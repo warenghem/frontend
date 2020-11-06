@@ -1323,6 +1323,11 @@
     lodash.template "^4.5.0"
     workbox-cdn "^5.1.3"
 
+"@nuxtjs/snipcart@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/snipcart/-/snipcart-1.1.0.tgz#34e9f2fa7efaf57ff52d09561dd5562640705b4d"
+  integrity sha512-uhpwjd3V1IGB6WPJpLYV63hY3YwP2BzpAC9aTpFx2Bs0Uk5O9NgfsUlecQD9y3NLV9+iSH+0Oxmfl6TYcrbMFA==
+
 "@nuxtjs/vuetify@^1.11.2":
   version "1.11.2"
   resolved "https://registry.yarnpkg.com/@nuxtjs/vuetify/-/vuetify-1.11.2.tgz#fefa861d98c021e10dd579a5b91b34b3fb49dc99"

@@ -34,6 +34,7 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/date-fns',
+    '@nuxtjs/snipcart',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -77,6 +78,15 @@ export default {
       },
      },
   },
+
+  snipcart: {
+    // Options available
+    version: /* not required default value is v3.0.23 */,
+    key: ST_YzkxMzZiZWYtZDc2NC00NDk3LTgwOTMtZjExNWM5YjU4NDQ5NjM3NDAyNzAwMzYyMDQxNTAy,
+    addProductBehavior: false,
+    locales: {} /* not required */,
+    snipcartCustomize: '' /* not required should be absolute path */
+  }
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
