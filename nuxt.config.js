@@ -20,6 +20,7 @@ export default {
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
+    '@/assets/scss/main.css',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
@@ -33,6 +34,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
+    "@nuxtjs/svg",
     '@nuxtjs/date-fns',
     '@nuxtjs/snipcart',
   ],
@@ -46,7 +48,7 @@ export default {
     // https://go.nuxtjs.dev/content
     '@nuxt/content',
     'nuxt-i18n',
-    
+    '@nuxtjs/color-mode',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -54,6 +56,23 @@ export default {
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
+
+  pwa: {
+    meta: {
+      mobileAppIOS: 'false',
+      theme_color: '#153038',
+      appleStatusBarStyle: 'black',
+      author: 'Kevin Brosseau',
+      description: 'Warenghem App',
+      theme_color: 'undefined',
+      lang: 'fr',
+      ogHost: 'www.warenghem.com',
+      ogSiteName: 'Warenghem Studios',
+      ogDescription: 'À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com',
+      twitterCard: 'summary',
+      twitterSite: 'www.warenghem.com',
+    }
+  },
 
   i18n: {
     strategy: 'prefix',
@@ -81,29 +100,15 @@ export default {
 
   snipcart: {
     // Options available
-    version: /* not required default value is v3.0.23 */,
-    key: ST_YzkxMzZiZWYtZDc2NC00NDk3LTgwOTMtZjExNWM5YjU4NDQ5NjM3NDAyNzAwMzYyMDQxNTAy,
+    key: "ST_YzkxMzZiZWYtZDc2NC00NDk3LTgwOTMtZjExNWM5YjU4NDQ5NjM3NDAyNzAwMzYyMDQxNTAy",
     addProductBehavior: false,
-    locales: {} /* not required */,
-    snipcartCustomize: '' /* not required should be absolute path */
-  }
+  },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     theme: {
-      dark: true,
-      themes: {
-        dark: {
-          primary: colors.blue.darken2,
-          accent: colors.grey.darken3,
-          secondary: colors.amber.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3
-        }
-      }
+      disable: true,
     }
   },
 

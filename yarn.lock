@@ -1302,6 +1302,21 @@
     consola "^2.15.0"
     defu "^3.1.0"
 
+"@nuxtjs/color-mode@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/color-mode/-/color-mode-2.0.0.tgz#6efcc443353ad4136d2c5d04d011ad3839349a0f"
+  integrity sha512-h3LFcfeKgNb8lzLu8vP/umbFxL+aFopzEiF9wHxyFAKCokdbnJyK7wY3+xqaX9eRUnlkxHbIcOO0dnyVZQkqPQ==
+  dependencies:
+    defu "^2.0.4"
+    lodash.template "^4.5.0"
+
+"@nuxtjs/date-fns@^1.4.1":
+  version "1.4.1"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/date-fns/-/date-fns-1.4.1.tgz#0b46b079b2d2014f38dba452d3b4a696fd4bc7a1"
+  integrity sha512-lZrWxcaiew+IYvTdCt5UrXJwHQ6ODFaC1gE5zhq3PS6kbV128J6YSGNEJFtI7OJEo4NgHohbuZLsij7GLnRnug==
+  dependencies:
+    date-fns "^2.16.1"
+
 "@nuxtjs/proxy@^2.0.1":
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/@nuxtjs/proxy/-/proxy-2.0.1.tgz#2469b6e316311aa8c60d348502a54bfe6d5536aa"
@@ -3364,6 +3379,11 @@ cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
+
+date-fns@^2.16.1:
+  version "2.16.1"
+  resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.16.1.tgz#05775792c3f3331da812af253e1a935851d3834b"
+  integrity sha512-sAJVKx/FqrLYHAQeN7VpJrPhagZc9R4ImZIWYRFZaaohR3KzmuK88touwsSwSVT8Qcbd4zoDsnGfX4GFB4imyQ==
 
 de-indent@^1.0.2:
   version "1.0.2"
