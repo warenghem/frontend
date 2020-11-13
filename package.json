@@ -9,11 +9,16 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
+    "@amcharts/amcharts4": "^4.10.10",
+    "@amcharts/amcharts4-geodata": "^4.1.19",
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/axios": "^5.12.2",
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/snipcart": "^1.1.0",
     "core-js": "^3.6.5",
+    "gsap": "^3.5.1",
+    "instafeed": "^1.4.0",
+    "jsonp": "^0.2.1",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4"
   },
