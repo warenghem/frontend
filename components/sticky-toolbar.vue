@@ -1,5 +1,5 @@
 <template>
-    <section class="appBar">
+    <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
         <v-navigation-drawer v-model="sidebar" dark app class="d-lg-none">
             <v-list>
                 <v-list-item
@@ -38,21 +38,41 @@
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
             <v-toolbar-items class="py-1 mr-3" style="max-width: 240px;">
-                <button class="nav-btn" @click="$root.scrollToElement('jePlanetBtn')">{{$t('title')}}</button>
+                <button class="nav-btn" @click="$store.state.plantModal=true">{{$t('btnTitle')}}</button>
             </v-toolbar-items>
         </v-app-bar>
     </section>
 </template>
 
 <script>
-    export default {
-        name: "sticky-toolbar",
-        data() {
-            return {
-                sidebar: false,
-            }
-        }
+export default {
+  name: 'sticky-toolbar',
+  data: function () {
+    return {
+      fixedOnScroll: false,
+      sidebar: false,
     }
+  },
+  methods: {
+    handleScroll () {
+      if (window.scrollY >= 200) {
+        this.fixedOnScroll = true
+      } else {
+        this.fixedOnScroll = false
+      }
+    }
+  },
+  created () {
+    if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  },
+  beforeUpdate () {
+    if (process.browser) {
+      window.addEventListener('scroll', this.handleScroll)
+    }
+  }
+}
 </script>
 
 <style scoped lang="scss">

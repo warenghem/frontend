@@ -21,10 +21,12 @@ export default {
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/scss/main.css',
+    '@/assets/scss/app.scss',   
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    {src: '~/plugins/vue-leaflet', ssr: false },
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -79,7 +81,7 @@ export default {
     locales: [
        {
         code: 'en',
-        iso: 'en-US',
+        iso: 'en-us',
         name: 'English',
       },
       {
@@ -100,7 +102,7 @@ export default {
 
   snipcart: {
     // Options available
-    key: "ST_YzkxMzZiZWYtZDc2NC00NDk3LTgwOTMtZjExNWM5YjU4NDQ5NjM3NDAyNzAwMzYyMDQxNTAy",
+    key: "N2VkOWYwOTgtNDYxMC00YWFmLWFjYzEtMDllZmY0YzdmZmUyNjM3Mzk5NDI5MzA2MTE0MDg2",
     addProductBehavior: false,
   },
 
@@ -109,10 +111,14 @@ export default {
     customVariables: ['~/assets/variables.scss'],
     theme: {
       disable: true,
-    }
+    },
+    materialIcons: true,
+    css: true,
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    analyze:true,
+    extractCSS: true,
   }
 }

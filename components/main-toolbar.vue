@@ -83,12 +83,12 @@
                                     :key="'flag_list_'+idx"
                             >
                                 <v-list-item-title class="cursor-pointer">
-                                    <router-link :to="{path:flag.path}">
+                                    <NuxtLink :to="{path:flag.path}">
                                         <img :src="flag.img"
                                              width="24"
                                              alt="flag"
                                         />
-                                    </router-link>
+                                    </NuxtLink>
 
                                 </v-list-item-title>
                             </v-list-item>

@@ -1,206 +1,60 @@
 <template>
-    <div v-intersect.once="mapIntersect">
+    <div class="py-10 border-bottom-2" v-intersect.once="mapIntersect">
         <h2 class="page-title pt-md-5 pt-4 pr-4"> {{$t('title')}}</h2>
         <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
-        <div class="d-flex justify-center py-3 py-md-0 flex-column flex-sm-row">
-            <div class="text-center py-4 px-7">
-                <div class="sub-title">
-                    <animated-number ref="treeCount"
-                                     :from="0"
-                                     :to="treeCount"
-                                     :duration="3"
-                                     :delay="2"
-                                     easing="Power1.easeOut"
-                    />
-                </div>
-                <div style="color: #888;"> {{$t('term1')}}</div>
-            </div>
-            <div class="text-center py-4 px-7">
-                <div class="sub-title">
-                    <animated-number ref="co2"
-                                     :from="0"
-                                     :to="co2"
-                                     :format="2"
-                                     :duration="3"
-                                     :delay="2"
-                                     easing="Power1.easeOut"
-                    />
-                    tonnes
-                </div>
-                <div style="color: #888;">{{$t('term2')}}</div>
-            </div>
-            <div class="text-center py-4 px-7">
-                <div class="sub-title">
-                    <animated-number ref="reforest"
-                                     :from="0"
-                                     :to="reforest"
-                                     :duration="3"
-                                     :delay="2"
-                                     :format="3"
-                                     easing="Power1.easeOut"
-                    />
-                </div>
-                <div style="color: #888;">{{$t('term3')}}</div>
-            </div>
-
-        </div>
-        <div id="mapSection"></div>
-        <div class="slideArea mgforest">
-            <div class="card">
-                <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
-                    <div class="py-1 border-right-2 pl-3" style="width: 100%">
-                        <button class="btn-theme my-0"
-                                @click="dialog = true">
-                            {{$t('title')}}
-                        </button>
-                    </div>
-                    <v-btn
-                            text
-                            color="black"
-                            @click="closeSlide"
-                            style="font-size: 32px"
-                            class="px-0 h-100"
-                    >
-                        &times;
-                    </v-btn>
-                </div>
-                <div class="px-7 pb-3  map-modal">
-                    <v-row>
-                        <v-col lg="6">
-                            <div class="para-title">{{$t('madagascar.section1.title')}}</div>
-                            <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
-                            <div class="para-img">
-                                <v-img src="../assets/images/specie-mango.jpg" alt="mango"></v-img>
-                            </div>
-                            <v-row>
-                                <v-col class="text-center ">
-                                    <div class="para-subtitle">
-                                        20kg
-                                    </div>
-                                    <div class="para-text">{{$t('madagascar.section1.term1')}}</div>
-                                </v-col>
-                                <v-col class="text-center">
-                                    <div class="para-subtitle">{{$t('madagascar.section1.term2bis')}}</div>
-                                    <div class="para-text">{{$t('madagascar.section1.term2')}}</div>
-                                </v-col>
-                                <v-col class="text-center ">
-                                    <div class="para-subtitle">2 – 10 m</div>
-                                    <div class="para-text">{{$t('madagascar.section1.term3')}}</div>
-                                </v-col>
-                            </v-row>
-                            <div class="para-subtitle-small">{{$t('madagascar.section1.paraTitle')}}</div>
-                            <div class="para-text" v-html="$t('madagascar.section1.paraText')">
-                            </div>
-                        </v-col>
-                        <v-col lg="6">
-                            <div class="para-title">{{$t('madagascar.section2.title')}}</div>
-                            <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
-                            <div class="para-img">
-                                <v-img src="../assets/images/river.png" alt="tiger"></v-img>
-                            </div>
-                            <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle1')}}</div>
-                            <div class="para-text" v-html="$t('madagascar.section2.paraText1')">
-                            </div>
-                            <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle2')}}</div>
-                            <div class="para-text" v-html="$t('madagascar.section2.paraText2')">
-                            </div>
-                        </v-col>
-                        <v-col>
-                            <div class="para-title">{{$t('madagascar.section3.title')}}</div>
-                            <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
-                                <v-img class="py-3" src="../assets/images/map1.png" alt="map"></v-img>
-                            </a>
-                        </v-col>
-                    </v-row>
-
-                </div>
-            </div>
-        </div>
-        <div class="slideArea indianforest">
-            <div class="card">
-                <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2 pl-3">
-                    <div class="py-1 border-right-2" style="width: 100%">
-                        <button class="btn-theme my-0"
-                                @click="dialog = true">
-                            {{$t('title')}}
-                        </button>
-                    </div>
-                    <v-btn
-                            text
-                            color="black"
-                            @click="closeSlide"
-                            style="font-size: 32px"
-                            class="px-0 h-100"
-                            large
-                    >
-                        &times;
-                    </v-btn>
-                </div>
-                <div class="px-7 pb-3  map-modal">
-                    <v-row>
-                        <v-col lg="6">
-                            <div class="para-title">{{$t('india.section1.title')}}</div>
-                            <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
-                            <div class="para-img">
-                                <v-img src="../assets/images/mango.jpg" alt="mango"></v-img>
-                            </div>
-                            <v-row>
-                                <v-col class="text-center ">
-                                    <div class="para-subtitle">
-                                        800kg
-                                    </div>
-                                    <div class="para-text">{{$t('india.section1.term1')}}</div>
-                                </v-col>
-                                <v-col class="text-center">
-                                    <div class="para-subtitle">{{$t('india.section1.term2bis')}}</div>
-                                    <div class="para-text">{{$t('india.section1.term2')}}</div>
-                                </v-col>
-                                <v-col class="text-center ">
-                                    <div class="para-subtitle">35–45m</div>
-                                    <div class="para-text">{{$t('india.section1.term3')}}</div>
-                                </v-col>
-                            </v-row>
-                            <div class="para-subtitle-small">{{$t('india.section1.paraTitle')}}</div>
-                            <div class="para-text" v-html="$t('india.section1.paraText')">
-                            </div>
-                        </v-col>
-                        <v-col lg="6">
-                            <div class="para-title">{{$t('india.section2.title')}}</div>
-                            <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
-                            <div class="para-img">
-                                <v-img src="../assets/images/tiger.jpg" alt="tiger"></v-img>
-                            </div>
-                            <div class="para-subtitle-small">{{$t('india.section2.paraTitle1')}}</div>
-                            <div class="para-text" v-html="$t('india.section2.paraText1')">
-                            </div>
-                            <div class="para-subtitle-small">{{$t('india.section2.paraTitle2')}}</div>
-                            <div class="para-text" v-html="$t('india.section2.paraText2')">
-                            </div>
-                        </v-col>
-                        <v-col>
-                            <div class="para-title">{{$t('india.section3.title')}}</div>
-                            <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
-                                <v-img class="py-3" src="../assets/images/map2.png" alt="map2"></v-img>
-                            </a>
-                        </v-col>
-                    </v-row>
-                </div>
-            </div>
-        </div>
-
+        <client-only>
+            <l-map
+                style="height: 800px; width: 800px"
+                :zoom="zoom"
+                :center="center"
+                :options="{zoomControl: false,attributionControl: false}"
+            >
+                <l-tile-layer
+                    :url="url"
+                />
+                <l-marker :lat-lng="[22.003975, 86.06648]">
+                    <l-icon
+                        :icon-size= "[32, 37]"
+                        icon-url="require(`~/assets/images/map2.png`)"
+                        >
+                    </l-icon>
+                </l-marker>   
+                <l-marker :lat-lng="[-16.270975, 44.445852]">
+                    <l-icon
+                        :icon-size= "[32, 37]"
+                        icon-url="require(`~/assets/images/map1.png`)" >
+                    </l-icon>
+                </l-marker>    
+            </l-map>
+        </client-only>
     </div>
 </template>
-
 <script>
-    import * as am4core from "@amcharts/amcharts4/core"
-    import * as am4maps from "@amcharts/amcharts4/maps"
-    import am4geodata_worldLow from "@amcharts/amcharts4-geodata/worldLow"
-    import AnimatedNumber from "./animated-number";
-
-
-    export default {
-        name: "we-plant-tree-map",
-        components: {AnimatedNumber},
+	export default {
+		name: 'leaflet-map',
+        data() {
+            return {
+                zoom: 4,
+                center: [3.770449, 64.38911],
+                url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+                showParagraph: false,
+                showMap: true,
+                };
+            },
+        methods: {
+            zoomUpdate(zoom) {
+                this.currentZoom = zoom;
+            },
+            centerUpdate(center) {
+                this.currentCenter = center;
+            },
+            showLongText() {
+                this.showParagraph = !this.showParagraph;
+            },
+            innerClick() {
+                alert("Click!");
+            }
+        },
         i18n: {
             messages: {
                 en: {
@@ -347,212 +201,9 @@
                 }
             }
         },
-        data() {
-            return {
-                intersectionOptions: {
-                    root: null,
-                    rootMargin: '0px 0px 0px 0px',
-                    threshold: [0, 1] // [0.25, 0.75] if you want a 25% offset!
-                },
-                wPointActive: true,
-                treeCount: 0,
-                co2: 0,
-                reforest: 0
-            }
-        },
-        mounted() {
-            this.mapCreate();
-        },
-        beforeDestroy() {
-            if (this.chart) {
-                this.chart.dispose()
-            }
-        },
-        methods: {
-            mapCreate() {
-                am4core.options.queue = true;
-                am4core.options.onlyShowOnViewport = true;
-                am4core.ready(function () {
-                    // Create map instance
-                    var chart = am4core.create("mapSection", am4maps.MapChart);
-
-                    chart.tapToActivate = true;
-                    chart.chartContainer.wheelable = false;
-                    chart.seriesContainer.draggable = false;
-                    chart.seriesContainer.resizable = false;
-                    chart.seriesContainer.events.disableType("doublehit");
-                    chart.chartContainer.background.events.disableType("doublehit");
-
-                    // Set map definition
-                    chart.geodata = am4geodata_worldLow;
-
-                    // Set projection
-                    chart.projection = new am4maps.projections.Miller();
-
-                    // Create map polygon series
-                    var polygonSeries = chart.series.push(new am4maps.MapPolygonSeries());
-
-                    // Exclude Antartica
-                    polygonSeries.exclude = ["AQ"];
-
-                    // Make map load polygon (like country names) data from GeoJSON
-                    polygonSeries.useGeodata = true;
-
-                    // Configure series
-                    var polygonTemplate = polygonSeries.mapPolygons.template;
-                    polygonTemplate.fill = am4core.color("#153038");
-                    polygonTemplate.strokeOpacity = 0.4;
-
-                    // Add image series
-                    var imageSeries = chart.series.push(new am4maps.MapImageSeries());
-                    imageSeries.mapImages.template.propertyFields.longitude = "longitude";
-                    imageSeries.mapImages.template.propertyFields.latitude = "latitude";
-                    imageSeries.data = [
-                        {
-                            id: "Trees_for_Tiger",
-                            text: "India - Trees for Tiger",
-                            latitude: 22.003975,
-                            longitude: 86.06648,
-                            image: "../assets/images/map2.png",
-                            modal: ".indianforest",
-                        },
-                        {
-                            id: "Eden_Projet",
-                            text: "Madagascar - Eden Project",
-                            latitude: -16.270975,
-                            longitude: 44.445852,
-                            image: "../assets/images/map1.png",
-                            modal: ".mgforest",
-                        },
-                    ];
-
-                    // add events to recalculate map position when the map is moved or zoomed
-                    chart.events.on("ready", updateCustomMarkers);
-                    chart.events.on("mappositionchanged", updateCustomMarkers);
-
-                    // this function will take current images on the map and create HTML elements for them
-                    function updateCustomMarkers() {
-                        // go through all of the images
-                        imageSeries.mapImages.each(function (image) {
-                            // check if it has corresponding HTML element
-                            if (!image.dummyData || !image.dummyData.externalElement) {
-                                // create onex
-                                image.dummyData = {
-                                    externalElement: createCustomMarker(image),
-                                };
-                            }
-
-                            // reposition the element accoridng to coordinates
-                            var xy = chart.geoPointToSVG({longitude: image.longitude, latitude: image.latitude});
-                            image.dummyData.externalElement.style.top = xy.y + "px";
-                            image.dummyData.externalElement.style.left = xy.x + "px";
-                        });
-                    }
-
-                    // responsive Zoom
-                    var x = window.matchMedia("(max-width: 768px)");
-                    if (x.matches) {
-                        chart.homeZoomLevel = 3;
-                        chart.maxZoomLevel = 3;
-                        chart.homeGeoPoint = {
-                            latitude: 3.770449,
-                            longitude: 64.38911,
-                        };
-                    } else {
-                        chart.maxZoomLevel = 1;
-                    }
-
-                    // this function creates and returns a new marker element
-                    function createCustomMarker(image) {
-                        var chart = image.dataItem.component.chart;
-                        var elt = image.dataItem.dataContext;
-
-                        // create holder
-                        var holder = document.createElement("div");
-                        holder.className = "map-marker";
-                        holder.title = elt.text;
-                        holder.style.position = "absolute";
-
-                        // create dot
-                        var dot = document.createElement("div");
-                        dot.className = "dot";
-                        holder.appendChild(dot);
-
-                        // create pulse
-                        var pulse = document.createElement("div");
-                        pulse.className = "dotpulse";
-                        holder.appendChild(pulse);
-
-                        // create conttext
-                        var conttext = document.createElement("div");
-                        conttext.className = "conttext appshadow hand";
-                        conttext.id = elt.id + "Container";
-                        holder.appendChild(conttext);
-
-                        var t = document.createElement("div");
-                        t.textContent = elt.text;
-                        t.className = "text";
-                        conttext.appendChild(t);
-
-                        var img = document.createElement("img");
-                        img.setAttribute("src", elt.image);
-                        img.className = "img";
-                        conttext.appendChild(img);
-
-                        // Modal system
-                        conttext.onclick = function () {
-                            document.querySelector(elt.modal).classList.add('active');
-                            document.getElementById('blackContent').classList.add('overlay');
-                            const el = document.body;
-                            el.classList.add("modal-open");
-                            document.documentElement.style.overflowY = 'hidden'
-                        };
-                        dot.onclick = function () {
-                            document.querySelector(elt.modal).classList.add('active');
-                            document.getElementById('blackContent').classList.add('overlay');
-                            const el = document.body;
-                            el.classList.add("modal-open");
-                            document.documentElement.style.overflowY = 'hidden'
-                        };
-                        // append the marker to the map container
-                        chart.svgContainer.htmlElement.appendChild(holder);
-
-                        return holder;
-                    }
-                });
-            },
-
-
-            closeSlide() {
-                document.querySelector('.indianforest').classList.remove('active');
-                document.querySelector('.mgforest').classList.remove('active');
-                document.getElementById('blackContent').classList.remove('overlay');
-                const el = document.body;
-                el.classList.remove('modal-open');
-                document.documentElement.style.overflowY = 'auto'
-            },
-            closeSlideUp() {
-                document.querySelector('.indianforest').classList.remove('active');
-                document.querySelector('.mgforest').classList.remove('active');
-                document.getElementById('blackContent').classList.remove('overlay');
-                const el = document.body;
-                el.classList.remove('modal-open');
-                document.documentElement.style.overflowY = 'auto';
-                this.$root.scrollToElement('formSection')
-            },
-            mapIntersect() {
-
-                this.treeCount = this.$store.state.tree_count;
-                this.co2 = parseFloat(this.$store.state.co2_compensated);
-                this.reforest = parseFloat(this.$store.state.reforest)
-            },
-
-
-        },
-
-
-    }
-
+	}
+</script>
+	}
 </script>
 <style lang="scss" scoped>
 

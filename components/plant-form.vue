@@ -53,7 +53,7 @@
                                                                      style="margin-top: -13px;"
                                                                 >
                                                             </span>
-                                                <span v-else>{{$t('title')}}</span>
+                                                <span v-else>{{$t('btnTitle')}}</span>
                                             </button>
                                         </form>
                                     </template>
