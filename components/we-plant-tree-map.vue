@@ -1,37 +1,177 @@
 <template>
-    <div class="py-10 border-bottom-2" v-intersect.once="mapIntersect">
-        <h2 class="page-title pt-md-5 pt-4 pr-4"> {{$t('title')}}</h2>
-        <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
-        <client-only>
-            <l-map
-                style="height: 800px; width: 800px"
-                :zoom="zoom"
-                :center="center"
-                :options="{zoomControl: false,attributionControl: false}"
-            >
-                <l-tile-layer
-                    :url="url"
-                />
-                <l-marker :lat-lng="[22.003975, 86.06648]">
-                    <l-icon
-                        :icon-size= "[32, 37]"
-                        icon-url="require(`~/assets/images/map2.png`)"
-                        >
-                    </l-icon>
-                </l-marker>   
-                <l-marker :lat-lng="[-16.270975, 44.445852]">
-                    <l-icon
-                        :icon-size= "[32, 37]"
-                        icon-url="require(`~/assets/images/map1.png`)" >
-                    </l-icon>
-                </l-marker>    
-            </l-map>
-        </client-only>
+  <div class="py-10 border-bottom-2" v-intersect.once="mapIntersect">
+    <h2 class="page-title pt-md-5 pt-4 pr-4"> {{$t('title')}}</h2>
+    <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
+    <tree-data :treeData="treeData"></tree-data>
+    <client-only>
+      <l-map
+        style="height: 800px; width: 800px"
+        :zoom="zoom"
+        :center="center"
+        :options="{zoomControl: false,attributionControl: false}"
+      >
+        <l-tile-layer
+          :url="url"
+        />
+        <l-marker :lat-lng="[marker.latitude, marker.longitude]"
+                  @click="innerClick(marker.modal)"
+                  v-for="(marker,m_idx) in markers"
+                  :key="'map_'+m_idx">
+          <l-icon
+            :icon-size="[32, 37]"
+            :icon-url="marker.image"
+          >
+          </l-icon>
+        </l-marker>
+      </l-map>
+    </client-only>
+    <div class="slideArea mgforest">
+      <div class="card">
+        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
+          <div class="py-1 border-right-2 pl-3" style="width: 100%">
+            <button class="btn-theme my-0"
+                    @click="closeSlideUp">
+              {{$t('btnTitle')}}
+            </button>
+          </div>
+          <v-btn
+            text
+            color="black"
+            @click="closeSlide"
+            style="font-size: 32px"
+            class="px-0 h-100"
+          >
+            &times;
+          </v-btn>
+        </div>
+        <div class="px-7 pb-3  map-modal">
+          <v-row>
+            <v-col lg="6">
+              <div class="para-title">{{$t('madagascar.section1.title')}}</div>
+              <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
+              <div class="para-img">
+                <v-img :src="require('../assets/images/specie-mango.jpg')" alt="mango"></v-img>
+              </div>
+              <v-row>
+                <v-col class="text-center ">
+                  <div class="para-subtitle">
+                    20kg
+                  </div>
+                  <div class="para-text">{{$t('madagascar.section1.term1')}}</div>
+                </v-col>
+                <v-col class="text-center">
+                  <div class="para-subtitle">{{$t('madagascar.section1.term2bis')}}</div>
+                  <div class="para-text">{{$t('madagascar.section1.term2')}}</div>
+                </v-col>
+                <v-col class="text-center ">
+                  <div class="para-subtitle">2 – 10 m</div>
+                  <div class="para-text">{{$t('madagascar.section1.term3')}}</div>
+                </v-col>
+              </v-row>
+              <div class="para-subtitle-small">{{$t('madagascar.section1.paraTitle')}}</div>
+              <div class="para-text" v-html="$t('madagascar.section1.paraText')">
+              </div>
+            </v-col>
+            <v-col lg="6">
+              <div class="para-title">{{$t('madagascar.section2.title')}}</div>
+              <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
+              <div class="para-img">
+                <v-img :src="require('../assets/images/river.png')" alt="tiger"></v-img>
+              </div>
+              <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle1')}}</div>
+              <div class="para-text" v-html="$t('madagascar.section2.paraText1')">
+              </div>
+              <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle2')}}</div>
+              <div class="para-text" v-html="$t('madagascar.section2.paraText2')">
+              </div>
+            </v-col>
+            <v-col>
+              <div class="para-title">{{$t('madagascar.section3.title')}}</div>
+              <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
+                <v-img class="py-3" :src="require('../assets/images/map1.png')" alt="map"></v-img>
+              </a>
+            </v-col>
+          </v-row>
+
+        </div>
+      </div>
     </div>
+    <div class="slideArea indianforest">
+      <div class="card">
+        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2 pl-3">
+          <div class="py-1 border-right-2" style="width: 100%">
+            <button class="btn-theme my-0"
+                    @click="closeSlideUp">
+              {{$t('btnTitle')}}
+            </button>
+          </div>
+          <v-btn
+            text
+            color="black"
+            @click="closeSlide"
+            style="font-size: 32px"
+            class="px-0 h-100"
+            large
+          >
+            &times;
+          </v-btn>
+        </div>
+        <div class="px-7 pb-3  map-modal">
+          <v-row>
+            <v-col lg="6">
+              <div class="para-title">{{$t('india.section1.title')}}</div>
+              <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
+              <div class="para-img">
+                <v-img :src="require('../assets/images/mango.jpg')" alt="mango"></v-img>
+              </div>
+              <v-row>
+                <v-col class="text-center ">
+                  <div class="para-subtitle">
+                    800kg
+                  </div>
+                  <div class="para-text">{{$t('india.section1.term1')}}</div>
+                </v-col>
+                <v-col class="text-center">
+                  <div class="para-subtitle">{{$t('india.section1.term2bis')}}</div>
+                  <div class="para-text">{{$t('india.section1.term2')}}</div>
+                </v-col>
+                <v-col class="text-center ">
+                  <div class="para-subtitle">35–45m</div>
+                  <div class="para-text">{{$t('india.section1.term3')}}</div>
+                </v-col>
+              </v-row>
+              <div class="para-subtitle-small">{{$t('india.section1.paraTitle')}}</div>
+              <div class="para-text" v-html="$t('india.section1.paraText')">
+              </div>
+            </v-col>
+            <v-col lg="6">
+              <div class="para-title">{{$t('india.section2.title')}}</div>
+              <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
+              <div class="para-img">
+                <v-img :src="require('../assets/images/tiger.jpg')" alt="tiger"></v-img>
+              </div>
+              <div class="para-subtitle-small">{{$t('india.section2.paraTitle1')}}</div>
+              <div class="para-text" v-html="$t('india.section2.paraText1')">
+              </div>
+              <div class="para-subtitle-small">{{$t('india.section2.paraTitle2')}}</div>
+              <div class="para-text" v-html="$t('india.section2.paraText2')">
+              </div>
+            </v-col>
+            <v-col>
+              <div class="para-title">{{$t('india.section3.title')}}</div>
+              <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
+                <v-img class="py-3" :src="require('../assets/images/map2.png')" alt="map2"></v-img>
+              </a>
+            </v-col>
+          </v-row>
+        </div>
+      </div>
+    </div>
+  </div>
 </template>
 <script>
-	export default {
-		name: 'leaflet-map',
+    export default {
+        name: 'leaflet-map',
         data() {
             return {
                 zoom: 4,
@@ -39,8 +179,37 @@
                 url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                 showParagraph: false,
                 showMap: true,
-                };
-            },
+                intersectionOptions: {
+                    root: null,
+                    rootMargin: '0px 0px 0px 0px',
+                    threshold: [0, 1] // [0.25, 0.75] if you want a 25% offset!
+                },
+                treeData: {
+                    treeCount: 0,
+                    co2: 0,
+                    reforest: 0
+                },
+                markers: [
+                    {
+                        id: "Trees_for_Tiger",
+                        text: "India - Trees for Tiger",
+                        latitude: 22.003975,
+                        longitude: 86.06648,
+                        image: require("../assets/images/map2.png"),
+                        modal: ".indianforest",
+                    },
+                    {
+                        id: "Eden_Projet",
+                        text: "Madagascar - Eden Project",
+                        latitude: -16.270975,
+                        longitude: 44.445852,
+                        image: require("../assets/images/map1.png"),
+                        modal: ".mgforest",
+                    },
+                ]
+
+            };
+        },
         methods: {
             zoomUpdate(zoom) {
                 this.currentZoom = zoom;
@@ -51,8 +220,34 @@
             showLongText() {
                 this.showParagraph = !this.showParagraph;
             },
-            innerClick() {
-                alert("Click!");
+            closeSlide() {
+                document.querySelector('.indianforest').classList.remove('active');
+                document.querySelector('.mgforest').classList.remove('active');
+                document.getElementById('blackContent').classList.remove('overlay');
+                const el = document.body;
+                el.classList.remove('modal-open');
+                document.documentElement.style.overflowY = 'auto'
+            },
+            closeSlideUp() {
+                document.querySelector('.indianforest').classList.remove('active');
+                document.querySelector('.mgforest').classList.remove('active');
+                document.getElementById('blackContent').classList.remove('overlay');
+                const el = document.body;
+                el.classList.remove('modal-open');
+                document.documentElement.style.overflowY = 'auto';
+                // this.$scrollToElement('formSection')
+            },
+            innerClick(modalClass) {
+                document.querySelector(modalClass).classList.add('active');
+                document.getElementById('blackContent').classList.add('overlay');
+                const el = document.body;
+                el.classList.add("modal-open");
+                document.documentElement.style.overflowY = 'hidden'
+            },
+            mapIntersect() {
+                this.treeData.treeCount = this.$store.state.tree_count;
+                this.treeData.co2 = parseFloat(this.$store.state.co2_compensated);
+                this.treeData.reforest = parseFloat(this.$store.state.reforest)
             }
         },
         i18n: {
@@ -62,9 +257,6 @@
                     subtitle: 'To offset the CO2 emissions linked to the creation of our objects, your visits to our ' +
                         'site, and the electricity consumption of our technologies. Our projects are exclusively ' +
                         'reserved for the regeneration of biodiversity. Our trees are traced and certified.',
-                    term1: 'planted trees',
-                    term2: 'of CO2 compensated',
-                    term3: 'reforested hectares',
                     madagascar: {
                         section1: {
                             title: 'Forest',
@@ -133,9 +325,6 @@
                         ' sur notre site, et à la consommation d’électricité de nos technologies. Nos projets sont' +
                         ' exclusivement réservés à la régénération de la biodiversité. Nos arbres sont tracés' +
                         ' et certifiés.',
-                    term1: 'arbres plantés',
-                    term2: 'de CO2 compensées',
-                    term3: 'hectares reforestés',
                     madagascar: {
                         section1: {
                             title: 'Fôret',
@@ -201,93 +390,91 @@
                 }
             }
         },
-	}
-</script>
-	}
+    }
 </script>
 <style lang="scss" scoped>
 
-    .slideArea {
-        position: fixed;
-        top: 0;
-        bottom: 0;
-        height: 100%;
-        z-index: 100000 !important;
-        background: #fff;
-        max-height: 100%;
-        overflow-y: scroll;
-        transition: right 0.4s;
+  .slideArea {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    z-index: 100000 !important;
+    background: #fff;
+    max-height: 100%;
+    overflow-y: scroll;
+    transition: right 0.4s;
 
-        .card-header {
-            position: fixed;
-            z-index: 1;
-            background: white;
-        }
-
-        @media only screen and (min-width: 1291px) {
-            width: 50vw !important;
-            right: -50vw !important;
-            .card-header {
-                width: 49vw !important;
-            }
-        }
-
-        @media only screen and (max-width: 1290px) {
-            width: 70vw !important;
-            right: -70vw;
-            .card-header {
-                width: 69vw !important;
-            }
-        }
-        @media only screen and (max-width: 48em) {
-            width: 100vw !important;
-            right: -100vw;
-            .card-header {
-                width: 99vw !important;
-            }
-        }
-
-        &.active {
-            right: 0 !important;
-            visibility: visible !important;
-        }
-
+    .card-header {
+      position: fixed;
+      z-index: 1;
+      background: white;
     }
 
-    .map-modal {
-        .para-title {
-            font-weight: 700;
-            margin-bottom: 5px;
-            color: #888;
-            font-size: 16px;
-        }
-
-        .para-subtitle {
-            font-size: 18px;
-            font-family: 'teradeli-medium', sans-serif;
-            line-height: 1rem;
-            color: #153038;
-            margin: 0;
-        }
-
-        .para-subtitle-small {
-            font-size: 15px;
-            font-family: 'teradeli-medium', sans-serif;
-            line-height: 1rem;
-            color: #153038;
-            margin: 0;
-        }
-
-        .para-img {
-            padding-bottom: 1rem;
-            padding-top: 1rem;
-        }
-
-        .para-text {
-            color: #888;
-            font-size: 14px;
-        }
-
+    @media only screen and (min-width: 1291px) {
+      width: 50vw !important;
+      right: -50vw !important;
+      .card-header {
+        width: 49vw !important;
+      }
     }
+
+    @media only screen and (max-width: 1290px) {
+      width: 70vw !important;
+      right: -70vw;
+      .card-header {
+        width: 69vw !important;
+      }
+    }
+    @media only screen and (max-width: 48em) {
+      width: 100vw !important;
+      right: -100vw;
+      .card-header {
+        width: 99vw !important;
+      }
+    }
+
+    &.active {
+      right: 0 !important;
+      visibility: visible !important;
+    }
+
+  }
+
+  .map-modal {
+    .para-title {
+      font-weight: 700;
+      margin-bottom: 5px;
+      color: #888;
+      font-size: 16px;
+    }
+
+    .para-subtitle {
+      font-size: 18px;
+      font-family: 'teradeli-medium', sans-serif;
+      line-height: 1rem;
+      color: #153038;
+      margin: 0;
+    }
+
+    .para-subtitle-small {
+      font-size: 15px;
+      font-family: 'teradeli-medium', sans-serif;
+      line-height: 1rem;
+      color: #153038;
+      margin: 0;
+    }
+
+    .para-img {
+      padding-bottom: 1rem;
+      padding-top: 1rem;
+    }
+
+    .para-text {
+      color: #888;
+      font-size: 14px;
+    }
+
+  }
 
 </style>

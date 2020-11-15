@@ -8,7 +8,7 @@
                 <v-list-item
                         v-for="(link,l_idx) in $store.state.link.links"
                         :class="{'current':$root.currentId===link.elId}"
-                        @click="$root.scrollToElement(link.elId)"
+                        @click="$scrollToElement(link.elId)"
                         :key="'link_'+l_idx"
                 >
                     <v-list-item-content>
@@ -26,7 +26,7 @@
                              :key="'link_btn_l_'+l_idx">
                 <v-btn text class="text-uppercase item"
                        :class="{'current':$root.currentId===link.elId}"
-                       @click="$root.scrollToElement(link.elId)"
+                       @click="$scrollToElement(link.elId)"
                        v-if="link.position==='left'"
                 >
                     {{$t(link.name)}}
@@ -44,7 +44,7 @@
                              :key="'link_btn_r_'+l_idx">
                 <v-btn text class="text-uppercase item"
                        :class="{'current':$root.currentId===link.elId}"
-                       @click="$root.scrollToElement(link.elId)"
+                       @click="$scrollToElement(link.elId)"
                        v-if="link.position==='right'"
                 >
                     {{$t(link.name)}}

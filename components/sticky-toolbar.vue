@@ -5,7 +5,7 @@
                 <v-list-item
                         v-for="(link,l_idx) in $store.state.link.links"
                         :class="{'current':$root.currentId===link.elId}"
-                        @click="$root.scrollToElement(link.elId)"
+                        @click="$scrollToElement(link.elId)"
                         :key="'slink_'+l_idx"
                 >
                     <v-list-item-content>
@@ -15,7 +15,7 @@
             </v-list>
         </v-navigation-drawer>
 
-        <v-app-bar class="menu-bar" flat height="50px"  
+        <v-app-bar class="menu-bar" flat height="50px"
                    :class="{'whiteBack':$root.currentId==='mapTreeSection'||$root.currentId==='studioSection'}">
 
             <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-lg-none ml-3">
@@ -24,7 +24,7 @@
                              :key="'slink_btn_l_'+l_idx">
                 <v-btn text class="text-uppercase item"
                        :class="{'current':$root.currentId===link.elId}"
-                       @click="$root.scrollToElement(link.elId)"
+                       @click="$scrollToElement(link.elId)"
                 >
                     {{$t(link.name)}}
                 </v-btn>

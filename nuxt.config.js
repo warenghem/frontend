@@ -9,24 +9,25 @@ export default {
     titleTemplate: '%s - frontend',
     title: 'frontend',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: ''}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ]
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
   css: [
     '@/assets/scss/main.css',
-    '@/assets/scss/app.scss',   
+    '@/assets/scss/app.scss',
   ],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    {src: '~/plugins/vue-leaflet', ssr: false },
+    {src: '~/plugins/vue-leaflet', ssr: false},
+    {src: '~/plugins/main', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -54,7 +55,9 @@ export default {
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {},
+  axios: {
+    baseURL: 'https://tree-nation.com/api/',
+  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
@@ -66,7 +69,6 @@ export default {
       appleStatusBarStyle: 'black',
       author: 'Kevin Brosseau',
       description: 'Warenghem App',
-      theme_color: 'undefined',
       lang: 'fr',
       ogHost: 'www.warenghem.com',
       ogSiteName: 'Warenghem Studios',
@@ -79,7 +81,7 @@ export default {
   i18n: {
     strategy: 'prefix',
     locales: [
-       {
+      {
         code: 'en',
         iso: 'en-us',
         name: 'English',
@@ -89,15 +91,24 @@ export default {
         iso: 'fr-fr',
         name: 'Français',
       },
-     ],
-     defaultLocale: 'fr',
-     detectBrowserLanguage: { alwaysRedirect: true, fallbackLocale: 'fr', onlyOnRoot: true, useCookie: true, cookieCrossOrigin: false, cookieDomain: null, cookieKey: 'i18n_redirected', cookieSecure: false },
-     vueI18n: {
+    ],
+    defaultLocale: 'fr',
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+      fallbackLocale: 'fr',
+      onlyOnRoot: true,
+      useCookie: true,
+      cookieCrossOrigin: false,
+      cookieDomain: null,
+      cookieKey: 'i18n_redirected',
+      cookieSecure: false
+    },
+    vueI18n: {
       messages: {
         fr: require('./locales/fr-fr.json'),
         en: require('./locales/en-us.json'),
       },
-     },
+    },
   },
 
   snipcart: {
@@ -118,7 +129,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    analyze:true,
+    analyze: true,
     extractCSS: true,
   }
 }
