@@ -6,7 +6,7 @@
         <div class="">
           <h2 class="text-lg font-bold text-gray-800 mb-2">{{ post.title }}</h2>
           <p class="text-sm text-gray-700">
-            {{ $t('published-at') }} {{ getDate }
+            {{ $t('published-at') }} {{ getDate }}
             <nuxt-link
               class="uppercase text-teal-600 hover:text-teal-800"
               v-for="lang in otherLanguages"
