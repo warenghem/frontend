@@ -25,7 +25,7 @@
           >
             <div class="card">
               <div class="card-header">
-                Map title
+               {{marker.text}}
               </div>
               <div>
                 <img :src="marker.image" alt="" width="32" height="37">
