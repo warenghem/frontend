@@ -1,4 +1,6 @@
 <template>
+  <div>
+    <MainToolbar :type="true"/>
   <div class="blog container mx-auto">
     <section class="grid grid-cols-3 gap-4 pt-12">
       <article
@@ -23,6 +25,8 @@
       </article>
     </section>
   </div>
+  </div>
+
 </template>
 
 <script>
@@ -33,10 +37,7 @@ export default {
     const defaultLocale = app.i18n.locale;
     const posts = await $content(`${app.i18n.locale}/blog`).fetch();
     return {
-      posts: posts.map(post => ({
-        ...post,
-      path: post.path.replace(`/${defaultLocale}`, ''),
-      })),
+      posts: posts
     };
   },
 }

@@ -1,5 +1,7 @@
 <template>
-  <div class="container mx-auto pt-6">
+  <div>
+    <MainToolbar :type="true"/>
+    <div class="container mx-auto pt-6">
     <article v-if="post">
       <header class="grid grid-cols-2 gap-4 mb-12 rounded shadow-lg p-4">
         <img :src="post.media" alt="post.title" />
@@ -21,6 +23,8 @@
       <nuxt-content class="text-gray-800" :document="post" />
     </article>
   </div>
+  </div>
+
 </template>
 
 <script>
