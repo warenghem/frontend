@@ -35,7 +35,7 @@ export default {
   async asyncData(context) {
     const { $content, app } = context;
     const defaultLocale = app.i18n.locale;
-    const posts = await $content(`${app.i18n.locale}/blog`).fetch();
+    const posts = await $content(`${defaultLocale }/blog`).fetch();
     return {
       posts: posts
     };

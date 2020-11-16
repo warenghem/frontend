@@ -76,14 +76,15 @@
 
               </v-btn>
             </template>
-            <v-list
+            <slot name="langSwitcher">
+              <v-list
             >
               <v-list-item
                 v-for="(flag,idx) in $store.state.langs.items"
                 :key="'flag_list_'+idx"
               >
                 <v-list-item-title class="cursor-pointer">
-                  <NuxtLink :to="{name:$nuxt.$route.name.replace($i18n.locale,flag.lang)}">
+                  <NuxtLink :to="switchLocalePath(flag.lang)">
                     <img :src="flag.img"
                          width="24"
                          alt="flag"
@@ -93,6 +94,8 @@
                 </v-list-item-title>
               </v-list-item>
             </v-list>
+            </slot>
+
           </v-menu>
         </v-btn>
       </v-toolbar-items>
