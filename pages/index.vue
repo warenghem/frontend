@@ -2,7 +2,6 @@
   <div>
     <div id="blackContent" @click="hideModal"></div>
     <MainToolbar/>
-    <sticky-toolbar class="stickyBar" />
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>
     <ProductSection id="productSection"/>
@@ -31,7 +30,3 @@ export default {
 
 </script>
 
-<style lang="scss">
-    @import '~/assets/scss/home.scss';
-
-</style>
