@@ -83,7 +83,7 @@
                 :key="'flag_list_'+idx"
               >
                 <v-list-item-title class="cursor-pointer">
-                  <NuxtLink :to="{path:flag.path}">
+                  <NuxtLink :to="{name:$nuxt.$route.name.replace($i18n.locale,flag.lang)}">
                     <img :src="flag.img"
                          width="24"
                          alt="flag"
