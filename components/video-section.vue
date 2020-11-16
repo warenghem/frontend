@@ -1,80 +1,100 @@
 <template>
-    <div>
-        <div class="videoSection">
-            <div class="homepage-slider-background" ref="backgroundImg">
-                <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay"
-                     data-direction="top"
-                     :style="{'background-image': 'url(' + require('../assets/images/S048+PF.png') + ')'}"
-                     data-idx="1"
-                >
-                </div>
-
-            </div>
-            <div class="scrollicon d-none d-lg-block">
-                <div class="mouse">
-                    <div class="frame">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.9 91">
-                            <path class="st0" linejoin="round"
-                                  d="M27.4 3.6L27.4 3.6C14.2 3.6 3.5 14.3 3.5 27.5v36c0 13.2 10.7 23.9 23.9 23.9h0c13.2 0 23.9-10.7 23.9-23.9v-36C51.4 14.3 40.7 3.6 27.4 3.6z"></path>
-                        </svg>
-                    </div>
-                    <div class="mouse-left">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.4 91">
-                            <path linejoin="round" class="Draw-Frame Animate-Draw"
-                                  d="M27.4 87.5L27.4 87.5c-13.2 0-23.9-10.7-23.9-23.9v-36c0-13.2 10.7-23.9 23.9-23.9h0"></path>
-                        </svg>
-                    </div>
-                    <div class="mouse-right">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.4 91">
-                            <path linejoin="round" class="Draw-Frame Animate-Draw"
-                                  d="M0 3.6L0 3.6c13.2 0 23.9 10.7 23.9 23.9v36c0 13.2-10.7 23.9-23.9 23.9h0"></path>
-                        </svg>
-                    </div>
-                </div>
-            </div>
-            <v-row no-gutters class="homepage-slider-content">
-                <v-col class="topCenter my-auto col-12">
-                    <div class="bannerLeft px-2">
-                        <h2 class="title text-center"> {{$t('video.title')}}</h2>
-                        <h4 class="subtitle text-center">{{$t('video.subtitle')}}</h4>
-                    </div>
-                    <div class="row col-md-10 mx-auto text-center inner">
-                        <div class="col-md-4">
-                            <p><img src="../assets/images/ecological.svg" alt=""></p>
-                            <span>{{$t('video.tag1')}}</span>
-                        </div>
-                        <div class="col-md-4">
-                            <p><img src="../assets/images/france.svg" alt=""></p>
-                            <span>{{$t('video.tag2')}}</span>
-                        </div>
-                        <div class="col-md-4">
-                            <p><img src="../assets/images/tech.svg" alt=""></p>
-                            <span>{{$t('video.tag3')}}</span>
-                        </div>
-                    </div>
-                    <div class="text-center">
-                        <button
-                            class="btn-theme"
-                            id="jePlanetBtn"
-                            @click="$store.state.plantModal=true"
-                    >
-                        {{$t('btnTitle')}}
-                    </button>
-                    </div>
-
-
-                </v-col>
-                <div class="bottomleft">
-                    {{$store.state.tree_count}} <span>{{$t('video.forest.term1')}}</span> <br>
-                    {{$store.state.co2_compensated}} <span>{{$t('video.forest.term2')}}</span> <br>
-                    {{$store.state.reforest}} <span>{{$t('video.forest.term3')}}</span> <br>
-                </div>
-
-            </v-row>
+  <div>
+    <div class="videoSection">
+      <div class="homepage-slider-background" ref="backgroundImg">
+        <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay"
+             data-direction="top"
+             :style="{'background-image': 'url(' + require('../assets/images/S048+PF.png') + ')'}"
+             data-idx="1"
+        >
         </div>
 
+      </div>
+      <div class="scrollicon d-none d-lg-block">
+        <div class="mouse">
+          <div class="frame">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 54.9 91">
+              <path class="st0" linejoin="round"
+                    d="M27.4 3.6L27.4 3.6C14.2 3.6 3.5 14.3 3.5 27.5v36c0 13.2 10.7 23.9 23.9 23.9h0c13.2 0 23.9-10.7 23.9-23.9v-36C51.4 14.3 40.7 3.6 27.4 3.6z"></path>
+            </svg>
+          </div>
+          <div class="mouse-left">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.4 91">
+              <path linejoin="round" class="Draw-Frame Animate-Draw"
+                    d="M27.4 87.5L27.4 87.5c-13.2 0-23.9-10.7-23.9-23.9v-36c0-13.2 10.7-23.9 23.9-23.9h0"></path>
+            </svg>
+          </div>
+          <div class="mouse-right">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 27.4 91">
+              <path linejoin="round" class="Draw-Frame Animate-Draw"
+                    d="M0 3.6L0 3.6c13.2 0 23.9 10.7 23.9 23.9v36c0 13.2-10.7 23.9-23.9 23.9h0"></path>
+            </svg>
+          </div>
+        </div>
+      </div>
+      <v-row no-gutters class="homepage-slider-content">
+        <v-col class="topCenter my-auto col-12">
+          <div class="bannerLeft px-2">
+            <h2 class="title text-center"> {{$t('video.title')}}</h2>
+            <h4 class="subtitle text-center">{{$t('video.subtitle')}}</h4>
+          </div>
+          <div class="row col-md-10 mx-auto text-center inner">
+            <div class="col-md-4">
+              <p><img src="../assets/images/ecological.svg" alt=""></p>
+              <span>{{$t('video.tag1')}}</span>
+            </div>
+            <div class="col-md-4">
+              <p><img src="../assets/images/france.svg" alt=""></p>
+              <span>{{$t('video.tag2')}}</span>
+            </div>
+            <div class="col-md-4">
+              <p><img src="../assets/images/tech.svg" alt=""></p>
+              <span>{{$t('video.tag3')}}</span>
+            </div>
+          </div>
+          <div class="text-center">
+            <button
+              class="btn-theme"
+              id="jePlanetBtn"
+              @click="$store.state.plantModal=true"
+            >
+              {{$t('btnTitle')}}
+            </button>
+          </div>
 
+
+        </v-col>
+        <div class="bottomleft">
+          <animated-number ref="treeCount"
+                           :from="0"
+                           :to="treeData.treeCount"
+                           :duration="3"
+                           :delay="0"
+                           easing="Power1.easeOut"
+          ></animated-number> <span>{{$t('video.forest.term1')}}</span> <br>
+          <animated-number ref="co2"
+                           :from="0"
+                           :to="treeData.co2"
+                           :format="2"
+                           :duration="3"
+                           :delay="0"
+                           easing="Power1.easeOut"
+          ></animated-number> <span>{{$t('video.forest.term2')}}</span> <br>
+          <animated-number ref="reforest"
+                           :from="0"
+                           :to="treeData.reforest"
+                           :duration="3"
+                           :delay="0"
+                           :format="3"
+                           easing="Power1.easeOut"
+          ></animated-number> <span>{{$t('video.forest.term3')}}</span> <br>
+        </div>
+
+      </v-row>
     </div>
+
+
+  </div>
 </template>
 
 <script>
@@ -91,13 +111,21 @@
                 maxProgress: 30,
                 snackbarSuccess: false,
                 snackbarError: false,
-                email: ''
+                email: '',
+                treeData: {
+                    treeCount: 0,
+                    co2: 0,
+                    reforest: 0
+                },
             }
         },
         beforeDestroy() {
             clearInterval(this.interval)
         },
         mounted() {
+            this.treeData.treeCount = this.$store.state.tree_count;
+            this.treeData.co2 = parseFloat(this.$store.state.co2_compensated);
+            this.treeData.reforest = parseFloat(this.$store.state.reforest)
             this.interval = window.setInterval(function () {
                 if (this.progressValue < this.maxProgress) {
                     this.progressValue = this.progressValue < this.maxProgress ? this.progressValue + 1 : this.maxProgress;
@@ -209,6 +237,6 @@
 </script>
 
 <style scoped lang="scss">
-    @import "../assets/scss/home/video";
+  @import "../assets/scss/home/video";
 
 </style>

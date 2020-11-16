@@ -17,10 +17,20 @@
                   @click="innerClick(marker.modal)"
                   v-for="(marker,m_idx) in markers"
                   :key="'map_'+m_idx">
+
           <l-icon
-            :icon-size="[32, 37]"
+            :icon-size="[52, 50]"
             :icon-url="marker.image"
+            className="mapClass"
           >
+            <div class="card">
+              <div class="card-header">
+                Map title
+              </div>
+              <div>
+                <img :src="marker.image" alt="" width="32" height="37">
+              </div>
+            </div>
           </l-icon>
         </l-marker>
       </l-map>
