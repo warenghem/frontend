@@ -6,7 +6,7 @@
         v-for="(post, $index) in posts"
         :key="`post-${$index}`"
       >
-        <img class="w-full" :src="post.media" :alt="post.title" />
+        <img class="w-full" :src="post.media" :alt="post.title"/>
         <div class="px-6 py-4 flex-2">
           <h3>{{ post.title }}</h3>
           <p class="text-gray-700 text-base">
@@ -26,19 +26,22 @@
 </template>
 
 <script>
-export default {
-  name: 'shop',
-  async asyncData(context) {
-    const { $content, app } = context;
-    const defaultLocale = app.i18n.locale;
-    const posts = await $content(`${app.i18n.locale}/shop'`).fetch();
-    return {
-      posts: posts.map(post => ({
-        ...post,
-      path: post.path.replace(`/${defaultLocale}`, ''),
-      })),
-    };
-  },
-}
+    export default {
+        name: 'shop',
+        async asyncData(context) {
+            const {$content, app} = context;
+            const defaultLocale = app.i18n.locale;
+            const posts = await $content(`${app.i18n.locale}/shop'`).fetch();
+            return {
+                posts: posts.map(post => ({
+                    ...post,
+                    path: post.path.replace(`/${defaultLocale}`, ''),
+                })),
+            };
+        },
+        created() {
+            this.$store.commit('langs/RESET_LANG');
+        },
+    }
 
 </script>

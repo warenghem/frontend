@@ -5,7 +5,7 @@
                 <v-list-item
                         v-for="(link,l_idx) in $store.state.link.links"
                         :class="{'current':$root.currentId===link.elId}"
-                        @click="$scrollToElement(link.elId)"
+                        :to="'/'+$i18n.locale+link.elId"
                         :key="'slink_'+l_idx"
                 >
                     <v-list-item-content>
@@ -24,7 +24,7 @@
                              :key="'slink_btn_l_'+l_idx">
                 <v-btn text class="text-uppercase item"
                        :class="{'current':$root.currentId===link.elId}"
-                       @click="$scrollToElement(link.elId)"
+                      :to="'/'+$i18n.locale+link.elId"
                 >
                     {{$t(link.name)}}
                 </v-btn>

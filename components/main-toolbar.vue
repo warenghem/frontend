@@ -8,7 +8,7 @@
         <v-list-item
           v-for="(link,l_idx) in $store.state.link.links"
           :class="{'current':$root.currentId===link.elId}"
-          @click="$scrollToElement(link.elId)"
+          :to="'/'+$i18n.locale+link.elId"
           :key="'link_'+l_idx"
         >
           <v-list-item-content>
@@ -26,7 +26,7 @@
                        :key="'link_btn_l_'+l_idx">
         <v-btn text class="text-uppercase item"
                :class="{'current':$root.currentId===link.elId}"
-               @click="$scrollToElement(link.elId)"
+               :to="'/'+$i18n.locale+link.elId"
                v-if="link.position==='left'"
         >
           {{$t(link.name)}}
@@ -44,7 +44,7 @@
                        :key="'link_btn_r_'+l_idx">
         <v-btn text class="text-uppercase item"
                :class="{'current':$root.currentId===link.elId}"
-               @click="$scrollToElement(link.elId)"
+               :to="'/'+$i18n.locale+link.elId"
                v-if="link.position==='right'"
         >
           {{$t(link.name)}}
@@ -84,7 +84,7 @@
                   :key="'flag_list_'+idx"
                 >
                   <v-list-item-title class="cursor-pointer">
-                    <NuxtLink :to="switchLocalePath(flag.lang)">
+                    <NuxtLink :to="$store.state.langs.hasSlug?flag.path:switchLocalePath(flag.path)">
                       <img :src="flag.img"
                            width="24"
                            alt="flag"

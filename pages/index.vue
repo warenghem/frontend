@@ -25,6 +25,9 @@
                 document.documentElement.style.overflowY = 'auto'
             }
         },
+        created(){
+          this.$store.commit('langs/RESET_LANG');
+        },
         head() {
             return {
                 bodyAttrs: {
