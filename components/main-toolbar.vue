@@ -78,22 +78,22 @@
             </template>
             <slot name="langSwitcher">
               <v-list
-            >
-              <v-list-item
-                v-for="(flag,idx) in $store.state.langs.items"
-                :key="'flag_list_'+idx"
               >
-                <v-list-item-title class="cursor-pointer">
-                  <NuxtLink :to="switchLocalePath(flag.lang)">
-                    <img :src="flag.img"
-                         width="24"
-                         alt="flag"
-                    />
-                  </NuxtLink>
+                <v-list-item
+                  v-for="(flag,idx) in $store.state.langs.items"
+                  :key="'flag_list_'+idx"
+                >
+                  <v-list-item-title class="cursor-pointer">
+                    <NuxtLink :to="switchLocalePath(flag.lang)">
+                      <img :src="flag.img"
+                           width="24"
+                           alt="flag"
+                      />
+                    </NuxtLink>
 
-                </v-list-item-title>
-              </v-list-item>
-            </v-list>
+                  </v-list-item-title>
+                </v-list-item>
+              </v-list>
             </slot>
 
           </v-menu>
@@ -138,54 +138,7 @@
     }
 
     @media(min-width: 961px) {
-      border-bottom: solid 1px rgba(255, 255, 255, 0.5);
-    }
-
-    .menu-bar {
-      background: transparent !important;
-
-      &.theme--dark {
-        background: black !important;
-
-        &:hover {
-          background: black !important;
-
-          .brand {
-            filter: brightness(0) invert(1);
-          }
-
-          .item {
-            color: white;
-          }
-        }
-      }
-
-      @media(min-width: 961px) {
-        &:hover {
-          background: white !important;
-
-          .brand {
-            filter: brightness(1) invert(0);
-          }
-
-          .item {
-            color: #000000;
-          }
-        }
-      }
-
-      .brand {
-
-        filter: brightness(0) invert(1);
-
-        img {
-          padding-top: 5px;
-        }
-      }
-
-      .item {
-        color: #ffffff;
-      }
+      border-bottom: solid 1px #c0c0c080;
     }
 
   }

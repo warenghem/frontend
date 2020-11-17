@@ -1,14 +1,17 @@
 <template>
   <v-app>
     <div>
-      <slot name="header">
-        <MainToolbar/>
-      </slot>
       <sticky-toolbar class="stickyBar"/>
-      <slot name="content">
-        <nuxt/>
-      </slot>
+      <nuxt/>
       <app-footer/>
     </div>
   </v-app>
 </template>
+
+
+<script>
+    export default {
+        name: "headless"
+    }
+</script>
+

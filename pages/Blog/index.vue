@@ -1,6 +1,5 @@
 <template>
   <div>
-    <MainToolbar :type="true"/>
   <div class="blog container mx-auto">
     <section class="grid grid-cols-3 gap-4 pt-12">
       <article

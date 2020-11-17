@@ -1,7 +1,6 @@
 <template>
   <div>
     <div id="blackContent" @click="hideModal"></div>
-    <MainToolbar/>
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>
     <ProductSection id="productSection"/>
@@ -14,10 +13,10 @@
 
 <script>
 
-export default {
-  name:'default',
-    methods:{
-      hideModal() {
+    export default {
+        name: 'default',
+        methods: {
+            hideModal() {
                 document.querySelector('.indianforest').classList.remove('active');
                 document.querySelector('.mgforest').classList.remove('active');
                 document.getElementById('blackContent').classList.remove('overlay');
@@ -25,8 +24,19 @@ export default {
                 el.classList.remove('modal-open');
                 document.documentElement.style.overflowY = 'auto'
             }
+        },
+        head() {
+            return {
+                bodyAttrs: {
+                    class: 'BgTransparent'
+                }
+            }
+        }
     }
-  }
 
 </script>
-
+<style>
+  .appBar {
+    background: transparent !important;
+  }
+</style>
