@@ -2,11 +2,16 @@
     <section class="team-section py-10">
         <h2 class="page-title py-md-5 py-4">{{$t('title')}}</h2>
         <v-row no-gutters class="pt-4">
-            <v-col lg="4" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
+            <v-col lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <div class="item-inner py-2">
                     <div class="profile-holder mb-3">
-                        <img :src="profile.img"
-                             alt="profile image">
+                        <ik-image
+                            :path="profile.img"
+                            :lqip="{active:true, quality: 40, blur: 5}"
+                            :transformation="[{quality: 80, width:200, dpr:2, radius:'max'}]"
+                            loading="lazy"
+                            width="200"
+                        />
                     </div>
                     <div class="content-holder text-left">
                         <h4 class="name">{{profile.name}}</h4>
@@ -110,7 +115,7 @@
                     {
                         key: 1,
                         name: 'Kevin Brosseau',
-                        img: require('../assets/images/profile/kevin.png'),
+                        img: "/kevin_zsPDDH5iKn2R.png"
                     },
                     {
                         key: 2,
@@ -118,12 +123,12 @@
                     }, {
                         key: 3,
                         name: 'Julie maurence',
-                        img: require('../assets/images/profile/julie.png'),
+                        img: "/julie_e3H-plJ5LNi5.png"
                     },
                     {
                         key: 4,
                         name: 'Quentin Brosseau',
-                        img: require('../assets/images/profile/quentin.png'),
+                        img: "/quentin_jvUVQy_Hk0VvA.png"
                     }
                 ]
             }
@@ -139,12 +144,6 @@
 
             .profile-holder {
                 text-align: center;
-
-                img {
-                    border-radius: 50%;
-                    width: 200px;
-                    height: 200px;
-                }
             }
 
             .name {

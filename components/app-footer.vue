@@ -2,16 +2,18 @@
     <div>
         <div class="d-flex justify-center border-top-2 align-center flex-column flex-md-row py-5">
             <div v-for="(profile,idx) in profiles" :key="'profile_'+idx" class="text-center py-3 py-md-4 px-7">
-                <v-img :src="profile.img"
-                    width="200px"
-                    alt="profile image">
-                </v-img>
+                <ik-image
+                    :path="profile.img"
+                    :lqip="{active:true, quality: 40, blur: 5}"
+                    :transformation="[{quality: 80, width:200, dpr:2}]"
+                    loading="lazy"
+                    width="200"
+                />
             </div>
         </div>
         <div class="whole-footer border-top-2">
             <div class="insta-row border-left-2 border-right-2">
-                <h3 class="ins-subtitle">INSTAGRAM</h3>
-                <h2 class="ins-title">WARENGHEM LIVE</h2>
+                <h3 class="page-title py-md-5 py-4">Instagram - Warenghem Live</h3>
                 <div id="instaFeed" style="transform: translateY(6px);"></div>
             </div>
         </div>
@@ -28,14 +30,14 @@
                 profiles: [
                     {
                         key: 1,
-                        img: require('../assets/images/Label-Tech-white.png'),
+                        img: "/label-co2-website.png"
                     },
                     {
                         key: 2,
-                        img: require('../assets/images/label-co2-website.png'),
+                        img: "/Label-Tech-white.png"
                     }, {
                         key: 3,
-                        img: require('../assets/images/PETAapproved.png'),
+                        img: "/PETAapproved.png"
                     },
                 ]
             }
@@ -98,19 +100,6 @@
         @media (min-width: 767px) {
             padding-top: 2.5rem !important;
         }
-    }
-
-    .ins-subtitle {
-        font-family: 'teradeli-light',sans-serif;
-        font-size: 22px;
-        font-weight: 200;
-    }
-
-    .ins-title {
-        font-family: 'teradeli-medium',sans-serif;
-        line-height: 1;
-        font-size: 2.125rem;
-        text-transform: capitalize;
     }
 
 </style>

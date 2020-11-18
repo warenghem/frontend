@@ -9,10 +9,14 @@
                            cols="6"
                            class="p-0 cross product">
                         <div class="catalogue-item h-100">
-                            <div class="h-100">
-                                <v-img :src="backgroundImages[p_idx]"
-                                       class="img-fluid catalogue-item-background bg-white gradientoverlay"
-                                >
+                            <div class="h-100 img-fluid gradientoverlay theme--light">
+                                <ik-image
+                                    :path="backgroundImages[p_idx]"
+                                    :lqip="{active:true, quality: 40, blur: 5}"
+                                    :transformation="[{quality: 80, width:500, dpr:2, focus: 'bottom'}]"
+                                    loading="lazy"
+                                    class="cover bg-white catalogue-item-background"
+                                />
                                     <div class="teradeli-light mt-5 text-center" style="font-size:13px">
                                         {{product.tag}}
                                     </div>
@@ -120,10 +124,10 @@
         data() {
             return {
                 backgroundImages:[
-                    require('../assets/images/WA-mif-seamless-REVISION.png'),
-                    require('../assets/images/Products/PF/PFsolomoutain.jpg'),
-                    require('../assets/images/Products/S48/S48blackmountain.jpg'),
-                    require('../assets/images/WA-mif-seamless-REVISION.png'),
+                    "/WA-mif-seamless-REVISION.png",
+                    "/Products/PFsolomoutain_V__6TkALbMDj.jpg",
+                    "/Products/S48blackmountain__JiqyHXRH6pZ.jpg",
+                    "/WA-mif-seamless-REVISION.png",
                 ],
                 products: this.$t('products')
             }

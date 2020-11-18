@@ -4,10 +4,24 @@
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>
     <ProductSection id="productSection"/>
-    <WePlantTreeMap id="mapTreeSection"/>
-    <StudioSection id="studioSection"/>
+    <v-container fluid class="ma-0 pa-0 fill-height">
+      <v-row no-gutters>
+        <v-col
+          cols="12"
+          sm="6"
+          style="border-right:#eae8e4 solid 1px"
+        >
+          <WePlantTreeMap id="mapTreeSection"/>
+        </v-col>
+        <v-col
+          cols="12"
+          sm="6"
+        >
+          <StudioSection id="studioSection"/>
+        </v-col>
+      </v-row>
+    </v-container>
     <PlantForm/>
-    <NuxtLink :to="localePath('/blog')">Blog page</NuxtLink>
   </div>
 </template>
 

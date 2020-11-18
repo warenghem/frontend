@@ -1,11 +1,11 @@
 <template>
-  <div class="py-10 border-bottom-2" v-intersect.once="mapIntersect">
+  <div class="pt-10" v-intersect.once="mapIntersect">
     <h2 class="page-title pt-md-5 pt-4 pr-4"> {{$t('title')}}</h2>
     <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
     <tree-data :treeData="treeData"></tree-data>
     <client-only>
       <l-map
-        style="height: 800px; width: 800px"
+        style="height: 800px; width: 100%"
         :zoom="zoom"
         :center="center"
         :options="{zoomControl: false,attributionControl: false}"
@@ -19,16 +19,20 @@
                   :key="'map_'+m_idx">
 
           <l-icon
-            :icon-size="[52, 50]"
+            :icon-size="[50, 50]"
             :icon-url="marker.image"
             className="mapClass"
+                        :icon-class="e"
+
           >
             <div class="card">
-              <div class="card-header">
+              <div class="card-header name">
                {{marker.text}}
               </div>
               <div>
-                <img :src="marker.image" alt="" width="32" height="37">
+                <div class="blob white rounded-circle" style="width:45px; height:45px">
+                  <img :src="marker.image" alt="" width="45" height="45">
+                </div>
               </div>
             </div>
           </l-icon>
@@ -60,7 +64,13 @@
               <div class="para-title">{{$t('madagascar.section1.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
               <div class="para-img">
-                <v-img :src="require('../assets/images/specie-mango.jpg')" alt="mango"></v-img>
+                <ik-image
+                    path="/mango.jpg"
+                    :lqip="{active:true, quality: 40, blur: 5}"
+                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    loading="lazy"
+                    width="100%"
+                />
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -86,7 +96,13 @@
               <div class="para-title">{{$t('madagascar.section2.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
               <div class="para-img">
-                <v-img :src="require('../assets/images/river.png')" alt="tiger"></v-img>
+                <ik-image
+                    path="/tiger.jpg"
+                    :lqip="{active:true, quality: 40, blur: 5}"
+                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    loading="lazy"
+                    width="100%"
+                />
               </div>
               <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('madagascar.section2.paraText1')">
@@ -98,7 +114,13 @@
             <v-col>
               <div class="para-title">{{$t('madagascar.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
-                <v-img class="py-3" :src="require('../assets/images/map1.png')" alt="map"></v-img>
+                <ik-image
+                    path="/map2_Uo_1zAGzZTGPG.png"
+                    :lqip="{active:true, quality: 40, blur: 5}"
+                    :transformation="[{quality: 80, width:800, dpr:2}]"
+                    loading="lazy"
+                    width="100%"
+                />
               </a>
             </v-col>
           </v-row>
@@ -108,8 +130,8 @@
     </div>
     <div class="slideArea indianforest">
       <div class="card">
-        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2 pl-3">
-          <div class="py-1 border-right-2" style="width: 100%">
+        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
+          <div class="py-1 border-right-2 pl-3" style="width: 100%">
             <button class="btn-theme my-0"
                     @click="closeSlideUp">
               {{$t('btnTitle')}}
@@ -121,7 +143,6 @@
             @click="closeSlide"
             style="font-size: 32px"
             class="px-0 h-100"
-            large
           >
             &times;
           </v-btn>
@@ -132,7 +153,13 @@
               <div class="para-title">{{$t('india.section1.title')}}</div>
               <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
               <div class="para-img">
-                <v-img :src="require('../assets/images/mango.jpg')" alt="mango"></v-img>
+                <ik-image
+                    path="/specie-mango.jpg"
+                    :lqip="{active:true, quality: 40, blur: 5}"
+                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    loading="lazy"
+                    width="100%"
+                />
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -158,7 +185,13 @@
               <div class="para-title">{{$t('india.section2.title')}}</div>
               <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
               <div class="para-img">
-                <v-img :src="require('../assets/images/tiger.jpg')" alt="tiger"></v-img>
+                <ik-image
+                    path="/river.png"
+                    :lqip="{active:true, quality: 40, blur: 5}"
+                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    loading="lazy"
+                    width="100%"
+                />
               </div>
               <div class="para-subtitle-small">{{$t('india.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('india.section2.paraText1')">
@@ -170,7 +203,13 @@
             <v-col>
               <div class="para-title">{{$t('india.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
-                <v-img class="py-3" :src="require('../assets/images/map2.png')" alt="map2"></v-img>
+                <ik-image
+                    path="/map1_I5Um6vaIvpnKB.png"
+                    :lqip="{active:true, quality: 40, blur: 5}"
+                    :transformation="[{quality: 80, width:800, dpr:2}]"
+                    loading="lazy"
+                    width="100%"
+                />
               </a>
             </v-col>
           </v-row>
@@ -205,7 +244,7 @@
                         text: "India - Trees for Tiger",
                         latitude: 22.003975,
                         longitude: 86.06648,
-                        image: require("../assets/images/map2.png"),
+                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-45,fo-auto,r-max,dpr-2/map2_Uo_1zAGzZTGPG.png",
                         modal: ".indianforest",
                     },
                     {
@@ -213,7 +252,7 @@
                         text: "Madagascar - Eden Project",
                         latitude: -16.270975,
                         longitude: 44.445852,
-                        image: require("../assets/images/map1.png"),
+                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-45,fo-auto,r-max,dpr-2/map1_I5Um6vaIvpnKB.png",
                         modal: ".mgforest",
                     },
                 ]
@@ -486,5 +525,31 @@
     }
 
   }
+  .leaflet-marker-icon img {
+    border-radius: 50%;
+  }
+  .blobs-container {
+    display: flex;
+  }
+  .blob.white {
+    background: white;
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    animation: pulse-white 2s infinite;
+  }
+  @keyframes pulse-white {
+    0% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+    }
 
+    70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    }
+
+    100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    }
+  }
 </style>

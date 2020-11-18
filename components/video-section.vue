@@ -2,11 +2,14 @@
   <div>
     <div class="videoSection">
       <div class="homepage-slider-background" ref="backgroundImg">
-        <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay"
-             data-direction="top"
-             :style="{'background-image': 'url(' + require('../assets/images/S048+PF.png') + ')'}"
-             data-idx="1"
-        >
+        <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay">
+        <ik-image
+            path="/S048_PF_TEuxOrfV7C_a.png"
+            :lqip="{active:true, quality: 40, blur: 5}"
+            :transformation="[{quality: 80, width:1500, height:800, dpr:2, focus: 'bottom'}]"
+            loading="lazy"
+            class="cover"
+          />
         </div>
 
       </div>
