@@ -8,9 +8,7 @@
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
                              <ik-image
                                     :path="backgroundImage"
-                                    :lqip="{active:true, quality: 40, blur: 5}"
                                     :transformation="[{quality: 80, width:500, dpr:2, focus: 'bottom'}]"
-                                    loading="lazy"
                                     class="cover homepage-catalogue-background-big"
                             />
                             <div class="homepage-catalogue-background-lines"
