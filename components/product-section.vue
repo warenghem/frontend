@@ -7,7 +7,7 @@
                            lg="3"
                            sm="6"
                            cols="6"
-                           class="p-0 cross product">
+                           class="p-0 product">
                         <div class="catalogue-item h-100">
                             <div class="h-100 img-fluid gradientoverlay theme--light">
                                 <ik-image
@@ -36,7 +36,7 @@
                         </div>
                     </v-col>
                 </v-row>
-                <div class="text-center">
+                <div class="text-center pt-8">
                     <div class="sub-title">
                         Citadins Sauvages
                     </div>
@@ -138,12 +138,6 @@
 <style scoped lang="scss">
 
     @import "../assets/scss/home/product";
-
-    .catalogue-item-content-title {
-        a {
-            cursor: url(../assets/images/cross_100185.svg), auto;
-        }
-    }
 
 
 

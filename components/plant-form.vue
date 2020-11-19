@@ -47,12 +47,12 @@
                                                     type="submit"
                                                     style="width: 100%!important; overflow-y: hidden;max-height: 48px">
                                                             <span v-if="loading">
-                                                                <img src="../assets/images/ripple.svg"
-                                                                     alt="loader"
-                                                                     height="40px"
-                                                                     style="margin-top: -13px;"
-                                                                >
-                                                            </span>
+                                                                <ik-image
+                                                                    path="/Icons/ripple.svg"
+                                                                    :transformation="[{quality: 80, height: 40}]"
+                                                                    class="minusIcon"
+                                                                    style="margin-top: -13px;"
+                                                                />                                                            </span>
                                                 <span v-else>{{$t('btnTitle')}}</span>
                                             </button>
                                         </form>

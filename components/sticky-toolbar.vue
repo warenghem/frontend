@@ -32,7 +32,10 @@
             <v-spacer></v-spacer>
             <v-toolbar-title class="d-md-block d-none centerabsolute v-toolbar__logo">
                 <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                    <img src="../assets/images/logo.svg" width="140px" alt="logo"/>
+                  <ik-image
+                      path="/Logos/logo.png"
+                      :transformation="[{quality: 80, width:140}]"
+                  />
                 </router-link>
             </v-toolbar-title>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>

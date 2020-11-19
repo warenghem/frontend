@@ -223,7 +223,7 @@
         name: 'leaflet-map',
         data() {
             return {
-                zoom: 4,
+                zoom: 3,
                 center: [3.770449, 64.38911],
                 url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                 showParagraph: false,

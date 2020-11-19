@@ -1,7 +1,7 @@
 <template>
     <div>
         <div class="d-flex justify-center border-top-2 align-center flex-column flex-md-row py-5">
-            <div v-for="(profile,idx) in profiles" :key="'profile_'+idx" class="text-center py-3 py-md-4 px-7">
+            <div v-for="(profile,idx) in profiles" :key="'profile_'+idx" class="ttext-center py-8 py-md-4 px-7">
                 <ik-image
                     :path="profile.img"
                     :lqip="{active:true, quality: 40, blur: 5}"
@@ -11,10 +11,10 @@
                 />
             </div>
         </div>
-        <div class="whole-footer border-top-2">
+        <div class="whole-footer border-top-2 pt-10 pt-sm-0">
             <div class="insta-row border-left-2 border-right-2">
                 <h3 class="page-title py-md-5 py-4">Instagram - Warenghem Live</h3>
-                <div id="instaFeed" style="transform: translateY(6px);"></div>
+                <div id="instaFeed"></div>
             </div>
         </div>
     </div>

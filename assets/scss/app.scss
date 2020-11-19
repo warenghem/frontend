@@ -320,7 +320,6 @@ body {
 
   a {
     overflow: hidden;
-    max-height: 230px;
     @media (min-width: 990px) {
       min-width: 16.666%;
     }
@@ -344,6 +343,7 @@ body {
     img {
       width: 100% !important;
       transition: .5s;
+      height: 100%;
 
       &:hover {
         transition: all .5s;
@@ -381,10 +381,6 @@ body {
   z-index: 2;
   position: absolute !important;
   top: 20px;
-}
-
-.cross {
-  cursor: url('../images/cross_100185.svg'), auto;
 }
 
 .p-0 {
@@ -535,7 +531,7 @@ body {
 }
 
 .text-gray {
-  color: #888;
+  color:rgba(255,255,255,0.5);
 }
 
 .bg-white {

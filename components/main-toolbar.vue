@@ -36,6 +36,12 @@
       <v-toolbar-title class="centerabsolute v-toolbar__logo">
         <router-link to="/" tag="span" style="cursor: pointer" class="brand">
           <img src="../assets/images/logo.svg" width="140px" alt="logo"/>
+          <ik-image
+              path="/Logos/logo.svg"
+              :transformation="[{quality: 80, width:200, dpr:2, radius:'max'}]"
+              loading="lazy"
+              width="200"
+          />
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>

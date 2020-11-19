@@ -133,10 +133,6 @@
     width: 100%;
     z-index: 4;
 
-    span {
-      color: #888;
-    }
-
     @media(max-width: 768px) {
       display: none;
     }

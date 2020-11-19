@@ -6,11 +6,12 @@
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
-                             <ik-image
-                                    :path="backgroundImage"
-                                    :transformation="[{quality: 80, width:500, dpr:2, focus: 'bottom'}]"
-                                    class="cover homepage-catalogue-background-big"
-                            />
+                            <v-img class="homepage-catalogue-background-big"
+                                   :src="backgroundImage"
+                                   :lazy-src="backgroundImage"
+                                   alt="bg image"
+                            >
+                            </v-img>
                             <div class="homepage-catalogue-background-lines"
                                  :class="{'opacity-02':currentMissionHover}"
                             >
@@ -20,16 +21,13 @@
                                 <div></div>
                             </div>
                             <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
-
-                                <div v-for="(bgImage,idx) in backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
-                                    <ik-image
-                                        :path="bgImage"
-                                        :lqip="{active:true, quality: 40, blur: 5}"
-                                        :transformation="[{quality: 80, width:1500, height:800, dpr:2, focus: 'bottom'}]"
-                                        loading="lazy"
-                                        class="cover"
-                                    />
-                                </div>
+                                <v-img v-for="(bgImage,idx) in backgroundImages"
+                                       :key="'bg_image_'+idx"
+                                       :src="bgImage"
+                                       :lazy-src="bgImage"
+                                       class="blackoverlay gradientoverlay"
+                                >
+                                </v-img>
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
@@ -142,10 +140,10 @@
             return {
                 currentMissionHover: null,
                 backgroundImages: [
-                    "/tech_mx5bGeVoG3pm.jpg",
-                    "/studio_65kZ-dLBvomY.jpg",
-                    "/roche_AT2d0GTl7n9w.png",
-                    "/home_gCAPosI9qrtpP.jpg",
+                    require('../assets/images/mission/tech.jpg'),
+                    require('../assets/images/mission/studio.jpg'),
+                    require('../assets/images/mission/roche.png'),
+                    require('../assets/images/mission/home.jpg'),
                 ],
                 backgroundImage: ''
             }
