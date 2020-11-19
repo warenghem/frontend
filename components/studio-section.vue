@@ -14,8 +14,8 @@
                         />
                     </div>
                     <div class="content-holder text-left">
-                        <h4 class="name">{{profile.name}}</h4>
-                        <div class="role">
+                        <h4 class="titlesmall">{{profile.name}}</h4>
+                        <div class="subtitlesmall">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
                         </div>
                         <div class="item-details">
@@ -144,19 +144,6 @@
 
             .profile-holder {
                 text-align: center;
-            }
-
-            .name {
-                margin-top: 0;
-                margin-bottom: 5px;
-                color: #000;
-                font-size: 16px;
-            }
-
-            .role {
-                margin-bottom: 15px;
-                color: #888;
-                line-height: 15px;
             }
 
             .item-details {

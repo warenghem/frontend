@@ -1,6 +1,15 @@
 <template>
     <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
-        <v-navigation-drawer v-model="sidebar" dark app class="d-lg-none">
+        <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
+          <v-toolbar-title class="text-center py-10">
+              <router-link to="/" tag="span" style="cursor: pointer" class="brand">
+                <ik-image
+                    path="/Logos/WA_mif_w_vf.png"
+                    :transformation="[{quality: 80, width:170, dpr:2}]"
+                    width="170"
+                />
+              </router-link>
+          </v-toolbar-title>         
             <v-list>
                 <v-list-item
                         v-for="(link,l_idx) in $store.state.link.links"
@@ -20,6 +29,14 @@
 
             <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-lg-none ml-3">
             </v-app-bar-nav-icon>
+            <v-toolbar-title class="d-md-block pr-3 d-none">
+                <router-link to="/" tag="span" style="cursor: pointer" class="brand">
+                  <ik-image
+                      path="/Logos/Reduit_blanc.png"
+                      :transformation="[{quality: 80, width:35}]"
+                  />
+                </router-link>
+            </v-toolbar-title>
             <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
                              :key="'slink_btn_l_'+l_idx">
                 <v-btn text class="text-uppercase item"
@@ -30,14 +47,6 @@
                 </v-btn>
             </v-toolbar-items>
             <v-spacer></v-spacer>
-            <v-toolbar-title class="d-md-block d-none centerabsolute v-toolbar__logo">
-                <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                  <ik-image
-                      path="/Logos/logo.png"
-                      :transformation="[{quality: 80, width:140}]"
-                  />
-                </router-link>
-            </v-toolbar-title>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
             <v-toolbar-items class="py-1 mr-3" style="max-width: 240px;">

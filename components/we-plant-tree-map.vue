@@ -8,7 +8,7 @@
         style="height: 800px; width: 100%"
         :zoom="zoom"
         :center="center"
-        :options="{zoomControl: false,attributionControl: false}"
+        :options="{zoomControl: false,attributionControl: false,scrollWheelZoom: false,tap: false,boxZoom: false, doubleClickZoom: false, touchZoom: false, dragging: false, draggable: false}"
       >
         <l-tile-layer
           :url="url"
@@ -17,7 +17,6 @@
                   @click="innerClick(marker.modal)"
                   v-for="(marker,m_idx) in markers"
                   :key="'map_'+m_idx">
-
           <l-icon
             :icon-size="[50, 50]"
             :icon-url="marker.image"
@@ -25,9 +24,10 @@
                         :icon-class="e"
 
           >
-            <div class="card">
+            <div style="transform: translateY(-20px);" class="card">
               <div class="card-header name">
                {{marker.text}}
+               <div style="font-weight:400; font-size: 16px" class="subtitlesmall">En savoir plus</div>
               </div>
               <div>
                 <div class="blob white rounded-circle" style="width:45px; height:45px">
@@ -449,7 +449,7 @@
     bottom: 0;
     height: 100%;
     z-index: 100000 !important;
-    background: #fff;
+    background: rgba(255, 255, 255, 0.9);
     max-height: 100%;
     overflow-y: scroll;
     transition: right 0.4s;

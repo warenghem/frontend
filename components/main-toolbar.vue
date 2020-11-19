@@ -3,7 +3,16 @@
     <div class="topBar text-center d-none">
       {{$t('secondtoolbar.message')}}
     </div>
-    <v-navigation-drawer v-model="sidebar" app class="d-md-none">
+    <v-navigation-drawer v-model="sidebar" app class="d-md-none" v-bind:width="304">
+      <v-toolbar-title class="text-center py-10">
+          <router-link to="/" tag="span" style="cursor: pointer" class="brand">
+            <ik-image
+                path="/Logos/WA_mif_vf.png"
+                :transformation="[{quality: 80, width:160, dpr:2}]"
+                width="160"
+            />
+          </router-link>
+      </v-toolbar-title>  
       <v-list>
         <v-list-item
           v-for="(link,l_idx) in $store.state.link.links"

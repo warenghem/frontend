@@ -4,11 +4,11 @@
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>
     <ProductSection id="productSection"/>
-    <v-container fluid class="ma-0 pa-0 fill-height">
+    <v-container fluid class="ma-0 pa-0 fill-height border-top-2">
       <v-row no-gutters>
         <v-col
           cols="12"
-          sm="6"
+          md="6"
           style="border-right:#eae8e4 solid 1px"
         >
           <WePlantTreeMap id="mapTreeSection"/>

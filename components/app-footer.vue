@@ -13,7 +13,7 @@
         </div>
         <div class="whole-footer border-top-2 pt-10 pt-sm-0">
             <div class="insta-row border-left-2 border-right-2">
-                <h3 class="page-title py-md-5 py-4">Instagram - Warenghem Live</h3>
+                <h3 class="page-title pl-1 py-md-5 py-4">Instagram - #warenghemlive</h3>
                 <div id="instaFeed"></div>
             </div>
         </div>

@@ -6,12 +6,13 @@
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
-                            <v-img class="homepage-catalogue-background-big"
-                                   :src="backgroundImage"
-                                   :lazy-src="backgroundImage"
-                                   alt="bg image"
-                            >
-                            </v-img>
+                            <div class="homepage-catalogue-background-big">
+                                <ik-image
+                                        :path="backgroundImage"
+                                        :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                                        class="cover "
+                                />
+                            </div>
                             <div class="homepage-catalogue-background-lines"
                                  :class="{'opacity-02':currentMissionHover}"
                             >
@@ -21,13 +22,18 @@
                                 <div></div>
                             </div>
                             <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
-                                <v-img v-for="(bgImage,idx) in backgroundImages"
-                                       :key="'bg_image_'+idx"
-                                       :src="bgImage"
-                                       :lazy-src="bgImage"
-                                       class="blackoverlay gradientoverlay"
-                                >
-                                </v-img>
+
+                                <div v-for="(bgImage,idx) in backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
+                                    <div>
+                                        <ik-image
+                                            :path="bgImage"
+                                            :lqip="{active:true, quality: 40, blur: 5}"
+                                            :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                                            loading="lazy"
+                                            class="cover"
+                                        />
+                                        </div>
+                                    </div>
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
@@ -38,8 +44,12 @@
                                  :class="{'opacity-02':currentMissionHover}"
                                  :key="'mission_'+m_idx"
                             >
-                                <div class="pb-3"><img src="../assets/images/magazine-plus.svg"
-                                                       alt="Wait For It"></div>
+                                <div class="pb-3">
+                                    <ik-image
+                                        path="/Icons/magazine-plus.svg"
+                                        :transformation="[{quality: 80}]"
+                                    />
+                                </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
                                     <a>
                                         <div class="text-left px-3 mb-4">
@@ -94,15 +104,16 @@
                             </div>
                             <div class="pa-10 h-100 mt-8 z-2">
                                 <div class="pb-3">
-                                    <img width="35px" src="../assets/images/magazine-plus.svg"
-                                         alt="Wait For It"
-                                         class="plusIcon"
-                                    >
-                                    <img style="padding-bottom:2px" width="35px"
-                                         src="../assets/images/magazine-minus.svg"
-                                         alt="Wait For It"
-                                         class="minusIcon"
-                                    >
+                                    <ik-image
+                                        path="/Icons/magazine-plus.svg"
+                                        :transformation="[{quality: 80, width: 35}]"
+                                        class="plusIcon"
+                                    />
+                                    <ik-image
+                                        path="/Icons/magazine-minus.svg"
+                                        :transformation="[{quality: 80, width: 35}]"
+                                        class="minusIcon"
+                                    />
                                 </div>
                                 <div class="sub-title text-white">
                                     {{mission.title}}
@@ -140,10 +151,10 @@
             return {
                 currentMissionHover: null,
                 backgroundImages: [
-                    require('../assets/images/mission/tech.jpg'),
-                    require('../assets/images/mission/studio.jpg'),
-                    require('../assets/images/mission/roche.png'),
-                    require('../assets/images/mission/home.jpg'),
+                    "/tech_mx5bGeVoG3pm.jpg",
+                    "/studio_65kZ-dLBvomY.jpg",
+                    "/roche_AT2d0GTl7n9w.png",
+                    "/home_gCAPosI9qrtpP.jpg",
                 ],
                 backgroundImage: ''
             }
@@ -279,12 +290,6 @@
 <style scoped lang="scss">
     @import "../assets/scss/home/mission";
 
-    .homepage-catalogue-links-item {
-        cursor: url('../assets/images/cross_100185.svg'), auto !important;
-    }
 
-    .homepage-catalogue-links-item a {
-        cursor: url('../assets/images/cross_100185.svg'), auto !important;
-    }
 
 </style>

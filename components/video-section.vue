@@ -2,11 +2,14 @@
   <div>
     <div class="videoSection">
       <div class="homepage-slider-background" ref="backgroundImg">
-        <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay"
-             data-direction="top"
-             :style="{'background-image': 'url(' + require('../assets/images/S048+PF.png') + ')'}"
-             data-idx="1"
-        >
+        <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay">
+        <ik-image
+            path="/S048_PF_TEuxOrfV7C_a.png"
+            :lqip="{active:true, quality: 40, blur: 5}"
+            :transformation="[{quality: 80, width:1500, height:800, dpr:2, focus: 'bottom'}]"
+            loading="lazy"
+            class="cover"
+          />
         </div>
 
       </div>
@@ -40,15 +43,30 @@
           </div>
           <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
-              <p><img src="../assets/images/ecological.svg" alt=""></p>
+              <p>
+                <ik-image
+                    path="/Icons/ecological.svg"
+                    :transformation="[{quality: 80}]"
+                />
+              </p>
               <span>{{$t('video.tag1')}}</span>
             </div>
             <div class="col-md-4">
-              <p><img src="../assets/images/france.svg" alt=""></p>
+              <p>
+                <ik-image
+                    path="/Icons/france.svg"
+                    :transformation="[{quality: 80}]"
+                />
+              </p>
               <span>{{$t('video.tag2')}}</span>
             </div>
             <div class="col-md-4">
-              <p><img src="../assets/images/tech.svg" alt=""></p>
+              <p>
+                <ik-image
+                    path="/Icons/tech.svg"
+                    :transformation="[{quality: 80}]"
+                />
+              </p>              
               <span>{{$t('video.tag3')}}</span>
             </div>
           </div>
@@ -64,7 +82,7 @@
 
 
         </v-col>
-        <div class="bottomleft">
+        <div class="bottomleft text-gray">
           <animated-number ref="treeCount"
                            :from="0"
                            :to="treeData.treeCount"

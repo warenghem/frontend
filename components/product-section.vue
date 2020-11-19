@@ -1,15 +1,15 @@
 <template>
-        <div class="productSection finebordert border-bottom-2 pb-10">
+        <div class="productSection pb-10">
             <div class="page-title absolute-title d-none">{{$t('productTitle')}}</div>
-                <v-row no-gutters class="ma-md-4" style="background:black">
+                <v-row class="ma-md-4 shop">
                     <v-col v-for="(product,p_idx) in products"
                            :key="p_idx"
-                           lg="3"
+                           lg="4"
                            sm="6"
                            cols="6"
-                           class="p-0 product">
+                           class="product">
                         <div class="catalogue-item h-100">
-                            <div class="h-100 img-fluid gradientoverlay theme--light">
+                            <div class="h-100 img-fluid theme--light gradientoverlay">
                                 <ik-image
                                     :path="backgroundImages[p_idx]"
                                     :lqip="{active:true, quality: 40, blur: 5}"
@@ -138,7 +138,11 @@
 <style scoped lang="scss">
 
     @import "../assets/scss/home/product";
-
+    .shop div:nth-of-type(4) {
+        max-height: 400px;
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
 
 
 </style>

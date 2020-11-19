@@ -12,7 +12,7 @@
                             @click="$store.state.plantModal = false"
                     >
                         <v-icon
-                                color="white"
+                                color="black"
                                 medium
                         >
                             mdi-close
@@ -20,7 +20,7 @@
                     </v-btn>
                     <v-card-text>
                         <div class="d-flex flex-column align-center justify-center h-100">
-                            <p class="text-white pb-3 px-4 text-justify bottomText">
+                            <p class="pb-3 px-4 text-justify bottomText">
                                 {{$t('video.rightSection.subtitle')}}
                             </p>
                             <div class="w-100 px-5">
@@ -53,7 +53,7 @@
                                                                     class="minusIcon"
                                                                     style="margin-top: -13px;"
                                                                 />                                                            </span>
-                                                <span v-else>{{$t('btnTitle')}}</span>
+                                                <span class="text-white" v-else>{{$t('btnTitle')}}</span>
                                             </button>
                                         </form>
                                     </template>
