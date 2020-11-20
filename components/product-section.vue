@@ -1,55 +1,85 @@
 <template>
         <div class="productSection pb-10">
             <div class="page-title absolute-title d-none">{{$t('productTitle')}}</div>
-                <v-row class="ma-md-4 shop">
-                    <v-col v-for="(product,p_idx) in products"
-                           :key="p_idx"
-                           lg="4"
-                           sm="6"
-                           cols="6"
-                           class="product">
-                        <div class="catalogue-item h-100">
-                            <div class="h-100 img-fluid theme--light gradientoverlay">
-                                <ik-image
+                <v-container fluid class="myGrid pa-md-10">
+                    <v-card 
+                        v-for="(product,p_idx) in products"
+                        :key="p_idx"
+                        height= "100%"
+                        elevation="0"
+                    >
+                        <div class="img-fluid theme--light gradientoverlay squaredimage position-relative">
+                            <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
+                            <v-spacer></v-spacer>
+
+                            <v-btn icon>
+                                <v-icon>mdi-heart</v-icon>
+                            </v-btn>
+
+                            <v-btn icon>
+                                <v-icon>mdi-bookmark</v-icon>
+                            </v-btn>
+
+                            <v-btn icon>
+                                <v-icon>mdi-share-variant</v-icon>
+                            </v-btn>
+                            </v-card-actions>
+                            <ik-image
                                     :path="backgroundImages[p_idx]"
                                     :lqip="{active:true, quality: 40, blur: 5}"
-                                    :transformation="[{quality: 80, width:500, dpr:2, focus: 'bottom'}]"
+                                    :transformation="[{quality: 80, width:500, dpr:2, focus: 'bottom',}]"
                                     loading="lazy"
-                                    class="cover bg-white catalogue-item-background"
-                                />
-                                    <div class="teradeli-light mt-5 text-center" style="font-size:13px">
-                                        {{product.tag}}
-                                    </div>
-                                    <div class="catalogue-item-content-title sub-title mt-4 mt-lg-0">
-                                        <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
-                                            {{product.desc}}
-                                        </div>
-                                        <a>
-                                            <div class="text-white"> {{product.title}}</div>
-                                            <div class="teradeli-book px-3" style="font-size: 20px;">
-                                                {{product.summary}}
-                                            </div>
-                                        </a>
-                                    </div>
-                                </v-img>
+                                    class="cover bg-white catalogue-item-background elevation-3"
+                                />  
+                            <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
+                                {{product.desc}}
                             </div>
+                            <v-card-text class="teradeli-light mt-5 position-absolute pa-3 text-white" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
+                                {{product.tag}}
+                            </v-card-text>  
                         </div>
-                    </v-col>
-                </v-row>
-                <div class="text-center pt-8">
-                    <div class="sub-title">
-                        Citadins Sauvages
-                    </div>
-                    <div class="role">
-                        Collection 2021
-                    </div>
-               </div>
+                        <v-card-text elevation="4" class="catalogue-item-content-title mt-4 p-0">
+                                <span class="pr-1 pr-sm-3 titlesmall teradeli-medium"> {{product.title}}</span>
+                                <span class="subtitlesmall teradeli light">
+                                    {{product.summary}}
+                                </span>
+                        </v-card-text>
+                    </v-card>
+                    <v-card
+                        elevation="1"
+                        class="div5"
+                        style="background-color: #f6f5f3!important;"
+                    >
+                        <v-card-title class="text-center pt-8 justify-center h-100">
+                            <div class="d-block w-100">
+                                <ik-image
+                                    path="/Logos/Sans_titre_-_1.png"
+                                    :lqip="{active:true, quality: 40, blur: 5}"
+                                    :transformation="[{quality: 80, width:500, dpr:2}]"
+                                    loading="lazy"
+                                    width="500"
+                                />  
+                            </div>
+                        </v-card-title>
+                    </v-card>
+                </v-container>
         </div>
 </template>
 
 <script>
     export default {
         name: "product-section",
+        data() {
+            return {
+                backgroundImages:[
+                    "/AdobeStock_50352719.jpeg",
+                    "/Products/PFsolomoutain_V__6TkALbMDj.jpg",
+                    "/Products/S48blackmountain__JiqyHXRH6pZ.jpg",
+                    "/AdobeStock_213093083-scaled.jpeg",
+                ],
+                products: this.$t('products'),
+            }
+        },
         i18n: {
             messages: {
                 en: {
@@ -111,7 +141,7 @@
                                 'maitresse, qui donne le ton de la collection.'
                         },
                         {
-                            tag: 'Visuels à venir',
+                            tag: 'En cours de création',
                             title: 'La chaussure',
                             summary: '',
                             desc: ''
@@ -121,28 +151,21 @@
                 }
             }
         },
-        data() {
-            return {
-                backgroundImages:[
-                    "/WA-mif-seamless-REVISION.png",
-                    "/Products/PFsolomoutain_V__6TkALbMDj.jpg",
-                    "/Products/S48blackmountain__JiqyHXRH6pZ.jpg",
-                    "/WA-mif-seamless-REVISION.png",
-                ],
-                products: this.$t('products')
-            }
-        }
     }
 </script>
 
 <style scoped lang="scss">
 
     @import "../assets/scss/home/product";
+
+@media (min-width: 1263px) {
+
     .shop div:nth-of-type(4) {
         max-height: 400px;
         flex: 0 0 100%;
         max-width: 100%;
     }
+}
 
 
 </style>

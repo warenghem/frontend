@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fp-section d-none d-lg-table finebordert">
+        <div class="fp-section d-none d-lg-table finebordert elevation-3">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
             <div class="fp-tableCell" style="height: 900px;">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
@@ -84,36 +84,30 @@
         </div>
         <div class="d-lg-none mission-accordion finebordert" style="background:black">
             <v-expansion-panels accordion>
-                <v-img v-for="(mission,m_idx) in $t('mission.sections')"
-                       :key="'mission_ac'+m_idx"
-                       :src="backgroundImages[m_idx]"
-                       :lazy-src="backgroundImages[m_idx]"
-                       alt="bg image"
-                       class="img-fluid"
-                >
+                <div v-for="(mission,m_idx) in $t('mission.sections')" :key="'mission_ac'+m_idx" class="w-100">
                     <v-expansion-panel
-                            style="min-height: 320px"
+                            style="min-height: 33vw"
                             class="gradientoverlay blackoverlay backgroundcover"
                     >
-                        <v-expansion-panel-header style="min-height:320px" class="flex-column align-start p-0 z-2">
-                            <div style="position:absolute"
-                                 class="page-title px-5 pt-5"
-                                 v-if="m_idx===0"
-                            >
-                                {{$t('mission.title')}}
-                            </div>
-                            <div class="pa-10 h-100 mt-8 z-2">
+                    <ik-image
+                        :path="backgroundImages[m_idx]"
+                        :lqip="{active:true, quality: 40, blur: 5}"
+                        :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                        loading="lazy"
+                        class="cover position-absolute"
+                    />
+                        <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
+                            <div class="pa-10 h-100 z-2">
                                 <div class="pb-3">
-                                    <ik-image
-                                        path="/Icons/magazine-plus.svg"
-                                        :transformation="[{quality: 80, width: 35}]"
-                                        class="plusIcon"
-                                    />
-                                    <ik-image
-                                        path="/Icons/magazine-minus.svg"
-                                        :transformation="[{quality: 80, width: 35}]"
-                                        class="minusIcon"
-                                    />
+                                    <img width="35px" src="../assets/images/magazine-plus.svg"
+                                         alt="Wait For It"
+                                         class="plusIcon"
+                                    >
+                                    <img style="padding-bottom:2px" width="35px"
+                                         src="../assets/images/magazine-minus.svg"
+                                         alt="Wait For It"
+                                         class="minusIcon"
+                                    >
                                 </div>
                                 <div class="sub-title text-white">
                                     {{mission.title}}
@@ -138,7 +132,7 @@
                             </div>
                         </v-expansion-panel-content>
                     </v-expansion-panel>
-                </v-img>
+                </div>
             </v-expansion-panels>
         </div>
     </div>

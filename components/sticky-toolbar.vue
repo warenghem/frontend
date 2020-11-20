@@ -4,8 +4,8 @@
           <v-toolbar-title class="text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                 <ik-image
-                    path="/Logos/WA_mif_w_vf.png"
-                    :transformation="[{quality: 80, width:170, dpr:2}]"
+                    path="/Logos/WA_mif_vf.svg"
+                    :transformation="[{quality: 80, width:170}]"
                     width="170"
                 />
               </router-link>
@@ -27,13 +27,14 @@
         <v-app-bar class="menu-bar" flat height="50px"
                    :class="{'whiteBack':$root.currentId==='mapTreeSection'||$root.currentId==='studioSection'}">
 
-            <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-lg-none ml-3">
+            <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
             </v-app-bar-nav-icon>
-            <v-toolbar-title class="d-md-block pr-3 d-none">
+            <v-toolbar-title class="d-md-block pr-4 d-none">
                 <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                   <ik-image
-                      path="/Logos/Reduit_blanc.png"
+                      path="/Logos/WA_short_w_vf.svg"
                       :transformation="[{quality: 80, width:35}]"
+                      width="35"
                   />
                 </router-link>
             </v-toolbar-title>

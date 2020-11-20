@@ -5,7 +5,8 @@
     <tree-data :treeData="treeData"></tree-data>
     <client-only>
       <l-map
-        style="height: 800px; width: 100%"
+        style="width: 100%"
+        class="treemap"
         :zoom="zoom"
         :center="center"
         :options="{zoomControl: false,attributionControl: false,scrollWheelZoom: false,tap: false,boxZoom: false, doubleClickZoom: false, touchZoom: false, dragging: false, draggable: false}"
@@ -115,7 +116,7 @@
               <div class="para-title">{{$t('madagascar.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
                 <ik-image
-                    path="/map2_Uo_1zAGzZTGPG.png"
+                    path="/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:800, dpr:2}]"
                     loading="lazy"
@@ -204,7 +205,7 @@
               <div class="para-title">{{$t('india.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
                 <ik-image
-                    path="/map1_I5Um6vaIvpnKB.png"
+                    path="/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:800, dpr:2}]"
                     loading="lazy"
@@ -244,7 +245,7 @@
                         text: "India - Trees for Tiger",
                         latitude: 22.003975,
                         longitude: 86.06648,
-                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-45,fo-auto,r-max,dpr-2/map2_Uo_1zAGzZTGPG.png",
+                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.57.19.png",
                         modal: ".indianforest",
                     },
                     {
@@ -252,7 +253,7 @@
                         text: "Madagascar - Eden Project",
                         latitude: -16.270975,
                         longitude: 44.445852,
-                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-45,fo-auto,r-max,dpr-2/map1_I5Um6vaIvpnKB.png",
+                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.56.41.png",
                         modal: ".mgforest",
                     },
                 ]
@@ -442,6 +443,12 @@
     }
 </script>
 <style lang="scss" scoped>
+  .treemap {
+    height:800px;
+      @media only screen and (max-width: 600px) {
+        height:500px;
+      }
+    }
 
   .slideArea {
     position: fixed;

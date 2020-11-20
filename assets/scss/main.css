@@ -53,6 +53,7 @@ body {
 a {
   color: var(--color-primary)
 }
+
 .cover {
 display: block;
 width: 100%;

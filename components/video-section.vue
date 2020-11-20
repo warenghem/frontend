@@ -37,9 +37,9 @@
       </div>
       <v-row no-gutters class="homepage-slider-content">
         <v-col class="topCenter my-auto col-12">
-          <div class="bannerLeft px-2">
-            <h2 class="title text-center"> {{$t('video.title')}}</h2>
-            <h4 class="subtitle text-center">{{$t('video.subtitle')}}</h4>
+          <div class="bannerLeft px-2 text-center">
+            <h2 class="title"> {{$t('video.title')}}{{$t('video.title2')}}</h2>
+            <h4 class="subtitle">{{$t('video.subtitle')}}</h4>
           </div>
           <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
@@ -70,18 +70,17 @@
               <span>{{$t('video.tag3')}}</span>
             </div>
           </div>
-          <div class="text-center">
-            <button
-              class="btn-theme"
-              id="jePlanetBtn"
-              @click="$store.state.plantModal=true"
-            >
-              {{$t('btnTitle')}}
-            </button>
-          </div>
-
-
         </v-col>
+
+        <div style="bottom:0;right:0" class="text-center mx-auto position-absolute pa-5">
+          <button
+            class="btn-theme btn-transparent"
+            id="jePlanetBtn"
+            @click="$store.state.plantModal=true"
+          >
+            {{$t('btnTitle')}}
+          </button>
+        </div>
         <div class="bottomleft text-gray">
           <animated-number ref="treeCount"
                            :from="0"
@@ -199,7 +198,8 @@
             messages: {
                 en: {
                     video: {
-                        title: 'Vegetable shoes & leather goods of the future. Now.',
+                        title: 'Vegetable shoes & leather goods of the future. ',
+                        title2: 'Now.',
                         subtitle: 'Meeting between French leather traditions and our wine leathers',
                         tag1: 'Ecological / Vegan',
                         tag2: 'Made in France',
@@ -225,7 +225,8 @@
                 },
                 fr: {
                     video: {
-                        title: ' Maroquinerie & chaussures végétales du futur. Dès à présent.',
+                        title: ' Maroquinerie & chaussures végétales du futur. ',
+                        title2: ' Dès à présent.',
                         subtitle: 'Rencontre entre les traditions maroquinières francaises et nos cuirs de vin',
                         tag1: 'Ecologique / Vegan',
                         tag2: 'Made in France',

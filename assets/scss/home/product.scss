@@ -7,9 +7,10 @@
   > div {
     display: block;
     transition: box-shadow 0.3s;
+    position: relative;
 
     &:hover {
-      box-shadow: 0 0 85px 0 rgba(0, 0, 0, .8);
+      ;
 
       .catalogue-item-background {
         &::after {
@@ -26,30 +27,6 @@
 
 .catalogue-double {
   transform: translateY(-33.33%);
-}
-
-.catalogue-item-link {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 2;
-  display: block;
-}
-
-.catalogue-item-content-title {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  z-index: 3;
-  letter-spacing: 1px;
-  text-align: center;
-
-  a {
-    color: rgba(255, 255, 255, .65) !important;
-    transition: color 0.3s ease;
-  }
 }
 
 .catalogue-item-content-list {
@@ -83,12 +60,6 @@
   }
 }
 
-@media (max-width: 1263px) {
-  .catalogue-item-content-title {
-    top: 45%;
-  }
-}
-
 @media (max-width: 600px) {
   .catalogue-item {
     > div {
@@ -102,21 +73,12 @@
         }
       }
     }
-
-    overflow: hidden;
-    min-height: 320px;
   }
   .catalogue-item-link {
     display: none;
   }
   .catalogue-item-content-title {
-    position: relative;
-    top: 0;
-    right: 0;
-    transform: none;
-    text-align: right;
-    padding: 50px;
-    cursor: pointer;
+
 
     &::before {
       content: "";
@@ -215,7 +177,6 @@
     min-height: 100%;
   }
   .catalogue-item-content-title {
-    padding: 40px;
 
     &::before {
       left: 40px;
@@ -262,43 +223,6 @@
       &::before {
         right: 25px;
         left: 25px;
-      }
-    }
-
-    li {
-      &:not(:last-of-type) {
-        margin-bottom: 10px;
-      }
-    }
-  }
-}
-
-@media (max-width: 379px) {
-  .catalogue-item-content-title {
-    font-size: 22px;
-    padding: 30px 15px;
-
-    &::before {
-      left: 15px;
-      width: 30px;
-      height: 30px;
-    }
-
-    &::after {
-      left: 15px;
-      width: 30px;
-      height: 30px;
-    }
-  }
-  .catalogue-item-content-list {
-    font-size: 14px;
-
-    ul {
-      padding: 30px 15px;
-
-      &::before {
-        right: 15px;
-        left: 15px;
       }
     }
 

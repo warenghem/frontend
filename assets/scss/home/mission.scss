@@ -124,6 +124,12 @@
     transition: opacity 0.5s;
   }
 }
+.blackoverlay.v-item--active {
+  &::before {
+    opacity: 0.8;
+    transition: opacity 0.5s;
+  }
+}
 
 .homepage-catalogue-background-lines {
   position: absolute;

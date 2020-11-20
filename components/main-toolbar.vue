@@ -44,12 +44,11 @@
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo">
         <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-          <img src="../assets/images/logo.svg" width="140px" alt="logo"/>
           <ik-image
-              path="/Logos/logo.svg"
-              :transformation="[{quality: 80, width:200, dpr:2, radius:'max'}]"
+              path="/Logos/Warenghem_vf.svg"
+              :transformation="[{quality: 80, width:140, dpr:2, radius:'max'}]"
               loading="lazy"
-              width="200"
+              width="140"
           />
         </router-link>
       </v-toolbar-title>
