@@ -2,7 +2,7 @@
     <section class="team-section py-10">
         <h2 class="page-title py-md-5 py-4">{{$t('title')}}</h2>
         <v-row no-gutters class="pt-4">
-            <v-col lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
+            <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <div class="item-inner py-2 px-3">
                     <div class="profile-holder mb-3">
                         <ik-image
