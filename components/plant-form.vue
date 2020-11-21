@@ -5,6 +5,7 @@
                     v-model="$store.state.plantModal"
                     persistent
                     max-width="600px"
+                    class="ma-3"
             >
                 <v-card>
                     <v-btn
@@ -18,12 +19,13 @@
                             mdi-close
                         </v-icon>
                     </v-btn>
-                    <v-card-text>
+                    <v-card-text
+                    class="pa-3 pa-sm-5">
                         <div class="d-flex flex-column align-center justify-center h-100">
                             <p class="pb-3 px-4 text-justify bottomText">
                                 {{$t('video.rightSection.subtitle')}}
                             </p>
-                            <div class="w-100 px-5">
+                            <div class="w-100 px-sm-5">
                                 <mailchimp-subscribe
                                         url="https://warenghem.us20.list-manage.com/subscribe/post-json"
                                         user-id="2f7dbf20677f88c14c1389365"

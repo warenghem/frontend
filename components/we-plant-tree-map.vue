@@ -59,7 +59,7 @@
             &times;
           </v-btn>
         </div>
-        <div class="px-7 pb-3  map-modal">
+        <div class="px-3 px-sm-7 pb-3  map-modal">
           <v-row>
             <v-col lg="6">
               <div class="para-title">{{$t('madagascar.section1.title')}}</div>
@@ -112,7 +112,7 @@
               <div class="para-text" v-html="$t('madagascar.section2.paraText2')">
               </div>
             </v-col>
-            <v-col>
+            <v-col cols="12">
               <div class="para-title">{{$t('madagascar.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
                 <ik-image
@@ -148,7 +148,7 @@
             &times;
           </v-btn>
         </div>
-        <div class="px-7 pb-3  map-modal">
+        <div class="px-3 px-sm-7 pb-3  map-modal">
           <v-row>
             <v-col lg="6">
               <div class="para-title">{{$t('india.section1.title')}}</div>
@@ -201,7 +201,7 @@
               <div class="para-text" v-html="$t('india.section2.paraText2')">
               </div>
             </v-col>
-            <v-col>
+            <v-col cols="12">
               <div class="para-title">{{$t('india.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
                 <ik-image
