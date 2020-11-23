@@ -25,7 +25,7 @@
     "nuxt-i18n": "^6.15.4",
     "v-viewer": "^1.5.1",
     "vue": "^2.6.12",
-    "vue-carousel": "^0.18.0",
+    "vue-slick-carousel": "^1.0.6",
     "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {
