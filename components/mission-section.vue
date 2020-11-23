@@ -90,7 +90,7 @@
                             class="gradientoverlay blackoverlay backgroundcover"
                     >
                     <ik-image
-                        :path="backgroundImages[m_idx]"
+                        :path="backgroundImages[backgroundImages.length-1-m_idx]"
                         :lqip="{active:true, quality: 40, blur: 5}"
                         :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
                         loading="lazy"

@@ -71,7 +71,7 @@
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -103,7 +103,7 @@
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />
               </div>
               <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('madagascar.section2.paraText1')">
@@ -121,7 +121,7 @@
                     :transformation="[{quality: 80, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />
               </a>
             </v-col>
           </v-row>
@@ -160,7 +160,7 @@
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -192,7 +192,7 @@
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />
               </div>
               <div class="para-subtitle-small">{{$t('india.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('india.section2.paraText1')">
@@ -210,7 +210,7 @@
                     :transformation="[{quality: 80, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />
               </a>
             </v-col>
           </v-row>
