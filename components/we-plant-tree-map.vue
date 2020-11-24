@@ -66,7 +66,7 @@
               <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
               <div class="para-img">
                 <ik-image
-                    path="/mango.jpg"
+                    path="/specie-mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
@@ -98,7 +98,7 @@
               <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
               <div class="para-img">
                 <ik-image
-                    path="/tiger.jpg"
+                    path="/river.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
@@ -155,7 +155,7 @@
               <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
               <div class="para-img">
                 <ik-image
-                    path="/specie-mango.jpg"
+                    path="/mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
@@ -187,7 +187,7 @@
               <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
               <div class="para-img">
                 <ik-image
-                    path="/river.png"
+                    path="/tiger.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
