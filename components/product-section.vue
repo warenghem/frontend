@@ -53,7 +53,7 @@
                         <v-card-title class="text-center pt-8 justify-center h-100">
                             <div class="d-block w-100">
                                 <ik-image
-                                    path="/Logos/Citadins_Sauvages.svg"
+                                    path="/Logos/Citadins_Sauvages.png"
                                     :lqip="{active:true, quality: 40, blur: 5}"
                                     :transformation="[{quality: 80, width:500, dpr:2}]"
                                     loading="lazy"
