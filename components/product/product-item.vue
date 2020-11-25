@@ -23,7 +23,7 @@
       >
       </v-carousel-item>
     </v-carousel>
-    <div class="pt-3 pb-2 d-flex justify-space-between align-items-center">
+    <div class="pt-3 pb-2 d-flex justify-space-between align-center titlesmall teradeli-medium">
       <strong>{{product.name}}</strong>
       <div>
         <button v-for="(item,idx) in colors"
@@ -35,8 +35,7 @@
         </button>
       </div>
     </div>
-    <div style="font-weight: 100!important;">{{product.price}}</div>
-    <div></div>
+    <div class="subtitlesmall teradeli-light">{{product.price}}</div>
   </div>
 </template>
 

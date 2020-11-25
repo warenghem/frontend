@@ -1,5 +1,6 @@
 <template>
   <div>
+    <sticky-toolbar class="stickyBar"/>
     <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>

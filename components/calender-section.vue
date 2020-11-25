@@ -21,7 +21,7 @@
                         <img :src="images[i]" alt="timeline-icon" width="16px">
                     </template>
                     <div slot="opposite" v-if="i===0">
-                        <div class="d-flex align-items-center">
+                        <div class="d-flex align-center">
                             <img src="../assets/images/Arrowleftwhite.svg" class="d-none d-md-block" alt="fanel"
                                  width="26px">
                             <span class="time pl-3 mb-0"

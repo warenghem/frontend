@@ -62,7 +62,7 @@
                                             :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                             loading="lazy"
                                             class="cover"
-                                        />
+                                        ></ik-image>
                                         </div>
                                     </div>
                             </div>
@@ -126,7 +126,7 @@
                         :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                         loading="lazy"
                         class="cover position-absolute"
-                    />
+                    ></ik-image>
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
                                 <div class="pb-3">
