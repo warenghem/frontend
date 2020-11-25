@@ -1,6 +1,6 @@
 <template>
     <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
-        <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
+        <v-navigation-drawer v-model="sidebar" dark bottom app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                 <ik-image
@@ -50,16 +50,8 @@
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
-            <v-toolbar-items class="py-1 mr-3">
-                <v-btn
-                  elevation="2"
-                  rounded
-                  @click="$store.state.plantModal=true"
-                  class="btn-theme"
-                  style="border-radius: 28px;"
-                >
-                  {{$t('btnTitle')}}
-                </v-btn>
+            <v-toolbar-items class="toolbarcta py-1 mr-3">
+                <treebutton/>
             </v-toolbar-items>
         </v-app-bar>
     </section>
@@ -145,4 +137,9 @@ export default {
         }
 
     }
+@media (max-width: 600px) {
+    .toolbarcta button {
+    max-width: 250px;
+    }
+}
 </style>

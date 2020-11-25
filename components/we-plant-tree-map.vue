@@ -1,9 +1,10 @@
 <template>
-  <div class="pt-10" v-intersect.once="mapIntersect">
+  <div class="pt-10 position-relative" v-intersect.once="mapIntersect">
     <h2 class="page-title pt-md-5 pt-4 pr-4"> {{$t('title')}}</h2>
     <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
     <tree-data :treeData="treeData"></tree-data>
     <client-only>
+      <div class="pa-5 pt-5">
       <l-map
         style="width: 100%"
         class="treemap"
@@ -39,20 +40,13 @@
           </l-icon>
         </l-marker>
       </l-map>
+    </div>
     </client-only>
     <div class="slideArea mgforest">
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="py-1 border-right-2 pl-3" style="width: 100%">
-          <v-btn
-            elevation="2"
-            rounded
-            large
-            @click="$store.state.plantModal=true"
-            class="btn-theme"
-          >
-            {{$t('btnTitle')}}
-          </v-btn>
+            <treebutton/>
           </div>
           <v-btn
             text
@@ -66,7 +60,7 @@
         </div>
         <div class="px-3 px-sm-7 pb-3  map-modal">
           <v-row>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('madagascar.section1.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
               <div class="para-img">
@@ -98,7 +92,7 @@
               <div class="para-text" v-html="$t('madagascar.section1.paraText')">
               </div>
             </v-col>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('madagascar.section2.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
               <div class="para-img">
@@ -138,15 +132,7 @@
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="py-1 border-right-2 pl-3" style="width: 100%">
-            <v-btn
-              elevation="2"
-              rounded
-              large
-              @click="$store.state.plantModal=true"
-              class="btn-theme"
-            >
-              {{$t('btnTitle')}}
-            </v-btn>
+            <treebutton/>
           </div>
           <v-btn
             text
@@ -160,7 +146,7 @@
         </div>
         <div class="px-3 px-sm-7 pb-3  map-modal">
           <v-row>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('india.section1.title')}}</div>
               <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
               <div class="para-img">
@@ -192,7 +178,7 @@
               <div class="para-text" v-html="$t('india.section1.paraText')">
               </div>
             </v-col>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('india.section2.title')}}</div>
               <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
               <div class="para-img">
@@ -380,7 +366,7 @@
 
                 },
                 fr: {
-                    title: 'Nous plantons aussi des arbres. Et vous?',
+                    title: 'Nos projets de reforestation',
                     subtitle: 'Pour compenser les émissions de CO2 liées à la création de nos objets, à vos visites' +
                         ' sur notre site, et à la consommation d’électricité de nos technologies. Nos projets sont' +
                         ' exclusivement réservés à la régénération de la biodiversité. Nos arbres sont tracés' +
@@ -454,9 +440,10 @@
 </script>
 <style lang="scss" scoped>
   .treemap {
-    height:800px;
+    height:700px;
+    z-index: 1;
       @media only screen and (max-width: 600px) {
-        height:500px;
+        height:400px;
       }
     }
 

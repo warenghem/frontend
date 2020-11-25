@@ -5,7 +5,6 @@
                     v-model="$store.state.plantModal"
                     persistent
                     max-width="600px"
-                    class="ma-3"
             >
                 <v-card>
                     <v-btn
@@ -45,17 +44,18 @@
                                                    :placeholder="$t('video.rightSection.label2')"
                                                    @input="setEmail($event.target.value)"
                                             >
-                                            <v-btn
-                                                elevation="2"
-                                                rounded
-                                                large
-                                                :loading="loading"
-                                                class="btn-theme"
-                                                type="submit"
-                                                >
-                                                {{$t('btnTitle')}}
-                                            </v-btn>
-                                            
+                                            <div class="mx-auto">
+                                                    <v-btn
+                                                        elevation="2"
+                                                        large
+                                                        :loading="loading"
+                                                        class="btn-theme"
+                                                        type="submit"
+                                                        style="max-width: 250px;border-radius: 28px;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
+                                                        >
+                                                            {{$t('btnTitle')}}
+                                                    </v-btn>
+                                            </div>
                                         </form>
                                     </template>
                                 </mailchimp-subscribe>
