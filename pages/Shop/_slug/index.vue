@@ -1,5 +1,7 @@
 <template>
-  <v-container fluid>
+  <div>
+    <product-sticky-toolbar class="stickyBar"/>
+    <v-container fluid>
     <v-row
       class="mb-6"
     >
@@ -28,19 +30,18 @@
         <div class="d-flex justify-space-between">
           <div>M45538</div>
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="20px">
-              <path fill="black"
-                    d="M462.3 62.6C407.5 15.9 326 24.3 275.7 76.2L256 96.5l-19.7-20.3C186.1 24.3 104.5 15.9 49.7 62.6c-62.8 53.6-66.1 149.8-9.9 207.9l193.5 199.8c12.5 12.9 32.8 12.9 45.3 0l193.5-199.8c56.3-58.1 53-154.3-9.8-207.9z"/>
-            </svg>
+            <v-btn icon>
+              <v-icon>mdi-heart</v-icon>
+            </v-btn>
           </div>
         </div>
         <div class="bold-title text-left pt-2 pb-7">SAC À DOS TRIO</div>
-        <div class="d-flex justify-space-between align-items-center">
+        <div class="d-flex justify-space-between align-center">
           <h3 style="font-weight: 900">2 600,00€</h3>
           <div>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="10px" fill="green">
-              <path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8z"/>
-            </svg>
+
+            <v-icon small>mdi-circle</v-icon>
+
             Disponible
           </div>
         </div>
@@ -105,12 +106,7 @@
                    :key="i_dx"
                    class="text-center pa-2"
               >
-                <div class="grey lighten-5 d-flex justify-content-center align-items-center">
-                  <v-img :src="img"
-                         class=""
-                         alt="thumb image"
-                  ></v-img>
-                </div>
+                <product-item></product-item>
 
               </div>
             </VueSlickCarousel>
@@ -122,14 +118,9 @@
             <VueSlickCarousel v-bind="settings">
               <div v-for="(img,i_dx) in images"
                    :key="'recommend'+i_dx"
-                   class="text-center pa-2"
+                   class="pa-2"
               >
-                <div class="grey lighten-5 d-flex justify-content-center  align-items-center">
-                  <v-img :src="img"
-                         alt="thumb image"
-                  ></v-img>
-                </div>
-
+                <product-item></product-item>
               </div>
             </VueSlickCarousel>
           </v-tab-item>
@@ -138,6 +129,8 @@
     </v-row>
 
   </v-container>
+  </div>
+
 </template>
 
 <script>
@@ -151,9 +144,12 @@
         }
     });
     import {format} from 'date-fns';
+    import ProductItem from "../../../components/product/product-item";
+    import ProductStickyToolbar from "../../../components/product/product-sticky-toolbar";
 
     export default {
         name: 'post',
+        components: {ProductStickyToolbar, ProductItem},
         async asyncData(context) {
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;

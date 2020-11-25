@@ -4,7 +4,6 @@
       <slot name="header">
         <MainToolbar/>
       </slot>
-      <sticky-toolbar class="stickyBar"/>
       <slot name="content">
         <nuxt/>
       </slot>
