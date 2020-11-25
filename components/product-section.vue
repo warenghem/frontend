@@ -7,6 +7,7 @@
                         :key="p_idx"
                         height= "100%"
                         elevation="0"
+                        lazy
                     >
                         <div class="img-fluid theme--light gradientoverlay squaredimage position-relative">
                             <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">

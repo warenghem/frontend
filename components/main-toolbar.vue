@@ -7,7 +7,7 @@
       <v-toolbar-title class="text-center py-10">
           <router-link to="/" tag="span" style="cursor: pointer" class="brand">
             <ik-image
-                path="/Logos/WA_mif_vf.png"
+                path="/Logos/WA_mif_g_vf.svg"
                 :transformation="[{quality: 80, width:160, dpr:2}]"
                 width="160"
             />

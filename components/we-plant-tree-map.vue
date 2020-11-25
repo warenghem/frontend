@@ -44,16 +44,21 @@
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="py-1 border-right-2 pl-3" style="width: 100%">
-            <button class="btn-theme my-0"
-                    @click="closeSlideUp">
-              {{$t('btnTitle')}}
-            </button>
+          <v-btn
+            elevation="2"
+            rounded
+            large
+            @click="$store.state.plantModal=true"
+            class="btn-theme"
+          >
+            {{$t('btnTitle')}}
+          </v-btn>
           </div>
           <v-btn
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 32px"
+            style="font-size: 26px"
             class="px-0 h-100"
           >
             &times;
@@ -133,16 +138,21 @@
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="py-1 border-right-2 pl-3" style="width: 100%">
-            <button class="btn-theme my-0"
-                    @click="closeSlideUp">
+            <v-btn
+              elevation="2"
+              rounded
+              large
+              @click="$store.state.plantModal=true"
+              class="btn-theme"
+            >
               {{$t('btnTitle')}}
-            </button>
+            </v-btn>
           </div>
           <v-btn
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 32px"
+            style="font-size: 26px"
             class="px-0 h-100"
           >
             &times;

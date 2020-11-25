@@ -4,7 +4,7 @@
           <v-toolbar-title class="text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                 <ik-image
-                    path="/Logos/WA_mif_vf.svg"
+                    path="/Logos/WA_mif_wg_vf.svg"
                     :transformation="[{quality: 80, width:170}]"
                     width="170"
                 />
@@ -50,8 +50,16 @@
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
-            <v-toolbar-items class="py-1 mr-3" style="max-width: 240px;">
-                <button class="nav-btn" @click="$store.state.plantModal=true">{{$t('btnTitle')}}</button>
+            <v-toolbar-items class="py-1 mr-3">
+                <v-btn
+                  elevation="2"
+                  rounded
+                  @click="$store.state.plantModal=true"
+                  class="btn-theme"
+                  style="border-radius: 28px;"
+                >
+                  {{$t('btnTitle')}}
+                </v-btn>
             </v-toolbar-items>
         </v-app-bar>
     </section>

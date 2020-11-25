@@ -84,7 +84,7 @@
         </div>
         <div class="d-lg-none mission-accordion finebordert" style="background:black">
             <v-expansion-panels accordion>
-                <div v-for="(mission,m_idx) in $t('mission.sections')" :key="'mission_ac'+m_idx" class="w-100">
+                <div v-for="(mission,m_idx) in $t('mission.sections').slice().reverse()" :key="'mission_ac'+m_idx" class="w-100">
                     <v-expansion-panel
                             style="min-height: 33vw"
                             class="gradientoverlay blackoverlay backgroundcover"
