@@ -1,11 +1,11 @@
 <template>
     <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
-        <v-navigation-drawer v-model="sidebar" dark bottom app class="d-md-none" v-bind:width="304">
+        <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                 <ik-image
-                    path="/Logos/WA_mif_wg_vf.svg"
-                    :transformation="[{quality: 80, width:170}]"
+                    path="/Logos/WA_mif_wg_vf.png"
+                    :transformation="[{quality: 80, width:170, dpr:2}]"
                     width="170"
                 />
               </router-link>

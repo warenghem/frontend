@@ -3,11 +3,11 @@
     <div class="topBar text-center d-none">
       {{$t('secondtoolbar.message')}}
     </div>
-    <v-navigation-drawer v-model="sidebar" app class="d-md-none" v-bind:width="304">
+    <v-navigation-drawer v-model="sidebar" clipped app class="d-md-none" v-bind:width="304">
       <v-toolbar-title class="text-center py-10">
           <router-link to="/" tag="span" style="cursor: pointer" class="brand">
             <ik-image
-                path="/Logos/WA_mif_g_vf.svg"
+                path="/Logos/WA_mif_g_vf.png"
                 :transformation="[{quality: 80, width:160, dpr:2}]"
                 width="160"
             />

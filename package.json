@@ -23,6 +23,7 @@
     "leaflet": "^1.7.1",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4",
+    "nuxt-purgecss": "^1.0.0",
     "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {

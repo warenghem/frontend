@@ -441,6 +441,7 @@
 <style lang="scss" scoped>
   .treemap {
     height:700px;
+    border-radius: 4px;
     z-index: 1;
       @media only screen and (max-width: 600px) {
         height:400px;
@@ -537,23 +538,23 @@
   }
   .blob.white {
     background: white;
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 0 rgba(0, 129, 167,0.8);
     animation: pulse-white 2s infinite;
   }
   @keyframes pulse-white {
     0% {
     transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 0 rgba(0, 129, 167, 0.6);
     }
 
     70% {
     transform: scale(1);
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 20px rgba(0, 129, 167, 0);
     }
 
     100% {
     transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(0, 129, 167, 0);
     }
   }
 </style>
