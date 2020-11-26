@@ -12,7 +12,7 @@
                 width="160"
             />
           </router-link>
-      </v-toolbar-title>  
+      </v-toolbar-title>
       <v-list>
         <v-list-item
           v-for="(link,l_idx) in $store.state.link.links"
@@ -98,7 +98,7 @@
                   :key="'flag_list_'+idx"
                 >
                   <v-list-item-title class="cursor-pointer">
-                    <NuxtLink :to="$store.state.langs.hasSlug?flag.path:switchLocalePath(flag.path)">
+                    <NuxtLink :to="{path:flag.path}">
                       <img :src="flag.img"
                            width="24"
                            alt="flag"
