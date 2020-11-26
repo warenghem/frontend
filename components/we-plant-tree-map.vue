@@ -23,7 +23,7 @@
             :icon-size="[50, 50]"
             :icon-url="marker.image"
             className="mapClass"
-                        :icon-class="e"
+                        icon-class="e"
 
           >
             <div style="transform: translateY(-20px);" class="card">
