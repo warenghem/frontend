@@ -40,7 +40,6 @@ export default {
     "@nuxtjs/svg",
     '@nuxtjs/date-fns',
     '@nuxtjs/snipcart',
-    'nuxt-purgecss',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -62,10 +61,6 @@ export default {
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
-
-  purgeCSS: {
-    enabled: 'false', 
-   },
 
   pwa: {
     meta: {
