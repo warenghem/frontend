@@ -64,7 +64,7 @@ export default {
   content: {},
 
   purgeCSS: {
-    // your settings here
+    enabled: 'false', 
    },
 
   pwa: {
