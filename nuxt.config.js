@@ -27,6 +27,7 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     {src: '~/plugins/vue-leaflet', ssr: false},
+    {src: '~/plugins/imagekit', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -51,7 +52,6 @@ export default {
     '@nuxt/content',
     'nuxt-i18n',
     '@nuxtjs/color-mode',
-    '@nuxtjs/cloudinary',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -111,11 +111,6 @@ export default {
         name: 'Français',
       },
     ],
-  },
-
-  cloudinary: {
-    cloudName: 'dfnpkqf5d',
-    useComponent: true,
   },
 
   snipcart: {
