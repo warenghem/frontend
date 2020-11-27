@@ -1,14 +1,28 @@
 <template>
     <div>
         <div class="d-flex justify-center border-top-2 align-center flex-column flex-md-row py-5">
-            <div v-for="(profile,idx) in profiles" :key="'profile_'+idx" class="ttext-center py-8 py-md-4 px-7">
-                <ik-image
+            <div v-for="(profile,idx) in profiles" :key="'profile_'+idx" class="text-center py-8 py-md-4 px-7">
+                <!--<ik-image
                     :path="profile.img"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:200, dpr:2}]"
                     loading="lazy"
                     width="200"
-                />
+                />-->
+                <cld-image
+                    :public-id="profile.img"
+                    width="auto"
+                    crop="scale"
+                    dpr="auto"
+                    fetchFormat="auto"
+                    quality="auto"
+                    loading="lazy"
+                    responsive
+                    style="max-width:200px"
+                    class="ma-auto"
+                    >
+                      <cld-placeholder type="blur" class="ma-auto" style="max-width:200px" quality="40" />
+                </cld-image>
             </div>
         </div>
         <div class="whole-footer border-top-2 pt-10 pt-sm-0">
@@ -30,14 +44,14 @@
                 profiles: [
                     {
                         key: 1,
-                        img: "/Logos/label-co2-website.png"
+                        img: "/Logos/label-co2-website_ysatb0"
                     },
                     {
                         key: 2,
-                        img: "/Logos/Label-Tech-white.png"
+                        img: "/Logos/Label-Tech-white_tnkom0"
                     }, {
                         key: 3,
-                        img: "/Logos/PETAapproved.png"
+                        img: "/Logos/PETAapproved_ubgge9"
                     },
                 ]
             }

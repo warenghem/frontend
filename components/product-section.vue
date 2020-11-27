@@ -25,13 +25,26 @@
                                 <v-icon>mdi-share-variant</v-icon>
                             </v-btn>
                             </v-card-actions>
-                            <ik-image
+                            <!--<ik-image
                                     :path="backgroundImages[p_idx]"
                                     :lqip="{active:true, quality: 40, blur: 5}"
                                     :transformation="[{quality: 80, width:500, dpr:2, focus: 'bottom',}]"
                                     loading="lazy"
                                     class="cover bg-white catalogue-item-background elevation-3"
-                                />  
+                                />-->
+                            <cld-image
+                                :public-id="backgroundImages[p_idx]"
+                                class="cover bg-white catalogue-item-background elevation-3 h-100"
+                                width="auto"
+                                crop="scale"
+                                dpr="auto"
+                                fetchFormat="auto"
+                                quality="auto"
+                                loading="lazy"
+                                responsive
+                                >
+                                <cld-placeholder type="blur" quality="40" />
+                            </cld-image> 
                             <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
                                 {{product.desc}}
                             </div>
@@ -52,15 +65,27 @@
                         
                     >
                         <v-card-title class="text-center pt-8 justify-center h-100">
-                            <div class="d-block w-100">
-                                <ik-image
+                                <!--<ik-image
                                     path="/Logos/Citadins_Sauvages.png"
                                     :lqip="{active:true, quality: 40, blur: 5}"
                                     :transformation="[{quality: 80, width:500, dpr:2}]"
                                     loading="lazy"
                                     width="500"
-                                />  
-                            </div>
+                                />-->
+                                <cld-image
+                                    public-id="/Logos/Citadins_Sauvages_peftu0"
+                                    width="auto"
+                                    crop="scale"
+                                    dpr="auto"
+                                    fetchFormat="auto"
+                                    quality="auto"
+                                    loading="lazy"
+                                    responsive
+                                    class="d-flex"
+                                    style="width:unset"
+                                    >
+                                    <cld-placeholder type="blur" quality="40" />
+                                </cld-image>  
                         </v-card-title>
                     </v-card>
                 </v-container>
@@ -73,10 +98,10 @@
         data() {
             return {
                 backgroundImages:[
-                    "/AdobeStock_50352719.jpeg",
-                    "/Products/PFsolomoutain_V__6TkALbMDj.jpg",
-                    "/Products/S48blackmountain__JiqyHXRH6pZ.jpg",
-                    "/AdobeStock_213093083-scaled.jpeg",
+                    "/Products/AdobeStock_50352719_ierkbj",
+                    "/Products/PFsolomoutain_V__6TkALbMDj_ajvgbg",
+                    "/Products/S48blackmountain__JiqyHXRH6pZ_y7cmo4",
+                    "/Products/AdobeStock_213093083-scaled_ypdrqx",
                 ],
                 products: this.$t('products'),
             }

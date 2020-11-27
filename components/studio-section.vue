@@ -4,14 +4,27 @@
         <v-row no-gutters class="pt-4">
             <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <div class="item-inner py-2 px-3 px-md-5">
-                    <div class="profile-holder mb-3">
-                        <ik-image
+                    <div style="width:200px" class="ma-auto profile-holder mb-3">
+                        <!--<ik-image
                             :path="profile.img"
                             :lqip="{active:true, quality: 40, blur: 5}"
                             :transformation="[{quality: 80, width:200, dpr:2, radius:'max'}]"
                             loading="lazy"
                             width="200"
-                        />
+                        />-->
+                        <cld-image
+                            :public-id="profile.img"
+                            width="auto"
+                            crop="scale"
+                            radius="max"
+                            dpr="auto"
+                            fetchFormat="auto"
+                            quality="auto"
+                            loading="lazy"
+                            responsive
+                            >
+                            <cld-placeholder type="blur" quality="40" />
+                        </cld-image> 
                     </div>
                     <div class="content-holder text-left">
                         <h4 class="titlesmall">{{profile.name}}</h4>
@@ -115,7 +128,7 @@
                     {
                         key: 1,
                         name: 'Kevin Brosseau',
-                        img: "/kevin_zsPDDH5iKn2R.png"
+                        img: "/Team/kevin_zsPDDH5iKn2R_ucir2s"
                     },
                     {
                         key: 2,
@@ -123,12 +136,12 @@
                     }, {
                         key: 3,
                         name: 'Julie maurence',
-                        img: "/julie_e3H-plJ5LNi5.png"
+                        img: "/Team/julie_e3H-plJ5LNi5_mitccl"
                     },
                     {
                         key: 4,
                         name: 'Quentin Brosseau',
-                        img: "/quentin_jvUVQy_Hk0VvA.png"
+                        img: "/Team/quentin_jvUVQy_Hk0VvA_jn6llp"
                     }
                 ]
             }

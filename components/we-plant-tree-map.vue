@@ -23,7 +23,7 @@
             :icon-size="[50, 50]"
             :icon-url="marker.image"
             className="mapClass"
-                        :icon-class="e"
+                        icon-class="e"
 
           >
             <div style="transform: translateY(-20px);" class="card">
@@ -64,13 +64,25 @@
               <div class="para-title">{{$t('madagascar.section1.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/specie-mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                />
+                />-->
+                <cld-image
+                    public-id="/Forest/specie-mango_eltywh"
+                    width="auto"
+                    crop="scale"
+                    dpr="auto"
+                    fetchFormat="auto"
+                    quality="auto"
+                    loading="lazy"
+                    responsive
+                    >
+                    <cld-placeholder type="blur" quality="40" />
+                </cld-image> 
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -96,13 +108,25 @@
               <div class="para-title">{{$t('madagascar.section2.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/river.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                />
+                />-->
+                <cld-image
+                    public-id="/Forest/river_hmdtnp"
+                    width="auto"
+                    crop="scale"
+                    dpr="auto"
+                    fetchFormat="auto"
+                    quality="auto"
+                    loading="lazy"
+                    responsive
+                    >
+                    <cld-placeholder type="blur" quality="40" />
+                </cld-image> 
               </div>
               <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('madagascar.section2.paraText1')">
@@ -114,13 +138,25 @@
             <v-col cols="12">
               <div class="para-title">{{$t('madagascar.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
-                <ik-image
+                <!--<ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                />
+                />-->
+                <cld-image
+                    public-id="/Forest/Capture_d_e_cran_2020-11-20_a__18.56.41_ec6trs"
+                    width="auto"
+                    crop="scale"
+                    dpr="auto"
+                    fetchFormat="auto"
+                    quality="auto"
+                    loading="lazy"
+                    responsive
+                    >
+                    <cld-placeholder type="blur" quality="40" />
+                </cld-image> 
               </a>
             </v-col>
           </v-row>
@@ -150,13 +186,25 @@
               <div class="para-title">{{$t('india.section1.title')}}</div>
               <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                />
+                />-->
+                <cld-image
+                    public-id="/Forest/mango_y4ruzv"
+                    width="auto"
+                    crop="scale"
+                    dpr="auto"
+                    fetchFormat="auto"
+                    quality="auto"
+                    loading="lazy"
+                    responsive
+                    >
+                    <cld-placeholder type="blur" quality="40" />
+                </cld-image> 
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -182,13 +230,25 @@
               <div class="para-title">{{$t('india.section2.title')}}</div>
               <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/tiger.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                />
+                />-->
+                <cld-image
+                    public-id="/Forest/tiger_zwfahh"
+                    width="auto"
+                    crop="scale"
+                    dpr="auto"
+                    fetchFormat="auto"
+                    quality="auto"
+                    loading="lazy"
+                    responsive
+                    >
+                    <cld-placeholder type="blur" quality="40" />
+                </cld-image> 
               </div>
               <div class="para-subtitle-small">{{$t('india.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('india.section2.paraText1')">
@@ -200,13 +260,25 @@
             <v-col cols="12">
               <div class="para-title">{{$t('india.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
-                <ik-image
+                <!--<ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 80, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                />
+                />-->
+                <cld-image
+                    public-id="/Forest/Capture_d_e_cran_2020-11-20_a__18.57.19_yhjbhl"
+                    width="auto"
+                    crop="scale"
+                    dpr="auto"
+                    fetchFormat="auto"
+                    quality="auto"
+                    loading="lazy"
+                    responsive
+                    >
+                    <cld-placeholder type="blur" quality="40" />
+                </cld-image> 
               </a>
             </v-col>
           </v-row>

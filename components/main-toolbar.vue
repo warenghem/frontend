@@ -4,13 +4,23 @@
       {{$t('secondtoolbar.message')}}
     </div>
     <v-navigation-drawer v-model="sidebar" clipped app class="d-md-none" v-bind:width="304">
-      <v-toolbar-title class="text-center py-10">
+      <v-toolbar-title style="width:170px" class="ma-auto text-center py-10">
           <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-            <ik-image
+            <!--<ik-image
                 path="/Logos/WA_mif_g_vf.png"
                 :transformation="[{quality: 80, width:160, dpr:2}]"
                 width="160"
-            />
+            />-->
+            <cld-image
+                public-id="/Logos/WA_mif_g_vf_dsxawi"
+                width="auto"
+                crop="scale"
+                dpr="auto"
+                fetchFormat="auto"
+                quality="auto"
+                responsive
+                >
+            </cld-image>
           </router-link>
       </v-toolbar-title>  
       <v-list>
@@ -42,14 +52,24 @@
         </v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-toolbar-title class="centerabsolute v-toolbar__logo">
+      <v-toolbar-title class="centerabsolute v-toolbar__logo pb-1">
         <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-          <ik-image
+          <!--<ik-image
               path="/Logos/Warenghem_vf.svg"
               :transformation="[{quality: 80, width:140, dpr:2, radius:'max'}]"
               loading="lazy"
               width="140"
-          />
+          />-->
+            <cld-image
+                public-id="/Logos/Warenghem_w_vf_fdii2i"
+                width="auto"
+                crop="scale"
+                dpr="auto"
+                fetchFormat="auto"
+                quality="auto"
+                responsive
+                >
+            </cld-image>
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>

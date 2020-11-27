@@ -7,11 +7,23 @@
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
                             <div class="homepage-catalogue-background-big">
-                                <ik-image
+                                <!--<ik-image
                                         :path="backgroundImage"
                                         :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
                                         class="cover "
-                                />
+                                />-->
+                                <cld-image
+                                    :public-id="backgroundImage"
+                                    width="auto"
+                                    crop="scale"
+                                    dpr="auto"
+                                    fetchFormat="auto"
+                                    quality="auto"
+                                    responsive
+                                    class="cover h-100"
+                                    >
+                                    <cld-placeholder type="blur" quality="40" />
+                                </cld-image>
                             </div>
                             <div class="homepage-catalogue-background-lines"
                                  :class="{'opacity-02':currentMissionHover}"
@@ -24,16 +36,26 @@
                             <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
 
                                 <div v-for="(bgImage,idx) in backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
-                                    <div>
-                                        <ik-image
+                                        <!--<ik-image
                                             :path="bgImage"
                                             :lqip="{active:true, quality: 40, blur: 5}"
                                             :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
                                             loading="lazy"
                                             class="cover"
-                                        />
-                                        </div>
-                                    </div>
+                                        />-->
+                                        <cld-image
+                                            :public-id="bgImage"
+                                            loading="lazy"
+                                            width="auto"
+                                            crop="scale"
+                                            dpr="auto"
+                                            fetchFormat="auto"
+                                            quality="auto"
+                                            responsive
+                                            class="cover h-100"
+                                            >
+                                        </cld-image>
+                                </div>
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
@@ -45,10 +67,8 @@
                                  :key="'mission_'+m_idx"
                             >
                                 <div class="pb-3">
-                                    <ik-image
-                                        path="/Icons/magazine-plus.svg"
-                                        :transformation="[{quality: 80}]"
-                                    />
+                                    <img src="../assets/images/magazine-plus.svg"
+                                                       alt="Wait For It">
                                 </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
                                     <a>
@@ -89,13 +109,26 @@
                             style="min-height: 33vw"
                             class="gradientoverlay blackoverlay backgroundcover"
                     >
-                    <ik-image
+                    <!--<ik-image
                         :path="backgroundImages[backgroundImages.length-1-m_idx]"
                         :lqip="{active:true, quality: 40, blur: 5}"
                         :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
                         loading="lazy"
                         class="cover position-absolute"
-                    />
+                    />-->
+                    <cld-image
+                        :public-id="backgroundImages[backgroundImages.length-1-m_idx]"
+                        width="auto"
+                        crop="scale"
+                        dpr="auto"
+                        fetchFormat="auto"
+                        quality="auto"
+                        loading="lazy"
+                        responsive
+                        class="cover position-absolute h-100"
+                        >
+                        <cld-placeholder type="blur" quality="40" />
+                    </cld-image>
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
                                 <div class="pb-3">
@@ -145,10 +178,10 @@
             return {
                 currentMissionHover: null,
                 backgroundImages: [
-                    "/tech_mx5bGeVoG3pm.jpg",
-                    "/studio_65kZ-dLBvomY.jpg",
-                    "/roche_AT2d0GTl7n9w.png",
-                    "/home_gCAPosI9qrtpP.jpg",
+                    "/tech_mx5bGeVoG3pm_eadwv9",
+                    "/studio_65kZ-dLBvomY_vkjzve",
+                    "/roche_AT2d0GTl7n9w_wpx4av",
+                    "/home_gCAPosI9qrtpP_rdlbl9",
                 ],
                 backgroundImage: ''
             }

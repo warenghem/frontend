@@ -1,14 +1,24 @@
 <template>
     <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
         <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
-          <v-toolbar-title class="text-center py-10">
+          <v-toolbar-title style="width:170px" class="ma-auto text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                <ik-image
+                <!--<ik-image
                     path="/Logos/WA_mif_wg_vf.png"
                     :transformation="[{quality: 80, width:170, dpr:2}]"
                     width="170"
-                />
-              </router-link>
+                />-->
+                    <cld-image
+                        public-id="/Logos/WA_mif_wg_vf_luv3er"
+                        width="auto"
+                        crop="scale"
+                        dpr="auto"
+                        fetchFormat="auto"
+                        quality="auto"
+                        responsive
+                        >
+                    </cld-image>              
+            </router-link>
           </v-toolbar-title>         
             <v-list>
                 <v-list-item
@@ -29,13 +39,23 @@
 
             <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
             </v-app-bar-nav-icon>
-            <v-toolbar-title class="d-md-block pr-4 d-none">
-                <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                  <ik-image
+            <v-toolbar-title style="width:35px" class="d-md-block p-0 pb-1 ml-3 mr-4 d-none">
+                <router-link to="/" tag="span" style="cursor: pointer">
+                  <!--<ik-image
                       path="/Logos/WA_short_w_vf.svg"
                       :transformation="[{quality: 80, width:35}]"
                       width="35"
-                  />
+                  />-->
+                  <cld-image
+                      public-id="/Logos/WA_short_w_vf_lbm6tk"
+                      width="auto"
+                      crop="scale"
+                      dpr="auto"
+                      fetchFormat="auto"
+                      quality="auto"
+                      responsive
+                      >
+                  </cld-image>
                 </router-link>
             </v-toolbar-title>
             <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
