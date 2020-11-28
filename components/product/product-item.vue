@@ -8,12 +8,12 @@
        v-model="currentItem"
     >
       <v-carousel-item
-        :src="item.image"
         v-for="item in product.variants"
         v-if="product.variants"
         :key="item.id"
 
       >
+        <v-img :src="item.image" alt="" :lazy-src="require('../../assets/images/image-loader.gif')"></v-img>
       </v-carousel-item>
       <v-carousel-item
         :src="item.image"
