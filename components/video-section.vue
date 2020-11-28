@@ -3,13 +3,25 @@
     <div class="videoSection">
       <div class="homepage-slider-background" ref="backgroundImg">
         <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay">
-        <ik-image
+        <!--<ik-image
             path="/S048_PF_TEuxOrfV7C_a.png"
             :lqip="{active:true, quality: 40, blur: 5}"
             :transformation="[{quality: 65, width:1500, height:800, dpr:2, focus: 'bottom'}]"
             loading="lazy"
             class="cover"
-          />
+          />-->
+        <picture>
+          <source 
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1500w,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1280,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1280w,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1024,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1024w,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-640,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 640w,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-480,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 480w,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-320,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 320w,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-240,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 240w"
+          >
+          <img class="lazyload cover" data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" data-sizes="auto" />
+        </picture>
         </div>
 
       </div>

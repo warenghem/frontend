@@ -20,6 +20,7 @@
     "imagekitio-vue": "^1.0.8",
     "instafeed": "^1.4.0",
     "jsonp": "^0.2.1",
+    "lazysizes": "^5.2.2",
     "leaflet": "^1.7.1",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4",

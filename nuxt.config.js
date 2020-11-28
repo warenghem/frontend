@@ -28,6 +28,7 @@ export default {
   plugins: [
     {src: '~/plugins/vue-leaflet', ssr: false},
     {src: '~/plugins/imagekit', ssr: false},
+    {src: '~/plugins/lazysizes', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -131,5 +132,11 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extend (config, { isDev, isClient, loaders: { vue } }) {
+      if (isClient) {
+        vue.transformAssetUrls.img = ['data-src', 'src']
+        vue.transformAssetUrls.source = ['data-srcset', 'srcset']
+      }
+    }
   }
 }
