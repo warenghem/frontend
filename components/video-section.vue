@@ -6,7 +6,7 @@
         <ik-image
             path="/S048_PF_TEuxOrfV7C_a.png"
             :lqip="{active:true, quality: 40, blur: 5}"
-            :transformation="[{quality: 80, width:1500, height:800, dpr:2, focus: 'bottom'}]"
+            :transformation="[{quality: 65, width:1500, height:800, dpr:2, focus: 'bottom'}]"
             loading="lazy"
             class="cover"
           />
@@ -46,7 +46,7 @@
               <p>
                 <ik-image
                     path="/Icons/ecological.svg"
-                    :transformation="[{quality: 80}]"
+                    :transformation="[{quality: 65}]"
                 />
               </p>
               <span>{{$t('video.tag1')}}</span>
@@ -55,7 +55,7 @@
               <p>
                 <ik-image
                     path="/Icons/france.svg"
-                    :transformation="[{quality: 80}]"
+                    :transformation="[{quality: 65}]"
                 />
               </p>
               <span>{{$t('video.tag2')}}</span>
@@ -64,7 +64,7 @@
               <p>
                 <ik-image
                     path="/Icons/tech.svg"
-                    :transformation="[{quality: 80}]"
+                    :transformation="[{quality: 65}]"
                 />
               </p>              
               <span>{{$t('video.tag3')}}</span>

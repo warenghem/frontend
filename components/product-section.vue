@@ -28,7 +28,7 @@
                             <ik-image
                                     :path="backgroundImages[p_idx]"
                                     :lqip="{active:true, quality: 40, blur: 5}"
-                                    :transformation="[{quality: 80, width:500, dpr:2, focus: 'bottom',}]"
+                                    :transformation="[{quality: 65, width:500, dpr:2, focus: 'bottom',}]"
                                     loading="lazy"
                                     class="cover bg-white catalogue-item-background elevation-3"
                                 />  
@@ -56,7 +56,7 @@
                                 <ik-image
                                     path="/Logos/Citadins_Sauvages.png"
                                     :lqip="{active:true, quality: 40, blur: 5}"
-                                    :transformation="[{quality: 80, width:500, dpr:2}]"
+                                    :transformation="[{quality: 65, width:500, dpr:2}]"
                                     loading="lazy"
                                     width="500"
                                 />  

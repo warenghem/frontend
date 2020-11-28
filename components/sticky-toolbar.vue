@@ -5,7 +5,7 @@
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                 <ik-image
                     path="/Logos/WA_mif_wg_vf.png"
-                    :transformation="[{quality: 80, width:170, dpr:2}]"
+                    :transformation="[{quality: 65, width:170, dpr:2}]"
                     width="170"
                 />
               </router-link>
@@ -33,7 +33,7 @@
                 <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                   <ik-image
                       path="/Logos/WA_short_w_vf.svg"
-                      :transformation="[{quality: 80, width:35}]"
+                      :transformation="[{quality: 65, width:35}]"
                       width="35"
                   />
                 </router-link>

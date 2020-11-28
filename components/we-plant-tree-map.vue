@@ -67,7 +67,7 @@
                 <ik-image
                     path="/specie-mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
                 />
@@ -99,7 +99,7 @@
                 <ik-image
                     path="/river.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
                 />
@@ -117,7 +117,7 @@
                 <ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:800, dpr:2}]"
+                    :transformation="[{quality: 65, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
                 />
@@ -153,7 +153,7 @@
                 <ik-image
                     path="/mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
                 />
@@ -185,7 +185,7 @@
                 <ik-image
                     path="/tiger.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
                 />
@@ -203,7 +203,7 @@
                 <ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:800, dpr:2}]"
+                    :transformation="[{quality: 65, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
                 />

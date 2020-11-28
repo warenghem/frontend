@@ -8,7 +8,7 @@
                         <ik-image
                             :path="profile.img"
                             :lqip="{active:true, quality: 40, blur: 5}"
-                            :transformation="[{quality: 80, width:200, dpr:2, radius:'max'}]"
+                            :transformation="[{quality: 65, width:200, dpr:2, radius:'max'}]"
                             loading="lazy"
                             width="200"
                         />

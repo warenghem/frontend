@@ -9,7 +9,7 @@
                             <div class="homepage-catalogue-background-big">
                                 <ik-image
                                         :path="backgroundImage"
-                                        :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                         class="cover "
                                 />
                             </div>
@@ -28,7 +28,7 @@
                                         <ik-image
                                             :path="bgImage"
                                             :lqip="{active:true, quality: 40, blur: 5}"
-                                            :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                                            :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                             loading="lazy"
                                             class="cover"
                                         />
@@ -47,7 +47,7 @@
                                 <div class="pb-3">
                                     <ik-image
                                         path="/Icons/magazine-plus.svg"
-                                        :transformation="[{quality: 80}]"
+                                        :transformation="[{quality: 65}]"
                                     />
                                 </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
@@ -92,7 +92,7 @@
                     <ik-image
                         :path="backgroundImages[backgroundImages.length-1-m_idx]"
                         :lqip="{active:true, quality: 40, blur: 5}"
-                        :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                         loading="lazy"
                         class="cover position-absolute"
                     />
