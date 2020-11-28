@@ -269,10 +269,10 @@ body {
   opacity: 0 !important;
 }
 
-.v-btn__content {
-  font-size: 26px;
-  font-family: teradeli-light;
-}
+//.v-btn__content {
+//  font-size: 26px;
+//  font-family: teradeli-light;
+//}
 
 #Eden_ProjetContainer {
   transform: translateX(-265px);
@@ -626,7 +626,7 @@ body {
   position: fixed;
   z-index: 1000;
   transform: translate3D(0, 0, 0);
-  top: -51px;
+  top: -71px;
   width: 100%;
 
   &.active {
@@ -763,4 +763,33 @@ body {
 }
 .viewer-backdrop {
     background-color: rgb(255 255 255) !important;
+}
+.no-message{
+  .v-messages{
+    display: none;
+  }
+  .v-input__slot {
+    margin-bottom: 0!important;
+  }
+}
+.filter-bar{
+  .v-toolbar__content{
+    flex-wrap: wrap;
+    height: unset!important;
+  }
+   height: unset!important;
+  @media(min-width: 768px){
+    height: 70px!important;
+    .v-toolbar__content{
+    height: 70px!important;
+  }
+  }
+
+
+}
+.custom-list{
+  .v-list-item--active{
+    color:black!important;
+    font-weight: 900;
+  }
 }

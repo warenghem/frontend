@@ -1,5 +1,21 @@
 <template>
   <div>
+    <filter-bar :products="products.length"
+                :categories="categories"
+                :colors="colors"
+                :collections="collections"
+                :category-name="null"
+                :materials="materials"
+    >
+
+    </filter-bar>
+    <filter-bar class="stickyBar" :products="products.length"
+                :categories="categories"
+                :colors="colors"
+                :collections="collections"
+                :category-name="null"
+                :materials="materials">
+    </filter-bar>
     <v-container class="px-lg-7" fluid>
       <v-row>
         <v-col lg="4" md="6" v-for="i in 16" :key="i">
@@ -13,9 +29,11 @@
 
 <script>
     import ProductItem from "../../components/product/product-item";
+    import FilterBar from "../../components/product/filter-bar";
+
     export default {
         name: 'shop',
-        components: {ProductItem},
+        components: {FilterBar, ProductItem},
         // async asyncData(context) {
         //     const {$content, app} = context;
         //     const defaultLocale = app.i18n.locale;
@@ -140,7 +158,62 @@
                             "modificationDate": "2016-11-03T12:51:28.873Z"
                         }
                     ]
-                }
+                },
+                categories: [
+                    'lorem 1',
+                    'lorem 2',
+                    'lorem 3 sdfsfdsf',
+                    'lorem 4 dfdsf',
+                    'lorem 5',
+                    'lorem 6',
+                    'lorem 7',
+                ],
+                colors: [
+                    'red',
+                    'green',
+                    'black',
+                    'white',
+                    'pink'
+                ],
+                materials: [
+                    {
+                        name: 'cuires',
+                        items: [
+                            {id: 1, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
+                            {
+                                id: 2,
+                                name: 'materia 2',
+                                image: 'https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'toils',
+                        items: [
+                            {id: 1, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
+                            {
+                                id: 2,
+                                name: 'materia 2',
+                                image: 'https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow'
+                            },
+                        ]
+                    },
+                    {
+                        name: 'meterial 2',
+                        items: [
+                            {id: 1, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
+                            {
+                                id: 2,
+                                name: 'materia 2',
+                                image: 'https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow'
+                            },
+                        ]
+                    }
+                ],
+                collections: [
+                    'defile autum 2020',
+                    'defile autum 2021',
+                ]
             }
         },
 
