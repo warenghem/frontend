@@ -12,13 +12,39 @@
           />-->
         <picture>
           <source 
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1500w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1280,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1280w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1024,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1024w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-640,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 640w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-480,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 480w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-320,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 320w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-240,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 240w"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-1,w-1500,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom/S048_PF_TEuxOrfV7C_a.png 2x," 
+            media="(min-width: 1500px)"
+          >
+          <source 
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-1,w-1280,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1280,fo-bottom/S048_PF_TEuxOrfV7C_a.png 2x,"
+            media="(min-width: 1280px)"
+          >
+          <source 
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-1,w-1024,ar-4-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1024,ar-4-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x,"
+            media="(min-width: 1024px)"
+          >
+          <source 
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-640,ar-4-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-640,ar-4-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x,"
+            media="(min-width: 640px)"
+          >
+          <source 
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-1,w-480,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-480,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x,"
+            media="(min-width: 480px)"
+          >
+          <source 
+            data-srcset="http://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-320,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+                          http://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-320,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x,"
+            media="(min-width: 320px)"
+          >
+          <source 
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-1,w-240,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-240,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x,"
+            media="(min-width: 240px)"
           >
           <img class="lazyload cover" data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" data-sizes="auto" />
         </picture>
@@ -56,28 +82,19 @@
           <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
               <p>
-                <ik-image
-                    path="/Icons/ecological.svg"
-                    :transformation="[{quality: 65}]"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/ecological.svg">
               </p>
               <span>{{$t('video.tag1')}}</span>
             </div>
             <div class="col-md-4">
               <p>
-                <ik-image
-                    path="/Icons/france.svg"
-                    :transformation="[{quality: 65}]"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/france.svg">
               </p>
               <span>{{$t('video.tag2')}}</span>
             </div>
             <div class="col-md-4">
               <p>
-                <ik-image
-                    path="/Icons/tech.svg"
-                    :transformation="[{quality: 65}]"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/tech.svg">
               </p>              
               <span>{{$t('video.tag3')}}</span>
             </div>
