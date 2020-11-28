@@ -1,15 +1,6 @@
 <template>
   <div>
-    <filter-bar :products="products.length"
-                :categories="categories"
-                :colors="colors"
-                :collections="collections"
-                :category-name="null"
-                :materials="materials"
-    >
-
-    </filter-bar>
-    <filter-bar class="stickyBar" :products="products.length"
+    <filter-bar class="stickyFilterBar" :products="products.length"
                 :categories="categories"
                 :colors="colors"
                 :collections="collections"
@@ -18,10 +9,11 @@
     </filter-bar>
     <v-container class="px-lg-7" fluid>
       <v-row>
-        <v-col lg="4" md="6" v-for="i in 16" :key="i">
+        <v-col lg="4" md="6" v-for="i in productCount" :key="i">
           <product-item></product-item>
         </v-col>
       </v-row>
+      <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
     </v-container>
   </div>
 
@@ -47,6 +39,7 @@
         // },
         data() {
             return {
+                productCount:15,
                 products: {
                     "totalItems": 29,
                     "offset": 0,
@@ -190,9 +183,9 @@
                     {
                         name: 'toils',
                         items: [
-                            {id: 1, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
+                            {id: 3, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
                             {
-                                id: 2,
+                                id: 4,
                                 name: 'materia 2',
                                 image: 'https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow'
                             },
@@ -201,9 +194,9 @@
                     {
                         name: 'meterial 2',
                         items: [
-                            {id: 1, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
+                            {id: 5, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
                             {
-                                id: 2,
+                                id:6,
                                 name: 'materia 2',
                                 image: 'https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow'
                             },
@@ -216,6 +209,11 @@
                 ]
             }
         },
+        methods:{
+            infiniteScrolling(){
+                this.productCount=this.productCount+10;
+            }
+        }
 
     }
 
