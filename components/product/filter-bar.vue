@@ -29,7 +29,7 @@
 
       </div>
     </v-app-bar>
-    <v-expansion-panels v-model="panel" multiple>
+    <v-expansion-panels v-model="panel" multiple class="expan-panel">
       <v-expansion-panel :key="0">
         <v-expansion-panel-content>
           <v-slide-group
@@ -53,7 +53,6 @@
                         link
                         style="border-bottom: none!important;min-height: 10px!important;"
                         class="py-1"
-                        :active-class="categoryName"
                       >
                         <v-list-item-content class="py-1">
                           <v-list-item-title v-text="item"></v-list-item-title>
@@ -100,7 +99,7 @@
                       <div v-for="(item,idx) in material.items"
                            :key="'item_'+m_idx+'_'+idx">
                         <input type="radio"
-                               v-model="filter.materialSelected"
+                               v-model="filter"
 
                                :value="item.id"
                                hidden
@@ -131,7 +130,7 @@
                   <div class="d-flex">
                     <div v-for="(color,c_idx) in colors" :key="'color_'+c_idx">
                       <input type="radio"
-                             v-model="filter.colorSelected"
+                             v-model="filter"
                              :value="color"
                              hidden
                              :id="'color_radio_'+c_idx"
@@ -220,7 +219,7 @@
                       <div v-for="(item,idx) in material.items"
                            :key="'item_'+m_idx+'_'+idx">
                         <input type="radio"
-                               v-model="filter.materialSelected"
+                               v-model="filter"
 
                                :value="item.id"
                                hidden
@@ -252,7 +251,7 @@
                   <div class="d-flex">
                     <div v-for="(color,c_idx) in colors" :key="'color_'+c_idx">
                       <input type="radio"
-                             v-model="filter.colorSelected"
+                             v-model="filter"
                              :value="color"
                              hidden
                              :id="'color_radio_'+c_idx"
@@ -275,9 +274,30 @@
               </v-expansion-panel-content>
             </v-expansion-panel>
           </v-expansion-panels>
+          <hr>
+          <v-btn block text class="my-2" @click="togglePanel">
+            <v-icon class="px-3">mdi-chevron-up</v-icon>
+            Cacher les filtres
+          </v-btn>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
+    <v-app-bar class="menu-bar  pr-4 filter-bar" flat v-if="filter.length">
+      <div class="d-flex align-center">
+        <v-btn color="secondary" v-for="(fil,f_idx) in filter" :key="fil" class="ma-2" dark>
+          {{fil}}
+          <v-icon class="pl-2">mdi-close</v-icon>
+        </v-btn>
+      </div>
+      <v-spacer></v-spacer>
+      <div class="d-flex align-center title">
+        <h5 class="cursor-pointer" @click="filter=[]" style="text-decoration: underline;">
+          Effacer tous les filtres
+        </h5>
+
+
+      </div>
+    </v-app-bar>
   </section>
 
 
@@ -292,10 +312,7 @@
                 sidebar: false,
                 online: false,
                 panel: [],
-                filter: {
-                    materialSelected: null,
-                    colorSelected: null
-                }
+                filter: ['material 1', 'red']
 
             }
         },
@@ -390,5 +407,11 @@
     &:checked + label .color-box {
       border: 1px solid;
     }
+  }
+  .expan-panel{
+    position: absolute;
+    width: 100%;
+    top:71px;
+    z-index: 1000;
   }
 </style>
