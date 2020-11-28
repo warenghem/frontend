@@ -7,6 +7,7 @@
                         :key="p_idx"
                         height= "100%"
                         elevation="0"
+                        lazy
                     >
                         <div class="img-fluid theme--light gradientoverlay squaredimage position-relative">
                             <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
@@ -46,14 +47,14 @@
                         </v-card-text>
                     </v-card>
                     <v-card
-                        elevation="1"
+                        elevation="0"
                         class="div5"
-                        style="background-color: #f6f5f3!important;"
+                        
                     >
                         <v-card-title class="text-center pt-8 justify-center h-100">
                             <div class="d-block w-100">
                                 <ik-image
-                                    path="/Logos/Sans_titre_-_1.png"
+                                    path="/Logos/Citadins_Sauvages.png"
                                     :lqip="{active:true, quality: 40, blur: 5}"
                                     :transformation="[{quality: 80, width:500, dpr:2}]"
                                     loading="lazy"

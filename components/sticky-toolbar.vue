@@ -4,8 +4,8 @@
           <v-toolbar-title class="text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
                 <ik-image
-                    path="/Logos/WA_mif_vf.svg"
-                    :transformation="[{quality: 80, width:170}]"
+                    path="/Logos/WA_mif_wg_vf.png"
+                    :transformation="[{quality: 80, width:170, dpr:2}]"
                     width="170"
                 />
               </router-link>
@@ -50,8 +50,8 @@
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
-            <v-toolbar-items class="py-1 mr-3" style="max-width: 240px;">
-                <button class="nav-btn" @click="$store.state.plantModal=true">{{$t('btnTitle')}}</button>
+            <v-toolbar-items class="toolbarcta py-1 mr-3">
+                <treebutton/>
             </v-toolbar-items>
         </v-app-bar>
     </section>
@@ -137,4 +137,9 @@ export default {
         }
 
     }
+@media (max-width: 600px) {
+    .toolbarcta button {
+    max-width: 250px;
+    }
+}
 </style>

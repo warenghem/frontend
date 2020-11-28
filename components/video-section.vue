@@ -72,14 +72,8 @@
           </div>
         </v-col>
 
-        <div style="bottom:0;right:0" class="text-center mx-auto position-absolute pa-5">
-          <button
-            class="btn-theme btn-transparent"
-            id="jePlanetBtn"
-            @click="$store.state.plantModal=true"
-          >
-            {{$t('btnTitle')}}
-          </button>
+        <div style="bottom:0;right:0" class="mx-auto position-absolute pa-5">
+          <treebutton/>
         </div>
         <div class="bottomleft text-gray">
           <animated-number ref="treeCount"

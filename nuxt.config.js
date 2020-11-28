@@ -27,7 +27,6 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     {src: '~/plugins/vue-leaflet', ssr: false},
-    {src: '~/plugins/vue-carousel', ssr: true},
     {src: '~/plugins/imagekit', ssr: false},
   ],
 
@@ -80,19 +79,9 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix',
-    locales: [
-      {
-        code: 'en',
-        iso: 'en-us',
-        name: 'English',
-      },
-      {
-        code: 'fr',
-        iso: 'fr-fr',
-        name: 'Français',
-      },
-    ],
+    strategy: 'prefix_and_default',
+    lazy: true,
+    langDir: 'locales/',
     defaultLocale: 'fr',
     detectBrowserLanguage: {
       alwaysRedirect: true,
@@ -110,6 +99,18 @@ export default {
         en: require('./locales/en-us.json'),
       },
     },
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-us',
+        name: 'English',
+      },
+      {
+        code: 'fr',
+        iso: 'fr-fr',
+        name: 'Français',
+      },
+    ],
   },
 
   snipcart: {

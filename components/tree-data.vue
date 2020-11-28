@@ -1,7 +1,7 @@
 <template>
     <div class="d-flex justify-center py-3 py-md-0 flex-column flex-sm-row">
-      <div class="text-center py-4 px-7">
-        <div class="sub-title">
+      <div class="text-center py-3 py-sm-4 px-7 d-flex d-sm-block">
+        <div class="sub-title pr-3 pr-sm-0">
           <animated-number ref="treeCount"
                            :from="0"
                            :to="treeData.treeCount"
@@ -12,8 +12,8 @@
         </div>
         <div style="color: #888;"> {{$t('term1')}}</div>
       </div>
-      <div class="text-center py-4 px-7">
-        <div class="sub-title">
+      <div class="text-center py-3 py-sm-4 px-7 d-flex d-sm-block">
+        <div class="sub-title pr-3 pr-sm-0">
           <animated-number ref="co2"
                            :from="0"
                            :to="treeData.co2"
@@ -26,8 +26,8 @@
         </div>
         <div style="color: #888;">{{$t('term2')}}</div>
       </div>
-      <div class="text-center py-4 px-7">
-        <div class="sub-title">
+      <div class="text-center py-3 py-sm-4 px-7 d-flex d-sm-block">
+        <div class="sub-title pr-3 pr-sm-0">
           <animated-number ref="reforest"
                            :from="0"
                            :to="treeData.reforest"

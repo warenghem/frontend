@@ -30,14 +30,14 @@
                 profiles: [
                     {
                         key: 1,
-                        img: "/label-co2-website.png"
+                        img: "/Logos/label-co2-website.png"
                     },
                     {
                         key: 2,
-                        img: "/Label-Tech-white.png"
+                        img: "/Logos/Label-Tech-white.png"
                     }, {
                         key: 3,
-                        img: "/PETAapproved.png"
+                        img: "/Logos/PETAapproved.png"
                     },
                 ]
             }
