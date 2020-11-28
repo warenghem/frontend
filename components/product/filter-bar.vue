@@ -35,7 +35,7 @@
           <v-slide-group
             multiple
             show-arrows
-            class="w-100"
+            class="w-100 d-none d-lg-block"
           >
             <v-slide-item
 
@@ -66,8 +66,8 @@
             </v-slide-item>
             <v-slide-item
             >
-               <div class="slide-item">
-              <div class="font-weight-bold py-3 title">Collections</div>
+              <div class="slide-item">
+                <div class="font-weight-bold py-3 title">Collections</div>
                 <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
                   <v-list flat class="custom-list">
                     <v-list-item-group
@@ -87,17 +87,194 @@
                     </v-list-item-group>
                   </v-list>
                 </div>
-               </div>
+              </div>
             </v-slide-item>
             <v-slide-item
             >
-              <div class="slide-item">fdsfdsfsd</div>
+              <div class="slide-item">
+                <div class="font-weight-bold py-3 title">Materials</div>
+                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
+                  <div v-for="(material,m_idx) in materials" :key="'mat_'+m_idx">
+                    <h4 class="text-capitalize">{{material.name}}</h4>
+                    <div class="d-flex">
+                      <div v-for="(item,idx) in material.items"
+                           :key="'item_'+m_idx+'_'+idx">
+                        <input type="radio"
+                               v-model="filter.materialSelected"
+
+                               :value="item.id"
+                               hidden
+                               :id="'mat_radio_'+m_idx+'_'+idx"
+                               class="filter-radio"
+                        >
+                        <label
+                          :for="'mat_radio_'+m_idx+'_'+idx"
+                        >
+                          <img class="color-box"
+                               :src="item.image"
+                               alt=""
+                          >
+                        </label>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </div>
             </v-slide-item>
             <v-slide-item
             >
-              <div class="slide-item">fdsfdsfsd</div>
+              <div class="slide-item">
+                <div class="font-weight-bold py-3 title">Colors</div>
+                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 100px">
+                  <div class="d-flex">
+                    <div v-for="(color,c_idx) in colors" :key="'color_'+c_idx">
+                      <input type="radio"
+                             v-model="filter.colorSelected"
+                             :value="color"
+                             hidden
+                             :id="'color_radio_'+c_idx"
+                             class="filter-radio"
+                      >
+                      <label
+                        :for="'color_radio_'+c_idx"
+                      >
+                        <div class="color-box">
+                          <div
+                            :style="'background-color:'+color"
+                          ></div>
+                        </div>
+
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+              </div>
             </v-slide-item>
           </v-slide-group>
+          <v-expansion-panels class="d-lg-none overflow-y-auto" accordion style="max-height: 50vh">
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                <div class="font-weight-bold">Catégories</div>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
+                  <v-list flat class="custom-list">
+                    <v-list-item-group
+                      color="primary"
+                    >
+                      <v-list-item
+                        v-for="(item, c_idx) in categories"
+                        :key="'cat_'+c_idx"
+                        link
+                        style="border-bottom: none!important;min-height: 10px!important;"
+                        class="py-1"
+                        :active-class="categoryName"
+                      >
+                        <v-list-item-content class="py-1">
+                          <v-list-item-title v-text="item"></v-list-item-title>
+                        </v-list-item-content>
+                      </v-list-item>
+                    </v-list-item-group>
+                  </v-list>
+                </div>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                <div class="font-weight-bold">Collections</div>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 100px">
+                  <v-list flat class="custom-list">
+                    <v-list-item-group
+                      color="primary"
+                    >
+                      <v-list-item
+                        v-for="(item, c_idx) in collections"
+                        :key="'col_'+c_idx"
+                        link
+                        style="border-bottom: none!important;min-height: 10px!important;"
+                        class="py-1"
+                      >
+                        <v-list-item-content class="py-1">
+                          <v-list-item-title v-text="item"></v-list-item-title>
+                        </v-list-item-content>
+                      </v-list-item>
+                    </v-list-item-group>
+                  </v-list>
+                </div>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                <div class="font-weight-bold ">Materials</div>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 100px">
+                  <div v-for="(material,m_idx) in materials" :key="'mat_'+m_idx">
+                    <h4 class="text-capitalize">{{material.name}}</h4>
+                    <div class="d-flex">
+                      <div v-for="(item,idx) in material.items"
+                           :key="'item_'+m_idx+'_'+idx">
+                        <input type="radio"
+                               v-model="filter.materialSelected"
+
+                               :value="item.id"
+                               hidden
+                               :id="'mat_radio_'+m_idx+'_'+idx"
+                               class="filter-radio"
+                        >
+                        <label
+                          :for="'mat_radio_'+m_idx+'_'+idx"
+                        >
+                          <img class="color-box"
+                               :src="item.image"
+                               alt=""
+                          >
+                        </label>
+                      </div>
+
+
+                    </div>
+                  </div>
+                </div>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+            <v-expansion-panel>
+              <v-expansion-panel-header>
+                <div class="font-weight-bold">Color</div>
+              </v-expansion-panel-header>
+              <v-expansion-panel-content>
+                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 100px">
+                  <div class="d-flex">
+                    <div v-for="(color,c_idx) in colors" :key="'color_'+c_idx">
+                      <input type="radio"
+                             v-model="filter.colorSelected"
+                             :value="color"
+                             hidden
+                             :id="'color_radio_'+c_idx"
+                             class="filter-radio"
+                      >
+                      <label
+                        :for="'color_radio_'+c_idx"
+                      >
+                        <div class="color-box">
+                          <div
+                            :style="'background-color:'+color"
+                          ></div>
+                        </div>
+
+                      </label>
+                    </div>
+                  </div>
+
+                </div>
+              </v-expansion-panel-content>
+            </v-expansion-panel>
+          </v-expansion-panels>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
@@ -114,7 +291,12 @@
                 fixedOnScroll: false,
                 sidebar: false,
                 online: false,
-                panel: []
+                panel: [],
+                filter: {
+                    materialSelected: null,
+                    colorSelected: null
+                }
+
             }
         },
         props: {
@@ -190,5 +372,23 @@
     width: 25%;
     min-width: 300px;
     padding: 10px;
+  }
+
+  .color-box {
+    width: 45px;
+    height: 45px;
+    padding: 4px;
+
+    div {
+      width: 35px;
+      height: 35px;
+      border: 1px solid #c1c1c1;
+    }
+  }
+
+  .filter-radio {
+    &:checked + label .color-box {
+      border: 1px solid;
+    }
   }
 </style>
