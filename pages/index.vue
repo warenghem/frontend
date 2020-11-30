@@ -22,6 +22,8 @@
         </v-col>
       </v-row>
     </v-container>
+    <References/>
+    <Instagram/>
     <PlantForm/>
   </div>
 </template>

@@ -72,33 +72,27 @@ body {
 }
 
 .btn-theme {
-  color: #fff;
+  color: #fff!important;
   border: none;
   outline: 0;
   font-size: .875rem;
   text-transform: uppercase;
-  text-decoration: none;
   letter-spacing: 1.8px;
   background-color: #0081a7 !important;
   word-break: break-word;
-  padding: 0px 15px;
-  text-align: center;
-  border-radius: 30px;
   font-weight: 600;
-  margin: 7px 0;
-  transition: all 0.6s ease;
-  line-height: 15px;
-  height: 48px;
-
-  &:hover {
-    background-color: #153038 !important;
-  }
 }
 
 .btn-transparent {
   background-color: transparent !important;
   border: rgba(255, 255, 255, 0.6) solid 1px;
   font-weight: 300;
+  outline: 0;
+  font-size: .875rem;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  word-break: break-word;
+  color: #fff!important;
 }
 
 .nav-btn {
@@ -418,66 +412,15 @@ body {
   padding: 0px 10px;
 }
 
-.custom-toast {
-  position: fixed;
-  top: 70px;
-  right: auto;
-  width: 350px;
-  z-index: 20000;
-  padding: 1.5rem !important;
 
-  .toast-box {
-    border-radius: 15px !important;
-    background-color: rgba(29, 29, 31, .7);
-    color: white;
-    backdrop-filter: saturate(180%) blur(20px);
-    max-width: 350px;
-    overflow: hidden;
-    font-size: .875rem;
-    background-clip: padding-box;
-    border: none;
-    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, .1);
-    padding: .5rem !important;
-    -webkit-animation-duration: 1s;
-    animation-duration: 1s;
-    -webkit-animation-fill-mode: both;
-    animation-fill-mode: both;
-    -webkit-transition: all 1s ease-out;
-    transition: all 1s ease-out;
-    -webkit-animation-name: bounceInLeft;
-    animation-name: bounceInLeft;
-
-    .toast-body {
-      font-size: 14px;
-      font-family: 'teradeli-light', sans-serif !important;
-      color: #eaeaea !important;
-      padding: .75rem;
-    }
-
-
-    .toast-header {
-      font-size: 14px;
-      display: -ms-flexbox;
-      display: flex;
-      -ms-flex-align: center;
-      align-items: center;
-      padding: .25rem .75rem;
-      color: #888;
-      background-color: rgba(29, 29, 31, 0) !important;
-      background-clip: padding-box;
-      font-family: 'teradeli-light', sans-serif !important;
-    }
-
-    .close {
-      font-size: 1.5rem;
-      color: #000;
-      opacity: 0.75;
-      text-shadow: 0 1px 0 #888 !important;
-      cursor: pointer;
-    }
-  }
-
-
+.v-snack__wrapper.t.theme--dark {
+    background-color: rgba(0, 0, 0, 0.5)!important;
+}
+.v-application--is-ltr .v-snack__action {
+  margin-right: 0px!important;
+}
+.v-dialog {
+  margin: 8px !important;
 }
 
 @keyframes bounceInLeft {
@@ -554,12 +497,12 @@ body {
 .page-title {
   font-family: 'teradeli-medium', sans-serif;
   line-height: 1;
-  text-align: left !important;
-  color: #888;
-  font-size: 20px;
   padding-left: 20px;
   position: relative;
-  font-weight: 500;
+  font-size: 30px;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
 }
 
 .page-details {
@@ -774,6 +717,30 @@ body {
     width: 100% !important;
     max-width: 500px;
   }
+}
+
+.lazyload {
+	opacity: 0;
+}
+
+.lazyloading {
+	opacity: 1;
+	transition: opacity 300ms;
+}
+
+.lazyloading:after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  bottom: 0; left: 0;
+	background: url('https://ik.imagekit.io/g1noocuou2/Icons/ripple.svg') no-repeat center;
+  z-index: 10010000;
+}
+.hand {  
+  cursor: pointer;
+}
+.viewer-backdrop {
+    background-color: rgb(255 255 255) !important;
 }
 
 .viewer-backdrop {
