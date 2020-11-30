@@ -59,13 +59,19 @@
                     >
                         <v-card-title class="text-center pt-8 justify-center h-100">
                             <div class="d-block w-100">
-                                <ik-image
+                                <!--<ik-image
                                     path="/Logos/Citadins_Sauvages.png"
                                     :lqip="{active:true, quality: 40, blur: 5}"
                                     :transformation="[{quality: 65, width:500, dpr:2}]"
                                     loading="lazy"
                                     width="500"
-                                />  
+                                />--> 
+                                <img
+                                    data-sizes="auto"
+                                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
+                                    src="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-500,bl-10/Logos/Citadins_Sauvages.png" 
+                                    class="lazyload cover bg-white catalogue-item-background elevation-3" 
+                                />
                             </div>
                         </v-card-title>
                     </v-card>
