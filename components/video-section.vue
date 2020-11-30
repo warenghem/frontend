@@ -11,16 +11,44 @@
             class="cover"
           />-->
         <picture>
-          <source 
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1500w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1280,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1280w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-1024,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 1024w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-640,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 640w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-480,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 480w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-320,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 320w,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-65,w-240,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png 240w"
+          <source media="screen and (min-width: 64em)"
+            data-srcset="http://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 768w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1024w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1366w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
+              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
           >
-          <img class="lazyload cover" data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" data-sizes="auto" />
+          <source media="screen and (min-width: 48em)"
+            data-srcset="http://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 768w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1024w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1366w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
+              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-100,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
+          >
+          <source
+            data-srcset="http://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 768w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1024w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1366w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
+                http://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
+              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,ar-3-5,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
+          >
+          <img class="lazyload cover" 
+                data-src="http://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+                          http://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x" 
+                src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" 
+                data-sizes="auto" />    <v-progress-circular
+      indeterminate
+      color="green"
+    ></v-progress-circular>
         </picture>
         </div>
 
@@ -56,28 +84,19 @@
           <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
               <p>
-                <ik-image
-                    path="/Icons/ecological.svg"
-                    :transformation="[{quality: 65}]"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/ecological.svg">
               </p>
               <span>{{$t('video.tag1')}}</span>
             </div>
             <div class="col-md-4">
               <p>
-                <ik-image
-                    path="/Icons/france.svg"
-                    :transformation="[{quality: 65}]"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/france.svg">
               </p>
               <span>{{$t('video.tag2')}}</span>
             </div>
             <div class="col-md-4">
               <p>
-                <ik-image
-                    path="/Icons/tech.svg"
-                    :transformation="[{quality: 65}]"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/tech.svg">
               </p>              
               <span>{{$t('video.tag3')}}</span>
             </div>

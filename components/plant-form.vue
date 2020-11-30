@@ -65,7 +65,7 @@
                 </v-card>
             </v-dialog>
         </div>
-        <v-snackbar 
+        <v-snackbar
             v-model="snackbarSuccess"
             timeout="7500"
             rounded="lg"
@@ -87,9 +87,9 @@
                 </v-layout>
             </div>
         </v-snackbar>
-        <v-snackbar 
+        <v-snackbar
             v-model="snackbarError"
-            timeout="0"
+            timeout="-1"
             rounded="lg"
             >
             <div>

@@ -4,11 +4,10 @@
       <slot name="header">
         <MainToolbar/>
       </slot>
-      <sticky-toolbar class="stickyBar"/>
       <slot name="content">
         <nuxt/>
       </slot>
-      <app-footer/>
+      <Footer/>
     </div>
   </v-app>
 </template>

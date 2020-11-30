@@ -22,12 +22,12 @@
           <l-icon
             :icon-size="[50, 50]"
             :icon-url="marker.image"
-            className="mapClass"
-                        :icon-class="e"
+            className="mapClass hand"
+                        icon-class="e"
 
           >
             <div style="transform: translateY(-20px);" class="card">
-              <div class="card-header name">
+              <div class="card-header name hand">
                {{marker.text}}
                <div style="font-weight:400; font-size: 16px" class="subtitlesmall">En savoir plus</div>
               </div>
@@ -64,11 +64,23 @@
               <div class="para-title">{{$t('madagascar.section1.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/specie-mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
+                    width="100%"
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/specie-mango.jpg 300w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/specie-mango.jpg 380w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/specie-mango.jpg 512w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/specie-mango.jpg 683w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/specie-mango.jpg 800w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/specie-mango.jpg 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/specie-mango.jpg"
+                    class="lazyload"
                     width="100%"
                 />
               </div>
@@ -96,11 +108,23 @@
               <div class="para-title">{{$t('madagascar.section2.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/river.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
+                    width="100%"
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/river.png 300w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/river.png 380w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/river.png 512w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/river.png 683w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/river.png 800w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/river.png 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/river.png"
+                    class="lazyload" 
                     width="100%"
                 />
               </div>
@@ -114,11 +138,22 @@
             <v-col cols="12">
               <div class="para-title">{{$t('madagascar.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
-                <ik-image
+                <!--<ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 65, width:800, dpr:2}]"
                     loading="lazy"
+                    width="100%"
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-640,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.56.41.png 640w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 768w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1024w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1366w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1600w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1100,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
+                    class="lazyload" 
                     width="100%"
                 />
               </a>
@@ -150,11 +185,23 @@
               <div class="para-title">{{$t('india.section1.title')}}</div>
               <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
+                    width="100%"
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/mango.jpg 300w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/mango.jpg 380w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/mango.jpg 512w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/mango.jpg 683w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/mango.jpg 800w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/mango.jpg 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/mango.jpg"
+                    class="lazyload" 
                     width="100%"
                 />
               </div>
@@ -182,11 +229,23 @@
               <div class="para-title">{{$t('india.section2.title')}}</div>
               <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
+                <!--<ik-image
                     path="/tiger.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
+                    width="100%"
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/tiger.jpg 300w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/tiger.jpg 380w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/tiger.jpg 512w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/tiger.jpg 683w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/tiger.jpg 800w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/tiger.jpg 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/tiger.jpg"
+                    class="lazyload" 
                     width="100%"
                 />
               </div>
@@ -200,11 +259,22 @@
             <v-col cols="12">
               <div class="para-title">{{$t('india.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
-                <ik-image
+                <!--<ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
                     :transformation="[{quality: 65, width:800, dpr:2}]"
                     loading="lazy"
+                    width="100%"
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-640,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.57.19.png 640w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 768w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1024w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1366w,
+                      http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1600w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1100,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
+                    class="lazyload" 
                     width="100%"
                 />
               </a>

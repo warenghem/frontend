@@ -7,10 +7,15 @@
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
                             <div class="homepage-catalogue-background-big">
-                                <ik-image
+                                <!--<ik-image
                                         :path="backgroundImage"
                                         :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                         class="cover "
+                                />-->
+                                <img 
+                                  data-sizes="auto"
+                                  :data-srcset="backgroundImage" 
+                                  class="lazyload cover" 
                                 />
                             </div>
                             <div class="homepage-catalogue-background-lines"
@@ -25,13 +30,19 @@
 
                                 <div v-for="(bgImage,idx) in backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
                                     <div>
-                                        <ik-image
+                                        <!--<ik-image
                                             :path="bgImage"
                                             :lqip="{active:true, quality: 40, blur: 5}"
                                             :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                             loading="lazy"
                                             class="cover"
-                                        />
+                                        />-->
+                                        <img
+                                          data-sizes="auto"
+                                          :data-srcset="bgImage" 
+                                          :src="backgroundImagelqip" 
+                                          class="lazyload cover" 
+                                      />
                                         </div>
                                     </div>
                             </div>
@@ -45,10 +56,7 @@
                                  :key="'mission_'+m_idx"
                             >
                                 <div class="pb-3">
-                                    <ik-image
-                                        path="/Icons/magazine-plus.svg"
-                                        :transformation="[{quality: 65}]"
-                                    />
+                                    <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/magazine-plus.svg">
                                 </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
                                     <a>
@@ -89,12 +97,18 @@
                             style="min-height: 33vw"
                             class="gradientoverlay blackoverlay backgroundcover"
                     >
-                    <ik-image
+                    <!--<ik-image
                         :path="backgroundImages[backgroundImages.length-1-m_idx]"
                         :lqip="{active:true, quality: 40, blur: 5}"
                         :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                         loading="lazy"
                         class="cover position-absolute"
+                    />-->
+                    <img
+                        data-sizes="auto"
+                        :data-srcset="backgroundImages[backgroundImages.length-1-m_idx]" 
+                        :src="backgroundImagelqip" 
+                        class="lazyload cover position-absolute" 
                     />
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
@@ -145,10 +159,16 @@
             return {
                 currentMissionHover: null,
                 backgroundImages: [
-                    "/tech_mx5bGeVoG3pm.jpg",
-                    "/studio_65kZ-dLBvomY.jpg",
-                    "/roche_AT2d0GTl7n9w.png",
-                    "/home_gCAPosI9qrtpP.jpg",
+                    "http://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 640w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 768w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1024w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg.png 1366w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1920w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 2500w",
+                    "http://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 640w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 768w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 1024w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 1366w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 1920w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 2500w",
+                    "http://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 640w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 768w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1024w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1366w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1600w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1920w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 2500w",
+                    "http://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 640w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 768w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1024w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1366w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1600w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1920w,http://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 2500w",
+                ],
+                backgroundImageslqip: [
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/tech_mx5bGeVoG3pm.jpg",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/studio_65kZ-dLBvomY.jpg",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/roche_AT2d0GTl7n9w.png",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/home_gCAPosI9qrtpP.jpg",
                 ],
                 backgroundImage: ''
             }
@@ -283,7 +303,4 @@
 
 <style scoped lang="scss">
     @import "../assets/scss/home/mission";
-
-
-
 </style>

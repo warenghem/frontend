@@ -3,11 +3,7 @@
         <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                <ik-image
-                    path="/Logos/WA_mif_wg_vf.png"
-                    :transformation="[{quality: 65, width:170, dpr:2}]"
-                    width="170"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,dpr-2,w-170/Logos/WA_mif_wg_vf.png" width="170">
               </router-link>
           </v-toolbar-title>         
             <v-list>
@@ -31,11 +27,7 @@
             </v-app-bar-nav-icon>
             <v-toolbar-title class="d-md-block pr-4 d-none">
                 <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                  <ik-image
-                      path="/Logos/WA_short_w_vf.svg"
-                      :transformation="[{quality: 65, width:35}]"
-                      width="35"
-                  />
+                  <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-35/Logos/WA_short_w_vf.svg" width="35">
                 </router-link>
             </v-toolbar-title>
             <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
