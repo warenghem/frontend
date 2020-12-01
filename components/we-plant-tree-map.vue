@@ -1,9 +1,10 @@
 <template>
-  <div class="pt-10" v-intersect.once="mapIntersect">
+  <div class="pt-10 position-relative" v-intersect.once="mapIntersect">
     <h2 class="page-title pt-md-5 pt-4 pr-4"> {{$t('title')}}</h2>
     <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
     <tree-data :treeData="treeData"></tree-data>
     <client-only>
+      <div class="pa-0 pa-sm-5 pt-5">
       <l-map
         style="width: 100%"
         class="treemap"
@@ -21,14 +22,14 @@
           <l-icon
             :icon-size="[50, 50]"
             :icon-url="marker.image"
-            className="mapClass"
+            className="mapClass hand"
                         icon-class="e"
 
           >
             <div style="transform: translateY(-20px);" class="card">
-              <div class="card-header name">
+              <div class="card-header name hand">
                {{marker.text}}
-               <div style="font-weight:400; font-size: 16px" class="subtitlesmall">En savoir plus</div>
+               <div style="font-size: 16px" class="subtitlesmall">En savoir plus</div>
               </div>
               <div>
                 <div class="blob white rounded-circle" style="width:45px; height:45px">
@@ -39,21 +40,19 @@
           </l-icon>
         </l-marker>
       </l-map>
+    </div>
     </client-only>
     <div class="slideArea mgforest">
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="py-1 border-right-2 pl-3" style="width: 100%">
-            <button class="btn-theme my-0"
-                    @click="closeSlideUp">
-              {{$t('btnTitle')}}
-            </button>
+            <treebutton/>
           </div>
           <v-btn
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 32px"
+            style="font-size: 26px"
             class="px-0 h-100"
           >
             &times;
@@ -61,17 +60,29 @@
         </div>
         <div class="px-3 px-sm-7 pb-3  map-modal">
           <v-row>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('madagascar.section1.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section1.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
-                    path="/mango.jpg"
+                <!--<ik-image
+                    path="/specie-mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/specie-mango.jpg 300w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/specie-mango.jpg 380w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/specie-mango.jpg 512w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/specie-mango.jpg 683w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/specie-mango.jpg 800w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/specie-mango.jpg 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/specie-mango.jpg"
+                    class="lazyload"
+                    width="100%"
+                />
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -93,17 +104,29 @@
               <div class="para-text" v-html="$t('madagascar.section1.paraText')">
               </div>
             </v-col>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('madagascar.section2.title')}}</div>
               <div class="para-subtitle">{{$t('madagascar.section2.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
-                    path="/tiger.jpg"
+                <!--<ik-image
+                    path="/river.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/river.png 300w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/river.png 380w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/river.png 512w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/river.png 683w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/river.png 800w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/river.png 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/river.png"
+                    class="lazyload" 
+                    width="100%"
+                />
               </div>
               <div class="para-subtitle-small">{{$t('madagascar.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('madagascar.section2.paraText1')">
@@ -115,13 +138,24 @@
             <v-col cols="12">
               <div class="para-title">{{$t('madagascar.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=17AwywoebWVZcltzhsfdwTKS7IC5yDtvN&usp=sharing">
-                <ik-image
+                <!--<ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:800, dpr:2}]"
+                    :transformation="[{quality: 65, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-640,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.56.41.png 640w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 768w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1024w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1366w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1600w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1100,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
+                    class="lazyload" 
+                    width="100%"
+                />
               </a>
             </v-col>
           </v-row>
@@ -133,16 +167,13 @@
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="py-1 border-right-2 pl-3" style="width: 100%">
-            <button class="btn-theme my-0"
-                    @click="closeSlideUp">
-              {{$t('btnTitle')}}
-            </button>
+            <treebutton/>
           </div>
           <v-btn
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 32px"
+            style="font-size: 26px"
             class="px-0 h-100"
           >
             &times;
@@ -150,17 +181,29 @@
         </div>
         <div class="px-3 px-sm-7 pb-3  map-modal">
           <v-row>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('india.section1.title')}}</div>
               <div class="para-subtitle">{{$t('india.section1.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
-                    path="/specie-mango.jpg"
+                <!--<ik-image
+                    path="/mango.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/mango.jpg 300w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/mango.jpg 380w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/mango.jpg 512w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/mango.jpg 683w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/mango.jpg 800w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/mango.jpg 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/mango.jpg"
+                    class="lazyload" 
+                    width="100%"
+                />
               </div>
               <v-row>
                 <v-col class="text-center ">
@@ -182,17 +225,29 @@
               <div class="para-text" v-html="$t('india.section1.paraText')">
               </div>
             </v-col>
-            <v-col lg="6">
+            <v-col cols="12" sm="6">
               <div class="para-title">{{$t('india.section2.title')}}</div>
               <div class="para-subtitle">{{$t('india.section2.subtitle')}}</div>
               <div class="para-img">
-                <ik-image
-                    path="/river.png"
+                <!--<ik-image
+                    path="/tiger.jpg"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:420, dpr:2}]"
+                    :transformation="[{quality: 65, width:420, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-300,fo-bottom/tiger.jpg 300w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/tiger.jpg 380w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/tiger.jpg 512w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/tiger.jpg 683w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/tiger.jpg 800w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/tiger.jpg 960w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/tiger.jpg"
+                    class="lazyload" 
+                    width="100%"
+                />
               </div>
               <div class="para-subtitle-small">{{$t('india.section2.paraTitle1')}}</div>
               <div class="para-text" v-html="$t('india.section2.paraText1')">
@@ -204,13 +259,24 @@
             <v-col cols="12">
               <div class="para-title">{{$t('india.section3.title')}}</div>
               <a href="https://www.google.com/maps/d/edit?mid=1bayTFmMWGfd9RN9Yia5q4Vt-lOcOEkbl&usp=sharing">
-                <ik-image
+                <!--<ik-image
                     path="/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
                     :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:800, dpr:2}]"
+                    :transformation="[{quality: 65, width:800, dpr:2}]"
                     loading="lazy"
                     width="100%"
-                ></ik-image>
+                />-->
+                <img
+                    data-sizes="auto"
+                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-640,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.57.19.png 640w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 768w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1024w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1366w,
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1600w," 
+                      src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1100,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
+                    class="lazyload" 
+                    width="100%"
+                />
               </a>
             </v-col>
           </v-row>
@@ -226,7 +292,7 @@
             return {
                 zoom: 3,
                 center: [3.770449, 64.38911],
-                url: 'http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
+                url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                 showParagraph: false,
                 showMap: true,
                 intersectionOptions: {
@@ -245,7 +311,7 @@
                         text: "India - Trees for Tiger",
                         latitude: 22.003975,
                         longitude: 86.06648,
-                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.57.19.png",
+                        image: "https://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.57.19.png",
                         modal: ".indianforest",
                     },
                     {
@@ -253,7 +319,7 @@
                         text: "Madagascar - Eden Project",
                         latitude: -16.270975,
                         longitude: 44.445852,
-                        image: "http://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.56.41.png",
+                        image: "https://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.56.41.png",
                         modal: ".mgforest",
                     },
                 ]
@@ -370,7 +436,7 @@
 
                 },
                 fr: {
-                    title: 'Nous plantons aussi des arbres. Et vous?',
+                    title: 'Nos projets de reforestation',
                     subtitle: 'Pour compenser les émissions de CO2 liées à la création de nos objets, à vos visites' +
                         ' sur notre site, et à la consommation d’électricité de nos technologies. Nos projets sont' +
                         ' exclusivement réservés à la régénération de la biodiversité. Nos arbres sont tracés' +
@@ -443,10 +509,15 @@
     }
 </script>
 <style lang="scss" scoped>
+.leaflet-container {
+    font-family: "teradeli-book";
+}
   .treemap {
-    height:800px;
+    height:700px;
+    border-radius: 4px;
+    z-index: 1;
       @media only screen and (max-width: 600px) {
-        height:500px;
+        height:400px;
       }
     }
 
@@ -540,23 +611,23 @@
   }
   .blob.white {
     background: white;
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 1);
+    box-shadow: 0 0 0 0 rgba(0, 129, 167,0.8);
     animation: pulse-white 2s infinite;
   }
   @keyframes pulse-white {
     0% {
     transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.8);
+    box-shadow: 0 0 0 0 rgba(0, 129, 167, 0.6);
     }
 
     70% {
     transform: scale(1);
-    box-shadow: 0 0 0 20px rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 20px rgba(0, 129, 167, 0);
     }
 
     100% {
     transform: scale(0.9);
-    box-shadow: 0 0 0 0 rgba(255, 255, 255, 0);
+    box-shadow: 0 0 0 0 rgba(0, 129, 167, 0);
     }
   }
 </style>

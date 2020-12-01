@@ -10,7 +10,10 @@
     <v-container class="px-lg-7" fluid>
       <v-row>
         <v-col lg="4" md="6" v-for="i in productCount" :key="i">
-          <product-item></product-item>
+          <nuxt-link :to="{path:'/en/shop/hello'}">
+            <product-item></product-item>
+          </nuxt-link>
+
         </v-col>
       </v-row>
       <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>

@@ -1,29 +1,65 @@
 <template>
     <section class="team-section py-10">
         <h2 class="page-title py-md-5 py-4">{{$t('title')}}</h2>
-        <v-row no-gutters class="pt-4">
+        <v-row no-gutters class="pt-4 px-3 px-sm-0">
             <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
-                <div class="item-inner py-2 px-3 px-md-5">
-                    <div class="profile-holder mb-3">
-                        <ik-image
+                <v-card align=center elevation="0" class="item-inner px-0 px-sm-5 py-3 py-sm-3 d-flex d-sm-block">
+                    <div class="profile-holder mb-0 pa-0 pb-sm-3 col-4 col-sm-12">
+                        <!--<ik-image
                             :path="profile.img"
                             :lqip="{active:true, quality: 40, blur: 5}"
-                            :transformation="[{quality: 80, width:200, dpr:2, radius:'max'}]"
+                            :transformation="[{quality: 65, width:400, dpr:2, radius:'max'}]"
                             loading="lazy"
-                            width="200"
+                            width="400"
+                        />-->
+                        <img
+                            :data-srcset="profile.img" 
+                            :src="profile.imglqip" 
+                            class="lazyload profil" 
                         />
                     </div>
-                    <div class="content-holder text-left">
-                        <h4 class="titlesmall">{{profile.name}}</h4>
+                    <div class="content-holder text-left pl-4 pa-0 pl-sm-0 col-8 col-sm-12">
+                        <div class="titlesmall">{{profile.name}}</div>
                         <div class="subtitlesmall">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
                         </div>
-                        <div class="item-details">
+                        <div class="item-details d-none d-sm-block">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
                         </div>
+                        <v-card-actions class="p-0">
+                        <v-btn
+                            text
+                            color="teal accent-4"
+                            @click="reveal = true"
+                            class="d-none pa-0"
+                        >
+                            Learn More
+                        </v-btn>
+                        </v-card-actions>
                     </div>
-                </div>
-
+                    <v-expand-transition>
+                    <v-card
+                        v-if="reveal"
+                        class="transition-fast-in-fast-out v-card--reveal"
+                        style="height: 100%;"
+                    >
+                        <v-card-text class="pb-0">
+                            <div class="item-details">
+                                {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
+                            </div>
+                        </v-card-text>
+                        <v-card-actions class="pt-0">
+                        <v-btn
+                            text
+                            color="teal accent-4"
+                            @click="reveal = false"
+                        >
+                            Close
+                        </v-btn>
+                        </v-card-actions>
+                    </v-card>
+                    </v-expand-transition>
+                </v-card>
             </v-col>
         </v-row>
     </section>
@@ -111,11 +147,13 @@
         },
         data() {
             return {
+                reveal: false,
                 profiles: [
                     {
                         key: 1,
                         name: 'Kevin Brosseau',
-                        img: "/kevin_zsPDDH5iKn2R.png"
+                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-1,r-max/kevin_zsPDDH5iKn2R.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2,r-max/kevin_zsPDDH5iKn2R.png 2x",
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10,r-max/kevin_zsPDDH5iKn2R.png"
                     },
                     {
                         key: 2,
@@ -123,12 +161,14 @@
                     }, {
                         key: 3,
                         name: 'Julie maurence',
-                        img: "/julie_e3H-plJ5LNi5.png"
+                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-1,r-max/julie_e3H-plJ5LNi5.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2,r-max/julie_e3H-plJ5LNi5.png 2x",
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10,r-max/julie_e3H-plJ5LNi5.png"
                     },
                     {
                         key: 4,
                         name: 'Quentin Brosseau',
-                        img: "/quentin_jvUVQy_Hk0VvA.png"
+                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-1,r-max/quentin_jvUVQy_Hk0VvA.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2,r-max/quentin_jvUVQy_Hk0VvA.png 2x",
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10,r-max/quentin_jvUVQy_Hk0VvA.png"
                     }
                 ]
             }
@@ -141,11 +181,15 @@
         .item-inner {
             padding: 30px;
             height: 100%;
+            align-items: center;
 
             .profile-holder {
                 text-align: center;
             }
-
+            img {
+                max-width: 200px;
+                width: 100%;
+            }
             .item-details {
                 margin-bottom: 15px;
                 color: #86868b;
@@ -158,4 +202,10 @@
             }
         }
     }
+.v-card--reveal {
+  bottom: 0;
+  opacity: 1 !important;
+  position: absolute;
+  width: 100%;
+}
 </style>

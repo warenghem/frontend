@@ -5,7 +5,6 @@
                     v-model="$store.state.plantModal"
                     persistent
                     max-width="600px"
-                    class="ma-3"
             >
                 <v-card>
                     <v-btn
@@ -45,18 +44,18 @@
                                                    :placeholder="$t('video.rightSection.label2')"
                                                    @input="setEmail($event.target.value)"
                                             >
-                                            <button class="btn-theme"
-                                                    type="submit"
-                                                    style="width: 100%!important; overflow-y: hidden;max-height: 48px">
-                                                            <span v-if="loading">
-                                                                <ik-image
-                                                                    path="/Icons/ripple.svg"
-                                                                    :transformation="[{quality: 80, height: 40}]"
-                                                                    class="minusIcon"
-                                                                    style="margin-top: -13px;"
-                                                                />                                                            </span>
-                                                <span class="text-white" v-else>{{$t('btnTitle')}}</span>
-                                            </button>
+                                            <div class="mx-auto">
+                                                    <v-btn
+                                                        elevation="2"
+                                                        large
+                                                        :loading="loading"
+                                                        class="btn-theme"
+                                                        type="submit"
+                                                        style="max-width: 250px;border-radius: 28px;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
+                                                        >
+                                                            {{$t('btnTitle')}}
+                                                    </v-btn>
+                                            </div>
                                         </form>
                                     </template>
                                 </mailchimp-subscribe>
@@ -66,36 +65,51 @@
                 </v-card>
             </v-dialog>
         </div>
-        <div class="custom-toast" v-if="snackbarSuccess">
-            <div class="toast-box">
-                <div class="toast-header d-flex justify-space-between align-center">
+        <v-snackbar
+            v-model="snackbarSuccess"
+            timeout="7500"
+            rounded="lg"
+            >
+            <div>
+                <div class="d-flex justify-space-between align-center">
                     <div>{{$t('video.rightSection.alerttitle')}}</div>
                     <div class="d-flex align-center"><small class="pr-2">{{$t('video.rightSection.alerttime')}} </small>
-                        <span class="close" @click="snackbarSuccess=false">
-                            ×
-                        </span>
+                        <v-btn class="close" @click="snackbarSuccess=false">
+                            <v-icon>mdi-close</v-icon>
+                        </v-btn>
                     </div>
                 </div>
-                <div class="toast-body">
-                    {{$t('video.rightSection.success')}}
-                </div>
+                <v-layout align-center mt-5 mb-2 pr-4>
+                    <v-icon color="blue darken-2" class="pr-3" dark large>mdi-checkbox-marked-circle</v-icon>
+                    <v-layout column>
+                        <div>{{$t('video.rightSection.success')}}</div>
+                    </v-layout>
+                </v-layout>
             </div>
-        </div>
-        <div class="custom-toast" v-if="snackbarError">
-            <div class="toast-box">
-                <div class="toast-header d-flex justify-space-between align-center">
+        </v-snackbar>
+        <v-snackbar
+            v-model="snackbarError"
+            timeout="-1"
+            rounded="lg"
+            >
+            <div>
+                <div class="d-flex justify-space-between align-center">
                     <div>{{$t('video.rightSection.alerttitle')}}</div>
-                    <div class="d-flex align-center"><small class="pr-2">{{$t('video.rightSection.alerttime')}} </small>
-                        <span class="close" @click="snackbarError=false">
-                            ×
-                        </span>
+                    <div class="d-flex align-center">
+                        <small class="pr-2">{{$t('video.rightSection.alerttime')}} </small>
+                        <v-btn icon class="close" @click="snackbarError=false">
+                            <v-icon>mdi-close</v-icon>
+                        </v-btn>
                     </div>
                 </div>
-                <div class="toast-body">
-                    {{email}} {{$t('video.rightSection.error')}}
-                </div>
+                <v-layout align-center mt-5 mb-2 pr-4>
+                    <v-icon color="orange darken-2" class="pr-3" dark large>mdi-alert-circle-outline</v-icon>
+                    <v-layout column>
+                        <div>{{$t('video.rightSection.error')}}</div>
+                    </v-layout>
+                </v-layout>
             </div>
-        </div>
+        </v-snackbar>
     </div>
 
 </template>
@@ -120,7 +134,7 @@
                             label2: 'EMAIL',
                             alerttitle: 'Warenghem says',
                             alerttime: 'just now',
-                            error: 'looks invalid or already subscribed. ',
+                            error: 'Looks invalid or already subscribed. ',
                             success: 'Thank you! To avoid SPAM, we have sent you a confirmation email before ' +
                                 'start planting ... see you soon!'
                         }
@@ -136,7 +150,7 @@
                             label2: 'EMAIL',
                             alerttitle: 'Warenghem dit',
                             alerttime: 'maintenant',
-                            error: 'semble invalide ou déjà enregistré.',
+                            error: 'Semble invalide ou déjà enregistré.',
                             success: 'Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de ' +
                                 'commencer la plantation... A tout de suite!'
                         }
@@ -148,7 +162,8 @@
             return {
                 snackbarSuccess: false,
                 snackbarError: false,
-                email: ''
+                email: '',
+                loading: false
             }
         },
     }

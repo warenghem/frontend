@@ -3,11 +3,7 @@
         <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
               <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                <ik-image
-                    path="/Logos/WA_mif_vf.svg"
-                    :transformation="[{quality: 80, width:170}]"
-                    width="170"
-                />
+                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,dpr-2,w-170/Logos/WA_mif_wg_vf.png" width="170">
               </router-link>
           </v-toolbar-title>         
             <v-list>
@@ -31,11 +27,7 @@
             </v-app-bar-nav-icon>
             <v-toolbar-title class="d-md-block pr-4 d-none">
                 <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-                  <ik-image
-                      path="/Logos/WA_short_w_vf.svg"
-                      :transformation="[{quality: 80, width:35}]"
-                      width="35"
-                  />
+                  <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-35/Logos/WA_short_w_vf.svg" width="35">
                 </router-link>
             </v-toolbar-title>
             <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
@@ -50,8 +42,8 @@
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
-            <v-toolbar-items class="py-1 mr-3" style="max-width: 240px;">
-                <button class="nav-btn" @click="$store.state.plantModal=true">{{$t('btnTitle')}}</button>
+            <v-toolbar-items class="toolbarcta py-1 mr-3">
+                <treebutton/>
             </v-toolbar-items>
         </v-app-bar>
     </section>
@@ -137,4 +129,9 @@ export default {
         }
 
     }
+@media (max-width: 600px) {
+    .toolbarcta button {
+    max-width: 250px;
+    }
+}
 </style>

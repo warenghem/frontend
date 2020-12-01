@@ -7,11 +7,17 @@
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
                             <div class="homepage-catalogue-background-big">
-                                <ik-image
+                                <!--<ik-image
                                         :path="backgroundImage"
-                                        :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                         class="cover "
-                                />
+                                />-->
+                                <img
+                                  data-sizes="auto"
+                                  :srcset="backgroundImage.img"
+                                  :src="backgroundImage.blur_v"
+                                  class="lazyload cover"
+                                 alt="bg image"/>
                             </div>
                             <div class="homepage-catalogue-background-lines"
                                  :class="{'opacity-02':currentMissionHover}"
@@ -23,15 +29,21 @@
                             </div>
                             <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
 
-                                <div v-for="(bgImage,idx) in backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
+                                <div v-for="(bgImage,idx) in $store.state.picture.backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
                                     <div>
-                                        <ik-image
+                                        <!--<ik-image
                                             :path="bgImage"
                                             :lqip="{active:true, quality: 40, blur: 5}"
-                                            :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                                            :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                             loading="lazy"
                                             class="cover"
-                                        ></ik-image>
+                                        />-->
+                                        <img
+                                          data-sizes="auto"
+                                          :data-srcset="bgImage.img"
+                                          :src="bgImage.blur_v"
+                                          class="lazyload cover"
+                                      />
                                         </div>
                                     </div>
                             </div>
@@ -45,10 +57,7 @@
                                  :key="'mission_'+m_idx"
                             >
                                 <div class="pb-3">
-                                    <ik-image
-                                        path="/Icons/magazine-plus.svg"
-                                        :transformation="[{quality: 80}]"
-                                    />
+                                    <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/magazine-plus.svg">
                                 </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
                                     <a>
@@ -89,13 +98,19 @@
                             style="min-height: 33vw"
                             class="gradientoverlay blackoverlay backgroundcover"
                     >
-                    <ik-image
+                    <!--<ik-image
                         :path="backgroundImages[backgroundImages.length-1-m_idx]"
                         :lqip="{active:true, quality: 40, blur: 5}"
-                        :transformation="[{quality: 80, width:1500, dpr:2, focus: 'bottom'}]"
+                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                         loading="lazy"
                         class="cover position-absolute"
-                    ></ik-image>
+                    />-->
+                    <img
+                        data-sizes="auto"
+                        :data-srcset="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].img"
+                        :src="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].blur_v"
+                        class="lazyload cover position-absolute"
+                    />
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
                                 <div class="pb-3">
@@ -144,19 +159,14 @@
         data() {
             return {
                 currentMissionHover: null,
-                backgroundImages: [
-                    "/tech_mx5bGeVoG3pm.jpg",
-                    "/studio_65kZ-dLBvomY.jpg",
-                    "/roche_AT2d0GTl7n9w.png",
-                    "/home_gCAPosI9qrtpP.jpg",
-                ],
-                backgroundImage: ''
+                backgroundImage: '',
+                backgroundImagesL:''
             }
         },
         methods: {
             fpMouseOver(idx) {
                 this.currentMissionHover = idx;
-                this.backgroundImage = this.backgroundImages[idx - 1];
+                this.backgroundImage = this.$store.state.picture.backgroundImages[idx - 1];
             }
         }
         ,
@@ -283,7 +293,4 @@
 
 <style scoped lang="scss">
     @import "../assets/scss/home/mission";
-
-
-
 </style>
