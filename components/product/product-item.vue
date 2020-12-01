@@ -2,7 +2,7 @@
   <div>
     <v-carousel
       :cycle="false"
-      hide-delimiter-background
+      hide-delimiters
       show-arrows-on-hover
       class="grey lighten-5"
        v-model="currentItem"

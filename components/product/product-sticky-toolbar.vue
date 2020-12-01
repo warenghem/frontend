@@ -27,7 +27,7 @@
           <h3  class="teradeli-light">2 600,00€</h3>
         </div>
         <div class="pa-2">
-          <button class="btn-theme">À VOTRE PANIER</button>
+          <v-btn  tile large dark>À VOTRE PANIER</v-btn>
         </div>
 
       </div>

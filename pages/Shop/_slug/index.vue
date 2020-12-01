@@ -19,10 +19,9 @@
               <v-btn :to="{path:'/en/shop/'}" type="dark" class="backButton" tile>Back</v-btn>
               <v-carousel
                 :cycle="false"
-                hide-delimiters
+                hide-delimiter-background
                 show-arrows-on-hover
                 class="grey lighten-5"
-                v-model="currentItem"
                 height="70vh"
               >
                 <v-carousel-item
@@ -74,30 +73,21 @@
           <v-btn large block tile outlined color="black" class="py-3 my-3" height="50px">
             Trouver un magasin
           </v-btn>
-          <div>
-            Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition et modernité. Confectionné en
-            toile
-            Monogram Éclipse classique de Louis Vuitton, il est orné de détails originaux emblématiques du créateur
-            Virgil
-            Abloh. Pensé pour le confort et la fonctionnalité, il offre une texture souple qui s'adapte au corps, un
-            système de fermeture aimantée sécurisée et de multiples poches intérieures et extérieures.
+          <div class="custom-collapse">
+            <div v-html="product.description"
+                 class="box"
+                 :class="{'shadow-btn':read_more}"
+            >
+            </div>
+            <div @click="read_more=false" v-if="read_more" class="py-3">
+              <u>Voir plus</u>
+            </div>
+            <div @click="read_more=true" class="py-3" v-else>
+              <u>Voir moins</u>
+            </div>
           </div>
-          <div>
-            Détails
-            60 x 72 x 19 cm
-            (Longueur x Hauteur x Largeur)
-            Toile Monogram Éclipse
-            Garniture en cuir de veau
-            Doublure en textile
-            Finitions métalliques noires
-            Bretelles ajustables
-            Fermeture aimantée sécurisée
-            Poche plate intérieure
-            Deux poches doubles intérieures
-            Trois poches extérieures avec fermeture à glissière
-            Ce modèle peut être confectionné en France, en Espagne, en Italie ou aux États-Unis
-            Poignée: Simple
-          </div>
+
+
         </v-col>
       </v-row>
       <v-row>
@@ -186,6 +176,7 @@
         },
         data() {
             return {
+                read_more: true,
                 product: {
                     name: '',
                     price: '',
@@ -215,7 +206,20 @@
                             images: [],
                         },
                     ],
-                    description: ""
+                    description: "Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition et modernité. Confectionné en toile" +
+                        "            Monogram Éclipse classique de Louis Vuitton, il est orné de détails originaux emblématiques du créateur" +
+                        "            Virgil Abloh. Pensé pour le confort et la fonctionnalité, il offre une texture souple qui s'adapte au corps, un" +
+                        "            système de fermeture aimantée sécurisée et de multiples poches intérieures et extérieures.Détails" +
+                        "            60 x 72 x 19 cm (Longueur x Hauteur x Largeur) Toile Monogram Éclipse" +
+                        "            Garniture en cuir de veau Doublure en textile\n" +
+                        "            Finitions métalliques noires\n" +
+                        "            Bretelles ajustables\n" +
+                        "            Fermeture aimantée sécurisée\n" +
+                        "            Poche plate intérieure\n" +
+                        "            Deux poches doubles intérieures\n" +
+                        "            Trois poches extérieures avec fermeture à glissière\n" +
+                        "            Ce modèle peut être confectionné en France, en Espagne, en Italie ou aux États-Unis\n" +
+                        "            Poignée: Simple"
                 },
                 settings: {
                     "dots": false,

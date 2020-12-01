@@ -72,7 +72,7 @@ body {
 }
 
 .btn-theme {
-  color: #fff!important;
+  color: #fff !important;
   border: none;
   outline: 0;
   font-size: .875rem;
@@ -92,7 +92,7 @@ body {
   text-transform: uppercase;
   letter-spacing: 1.8px;
   word-break: break-word;
-  color: #fff!important;
+  color: #fff !important;
 }
 
 .nav-btn {
@@ -414,11 +414,13 @@ body {
 
 
 .v-snack__wrapper.t.theme--dark {
-    background-color: rgba(0, 0, 0, 0.5)!important;
+  background-color: rgba(0, 0, 0, 0.5) !important;
 }
+
 .v-application--is-ltr .v-snack__action {
-  margin-right: 0px!important;
+  margin-right: 0px !important;
 }
+
 .v-dialog {
   margin: 8px !important;
 }
@@ -720,27 +722,31 @@ body {
 }
 
 .lazyload {
-	opacity: 0;
+  opacity: 0;
 }
 
 .lazyloading {
-	opacity: 1;
-	transition: opacity 300ms;
+  opacity: 1;
+  transition: opacity 300ms;
 }
 
 .lazyloading:after {
   content: '';
   position: absolute;
-  top: 0; right: 0;
-  bottom: 0; left: 0;
-	background: url('https://ik.imagekit.io/g1noocuou2/Icons/ripple.svg') no-repeat center;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: url('https://ik.imagekit.io/g1noocuou2/Icons/ripple.svg') no-repeat center;
   z-index: 10010000;
 }
-.hand {  
+
+.hand {
   cursor: pointer;
 }
+
 .viewer-backdrop {
-    background-color: rgb(255 255 255) !important;
+  background-color: rgb(255 255 255) !important;
 }
 
 .viewer-backdrop {
@@ -780,9 +786,39 @@ body {
     font-weight: 900;
   }
 }
-.stickyFilterBar{
+
+.stickyFilterBar {
   position: sticky;
-  top:0;
-   z-index: 1000;
+  top: 0;
+  z-index: 1000;
+}
+
+.v-carousel__controls__item.v-btn.v-btn--icon {
+  color: #b2b2b2 !important;
+}
+
+.custom-collapse {
+  .box {
+    position: relative;
+    max-height: fit-content;
+    transition: max-height 0.45s ease-in;
+
+    &.shadow-btn {
+      max-height: 200px;
+      overflow: hidden;
+      transition: max-height 0.45s ease-in;
+      &:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: white;
+      box-shadow: 0px -4px 9px 15px #ffffff;
+    }
+    }
+
+
+  }
 }
 
