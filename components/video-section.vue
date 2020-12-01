@@ -45,10 +45,7 @@
                 data-src="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
                           https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x" 
                 src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" 
-                data-sizes="auto" />    <v-progress-circular
-      indeterminate
-      color="green"
-    ></v-progress-circular>
+                data-sizes="auto" />
         </picture>
         </div>
 

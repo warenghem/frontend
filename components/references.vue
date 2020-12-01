@@ -31,12 +31,12 @@
                     {
                         key: 1,
                         img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2/Logos/label-co2-website.png",
-                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-10,bl-10/Logos/label-co2-website.png"
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10/Logos/label-co2-website.png"
                     },
                     {
                         key: 2,
                         img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2/Logos/Label-Tech-white.png",
-                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-10,bl-10/Logos/Label-Tech-white.png"
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10/Logos/Label-Tech-white.png"
                     }, {
                         key: 3,
                         img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2/Logos/PETAapproved.png",

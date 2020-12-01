@@ -70,7 +70,7 @@
                                     data-sizes="auto"
                                     data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
                                     src="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-500,bl-10/Logos/Citadins_Sauvages.png" 
-                                    class="lazyload" 
+                                    class="lazyload cover bg-white catalogue-item-background elevation-3" 
                                 />
                             </div>
                         </v-card-title>

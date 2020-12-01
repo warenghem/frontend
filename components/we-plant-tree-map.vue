@@ -4,7 +4,7 @@
     <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
     <tree-data :treeData="treeData"></tree-data>
     <client-only>
-      <div class="pa-0 pa-sm-5 pt-5">
+      <div class="pa-5 pt-5">
       <l-map
         style="width: 100%"
         class="treemap"
@@ -29,7 +29,7 @@
             <div style="transform: translateY(-20px);" class="card">
               <div class="card-header name hand">
                {{marker.text}}
-               <div style="font-size: 16px" class="subtitlesmall">En savoir plus</div>
+               <div style="font-weight:400; font-size: 16px" class="subtitlesmall">En savoir plus</div>
               </div>
               <div>
                 <div class="blob white rounded-circle" style="width:45px; height:45px">
@@ -509,9 +509,6 @@
     }
 </script>
 <style lang="scss" scoped>
-.leaflet-container {
-    font-family: "teradeli-book";
-}
   .treemap {
     height:700px;
     border-radius: 4px;

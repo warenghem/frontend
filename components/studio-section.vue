@@ -1,10 +1,10 @@
 <template>
     <section class="team-section py-10">
         <h2 class="page-title py-md-5 py-4">{{$t('title')}}</h2>
-        <v-row no-gutters class="pt-4 px-3 px-sm-0">
+        <v-row no-gutters class="pt-4">
             <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
-                <v-card align=center elevation="0" class="item-inner px-0 px-sm-5 py-3 py-sm-3 d-flex d-sm-block">
-                    <div class="profile-holder mb-0 pa-0 pb-sm-3 col-4 col-sm-12">
+                <div class="item-inner py-2 px-3 px-md-5">
+                    <div class="profile-holder mb-3">
                         <!--<ik-image
                             :path="profile.img"
                             :lqip="{active:true, quality: 40, blur: 5}"
@@ -15,51 +15,21 @@
                         <img
                             :data-srcset="profile.img" 
                             :src="profile.imglqip" 
-                            class="lazyload profil" 
+                            class="lazyload" 
+                            width="200"
                         />
                     </div>
-                    <div class="content-holder text-left pl-4 pa-0 pl-sm-0 col-8 col-sm-12">
-                        <div class="titlesmall">{{profile.name}}</div>
+                    <div class="content-holder text-left">
+                        <h4 class="titlesmall">{{profile.name}}</h4>
                         <div class="subtitlesmall">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
                         </div>
-                        <div class="item-details d-none d-sm-block">
+                        <div class="item-details">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
                         </div>
-                        <v-card-actions class="p-0">
-                        <v-btn
-                            text
-                            color="teal accent-4"
-                            @click="reveal = true"
-                            class="d-none pa-0"
-                        >
-                            Learn More
-                        </v-btn>
-                        </v-card-actions>
                     </div>
-                    <v-expand-transition>
-                    <v-card
-                        v-if="reveal"
-                        class="transition-fast-in-fast-out v-card--reveal"
-                        style="height: 100%;"
-                    >
-                        <v-card-text class="pb-0">
-                            <div class="item-details">
-                                {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
-                            </div>
-                        </v-card-text>
-                        <v-card-actions class="pt-0">
-                        <v-btn
-                            text
-                            color="teal accent-4"
-                            @click="reveal = false"
-                        >
-                            Close
-                        </v-btn>
-                        </v-card-actions>
-                    </v-card>
-                    </v-expand-transition>
-                </v-card>
+                </div>
+
             </v-col>
         </v-row>
     </section>
@@ -147,7 +117,6 @@
         },
         data() {
             return {
-                reveal: false,
                 profiles: [
                     {
                         key: 1,
@@ -181,15 +150,11 @@
         .item-inner {
             padding: 30px;
             height: 100%;
-            align-items: center;
 
             .profile-holder {
                 text-align: center;
             }
-            img {
-                max-width: 200px;
-                width: 100%;
-            }
+
             .item-details {
                 margin-bottom: 15px;
                 color: #86868b;
@@ -202,10 +167,4 @@
             }
         }
     }
-.v-card--reveal {
-  bottom: 0;
-  opacity: 1 !important;
-  position: absolute;
-  width: 100%;
-}
 </style>
