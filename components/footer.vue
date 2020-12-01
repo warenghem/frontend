@@ -6,7 +6,8 @@
     <v-card
       flat
       tile
-      class="grey darken-4 lighten-1 white--text text-center w-100 px-15"
+      class="lighten-1 white--text text-center w-100 px-15"
+      color="#19110b"
     >
         <v-card-title class="px-0 d-block d-md-flex">
             <v-text flat tile class="d-block d-md-flex" >
