@@ -9,17 +9,35 @@
           lg="8"
 
         >
+
           <viewer :images="product.images" class="viewer" ref="viewer" @inited="inited">
             <img v-for="src in product.images" :src="src" :key="src" class="image d-none">
           </viewer>
           <v-row>
-            <v-col :cols="idx===0?12:6" class="pl-0 py-2" v-for="(image,idx) in product.images" :key="image">
-              <div class="grey lighten-5" align="center" @click="show(idx)">
-                <v-img
-                  :src="image"
-                  width="350px">
-                </v-img>
-              </div>
+
+            <v-col :cols="12" class="pl-lg-0 py-2 position-relative">
+              <v-btn :to="{path:'/en/shop/'}" type="dark" class="backButton" tile>Back</v-btn>
+              <v-carousel
+                :cycle="false"
+                hide-delimiters
+                show-arrows-on-hover
+                class="grey lighten-5"
+                v-model="currentItem"
+                height="70vh"
+              >
+                <v-carousel-item
+                  v-for="(image,idx) in product.images" :key="image"
+                  @click="show(idx)"
+                  class="text-center"
+                >
+                  <img :src="image"
+                       :lazy-src="require('../../../assets/images/image-loader.gif')"
+                       height="100%"
+                       class="lazyload"
+                       alt=""
+                  >
+                </v-carousel-item>
+              </v-carousel>
             </v-col>
           </v-row>
         </v-col>
@@ -172,7 +190,7 @@
                     name: '',
                     price: '',
                     id: '',
-                    in_stock:true,
+                    in_stock: true,
                     images: [
                         'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
                         'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
@@ -281,4 +299,10 @@
     text-align: center;
   }
 
+  .backButton {
+    position: absolute;
+    left: 5px;
+    top: 8px;
+    z-index: 1;
+  }
 </style>
