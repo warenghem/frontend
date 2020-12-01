@@ -14,8 +14,8 @@
                                 />-->
                                 <img
                                   data-sizes="auto"
-                                  :srcset="backgroundImage"
-                                  :src="backgroundImagesL"
+                                  :srcset="backgroundImage.img"
+                                  :src="backgroundImage.blur_v"
                                   class="lazyload cover"
                                  alt="bg image"/>
                             </div>
@@ -40,8 +40,8 @@
                                         />-->
                                         <img
                                           data-sizes="auto"
-                                          :data-srcset="bgImage"
-                                          :src="$store.state.picture.backgroundImageslqip"
+                                          :data-srcset="bgImage.img"
+                                          :src="bgImage.blur_v"
                                           class="lazyload cover"
                                       />
                                         </div>
@@ -107,8 +107,8 @@
                     />-->
                     <img
                         data-sizes="auto"
-                        :data-srcset="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx]"
-                        :src="$store.state.picture.backgroundImageslqip"
+                        :data-srcset="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].img"
+                        :src="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].blur_v"
                         class="lazyload cover position-absolute"
                     />
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
@@ -167,7 +167,6 @@
             fpMouseOver(idx) {
                 this.currentMissionHover = idx;
                 this.backgroundImage = this.$store.state.picture.backgroundImages[idx - 1];
-                this.backgroundImagesL = this.$store.state.picture.backgroundImageslqip[idx - 1];
             }
         }
         ,
