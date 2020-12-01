@@ -1,7 +1,8 @@
 <template>
-    <section class="team-section py-10">
-        <h2 class="page-title py-md-5 py-4">{{$t('title')}}</h2>
-        <v-row no-gutters class="pt-4 px-3 px-sm-0">
+    <section class="team-section py-8">
+        <h2 class="page-title pt-md-5 pt-4 px-3">{{$t('title')}}</h2>
+        <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
+        <v-row no-gutters class="py-0 px-3 px-sm-0">
             <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <v-card align=center elevation="0" class="item-inner px-0 px-sm-5 py-3 py-sm-3 d-flex d-sm-block">
                     <div class="profile-holder mb-0 pa-0 pb-sm-3 col-4 col-sm-12">
@@ -19,7 +20,7 @@
                         />
                     </div>
                     <div class="content-holder text-left pl-4 pa-0 pl-sm-0 col-8 col-sm-12">
-                        <div class="titlesmall">{{profile.name}}</div>
+                        <div class="titlesmall teradeli-medium">{{profile.name}}</div>
                         <div class="subtitlesmall">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
                         </div>
@@ -71,6 +72,7 @@
             messages: {
                 en: {
                     title: "Warenghem Studios",
+                    subtitle:"Our offices are located in Paris and in the Var, our factories are located all over France. Our team is growing, write to us ...",
                     profiles: [
                         {
                             key: 1,
@@ -108,6 +110,7 @@
                 },
                 fr: {
                     title: "Warenghem Studios",
+                    subtitle:"Nos bureaux sont situés à Paris et dans le Var, nos usines sont situées un peu partout en France. Notre équipe s'agrandie, écrivez nous...",
                     profiles: [
                         {
                             key: 1,

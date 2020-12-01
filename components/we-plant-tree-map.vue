@@ -1,6 +1,6 @@
 <template>
   <div class="pt-10 position-relative" v-intersect.once="mapIntersect">
-    <h2 class="page-title pt-md-5 pt-4 pr-4"> {{$t('title')}}</h2>
+    <h2 class="page-title pt-md-5 pt-4 px-3"> {{$t('title')}}</h2>
     <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
     <tree-data :treeData="treeData"></tree-data>
     <client-only>
