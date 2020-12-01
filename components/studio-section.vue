@@ -5,11 +5,17 @@
             <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <div class="item-inner py-2 px-3 px-md-5">
                     <div class="profile-holder mb-3">
-                        <ik-image
+                        <!--<ik-image
                             :path="profile.img"
                             :lqip="{active:true, quality: 40, blur: 5}"
-                            :transformation="[{quality: 80, width:200, dpr:2, radius:'max'}]"
+                            :transformation="[{quality: 65, width:400, dpr:2, radius:'max'}]"
                             loading="lazy"
+                            width="400"
+                        />-->
+                        <img
+                            :data-srcset="profile.img" 
+                            :src="profile.imglqip" 
+                            class="lazyload" 
                             width="200"
                         />
                     </div>
@@ -115,7 +121,8 @@
                     {
                         key: 1,
                         name: 'Kevin Brosseau',
-                        img: "/kevin_zsPDDH5iKn2R.png"
+                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-1,r-max/kevin_zsPDDH5iKn2R.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2,r-max/kevin_zsPDDH5iKn2R.png 2x",
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10,r-max/kevin_zsPDDH5iKn2R.png"
                     },
                     {
                         key: 2,
@@ -123,12 +130,14 @@
                     }, {
                         key: 3,
                         name: 'Julie maurence',
-                        img: "/julie_e3H-plJ5LNi5.png"
+                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-1,r-max/julie_e3H-plJ5LNi5.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2,r-max/julie_e3H-plJ5LNi5.png 2x",
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10,r-max/julie_e3H-plJ5LNi5.png"
                     },
                     {
                         key: 4,
                         name: 'Quentin Brosseau',
-                        img: "/quentin_jvUVQy_Hk0VvA.png"
+                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-1,r-max/quentin_jvUVQy_Hk0VvA.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2,r-max/quentin_jvUVQy_Hk0VvA.png 2x",
+                        imglqip: "https://ik.imagekit.io/g1noocuou2/tr:q-15,w-200,bl-10,r-max/quentin_jvUVQy_Hk0VvA.png"
                     }
                 ]
             }

@@ -7,7 +7,7 @@
       <slot name="content">
         <nuxt/>
       </slot>
-      <app-footer/>
+      <Footer/>
     </div>
   </v-app>
 </template>

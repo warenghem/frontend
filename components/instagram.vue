@@ -1,16 +1,5 @@
 <template>
     <div>
-        <div class="d-flex justify-center border-top-2 align-center flex-column flex-md-row py-5">
-            <div v-for="(profile,idx) in profiles" :key="'profile_'+idx" class="ttext-center py-8 py-md-4 px-7">
-                <ik-image
-                    :path="profile.img"
-                    :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:200, dpr:2}]"
-                    loading="lazy"
-                    width="200"
-                />
-            </div>
-        </div>
         <div class="whole-footer border-top-2 pt-10 pt-sm-0">
             <div class="insta-row border-left-2 border-right-2">
                 <h3 class="page-title pl-1 py-md-5 py-4">Instagram - #warenghemlive</h3>
@@ -24,24 +13,6 @@
     import * as InstagramFeed from 'instafeed';
     export default {
         name: "app-footer",
-
-       data() {
-            return {
-                profiles: [
-                    {
-                        key: 1,
-                        img: "/Logos/label-co2-website.png"
-                    },
-                    {
-                        key: 2,
-                        img: "/Logos/Label-Tech-white.png"
-                    }, {
-                        key: 3,
-                        img: "/Logos/PETAapproved.png"
-                    },
-                ]
-            }
-        },
         mounted() {
             new InstagramFeed({
                 'username': 'warenghem.studios',

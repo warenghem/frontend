@@ -27,7 +27,8 @@ export default {
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     {src: '~/plugins/vue-leaflet', ssr: false},
-    {src: '~/plugins/imagekit', ssr: false},
+    {src: '~/plugins/vue-carousel', ssr: true},
+    {src: '~/plugins/lazysizes', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -48,10 +49,10 @@ export default {
     '@nuxtjs/axios',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
-    // https://go.nuxtjs.dev/content
-    '@nuxt/content',
     'nuxt-i18n',
+    '@nuxt/content',
     '@nuxtjs/color-mode',
+    '@nuxtjs/sitemap',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -128,8 +129,20 @@ export default {
     materialIcons: true,
     css: true,
   },
+  sitemap: {
+    path: '/sitemapindex.xml',
+    hostname: 'https://www.warenghem.com',
+    i18n: true,
+    gzip: true,
+  },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    extend (config, { isDev, isClient, loaders: { vue } }) {
+      if (isClient) {
+        vue.transformAssetUrls.img = ['data-src', 'src']
+        vue.transformAssetUrls.source = ['data-srcset', 'srcset']
+      }
+    }
   }
 }

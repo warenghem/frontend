@@ -6,13 +6,9 @@
     <v-navigation-drawer v-model="sidebar" clipped app class="d-md-none" v-bind:width="304">
       <v-toolbar-title class="text-center py-10">
           <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-            <ik-image
-                path="/Logos/WA_mif_g_vf.png"
-                :transformation="[{quality: 80, width:160, dpr:2}]"
-                width="160"
-            />
+            <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-160,dpr-2/Logos/WA_mif_g_vf.png" width="160">
           </router-link>
-      </v-toolbar-title>  
+      </v-toolbar-title>
       <v-list>
         <v-list-item
           v-for="(link,l_idx) in $store.state.link.links"
@@ -44,12 +40,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo">
         <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-          <ik-image
-              path="/Logos/Warenghem_vf.svg"
-              :transformation="[{quality: 80, width:140, dpr:2, radius:'max'}]"
-              loading="lazy"
-              width="140"
-          />
+          <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-140,dpr-2,r-max/Logos/Warenghem_vf.svg" width="140">
         </router-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -98,7 +89,7 @@
                   :key="'flag_list_'+idx"
                 >
                   <v-list-item-title class="cursor-pointer">
-                    <NuxtLink :to="$store.state.langs.hasSlug?flag.path:switchLocalePath(flag.path)">
+                    <NuxtLink :to="{path:flag.path}">
                       <img :src="flag.img"
                            width="24"
                            alt="flag"

@@ -22,6 +22,8 @@
         </v-col>
       </v-row>
     </v-container>
+    <References/>
+    <Instagram/>
     <PlantForm/>
   </div>
 </template>
@@ -39,9 +41,6 @@
                 el.classList.remove('modal-open');
                 document.documentElement.style.overflowY = 'auto'
             }
-        },
-        created(){
-          this.$store.commit('langs/RESET_LANG');
         },
         head() {
             return {
