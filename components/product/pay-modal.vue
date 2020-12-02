@@ -4,6 +4,7 @@
       v-model="$store.state.product.productPayModal"
       width="500"
       @click:outside="$store.commit('product/CLOSE_PAY_MODAL')"
+      content-class="bg-white"
     >
       <v-card>
         <v-card-title>

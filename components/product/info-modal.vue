@@ -3,6 +3,7 @@
     v-model="isModal"
     width="700"
     @click:outside="closeModal"
+     content-class="bg-white"
   >
     <v-card>
       <v-card-title>
