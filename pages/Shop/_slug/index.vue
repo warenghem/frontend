@@ -89,7 +89,7 @@
             </div>
           </div>
           <div class="mb-7">
-            <div class="border-top-1 border-bottom-1 cursor-pointer py-2"
+            <div class="border-top-1 border-bottom-1 cursor-pointer py-5"
                  @click="isModal=true"
             >
               Materials et en

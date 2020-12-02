@@ -4,7 +4,6 @@
       :cycle="false"
       hide-delimiters
       show-arrows-on-hover
-      class="grey lighten-5"
        v-model="currentItem"
     >
       <v-carousel-item
@@ -13,7 +12,10 @@
         :key="item.id"
 
       >
-        <v-img :src="item.image" alt="" :lazy-src="require('../../assets/images/image-loader.gif')"></v-img>
+        <v-card class="grey lighten-5" lazy>
+          <v-img :src="item.image" alt="" :lazy-src="require('../../assets/images/image-loader.gif')"></v-img>
+        </v-card>
+
       </v-carousel-item>
       <v-carousel-item
         :src="item.image"
@@ -35,7 +37,7 @@
         </button>
       </div>
     </div>
-    <div class="subtitlesmall teradeli-light">{{product.price}}</div>
+    <div class="subtitlesmall teradeli-light text-left">{{product.price}}</div>
   </div>
 </template>
 
