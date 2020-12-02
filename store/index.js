@@ -1,6 +1,7 @@
 import link from './link'
 import langs from './langs'
 import picture from './picture'
+import product from './product'
 
 export const state = () => ({
   tree_count: 0,
@@ -31,5 +32,5 @@ export const actions = {
   }
 };
 export const modules = {
-  link, langs, picture
+  link, langs, picture, product
 };

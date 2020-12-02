@@ -27,7 +27,7 @@
           <h3  class="teradeli-light">2 600,00€</h3>
         </div>
         <div class="pa-2">
-          <v-btn  tile large dark>À VOTRE PANIER</v-btn>
+          <v-btn  tile large dark @click="$store.commit('product/OPEN_PAY_MODAL')">À VOTRE PANIER</v-btn>
         </div>
 
       </div>

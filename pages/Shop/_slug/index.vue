@@ -9,14 +9,15 @@
           lg="8"
 
         >
-
           <viewer :images="product.images" class="viewer" ref="viewer" @inited="inited">
             <img v-for="src in product.images" :src="src" :key="src" class="image d-none">
           </viewer>
           <v-row>
 
             <v-col :cols="12" class="pl-lg-0 py-2 position-relative">
-              <v-btn :to="{path:'/en/shop/'}" type="dark" class="backButton" tile>Back</v-btn>
+              <v-btn :to="{path:'/en/shop/'}" type="dark" class="backButton" tile>
+                <v-icon>mdi-keyboard-backspace</v-icon>
+              </v-btn>
               <v-carousel
                 :cycle="false"
                 hide-delimiter-background
@@ -62,7 +63,8 @@
               Disponible
             </div>
           </div>
-          <v-btn large block tile color="black" class="py-3 my-3" dark height="50px">
+          <v-btn large block tile color="black" class="py-3 my-3" dark height="50px"
+                 @click="$store.commit('product/OPEN_PAY_MODAL')">
             Ajouter au panier
           </v-btn>
           <div>
@@ -86,7 +88,81 @@
               <u>Voir moins</u>
             </div>
           </div>
+          <div class="mb-7">
+            <div class="border-top-1 border-bottom-1 cursor-pointer py-2"
+                 @click="isModal=true"
+            >
+              Materials et en
+              <v-icon class="float-right">mdi-chevron-right</v-icon>
+            </div>
+          </div>
+          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
+               @click="isModal=true">
+            <div class="d-flex align-center">
+              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <div>
+                <div class="right-title">Information about payment</div>
+                <span class="teradeli-light">paymant cart paypal</span>
+              </div>
+            </div>
 
+            <div>
+              <v-icon>mdi-content-copy</v-icon>
+            </div>
+          </div>
+          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
+               @click="isModal=true">
+            <div class="d-flex align-center">
+              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <div>
+                <div class="right-title">Information about payment</div>
+                <span class="teradeli-light">paymant cart paypal</span>
+              </div>
+            </div>
+
+            <div>
+              <v-icon>mdi-content-copy</v-icon>
+            </div>
+          </div>
+          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer">
+            <div class="d-flex align-center">
+              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <div>
+                <div class="right-title">Information about payment</div>
+                <span class="teradeli-light">paymant cart paypal</span>
+              </div>
+            </div>
+
+            <div>
+              <v-icon>mdi-content-copy</v-icon>
+            </div>
+          </div>
+          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer">
+            <div class="d-flex align-center">
+              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <div>
+                <div class="right-title">Information about payment</div>
+                <span class="teradeli-light">paymant cart paypal</span>
+              </div>
+            </div>
+
+            <div>
+              <v-icon>mdi-content-copy</v-icon>
+            </div>
+          </div>
+          <div class="d-flex align-center justify-space-between py-5 cursor-pointer">
+            <div class="d-flex align-center">
+              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <div>
+                <div class="right-title">Information about payment</div>
+                <span class="teradeli-light">paymant cart paypal</span>
+              </div>
+            </div>
+
+            <div>
+              <v-icon>mdi-content-copy</v-icon>
+            </div>
+          </div>
 
         </v-col>
       </v-row>
@@ -138,8 +214,9 @@
           </v-tabs>
         </v-col>
       </v-row>
-
     </v-container>
+    <pay-modal :product="product"></pay-modal>
+    <info-modal :content="content" :is-modal="isModal" v-on:closeModal="closeModal"></info-modal>
   </div>
 
 </template>
@@ -157,10 +234,12 @@
     import {format} from 'date-fns';
     import ProductItem from "../../../components/product/product-item";
     import ProductStickyToolbar from "../../../components/product/product-sticky-toolbar";
+    import PayModal from "../../../components/product/pay-modal";
+    import InfoModal from "../../../components/product/info-modal";
 
     export default {
         name: 'post',
-        components: {ProductStickyToolbar, ProductItem},
+        components: {InfoModal, PayModal, ProductStickyToolbar, ProductItem},
         async asyncData(context) {
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
@@ -177,10 +256,11 @@
         data() {
             return {
                 read_more: true,
+                isModal: false,
                 product: {
-                    name: '',
-                    price: '',
-                    id: '',
+                    name: 'SAC À DOS TRIO',
+                    price: '26000',
+                    id: '2',
                     in_stock: true,
                     images: [
                         'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
@@ -191,19 +271,25 @@
                     ],
                     variants: [
                         {
-                            name: '',
+                            name: 'SAC À DOS Black',
                             color: 'black',
-                            images: [],
+                            images: ['https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
+                                'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
+                                'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',],
                         },
                         {
-                            name: '',
+                            name: 'SAC À DOS blue',
                             color: 'blue',
-                            images: [],
+                            images: ['https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
+                                'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
+                                'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',],
                         },
                         {
-                            name: '',
+                            name: 'SAC À DOS red',
                             color: 'red',
-                            images: [],
+                            images: ['https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
+                                'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',
+                                'https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png',],
                         },
                     ],
                     description: "Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition et modernité. Confectionné en toile" +
@@ -221,6 +307,17 @@
                         "            Ce modèle peut être confectionné en France, en Espagne, en Italie ou aux États-Unis\n" +
                         "            Poignée: Simple"
                 },
+                content: "Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien :\n" +
+                    "\n" +
+                    "Veillez à ne pas érafler ou frotter votre article contre des surfaces abrasives, en particulier les finitions en cuir.\n" +
+                    "Nous vous conseillons de protéger votre article de l’humidité et de le maintenir à l’abri des sources directes de chaleur, comme les radiateurs et l’habitacle des voitures en été.\n" +
+                    "Évitez de mettre votre article en contact avec des liquides, de la crème et du désinfectant pour les mains, du maquillage et du parfum.\n" +
+                    "Pour nettoyer votre article, essuyez délicatement la toile enduite avec un chiffon doux imbibé d’eau légèrement savonneuse et les finitions en cuir noir avec un chiffon doux et sec.\n" +
+                    "La surface adhérente, constituée de ventouses microscopiques, peut être réactivée. À l’usage, la surface peut naturellement perdre son adhérence. Il est possible d’y remédier en nettoyant doucement la surface avec un chiffon humidifié d’eau et en la laissant sécher intégralement pendant 10 minutes avant de replacer le téléphone portable. L’étui a retrouvé son adhérence et le contact avec votre téléphone sera à nouveau parfait.\n" +
+                    "Quand vous ne vous en servez pas, rangez l’article dans la feutrine fournie lors de l’achat. Nous vous conseillons de le conserver à l’abri des températures élevées, de l’humidité excessive ou des zones non ventilées.\n" +
+                    "\n" +
+                    "\n" +
+                    "Pour toute question relative à votre article, veuillez prendre contact avec un magasin Louis Vuitton.",
                 settings: {
                     "dots": false,
                     "infinite": false,
@@ -264,6 +361,9 @@
             },
             show(idx) {
                 this.$viewer.view(idx);
+            },
+            closeModal() {
+                this.isModal = false
             }
         },
         head() {
@@ -308,5 +408,23 @@
     left: 5px;
     top: 8px;
     z-index: 1;
+  }
+
+  .border-bottom-1 {
+    border-bottom: solid 1px #cbcbcb99 !important;
+  }
+
+  .border-top-1 {
+    border-top: solid 1px #cbcbcb99 !important;
+  }
+
+  .right-icon {
+    font-size: 40px !important;
+  }
+
+  .right-title {
+    font-size: 20px;
+    font-weight: 500;
+
   }
 </style>
