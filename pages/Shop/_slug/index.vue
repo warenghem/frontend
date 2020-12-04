@@ -60,12 +60,12 @@
 
               <v-icon small>mdi-circle</v-icon>
 
-              Disponible
+             {{$t('product.stock')}}
             </div>
           </div>
           <v-btn large block tile color="black" class="py-3 my-3" dark height="50px"
                  @click="$store.commit('product/OPEN_PAY_MODAL')">
-            Ajouter au panier
+           {{$t('product.cartBtn')}}
           </v-btn>
           <div>
             Cette année, les Fêtes sont en avance ! Passez commande dès à présent, livraison à domicile offerte sous 2 à
@@ -73,7 +73,7 @@
             jours ouvrés.
           </div>
           <v-btn large block tile outlined color="black" class="py-3 my-3" height="50px">
-            Trouver un magasin
+            {{$t('product.findStore')}}
           </v-btn>
           <div class="custom-collapse">
             <div v-html="product.description"
@@ -82,17 +82,17 @@
             >
             </div>
             <div @click="read_more=false" v-if="read_more" class="py-3">
-              <u>Voir plus</u>
+              <u>{{$t('product.readMore')}}</u>
             </div>
             <div @click="read_more=true" class="py-3" v-else>
-              <u>Voir moins</u>
+              <u>{{$t('product.readLess')}}</u>
             </div>
           </div>
           <div class="mb-7">
             <div class="border-top-1 border-bottom-1 cursor-pointer py-5"
-                 @click="isModal=true"
+                 @click="productCare=true"
             >
-              Materials et en
+              {{$t('product.careBtn')}}
               <v-icon class="float-right">mdi-chevron-right</v-icon>
             </div>
           </div>
@@ -217,6 +217,42 @@
     </v-container>
     <pay-modal :product="product"></pay-modal>
     <info-modal :content="content" :is-modal="isModal" v-on:closeModal="closeModal"></info-modal>
+    <v-navigation-drawer
+      v-model="productCare"
+      absolute
+      temporary
+      right
+    >
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>John Leider</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+    </v-navigation-drawer>
+    <v-navigation-drawer
+      v-model="colorModal"
+      absolute
+      temporary
+      right
+    >
+      <v-list-item>
+        <v-list-item-avatar>
+          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
+        </v-list-item-avatar>
+
+        <v-list-item-content>
+          <v-list-item-title>John Leider</v-list-item-title>
+        </v-list-item-content>
+      </v-list-item>
+
+      <v-divider></v-divider>
+    </v-navigation-drawer>
   </div>
 
 </template>
@@ -257,6 +293,9 @@
             return {
                 read_more: true,
                 isModal: false,
+                productCare: false,
+                colorModal: false,
+
                 product: {
                     name: 'SAC À DOS TRIO',
                     price: '26000',
