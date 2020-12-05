@@ -60,12 +60,12 @@
 
               <v-icon small>mdi-circle</v-icon>
 
-             {{$t('product.stock')}}
+              {{$t('product.stock')}}
             </div>
           </div>
           <v-btn large block tile color="black" class="py-3 my-3" dark height="50px"
                  @click="$store.commit('product/OPEN_PAY_MODAL')">
-           {{$t('product.cartBtn')}}
+            {{$t('product.cartBtn')}}
           </v-btn>
           <div>
             Cette année, les Fêtes sont en avance ! Passez commande dès à présent, livraison à domicile offerte sous 2 à
@@ -97,12 +97,12 @@
             </div>
           </div>
           <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
-               @click="isModal=true">
+               @click="infoModal=true">
             <div class="d-flex align-center">
-              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <v-icon class="pr-5 right-icon">mdi-credit-card</v-icon>
               <div>
-                <div class="right-title">Information about payment</div>
-                <span class="teradeli-light">paymant cart paypal</span>
+                <div class="right-title">{{$t('product.payInfoBtn.title')}}</div>
+                <span class="teradeli-light">{{$t('product.payInfoBtn.desc')}}</span>
               </div>
             </div>
 
@@ -111,12 +111,12 @@
             </div>
           </div>
           <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
-               @click="isModal=true">
+               @click="shipModal=true">
             <div class="d-flex align-center">
-              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <v-icon class="pr-5 right-icon">mdi-truck-delivery</v-icon>
               <div>
-                <div class="right-title">Information about payment</div>
-                <span class="teradeli-light">paymant cart paypal</span>
+                <div class="right-title">{{$t('product.shipBtn.title')}}</div>
+                <span class="teradeli-light">{{$t('product.shipBtn.desc')}}</span>
               </div>
             </div>
 
@@ -124,12 +124,13 @@
               <v-icon>mdi-content-copy</v-icon>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer">
+          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
+               @click="returnModal=true">
             <div class="d-flex align-center">
-              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <v-icon class="pr-5 right-icon">mdi-sync</v-icon>
               <div>
-                <div class="right-title">Information about payment</div>
-                <span class="teradeli-light">paymant cart paypal</span>
+                <div class="right-title">{{$t('product.returnBtn.title')}}</div>
+                <span class="teradeli-light">{{$t('product.returnBtn.desc')}}</span>
               </div>
             </div>
 
@@ -137,25 +138,12 @@
               <v-icon>mdi-content-copy</v-icon>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer">
+          <div class="d-flex align-center justify-space-between py-5 cursor-pointer" @click="packageModal=true">
             <div class="d-flex align-center">
-              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
+              <v-icon class="pr-5 right-icon">mdi-package-variant-closed</v-icon>
               <div>
-                <div class="right-title">Information about payment</div>
-                <span class="teradeli-light">paymant cart paypal</span>
-              </div>
-            </div>
-
-            <div>
-              <v-icon>mdi-content-copy</v-icon>
-            </div>
-          </div>
-          <div class="d-flex align-center justify-space-between py-5 cursor-pointer">
-            <div class="d-flex align-center">
-              <v-icon class="pr-3 right-icon">mdi-credit-card</v-icon>
-              <div>
-                <div class="right-title">Information about payment</div>
-                <span class="teradeli-light">paymant cart paypal</span>
+                <div class="right-title">{{$t('product.packageBtn.title')}}</div>
+                <span class="teradeli-light">{{$t('product.packageBtn.desc')}}</span>
               </div>
             </div>
 
@@ -168,7 +156,7 @@
       </v-row>
       <v-row>
         <v-col cols="12">
-          <div class="bold-title">A DÉCOUVRIR ÉGALEMENT</div>
+          <div class="bold-title">{{$t('product.like')}}</div>
         </v-col>
         <v-col cols="12">
           <v-tabs
@@ -177,13 +165,13 @@
             <v-tab
               href="#recentTab"
             >
-              Consultés récemment
+             {{$t('product.recent')}}
 
             </v-tab>
             <v-tab
               href="#recommendTab"
             >
-              Recommandé
+             {{$t('product.recommend')}}
             </v-tab>
             <v-tab-item
               value="recentTab"
@@ -216,7 +204,10 @@
       </v-row>
     </v-container>
     <pay-modal :product="product"></pay-modal>
-    <info-modal :content="content" :is-modal="isModal" v-on:closeModal="closeModal"></info-modal>
+    <info-modal :is-modal="infoModal" v-on:closeModal="closeModal"></info-modal>
+    <shipping-modal :is-modal="shipModal" v-on:closeModal="closeModal"></shipping-modal>
+    <return-modal :is-modal="returnModal" v-on:closeModal="closeModal"></return-modal>
+    <package-modal :is-modal="packageModal" v-on:closeModal="closeModal"></package-modal>
     <v-navigation-drawer
       v-model="productCare"
       absolute
@@ -272,10 +263,13 @@
     import ProductStickyToolbar from "../../../components/product/product-sticky-toolbar";
     import PayModal from "../../../components/product/pay-modal";
     import InfoModal from "../../../components/product/info-modal";
+    import ShippingModal from "../../../components/product/shipping-modal";
+    import ReturnModal from "../../../components/product/return-modal";
+    import PackageModal from "../../../components/product/package-modal";
 
     export default {
         name: 'post',
-        components: {InfoModal, PayModal, ProductStickyToolbar, ProductItem},
+        components: {PackageModal, ReturnModal, ShippingModal, InfoModal, PayModal, ProductStickyToolbar, ProductItem},
         async asyncData(context) {
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
@@ -292,9 +286,12 @@
         data() {
             return {
                 read_more: true,
-                isModal: false,
+                infoModal: false,
+                shipModal: false,
                 productCare: false,
                 colorModal: false,
+                returnModal: false,
+                packageModal: false,
 
                 product: {
                     name: 'SAC À DOS TRIO',
@@ -402,7 +399,10 @@
                 this.$viewer.view(idx);
             },
             closeModal() {
-                this.isModal = false
+                this.infoModal = false;
+                this.shipModal = false;
+                this.returnModal = false;
+                this.packageModal = false;
             }
         },
         head() {
@@ -458,12 +458,16 @@
   }
 
   .right-icon {
-    font-size: 40px !important;
+    font-size: 35px !important;
   }
 
   .right-title {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 
+  }
+
+  span.teradeli-light {
+    font-size: 14px;
   }
 </style>

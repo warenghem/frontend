@@ -21,19 +21,19 @@
     "readMore": "Lire la suite",
     "readLess": "Lire moins",
     "payInfoBtn": {
-      "title": "Paiement",
-      "desc": "Carte de crédit, carte de débit, PayPal, Apple Pay"
+      "title": "Informations sur le paiement",
+      "desc": "Paiement par carte bancaire ou par Paypal."
     },
     "shipBtn": {
-      "title": "Expédition et livraison",
-      "desc": "Livraison standard gratuite"
+      "title": "Informations sur la livraison",
+      "desc": "Livraison offerte à domicile"
     },
     "returnBtn": {
-      "title": "Retours et échanges",
+      "title": "INFORMATIONS SUR LES RETOURS",
       "desc": "Gratuit"
     },
     "packageBtn": {
-      "title": "Emballage",
+      "title": "EMBALLAGE CADEAU",
       "desc": "Emballage contemporain et écologique inspiré de notre patrimoine"
     },
     "like": "VOUS POUVEZ AUSSI AIMER",
