@@ -41,7 +41,7 @@
               text
               rounded
               class="my-2"
-              :href="link.url"
+              :to="link.url" nuxt
             >
               {{ link.title }}
             </v-btn>

@@ -114,12 +114,12 @@
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
                                 <div class="pb-3">
-                                    <img width="35px" src="../assets/images/magazine-plus.svg"
+                                    <img width="35px" src="https://ik.imagekit.io/g1noocuou2/Icons/magazine-plus.svg"
                                          alt="Wait For It"
                                          class="plusIcon"
                                     >
                                     <img style="padding-bottom:2px" width="35px"
-                                         src="../assets/images/magazine-minus.svg"
+                                         src="https://ik.imagekit.io/g1noocuou2/Icons/magazine-minus.svg"
                                          alt="Wait For It"
                                          class="minusIcon"
                                     >

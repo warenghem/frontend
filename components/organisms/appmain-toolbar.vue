@@ -3,17 +3,17 @@
     <div class="topBar text-center d-none">
       {{$t('secondtoolbar.message')}}
     </div>
-    <v-navigation-drawer v-model="sidebar" clipped app class="d-md-none" v-bind:width="304">
+    <v-navigation-drawer v-model="sidebar" temporary app v-bind:width="304">
       <v-toolbar-title class="text-center py-10">
-          <router-link to="/" tag="span" style="cursor: pointer" class="brand">
+          <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
             <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-160,dpr-2/Logos/WA_mif_g_vf.png" width="160">
-          </router-link>
+          </nuxt-link>
       </v-toolbar-title>
       <v-list>
         <v-list-item
           v-for="(link,l_idx) in $store.state.link.links"
           :class="{'current':$root.currentId===link.elId}"
-          :to="'/'+$i18n.locale+link.elId"
+          :to="'/'+$i18n.locale+link.elId" nuxt
           :key="'link_'+l_idx"
         >
           <v-list-item-content>
@@ -23,37 +23,20 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar class="menu-bar" flat height="50px" :dark="type">
+    <v-app-bar flat height="50px" :dark="type">
 
-      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
+      <v-app-bar-nav-icon class="ml-1" @click="sidebar = !sidebar">
       </v-app-bar-nav-icon>
-      <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
-                       :key="'link_btn_l_'+l_idx">
-        <v-btn text class="text-uppercase item"
-               :class="{'current':$root.currentId===link.elId}"
-               :to="'/'+$i18n.locale+link.elId"
-               v-if="link.position==='left'"
-        >
-          {{$t(link.name)}}
-        </v-btn>
-      </v-toolbar-items>
+
       <v-spacer></v-spacer>
-      <v-toolbar-title class="centerabsolute v-toolbar__logo">
-        <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-          <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-140,dpr-2,r-max/Logos/Warenghem_vf.svg" width="140">
-        </router-link>
+      <v-toolbar-title class="centerabsolute v-toolbar__logo pt-2">
+        <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
+          <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-140,dpr-2,r-max/Logos/Warenghem_w_vf.svg" width="140">
+        </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="d-none d-md-block"
-                       v-for="(link,l_idx) in $store.state.link.links"
-                       :key="'link_btn_r_'+l_idx">
-        <v-btn text class="text-uppercase item"
-               :class="{'current':$root.currentId===link.elId}"
-               :to="'/'+$i18n.locale+link.elId"
-               v-if="link.position==='right'"
-        >
-          {{$t(link.name)}}
-        </v-btn>
+      <v-toolbar-items>
+        <themeswitcher/>
       </v-toolbar-items>
       <v-toolbar-items class="d-none d-md-block">
         <v-btn
@@ -109,15 +92,16 @@
 </template>
 
 <script>
-    import link from './../store/link'
-    import langs from './../store/langs'
+    import link from './../../store/link'
+    import langs from './../../store/langs'
 
 
     export default {
-        name: "main-toolbar",
+        name: "appmain-toolbar",
         data() {
             return {
                 sidebar: false,
+                goDark: false,
             }
         },
         props: {
@@ -125,7 +109,7 @@
                 type: Boolean,
                 default: false
             }
-        }
+        },
     }
 </script>
 

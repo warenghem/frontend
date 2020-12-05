@@ -8,6 +8,7 @@
                         height= "100%"
                         elevation="0"
                         lazy
+                        style="background-color:unset!important"
                     >
                         <div class="img-fluid theme--light gradientoverlay squaredimage position-relative">
                             <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
@@ -36,7 +37,7 @@
                                     data-sizes="auto"
                                     :data-srcset="backgroundImages[p_idx]" 
                                     :src="backgroundImagelqip[p_idx]" 
-                                    class="lazyload cover bg-white catalogue-item-background elevation-3" 
+                                    class=" rounded-xl lazyload cover bg-white catalogue-item-background elevation-3" 
                                 />
                             <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
                                 {{product.desc}}
@@ -55,7 +56,7 @@
                     <v-card
                         elevation="0"
                         class="div5"
-                        
+                        style="background-color:unset!important"         
                     >
                         <v-card-title class="text-center pt-8 justify-center h-100">
                             <div class="d-block w-100">
@@ -86,7 +87,7 @@
             return {
                 backgroundImages: [
                     "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 1500w",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 1500w",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/PFsolomoutain_V__6TkALbMDj.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/PFsolomoutain_V__6TkALbMDj.jpg 1500w",
                     "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/S48blackmountain__JiqyHXRH6pZ.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/S48blackmountain__JiqyHXRH6pZ.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/S48blackmountain__JiqyHXRH6pZ.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/S48blackmountain__JiqyHXRH6pZ.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Products/S48blackmountain__JiqyHXRH6pZ.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/S48blackmountain__JiqyHXRH6pZ.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/S48blackmountain__JiqyHXRH6pZ.jpg 1500w",
                     "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 1500w",
                 ],

@@ -41,6 +41,7 @@ export default {
     "@nuxtjs/svg",
     '@nuxtjs/date-fns',
     '@nuxtjs/snipcart',
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -51,8 +52,8 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-i18n',
     '@nuxt/content',
-    '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
+    '@nuxtjs/gtm',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
@@ -123,8 +124,22 @@ export default {
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
     theme: {
-      disable: true,
+      options: {
+        customProperties: true
+      },
+      light: true,
+      themes: {
+        dark: {
+          background: '#000000',
+
+        },
+        light: {
+          background: colors.white,
+
+        }
+      }
     },
     materialIcons: true,
     css: true,
@@ -136,6 +151,14 @@ export default {
     gzip: true,
   },
 
+  googleAnalytics: {
+    id: 'UA-156842548-1'
+  },
+
+  gtm: {
+    id: '	GTM-NXPG4SV'
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extend (config, { isDev, isClient, loaders: { vue } }) {
@@ -143,6 +166,7 @@ export default {
         vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
-    }
+    },
+    analyze: true,
   }
 }

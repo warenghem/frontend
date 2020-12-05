@@ -3,28 +3,28 @@
     <sticky-toolbar class="stickyBar"/>
     <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
-    <MissionSection id="missionSection"/>
-    <ProductSection id="productSection"/>
+    <LazyMissionSection id="missionSection"/>
+    <LazyProductSection id="productSection"/>
     <v-container fluid class="ma-0 pa-0 fill-height border-top-2">
       <v-row no-gutters>
         <v-col
           cols="12"
           md="6"
-          style="border-right:#eae8e4 solid 1px"
+          class="border-right-2"
         >
-          <WePlantTreeMap id="mapTreeSection"/>
+          <LazyWePlantTreeMap id="mapTreeSection"/>
         </v-col>
         <v-col
           cols="12"
           md="6"
         >
-          <StudioSection id="studioSection"/>
+          <LazyStudioSection id="studioSection"/>
         </v-col>
       </v-row>
     </v-container>
-    <References/>
-    <Instagram/>
-    <PlantForm/>
+    <LazyReferences/>
+    <LazyInstagram/>
+    <LazyPlantForm/>
   </div>
 </template>
 
@@ -52,8 +52,4 @@
     }
 
 </script>
-<style>
-  .appBar {
-    background: transparent !important;
-  }
-</style>
+
