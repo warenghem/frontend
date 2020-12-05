@@ -214,7 +214,7 @@
       fixed
       right
       width="500px"
-      style="z-index: 300001;max-height: 100vh;"
+      style="z-index: 300002;max-height: 100vh;"
 
     >
       <v-list-item>
