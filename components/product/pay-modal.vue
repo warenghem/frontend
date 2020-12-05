@@ -2,7 +2,7 @@
   <div>
     <v-dialog
       v-model="$store.state.product.productPayModal"
-      width="500"
+      max-width="500px"
       @click:outside="$store.commit('product/CLOSE_PAY_MODAL')"
       content-class="bg-white"
     >

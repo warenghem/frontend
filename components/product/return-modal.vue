@@ -1,7 +1,7 @@
 <template>
   <v-dialog
     v-model="isModal"
-    width="1200"
+   max-width="1200px"
     @click:outside="closeModal"
     content-class="bg-white"
     style='z-index:300001;'
