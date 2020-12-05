@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-click-outside="closeProductCare">
     <product-sticky-toolbar class="stickyBar"/>
     <v-container fluid>
       <v-row
@@ -90,9 +90,9 @@
           </div>
           <div class="mb-7">
             <div class="border-top-1 border-bottom-1 cursor-pointer py-5"
-                 @click="productCare=true"
+                 @click="openProductCare"
             >
-              {{$t('product.careBtn')}}
+              {{$t('product.materialTitle')}}
               <v-icon class="float-right">mdi-chevron-right</v-icon>
             </div>
           </div>
@@ -210,21 +210,26 @@
     <package-modal :is-modal="packageModal" v-on:closeModal="closeModal"></package-modal>
     <v-navigation-drawer
       v-model="productCare"
-      absolute
       temporary
+      fixed
       right
+      width="500px"
+      style="z-index: 300001;max-height: 100vh;"
+
     >
       <v-list-item>
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
-        </v-list-item-content>
+        <div class="d-flex justify-space-between align-center w-100" style="position: sticky;top:0">
+          <h4>{{$t('product.materialTitle')}}</h4>
+          <span>
+              <v-icon @click="closeProductCare">mdi-close</v-icon>
+            </span>
+        </div>
       </v-list-item>
 
       <v-divider></v-divider>
+      <div class="pa-4 overflow-y-auto" style="max-height: 87vh">
+        <material-content/>
+      </div>
     </v-navigation-drawer>
     <v-navigation-drawer
       v-model="colorModal"
@@ -266,23 +271,26 @@
     import ShippingModal from "../../../components/product/shipping-modal";
     import ReturnModal from "../../../components/product/return-modal";
     import PackageModal from "../../../components/product/package-modal";
+    import MaterialContent from "../../../components/product/material-content";
 
     export default {
         name: 'post',
-        components: {PackageModal, ReturnModal, ShippingModal, InfoModal, PayModal, ProductStickyToolbar, ProductItem},
-        async asyncData(context) {
-            const {$content, params, app, route, redirect} = context;
-            const slug = params.slug;
-            const post = await $content(`${app.i18n.locale}/blog`, slug).fetch();
-            const computed = {
-                getDate() {
-                    return format(new Date(this.post.createdAt), 'dd/MM');
-                },
-            };
-            return {
-                post,
-            }
-        },
+        components: {
+            MaterialContent,
+            PackageModal, ReturnModal, ShippingModal, InfoModal, PayModal, ProductStickyToolbar, ProductItem},
+        // async asyncData(context) {
+        //     const {$content, params, app, route, redirect} = context;
+        //     const slug = params.slug;
+        //     const post = await $content(`${app.i18n.locale}/blog`, slug).fetch();
+        //     const computed = {
+        //         getDate() {
+        //             return format(new Date(this.post.createdAt), 'dd/MM');
+        //         },
+        //     };
+        //     return {
+        //         post,
+        //     }
+        // },
         data() {
             return {
                 read_more: true,
@@ -403,31 +411,42 @@
                 this.shipModal = false;
                 this.returnModal = false;
                 this.packageModal = false;
+            },
+            openProductCare(){
+                const el = document.body;
+                el.classList.add("modal-open");
+                document.documentElement.style.overflowY = 'hidden';
+                this.productCare=true
+            },
+            closeProductCare(){
+                const el = document.body;
+                el.classList.remove("modal-open");
+                document.documentElement.style.overflowY = 'auto';
+                this.productCare=false
             }
         },
         head() {
             return {
-                title: this.post.title,
                 htmlAttrs: {
                     lang: this.$i18n.locale,
                 },
-                meta: [
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: this.post.description,
-                    },
-                    {
-                        property: 'og:title',
-                        hid: 'og:title',
-                        content: this.post.title,
-                    },
-                    {
-                        hid: 'og:image',
-                        property: 'og:image',
-                        content: this.post.media,
-                    },
-                ],
+                // meta: [
+                //     {
+                //         hid: 'og:description',
+                //         property: 'og:description',
+                //         content: this.post.description,
+                //     },
+                //     {
+                //         property: 'og:title',
+                //         hid: 'og:title',
+                //         content: this.post.title,
+                //     },
+                //     {
+                //         hid: 'og:image',
+                //         property: 'og:image',
+                //         content: this.post.media,
+                //     },
+                // ],
             };
         },
     }

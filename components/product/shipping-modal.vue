@@ -5,6 +5,7 @@
     @click:outside="closeModal"
     content-class="bg-white"
     style='z-index:300001;'
+    scrollable
   >
     <v-card>
       <v-card-title>
