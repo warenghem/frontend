@@ -41,14 +41,14 @@
             tile
             @click="$store.commit('product/CLOSE_PAY_MODAL')"
           >
-            Continuer mes achats
+            {{$t('product.continueBtn')}}
           </v-btn>
           <v-btn
             dark
             tile
             @click="$store.commit('product/CLOSE_PAY_MODAL')"
           >
-            Voir votre panier
+            {{$t('product.viewCart')}}
           </v-btn>
         </v-card-actions>
       </v-card>
