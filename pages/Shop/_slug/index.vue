@@ -1,5 +1,5 @@
 <template>
-  <div v-click-outside="closeProductCare">
+  <div v-click-outside="closeSideModal">
     <product-sticky-toolbar class="stickyBar"/>
     <v-container fluid>
       <v-row
@@ -90,14 +90,14 @@
           </div>
           <div class="mb-7">
             <div class="border-top-1 border-bottom-1 cursor-pointer py-5"
-                 @click="openProductCare"
+                 @click="openSideModal('productCare')"
             >
               {{$t('product.materialTitle')}}
               <v-icon class="float-right">mdi-chevron-right</v-icon>
             </div>
           </div>
           <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
-               @click="infoModal=true">
+               @click="openModal('paymentInfoModal')">
             <div class="d-flex align-center">
               <v-icon class="pr-5 right-icon">mdi-credit-card</v-icon>
               <div>
@@ -111,7 +111,7 @@
             </div>
           </div>
           <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
-               @click="shipModal=true">
+               @click="openModal('shippingModal')">
             <div class="d-flex align-center">
               <v-icon class="pr-5 right-icon">mdi-truck-delivery</v-icon>
               <div>
@@ -125,7 +125,7 @@
             </div>
           </div>
           <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
-               @click="returnModal=true">
+               @click="openModal('returnModal')">
             <div class="d-flex align-center">
               <v-icon class="pr-5 right-icon">mdi-sync</v-icon>
               <div>
@@ -138,7 +138,7 @@
               <v-icon>mdi-content-copy</v-icon>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between py-5 cursor-pointer" @click="packageModal=true">
+          <div class="d-flex align-center justify-space-between py-5 cursor-pointer" @click="openModal('packageModal')">
             <div class="d-flex align-center">
               <v-icon class="pr-5 right-icon">mdi-package-variant-closed</v-icon>
               <div>
@@ -165,13 +165,13 @@
             <v-tab
               href="#recentTab"
             >
-             {{$t('product.recent')}}
+              {{$t('product.recent')}}
 
             </v-tab>
             <v-tab
               href="#recommendTab"
             >
-             {{$t('product.recommend')}}
+              {{$t('product.recommend')}}
             </v-tab>
             <v-tab-item
               value="recentTab"
@@ -204,51 +204,8 @@
       </v-row>
     </v-container>
     <pay-modal :product="product"></pay-modal>
-    <info-modal :is-modal="infoModal" v-on:closeModal="closeModal"></info-modal>
-    <shipping-modal :is-modal="shipModal" v-on:closeModal="closeModal"></shipping-modal>
-    <return-modal :is-modal="returnModal" v-on:closeModal="closeModal"></return-modal>
-    <package-modal :is-modal="packageModal" v-on:closeModal="closeModal"></package-modal>
-    <v-navigation-drawer
-      v-model="productCare"
-      temporary
-      fixed
-      right
-      width="500px"
-      style="z-index: 300002;max-height: 100vh;"
-
-    >
-      <v-list-item>
-        <div class="d-flex justify-space-between align-center w-100" style="position: sticky;top:0">
-          <h4>{{$t('product.materialTitle')}}</h4>
-          <span>
-              <v-icon @click="closeProductCare">mdi-close</v-icon>
-            </span>
-        </div>
-      </v-list-item>
-
-      <v-divider></v-divider>
-      <div class="pa-4 overflow-y-auto" style="max-height: 87vh">
-        <material-content/>
-      </div>
-    </v-navigation-drawer>
-    <v-navigation-drawer
-      v-model="colorModal"
-      absolute
-      temporary
-      right
-    >
-      <v-list-item>
-        <v-list-item-avatar>
-          <v-img src="https://randomuser.me/api/portraits/men/78.jpg"></v-img>
-        </v-list-item-avatar>
-
-        <v-list-item-content>
-          <v-list-item-title>John Leider</v-list-item-title>
-        </v-list-item-content>
-      </v-list-item>
-
-      <v-divider></v-divider>
-    </v-navigation-drawer>
+    <info-modal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"></info-modal>
+    <side-modal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"></side-modal>
   </div>
 
 </template>
@@ -268,16 +225,13 @@
     import ProductStickyToolbar from "../../../components/product/product-sticky-toolbar";
     import PayModal from "../../../components/product/pay-modal";
     import InfoModal from "../../../components/product/info-modal";
-    import ShippingModal from "../../../components/product/shipping-modal";
-    import ReturnModal from "../../../components/product/return-modal";
-    import PackageModal from "../../../components/product/package-modal";
-    import MaterialContent from "../../../components/product/material-content";
+    import SideModal from "../../../components/product/side-modal";
 
     export default {
         name: 'post',
         components: {
-            MaterialContent,
-            PackageModal, ReturnModal, ShippingModal, InfoModal, PayModal, ProductStickyToolbar, ProductItem},
+            SideModal, InfoModal, PayModal, ProductStickyToolbar, ProductItem
+        },
         // async asyncData(context) {
         //     const {$content, params, app, route, redirect} = context;
         //     const slug = params.slug;
@@ -295,12 +249,9 @@
             return {
                 read_more: true,
                 infoModal: false,
-                shipModal: false,
-                productCare: false,
-                colorModal: false,
-                returnModal: false,
-                packageModal: false,
-
+                currentModal: 'paymentInfoModal',
+                sideModal: false,
+                currentSideItem: 'productCare',
                 product: {
                     name: 'SAC À DOS TRIO',
                     price: '26000',
@@ -406,24 +357,24 @@
             show(idx) {
                 this.$viewer.view(idx);
             },
-            closeModal() {
-                this.infoModal = false;
-                this.shipModal = false;
-                this.returnModal = false;
-                this.packageModal = false;
+            openModal(modalName) {
+                this.currentModal = modalName;
+                this.infoModal = true
             },
-            openProductCare(){
+            openSideModal(modalName) {
+                this.currentSideItem = modalName;
+                this.sideModal = true;
                 const el = document.body;
                 el.classList.add("modal-open");
                 document.documentElement.style.overflowY = 'hidden';
-                this.productCare=true
             },
-            closeProductCare(){
+            closeSideModal() {
+                this.sideModal = false;
                 const el = document.body;
                 el.classList.remove("modal-open");
                 document.documentElement.style.overflowY = 'auto';
-                this.productCare=false
             }
+
         },
         head() {
             return {
