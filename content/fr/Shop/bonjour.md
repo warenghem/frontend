@@ -1,74 +1,74 @@
 ---
-identifiant: '1'
+id: '1'
 sku: M45604
-nom: Un produit incroyable
+name: Un produit incroyable
 description: Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition
-  et modernité. Fait de toile
-Propriété supplémentaire:
-- détails: Maroquinerie
-- entretien: Pour préserver la beauté de cet article en toile Monogram Eclipse au fil des ans,
-    nous vous recommandons de suivre ces conseils d'entretien
+  et modernité. Confectionné en toile
+additionalProperty:
+- details:  ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien
+- care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse,
+    nous vous recommandons de suivre ces conseils d’entretien
 dimensions:
-  longueur: '290'
-  largeur: '100'
-  hauteur: '250'
-fabricant: ''
-Matériel:
-- nom: Cuir Dionysos
+  length: '290'
+  width: '100'
+  height: '250'
+manufacturer: ''
+material:
+- name: Cuit Dionysos
   image: "/dionysosleather.jpeg"
-- nom: Lin
+- name: Lin
   slug: "/linen.jpeg"
-prix:
-- nom: Vegan
+award:
+- name: Vegan
   image: "/vegan.jpeg"
-- nom: écologique
-  limace: "/ecological.jpeg"
-des offres:
+- name: Ecologique
+  slug: "/ecological.jpeg"
+offers:
   priceCurrency: EUR
-  prix: '390'
-  disponibilité: http://schema.org/InStock
-catégories:
-- nom: Maroquinerie
-  limace: maroquinerie
-  profondeur: '1'
-- nom: Sacs
-  limace: sacs
-  profondeur: '2'
-Mots clés:
-- nom: Maroquinerie
-- nom: Sacs
+  price: '390'
+  availability: http://schema.org/InStock
+categories:
+- name: Leather Goods
+  slug: leathergoods
+  depth: '1'
+- name: Bags
+  slug: bags
+  depth: '2'
+tags:
+- name: Leather Goods
+- name: Bags
 image:
 - src: "/AdobeStock_50352719.jpeg"
-  Nom: ''
+  name: ''
   alt: ''
 - src: https://example.com/wp-content/uploads/2017/03/T_2_back-2.jpg
-  Nom: ''
+  name: ''
   alt: ''
-les attributs:
-- nom: Couleur
+attributes:
+- name: Color
   options:
-  - nom: NaturalBlack
-    icône: "/naturalblack.jpeg"
-  - nom: DeserticCamel
-    icône: "/deserticcamel.jpeg"
-  - nom: BugattiBlue
-    icône: "/bugattiblue.jpeg"
-- nom: Taille
+  - name: NaturalBlack
+    icon: "/naturalblack.jpeg"
+  - name: DeserticCamel
+    icon: "/deserticcamel.jpeg"
+  - name: BugattiBlue
+    icon: "/bugattiblue.jpeg"
+- name: Size
   options:
-  - «41»
-  - «42»
-  - «43»
+  - '41'
+  - '42'
+  - '43'
 default_attributes:
-- nom: Couleur
-  option: NaturelNoir
-- nom: Taille
+- name: Color
+  option: NaturalBlack
+- name: Size
   option: '41'
-est liée à: ''
-isSimilarTo: chaussures
-marque:
-  nom: Warenghem
-locale: fr
-chemin: / fr / mon-premier-article
+isRelatedTo: ''
+isSimilarTo: shoes
+brand:
+  name: Warenghem
+locale: en
+path: /en/my-first-article
 ---
 
 Renforcez votre application NuxtJS avec le module `@ nuxtjs / content`: écrivez dans un répertoire` content /` et récupérez vos fichiers Markdown, JSON, YAML et CSV via une API similaire à MongoDB, agissant comme un ** CMS Headless basé sur Git ** .

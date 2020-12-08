@@ -2,12 +2,10 @@
 id: '1'
 sku: M45604
 name: Some Amazing Product
-description: Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition
-  et modernité. Confectionné en toile
+description: This new bags ... 
 additionalProperty:
 - details: Leather Goods
-- care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse,
-    nous vous recommandons de suivre ces conseils d’entretien
+- care: Care for this product
 dimensions:
   length: '290'
   width: '100'
