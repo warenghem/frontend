@@ -1,23 +1,86 @@
 ---
-title: Getting started
-category: web
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-media: https://images.unsplash.com/photo-1592500103620-1ab8f2c666a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3000&q=80
-
-locale: en
-path: /en/my-first-article
+identifiant: '1'
+sku: M45604
+nom: Un produit incroyable
+description: Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition
+  et modernité. Fait de toile
+Propriété supplémentaire:
+- détails: Maroquinerie
+- entretien: Pour préserver la beauté de cet article en toile Monogram Eclipse au fil des ans,
+    nous vous recommandons de suivre ces conseils d'entretien
+dimensions:
+  longueur: '290'
+  largeur: '100'
+  hauteur: '250'
+fabricant: ''
+Matériel:
+- nom: Cuir Dionysos
+  image: "/dionysosleather.jpeg"
+- nom: Lin
+  slug: "/linen.jpeg"
+prix:
+- nom: Vegan
+  image: "/vegan.jpeg"
+- nom: écologique
+  limace: "/ecological.jpeg"
+des offres:
+  priceCurrency: EUR
+  prix: '390'
+  disponibilité: http://schema.org/InStock
+catégories:
+- nom: Maroquinerie
+  limace: maroquinerie
+  profondeur: '1'
+- nom: Sacs
+  limace: sacs
+  profondeur: '2'
+Mots clés:
+- nom: Maroquinerie
+- nom: Sacs
+image:
+- src: "/AdobeStock_50352719.jpeg"
+  Nom: ''
+  alt: ''
+- src: https://example.com/wp-content/uploads/2017/03/T_2_back-2.jpg
+  Nom: ''
+  alt: ''
+les attributs:
+- nom: Couleur
+  options:
+  - nom: NaturalBlack
+    icône: "/naturalblack.jpeg"
+  - nom: DeserticCamel
+    icône: "/deserticcamel.jpeg"
+  - nom: BugattiBlue
+    icône: "/bugattiblue.jpeg"
+- nom: Taille
+  options:
+  - «41»
+  - «42»
+  - «43»
+default_attributes:
+- nom: Couleur
+  option: NaturelNoir
+- nom: Taille
+  option: '41'
+est liée à: ''
+isSimilarTo: chaussures
+marque:
+  nom: Warenghem
+locale: fr
+chemin: / fr / mon-premier-article
 ---
 
-Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Renforcez votre application NuxtJS avec le module `@ nuxtjs / content`: écrivez dans un répertoire` content /` et récupérez vos fichiers Markdown, JSON, YAML et CSV via une API similaire à MongoDB, agissant comme un ** CMS Headless basé sur Git ** .
 
-## Writing content
+## Rédaction de contenu
 
-Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
+Apprenez à écrire votre `content /`, en prenant en charge Markdown, YAML, CSV et JSON: https://content.nuxtjs.org/writing.
 
-## Fetching content
+## Récupération du contenu
 
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+Apprenez à récupérer votre contenu avec `$ content`: https://content.nuxtjs.org/fetching.
 
-## Displaying content
+## Affichage du contenu
 
-Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+Apprenez à afficher votre contenu Markdown avec le composant `<nuxt-content>` `directement dans votre modèle: https://content.nuxtjs.org/displaying.
