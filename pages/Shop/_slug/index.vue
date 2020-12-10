@@ -9,8 +9,8 @@
           lg="8"
 
         >
-          <viewer :images="product.images" class="viewer" ref="viewer" @inited="inited">
-            <img v-for="src in product.images" :src="src" :key="src" class="image d-none">
+          <viewer  class="viewer" ref="viewer" @inited="inited">
+            <img v-for="img in product.image" :src="img.src" :key="img.src" class="image d-none">
           </viewer>
           <v-row>
 
@@ -26,11 +26,11 @@
                 height="70vh"
               >
                 <v-carousel-item
-                  v-for="(image,idx) in product.images" :key="image"
+                  v-for="(image,idx) in product.image" :key="'image_'+idx"
                   @click="show(idx)"
                   class="text-center"
                 >
-                  <img :src="image"
+                  <img :src="image.src"
                        :lazy-src="require('../../../assets/images/image-loader.gif')"
                        height="100%"
                        class="lazyload"
@@ -46,16 +46,16 @@
           class="pa-7"
         >
           <div class="d-flex justify-space-between">
-            <div>M45538</div>
+            <div>{{product.sku}}</div>
             <div>
               <v-btn icon>
                 <v-icon>mdi-heart</v-icon>
               </v-btn>
             </div>
           </div>
-          <div class="bold-title text-left pt-2 pb-7">SAC À DOS TRIO</div>
+          <div class="bold-title text-left pt-2 pb-7">{{product.name}}</div>
           <div class="d-flex justify-space-between align-center">
-            <h3 style="font-weight: 900">2 600,00€</h3>
+            <h3 style="font-weight: 900">{{product.offers.price}}{{product.offers.priceCurrency}}</h3>
             <div>
 
               <v-icon small>mdi-circle</v-icon>
@@ -177,7 +177,7 @@
               value="recentTab"
             >
               <VueSlickCarousel v-bind="settings">
-                <div v-for="(img,i_dx) in product.images"
+                <div v-for="(img,i_dx) in product.image"
                      :key="i_dx"
                      class="text-center pa-2"
                 >
@@ -191,7 +191,7 @@
               value="recommendTab"
             >
               <VueSlickCarousel v-bind="settings">
-                <div v-for="(img,i_dx) in product.images"
+                <div v-for="(img,i_dx) in product.image"
                      :key="'recommend'+i_dx"
                      class="pa-2"
                 >
@@ -232,19 +232,15 @@
         components: {
             SideModal, InfoModal, PayModal, ProductStickyToolbar, ProductItem
         },
-        // async asyncData(context) {
-        //     const {$content, params, app, route, redirect} = context;
-        //     const slug = params.slug;
-        //     const post = await $content(`${app.i18n.locale}/blog`, slug).fetch();
-        //     const computed = {
-        //         getDate() {
-        //             return format(new Date(this.post.createdAt), 'dd/MM');
-        //         },
-        //     };
-        //     return {
-        //         post,
-        //     }
-        // },
+        async asyncData(context) {
+            const {$content, params, app, route, redirect} = context;
+            const slug = params.slug;
+            const product = await $content(`${app.i18n.locale}/Shop`, slug).fetch();
+            console.log(product)
+            return {
+                product,
+            }
+        },
         data() {
             return {
                 read_more: true,

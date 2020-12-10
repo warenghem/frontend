@@ -20,11 +20,11 @@
 
         <v-card-text>
           <div class="d-flex align-center">
-            <v-card class="grey lighten-2">
-              <v-img :src="product.images[0]" width="150px"></v-img>
+            <v-card class="grey lighten-2" v-if="product.image.length>0">
+              <v-img :src="product.image[0].src" width="150px"></v-img>
             </v-card>
             <div class="pa-4">
-              <div>SAC À DOS TRIO</div>
+              <div>{{product.name}}</div>
               <div> M45538</div>
               <div>Couleurs : ECLIPSE</div>
               <span>2 600,00€</span>
