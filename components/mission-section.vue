@@ -27,6 +27,26 @@
                                 <div></div>
                                 <div></div>
                             </div>
+                            <div class="homepage-catalogue-background-divided d-none">
+
+                                <div v-for="(bgLogo,idx) in $store.state.picture.backgroundlogos" :key="'bg_logo_'+idx">
+                                    <div>
+                                        <!--<ik-image
+                                            :path="bgImage"
+                                            :lqip="{active:true, quality: 40, blur: 5}"
+                                            :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
+                                            loading="lazy"
+                                            class="cover"
+                                        />-->
+                                        <img
+                                          data-sizes="auto"
+                                          :data-src="bgLogo.img"
+                                          class="lazyload d-none position-relative"
+                                          style="z-index:10"
+                                      />
+                                        </div>
+                                    </div>
+                            </div>
                             <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
 
                                 <div v-for="(bgImage,idx) in $store.state.picture.backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
@@ -132,7 +152,7 @@
                                 </div>
                             </div>
                         </v-expansion-panel-header>
-                        <v-expansion-panel-content>
+                        <v-expansion-panel-content eager="true">
                             <div>
                                 <ul class="text-left mb-4 teradeli-light z-2">
                                     <li class="fp-list-item" v-for="(item,idx) in mission.items"
@@ -167,6 +187,7 @@
             fpMouseOver(idx) {
                 this.currentMissionHover = idx;
                 this.backgroundImage = this.$store.state.picture.backgroundImages[idx - 1];
+                this.backgroundlogos = this.$store.state.picture.backgroundlogos[idx - 1];
             }
         }
         ,
@@ -176,7 +197,7 @@
                     mission: {
                         title: "The mission: to reunite man with nature",
                         sections: [{
-                            title: "Sustainable technologies. Total traceability.",
+                            title: "Total traceability via our Blockchain technology",
                             subtitle: "Powerful, CO2 neutral, our technologies support the regeneration of nature.",
                             items:
                                 [
@@ -233,15 +254,15 @@
                         title: "La mission: réunifier l’Homme à la nature",
                         sections: [
                             {
-                                title: "Technologies durables. Tracabilité totale.",
+                                title: "Tracabilité totale, infalsifiable via notre technologie ORIGIN®.",
                                 subtitle:
-                                    "Puissantes, neutres en CO2, nos technologies accompagnent la régénération de la nature.",
+                                    "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons.",
                                 items:
                                     [
-                                        "Technologie Blockchain. Pour une transparence sans faille.",
-                                        "Bio-Technologies. Comme alternative au cuir animal.",
-                                        "Technologies neutres en CO2. Alimentées par des énergies renouvelables.",
-                                        "Technologies et electroniques fabriquées en France. Nos usines cherchent à innover sans altérer l’environnement."
+                                        "Tagez un QR code pour découvrir l'histoire de vos produits et de leurs fabriquants.",
+                                        "Notre application est basée sur la Blockchain, une base de donnée publique et décentralisée. Infalsifiable.",
+                                        "Elle est Neutre en CO2 grâce à nos projets de reforestation.",
+                                        "Nos fourniseurs y renseignent les caractéristiques de leurs produits et leurs certifications.",
                                     ]
                             }
                             , {
@@ -255,30 +276,28 @@
                                         "objets casse les codes de la maroquinerie classique.",
                                         "Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la " +
                                         "fonctionnalité et le quotidien.",
-                                        "Focalisés sur un futur que nous devons réinventer. Le style de chaque matière est " +
-                                        "étudié pour confondre l’objet dans le paysage.",
                                     ]
                             }
                             , {
                                 title: " Fabriqué en France. Point.",
                                 subtitle:
-                                    "Raffinés, artisanaux, locaux, nos objets développent l’industrie et le savoir-faire français.",
+                                    "Raffinés, locaux, nos objets développent le savoir-faire français.",
                                 items:
                                     [
                                         "Local : Véritable projet français de A à Z.",
                                         "Social : Développer les emplois et les traditions francaises.",
                                         "Éthique : Ne pas profiter de pays à bas couts (y compris en Europe).",
-                                        "Écologique : Éviter les transports et l’opacité de pays en dehors de nos règlementations nationales."
+                                        "Écologique : Éviter les transports et l’opacité de pays en dehors de nos règlementations."
                                     ]
                             }
                             , {
-                                title: "Cuir de vin Dionysos®. Végétalement noble.",
+                                title: "Végétalement noble. Nos cuirs de vin DIONYSOS®.",
                                 subtitle:
-                                    "Performantes, naturelles, solides, nos matières sont issues de la terre et des vendanges.",
+                                    "Solides, performantes, nos matières sont issues de la terre et des vendanges.",
                                 items:
                                     [
                                         "Issues de la rencontre entre la nature et nos innovations technologiques.",
-                                        "Beaucoup plus écologiques et aussi solides que le cuir traditionnel.",
+                                        "Beaucoup plus écologiques et aussi solides que le cuir animal.",
                                         "Ne demande aucun entretien",
                                         "Sans matière animale. Sans souffrance.",
                                     ]

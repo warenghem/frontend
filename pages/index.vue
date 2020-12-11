@@ -12,7 +12,11 @@
           md="6"
           class="border-right-2"
         >
-          <LazyWePlantTreeMap id="mapTreeSection"/>
+          <div v-intersect.quiet="mapintersect">
+            <client-only placeholder="Loading...">
+              <LazyMap v-if="mapshow" id="mapTreeSection"/>
+            </client-only>
+          </div>
         </v-col>
         <v-col
           cols="12"
@@ -23,8 +27,10 @@
       </v-row>
     </v-container>
     <LazyReferences/>
-    <LazyInstagram/>
-    <LazyPlantForm/>
+    <LazyInstagram v-if="instashow" />
+    <div v-intersect.quiet="instaintersect">
+      <LazyPlantForm v-if="$store.state.plantModal" />
+    </div>
   </div>
 </template>
 
@@ -32,6 +38,12 @@
 
     export default {
         name: 'default',
+        data() {
+          return {
+            mapshow: false,
+            instashow: false,
+          }
+        },
         methods: {
             hideModal() {
                 document.querySelector('.indianforest').classList.remove('active');
@@ -40,6 +52,12 @@
                 const el = document.body;
                 el.classList.remove('modal-open');
                 document.documentElement.style.overflowY = 'auto'
+            },
+            mapintersect(entries, observer, isIntersecting) {
+              this.mapshow = true
+            },
+            instaintersect(entries, observer, isIntersecting) {
+              this.instashow = true
             }
         },
         head() {

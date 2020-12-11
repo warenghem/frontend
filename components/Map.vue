@@ -3,7 +3,6 @@
     <h2 class="page-title pt-md-5 pt-4 px-3"> {{$t('title')}}</h2>
     <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
     <tree-data :treeData="treeData"></tree-data>
-    <client-only>
       <div class="pa-0 pa-sm-5 pt-5">
       <l-map
         style="width: 100%"
@@ -41,7 +40,6 @@
         </l-marker>
       </l-map>
     </div>
-    </client-only>
     <div class="slideArea mgforest">
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
@@ -286,8 +284,17 @@
   </div>
 </template>
 <script>
+    import L from 'leaflet';
+    import { LMap, LTileLayer, LMarker, LIcon } from 'vue2-leaflet';
+    import 'leaflet/dist/leaflet.css';
     export default {
         name: 'leaflet-map',
+        components: {
+              LMap,
+              LTileLayer,
+              LMarker,
+              LIcon,
+        },
         data() {
             return {
                 zoom: 3,

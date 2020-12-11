@@ -26,8 +26,6 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    {src: '~/plugins/vue-leaflet', ssr: false},
-    {src: '~/plugins/vue-carousel', ssr: true},
     {src: '~/plugins/lazysizes', ssr: false},
   ],
 
@@ -39,7 +37,6 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     "@nuxtjs/svg",
-    '@nuxtjs/date-fns',
     '@nuxtjs/snipcart',
     '@nuxtjs/google-analytics',
   ],
@@ -167,6 +164,42 @@ export default {
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     },
+    postcss: {
+      plugins: {
+          "@fullhuman/postcss-purgecss": {
+            content: [
+              'components/**/*.vue',
+              'layouts/**/*.vue',
+              'pages/**/*.vue',
+              'plugins/**/*.js',
+              'node_modules/vuetify/src/**/*.ts',
+            ],
+            styleExtensions: ['.css'],
+            safelist: {
+              standard: [
+                "body",
+                "html",
+                "nuxt-progress",
+                /col-*/,
+              ],
+              deep: [
+                /page-enter/,
+                /page-leave/,
+                /dialog-transition/,
+                /tab-transition/,
+                /tab-reversetransition/
+              ],
+              greedy: [/leaflet/]
+            }
+          }
+        }
+    },
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
+    },
     analyze: true,
-  }
+  },
+  
 }

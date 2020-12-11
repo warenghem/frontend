@@ -25,13 +25,13 @@
     "leaflet": "^1.7.1",
     "nuxt": "^2.14.6",
     "nuxt-i18n": "^6.15.4",
-    "nuxt-purgecss": "^1.0.0",
     "v-viewer": "^1.5.1",
     "vue": "^2.6.12",
     "vue-slick-carousel": "^1.0.6",
     "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {
+    "@fullhuman/postcss-purgecss": "^3.0.0",
     "@nuxtjs/date-fns": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/svg": "^0.1.12",

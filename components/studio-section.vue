@@ -71,7 +71,7 @@
         i18n: {
             messages: {
                 en: {
-                    title: "Warenghem Studios",
+                    title: "Warenghem Studio",
                     subtitle:"Our offices are located in Paris and in the Var, our factories are located all over France. Our team is growing, write to us ...",
                     profiles: [
                         {
@@ -109,7 +109,7 @@
                     ],
                 },
                 fr: {
-                    title: "Warenghem Studios",
+                    title: "Warenghem Studio",
                     subtitle:"Nos bureaux sont situés à Paris et dans le Var, nos usines sont situées un peu partout en France. Notre équipe s'agrandie, écrivez nous...",
                     profiles: [
                         {

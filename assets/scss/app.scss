@@ -734,20 +734,6 @@ body {
   right: 0px;
 }
 
-.div5 {
-  grid-area: 2 / 2 / 3 / 4;
-  height: calc(100% - 38px);
-  @media (max-width: 960px) {
-    grid-area: 3 / 1 / 4 / 3;
-    height: 33vw;
-  }
-
-  img {
-    width: 100% !important;
-    max-width: 500px;
-  }
-}
-
 .lazyload {
 	opacity: 0;
 }
