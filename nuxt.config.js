@@ -199,7 +199,6 @@ export default {
     */
     extend(config, ctx) {
     },
-    analyze: true,
   },
   
 }
