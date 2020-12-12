@@ -26,6 +26,7 @@
     <v-app-bar class="menu-bar" flat height="50px" :dark="type">
 
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
+          <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>
       <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
                        :key="'link_btn_l_'+l_idx">
@@ -111,6 +112,7 @@
 <script>
     import link from './../../store/link'
     import langs from './../../store/langs'
+    import { mdiAccount } from '@mdi/js'
 
 
     export default {
@@ -118,6 +120,7 @@
         data() {
             return {
                 sidebar: false,
+                svgPath: mdiAccount
             }
         },
         props: {
