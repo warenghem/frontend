@@ -15,6 +15,10 @@
           <div v-intersect.quiet="mapintersect">
             <client-only placeholder="Loading...">
               <LazyMap v-if="mapshow" id="mapTreeSection"/>
+                <v-skeleton-loader
+                v-bind="attrs"
+                type="list-item-avatar, divider, list-item-three-line, card-heading, image, actions"
+              ></v-skeleton-loader>
             </client-only>
           </div>
         </v-col>

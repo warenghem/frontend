@@ -14,8 +14,18 @@ export default {
       {hid: 'description', name: 'description', content: ''}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: "preconnect", href: "https://ik.imagekit.io", crossorigin: true},
+      {rel: "preconnect", href: "https://app.snipcart.com", crossorigin: true},
+      {rel: "preconnect", href: "https://cdn.snipcart.com", crossorigin: true},
     ]
+  },
+  render: {
+    bundleRenderer: {
+      shouldPreload: (_, type) => {
+        return type === 'image'
+      }
+    }
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
