@@ -18,6 +18,8 @@ export default {
       {rel: "preconnect", href: "https://ik.imagekit.io", crossorigin: true},
       {rel: "preconnect", href: "https://app.snipcart.com", crossorigin: true},
       {rel: "preconnect", href: "https://cdn.snipcart.com", crossorigin: true},
+      {rel: "preconnect", href: "d33wubrfki0l68.cloudfront.net", crossorigin: true},
+      {rel: "preconnect", href: "www.google-analytics.com", crossorigin: true},
     ]
   },
   render: {
@@ -55,6 +57,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/component-cache',
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     'nuxt-i18n',
