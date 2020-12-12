@@ -24,6 +24,7 @@
                    :class="{'whiteBack':$root.currentId==='mapTreeSection'||$root.currentId==='studioSection'}">
 
             <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
+              <v-icon>{{ svgPath }}</v-icon>
             </v-app-bar-nav-icon>
             <v-toolbar-title class="d-md-block pr-4 d-none">
                 <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
@@ -50,12 +51,14 @@
 </template>
 
 <script>
+import { mdiMenu } from '@mdi/js'
 export default {
   name: 'sticky-toolbar',
   data: function () {
     return {
       fixedOnScroll: false,
       sidebar: false,
+      svgPath: mdiMenu,
     }
   },
   methods: {

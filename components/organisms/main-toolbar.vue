@@ -112,7 +112,7 @@
 <script>
     import link from './../../store/link'
     import langs from './../../store/langs'
-    import { mdiAccount } from '@mdi/js'
+    import { mdiMenu } from '@mdi/js'
 
 
     export default {
@@ -120,7 +120,7 @@
         data() {
             return {
                 sidebar: false,
-                svgPath: mdiAccount
+                svgPath: mdiMenu
             }
         },
         props: {
