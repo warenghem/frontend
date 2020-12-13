@@ -1,9 +1,6 @@
 <template>
-  <div class="pt-10 position-relative" v-intersect.once="mapIntersect">
-    <h2 class="page-title pt-md-5 pt-4 px-3"> {{$t('title')}}</h2>
-    <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
-    <tree-data :treeData="treeData"></tree-data>
-      <div class="pa-0 pa-sm-5 pt-5">
+  <div>
+    <div class="pa-0 pa-sm-5 pt-5">
       <l-map
         style="width: 100%"
         class="treemap"
@@ -53,7 +50,7 @@
             style="font-size: 26px"
             class="px-0 h-100"
           >
-            &times;
+            <v-icon>{{ svgPath }}</v-icon>
           </v-btn>
         </div>
         <div class="px-3 px-sm-7 pb-3  map-modal">
@@ -174,7 +171,7 @@
             style="font-size: 26px"
             class="px-0 h-100"
           >
-            &times;
+            <v-icon>{{ svgPath }}</v-icon>
           </v-btn>
         </div>
         <div class="px-3 px-sm-7 pb-3  map-modal">
@@ -287,6 +284,7 @@
     import L from 'leaflet';
     import { LMap, LTileLayer, LMarker, LIcon } from 'vue2-leaflet';
     import 'leaflet/dist/leaflet.css';
+    import { mdiClose } from '@mdi/js';
     export default {
         name: 'leaflet-map',
         components: {
@@ -297,21 +295,12 @@
         },
         data() {
             return {
+                svgPath: mdiClose,
                 zoom: 3,
                 center: [3.770449, 64.38911],
                 url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                 showParagraph: false,
                 showMap: true,
-                intersectionOptions: {
-                    root: null,
-                    rootMargin: '0px 0px 0px 0px',
-                    threshold: [0, 1] // [0.25, 0.75] if you want a 25% offset!
-                },
-                treeData: {
-                    treeCount: 0,
-                    co2: 0,
-                    reforest: 0
-                },
                 markers: [
                     {
                         id: "Trees_for_Tiger",
@@ -367,19 +356,10 @@
                 el.classList.add("modal-open");
                 document.documentElement.style.overflowY = 'hidden'
             },
-            mapIntersect() {
-                this.treeData.treeCount = this.$store.state.tree_count;
-                this.treeData.co2 = parseFloat(this.$store.state.co2_compensated);
-                this.treeData.reforest = parseFloat(this.$store.state.reforest)
-            }
         },
         i18n: {
             messages: {
                 en: {
-                    title: 'We also plant trees. And you?',
-                    subtitle: 'To offset the CO2 emissions linked to the creation of our objects, your visits to our ' +
-                        'site, and the electricity consumption of our technologies. Our projects are exclusively ' +
-                        'reserved for the regeneration of biodiversity. Our trees are traced and certified.',
                     madagascar: {
                         section1: {
                             title: 'Forest',
@@ -443,11 +423,6 @@
 
                 },
                 fr: {
-                    title: 'Nos projets de reforestation',
-                    subtitle: 'Pour compenser les émissions de CO2 liées à la création de nos objets, à vos visites' +
-                        ' sur notre site, et à la consommation d’électricité de nos technologies. Nos projets sont' +
-                        ' exclusivement réservés à la régénération de la biodiversité. Nos arbres sont tracés' +
-                        ' et certifiés.',
                     madagascar: {
                         section1: {
                             title: 'Fôret',

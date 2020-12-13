@@ -48,7 +48,7 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    "@nuxtjs/svg",
+    '@nuxtjs/svg',
     '@nuxtjs/snipcart',
     '@nuxtjs/google-analytics',
   ],

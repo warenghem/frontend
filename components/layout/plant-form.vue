@@ -11,12 +11,7 @@
                             icon
                             @click="$store.state.plantModal = false"
                     >
-                        <v-icon
-                                color="black"
-                                medium
-                        >
-                            mdi-close
-                        </v-icon>
+                        <v-icon>{{ svgPath }}</v-icon>
                     </v-btn>
                     <v-card-text
                     class="pa-3 pa-sm-5">
@@ -116,7 +111,7 @@
 
 <script>
     import MailchimpSubscribe from './mailchp-subscribe'
-
+    import { mdiClose } from '@mdi/js'
     export default {
         name: "plant-form",
         components: {
@@ -163,7 +158,8 @@
                 snackbarSuccess: false,
                 snackbarError: false,
                 email: '',
-                loading: false
+                loading: false,
+                svgPath: mdiClose,
             }
         },
     }

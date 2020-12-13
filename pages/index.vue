@@ -3,8 +3,8 @@
     <sticky-toolbar class="stickyBar"/>
     <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
-    <LazyMissionSection id="missionSection"/>
-    <LazyProductSection id="productSection"/>
+    <MissionSection id="missionSection"/>
+    <ProductSection id="productSection"/>
     <v-container fluid class="ma-0 pa-0 fill-height border-top-2">
       <v-row no-gutters>
         <v-col
@@ -12,41 +12,25 @@
           md="6"
           class="border-right-2"
         >
-          <div v-intersect.quiet="mapintersect">
-            <client-only placeholder="Loading...">
-              <LazyMap v-if="mapshow" id="mapTreeSection"/>
-                <v-skeleton-loader
-                v-bind="attrs"
-                type="list-item-avatar, divider, list-item-three-line, card-heading, image, actions"
-              ></v-skeleton-loader>
-            </client-only>
-          </div>
+          <MapSection id="mapTreeSection"/>
         </v-col>
         <v-col
           cols="12"
           md="6"
         >
-          <LazyStudioSection id="studioSection"/>
+          <StudioSection id="studioSection"/>
         </v-col>
       </v-row>
     </v-container>
-    <LazyReferences/>
-    <LazyInstagram v-if="instashow" />
-    <div v-intersect.quiet="instaintersect">
-      <LazyPlantForm v-if="$store.state.plantModal" />
-    </div>
+    <References/>
+    <SocialSection/>
+    <LazyPlantForm v-if="$store.state.plantModal" />
   </div>
 </template>
 
 <script>
     export default {
         name: 'default',
-        data() {
-          return {
-            mapshow: false,
-            instashow: false,
-          }
-        },
         methods: {
             hideModal() {
                 document.querySelector('.indianforest').classList.remove('active');
@@ -56,12 +40,6 @@
                 el.classList.remove('modal-open');
                 document.documentElement.style.overflowY = 'auto'
             },
-            mapintersect(entries, observer, isIntersecting) {
-              this.mapshow = true
-            },
-            instaintersect(entries, observer, isIntersecting) {
-              this.instashow = true
-            }
         },
         head() {
             return {
@@ -73,4 +51,3 @@
     }
 
 </script>
-

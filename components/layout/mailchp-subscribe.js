@@ -49,7 +49,7 @@ export default {
         setName(value = '') {
             this.name = value.trim()
         },
-        getLang(){ 
+        getLang(){
             this.lang=this.$store.state.langs.items.some(lang => {
                     if (lang.lang === this.$i18n.locale) {
                         return lang.full

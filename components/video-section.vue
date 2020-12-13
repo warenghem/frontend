@@ -45,10 +45,7 @@
                 data-src="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
                           https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x" 
                 src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" 
-                data-sizes="auto" />    <v-progress-circular
-      indeterminate
-      color="green"
-    ></v-progress-circular>
+                data-sizes="auto" />
         </picture>
         </div>
 
@@ -223,8 +220,8 @@
             messages: {
                 en: {
                     video: {
-                        title: 'Vegetable shoes & leather goods of the future. ',
-                        title2: 'Now.',
+                        title: 'Inspired by tradition. ',
+                        title2: 'Made for the future.',
                         subtitle: 'Meeting between French leather traditions and our wine leathers',
                         tag1: 'Ecological / Vegan',
                         tag2: 'Made in France',
@@ -250,9 +247,9 @@
                 },
                 fr: {
                     video: {
-                        title: ' Maroquinerie & chaussures végétales du futur. ',
-                        title2: ' Dès à présent.',
-                        subtitle: 'Rencontre entre les traditions maroquinières francaises et nos cuirs de vin',
+                        title: 'Inspiré par la tradition. ',
+                        title2: 'Fabriqué pour le futur.',
+                        subtitle: 'Chaussures et maroquinerie en cuir vététal de vin',
                         tag1: 'Ecologique / Vegan',
                         tag2: 'Made in France',
                         tag3: 'Technologie durable',

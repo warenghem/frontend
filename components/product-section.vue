@@ -6,7 +6,7 @@
                         style="max-width:500px" 
                         data-sizes="auto"
                         data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
-                        src="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-500,bl-10/Logos/Citadins_Sauvages.png" 
+                        src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
                         class="lazyload w-100 px-3" 
                     />
                 </div>

@@ -188,9 +188,8 @@
                 this.currentMissionHover = idx;
                 this.backgroundImage = this.$store.state.picture.backgroundImages[idx - 1];
                 this.backgroundlogos = this.$store.state.picture.backgroundlogos[idx - 1];
-            }
-        }
-        ,
+            },
+        }, 
         i18n: {
             messages: {
                 en: {
