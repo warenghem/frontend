@@ -24,7 +24,6 @@ export default {
   },
   render: {
     asyncScripts: true,
-    injectScripts: false,
     bundleRenderer: {
       shouldPreload: (_, type) => {
         return type === 'image'
