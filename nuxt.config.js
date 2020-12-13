@@ -23,10 +23,14 @@ export default {
     ]
   },
   render: {
+    asyncScripts: true,
     bundleRenderer: {
       shouldPreload: (_, type) => {
         return type === 'image'
       }
+    },
+    static: {
+      maxAge: 1000 * 60 * 60 * 24 * 7
     }
   },
 
@@ -57,7 +61,13 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
-    '@nuxtjs/component-cache',
+    [
+      '@nuxtjs/component-cache',
+      {
+        max: 10000,
+        maxAge: 1000 * 60 * 60
+      }
+    ],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     'nuxt-i18n',
