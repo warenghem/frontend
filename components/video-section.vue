@@ -80,19 +80,19 @@
           </div>
           <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
-              <p>
+              <p style="height:23.6094px">
                 <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/ecological.svg">
               </p>
               <span>{{$t('video.tag1')}}</span>
             </div>
             <div class="col-md-4">
-              <p>
+              <p style="height:23.6094px">
                 <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/france.svg">
               </p>
               <span>{{$t('video.tag2')}}</span>
             </div>
             <div class="col-md-4">
-              <p>
+              <p style="height:23.6094px">
                 <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/tech.svg">
               </p>              
               <span>{{$t('video.tag3')}}</span>
