@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fp-section d-none d-lg-table finebordert elevation-3">
+        <div class="fp-section d-none d-lg-table finebordert">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
             <div class="fp-tableCell" style="height: 900px;">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
@@ -133,7 +133,7 @@
                     />
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
-                                <div class="pb-3">
+                                <div style="height:49px" class="pb-3">
                                     <img width="35px" src="https://ik.imagekit.io/g1noocuou2/Icons/magazine-plus.svg"
                                          alt="Wait For It"
                                          class="plusIcon"

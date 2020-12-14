@@ -2,7 +2,7 @@
   <div>
     <div class="videoSection">
       <div class="homepage-slider-background" ref="backgroundImg">
-        <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay">
+        <div class="homepage-slider-background-item active activeNew">
         <!--<ik-image
             path="/S048_PF_TEuxOrfV7C_a.png"
             :lqip="{active:true, quality: 40, blur: 5}"
@@ -10,7 +10,7 @@
             loading="lazy"
             class="cover"
           />-->
-        <picture>
+        <picture class="gradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 768w,
@@ -73,7 +73,7 @@
         </div>
       </div>
       <v-row no-gutters class="homepage-slider-content">
-        <v-col class="topCenter my-auto col-12">
+        <v-col class="topCenter col-12">
           <div class="bannerLeft px-2 text-center">
             <h2 class="title"> {{$t('video.title')}}{{$t('video.title2')}}</h2>
             <h4 class="subtitle">{{$t('video.subtitle')}}</h4>
