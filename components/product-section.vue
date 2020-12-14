@@ -69,7 +69,7 @@
                                     data-sizes="auto"
                                     :data-srcset="backgroundImages[p_idx]" 
                                     :src="backgroundImagelqip[p_idx]" 
-                                    class="lazyload cover bg-white catalogue-item-background elevation-3" 
+                                    class="lazyload cover bg-white catalogue-item-background elevation-0" 
                                 />
                             <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
                                 {{product.desc}}
@@ -79,8 +79,8 @@
                             </v-card-text>  
                         </div>
                         <v-card-text elevation="4" class="catalogue-item-content-title mt-4 p-0">
-                                <span class="pr-1 pr-sm-3 titlesmall teradeli-medium">{{product.title}}</span>
-                                <span class="subtitlesmall teradeli light">
+                                <span class="pr-1 titlesmall teradeli-medium primary--text">{{product.title}}</span>
+                                <span class="titlesmall teradeli-medium secondary--text">
                                     {{product.summary}}
                                 </span>
                         </v-card-text>

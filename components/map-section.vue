@@ -1,9 +1,11 @@
 <template>
-  <div class="pt-10 position-relative" v-intersect.once="mapIntersect">
-    <h2 class="page-title pt-md-5 pt-4 px-3">{{$t('title')}}</h2>
-    <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4">{{$t('subtitle')}}</h3>
-    <TreeData :treeData="treeData"/>
-    <div class="treemapcontainer" v-intersect.quiet="mapintersect2">
+  <div class="pvw treemapwhole position-relative" v-intersect.quiet="{handler: mapIntersect,options: {rootMargin: '50px', threshold: [0, 0.5, 1.0]}}">
+    <div class="treemapheader">
+      <h2 class="page-title px-3 primary--text">{{$t('title')}}</h2>
+      <div class="py-2 px-3 px-md-10 text-center secondary--text">{{$t('subtitle')}}</div>
+      <TreeData :treeData="treeData"/>
+    </div>
+    <div class="treemapcontainer">
       <client-only placeholder="Loading...">
         <LazyMap v-if="mapshow"/>
       </client-only>
@@ -21,11 +23,6 @@
                     co2: 0,
                     reforest: 0
                 },
-                intersectionOptions: {
-                    root: null,
-                    rootMargin: '0px 0px 0px 0px',
-                    threshold: [0, 1] // [0.25, 0.75] if you want a 25% offset!
-                },
             };
         },
         methods: {
@@ -33,10 +30,9 @@
                 this.treeData.treeCount = this.$store.state.tree_count;
                 this.treeData.co2 = parseFloat(this.$store.state.co2_compensated);
                 this.treeData.reforest = parseFloat(this.$store.state.reforest);
+                this.mapshow = true;
             },
-            mapintersect2(entries, observer, isIntersecting) {
-              this.mapshow = true
-            }
+
         },
         i18n: {
             messages: {
@@ -48,20 +44,24 @@
                 },
                 fr: {
                     title: 'Nos projets de reforestation',
-                    subtitle: 'Pour compenser les émissions de CO2 liées à la création de nos objets, à vos visites' +
-                        ' sur notre site, et à la consommation d’électricité de nos technologies. Nos projets sont' +
-                        ' exclusivement réservés à la régénération de la biodiversité. Nos arbres sont tracés' +
-                        ' et certifiés.',
+                    subtitle: 'Nos arbres sont tracés et certifiés, pour compenser nos émissions de CO2, à celle vos visites' +
+                        ' sur notre site, et la consommation d’électricité de nos technologies.',
                 }
             }
         }
     }
 </script>
 <style lang="scss" scoped>
-  .treemapcontainer {
-    height:700px;
-      @media only screen and (max-width: 600px) {
-        height:400px;
-      }
-    }
+.treemapwhole {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+  @media(max-width: 960px) {
+  border-bottom: #eae8e4 solid 1px;
+}
+}
+
+.treemapcontainer {
+  flex-grow : 1;
+}
 </style>

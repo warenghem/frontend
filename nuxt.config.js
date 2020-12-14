@@ -153,12 +153,52 @@ export default {
       light: true,
       themes: {
         dark: {
-          background: '#000000',
-
+          background: '#000',
+          myawesomecolour: '#19110b',
+          primary: {
+            base: '#ffffff',
+            lighten3: '#ffb700',
+            darken3: '#ff6200'
+          },
+          secondary: {
+            base: '#ffffff',
+            lighten3: '#4696bf',
+            darken3: '#466ebf'
+          },
+          tertiary: {
+            base: '#ffffff',
+            lighten3: '#4696bf',
+            darken3: '#466ebf'
+          },
+          accent: colors.grey.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
         },
         light: {
           background: colors.white,
-
+          myawesomecolour: '#19110b',
+          primary: {
+            base: '#19110b',
+            lighten3: '#ffb700',
+            darken3: '#ff6200'
+          },
+          secondary: {
+            base: '#86868b',
+            lighten3: '#4696bf',
+            darken3: '#466ebf'
+          },
+          tertiary: {
+            base: '#4682bf',
+            lighten3: '#4696bf',
+            darken3: '#466ebf'
+          },
+          accent: colors.grey.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3
         }
       }
     },

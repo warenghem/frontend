@@ -1,11 +1,11 @@
 <template>
-    <section class="team-section py-8">
-        <h2 class="page-title pt-md-5 pt-4 px-3">{{$t('title')}}</h2>
-        <h3 class="page-details pb-md-5 py-2 teradeli-light pr-4"> {{$t('subtitle')}}</h3>
-        <v-row no-gutters class="py-0 px-3 px-sm-0">
-            <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
-                <v-card align=center elevation="0" class="item-inner px-0 px-sm-5 py-3 py-sm-3 d-flex d-sm-block">
-                    <div class="profile-holder mb-0 pa-0 pb-sm-3 col-4 col-sm-12">
+    <section class="team-section pvw">
+        <h2 class="page-title px-3 primary--text">{{$t('title')}}</h2>
+        <div class="pb-5 py-2 px-3 px-md-10 text-center secondary--text"> {{$t('subtitle')}}</div>
+        <v-row no-gutters class="pa-0">
+            <v-col cols="12" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
+                <v-card align=center elevation="0" class="item-inner px-0 px-sm-5 py-3 py-sm-3 d-flex">
+                    <div class="profile-holder mb-0 pa-0 col-4 col-sm-3">
                         <!--<ik-image
                             :path="profile.img"
                             :lqip="{active:true, quality: 40, blur: 5}"
@@ -19,12 +19,12 @@
                             class="lazyload profil" 
                         />
                     </div>
-                    <div class="content-holder text-left pl-4 pa-0 pl-sm-0 col-8 col-sm-12">
-                        <div class="titlesmall teradeli-medium">{{profile.name}}</div>
-                        <div class="subtitlesmall">
+                    <div class="content-holder text-left pl-4 pa-0 col-8 col-sm-9">
+                        <div class="titlesmall teradeli-medium primary--text">{{profile.name}}</div>
+                        <div class="subtitlesmall secondary--text">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
                         </div>
-                        <div class="item-details d-none d-sm-block">
+                        <div class="item-details d-none">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
                         </div>
                         <v-card-actions class="p-0">
@@ -190,7 +190,7 @@
                 text-align: center;
             }
             img {
-                max-width: 200px;
+                max-width: 160px;
                 width: 100%;
             }
             .item-details {

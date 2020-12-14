@@ -2,9 +2,9 @@
     <div>
         <div class="whole-footer border-top-2 pt-10 pt-sm-0">
             <div class="insta-row border-left-2 border-right-2">
-                <h3 class="page-title pl-1 py-md-5 py-4">Instagram - #warenghemlive</h3>
-                <div v-intersect.quiet="instaintersect">
-                    <LazyInstagram v-if="instashow"/>
+                <h3 class="page-title pl-1 py-md-5 py-4 primary--text">Instagram - #warenghemlive</h3>
+                <div>
+                    <Instagram />
                 </div>
             </div>
         </div>
@@ -16,7 +16,6 @@
         name: "social-section",
         data() {
           return {
-            instashow: false,
           }
         },
         methods: {
@@ -28,9 +27,6 @@
                 el.classList.remove('modal-open');
                 document.documentElement.style.overflowY = 'auto'
             },
-            instaintersect(entries, observer, isIntersecting) {
-              this.instashow = true
-            }
         },
     }
 </script>

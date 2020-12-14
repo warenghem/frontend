@@ -1,9 +1,9 @@
 <template>
-  <div>
-    <div class="pa-0 pa-sm-5 pt-5">
+  <div class="h-100">
+    <div class="h-100 pa-0">
       <l-map
         style="width: 100%"
-        class="treemap"
+        class="treemap h-100"
         :zoom="zoom"
         :center="center"
         :options="{zoomControl: false,attributionControl: false,scrollWheelZoom: false,tap: false,boxZoom: false, doubleClickZoom: false, touchZoom: false, dragging: false, draggable: false}"
@@ -304,7 +304,7 @@
                 markers: [
                     {
                         id: "Trees_for_Tiger",
-                        text: "India - Trees for Tiger",
+                        text: "Trees for Tiger",
                         latitude: 22.003975,
                         longitude: 86.06648,
                         image: "https://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.57.19.png",
@@ -312,7 +312,7 @@
                     },
                     {
                         id: "Eden_Projet",
-                        text: "Madagascar - Eden Project",
+                        text: "Eden Project",
                         latitude: -16.270975,
                         longitude: 44.445852,
                         image: "https://ik.imagekit.io/g1noocuou2/tr:q-80,w-85,fo-auto,r-max,dpr-2/Capture_d_e_cran_2020-11-20_a__18.56.41.png",
@@ -495,12 +495,9 @@
     font-family: "teradeli-book";
 }
   .treemap {
-    height:700px;
     border-radius: 4px;
     z-index: 1;
-      @media only screen and (max-width: 600px) {
-        height:400px;
-      }
+    min-height:400px;
     }
 
   .slideArea {

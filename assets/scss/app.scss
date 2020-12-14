@@ -6,13 +6,7 @@ html {
   height: inherit;
 }
 /*Vuetify*/
-.v-application {
-  font-family: 'teradeli-book', sans-serif !important;
 
-  .title { // To pin point specific classes of some components
-    font-family: 'teradeli-light', sans-serif !important;
-  }
-}
 .v-bottom-navigation.theme--dark, .theme--dark.v-car, .theme--dark.v-toolbar,.theme--dark.v-navigation-drawer, .theme--dark.v-tabs > .v-tabs-bar {
   background-color: #1C1C1E!important;
 }
@@ -71,16 +65,14 @@ html {
 }
 
 .finebordert {
-  border-top: solid 1px rgba(255, 255, 255, 0.6);
+  border-top: solid 1px rgba(255, 255, 255, 0.1);
+}
+.theme--dark .finebordert {
+  border-top: solid 1px rgba(84, 84, 88, 1);
 }
 
 body {
-  font-family: 'teradeli-book', sans-serif;
   color: #19110b;
-}
-
-.v-application {
-  font-family: 'teradeli-book', sans-serif;
 }
 
 .teradeli-book {
@@ -243,6 +235,19 @@ body {
     margin-bottom: 10px;
     font-size: 15px;
     font-family: 'teradeli-medium', sans-serif;
+  }
+}
+
+.pvw {
+  padding: 6.4vw;
+  @media(min-width: 48em) {
+      padding: 3.125vw;
+  }
+  @media(min-width: 64em) {
+      padding: 3.125vw;
+  }
+  @media(min-width: 90em) {
+      padding: 3.33333vw;
   }
 }
 
@@ -499,7 +504,6 @@ body {
 .sub-title {
   font-size: 24px;
   font-family: 'teradeli-medium', sans-serif;
-  line-height: 1.16667;
   letter-spacing: .009em;
 }
 
@@ -532,14 +536,6 @@ body {
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
-}
-
-.page-details {
-  color: #888;
-  font-size: 13px;
-  padding-left: 20px;
-  line-height: 1rem !important;
-  font-weight: 500;
 }
 
 .mission-accordion {
@@ -690,17 +686,6 @@ body {
     .item {
       color: white;
     }
-
-    /*&:hover {
-      background: white!important;
-      .brand {
-        filter: brightness(1) invert(0);
-      }
-
-      .item {
-        color: #000000;
-      }
-    }*/
   }
 }
 

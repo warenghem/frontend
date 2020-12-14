@@ -152,7 +152,7 @@
                                 </div>
                             </div>
                         </v-expansion-panel-header>
-                        <v-expansion-panel-content eager="true">
+                        <v-expansion-panel-content :eager="true">
                             <div>
                                 <ul class="text-left mb-4 teradeli-light z-2">
                                     <li class="fp-list-item" v-for="(item,idx) in mission.items"

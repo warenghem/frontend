@@ -10,7 +10,7 @@
                            easing="Power1.easeOut"
           ></animated-number>
         </div>
-        <div style="color: #888;"> {{$t('term1')}}</div>
+        <div class="secondary--text"> {{$t('term1')}}</div>
       </div>
       <div class="text-center py-3 py-sm-4 px-7 d-flex d-sm-block">
         <div class="sub-title pr-3 pr-sm-0">
@@ -22,9 +22,8 @@
                            :delay="2"
                            easing="Power1.easeOut"
           ></animated-number>
-          tonnes
         </div>
-        <div style="color: #888;">{{$t('term2')}}</div>
+        <div class="secondary--text">{{$t('term2')}}</div>
       </div>
       <div class="text-center py-3 py-sm-4 px-7 d-flex d-sm-block">
         <div class="sub-title pr-3 pr-sm-0">
@@ -37,7 +36,7 @@
                            easing="Power1.easeOut"
           ></animated-number>
         </div>
-        <div style="color: #888;">{{$t('term3')}}</div>
+        <div class="secondary--text">{{$t('term3')}}</div>
       </div>
 
     </div>
@@ -58,13 +57,13 @@
             messages: {
                 en: {
                     term1: 'planted trees',
-                    term2: 'of CO2 compensated',
+                    term2: 'ton of CO2 compensated',
                     term3: 'reforested hectares',
 
                 },
                 fr: {
                     term1: 'arbres plantés',
-                    term2: 'de CO2 compensées',
+                    term2: 'tonnes de CO2 compensées',
                     term3: 'hectares reforestés',
                 }
             }
