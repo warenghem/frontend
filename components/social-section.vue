@@ -1,7 +1,7 @@
 <template>
     <div>
-        <div class="whole-footer border-top-2 pt-sm-0">
-            <div class="insta-row border-left-2 border-right-2 pvw pb-0">
+        <div class="whole-footer pt-sm-0">
+            <div class="insta-row pvw pb-0">
                 <h3 class="page-title pl-1 pb-md-5 pb-4 primary--text">Instagram - #warenghemlive</h3>
                 <div>
                     <Instagram />

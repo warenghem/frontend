@@ -155,6 +155,7 @@ export default {
         dark: {
           background: '#000',
           myawesomecolour: '#19110b',
+          bgcard: '#1c1c1e',
           primary: {
             base: '#ffffff',
             lighten3: '#ffb700',
@@ -162,8 +163,7 @@ export default {
           },
           secondary: {
             base: '#ffffff',
-            lighten3: '#4696bf',
-            darken3: '#466ebf'
+            lighten3: '#FBFBFD'
           },
           tertiary: {
             base: '#ffffff',
@@ -179,6 +179,7 @@ export default {
         light: {
           background: colors.white,
           myawesomecolour: '#19110b',
+          bgcard: '#fafafa',
           primary: {
             base: '#19110b',
             lighten3: '#ffb700',

@@ -1,45 +1,43 @@
 <template>
-    <div>
-        <div class="d-flex justify-center border-top-2 align-center flex-column flex-md-row py-5">
-            <div v-for="(profile,idx) in profiles" :key="'profile_'+idx" class="ttext-center py-8 py-md-4 px-7">
-                <!--<ik-image
-                    :path="profile.img"
-                    :lqip="{active:true, quality: 40, blur: 5}"
-                    :transformation="[{quality: 80, width:200, dpr:2}]"
-                    loading="lazy"
-                    width="200"
-                />-->
-                <img
-                    :data-src="profile.img" 
-                    class="lazyload"
-                    width="200"
-                />
-            </div>
+    <div class="pvw mb-n4">
+        <h2 class="page-title px-0 primary--text">{{$t('references')}}</h2>
+        <div class="d-flex justify-center align-center flex-column flex-md-row">
+                <div class="svgicon svglogo text-center py-8 py-md-4 px-7" v-html="CO2SiteLogo" />
+                <div class="svgicon svglogo text-center py-8 py-md-4 px-7" v-html="CO2TechLogo" />
+                <div class="svgiconpeta svglogo text-center py-8 py-md-4 px-7" v-html="PETALogo" />
         </div>
     </div>
 </template>
 
 <script>
-    import * as InstagramFeed from 'instafeed';
+    import CO2SiteLogo from "~/assets/images/label-co2-website.svg?raw";
+    import CO2TechLogo from "~/assets/images/Label-Tech.svg?raw";
+    import PETALogo from "~/assets/images/PETAapproved.svg?raw";
+
     export default {
         name: "app-footer",
-
+        i18n: {
+            messages: {
+                en: {
+                    references: "Warenghem Studio",
+                },
+                fr: {
+                    references: "Nos certifications",
+                }
+            }
+        },
        data() {
             return {
-                profiles: [
-                    {
-                        key: 1,
-                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2/Logos/label-co2-website.png",
-                    },
-                    {
-                        key: 2,
-                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2/Logos/Label-Tech-white.png",
-                    }, {
-                        key: 3,
-                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-65,w-200,dpr-2/Logos/PETAapproved.png",
-                    },
-                ]
+                CO2SiteLogo,CO2TechLogo,PETALogo,
             }
         },
     }
 </script>
+<style scoped>
+.svgicon {
+	width: 250px
+}
+.svgiconpeta {
+	width: 210px
+}
+</style>

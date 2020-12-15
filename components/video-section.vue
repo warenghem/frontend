@@ -80,21 +80,15 @@
           </div>
           <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
-              <p style="height:23.6094px">
-                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/ecological.svg">
-              </p>
+                <div class="logosvg pr-0 pr-md-5 logosvg" v-html="Eco" />
               <span>{{$t('video.tag1')}}</span>
             </div>
             <div class="col-md-4">
-              <p style="height:23.6094px">
-                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/france.svg">
-              </p>
+                <div class="logosvg pr-0 pr-md-5 logosvg" v-html="France" />
               <span>{{$t('video.tag2')}}</span>
             </div>
             <div class="col-md-4">
-              <p style="height:23.6094px">
-                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/tech.svg">
-              </p>              
+                <div class="logosvg pr-0 pr-md-5 logosvg" v-html="Tech" />
               <span>{{$t('video.tag3')}}</span>
             </div>
           </div>
@@ -137,13 +131,14 @@
 </template>
 
 <script>
-
-
+    import Eco from "~/assets/images/ecological.svg?raw";
+    import France from "~/assets/images/france.svg?raw";
+    import Tech from "~/assets/images/tech.svg?raw";
     export default {
         name: "video-section",
-
         data() {
             return {
+                Eco,France,Tech,
                 dialog: false,
                 interval: {},
                 progressValue: 0,
@@ -279,5 +274,4 @@
 
 <style scoped lang="scss">
   @import "../assets/scss/home/video";
-
 </style>

@@ -56,9 +56,6 @@
   display: flex;
   flex-flow: column;
   height: 100%;
-  @media(max-width: 960px) {
-  border-bottom: #eae8e4 solid 1px;
-}
 }
 
 .treemapcontainer {

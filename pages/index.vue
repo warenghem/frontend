@@ -4,26 +4,23 @@
     <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>
-    <ProductSection id="productSection"/>
-    <v-container fluid class="ma-0 pa-0 fill-height border-top-2">
-      <v-row no-gutters>
-        <v-col
-          cols="12"
-          md="6"
-          class="border-right-2"
-        >
-          <MapSection id="mapTreeSection"/>
-        </v-col>
-        <v-col
-          cols="12"
-          md="6"
-        >
-          <StudioSection id="studioSection"/>
-        </v-col>
-      </v-row>
-    </v-container>
+    <v-container fluid class="homegrid pb-0">
+      <v-card class="bgcard item1">
+        <ProductSection id="productSection"/>
+      </v-card>
+      <v-card class="bgcard item2">
+        <MapSection id="mapTreeSection"/>
+      </v-card>
+      <v-card class="bgcard item3">
+        <StudioSection id="studioSection"/>
+      </v-card>
+      <v-card class="bgcard item4">
     <References/>
+      </v-card>
+      <v-card class="bgcard item5">
     <SocialSection/>
+      </v-card>
+    </v-container>
     <LazyPlantForm v-if="$store.state.plantModal" />
   </div>
 </template>

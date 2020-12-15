@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 587.75 184">
+   <defs>
+      <style>.cls-1,.cls-2,.cls-3{fill:#706f6f;stroke:#706f6f;stroke-miterlimit:10;}.cls-1{stroke-width:3px;}.cls-2{font-size:93.74px;stroke-width:10px;font-family:Alcubierre;letter-spacing:-0.02em;}.cls-3{font-size:61px;font-family:Gotham-Light, Gotham Light;font-weight:300;letter-spacing:0.15em;}.cls-4{letter-spacing:0.12em;}.cls-5{letter-spacing:0.14em;}.cls-6{letter-spacing:0.13em;}</style>
+   </defs>
+    <path class="cls-1" d="M324.78,89.59l-8.22,15.31h-13L346.73,25l40.92,79.92H374.77L367,89.59ZM346.3,49.52l-16.14,30h31.72Z" transform="translate(0.5 -9.23)"/>
+    <text class="cls-2" transform="translate(192.15 84.68) scale(1.23 1)">W</text>
+    <text class="cls-3" transform="translate(0.5 173.49)">
+        made in F
+        <tspan class="cls-4" x="377.71" y="0">r</tspan>
+        <tspan class="cls-5" x="409.43" y="0">an</tspan>
+        <tspan class="cls-6" x="499.52" y="0">c</tspan>
+        <tspan class="cls-5" x="542.28" y="0">e</tspan>
+    </text>
+</svg>

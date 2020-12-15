@@ -3,7 +3,7 @@
         <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
               <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
-                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,dpr-2,w-170/Logos/WA_mif_wg_vf.png" width="170">
+                <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
               </nuxt-link>
           </v-toolbar-title>         
             <v-list>
@@ -28,7 +28,7 @@
             </v-app-bar-nav-icon>
             <v-toolbar-title class="d-md-block pr-4 d-none">
                 <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
-                  <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-35/Logos/WA_short_w_vf.svg" width="35">
+                  <div style="fill: #ffffff;stroke: #ffffff;width:35px" v-html="LogoSmSm" />
                 </nuxt-link>
             </v-toolbar-title>
             <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
@@ -52,10 +52,13 @@
 
 <script>
 import { mdiMenu } from '@mdi/js'
+import LogoSm from "~/assets/images/WA-mif-g-vf.svg?raw";
+import LogoSmSm from "~/assets/images/WAshort-w-vf.svg?raw";
 export default {
   name: 'sticky-toolbar',
   data: function () {
     return {
+      LogoSm,LogoSmSm,
       fixedOnScroll: false,
       sidebar: false,
       svgPath: mdiMenu,

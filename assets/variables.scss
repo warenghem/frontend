@@ -15,6 +15,8 @@ $body-font-family: 'teradeli-book';
 $heading-font-family: 'teradeli-medium';
 $font-size-root: 0.95rem;
 $line-height-root: 1.6rem;
+$card-elevation: 0 !default;
+$card-border-radius: 0 !default;
 
 @import '~vuetify/src/styles/styles.sass';
 

@@ -11,7 +11,7 @@
     >
         <v-card-title class="px-0 pb-0 d-block d-md-flex">
             <v-text flat tile class="d-block d-md-flex" >
-                <img src="https://ik.imagekit.io/g1noocuou2/Logos/Warenghem_w_noparis_vf.svg" class="py-5" width="140">
+                <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5" v-html="LogoSmNp" />
                 <v-breadcrumbs dark :items="items">
                     <template v-slot:divider>
                         <v-icon>mdi-forward</v-icon>
@@ -73,8 +73,10 @@
       'Contact Us',-->
 
 <script>
+  import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
   export default {
     data: () => ({
+    LogoSmNp,
     links: [
       {title:"HOME", url:"/"},
     ],

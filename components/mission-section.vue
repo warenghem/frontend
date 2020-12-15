@@ -77,7 +77,7 @@
                                  :key="'mission_'+m_idx"
                             >
                                 <div class="pb-3">
-                                    <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/magazine-plus.svg">
+                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="mx-auto" v-html="MagazinePlus" />
                                 </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
                                     <a>
@@ -134,15 +134,8 @@
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
                                 <div style="height:49px" class="pb-3">
-                                    <img width="35px" src="https://ik.imagekit.io/g1noocuou2/Icons/magazine-plus.svg"
-                                         alt="Wait For It"
-                                         class="plusIcon"
-                                    >
-                                    <img style="padding-bottom:2px" width="35px"
-                                         src="https://ik.imagekit.io/g1noocuou2/Icons/magazine-minus.svg"
-                                         alt="Wait For It"
-                                         class="minusIcon"
-                                    >
+                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="plusIcon" v-html="MagazinePlus" />
+                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="minusIcon" v-html="MagazineMinus" />
                                 </div>
                                 <div class="sub-title text-white">
                                     {{mission.title}}
@@ -174,10 +167,13 @@
 </template>
 
 <script>
+    import MagazinePlus from "~/assets/images/magazine-plus.svg?raw";
+    import MagazineMinus from "~/assets/images/magazine-minus.svg?raw";
     export default {
         name: "mission-section",
         data() {
             return {
+                MagazinePlus,MagazineMinus,
                 currentMissionHover: null,
                 backgroundImage: '',
                 backgroundImagesL:''

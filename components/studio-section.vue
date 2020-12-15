@@ -4,7 +4,7 @@
         <div class="pb-5 py-2 text-center secondary--text"> {{$t('subtitle')}}</div>
         <v-row no-gutters class="pa-0">
             <v-col cols="12" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
-                <v-card align=center elevation="0" class="item-inner px-0 py-3 py-sm-3 d-flex">
+                <v-card align=center class="bgcard item-inner px-0 py-3 py-sm-3 d-flex">
                     <div class="profile-holder mb-0 pa-0 col-4 col-sm-3">
                         <!--<ik-image
                             :path="profile.img"

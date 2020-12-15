@@ -6,7 +6,7 @@
     <v-navigation-drawer v-model="sidebar" clipped app class="d-md-none" v-bind:width="304">
       <v-toolbar-title class="text-center py-10">
           <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
-            <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-160,dpr-2/Logos/WA_mif_g_vf.png" width="160">
+            <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
           </nuxt-link>
       </v-toolbar-title>
       <v-list>
@@ -41,7 +41,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo pt-2">
         <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
-          <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-140,dpr-2,r-max/Logos/Warenghem_vf.svg" width="140">
+          <div class="logo" width="140" v-html="Logo" />
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -113,12 +113,14 @@
     import link from './../../store/link'
     import langs from './../../store/langs'
     import { mdiMenu } from '@mdi/js'
-
+    import Logo from "~/assets/images/Logo.svg?raw";
+    import LogoSm from "~/assets/images/WA-mif-g-vf.svg?raw";
 
     export default {
         name: "main-toolbar",
         data() {
             return {
+                Logo,LogoSm,
                 sidebar: false,
                 svgPath: mdiMenu
             }
