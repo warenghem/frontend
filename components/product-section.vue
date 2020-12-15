@@ -1,7 +1,7 @@
 <template>
-        <div class="productSection py-10">
+        <div class="productSection pvw mb-n10">
             <div class="page-title absolute-title d-none">{{$t('productTitle')}}</div>
-                <div class="text-center d-block pb-8 w-100">
+                <div class="text-center d-block pb-8 w-100 mt-n4">
                     <img
                         style="max-width:500px" 
                         data-sizes="auto"
@@ -10,7 +10,7 @@
                         class="lazyload w-100 px-3" 
                     />
                 </div>
-                <v-container fluid class="myGrid px-md-10">
+                <v-container fluid class="myGrid p-0">
                     <!--<v-card
                         elevation="0"
                         class="div5"

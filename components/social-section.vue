@@ -1,8 +1,8 @@
 <template>
     <div>
-        <div class="whole-footer border-top-2 pt-10 pt-sm-0">
-            <div class="insta-row border-left-2 border-right-2">
-                <h3 class="page-title pl-1 py-md-5 py-4 primary--text">Instagram - #warenghemlive</h3>
+        <div class="whole-footer border-top-2 pt-sm-0">
+            <div class="insta-row border-left-2 border-right-2 pvw pb-0">
+                <h3 class="page-title pl-1 pb-md-5 pb-4 primary--text">Instagram - #warenghemlive</h3>
                 <div>
                     <Instagram />
                 </div>
@@ -35,10 +35,5 @@
     .insta-row {
         max-width: 1440px;
         margin: 0 auto !important;
-        padding-left: 1em;
-        padding-right: 1em;
-        @media (min-width: 767px) {
-            padding-top: 2.5rem !important;
-        }
     }
 </style>
