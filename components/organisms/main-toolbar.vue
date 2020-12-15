@@ -41,7 +41,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo pt-2">
         <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
-          <div class="logo" width="140" v-html="Logo" />
+          <div class="svglogo logo" width="140" v-html="Logo" />
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -113,8 +113,8 @@
     import link from './../../store/link'
     import langs from './../../store/langs'
     import { mdiMenu } from '@mdi/js'
-    import Logo from "~/assets/images/Logo.svg?raw";
-    import LogoSm from "~/assets/images/WA-mif-g-vf.svg?raw";
+    import Logo from "~/assets/images/Logo.svg?raw"
+    import LogoSm from "~/assets/images/WA-mif-g-vf.svg?raw"
 
     export default {
         name: "main-toolbar",
