@@ -53,7 +53,6 @@ export default {
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
     '@nuxtjs/svg',
-    '@nuxtjs/snipcart',
     '@nuxtjs/google-analytics',
   ],
 
@@ -133,12 +132,6 @@ export default {
         name: 'Français',
       },
     ],
-  },
-
-  snipcart: {
-    // Options available
-    key: "N2VkOWYwOTgtNDYxMC00YWFmLWFjYzEtMDllZmY0YzdmZmUyNjM3Mzk5NDI5MzA2MTE0MDg2",
-    addProductBehavior: false,
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
