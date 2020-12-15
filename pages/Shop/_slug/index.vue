@@ -18,26 +18,19 @@
               <v-btn :to="{path:'/en/shop/'}" type="dark" class="backButton" tile>
                 <v-icon>mdi-keyboard-backspace</v-icon>
               </v-btn>
-              <v-carousel
-                :cycle="false"
-                hide-delimiter-background
-                show-arrows-on-hover
-                class="grey lighten-5"
-                height="70vh"
-              >
-                <v-carousel-item
-                  v-for="(image,idx) in product.image" :key="'image_'+idx"
-                  @click="show(idx)"
-                  class="text-center"
+               <VueSlickCarousel v-bind="settingsSingle">
+                <div v-for="(img,i_dx) in product.image"
+                     :key="'image_'+i_dx"
+                     class="pa-2"
                 >
-                  <img :src="image.src"
+                 <img :src="img.src"
                        :lazy-src="require('../../../assets/images/image-loader.gif')"
                        height="100%"
                        class="lazyload"
                        alt=""
                   >
-                </v-carousel-item>
-              </v-carousel>
+                </div>
+              </VueSlickCarousel>
             </v-col>
           </v-row>
         </v-col>
