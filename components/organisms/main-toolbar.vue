@@ -113,7 +113,7 @@
     import link from './../../store/link'
     import langs from './../../store/langs'
     import { mdiMenu } from '@mdi/js'
-    import Logo from "~/assets/images/Logo.svg?raw"
+    import Logo from "~/assets/images/warenghem.svg?raw"
     import LogoSm from "~/assets/images/WA-mif-g-vf.svg?raw"
 
     export default {
