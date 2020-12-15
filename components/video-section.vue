@@ -80,15 +80,15 @@
           </div>
           <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
-                <div class="logosvg pr-0 pr-md-5 logosvg" v-html="Eco" />
+                <div class="logosvg pr-5 pr-md-0 logosvg" v-html="Eco" />
               <span>{{$t('video.tag1')}}</span>
             </div>
             <div class="col-md-4">
-                <div class="logosvg pr-0 pr-md-5 logosvg" v-html="France" />
+                <div class="logosvg pr-5 pr-md-0 logosvg" v-html="France" />
               <span>{{$t('video.tag2')}}</span>
             </div>
             <div class="col-md-4">
-                <div class="logosvg pr-0 pr-md-5 logosvg" v-html="Tech" />
+                <div class="logosvg pr-5 pr-md-0 logosvg" v-html="Tech" />
               <span>{{$t('video.tag3')}}</span>
             </div>
           </div>

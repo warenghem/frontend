@@ -2,7 +2,7 @@
         <div class="productSection pvw">
             <div class="page-title absolute-title d-none">{{$t('productTitle')}}</div>
                 <div class="text-center d-block pb-8 w-100 mt-n5">
-                    <div style="min-width:400px;max-width:500px" class="svglogo mx-auto w-100 px-3" v-html="LogoCS" />
+                    <div style="max-width:500px" class="svglogo mx-auto w-100" v-html="LogoCS" />
                 </div>
                 <v-container fluid class="productgrid p-0">
                     <!--<v-card
