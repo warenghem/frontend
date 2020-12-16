@@ -221,6 +221,7 @@ export default {
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     },
+    analyze: true,
     postcss: {
       plugins: {
           "@fullhuman/postcss-purgecss": {

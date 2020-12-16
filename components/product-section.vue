@@ -1,8 +1,15 @@
 <template>
         <div class="productSection pvw">
             <div class="page-title absolute-title d-none">{{$t('productTitle')}}</div>
-                <div class="text-center d-block pb-8 w-100 mt-n5">
-                    <div style="max-width:500px" class="svglogo mx-auto w-100" v-html="LogoCS" />
+                <div class="text-center d-block pb-4 pb-md-8 w-100 mt-n5">
+                    <!--<div style="min-width:400px;max-width:500px" class="svglogo mx-auto w-100 px-3" v-html="LogoCS" />-->
+                    <img
+                        data-sizes="auto"
+                        data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
+                        src="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-500,bl-10/Logos/Citadins_Sauvages.png" 
+                        class="lazyload mx-auto w-100 px-3" 
+                        style="max-width:500px"
+                    />
                 </div>
                 <v-container fluid class="productgrid p-0">
                     <!--<v-card
@@ -82,12 +89,10 @@
 </template>
 
 <script>
-    import LogoCS from "~/assets/images/Citadins-Sauvages.svg?raw";
     export default {
         name: "product-section",
         data() {
             return {
-                LogoCS,
                 backgroundImages: [
                     "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 1500w",
                     "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 1500w",
