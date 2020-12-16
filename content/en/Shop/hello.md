@@ -13,14 +13,14 @@ dimensions:
 manufacturer: ''
 material:
 - name: Dionysos Leather
-  image: "/dionysosleather.jpeg"
+  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Linen
-  slug: "/linen.jpeg"
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
-  image: "/vegan.jpeg"
+  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Ecological
-  slug: "/ecological.jpeg"
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 offers:
   priceCurrency: EUR
   price: '390'
@@ -36,21 +36,21 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "/AdobeStock_50352719.jpeg"
+- src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
+  attributes: "NaturalBlack"
   name: ''
   alt: ''
-- src: https://example.com/wp-content/uploads/2017/03/T_2_back-2.jpg
+- src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
+  attributes: "DeserticCamel"
   name: ''
   alt: ''
 attributes:
 - name: Color
   options:
   - name: NaturalBlack
-    icon: "/naturalblack.jpeg"
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
   - name: DeserticCamel
-    icon: "/deserticcamel.jpeg"
-  - name: BugattiBlue
-    icon: "/bugattiblue.jpeg"
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - name: Size
   options:
   - '41'
