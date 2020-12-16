@@ -1,6 +1,6 @@
 <template>
     <section class="team-section pvw">
-        <h2 class="page-title px-0 primary--text">{{$t('title')}}</h2>
+        <h2 class="page-title px-0">{{$t('title')}}</h2>
         <div class="pb-5 py-2 text-center secondary--text"> {{$t('subtitle')}}</div>
         <v-row no-gutters class="pa-0">
             <v-col cols="12" v-for="(profile,idx) in profiles" :key="'profile_'+idx">

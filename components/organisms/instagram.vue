@@ -15,7 +15,9 @@
                 'display_gallery': true,
                 'display_captions': true,
                 'callback': null,
-                'styling': false,
+                'styling': true,
+                'items': 8,
+                'items_per_row': 4,
                 'margin': 0,
                 'lazy_load': true,
                 'on_error': console.error

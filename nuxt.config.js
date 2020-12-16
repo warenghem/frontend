@@ -141,14 +141,15 @@ export default {
     defaultAssets: false,
     theme: {
       options: {
-        customProperties: true
+        customProperties: true,
       },
-      light: true,
       themes: {
         dark: {
           background: '#000',
-          myawesomecolour: '#19110b',
-          bgcard: '#1c1c1e',
+          bgcard: {
+            base: '#1E1E1F',
+            darken3: '#161617'
+          },
           primary: {
             base: '#ffffff',
             lighten3: '#ffb700',
@@ -160,8 +161,6 @@ export default {
           },
           tertiary: {
             base: '#ffffff',
-            lighten3: '#4696bf',
-            darken3: '#466ebf'
           },
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
@@ -171,8 +170,11 @@ export default {
         },
         light: {
           background: colors.white,
-          myawesomecolour: '#19110b',
-          bgcard: '#fafafa',
+          bgcard: {
+            base: '#fafafa',
+            lighten3: '#ffb700',
+            darken3: '#161617'
+          },
           primary: {
             base: '#19110b',
             lighten3: '#ffb700',

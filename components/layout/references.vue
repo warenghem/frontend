@@ -1,11 +1,11 @@
 <template>
-    <div class="pvw mb-n4">
-        <h2 class="page-title px-0 primary--text">{{$t('references')}}</h2>
-        <div class="d-flex justify-center align-center flex-column flex-md-row">
-                <div class="svgicon svglogo text-center py-8 py-md-4 px-7" v-html="CO2SiteLogo" />
-                <div class="svgicon svglogo text-center py-8 py-md-4 px-7" v-html="CO2TechLogo" />
-                <div class="svgiconpeta svglogo text-center py-8 py-md-4 px-7" v-html="PETALogo" />
-        </div>
+    <div class="pvw h-100">
+        <h2 class="d-none page-title px-0">{{$t('references')}}</h2>
+        <v-row class="ma-0 h-100 w-100" align="center" justify="center">
+            <v-col align="center"><div class="svgicon svglogo text-center px-3" v-html="CO2SiteLogo" /></v-col>
+            <v-col align="center"><div class="svgicon svglogo text-center px-3" v-html="CO2TechLogo" /></v-col>
+            <v-col align="center"><div class="svgiconpeta svglogo text-center px-3" v-html="PETALogo" /></v-col>
+        </v-row>
     </div>
 </template>
 
@@ -35,9 +35,9 @@
 </script>
 <style scoped>
 .svgicon {
-	width: 250px
+	max-width: 250px
 }
 .svgiconpeta {
-	width: 210px
+	max-width: 210px
 }
 </style>

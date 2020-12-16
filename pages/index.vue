@@ -4,7 +4,7 @@
     <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>
-    <v-container fluid class="homegrid pb-0">
+    <v-container fluid class="homegrid">
       <v-card class="bgcard item1">
         <ProductSection id="productSection"/>
       </v-card>
@@ -14,11 +14,11 @@
       <v-card class="bgcard item3">
         <StudioSection id="studioSection"/>
       </v-card>
-      <v-card class="bgcard item4">
-    <References/>
+      <v-card dark class="item4">
+        <References/>
       </v-card>
-      <v-card class="bgcard item5">
-    <SocialSection/>
+      <v-card dark class="color black item5">
+        <SocialSection/>
       </v-card>
     </v-container>
     <LazyPlantForm v-if="$store.state.plantModal" />

@@ -1,7 +1,7 @@
 <template>
   <div class="pvw treemapwhole position-relative" v-intersect.quiet="{handler: mapIntersect,options: {rootMargin: '50px', threshold: [0, 0.5, 1.0]}}">
     <div class="treemapheader">
-      <h2 class="page-title px-0 primary--text">{{$t('title')}}</h2>
+      <h2 class="page-title px-0">{{$t('title')}}</h2>
       <div class="py-2 text-center secondary--text">{{$t('subtitle')}}</div>
       <TreeData :treeData="treeData"/>
     </div>

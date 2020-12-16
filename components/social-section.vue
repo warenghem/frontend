@@ -1,21 +1,30 @@
 <template>
     <div>
-        <div class="whole-footer pt-sm-0">
-            <div class="insta-row pvw pb-0">
-                <h3 class="page-title pl-1 pb-md-5 pb-4 primary--text">Instagram - #warenghemlive</h3>
+        <a href="https://www.instagram.com/warenghem.studio/" target="_blank">
+            <v-row style="z-index:2"  align="center" justify="center" class="ma-0 h-100 w-100 position-absolute">
+                <v-col align="center">
+                    <div class="ma-auto" style="fill: #ffffff;stroke: #ffffff;width:85px" v-html="LogoSmSm" />
+                    <div class="text-caption-h4 text-white">Live.</div>
+                </v-col>
+            </v-row>
+            <div style="top:1vw;left:1vw;width:40px" class="svglogo position-absolute" v-html="InstaLogo" />
+            <div class="insta-row gradientoverlay blackoverlay">
                 <div>
                     <Instagram />
                 </div>
             </div>
-        </div>
+        </a>
     </div>
 </template>
 
 <script>
+    import LogoSmSm from "~/assets/images/WAshort-w-vf.svg?raw";
+    import InstaLogo from "~/assets/images/Instagram.svg?raw";
     export default {
         name: "social-section",
         data() {
           return {
+            LogoSmSm,InstaLogo,
           }
         },
         methods: {

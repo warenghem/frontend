@@ -8,7 +8,7 @@ html {
 /*Vuetify*/
 
 .v-bottom-navigation.theme--dark, .theme--dark.v-car, .theme--dark.v-toolbar,.theme--dark.v-navigation-drawer, .theme--dark.v-tabs > .v-tabs-bar {
-  background-color: #1C1C1E!important;
+  background-color: #161617!important;
 }
 .theme--dark.v-tabs-items {
   background-color: black!important;
@@ -19,10 +19,6 @@ html {
 .theme--dark .svglogo {
   fill: white;
   stroke:white;
-}
-.theme--light .svglogo {
-  fill: #19110b;
-  stroke:#19110b;
 }
 .v-progress-circular__info {
   color: #fff;
@@ -358,49 +354,25 @@ body {
   margin: 0 auto;
   display: block;
 }
-.instagram_gallery {
-  overflow-x: auto;
-  max-width: 100%;
-  display: flex;
 
-  &::-webkit-scrollbar {
-    display: none;
-  }
-
-  a {
-    overflow: hidden;
-    @media (min-width: 990px) {
-      min-width: 16.666%;
+#instaFeed {
+  @media only screen and (max-width: 599px) {
+    a:nth-child(n+5) {
+      display: none;
     }
-    @media (min-width: 800px) and (max-width: 989px) {
-      min-width: 20%;
-    }
-    @media (min-width: 700px) and (max-width: 799px) {
-      min-width: 25%;
-    }
-    @media (min-width: 600px) and (max-width: 699px) {
-      min-width: 33.333%;
-    }
-    @media (min-width: 480px) and (max-width: 599px) {
-      min-width: 50%;
-    }
-    @media (max-width: 479px) {
-      min-width: 100%;
-    }
-
     img {
-      width: 100% !important;
-      transition: .5s;
-      height: 100%;
-
-      &:hover {
-        transition: all .5s;
-        transform: scale(1.05);
-      }
+      width: 50%!important;
+    }
+  }
+  @media only screen and (min-width: 600px) and (max-width: 779px) {
+    a:nth-child(n+7) {
+      display: none!important;
+    }
+    img {
+      width: 33.33%!important;
     }
   }
 }
-
 .modal-open {
   overflow: hidden !important;
 }
@@ -537,12 +509,11 @@ body {
 .page-title {
   font-family: 'teradeli-medium', sans-serif;
   line-height: 1;
-  padding-left: 20px;
-  position: relative;
   font-size: 30px;
   font-weight: 700;
   text-transform: uppercase;
   text-align: center;
+  z-index: 2;
 }
 
 .mission-accordion {
@@ -716,7 +687,7 @@ body {
   display: grid;
   grid-gap: 1rem;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  grid-template-rows: auto auto auto auto auto;
+  grid-template-rows: auto auto auto;
   grid-auto-rows: 1fr;
   padding:1rem!important;
   @media (max-width: 960px) {
@@ -724,7 +695,7 @@ body {
     padding:0!important;
   }
   @media (min-width: 960px) {
-    .item1, .item4, .item5  {
+    .item1 {
       grid-column: 1 / span 2;
     }
   }
