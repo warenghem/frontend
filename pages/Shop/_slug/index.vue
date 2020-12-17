@@ -23,7 +23,7 @@
                      :key="'image_'+i_dx"
                      class="pa-2"
                 >
-                 <img :src="img.src"
+                 <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-65,w-35'+img.src"
                        :lazy-src="require('../../../assets/images/image-loader.gif')"
                        height="100%"
                        class="lazyload"
@@ -336,6 +336,14 @@
                             }
                         }
                     ]
+                },
+                settingsSingle: {
+                    "dots": false,
+                    "infinite": false,
+                    "arrow": false,
+                    "speed": 500,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
                 }
             }
         },
