@@ -1,6 +1,6 @@
 <template>
   <div v-click-outside="closeSideModal">
-    <product-sticky-toolbar class="stickyBar"/>
+    <product-sticky-toolbar class="stickyBar" :product="product"/>
     <v-container fluid>
       <v-row
         class="mb-6"
@@ -9,28 +9,29 @@
           lg="8"
 
         >
-          <viewer  class="viewer" ref="viewer" @inited="inited">
-            <img v-for="img in product.image" :src="img.src" :key="img.src" class="image d-none">
-          </viewer>
           <v-row>
 
             <v-col :cols="12" class="pl-lg-0 py-2 position-relative">
               <v-btn :to="{path:'/en/shop/'}" type="dark" class="backButton" tile>
                 <v-icon>mdi-keyboard-backspace</v-icon>
               </v-btn>
-               <VueSlickCarousel v-bind="settingsSingle">
-                <div v-for="(img,i_dx) in product.image"
-                     :key="'image_'+i_dx"
-                     class="pa-2"
+              <VueSlickCarousel v-bind="settingsSingle" v-viewer>
+                <div
+                  class="pa-2 img-wrapper"
+                  v-for="(img,i_dx) in product.image"
+                  :key="'image_'+i_dx"
+
                 >
-                 <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-65,w-35'+img.src"
-                       :lazy-src="require('../../../assets/images/image-loader.gif')"
-                       height="100%"
-                       class="lazyload"
-                       alt=""
+                  <img
+                    :src="img.src"
+                    :lazy-src="require('../../../assets/images/image-loader.gif')"
+                    class="lazyload"
+                    alt=""
                   >
+
                 </div>
               </VueSlickCarousel>
+
             </v-col>
           </v-row>
         </v-col>
@@ -68,18 +69,15 @@
           <v-btn large block tile outlined color="black" class="py-3 my-3" height="50px">
             {{$t('product.findStore')}}
           </v-btn>
-          <div class="custom-collapse">
-            <div v-html="product.description"
-                 class="box"
-                 :class="{'shadow-btn':read_more}"
-            >
-            </div>
-            <div @click="read_more=false" v-if="read_more" class="py-3">
-              <u>{{$t('product.readMore')}}</u>
-            </div>
-            <div @click="read_more=true" class="py-3" v-else>
-              <u>{{$t('product.readLess')}}</u>
-            </div>
+          <div>
+            <foldable minHeight="200" height="50%">
+              <div v-html="product.additionalProperty[0].details"
+              ></div>
+              <p align="center" class="my-foldable"
+                 slot="view-more" slot-scope="{ toggle, collapsed }" @click="toggle">
+                {{ collapsed ? $t('product.readMore') : $t('product.readLess') }}
+              </p>
+            </foldable>
           </div>
           <div class="mb-7">
             <div class="border-top-1 border-bottom-1 cursor-pointer py-5"
@@ -168,6 +166,7 @@
             </v-tab>
             <v-tab-item
               value="recentTab"
+              style="height: 700px"
             >
               <VueSlickCarousel v-bind="settings">
                 <div v-for="(img,i_dx) in product.image"
@@ -182,6 +181,7 @@
             </v-tab-item>
             <v-tab-item
               value="recommendTab"
+              style="height: 700px"
             >
               <VueSlickCarousel v-bind="settings">
                 <div v-for="(img,i_dx) in product.image"
@@ -198,7 +198,8 @@
     </v-container>
     <pay-modal :product="product"></pay-modal>
     <info-modal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"></info-modal>
-    <side-modal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"></side-modal>
+    <side-modal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
+                :product="product"></side-modal>
   </div>
 
 </template>
@@ -219,7 +220,10 @@
     import PayModal from "../../../components/product/pay-modal";
     import InfoModal from "../../../components/product/info-modal";
     import SideModal from "../../../components/product/side-modal";
+    import VueFoldable from 'vue-foldable'
+    import 'vue-foldable/dist/vue-foldable.css'
 
+    Vue.component('foldable', VueFoldable);
     export default {
         name: 'post',
         components: {
@@ -229,7 +233,6 @@
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
             const product = await $content(`${app.i18n.locale}/Shop`, slug).fetch();
-            console.log(product)
             return {
                 product,
             }
@@ -338,9 +341,8 @@
                     ]
                 },
                 settingsSingle: {
-                    "dots": false,
+                    "dots": true,
                     "infinite": false,
-                    "arrow": false,
                     "speed": 500,
                     "slidesToShow": 1,
                     "slidesToScroll": 1,
@@ -348,12 +350,6 @@
             }
         },
         methods: {
-            inited(viewer) {
-                this.$viewer = viewer;
-            },
-            show(idx) {
-                this.$viewer.view(idx);
-            },
             openModal(modalName) {
                 this.currentModal = modalName;
                 this.infoModal = true
@@ -378,23 +374,23 @@
                 htmlAttrs: {
                     lang: this.$i18n.locale,
                 },
-                // meta: [
-                //     {
-                //         hid: 'og:description',
-                //         property: 'og:description',
-                //         content: this.post.description,
-                //     },
-                //     {
-                //         property: 'og:title',
-                //         hid: 'og:title',
-                //         content: this.post.title,
-                //     },
-                //     {
-                //         hid: 'og:image',
-                //         property: 'og:image',
-                //         content: this.post.media,
-                //     },
-                // ],
+                meta: [
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content: this.product.description,
+                    },
+                    {
+                        property: 'og:title',
+                        hid: 'og:title',
+                        content: this.product.name,
+                    },
+                    {
+                        hid: 'og:image',
+                        property: 'og:image',
+                        content: this.product.image,
+                    },
+                ],
             };
         },
     }
@@ -436,5 +432,26 @@
 
   span.teradeli-light {
     font-size: 14px;
+  }
+
+  .img-wrapper {
+    img {
+      max-height: 84vh;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
+  }
+
+  .vue-foldable-container {
+    transition: max-height 0.7s;
+  }
+
+  .vue-foldable-mask {
+    transition: opacity 3s;
+    bottom: 24px;
   }
 </style>

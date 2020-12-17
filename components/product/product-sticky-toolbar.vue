@@ -7,13 +7,15 @@
       </v-app-bar-nav-icon>
       <div class="d-flex align-center">
         <div class="ma-2 grey">
-          <ik-image
-            path="/Products/PFsolomoutain_V__6TkALbMDj.jpg"
-            :transformation="[{quality: 80, width:55}]"
-            width="55"
-          ></ik-image>
+          <img :src="product.image[0].src"
+               :lazy-src="require('../../assets/images/image-loader.gif')"
+               class="lazyload"
+               alt=""
+               height="55px"
+          >
+
         </div>
-        <div class="sub-title pa-2">SAC À DOS TRIO</div>
+        <div class="sub-title pa-2">{{product.name}}</div>
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center">
@@ -24,10 +26,10 @@
 
             {{$t('product.stock')}}
           </div>
-          <h3  class="teradeli-light">2 600,00€</h3>
+          <h3 class="teradeli-light">{{product.offers.price}}{{product.offers.priceCurrency}}</h3>
         </div>
         <div class="pa-2">
-          <v-btn  tile large dark @click="$store.commit('product/OPEN_PAY_MODAL')">
+          <v-btn tile large dark @click="$store.commit('product/OPEN_PAY_MODAL')">
             {{$t('product.cartBtn')}}
           </v-btn>
         </div>
@@ -44,6 +46,13 @@
             return {
                 fixedOnScroll: false,
                 sidebar: false,
+            }
+        },
+        props: {
+            product: {
+                type: Object,
+                default: () => {
+                }
             }
         },
         methods: {
