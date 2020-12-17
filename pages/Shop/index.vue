@@ -40,9 +40,12 @@
         //         })),
         //     };
         // },
+        created() {
+            this.$store.commit('langs/RESET_LANG');
+        },
         data() {
             return {
-                productCount:15,
+                productCount: 15,
                 products: {
                     "totalItems": 29,
                     "offset": 0,
@@ -199,7 +202,7 @@
                         items: [
                             {id: 5, name: 'materia 1', image: 'https://www.louisvuitton.com/images/AEL-LG-C01_taiga'},
                             {
-                                id:6,
+                                id: 6,
                                 name: 'materia 2',
                                 image: 'https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow'
                             },
@@ -212,9 +215,9 @@
                 ]
             }
         },
-        methods:{
-            infiniteScrolling(){
-                this.productCount=this.productCount+10;
+        methods: {
+            infiniteScrolling() {
+                this.productCount = this.productCount + 10;
             }
         }
 

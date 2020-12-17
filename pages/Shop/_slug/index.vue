@@ -233,9 +233,15 @@
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
             const product = await $content(`${app.i18n.locale}/Shop`, slug).fetch();
+            context.store.commit('langs/SET_LANG_NAV', product.Languages || []);
             return {
                 product,
             }
+        },
+        computed: {
+            Languages() {
+                return this.product.Languages || []
+            },
         },
         data() {
             return {

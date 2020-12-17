@@ -75,7 +75,7 @@
                   <img :src="flag.img"
                        width="24"
                        alt="lang flag"
-                       v-if="$i18n.locale===flag.lang"
+                       v-if="'/'+$i18n.locale===flag.lang"
                   />
                 </div>
 

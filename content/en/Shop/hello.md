@@ -65,8 +65,11 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-locale: fr
-path: /fr/mon-premier-article
+Languages:
+- locale: en
+  path: /en/Shop/hello
+- locale: fr
+  path: /fr/Shop/bonjour
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
