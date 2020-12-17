@@ -15,14 +15,14 @@ dimensions:
 manufacturer: ''
 material:
 - name: Cuit Dionysos
-  image: "/dionysosleather.jpeg"
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - name: Lin
-  slug: "/linen.jpeg"
+  slug: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 award:
 - name: Vegan
-  image: "/vegan.jpeg"
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - name: Ecologique
-  slug: "/ecological.jpeg"
+  slug: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 offers:
   priceCurrency: EUR
   price: '390'
@@ -38,21 +38,21 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "/AdobeStock_50352719.jpeg"
+- src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
+  attributes: "NaturalBlack"
   name: ''
   alt: ''
-- src: https://example.com/wp-content/uploads/2017/03/T_2_back-2.jpg
+- src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
+  attributes: "DeserticCamel"
   name: ''
   alt: ''
 attributes:
 - name: Color
   options:
   - name: NaturalBlack
-    icon: "/naturalblack.jpeg"
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
   - name: DeserticCamel
     icon: "/deserticcamel.jpeg"
-  - name: BugattiBlue
-    icon: "/bugattiblue.jpeg"
 - name: Size
   options:
   - '41'
