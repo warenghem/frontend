@@ -67,6 +67,7 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
+path: /fr/Shop/bonjour
 Languages:
 - locale: en
   path: /en/Shop/hello

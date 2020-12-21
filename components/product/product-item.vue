@@ -1,30 +1,50 @@
 <template>
   <div>
-    <v-carousel
-      :cycle="false"
-      hide-delimiters
-      show-arrows-on-hover
-       v-model="currentItem"
-    >
-      <v-carousel-item
-        v-for="item in product.variants"
-        v-if="product.variants"
-        :key="item.id"
 
-      >
-        <v-card class="grey lighten-5" lazy>
-          <v-img :src="item.image" alt="" :lazy-src="require('../../assets/images/image-loader.gif')"></v-img>
-        </v-card>
+    <VueSlickCarousel v-bind="settingsSingle">
 
-      </v-carousel-item>
-      <v-carousel-item
-        :src="item.image"
-        v-for="item in product.images"
-        :key="item.id"
-        v-else
-      >
-      </v-carousel-item>
-    </v-carousel>
+        <div
+          class="pa-2 img-wrapper"
+          v-for="(img,i_dx) in product.image"
+          :key="'image_'+i_dx"
+
+        >
+          <img
+            :src="img.src"
+            :lazy-src="require('../../assets/images/image-loader.gif')"
+            class="lazyload"
+            alt=""
+            @click="$router.push({path:product.path})"
+          >
+
+        </div>
+    </VueSlickCarousel>
+
+    <!--    <v-carousel-->
+    <!--      :cycle="false"-->
+    <!--      hide-delimiters-->
+    <!--      show-arrows-on-hover-->
+    <!--      v-model="currentItem"-->
+    <!--    >-->
+    <!--      <v-carousel-item-->
+    <!--        v-for="item in product.variants"-->
+    <!--        v-if="product.variants"-->
+    <!--        :key="item.id"-->
+
+    <!--      >-->
+    <!--        <v-card class="grey lighten-5" lazy>-->
+    <!--          <v-img :src="item.image" alt="" :lazy-src="require('../../assets/images/image-loader.gif')"></v-img>-->
+    <!--        </v-card>-->
+
+    <!--      </v-carousel-item>-->
+    <!--      <v-carousel-item-->
+    <!--        :src="item.image"-->
+    <!--        v-for="item in product.images"-->
+    <!--        :key="item.id"-->
+    <!--        v-else-->
+    <!--      >-->
+    <!--      </v-carousel-item>-->
+    <!--    </v-carousel>-->
     <div class="pt-3 pb-2 d-flex justify-space-between align-center titlesmall teradeli-medium">
       <strong>{{product.name}}</strong>
       <div>
@@ -37,7 +57,9 @@
         </button>
       </div>
     </div>
-    <div class="subtitlesmall teradeli-light text-left">{{product.price}}</div>
+    <div class="subtitlesmall teradeli-light text-left">{{product.offers.price*exchange_rate}}
+      {{$store.state.product.exchange_currency}}
+    </div>
   </div>
 </template>
 
@@ -46,92 +68,28 @@
         name: "product-item",
         data() {
             return {
-                colors:['red','green'],
-                currentItem:1,
-                product: {
-                    "mode": "Test",
-                    "userDefinedId": "AP1",
-                    "url": "/product-examples.html",
-                    "price": 299.99,
-                    "name": "Android Phone",
-                    "description": "",
-                    "image": "https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png",
-                    "archived": false,
-                    "inventoryManagementMethod": "Variant",
-                    "stock": 1,
-                    "totalStock": 11,
-                    "allowOutOfStockPurchases": false,
-                    "statistics": {
-                        "numberOfSales": 0,
-                        "totalSales": 0
-                    },
-                    "customFields": [
-                        {
-                            "name": "Size",
-                            "operation": "+200.00",
-                            "type": "dropdown",
-                            "options": "16GB|32GB[+50.00]|128GB[+200.00]",
-                            "required": false,
-                            "value": "128GB",
-                            "optionsArray": [
-                                "16GB",
-                                "32GB",
-                                "128GB"
-                            ]
-                        },
-                        {
-                            "name": "Color",
-                            "operation": "",
-                            "type": "dropdown",
-                            "options": "Black|Blue|Red|White",
-                            "required": false,
-                            "value": "Blue",
-                            "optionsArray": [
-                                "Black",
-                                "Blue",
-                                "Red",
-                                "White"
-                            ]
-                        }
-                    ],
-                    "variants": [
-                        {
-                            "stock": 10,
-                            "variation": [
-                                {
-                                    "name": "Size",
-                                    "option": "16GB"
-                                },
-                                {
-                                    "name": "Color",
-                                    "option": "Black"
-                                }
-                            ],
-                            "image": "https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png",
-                            "allowOutOfStockPurchases": true
-                        },
-                        {
-                            "stock": 1,
-                            "variation": [
-                                {
-                                    "name": "Size",
-                                    "option": "32GB"
-                                },
-                                {
-                                    "name": "Color",
-                                    "option": "Red"
-                                }
-                            ],
-                            "image": "https://fr.louisvuitton.com/images/is/image/lv/1/PP_VP_L/louis-vuitton-sac-%C3%A0-dos-trio-toile-monogram-%C3%A9clipse-sacs--M45538_PM2_Front%20view.png",
-                            "allowOutOfStockPurchases": false
-                        }
-                    ],
-                    "metadata": {
-                        "meta": true
-                    },
-                    "id": "3932ecd1-6508-4209-a7c6-8da4cc75590d",
-                    "creationDate": "2016-11-03T12:51:04.297Z",
-                    "modificationDate": "2016-11-03T12:51:28.873Z"
+                colors: ['red', 'green'],
+                currentItem: 1,
+                settingsSingle: {
+                    "dots": true,
+                    "arrow": true,
+                    "infinite": false,
+                    "speed": 500,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
+                }
+            }
+        },
+        computed: {
+            exchange_rate() {
+                this.$store.dispatch('product/getExchangeRate', this.$i18n.locale);
+                return this.$store.state.product.exchange_rate
+            }
+        },
+        props: {
+            product: {
+                type: Object,
+                default: () => {
                 }
             }
         }
@@ -139,9 +97,9 @@
 </script>
 
 <style scoped>
-.color-button{
-  width: 15px;
-  height: 15px;
-  margin: 2px;
-}
+  .color-button {
+    width: 15px;
+    height: 15px;
+    margin: 2px;
+  }
 </style>

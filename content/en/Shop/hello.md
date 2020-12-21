@@ -24,7 +24,7 @@ award:
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: http://schema.org/InStock
+  availability: true
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -65,6 +65,7 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
+path: /en/Shop/hello
 Languages:
 - locale: en
   path: /en/Shop/hello

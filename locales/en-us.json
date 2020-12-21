@@ -13,6 +13,7 @@
   "product": {
     "cartBtn": "Place in Cart",
     "stock": "In stock",
+    "notInStock": "Not In stock",
     "findStore": "Find In Store",
     "continueBtn": "Continue Shopping",
     "viewCart": "View My Cart",

@@ -22,9 +22,9 @@
         <div class="pa-2">
           <div>
 
-            <v-icon small>mdi-circle</v-icon>
+            <v-icon small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
 
-            {{$t('product.stock')}}
+            {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
           </div>
           <h3 class="teradeli-light">{{product.offers.price*$store.state.product.exchange_rate}} {{$store.state.product.exchange_currency}}</h3>
         </div>
