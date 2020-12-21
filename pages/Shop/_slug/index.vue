@@ -49,7 +49,7 @@
           </div>
           <div class="bold-title text-left pt-2 pb-7">{{product.name}}</div>
           <div class="d-flex justify-space-between align-center">
-            <h3 style="font-weight: 900">{{product.offers.price}}{{product.offers.priceCurrency}}</h3>
+            <h3 style="font-weight: 900">{{product.offers.price*exchange_rate}} {{$store.state.product.exchange_currency}}</h3>
             <div>
 
               <v-icon small>mdi-circle</v-icon>
@@ -242,6 +242,10 @@
             Languages() {
                 return this.product.Languages || []
             },
+            exchange_rate(){
+                this.$store.dispatch('product/getExchangeRate',this.$i18n.locale);
+                return this.$store.state.product.exchange_rate
+            }
         },
         data() {
             return {

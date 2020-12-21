@@ -5,9 +5,9 @@
     </div>
     <v-navigation-drawer v-model="sidebar" clipped app class="d-md-none" v-bind:width="304">
       <v-toolbar-title class="text-center py-10">
-          <router-link to="/" tag="span" style="cursor: pointer" class="brand">
-            <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-160,dpr-2/Logos/WA_mif_g_vf.png" width="160">
-          </router-link>
+        <router-link to="/" tag="span" style="cursor: pointer" class="brand">
+          <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-160,dpr-2/Logos/WA_mif_g_vf.png" width="160">
+        </router-link>
       </v-toolbar-title>
       <v-list>
         <v-list-item
@@ -125,7 +125,8 @@
                 type: Boolean,
                 default: false
             }
-        }
+        },
+
     }
 </script>
 

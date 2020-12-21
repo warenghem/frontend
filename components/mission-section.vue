@@ -12,10 +12,10 @@
                                         :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
                                         class="cover "
                                 />-->
-                                <img 
+                                <img
                                   data-sizes="auto"
-                                  :data-srcset="backgroundImage" 
-                                  class="lazyload cover" 
+                                  :data-srcset="backgroundImage"
+                                  class="lazyload cover"
                                 />
                             </div>
                             <div class="homepage-catalogue-background-lines"
@@ -39,9 +39,9 @@
                                         />-->
                                         <img
                                           data-sizes="auto"
-                                          :data-srcset="bgImage" 
-                                          :src="backgroundImagelqip" 
-                                          class="lazyload cover" 
+                                          :data-srcset="bgImage"
+                                          :src="backgroundImageslqip"
+                                          class="lazyload cover"
                                       />
                                         </div>
                                     </div>
@@ -106,9 +106,9 @@
                     />-->
                     <img
                         data-sizes="auto"
-                        :data-srcset="backgroundImages[backgroundImages.length-1-m_idx]" 
-                        :src="backgroundImagelqip" 
-                        class="lazyload cover position-absolute" 
+                        :data-srcset="backgroundImages[backgroundImages.length-1-m_idx]"
+                        :src="backgroundImageslqip"
+                        class="lazyload cover position-absolute"
                     />
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">

@@ -20,7 +20,7 @@
 
             <v-spacer></v-spacer>
             <v-text>
-                <a target="_blank" v-bind:href="social.url" v-for="social in socials" :key="social">
+                <a target="_blank" v-bind:href="social.url" v-for="social in socials" :key="social.name">
                     <v-btn
                         class="mx-3"
                         dark
@@ -48,6 +48,7 @@
       {name:"instagram", icon:"mdi-instagram", url:"https://www.instagram.com/warenghem.studios/"},
       {name:"facebook", icon:"mdi-facebook", url:"https://www.facebook.com/warenghem.studios/"},
     ],
+        items:[]
     }),
   }
 </script>

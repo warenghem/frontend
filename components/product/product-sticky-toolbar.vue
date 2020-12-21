@@ -26,7 +26,7 @@
 
             {{$t('product.stock')}}
           </div>
-          <h3 class="teradeli-light">{{product.offers.price}}{{product.offers.priceCurrency}}</h3>
+          <h3 class="teradeli-light">{{product.offers.price*$store.state.product.exchange_rate}} {{$store.state.product.exchange_currency}}</h3>
         </div>
         <div class="pa-2">
           <v-btn tile large dark @click="$store.commit('product/OPEN_PAY_MODAL')">
