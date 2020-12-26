@@ -164,7 +164,7 @@ export default {
           },
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
-          warning: colors.amber.base,
+          warning: colors.amber.base, 
           error: colors.deepOrange.accent4,
           success: colors.green.accent3
         },
@@ -223,7 +223,6 @@ export default {
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     },
-    analyze: true,
     postcss: {
       plugins: {
           "@fullhuman/postcss-purgecss": {
@@ -249,7 +248,7 @@ export default {
                 /tab-transition/,
                 /tab-reversetransition/
               ],
-              greedy: [/leaflet/]
+              greedy: [/leaflet/,/^lazy/]
             }
           }
         }

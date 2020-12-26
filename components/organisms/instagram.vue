@@ -8,7 +8,7 @@
         name: "app-footer",
         mounted() {
             new InstagramFeed({
-                'username': 'warenghem.studio',
+                'username': 'warenghem.studios',
                 'container': document.getElementById("instaFeed"),
                 'display_profile': false,
                 'display_biography': false,

@@ -2,7 +2,7 @@
   <div>
     <div class="videoSection">
       <div class="homepage-slider-background" ref="backgroundImg">
-        <div class="homepage-slider-background-item active activeNew">
+        <div class="homepage-slider-background-item active activeNew skeletton">
         <!--<ik-image
             path="/S048_PF_TEuxOrfV7C_a.png"
             :lqip="{active:true, quality: 40, blur: 5}"
@@ -19,7 +19,6 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
-              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
           >
           <source media="screen and (min-width: 48em)"
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
@@ -29,7 +28,6 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
-              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-100,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
           >
           <source
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
@@ -39,12 +37,10 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
-              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,ar-3-5,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
           >
-          <img class="lazyload cover" 
-                data-src="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+          <img class="lazyload cover lazypreload"
+                data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
                           https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x" 
-                src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" 
                 data-sizes="auto" />
         </picture>
         </div>
@@ -78,7 +74,7 @@
             <h2 class="title"> {{$t('video.title')}}{{$t('video.title2')}}</h2>
             <h4 class="subtitle">{{$t('video.subtitle')}}</h4>
           </div>
-          <div class="row col-md-10 mx-auto text-center inner">
+          <div class="row col-md-10 mx-auto text-center inner d-none d-md-flex">
             <div class="col-md-4">
                 <div class="logosvg pr-5 pr-md-0 logosvg" v-html="Eco" />
               <span>{{$t('video.tag1')}}</span>

@@ -5,7 +5,7 @@
         <v-row no-gutters class="pa-0">
             <v-col cols="12" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <v-card align=center class="bgcard item-inner px-0 py-3 py-sm-3 d-flex">
-                    <div class="profile-holder mb-0 pa-0 col-4 col-sm-3">
+                    <div class="profile-holder mb-0 pa-0 col-4 col-sm-3 skeletton wa-smart-picture rounded-circle square-ratio">
                         <!--<ik-image
                             :path="profile.img"
                             :lqip="{active:true, quality: 40, blur: 5}"
@@ -15,7 +15,6 @@
                         />-->
                         <img
                             :data-srcset="profile.img" 
-                            :src="profile.imglqip" 
                             class="lazyload profil" 
                         />
                     </div>
@@ -71,7 +70,7 @@
         i18n: {
             messages: {
                 en: {
-                    title: "Warenghem Studio",
+                    title: "Warenghem Studios",
                     subtitle:"Our offices are located in Paris and in the Var, our factories are located all over France. Our team is growing, write to us ...",
                     profiles: [
                         {
@@ -109,7 +108,7 @@
                     ],
                 },
                 fr: {
-                    title: "Warenghem Studio",
+                    title: "Warenghem Studios",
                     subtitle:"Nos bureaux sont situés à Paris et dans le Var, nos usines sont situées un peu partout en France. Notre équipe s'agrandie, écrivez nous...",
                     profiles: [
                         {
@@ -188,9 +187,10 @@
 
             .profile-holder {
                 text-align: center;
+                max-width: 120px;
+                width: 100%;
             }
             img {
-                max-width: 160px;
                 width: 100%;
             }
             .item-details {

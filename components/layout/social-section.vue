@@ -1,6 +1,6 @@
 <template>
     <div>
-        <a href="https://www.instagram.com/warenghem.studio/" target="_blank">
+        <a href="https://www.instagram.com/warenghem.studios/" target="_blank">
             <v-row style="z-index:2"  align="center" justify="center" class="ma-0 h-100 w-100 position-absolute">
                 <v-col align="center">
                     <div class="ma-auto" style="fill: #ffffff;stroke: #ffffff;width:85px" v-html="LogoSmSm" />

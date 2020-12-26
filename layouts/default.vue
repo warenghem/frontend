@@ -9,5 +9,6 @@
       </slot>
       <Footer/>
     </div>
+    <LazyPlantForm v-if="$store.state.plantModal" />
   </v-app>
 </template>

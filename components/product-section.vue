@@ -2,38 +2,14 @@
         <div class="productSection pvw">
             <div class="page-title absolute-title d-none">{{$t('productTitle')}}</div>
                 <div class="text-center d-block pb-4 pb-md-8 w-100 mt-n5">
-                    <!--<div style="min-width:400px;max-width:500px" class="svglogo mx-auto w-100 px-3" v-html="LogoCS" />-->
                     <img
                         data-sizes="auto"
                         data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
-                        src="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-500,bl-10/Logos/Citadins_Sauvages.png" 
-                        class="lazyload mx-auto w-100 px-3" 
+                        class="lazyload mx-auto w-100" 
                         style="max-width:500px"
                     />
                 </div>
-                <v-container fluid class="productgrid p-0">
-                    <!--<v-card
-                        class="div5"
-                        style="background-color:unset!important"         
-                    >
-                        <v-card-title class="text-center pt-8 justify-center h-100">
-                            <div class="d-block w-100">
-                                <ik-image
-                                    path="/Logos/Citadins_Sauvages.png"
-                                    :lqip="{active:true, quality: 40, blur: 5}"
-                                    :transformation="[{quality: 65, width:500, dpr:2}]"
-                                    loading="lazy"
-                                    width="500"
-                                />
-                                <img
-                                    data-sizes="auto"
-                                    data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
-                                    src="https://ik.imagekit.io/g1noocuou2/tr:q-15,w-500,bl-10/Logos/Citadins_Sauvages.png" 
-                                    class="lazyload" 
-                                />
-                            </div>
-                        </v-card-title>
-                    </v-card>--> 
+                <v-container fluid style="padding:0!important" class="productgrid p-0">
                     <v-card 
                         v-for="(product,p_idx) in products"
                         :key="p_idx"
@@ -41,7 +17,7 @@
                         lazy
                         style="background-color:unset!important"
                     >
-                        <div class="gradientoverlay img-fluid theme--light squaredimage position-relative">
+                        <div class="gradientoverlay img-fluid theme--light wa-smart-picture square-ratio position-relative">
                             <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
                             <v-spacer></v-spacer>
 
@@ -57,19 +33,13 @@
                                 <v-icon>mdi-share-variant</v-icon>
                             </v-btn>
                             </v-card-actions>
-                            <!--<ik-image
-                                    :path="backgroundImages[p_idx]"
-                                    :lqip="{active:true, quality: 40, blur: 5}"
-                                    :transformation="[{quality: 65, width:500, dpr:2, focus: 'bottom',}]"
-                                    loading="lazy"
-                                    class="cover bg-white catalogue-item-background elevation-3"
-                                />-->
+                                <div class="skeletton">
                                 <img
                                     data-sizes="auto"
                                     :data-srcset="backgroundImages[p_idx]" 
-                                    :src="backgroundImagelqip[p_idx]" 
                                     class="lazyload cover bg-white catalogue-item-background" 
                                 />
+                                </div>
                             <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
                                 {{product.desc}}
                             </div>
@@ -94,16 +64,16 @@
         data() {
             return {
                 backgroundImages: [
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 1500w",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 1500w",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 1500w",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 1500w",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,ar-1-1,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,ar-1-1,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,ar-1-1,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,ar-1-1,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,ar-1-1,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,ar-1-1,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,ar-1-1,fo-bottom,c-maintain_ratio/Products/Ceinturesea2.jpg 1500w",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,ar-1-1,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,ar-1-1,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,ar-1-1,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,ar-1-1,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,ar-1-1,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,ar-1-1,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,ar-1-1,fo-bottom,c-maintain_ratio/Products/Porte_carte_15102020.3.jpg 1500w",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,ar-1-1,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,ar-1-1,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,ar-1-1,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,ar-1-1,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,ar-1-1,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,ar-1-1,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,ar-1-1,fo-bottom,c-maintain_ratio/Products/S48mountain.2carre2.jpg 1500w",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,ar-1-1,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,ar-1-1,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,ar-1-1,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,ar-1-1,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,ar-1-1,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,ar-1-1,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,ar-1-1,fo-bottom,c-maintain_ratio/AdobeStock_213093083-scaled.jpeg 1500w",
                 ],
                 backgroundImagelqip: [
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Products/Ceinturesea2.jpg",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Products/Porte_carte_15102020.3.jpg",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Products/S48mountain.2carre2.jpg",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/AdobeStock_213093083-scaled.jpeg",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,ar-1-1,fo-bottom/Products/Ceinturesea2.jpg",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,ar-1-1,fo-bottom/Products/Porte_carte_15102020.3.jpg",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,ar-1-1,fo-bottom/Products/S48mountain.2carre2.jpg",
+                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,ar-1-1,fo-bottom/AdobeStock_213093083-scaled.jpeg",
                 ],
                 products: this.$t('products'),
             }
@@ -183,8 +153,7 @@
 </script>
 
 <style scoped lang="scss">
-
-    @import "../assets/scss/home/product";
+@import "../assets/scss/home/product";
 
 @media (min-width: 1263px) {
 

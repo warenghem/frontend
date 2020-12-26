@@ -69,8 +69,8 @@
                 <div class="d-flex justify-space-between align-center">
                     <div>{{$t('video.rightSection.alerttitle')}}</div>
                     <div class="d-flex align-center"><small class="pr-2">{{$t('video.rightSection.alerttime')}} </small>
-                        <v-btn class="close" @click="snackbarSuccess=false">
-                            <v-icon>mdi-close</v-icon>
+                        <v-btn icon class="close" @click="snackbarSuccess=false">
+                            <v-icon>{{ svgPath }}</v-icon>
                         </v-btn>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                     <v-icon color="blue darken-2" class="pr-3" dark large>mdi-checkbox-marked-circle</v-icon>
                     <v-layout column>
                         <div>{{$t('video.rightSection.success')}}</div>
-                    </v-layout>
+                    </v-layout> 
                 </v-layout>
             </div>
         </v-snackbar>
@@ -93,14 +93,14 @@
                     <div class="d-flex align-center">
                         <small class="pr-2">{{$t('video.rightSection.alerttime')}} </small>
                         <v-btn icon class="close" @click="snackbarError=false">
-                            <v-icon>mdi-close</v-icon>
+                            <v-icon>{{ svgPath }}</v-icon>
                         </v-btn>
                     </div>
                 </div>
                 <v-layout align-center mt-5 mb-2 pr-4>
                     <v-icon color="orange darken-2" class="pr-3" dark large>mdi-alert-circle-outline</v-icon>
                     <v-layout column>
-                        <div>{{$t('video.rightSection.error')}}</div>
+                        <div>{{$t('video.rightSection.error')}} <a style="color:white" href="mailto:hello@warenghem.com">hello@warenghem.com</a></div>
                     </v-layout>
                 </v-layout>
             </div>
@@ -129,7 +129,7 @@
                             label2: 'EMAIL',
                             alerttitle: 'Warenghem says',
                             alerttime: 'just now',
-                            error: 'Looks invalid or already subscribed. ',
+                            error: 'Your email looks invalid or already subscribed. Please contact us:',
                             success: 'Thank you! To avoid SPAM, we have sent you a confirmation email before ' +
                                 'start planting ... see you soon!'
                         }
@@ -145,7 +145,7 @@
                             label2: 'EMAIL',
                             alerttitle: 'Warenghem dit',
                             alerttime: 'maintenant',
-                            error: 'Semble invalide ou déjà enregistré.',
+                            error: 'Votre email semble invalide ou déjà enregistré. Contactez nous:',
                             success: 'Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de ' +
                                 'commencer la plantation... A tout de suite!'
                         }

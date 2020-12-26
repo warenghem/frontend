@@ -23,7 +23,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar class="menu-bar" flat height="50px" :dark="type">
+    <v-app-bar class="menu-bar border-bottom-md-2" flat height="50px" :dark="type">
 
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
           <v-icon>{{ svgPath }}</v-icon>
@@ -145,14 +145,6 @@
       color: #fff;
       padding: 7px;
       font-size: 12px;
-    }
-    @media(min-width: 961px) {
-      border-bottom: solid 1px rgba(255,255,255,0.4);
-    }
-  }
-  .theme--dark .appBar {
-    @media(min-width: 961px) {
-      border-bottom: solid 1px #c0c0c080;
     }
   }
 </style>

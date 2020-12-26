@@ -2,9 +2,9 @@
     <div class="pvw h-100">
         <h2 class="d-none page-title px-0">{{$t('references')}}</h2>
         <v-row class="ma-0 h-100 w-100" align="center" justify="center">
-            <v-col align="center"><div class="svgicon svglogo text-center px-3" v-html="CO2SiteLogo" /></v-col>
-            <v-col align="center"><div class="svgicon svglogo text-center px-3" v-html="CO2TechLogo" /></v-col>
-            <v-col align="center"><div class="svgiconpeta svglogo text-center px-3" v-html="PETALogo" /></v-col>
+            <v-col cols="12" sm="6" align="center"><div class="svgicon svglogo text-center px-3" v-html="CO2SiteLogo" /></v-col>
+            <v-col cols="12" sm="6" align="center"><div class="svgicon svglogo text-center px-3" v-html="CO2TechLogo" /></v-col>
+            <v-col cols="12" sm="6" align="center"><div class="svgiconpeta svglogo text-center px-3" v-html="PETALogo" /></v-col>
         </v-row>
     </div>
 </template>
@@ -35,9 +35,9 @@
 </script>
 <style scoped>
 .svgicon {
-	max-width: 250px
+	max-width: 220px
 }
 .svgiconpeta {
-	max-width: 210px
+	max-width: 180px
 }
 </style>

@@ -7,27 +7,34 @@
       flat
       tile
       class="lighten-1 white--text text-center w-100 px-3 px-sm-15"
-      color="#19110b"
+      color="#161617"
     >
         <v-card-title class="px-0 pb-0 d-block d-md-flex">
             <v-text flat tile class="d-block d-md-flex" >
-                <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5" v-html="LogoSmNp" />
+                <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp" />
                 <v-breadcrumbs dark :items="items">
                     <template v-slot:divider>
                         <v-icon>mdi-forward</v-icon>
                     </template>
                 </v-breadcrumbs>
             </v-text>
-
             <v-spacer></v-spacer>
             <v-text>
                     <v-btn
                         class="mx-3"
                         dark
                         icon
-                        target="_blank" v-bind:href="social.url" v-for="social in socials" :key="social"
+                        target="_blank" 
                     >
-                        <v-icon class="d-block" size="24px">{{ social.icon }}</v-icon>
+                        <v-icon class="d-block" size="24px">{{ svgPath }}</v-icon>
+                    </v-btn>
+                    <v-btn
+                        class="mx-3"
+                        dark
+                        icon
+                        target="_blank" 
+                    >
+                        <v-icon class="d-block" size="24px">{{ svgPath2 }}</v-icon>
                     </v-btn>
             </v-text>
         </v-card-title>
@@ -70,19 +77,25 @@
       'Team',
       'Services',
       'Blog',
-      'Contact Us',-->
+      'Contact Us',
+      v-bind:href="social.url" v-for="social in socials" :key="social"
+      -->
 
 <script>
   import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
+  import { mdiInstagram, mdiFacebook } from '@mdi/js'
+
   export default {
     data: () => ({
     LogoSmNp,
+    svgPath: mdiInstagram,
+    svgPath2: mdiFacebook,
     links: [
       {title:"HOME", url:"/"},
     ],
     socials: [
-      {name:"instagram", icon:"mdi-instagram", url:"https://www.instagram.com/warenghem.studios/"},
-      {name:"facebook", icon:"mdi-facebook", url:"https://www.facebook.com/warenghem.studios/"},
+      {name:"instagram", icon:"'svgPath'", url:"https://www.instagram.com/warenghem.studios/"},
+      {name:"facebook", icon:"'svgPath2'", url:"https://www.facebook.com/warenghem.studios/"},
     ],
     }),
   }
