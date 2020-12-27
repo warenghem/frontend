@@ -10,7 +10,7 @@
     <v-container class="px-lg-7" fluid>
       <v-row>
         <v-col lg="4" md="6" v-for="(product,idx) in products" :key="'product_'+idx">
-            <product-item :product="product"></product-item>
+          <product-item :product="product"></product-item>
         </v-col>
       </v-row>
       <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
@@ -22,21 +22,47 @@
 <script>
     import ProductItem from "../../components/product/product-item";
     import FilterBar from "../../components/product/filter-bar";
+    import product from "../../store/product";
 
     export default {
         name: 'shop',
         components: {FilterBar, ProductItem},
-         async asyncData(context) {
-            const {$content, params, app, route, redirect} = context;
-            const slug = params.slug;
-            const products = await $content(`${app.i18n.locale}/Shop`).fetch();
+        async asyncData(context) {
+            const {$content, app} = context;
+            const productsItem = await $content(`${app.i18n.locale}/Shop`).fetch();
             return {
-                products,
+                productsItem,
             }
+        },
+        computed: {
+            products() {
+                if (this.$store.state.product.exchange_rate.length > 0) {
+                    this.productsItem.map(product => {
+                        var exchange_rate={};
+                        exchange_rate=this.$store.state.product.exchange_rate.find(rate => {
+                            if (rate.from === product.offers.priceCurrency) {
+                               return rate;
+                            }
+                        });
+                        exchange_rate.exchange_r.some((curr, idx) => {
+                            if (curr.currency === this.$store.state.product.currency_default) {
+                                product.price = (product.offers.price * curr.rate).toFixed(2)
+                            }
+                        })
+
+                    });
+                    return this.productsItem;
+                } else {
+                    return this.productsItem;
+                }
+
+            }
+
         },
 
         created() {
             this.$store.commit('langs/RESET_LANG');
+            this.$store.dispatch('product/getAllExchangeRate');
         },
         data() {
             return {

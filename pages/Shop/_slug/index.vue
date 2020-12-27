@@ -49,12 +49,13 @@
           </div>
           <div class="bold-title text-left pt-2 pb-7">{{product.name}}</div>
           <div class="d-flex justify-space-between align-center">
-            <h3 style="font-weight: 900">{{product.offers.price*exchange_rate}} {{$store.state.product.exchange_currency}}</h3>
+            <h3 style="font-weight: 900">{{product.price}}
+              {{$store.state.product.currency_default}}</h3>
             <div>
 
               <v-icon small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
 
-             {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
+              {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
             </div>
           </div>
           <v-btn large block tile color="black" class="py-3 my-3" dark height="50px"
@@ -164,34 +165,34 @@
             >
               {{$t('product.recommend')}}
             </v-tab>
-<!--            <v-tab-item-->
-<!--              value="recentTab"-->
-<!--              style="height: 700px"-->
-<!--            >-->
-<!--              <VueSlickCarousel v-bind="settings">-->
-<!--                <div v-for="(img,i_dx) in product.image"-->
-<!--                     :key="i_dx"-->
-<!--                     class="text-center pa-2"-->
-<!--                >-->
-<!--                  <product-item></product-item>-->
+            <!--            <v-tab-item-->
+            <!--              value="recentTab"-->
+            <!--              style="height: 700px"-->
+            <!--            >-->
+            <!--              <VueSlickCarousel v-bind="settings">-->
+            <!--                <div v-for="(img,i_dx) in product.image"-->
+            <!--                     :key="i_dx"-->
+            <!--                     class="text-center pa-2"-->
+            <!--                >-->
+            <!--                  <product-item></product-item>-->
 
-<!--                </div>-->
-<!--              </VueSlickCarousel>-->
+            <!--                </div>-->
+            <!--              </VueSlickCarousel>-->
 
-<!--            </v-tab-item>-->
-<!--            <v-tab-item-->
-<!--              value="recommendTab"-->
-<!--              style="height: 700px"-->
-<!--            >-->
-<!--              <VueSlickCarousel v-bind="settings">-->
-<!--                <div v-for="(img,i_dx) in product.image"-->
-<!--                     :key="'recommend'+i_dx"-->
-<!--                     class="pa-2"-->
-<!--                >-->
-<!--                  <product-item></product-item>-->
-<!--                </div>-->
-<!--              </VueSlickCarousel>-->
-<!--            </v-tab-item>-->
+            <!--            </v-tab-item>-->
+            <!--            <v-tab-item-->
+            <!--              value="recommendTab"-->
+            <!--              style="height: 700px"-->
+            <!--            >-->
+            <!--              <VueSlickCarousel v-bind="settings">-->
+            <!--                <div v-for="(img,i_dx) in product.image"-->
+            <!--                     :key="'recommend'+i_dx"-->
+            <!--                     class="pa-2"-->
+            <!--                >-->
+            <!--                  <product-item></product-item>-->
+            <!--                </div>-->
+            <!--              </VueSlickCarousel>-->
+            <!--            </v-tab-item>-->
           </v-tabs>
         </v-col>
       </v-row>
@@ -239,16 +240,33 @@
             }
         },
         computed: {
-            product(){
-              return this.productItem;
+            product() {
+                if (this.$store.state.product.exchange_rate.length > 0) {
+                    var exchange_rate = {};
+                    exchange_rate = this.$store.state.product.exchange_rate.find(rate => {
+                        if (rate.from === this.productItem.offers.priceCurrency) {
+                            return rate;
+                        }
+                    });
+                    exchange_rate.exchange_r.some((curr, idx) => {
+                        if (curr.currency === this.$store.state.product.currency_default) {
+                            this.productItem.price = (this.productItem.offers.price * curr.rate).toFixed(2)
+                        }
+                    });
+
+                    return this.productItem;
+                } else {
+                    this.productItem.price =this.productItem.offers.price;
+                    return this.productItem;
+                }
+
             },
             Languages() {
                 return this.productItem.Languages || []
             },
-            exchange_rate(){
-                this.$store.dispatch('product/getExchangeRate',this.$i18n.locale);
-                return this.$store.state.product.exchange_rate
-            }
+        },
+        created() {
+            this.$store.dispatch('product/getAllExchangeRate');
         },
         data() {
             return {

@@ -26,7 +26,7 @@
 
             {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
           </div>
-          <h3 class="teradeli-light">{{product.offers.price*$store.state.product.exchange_rate}} {{$store.state.product.exchange_currency}}</h3>
+          <h3 class="teradeli-light">{{product.price}} {{$store.state.product.currency_default}}</h3>
         </div>
         <div class="pa-2">
           <v-btn tile large dark @click="$store.commit('product/OPEN_PAY_MODAL')">

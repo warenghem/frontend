@@ -1,9 +1,8 @@
-import langs from "~/store/langs";
 
 const state = () => ({
   productPayModal: false,
-  exchange_rate: 1,
-  exchange_currency:'EUR',
+  exchange_rate: [],
+  currency_default: 'EUR'
 });
 export const mutations = {
   OPEN_PAY_MODAL(state) {
@@ -13,28 +12,41 @@ export const mutations = {
     state.productPayModal = false;
   },
   SET_EXCHANGE_RATE(state, data) {
-    state.exchange_rate = data.rate;
-    state.exchange_currency = data.currency;
+    state.exchange_rate = data;
   },
   RESET_EXCHANGE_RATE(state) {
-    state.exchange_rate = 1;
-    state.exchange_currency = 'EUR';
+    state.exchange_rate = [];
+  },
+  SET_CURRENCY(state, data) {
+    state.currency_default = data;
+  },
+  RESET_CURRENCY(state) {
+    state.currency_default = 'EUR';
   }
 };
 export const actions = {
-  async getExchangeRate({$axios, commit}, lang) {
-    try {
-      const currency = langs.state().items.find(l => l.lang === '/' + lang).currency;
-      if (currency !== 'EUR') {
-        const res = await this.$axios.$get("https://api.exchangeratesapi.io/latest?base=EUR&symbols=" + currency);
-        commit("SET_EXCHANGE_RATE", {rate:Object.values(res.rates)[0].toFixed(2),currency:currency});
-      }else{
-        commit("RESET_EXCHANGE_RATE");
-      }
+  async getAllExchangeRate({$axios, commit}) {
+    const allCurrency = ['EUR', 'USD', 'GBP'];
+    var rate =[];
+    allCurrency.forEach(currency => {
+      let exchange = [];
+      this.$axios.$get("https://api.exchangeratesapi.io/latest?base=" + currency).then(res => {
+        allCurrency.forEach(curr => {
+          if (curr === currency) {
+            exchange.push({currency:curr,rate:1})
+          } else {
+             Object.keys(res.rates).forEach((obj,idx)=>{
+               if(obj === curr){
+                 exchange.push({currency:curr,rate:Object.values(res.rates)[idx]})
+               }
 
-    } catch (e) {
-      commit("RESET_EXCHANGE_RATE");
-    }
+             })
+          }
+        })
+      });
+      rate.push({from:currency,exchange_r:exchange})
+    });
+    commit("SET_EXCHANGE_RATE", rate);
   },
 };
 export default {

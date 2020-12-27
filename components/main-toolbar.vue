@@ -87,6 +87,7 @@
                 <v-list-item
                   v-for="(flag,idx) in $store.state.langs.items"
                   :key="'flag_list_'+idx"
+                  class="text-center"
                 >
                   <v-list-item-title class="cursor-pointer">
                     <NuxtLink :to="{path:flag.path}">
@@ -96,6 +97,24 @@
                       />
                     </NuxtLink>
 
+                  </v-list-item-title>
+                </v-list-item>
+                <v-divider></v-divider>
+                <v-list-item style="min-height: 30px" class="langChanger"  :class="{'active':$store.state.product.currency_default==='USD'}">
+                  <v-list-item-title class="cursor-pointer"
+                                     @click="$store.commit('product/SET_CURRENCY','USD')"
+                  >
+                    &dollar;
+                  </v-list-item-title>
+                </v-list-item >
+                 <v-list-item style="min-height: 30px" class="langChanger" :class="{'active':$store.state.product.currency_default==='EUR'}">
+                  <v-list-item-title class="cursor-pointer"  @click="$store.commit('product/SET_CURRENCY','EUR')">
+                    &euro;
+                  </v-list-item-title>
+                 </v-list-item>
+                 <v-list-item style="min-height: 30px" class="langChanger" :class="{'active':$store.state.product.currency_default==='GBP'}">
+                  <v-list-item-title class="cursor-pointer"  @click="$store.commit('product/SET_CURRENCY','GBP')">
+                    &pound;
                   </v-list-item-title>
                 </v-list-item>
               </v-list>

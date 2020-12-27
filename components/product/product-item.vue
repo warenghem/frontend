@@ -1,23 +1,23 @@
 <template>
   <div>
 
-    <VueSlickCarousel v-bind="settingsSingle">
+    <VueSlickCarousel v-bind="settingsSingle" v-if="product.image">
 
-        <div
-          class="pa-2 img-wrapper"
-          v-for="(img,i_dx) in product.image"
-          :key="'image_'+i_dx"
+      <div
+        class="pa-2 img-wrapper"
+        v-for="(img,i_dx) in product.image"
+        :key="'image_'+i_dx"
 
+      >
+        <img
+          :src="img.src"
+          :lazy-src="require('../../assets/images/image-loader.gif')"
+          class="lazyload"
+          alt=""
+          @click="$router.push({path:product.path})"
         >
-          <img
-            :src="img.src"
-            :lazy-src="require('../../assets/images/image-loader.gif')"
-            class="lazyload"
-            alt=""
-            @click="$router.push({path:product.path})"
-          >
 
-        </div>
+      </div>
     </VueSlickCarousel>
 
     <!--    <v-carousel-->
@@ -57,8 +57,8 @@
         </button>
       </div>
     </div>
-    <div class="subtitlesmall teradeli-light text-left">{{product.offers.price*exchange_rate}}
-      {{$store.state.product.exchange_currency}}
+    <div class="subtitlesmall teradeli-light text-left" v-if="product.offers">{{product.price}}
+      {{$store.state.product.currency_default}}
     </div>
   </div>
 </template>
@@ -80,12 +80,6 @@
                 }
             }
         },
-        computed: {
-            exchange_rate() {
-                this.$store.dispatch('product/getExchangeRate', this.$i18n.locale);
-                return this.$store.state.product.exchange_rate
-            }
-        },
         props: {
             product: {
                 type: Object,
@@ -96,10 +90,23 @@
     }
 </script>
 
-<style scoped>
+
+<style lang="scss">
   .color-button {
     width: 15px;
     height: 15px;
     margin: 2px;
+  }
+
+  .img-wrapper {
+    img {
+      max-height: 84vh;
+      max-width: 100%;
+      margin: auto;
+    }
+
+    &:focus {
+      outline: none !important;
+    }
   }
 </style>
