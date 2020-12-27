@@ -21,14 +21,17 @@
         <picture class="gradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/'+ post.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/'+ post.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/'+ post.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/'+ post.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/'+ post.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/'+ post.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/'+ post.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,fo-bottom/'+ post.media"
           >
           <source media="screen and (min-width: 48em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,fo-bottom,c-maintain_ratio/'+ post.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,fo-bottom,c-maintain_ratio/'+ post.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,fo-bottom,c-maintain_ratio/'+ post.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,fo-bottom,c-maintain_ratio/'+ post.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,fo-bottom,c-maintain_ratio/'+ post.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,fo-bottom,c-maintain_ratio/'+ post.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,fo-bottom,c-maintain_ratio/'+ post.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-640,fo-bottom/'+ post.media"
           >
           <source
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-640,fo-bottom,c-maintain_ratio/'+ post.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-768,fo-bottom,c-maintain_ratio/'+ post.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1024,fo-bottom,c-maintain_ratio/'+ post.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1366,fo-bottom,c-maintain_ratio/'+ post.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1600,fo-bottom,c-maintain_ratio/'+ post.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1920,fo-bottom,c-maintain_ratio/'+ post.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-2500,fo-bottom,c-maintain_ratio/'+ post.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,ar-3-5,bl-10,w-640,fo-bottom/'+ post.media"
           >
-          <img class="lazyload cover" 
+          <img class="lazyload mediabox-img" 
             :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/'+ post.media +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/'+ post.media +' 2x'" 
             data-sizes="auto" />
         </picture>

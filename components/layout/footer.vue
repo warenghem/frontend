@@ -2,6 +2,7 @@
   <v-footer
     dark
     padless
+    color="#161617"
   >
     <v-card
       flat

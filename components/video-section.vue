@@ -2,7 +2,7 @@
   <div>
     <div class="videoSection">
       <div class="homepage-slider-background" ref="backgroundImg">
-        <div class="homepage-slider-background-item active activeNew skeletton">
+        <div class="homepage-slider-background-item active activeNew skeletton mediabox">
         <!--<ik-image
             path="/S048_PF_TEuxOrfV7C_a.png"
             :lqip="{active:true, quality: 40, blur: 5}"
@@ -19,6 +19,7 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
           >
           <source media="screen and (min-width: 48em)"
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
@@ -28,6 +29,7 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-1000,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
           >
           <source
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
@@ -37,11 +39,12 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,ar-3-5,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
           >
-          <img class="lazyload cover lazypreload"
-                data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
+          <img class="lazyload mediabox-img lazypreload"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
                           https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x" 
-                data-sizes="auto" />
+            data-sizes="auto" />
         </picture>
         </div>
 
@@ -121,8 +124,6 @@
 
       </v-row>
     </div>
-
-
   </div>
 </template>
 

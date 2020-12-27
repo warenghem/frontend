@@ -248,7 +248,7 @@ export default {
                 /tab-transition/,
                 /tab-reversetransition/
               ],
-              greedy: [/leaflet/,/^lazy/]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/]
             }
           }
         }

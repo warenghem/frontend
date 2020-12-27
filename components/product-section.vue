@@ -5,7 +5,7 @@
                     <img
                         data-sizes="auto"
                         data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-500,dpr-2/Logos/Citadins_Sauvages.png" 
-                        class="lazyload mx-auto w-100" 
+                        class="lazyload mx-auto w-100 lazypreload" 
                         style="max-width:500px"
                     />
                 </div>
@@ -17,7 +17,7 @@
                         lazy
                         style="background-color:unset!important"
                     >
-                        <div class="gradientoverlay img-fluid theme--light wa-smart-picture square-ratio position-relative">
+                        <div class="gradientoverlay img-fluid theme--light wa-smart-picture square-ratio position-relative skeletton">
                             <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
                             <v-spacer></v-spacer>
 
@@ -33,13 +33,12 @@
                                 <v-icon>mdi-share-variant</v-icon>
                             </v-btn>
                             </v-card-actions>
-                                <div class="skeletton">
-                                <img
-                                    data-sizes="auto"
-                                    :data-srcset="backgroundImages[p_idx]" 
-                                    class="lazyload cover bg-white catalogue-item-background" 
-                                />
-                                </div>
+                                    <img
+                                        data-sizes="auto"
+                                        :data-srcset="backgroundImages[p_idx]" 
+                                        :data-lowsrc="backgroundImagelqip[p_idx]" 
+                                        class="lazyload mediabox-img" 
+                                    />
                             <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
                                 {{product.desc}}
                             </div>

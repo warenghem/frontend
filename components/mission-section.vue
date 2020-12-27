@@ -2,22 +2,19 @@
     <div>
         <div class="fp-section d-none d-lg-table finebordert">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
-            <div class="fp-tableCell" style="height: 80vh;">
+            <div class="fp-tableCell" style="height: 900px;">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
-                            <div class="homepage-catalogue-background-big skeletton">
-                                <!--<ik-image
-                                        :path="backgroundImage"
-                                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
-                                        class="cover "
-                                />-->
-                                <img
-                                  data-sizes="auto"
-                                  :srcset="backgroundImage.img"
-                                  :src="backgroundImage.blur_v"
-                                  class="lazyload cover"
-                                 alt="bg image"/>
+                            <div class="homepage-catalogue-background-big">
+                                <div class="skeletton">
+                                    <img
+                                    data-sizes="auto"
+                                    :srcset="backgroundImage.img"
+                                    :data-lowsrc="backgroundImage.blur_v"
+                                    class="lazyload mediabox-img"
+                                    alt="bg image"/>
+                                </div>
                             </div>
                             <div class="homepage-catalogue-background-lines"
                                  :class="{'opacity-02':currentMissionHover}"
@@ -28,16 +25,8 @@
                                 <div></div>
                             </div>
                             <div class="homepage-catalogue-background-divided d-none">
-
                                 <div v-for="(bgLogo,idx) in $store.state.picture.backgroundlogos" :key="'bg_logo_'+idx">
-                                    <div class="skeletton">
-                                        <!--<ik-image
-                                            :path="bgImage"
-                                            :lqip="{active:true, quality: 40, blur: 5}"
-                                            :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
-                                            loading="lazy"
-                                            class="cover"
-                                        />-->
+                                    <div>
                                         <img
                                           data-sizes="auto"
                                           :data-src="bgLogo.img"
@@ -48,23 +37,16 @@
                                     </div>
                             </div>
                             <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
-
                                 <div v-for="(bgImage,idx) in $store.state.picture.backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
                                     <div class="skeletton">
-                                        <!--<ik-image
-                                            :path="bgImage"
-                                            :lqip="{active:true, quality: 40, blur: 5}"
-                                            :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
-                                            loading="lazy"
-                                            class="cover"
-                                        />-->
-                                        <img
-                                          data-sizes="auto"
-                                          :data-srcset="bgImage.img"
-                                          class="lazyload cover"
-                                      />
-                                        </div>
+                                            <img
+                                            data-sizes="auto"
+                                            :data-srcset="bgImage.img"
+                                            :data-lowsrc="bgImage.blur_v"
+                                            class="lazyload mediabox-img lazypreload"
+                                            />
                                     </div>
+                                </div>
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
@@ -110,27 +92,21 @@
                 </div>
             </div>
         </div>
-        <div class="d-lg-none mission-accordion finebordert" style="background:black">
+        <div class="d-lg-none mission-accordion finebordert">
             <v-expansion-panels accordion>
                 <div v-for="(mission,m_idx) in $t('mission.sections').slice().reverse()" :key="'mission_ac'+m_idx" class="w-100">
                     <v-expansion-panel
                             style="min-height: 33vw"
                             class="gradientoverlay blackoverlay backgroundcover"
                     >
-                    <!--<ik-image
-                        :path="backgroundImages[backgroundImages.length-1-m_idx]"
-                        :lqip="{active:true, quality: 40, blur: 5}"
-                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
-                        loading="lazy"
-                        class="cover position-absolute"
-                    />-->
-                    <div class="skeletton">
-                    <img
-                        data-sizes="auto"
-                        :data-srcset="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].img"
-                        class="lazyload cover position-absolute"
-                    />
-                    </div>
+                        <div class="skeletton">
+                            <img
+                                data-sizes="auto"
+                                :data-srcset="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].img"
+                                :data-lowsrc="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].blur_v"
+                                class="lazyload mediabox-img"
+                            />
+                        </div>
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
                             <div class="pa-sm-10 pa-3 h-100 z-2">
                                 <div style="height:49px" class="pb-3">

@@ -6,16 +6,10 @@
             <v-col cols="12" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <v-card align=center class="bgcard item-inner px-0 py-3 py-sm-3 d-flex">
                     <div class="profile-holder mb-0 pa-0 col-4 col-sm-3 skeletton wa-smart-picture rounded-circle square-ratio">
-                        <!--<ik-image
-                            :path="profile.img"
-                            :lqip="{active:true, quality: 40, blur: 5}"
-                            :transformation="[{quality: 65, width:400, dpr:2, radius:'max'}]"
-                            loading="lazy"
-                            width="400"
-                        />-->
                         <img
                             :data-srcset="profile.img" 
-                            class="lazyload profil" 
+                            :data-lowsrc="profile.imglqip" 
+                            class="lazyload profil mediabox-img" 
                         />
                     </div>
                     <div class="content-holder text-left pl-4 pa-0 col-8 col-sm-9">

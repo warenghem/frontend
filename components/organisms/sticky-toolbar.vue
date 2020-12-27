@@ -98,8 +98,9 @@ export default {
 
         .menu-bar {
             border-bottom: none !important;
-            backdrop-filter: saturate(180%) blur(20px);
-            background: #1d1d1fb3 !important;
+            /* backdrop-filter: saturate(180%) blur(20px);
+            background: rgba(29,29,31,0.9) !important; */
+            background: #161617!important; 
 
             &.whiteBack {
                 border-bottom: #eae8e4 solid 1px !important;

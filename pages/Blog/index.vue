@@ -32,14 +32,17 @@
         <picture class="gradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,fo-bottom/'+ firstpost.media"
           >
           <source media="screen and (min-width: 48em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3,fo-bottom/'+ firstpost.media"
           >
           <source
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-640,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-768,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1024,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1366,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1600,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1920,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-2500,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-3-5,fo-bottom/'+ firstpost.media"
           >
-          <img class="lazyload cover" 
+          <img class="lazyload mediabox-img" 
             :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 2x'" 
             data-sizes="auto" />
         </picture>
@@ -76,8 +79,9 @@
                     <img
                         data-sizes="auto"
                         :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,ar-1-1,fo-bottom,c-maintain_ratio/' + post.media +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,ar-1-1,fo-bottom,c-maintain_ratio/' + post.media +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,ar-1-1,fo-bottom,c-maintain_ratio/' + post.media +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,ar-1-1,fo-bottom,c-maintain_ratio/' + post.media +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,ar-1-1,fo-bottom,c-maintain_ratio/' + post.media +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,ar-1-1,fo-bottom,c-maintain_ratio/' + post.media +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,ar-1-1,fo-bottom,c-maintain_ratio/' + post.media +' 1500w'"
+                        :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-500,ar-1-1/' + post.media" 
                         :alt="post.title" 
-                        class="lazyload cover bg-white catalogue-item-background" 
+                        class="lazyload bg-white catalogue-item-background mediabox-img" 
                     />
                 <v-card-text class="teradeli-light mt-5 position-absolute pa-3 text-white" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
                   {{ post.tags }}
