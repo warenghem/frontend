@@ -108,7 +108,7 @@
                             />
                         </div>
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
-                            <div class="pa-sm-10 pa-3 h-100 z-2">
+                            <div class="pa-sm-10 pvw h-100 z-2">
                                 <div style="height:49px" class="pb-3">
                                     <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="plusIcon" v-html="MagazinePlus" />
                                     <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="minusIcon" v-html="MagazineMinus" />

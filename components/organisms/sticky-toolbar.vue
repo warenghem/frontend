@@ -9,7 +9,7 @@
             <v-list>
                 <v-list-item
                         v-for="(link,l_idx) in $store.state.link.links"
-                        :class="{'current':$root.currentId===link.elId}"
+                        
                         :to="'/'+$i18n.locale+link.elId"
                         :key="'slink_'+l_idx"
                 >
@@ -20,21 +20,21 @@
             </v-list>
         </v-navigation-drawer>
 
-        <v-app-bar class="menu-bar" flat height="50px"
-                   :class="{'whiteBack':$root.currentId==='mapTreeSection'||$root.currentId==='studioSection'}">
+        <v-app-bar flat class="border-bottom-2" height="50px"
+                   >
 
             <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
               <v-icon>{{ svgPath }}</v-icon>
             </v-app-bar-nav-icon>
             <v-toolbar-title class="d-md-block pr-4 d-none">
                 <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
-                  <div style="fill: #ffffff;stroke: #ffffff;width:35px" v-html="LogoSmSm" />
+                  <div style="fill: #19110b;stroke: #19110b;width:35px" v-html="LogoSmSm" />
                 </nuxt-link>
             </v-toolbar-title>
             <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
                              :key="'slink_btn_l_'+l_idx">
                 <v-btn text class="text-uppercase item"
-                       :class="{'current':$root.currentId===link.elId}"
+                       
                       :to="'/'+$i18n.locale+link.elId"
                 >
                     {{$t(link.name)}}
@@ -96,10 +96,10 @@ export default {
             font-size: 12px;
         }
 
-        .menu-bar {
+        /* .menu-bar {
             border-bottom: none !important;
-            /* backdrop-filter: saturate(180%) blur(20px);
-            background: rgba(29,29,31,0.9) !important; */
+            backdrop-filter: saturate(180%) blur(20px);
+            background: rgba(29,29,31,0.9) !important;
             background: #161617!important; 
 
             &.whiteBack {
@@ -114,7 +114,7 @@ export default {
                 .brand {
                     filter: brightness(1) invert(0);
                 }
-            }
+            } 
 
             .brand {
 
@@ -133,7 +133,7 @@ export default {
                     color: #0081a7 !important;
                 }
             }
-        }
+        }*/
 
     }
 @media (max-width: 600px) {
