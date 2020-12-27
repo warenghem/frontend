@@ -26,7 +26,7 @@
 
 <script>
     export default {
-        name: 'default',
+        name: 'home',
         methods: {
             hideModal() {
                 document.querySelector('.indianforest').classList.remove('active');

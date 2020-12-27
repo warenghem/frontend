@@ -2,7 +2,7 @@
     <div>
         <div class="fp-section d-none d-lg-table finebordert">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
-            <div class="fp-tableCell" style="height: 900px;">
+            <div class="fp-tableCell" style="height: 80vh!important">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
@@ -225,7 +225,7 @@
                         title: "La mission: réunifier l’Homme à la nature",
                         sections: [
                             {
-                                title: "Tracabilité totale, infalsifiable via notre technologie ORIGIN®.",
+                                title: "Tracabilité totale via notre technologie ORIGIN®.",
                                 subtitle:
                                     "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons.",
                                 items:
@@ -233,7 +233,6 @@
                                         "Tagez un QR code pour découvrir l'histoire de vos produits et de leurs fabriquants.",
                                         "Notre application est basée sur la Blockchain, une base de donnée publique et décentralisée. Infalsifiable.",
                                         "Elle est Neutre en CO2 grâce à nos projets de reforestation.",
-                                        "Nos fourniseurs y renseignent les caractéristiques de leurs produits et leurs certifications.",
                                     ]
                             }
                             , {
@@ -242,11 +241,9 @@
                                     "Intuitives, brutes, sans excès, nos créations sont pensées pour l’usage.",
                                 items:
                                     [
-                                        "Passionés par des objets qui durent. Le design est pensé intemporel, échappant à toute mode éphémère.",
-                                        "Inspirées par les architectes et designers. La personnalité affirmée de nos " +
-                                        "objets casse les codes de la maroquinerie classique.",
-                                        "Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la " +
-                                        "fonctionnalité et le quotidien.",
+                                        "Le design est pensé intemporel, échappant à toute mode éphémère.",
+                                        "Inspirées par les architectes et designers du monde. Nos objets casse les codes de la maroquinerie classique.",
+                                        "Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la fonctionnalité et le quotidien."
                                     ]
                             }
                             , {
@@ -268,8 +265,7 @@
                                 items:
                                     [
                                         "Issues de la rencontre entre la nature et nos innovations technologiques.",
-                                        "Beaucoup plus écologiques et aussi solides que le cuir animal.",
-                                        "Ne demande aucun entretien",
+                                        "Beaucoup plus écologiques et aussi solides que le cuir animal. Sans entretient",
                                         "Sans matière animale. Sans souffrance.",
                                     ]
                             }]
