@@ -43,6 +43,11 @@ export const actions = {
              })
           }
         })
+      }).catch(()=>{
+        allCurrency.forEach(curr => {
+
+            exchange.push({currency:curr,rate:1})
+        })
       });
       rate.push({from:currency,exchange_r:exchange})
     });
