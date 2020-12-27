@@ -156,43 +156,47 @@
           >
             <v-tab
               href="#recentTab"
+              v-if="recentProducts.length>0"
             >
               {{$t('product.recent')}}
 
             </v-tab>
             <v-tab
               href="#recommendTab"
+              v-if="recommendedProducts.length>0"
             >
               {{$t('product.recommend')}}
             </v-tab>
-            <!--            <v-tab-item-->
-            <!--              value="recentTab"-->
-            <!--              style="height: 700px"-->
-            <!--            >-->
-            <!--              <VueSlickCarousel v-bind="settings">-->
-            <!--                <div v-for="(img,i_dx) in product.image"-->
-            <!--                     :key="i_dx"-->
-            <!--                     class="text-center pa-2"-->
-            <!--                >-->
-            <!--                  <product-item></product-item>-->
+            <v-tab-item
+              value="recentTab"
+              style="height: 700px"
+              v-if="recentProducts.length>0"
+            >
+              <VueSlickCarousel v-bind="settings">
+                <div v-for="(rc_productItem,i_dx) in recentProducts"
+                     :key="'recent_'+i_dx"
+                     class="text-center pa-2"
+                >
+                  <product-item :product="rc_productItem"></product-item>
 
-            <!--                </div>-->
-            <!--              </VueSlickCarousel>-->
+                </div>
+              </VueSlickCarousel>
 
-            <!--            </v-tab-item>-->
-            <!--            <v-tab-item-->
-            <!--              value="recommendTab"-->
-            <!--              style="height: 700px"-->
-            <!--            >-->
-            <!--              <VueSlickCarousel v-bind="settings">-->
-            <!--                <div v-for="(img,i_dx) in product.image"-->
-            <!--                     :key="'recommend'+i_dx"-->
-            <!--                     class="pa-2"-->
-            <!--                >-->
-            <!--                  <product-item></product-item>-->
-            <!--                </div>-->
-            <!--              </VueSlickCarousel>-->
-            <!--            </v-tab-item>-->
+            </v-tab-item>
+            <v-tab-item
+              value="recommendTab"
+              style="height: 700px"
+              v-if="recommendedProducts.length>0"
+            >
+              <VueSlickCarousel v-bind="settings">
+                <div v-for="(productItem,i_dx) in recommendedProducts"
+                     :key="'recommend'+i_dx"
+                     class="pa-2"
+                >
+                  <product-item :product="productItem"></product-item>
+                </div>
+              </VueSlickCarousel>
+            </v-tab-item>
           </v-tabs>
         </v-col>
       </v-row>
@@ -234,12 +238,33 @@
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
             const productItem = await $content(`${app.i18n.locale}/Shop`, slug).fetch();
+            const productsItem = await $content(`${app.i18n.locale}/Shop`).fetch();
             context.store.commit('langs/SET_LANG_NAV', productItem.Languages || []);
             return {
-                productItem,
+                productItem, productsItem
             }
         },
         computed: {
+            products() {
+                if (this.$store.state.product.exchange_rate.length > 0) {
+
+                    this.productsItem.map(product => {
+                        this.$store.state.product.exchange_rate.some(curr => {
+
+                            if (curr.currency === this.$store.state.product.currency_default) {
+                                product.price = (product.offers.price * curr.rate).toFixed(2)
+                            }
+                        })
+                    });
+                    return this.productsItem;
+                } else {
+                    this.productsItem.map(product => {
+                        product.price = product.offers.price
+                    });
+                    return this.productsItem;
+                }
+
+            },
             product() {
                 if (this.$store.state.product.exchange_rate.length > 0) {
                     this.$store.state.product.exchange_rate.some(curr => {
@@ -253,7 +278,31 @@
                     this.productItem.price = this.productItem.offers.price;
                     return this.productItem;
                 }
+            },
+            recommendedProducts() {
+                var tags = this.productItem.tags.map(tag => {
+                    return tag.name
+                });
+                var r_products = [];
+                this.products.forEach(product => {
+                    if (product.tags.filter(value => tags.includes(value.name)).length > 0) {
+                        r_products.push(product)
+                    }
+                });
+                return r_products;
+            },
+            recentProducts() {
+                var rc_products = [];
+                var recent_products = this.$store.state.product.recent_products;
+                if (recent_products.length > 0) {
+                    recent_products.forEach(p_id => {
+                        if (p_id !== this.product.id) {
+                            rc_products.push(this.products.find(p => p.id === p_id))
+                        }
+                    });
 
+                }
+                return rc_products;
             },
             Languages() {
                 return this.productItem.Languages || []
@@ -261,6 +310,7 @@
         },
         created() {
             this.$store.dispatch('product/getAllExchangeRate');
+            this.$store.commit('product/recentProducts', this.product.id);
         },
         data() {
             return {

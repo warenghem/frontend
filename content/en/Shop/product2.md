@@ -33,8 +33,8 @@ categories:
   slug: bags
   depth: '2'
 tags:
-- name: Leather Goods
-- name: Shoe
+- name: Man
+- name: Cloth
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
   attributes: "NaturalBlack"
