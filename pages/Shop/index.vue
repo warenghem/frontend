@@ -37,22 +37,20 @@
         computed: {
             products() {
                 if (this.$store.state.product.exchange_rate.length > 0) {
+
                     this.productsItem.map(product => {
-                        var exchange_rate={};
-                        exchange_rate=this.$store.state.product.exchange_rate.find(rate => {
-                            if (rate.from === product.offers.priceCurrency) {
-                               return rate;
-                            }
-                        });
-                        exchange_rate.exchange_r.some((curr, idx) => {
+                        this.$store.state.product.exchange_rate.some(curr => {
+
                             if (curr.currency === this.$store.state.product.currency_default) {
                                 product.price = (product.offers.price * curr.rate).toFixed(2)
                             }
                         })
-
                     });
                     return this.productsItem;
                 } else {
+                    this.productsItem.map(product => {
+                        product.price = product.offers.price
+                    });
                     return this.productsItem;
                 }
 

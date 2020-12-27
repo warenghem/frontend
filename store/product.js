@@ -26,32 +26,26 @@ export const mutations = {
 };
 export const actions = {
   async getAllExchangeRate({$axios, commit}) {
-    const allCurrency = ['EUR', 'USD', 'GBP'];
-    var rate =[];
-    allCurrency.forEach(currency => {
+    const allCurrency = ['EUR', 'USD', 'GBP','CAD'];
       let exchange = [];
-      this.$axios.$get("https://api.exchangeratesapi.io/latest?base=" + currency).then(res => {
+      this.$axios.$get("https://api.exchangeratesapi.io/latest?base=EUR").then(res => {
         allCurrency.forEach(curr => {
-          if (curr === currency) {
+          if (curr === 'EUR') {
             exchange.push({currency:curr,rate:1})
           } else {
              Object.keys(res.rates).forEach((obj,idx)=>{
                if(obj === curr){
                  exchange.push({currency:curr,rate:Object.values(res.rates)[idx]})
                }
-
              })
           }
         })
       }).catch(()=>{
         allCurrency.forEach(curr => {
-
             exchange.push({currency:curr,rate:1})
         })
       });
-      rate.push({from:currency,exchange_r:exchange})
-    });
-    commit("SET_EXCHANGE_RATE", rate);
+    commit("SET_EXCHANGE_RATE", exchange);
   },
 };
 export default {

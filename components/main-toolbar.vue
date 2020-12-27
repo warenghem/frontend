@@ -78,7 +78,10 @@
                        v-if="'/'+$i18n.locale===flag.lang"
                   />
                 </div>
-
+                <span class="px-2">/</span>
+                <div>
+                  {{$store.state.product.currency_default}}
+                </div>
               </v-btn>
             </template>
             <slot name="langSwitcher">
@@ -96,25 +99,33 @@
                            alt="flag"
                       />
                     </NuxtLink>
-
                   </v-list-item-title>
                 </v-list-item>
                 <v-divider></v-divider>
-                <v-list-item style="min-height: 30px" class="langChanger"  :class="{'active':$store.state.product.currency_default==='USD'}">
+                <v-list-item style="min-height: 30px" class="langChanger"
+                             :class="{'active':$store.state.product.currency_default==='USD'}">
                   <v-list-item-title class="cursor-pointer"
                                      @click="$store.commit('product/SET_CURRENCY','USD')"
                   >
                     &dollar;
                   </v-list-item-title>
-                </v-list-item >
-                 <v-list-item style="min-height: 30px" class="langChanger" :class="{'active':$store.state.product.currency_default==='EUR'}">
-                  <v-list-item-title class="cursor-pointer"  @click="$store.commit('product/SET_CURRENCY','EUR')">
+                </v-list-item>
+                <v-list-item style="min-height: 30px" class="langChanger"
+                             :class="{'active':$store.state.product.currency_default==='EUR'}">
+                  <v-list-item-title class="cursor-pointer" @click="$store.commit('product/SET_CURRENCY','EUR')">
                     &euro;
                   </v-list-item-title>
-                 </v-list-item>
-                 <v-list-item style="min-height: 30px" class="langChanger" :class="{'active':$store.state.product.currency_default==='GBP'}">
-                  <v-list-item-title class="cursor-pointer"  @click="$store.commit('product/SET_CURRENCY','GBP')">
+                </v-list-item>
+                <v-list-item style="min-height: 30px" class="langChanger"
+                             :class="{'active':$store.state.product.currency_default==='GBP'}">
+                  <v-list-item-title class="cursor-pointer" @click="$store.commit('product/SET_CURRENCY','GBP')">
                     &pound;
+                  </v-list-item-title>
+                </v-list-item>
+                <v-list-item style="min-height: 30px" class="langChanger"
+                             :class="{'active':$store.state.product.currency_default==='CAD'}">
+                  <v-list-item-title class="cursor-pointer" @click="$store.commit('product/SET_CURRENCY','CAD')">
+                   C$
                   </v-list-item-title>
                 </v-list-item>
               </v-list>

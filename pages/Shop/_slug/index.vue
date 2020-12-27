@@ -242,22 +242,11 @@
         computed: {
             product() {
                 if (this.$store.state.product.exchange_rate.length > 0) {
-                    var exchange_rate = {};
-                    exchange_rate = this.$store.state.product.exchange_rate.find(rate => {
-                        if (rate.from === this.productItem.offers.priceCurrency) {
-                            return rate;
-                        }
-                    });
-                    exchange_rate.exchange_r.some((curr, idx) => {
-                        if (curr.currency === this.$store.state.product.currency_default) {
-                            this.productItem.price = (this.productItem.offers.price * curr.rate).toFixed(2)
-                        }
-                    });
-
+                    this.productItem.price = (product.offers.price * curr.rate).toFixed(2);
                     return this.productItem;
                 } else {
-                    this.productItem.price =this.productItem.offers.price;
-                    return this.productItem;
+                    this.productsItem.price = product.offers.price;
+                    return this.productsItem;
                 }
 
             },
