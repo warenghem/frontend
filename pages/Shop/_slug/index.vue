@@ -285,7 +285,7 @@
                 });
                 var r_products = [];
                 this.products.forEach(product => {
-                    if (product.tags.filter(value => tags.includes(value.name)).length > 0) {
+                    if (product.tags.filter(value => tags.includes(value.name)).length > 0 && product.id!==this.product.id) {
                         r_products.push(product)
                     }
                 });
