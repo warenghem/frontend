@@ -53,7 +53,7 @@
                v-if="productColor.name"
           >
             <div>
-              Colors
+              {{$t('product.color')}}
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productColor.name}}
@@ -67,7 +67,7 @@
                v-if="productMaterialChoice.name"
           >
             <div>
-              Materials
+              {{$t('product.material')}}
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productMaterialChoice.name}}
