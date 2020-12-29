@@ -15,7 +15,7 @@ material:
 - name: Dionysos Leather
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Linen
-  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
@@ -38,12 +38,16 @@ tags:
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
   attributes: "NaturalBlack"
+  material: Dionysos Leather
   name: ''
   alt: ''
+  availability: true
 - src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
   attributes: "DeserticCamel"
+  material: Linen
   name: ''
   alt: ''
+  availability: false
 attributes:
 - name: Color
   options:

@@ -11,7 +11,7 @@
     <v-card>
       <v-card-title>
         <div class="d-flex justify-space-between align-center w-100">
-          <h4>{{$t('product.materialTitle')}}</h4>
+          <h4>{{currentModal.modalTitle}}</h4>
           <span>
               <v-icon @click="closeModal">mdi-close</v-icon>
             </span>
@@ -20,9 +20,67 @@
 
       </v-card-title>
       <v-divider></v-divider>
-      <v-card-text class="pa-4">
+      <v-card-text class="pa-4" v-if="current === 'productCare'">
         <div v-html="product.additionalProperty[1].care">
         </div>
+      </v-card-text>
+      <v-card-text class="pa-4" v-if="current === 'colorSide'">
+        <v-row>
+          <v-col lg="6" v-for="item in product.image"
+                 :key="item.attributes">
+            <v-card
+              class="mx-auto"
+              max-width="344"
+
+            >
+              <v-img
+                :src="item.src"
+                height="200px"
+                class="mx-2 bg-light"
+                style="top:7px"
+              ></v-img>
+
+              <v-card-subtitle class="pt-4 pb-1">
+                {{item.attributes}}
+              </v-card-subtitle>
+              <v-card-subtitle class="pb-2 pt-0">
+                <v-icon x-small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
+
+                {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
+              </v-card-subtitle>
+            </v-card>
+          </v-col>
+
+        </v-row>
+      </v-card-text>
+      <v-card-text class="pa-4" v-if="current === 'materialSide'">
+        <v-row>
+          <v-col lg="6" v-for="item in product.image"
+                 :key="item.materials">
+            <v-card
+              class="mx-auto"
+              max-width="344"
+
+            >
+              <v-img
+                :src="item.src"
+                height="200px"
+                class="mx-2 bg-light"
+                style="top:7px"
+              ></v-img>
+
+              <v-card-subtitle class="pt-4 pb-1">
+                {{item.material}}
+              </v-card-subtitle>
+              <v-card-subtitle class="pb-2 pt-0">
+                <v-icon x-small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
+
+                {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
+              </v-card-subtitle>
+            </v-card>
+          </v-col>
+
+        </v-row>
       </v-card-text>
 
     </v-card>
@@ -68,7 +126,13 @@
             }
         },
         updated() {
-
+            if (this.current === 'productCare') {
+                this.currentModal.modalTitle = this.$t('product.materialTitle');
+            } else if (this.current === 'colorSide') {
+                this.currentModal.modalTitle = this.$t('product.color');
+            } else if (this.current === 'materialSide') {
+                this.currentModal.modalTitle = this.$t('product.material');
+            }
         }
     }
 </script>

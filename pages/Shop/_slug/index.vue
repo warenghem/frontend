@@ -48,7 +48,35 @@
             </div>
           </div>
           <div class="bold-title text-left pt-2 pb-7">{{product.name}}</div>
-          <div class="d-flex justify-space-between align-center">
+          <div class="border-top-1 border-bottom-1 cursor-pointer py-5 d-flex align-center justify-space-between"
+               @click="openSideModal('colorSide')"
+               v-if="productColor.name"
+          >
+            <div>
+              Colors
+            </div>
+            <div class="d-flex align-center justify-space-between">
+              {{productColor.name}}
+              <img :src="productColor.image.icon" alt="" v-if="productColor.image" width="40px" class="mx-3">
+              <v-icon class="float-right">mdi-chevron-right</v-icon>
+            </div>
+
+          </div>
+         <div class="border-top-1 border-bottom-1 cursor-pointer py-5 d-flex align-center justify-space-between"
+               @click="openSideModal('materialSide')"
+               v-if="productMaterialChoice.name"
+          >
+            <div>
+              Materials
+            </div>
+            <div class="d-flex align-center justify-space-between">
+              {{productMaterialChoice.name}}
+              <img :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image" width="40px" class="mx-3">
+              <v-icon class="float-right">mdi-chevron-right</v-icon>
+            </div>
+
+          </div>
+          <div class="d-flex justify-space-between align-center mt-3">
             <h3 style="font-weight: 900">{{product.price}}
               {{$store.state.product.currency_default}}</h3>
             <div>
@@ -204,7 +232,8 @@
     <pay-modal :product="product"></pay-modal>
     <info-modal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"></info-modal>
     <side-modal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
-                :product="product"></side-modal>
+                :product="product">
+    </side-modal>
   </div>
 
 </template>
@@ -285,7 +314,7 @@
                 });
                 var r_products = [];
                 this.products.forEach(product => {
-                    if (product.tags.filter(value => tags.includes(value.name)).length > 0 && product.id!==this.product.id) {
+                    if (product.tags.filter(value => tags.includes(value.name)).length > 0 && product.id !== this.product.id) {
                         r_products.push(product)
                     }
                 });
@@ -311,6 +340,17 @@
         created() {
             this.$store.dispatch('product/getAllExchangeRate');
             this.$store.commit('product/recentProducts', this.product.id);
+
+        },
+        mounted(){
+            var name=this.product.default_attributes.find(p => p.name === 'Color').option;
+            this.productColor= {
+                name: name,
+                image:this.product.attributes.find(p => p.name === 'Color').options.find(op=>op.name ===  name)
+            };
+            this.productMaterialChoice=this.product.material[0]
+
+            console.log(this.product)
         },
         data() {
             return {
@@ -319,7 +359,15 @@
                 currentModal: 'paymentInfoModal',
                 sideModal: false,
                 currentSideItem: 'productCare',
-
+                productColor:{
+                    name:null,
+                    image:null
+                },
+                productMaterialChoice:{
+                    name:null,
+                    image:null
+                },
+                productMaterial:null,
                 content: "Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien :\n" +
                     "\n" +
                     "Veillez à ne pas érafler ou frotter votre article contre des surfaces abrasives, en particulier les finitions en cuir.\n" +

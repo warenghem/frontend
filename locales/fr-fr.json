@@ -40,7 +40,9 @@
     },
     "like": "VOUS POUVEZ AUSSI AIMER",
     "recommend": "recommandé",
-    "recent": "récemment consulté"
+    "recent": "récemment consulté",
+    "color":"Couleurs",
+    "material": "Matières"
   },
   "btnTitle": "Je plante un arbre gratuitement",
   "router": {
