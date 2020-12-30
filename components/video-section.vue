@@ -10,7 +10,7 @@
             loading="lazy"
             class="cover"
           />-->
-        <picture class="gradientoverlay blackoverlay">
+        <picture class="invgradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 640w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 768w,

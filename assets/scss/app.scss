@@ -742,6 +742,19 @@ body {
     opacity: 0.3 !important;
   }
 }
+.invgradientoverlay {
+  &::after {
+    background: linear-gradient(180deg, #000000 0%, transparent 100%);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 0.3 !important;
+  }
+}
 
 .v-toolbar__logo {
   width: 140px;

@@ -1,6 +1,9 @@
 <template>
   <div class="h-100">
     <div class="h-100 pa-0">
+      <div style="z-index: 2; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;" class="position-absolute text-center mb-3">
+        {{$t('informations')}}
+      </div>
       <l-map
         style="width: 100%"
         class="treemap h-100"
@@ -23,9 +26,9 @@
 
           >
             <div style="transform: translateY(-20px);" class="card">
-              <div class="card-header name hand">
+              <div class="card-header name hand d-none">
                {{marker.text}}
-               <div style="font-size: 16px" class="subtitlesmall">En savoir plus</div>
+               <div style="font-size: 16px" class="subtitlesmall d-none">En savoir plus</div>
               </div>
               <div>
                 <div class="blob white rounded-circle" style="width:45px; height:45px">
@@ -40,14 +43,14 @@
     <div class="slideArea mgforest">
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
-          <div class="py-1 border-right-2 pl-3" style="width: 100%">
+          <div class="border-right-2 pl-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton/>
           </div>
           <v-btn
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 26px"
+            style="font-size: 26px rounded-0"
             class="px-0 h-100"
           >
             <v-icon>{{ svgPath }}</v-icon>
@@ -161,7 +164,7 @@
     <div class="slideArea indianforest">
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
-          <div class="py-1 border-right-2 pl-3" style="width: 100%">
+          <div class="border-right-2 pl-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton/>
           </div>
           <v-btn
@@ -169,7 +172,7 @@
             color="black"
             @click="closeSlide"
             style="font-size: 26px"
-            class="px-0 h-100"
+            class="px-0 h-100 rounded-0"
           >
             <v-icon>{{ svgPath }}</v-icon>
           </v-btn>
@@ -360,6 +363,7 @@
         i18n: {
             messages: {
                 en: {
+                    informations: 'Click on the pulsing point for more informations',
                     madagascar: {
                         section1: {
                             title: 'Forest',
@@ -423,6 +427,7 @@
 
                 },
                 fr: {
+                    informations: "Cliquez sur les localisations pour plus d'informations",
                     madagascar: {
                         section1: {
                             title: 'Fôret',
@@ -495,7 +500,6 @@
     font-family: "teradeli-book";
 }
   .treemap {
-    border-radius: 4px;
     z-index: 1;
     min-height:400px;
     }
