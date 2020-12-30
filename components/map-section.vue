@@ -43,8 +43,7 @@
                 },
                 fr: {
                     title: 'Reforestation',
-                    subtitle: 'Les arbres de nos projets sont tracés et certifiés, pour compenser nos émissions de CO2, à celle vos visites' +
-                        ' sur notre site, et la consommation d’électricité de nos technologies.',
+                    subtitle: 'Les arbres de nos projets sont tracés et certifiés. Pour compenser nos émissions de CO2, celle vos visites, et l’électricité de nos technologies.',
                 }
             }
         }

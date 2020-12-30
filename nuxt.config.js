@@ -200,7 +200,7 @@ export default {
           success: colors.green.accent3,
           darkbugattiblue: '#153038',
           lightbugattiblue: '#3D8EBE',
-          wablack: '#19110b'
+          wablack: '#000000'
         }
       }
     },

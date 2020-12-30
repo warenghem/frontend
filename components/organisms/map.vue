@@ -43,14 +43,14 @@
     <div class="slideArea mgforest">
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
-          <div class="border-right-2 pl-3 h-100 d-flex align-center" style="width: 100%">
+          <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton/>
           </div>
           <v-btn
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 26px; max-width: 280px;"
+            style="font-size: 26px"
             class="px-0 h-100"
           >
             <v-icon>{{ svgPath }}</v-icon>
@@ -164,14 +164,14 @@
     <div class="slideArea indianforest">
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
-          <div class="border-right-2 pl-3 h-100 d-flex align-center" style="width: 100%">
+          <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton/>
           </div>
           <v-btn
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 26px; max-width: 280px;"
+            style="font-size: 26px"
             class="px-0 h-100 rounded-0"
           >
             <v-icon>{{ svgPath }}</v-icon>
