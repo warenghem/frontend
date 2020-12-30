@@ -166,12 +166,15 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base, 
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          darkbugattiblue: '#153038',
+          lightbugattiblue: '#3D8EBE',
+          wablack: '#19110b'
         },
         light: {
           background: colors.white,
           bgcard: {
-            base: '#fafafa',
+            base: '#f6f5f3',
             lighten3: '#ffb700',
             darken3: '#161617'
           },
@@ -194,7 +197,10 @@ export default {
           info: colors.teal.lighten1,
           warning: colors.amber.base,
           error: colors.deepOrange.accent4,
-          success: colors.green.accent3
+          success: colors.green.accent3,
+          darkbugattiblue: '#153038',
+          lightbugattiblue: '#3D8EBE',
+          wablack: '#19110b'
         }
       }
     },

@@ -2,13 +2,12 @@
   <v-footer
     dark
     padless
-    color="#161617"
   >
     <v-card
       flat
       tile
-      class="lighten-1 white--text text-center w-100 px-3 px-sm-15"
-      color="#161617"
+      color="wablack"
+      class="white--text text-center w-100 px-3 px-sm-15"
     >
         <v-card-title class="px-0 pb-0 d-block d-md-flex">
             <v-text flat tile class="d-block d-md-flex" >
@@ -48,7 +47,7 @@
               color="white"
               text
               rounded
-              class="my-2"
+              class="my-2 d-none"
               :to="link.url" nuxt
             >
               {{ link.title }}

@@ -1,6 +1,6 @@
 <template>
   <div class="treemapwhole position-relative" v-intersect.quiet="{handler: mapIntersect,options: {rootMargin: '50px', threshold: [0, 0.5, 1.0]}}">
-    <div class="pb-0 pvw treemapheader px-10">
+    <div class="pb-0 pvw treemapheader px-10 pb-3">
       <h2 class="page-title px-0">{{$t('title')}}</h2>
       <div class="py-2 text-center secondary--text">{{$t('subtitle')}}</div>
     </div>
@@ -37,13 +37,13 @@
         i18n: {
             messages: {
                 en: {
-                    title: 'We also plant trees. And you?',
+                    title: 'Reforestation',
                     subtitle: 'To offset the CO2 emissions linked to the creation of our objects, your visits to our ' +
                         'site, and the electricity consumption of our technologies.',
                 },
                 fr: {
-                    title: 'Nos projets de reforestation',
-                    subtitle: 'Nos arbres sont tracés et certifiés, pour compenser nos émissions de CO2, à celle vos visites' +
+                    title: 'Reforestation',
+                    subtitle: 'Les arbres de nos projets sont tracés et certifiés, pour compenser nos émissions de CO2, à celle vos visites' +
                         ' sur notre site, et la consommation d’électricité de nos technologies.',
                 }
             }
@@ -65,7 +65,7 @@
     z-index: 3;
     max-width: 300px;
     margin: 15px;
-    border-radius: 15px;
+    border-radius: 5px;
     padding: 15px;
     background: white;
     @media(min-width:48em) {

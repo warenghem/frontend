@@ -4,7 +4,7 @@
             <v-row style="z-index:2"  align="center" justify="center" class="ma-0 h-100 w-100 position-absolute">
                 <v-col align="center">
                     <div class="ma-auto" style="fill: #ffffff;stroke: #ffffff;width:85px" v-html="LogoSmSm" />
-                    <div class="text-caption-h4 text-white">Live.</div>
+                    <div style="font-size: 50px;margin-left: 8px;" class="teradeli-light pt-3 text-white">Live.</div>
                 </v-col>
             </v-row>
             <div style="top:1vw;left:1vw;width:40px" class="svglogo position-absolute" v-html="InstaLogo" />

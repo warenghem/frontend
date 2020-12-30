@@ -1,7 +1,7 @@
 <template>
     <section class="team-section pvw">
         <h2 class="page-title px-0">{{$t('title')}}</h2>
-        <div class="pb-5 py-2 text-center secondary--text"> {{$t('subtitle')}}</div>
+        <div class="pb-3 py-2 text-center secondary--text"> {{$t('subtitle')}}</div>
         <v-row no-gutters class="pa-0">
             <v-col cols="12" lg="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <v-card align=center class="bgcard item-inner px-0 py-3 py-sm-3 d-flex">

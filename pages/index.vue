@@ -14,10 +14,10 @@
       <v-card class="bgcard item3">
         <StudioSection id="studioSection"/>
       </v-card>
-      <v-card dark class="black item4">
+      <v-card dark color="darkbugattiblue" class="item4">
         <References/>
       </v-card>
-      <v-card dark class="color black item5">
+      <v-card dark class="item5">
         <SocialSection/>
       </v-card>
     </v-container>

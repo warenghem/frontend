@@ -50,7 +50,7 @@
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 26px rounded-0"
+            style="font-size: 26px; max-width: 280px;"
             class="px-0 h-100"
           >
             <v-icon>{{ svgPath }}</v-icon>
@@ -171,7 +171,7 @@
             text
             color="black"
             @click="closeSlide"
-            style="font-size: 26px"
+            style="font-size: 26px; max-width: 280px;"
             class="px-0 h-100 rounded-0"
           >
             <v-icon>{{ svgPath }}</v-icon>
@@ -510,7 +510,7 @@
     bottom: 0;
     height: 100%;
     z-index: 100000 !important;
-    background: rgba(255, 255, 255, 0.9);
+    background: white;
     max-height: 100%;
     overflow-y: scroll;
     transition: right 0.4s;
