@@ -51,6 +51,7 @@ export const actions = {
     commit('recentProducts', data);
     this.$cookies.set('recent_products', state.recent_products);
   },
+
   async getAllExchangeRate({$axios, commit}) {
     const allCurrency = ['EUR', 'USD', 'GBP', 'CAD'];
     let exchange = [];

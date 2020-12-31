@@ -205,7 +205,7 @@
                      :key="'recent_'+i_dx"
                      class="text-center pa-2"
                 >
-                  <product-item :product="rc_productItem"></product-item>
+                  <product-item :productItem="rc_productItem"></product-item>
 
                 </div>
               </VueSlickCarousel>
@@ -221,7 +221,7 @@
                      :key="'recommend'+i_dx"
                      class="pa-2"
                 >
-                  <product-item :product="productItem"></product-item>
+                  <product-item :productItem="productItem"></product-item>
                 </div>
               </VueSlickCarousel>
             </v-tab-item>
@@ -274,30 +274,11 @@
             }
         },
         computed: {
-            products() {
-                if (this.$store.state.product.exchange_rate.length > 0) {
-
-                    this.productsItem.map(product => {
-                        this.$store.state.product.exchange_rate.some(curr => {
-
-                            if (curr.currency === this.$store.state.product.currency_default) {
-                                product.price = (product.offers.price * curr.rate).toFixed(2)
-                            }
-                        })
-                    });
-                    return this.productsItem;
-                } else {
-                    this.productsItem.map(product => {
-                        product.price = product.offers.price
-                    });
-                    return this.productsItem;
-                }
-
-            },
             product() {
                 if (this.$store.state.product.exchange_rate.length > 0) {
                     this.$store.state.product.exchange_rate.some(curr => {
                         if (curr.currency === this.$store.state.product.currency_default) {
+                            console.log(curr.rate)
                             this.productItem.price = (this.productItem.offers.price * curr.rate).toFixed(2);
                         }
                     });
@@ -313,7 +294,7 @@
                     return tag.name
                 });
                 var r_products = [];
-                this.products.forEach(product => {
+                this.productsItem.forEach(product => {
                     if (product.tags.filter(value => tags.includes(value.name)).length > 0 && product.id !== this.product.id) {
                         r_products.push(product)
                     }
@@ -326,7 +307,7 @@
                 if (recent_products.length > 0) {
                     recent_products.forEach(p_id => {
                         if (p_id !== this.product.id) {
-                            rc_products.push(this.products.find(p => p.id === p_id))
+                            rc_products.push(this.productsItem.find(p => p.id === p_id))
                         }
                     });
 

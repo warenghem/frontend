@@ -19,32 +19,6 @@
 
       </div>
     </VueSlickCarousel>
-
-    <!--    <v-carousel-->
-    <!--      :cycle="false"-->
-    <!--      hide-delimiters-->
-    <!--      show-arrows-on-hover-->
-    <!--      v-model="currentItem"-->
-    <!--    >-->
-    <!--      <v-carousel-item-->
-    <!--        v-for="item in product.variants"-->
-    <!--        v-if="product.variants"-->
-    <!--        :key="item.id"-->
-
-    <!--      >-->
-    <!--        <v-card class="grey lighten-5" lazy>-->
-    <!--          <v-img :src="item.image" alt="" :lazy-src="require('../../assets/images/image-loader.gif')"></v-img>-->
-    <!--        </v-card>-->
-
-    <!--      </v-carousel-item>-->
-    <!--      <v-carousel-item-->
-    <!--        :src="item.image"-->
-    <!--        v-for="item in product.images"-->
-    <!--        :key="item.id"-->
-    <!--        v-else-->
-    <!--      >-->
-    <!--      </v-carousel-item>-->
-    <!--    </v-carousel>-->
     <div class="pt-3 pb-2 d-flex justify-space-between align-center titlesmall teradeli-medium">
       <strong>{{product.name}}</strong>
       <div>
@@ -57,7 +31,8 @@
         </button>
       </div>
     </div>
-    <div class="subtitlesmall teradeli-light text-left" v-if="product.offers">{{product.price}}
+    <div class="subtitlesmall teradeli-light text-left" v-if="product.offers">
+      {{product.price}}
       {{$store.state.product.currency_default}}
     </div>
   </div>
@@ -80,8 +55,24 @@
                 }
             }
         },
+        computed:{
+          product(){
+              if (this.$store.state.product.exchange_rate.length > 0) {
+                    this.$store.state.product.exchange_rate.some(curr => {
+                        if (curr.currency === this.$store.state.product.currency_default) {
+                            this.productItem.price = (this.productItem.offers.price * curr.rate).toFixed(2);
+                        }
+                    });
+
+                    return this.productItem;
+                } else {
+                    this.productItem.price = this.productItem.offers.price;
+                    return this.productItem;
+                }
+            }
+        },
         props: {
-            product: {
+            productItem: {
                 type: Object,
                 default: () => {
                 }

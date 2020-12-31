@@ -69,7 +69,7 @@
                 v-bind="attrs"
                 v-on="on"
                 :ripple="false"
-                class="nohover"
+                class="nohover item"
               >
                 <div v-for="(flag,idx) in $store.state.langs.items" :key="'flag_'+idx">
                   <img :src="flag.img"
@@ -79,7 +79,7 @@
                   />
                 </div>
                 <span class="px-2">/</span>
-                <div>
+                <div >
                   {{$store.state.product.currency_default}}
                 </div>
               </v-btn>
@@ -154,7 +154,6 @@
             if(this.$cookies.get('currency_default')){
                 this.$store.commit('product/SET_CURRENCY',this.$cookies.get('currency_default'))
             }
-
         },
         props: {
             type: {

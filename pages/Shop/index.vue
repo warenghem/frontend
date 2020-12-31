@@ -1,6 +1,6 @@
 <template>
   <div>
-    <filter-bar class="stickyFilterBar" :products="products.length"
+    <filter-bar class="stickyFilterBar" :products="productsItem.length"
                 :categories="categories"
                 :colors="colors"
                 :collections="collections"
@@ -9,8 +9,8 @@
     </filter-bar>
     <v-container class="px-lg-7" fluid>
       <v-row>
-        <v-col lg="4" md="6" v-for="(product,idx) in products" :key="'product_'+idx">
-          <product-item :product="product"></product-item>
+        <v-col lg="4" md="6" v-for="(product,idx) in productsItem" :key="'product_'+idx">
+          <product-item :productItem="product"></product-item>
         </v-col>
       </v-row>
       <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
@@ -33,29 +33,6 @@
             return {
                 productsItem,
             }
-        },
-        computed: {
-            products() {
-                if (this.$store.state.product.exchange_rate.length > 0) {
-
-                    this.productsItem.map(product => {
-                        this.$store.state.product.exchange_rate.some(curr => {
-
-                            if (curr.currency === this.$store.state.product.currency_default) {
-                                product.price = (product.offers.price * curr.rate).toFixed(2)
-                            }
-                        })
-                    });
-                    return this.productsItem;
-                } else {
-                    this.productsItem.map(product => {
-                        product.price = product.offers.price
-                    });
-                    return this.productsItem;
-                }
-
-            }
-
         },
 
         created() {
