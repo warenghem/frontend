@@ -105,26 +105,26 @@
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='USD'}">
                   <v-list-item-title class="cursor-pointer"
-                                     @click="$store.commit('product/SET_CURRENCY','USD')"
+                                     @click="$store.dispatch('product/setCurrency','USD')"
                   >
                     &dollar;
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='EUR'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.commit('product/SET_CURRENCY','EUR')">
+                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','EUR')">
                     &euro;
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='GBP'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.commit('product/SET_CURRENCY','GBP')">
+                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','GBP')">
                     &pound;
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='CAD'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.commit('product/SET_CURRENCY','CAD')">
+                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','CAD')">
                    C$
                   </v-list-item-title>
                 </v-list-item>
@@ -149,6 +149,12 @@
             return {
                 sidebar: false,
             }
+        },
+        beforeCreate(){
+            if(this.$cookies.get('currency_default')){
+                this.$store.commit('product/SET_CURRENCY',this.$cookies.get('currency_default'))
+            }
+
         },
         props: {
             type: {

@@ -53,6 +53,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
+    'cookie-universal-nuxt',
   ],
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)

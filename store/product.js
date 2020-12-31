@@ -1,7 +1,7 @@
 const state = () => ({
   productPayModal: false,
   exchange_rate: [],
-  currency_default: 'EUR',
+  currency_default: "EUR",
   recent_products: []
 });
 export const mutations = {
@@ -19,6 +19,7 @@ export const mutations = {
   },
   SET_CURRENCY(state, data) {
     state.currency_default = data;
+
   },
   RESET_CURRENCY(state) {
     state.currency_default = 'EUR';
@@ -27,7 +28,7 @@ export const mutations = {
     if (state.recent_products.includes(data)) {
       var index = state.recent_products.indexOf(data);
       if (index !== -1) {
-         state.recent_products.splice(index, 1);
+        state.recent_products.splice(index, 1);
       }
       state.recent_products.unshift(data)
     } else {
@@ -37,6 +38,11 @@ export const mutations = {
   }
 };
 export const actions = {
+  setCurrency({commit}, data) {
+    this.$cookies.set('currency_default', data);
+    commit('SET_CURRENCY', data)
+  },
+
   async getAllExchangeRate({$axios, commit}) {
     const allCurrency = ['EUR', 'USD', 'GBP', 'CAD'];
     let exchange = [];
