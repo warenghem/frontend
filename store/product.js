@@ -24,6 +24,9 @@ export const mutations = {
   RESET_CURRENCY(state) {
     state.currency_default = 'EUR';
   },
+  initRecentProduct(state, data) {
+    state.recent_products = data
+  },
   recentProducts(state, data) {
     if (state.recent_products.includes(data)) {
       var index = state.recent_products.indexOf(data);
@@ -34,7 +37,9 @@ export const mutations = {
     } else {
       state.recent_products.unshift(data)
     }
-
+    if(state.recent_products.length>15){
+      state.recent_products=state.recent_products.slice(0,15)
+    }
   }
 };
 export const actions = {
@@ -42,7 +47,10 @@ export const actions = {
     this.$cookies.set('currency_default', data);
     commit('SET_CURRENCY', data)
   },
-
+  setRecentProducts({commit, state}, data) {
+    commit('recentProducts', data);
+    this.$cookies.set('recent_products', state.recent_products);
+  },
   async getAllExchangeRate({$axios, commit}) {
     const allCurrency = ['EUR', 'USD', 'GBP', 'CAD'];
     let exchange = [];

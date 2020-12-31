@@ -337,9 +337,15 @@
                 return this.productItem.Languages || []
             },
         },
+        beforeCreate(){
+            let rc_products=this.$cookies.get('recent_products');
+            if(rc_products.length>0){
+                this.$store.commit('product/initRecentProduct', rc_products);
+            }
+        },
         created() {
             this.$store.dispatch('product/getAllExchangeRate');
-            this.$store.commit('product/recentProducts', this.product.id);
+            this.$store.dispatch('product/setRecentProducts', this.product.id);
 
         },
         mounted(){
