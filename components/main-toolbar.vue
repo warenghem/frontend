@@ -139,20 +139,12 @@
 </template>
 
 <script>
-    import link from './../store/link'
-    import langs from './../store/langs'
-
 
     export default {
         name: "main-toolbar",
         data() {
             return {
                 sidebar: false,
-            }
-        },
-        beforeCreate(){
-            if(this.$cookies.get('currency_default')){
-                this.$store.commit('product/SET_CURRENCY',this.$cookies.get('currency_default'))
             }
         },
         props: {

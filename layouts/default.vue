@@ -8,6 +8,24 @@
         <nuxt/>
       </slot>
       <Footer/>
+      <loading />
     </div>
   </v-app>
 </template>
+<script>
+    import Loading from "../components/loading";
+    export default {
+        components: {Loading},
+        data(){
+          return{
+              isLoading:false,
+          }
+        },
+        // beforeCreate(){
+        //     if(this.$cookies.get('currency_default')){
+        //         this.$store.commit('product/SET_CURRENCY',this.$cookies.get('currency_default'))
+        //     }
+        // },
+
+    }
+</script>

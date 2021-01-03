@@ -2,7 +2,8 @@ const state = () => ({
   productPayModal: false,
   exchange_rate: [],
   currency_default: "EUR",
-  recent_products: []
+  recent_products: [],
+  loading:false
 });
 export const mutations = {
   OPEN_PAY_MODAL(state) {
@@ -18,7 +19,11 @@ export const mutations = {
     state.exchange_rate = [];
   },
   SET_CURRENCY(state, data) {
+    state.loading = true;
     state.currency_default = data;
+    setTimeout(function(){
+     state.loading = false;
+    },1000)
 
   },
   RESET_CURRENCY(state) {
