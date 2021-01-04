@@ -37,7 +37,6 @@
 
         created() {
             this.$store.commit('langs/RESET_LANG');
-            this.$store.dispatch('product/getAllExchangeRate');
         },
         data() {
             return {

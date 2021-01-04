@@ -21,11 +21,11 @@
               isLoading:false,
           }
         },
-        // beforeCreate(){
-        //     if(this.$cookies.get('currency_default')){
-        //         this.$store.commit('product/SET_CURRENCY',this.$cookies.get('currency_default'))
-        //     }
-        // },
+        beforeCreate(){
+            if(this.$cookies.get('currency_default')){
+                this.$store.dispatch('product/getExchangeRate',this.$cookies.get('currency_default'))
+            }
+        },
 
     }
 </script>

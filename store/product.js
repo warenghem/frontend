@@ -1,9 +1,9 @@
 const state = () => ({
   productPayModal: false,
-  exchange_rate: [],
+  exchange_rate: 1,
   currency_default: "EUR",
   recent_products: [],
-  loading:false
+  loading: false
 });
 export const mutations = {
   OPEN_PAY_MODAL(state) {
@@ -16,14 +16,10 @@ export const mutations = {
     state.exchange_rate = data;
   },
   RESET_EXCHANGE_RATE(state) {
-    state.exchange_rate = [];
+    state.exchange_rate = 1;
   },
   SET_CURRENCY(state, data) {
-    state.loading = true;
     state.currency_default = data;
-    setTimeout(function(){
-     state.loading = false;
-    },1000)
 
   },
   RESET_CURRENCY(state) {
@@ -42,42 +38,30 @@ export const mutations = {
     } else {
       state.recent_products.unshift(data)
     }
-    if(state.recent_products.length>15){
-      state.recent_products=state.recent_products.slice(0,15)
+    if (state.recent_products.length > 15) {
+      state.recent_products = state.recent_products.slice(0, 15)
     }
   }
 };
 export const actions = {
-  setCurrency({commit}, data) {
-    this.$cookies.set('currency_default', data);
-    commit('SET_CURRENCY', data)
-  },
   setRecentProducts({commit, state}, data) {
     commit('recentProducts', data);
     this.$cookies.set('recent_products', state.recent_products);
   },
 
-  async getAllExchangeRate({$axios, commit}) {
-    const allCurrency = ['EUR', 'USD', 'GBP', 'CAD'];
-    let exchange = [];
-    this.$axios.$get("https://api.exchangeratesapi.io/latest?base=EUR").then(res => {
-      allCurrency.forEach(curr => {
-        if (curr === 'EUR') {
-          exchange.push({currency: curr, rate: 1})
-        } else {
-          Object.keys(res.rates).forEach((obj, idx) => {
-            if (obj === curr) {
-              exchange.push({currency: curr, rate: Object.values(res.rates)[idx]})
-            }
-          })
-        }
-      })
-    }).catch(() => {
-      allCurrency.forEach(curr => {
-        exchange.push({currency: curr, rate: 1})
-      })
-    });
-    commit("SET_EXCHANGE_RATE", exchange);
+  async getExchangeRate({$axios, commit}, toLang) {
+    this.$cookies.set('currency_default', toLang);
+    commit('SET_CURRENCY', toLang);
+    if (toLang !== 'EUR') {
+      this.$axios.$get("https://api.exchangeratesapi.io/latest?base=EUR&symbols=" + toLang).then(res => {
+        commit("SET_EXCHANGE_RATE", Object.values(res.rates)[0]);
+      }).catch(() => {
+        commit("SET_EXCHANGE_RATE", 1);
+      });
+    } else {
+      commit("SET_EXCHANGE_RATE", 1);
+    }
+
   },
 };
 export default {

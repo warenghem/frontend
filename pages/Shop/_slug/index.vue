@@ -275,19 +275,8 @@
         },
         computed: {
             product() {
-                if (this.$store.state.product.exchange_rate.length > 0) {
-                    this.$store.state.product.exchange_rate.some(curr => {
-                        if (curr.currency === this.$store.state.product.currency_default) {
-                            console.log(curr.rate)
-                            this.productItem.price = (this.productItem.offers.price * curr.rate).toFixed(2);
-                        }
-                    });
-
-                    return this.productItem;
-                } else {
-                    this.productItem.price = this.productItem.offers.price;
-                    return this.productItem;
-                }
+                this.productItem.price = (this.productItem.offers.price * this.$store.state.product.exchange_rate).toFixed(2);
+                return this.productItem;
             },
             recommendedProducts() {
                 var tags = this.productItem.tags.map(tag => {
@@ -325,7 +314,6 @@
             }
         },
         created() {
-            this.$store.dispatch('product/getAllExchangeRate');
             this.$store.dispatch('product/setRecentProducts', this.product.id);
 
         },

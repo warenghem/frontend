@@ -55,20 +55,10 @@
                 }
             }
         },
-        computed:{
-          product(){
-              if (this.$store.state.product.exchange_rate.length > 0) {
-                    this.$store.state.product.exchange_rate.some(curr => {
-                        if (curr.currency === this.$store.state.product.currency_default) {
-                            this.productItem.price = (this.productItem.offers.price * curr.rate).toFixed(2);
-                        }
-                    });
-
-                    return this.productItem;
-                } else {
-                    this.productItem.price = this.productItem.offers.price;
-                    return this.productItem;
-                }
+        computed: {
+            product() {
+                this.productItem.price = (this.productItem.offers.price * this.$store.state.product.exchange_rate).toFixed(2);
+                return this.productItem;
             }
         },
         props: {
