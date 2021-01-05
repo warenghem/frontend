@@ -39,6 +39,8 @@
 </template>
 
 <script>
+    import product from "../../store/product";
+
     export default {
         name: "product-item",
         data() {
@@ -57,7 +59,14 @@
         },
         computed: {
             product() {
-                this.productItem.price = (this.productItem.offers.price * this.$store.state.product.exchange_rate).toFixed(2);
+               let currency = this.productItem.currency.find(currency => {
+                    return currency.name === this.$store.state.product.currency_default
+                });
+                if (currency) {
+                    this.productItem.price = currency.price;
+                } else {
+                    this.productItem.price = parseFloat(this.productItem.offers.price).toFixed(2);
+                }
                 return this.productItem;
             }
         },

@@ -48,21 +48,24 @@ export const actions = {
     commit('recentProducts', data);
     this.$cookies.set('recent_products', state.recent_products);
   },
-
-  async getExchangeRate({$axios, commit}, toLang) {
+  async setCurrency({ commit}, toLang) {
     this.$cookies.set('currency_default', toLang);
     commit('SET_CURRENCY', toLang);
-    if (toLang !== 'EUR') {
-      this.$axios.$get("https://api.exchangeratesapi.io/latest?base=EUR&symbols=" + toLang).then(res => {
-        commit("SET_EXCHANGE_RATE", Object.values(res.rates)[0]);
-      }).catch(() => {
-        commit("SET_EXCHANGE_RATE", 1);
-      });
-    } else {
-      commit("SET_EXCHANGE_RATE", 1);
-    }
-
   },
+  // async getExchangeRate({$axios, commit}, toLang) {
+  //   this.$cookies.set('currency_default', toLang);
+  //   commit('SET_CURRENCY', toLang);
+  //   if (toLang !== 'EUR') {
+  //     this.$axios.$get("https://api.exchangeratesapi.io/latest?base=EUR&symbols=" + toLang).then(res => {
+  //       commit("SET_EXCHANGE_RATE", Object.values(res.rates)[0]);
+  //     }).catch(() => {
+  //       commit("SET_EXCHANGE_RATE", 1);
+  //     });
+  //   } else {
+  //     commit("SET_EXCHANGE_RATE", 1);
+  //   }
+  //
+  // },
 };
 export default {
   namespaced: true,

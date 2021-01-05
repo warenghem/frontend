@@ -105,26 +105,26 @@
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='USD'}">
                   <v-list-item-title class="cursor-pointer"
-                                     @click="$store.dispatch('product/getExchangeRate','USD')"
+                                     @click="$store.dispatch('product/setCurrency','USD')"
                   >
                     &dollar;
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='EUR'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/getExchangeRate','EUR')">
+                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','EUR')">
                     &euro;
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='GBP'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/getExchangeRate','GBP')">
+                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','GBP')">
                     &pound;
                   </v-list-item-title>
                 </v-list-item>
                 <v-list-item style="min-height: 30px" class="langChanger"
                              :class="{'active':$store.state.product.currency_default==='CAD'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/getExchangeRate','CAD')">
+                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','CAD')">
                    C$
                   </v-list-item-title>
                 </v-list-item>

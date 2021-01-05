@@ -23,7 +23,7 @@
         },
         beforeCreate(){
             if(this.$cookies.get('currency_default')){
-                this.$store.dispatch('product/getExchangeRate',this.$cookies.get('currency_default'))
+                this.$store.dispatch('product/setCurrency',this.$cookies.get('currency_default'))
             }
         },
 

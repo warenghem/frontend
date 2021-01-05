@@ -62,7 +62,7 @@
             </div>
 
           </div>
-         <div class="border-top-1 border-bottom-1 cursor-pointer py-5 d-flex align-center justify-space-between"
+          <div class="border-top-1 border-bottom-1 cursor-pointer py-5 d-flex align-center justify-space-between"
                @click="openSideModal('materialSide')"
                v-if="productMaterialChoice.name"
           >
@@ -71,7 +71,8 @@
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productMaterialChoice.name}}
-              <img :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image" width="40px" class="mx-3">
+              <img :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image" width="40px"
+                   class="mx-3">
               <v-icon class="float-right">mdi-chevron-right</v-icon>
             </div>
 
@@ -275,7 +276,14 @@
         },
         computed: {
             product() {
-                this.productItem.price = (this.productItem.offers.price * this.$store.state.product.exchange_rate).toFixed(2);
+                let currency = this.productItem.currency.find(currency => {
+                    return currency.name === this.$store.state.product.currency_default
+                });
+                if (currency) {
+                    this.productItem.price = currency.price;
+                } else {
+                    this.productItem.price = parseFloat(this.productItem.offers.price).toFixed(2);
+                }
                 return this.productItem;
             },
             recommendedProducts() {
@@ -307,9 +315,9 @@
                 return this.productItem.Languages || []
             },
         },
-        beforeCreate(){
-            let rc_products=this.$cookies.get('recent_products');
-            if(rc_products.length>0){
+        beforeCreate() {
+            let rc_products = this.$cookies.get('recent_products');
+            if (rc_products.length > 0) {
                 this.$store.commit('product/initRecentProduct', rc_products);
             }
         },
@@ -317,13 +325,13 @@
             this.$store.dispatch('product/setRecentProducts', this.product.id);
 
         },
-        mounted(){
-            var name=this.product.default_attributes.find(p => p.name === 'Color').option;
-            this.productColor= {
+        mounted() {
+            var name = this.product.default_attributes.find(p => p.name === 'Color').option;
+            this.productColor = {
                 name: name,
-                image:this.product.attributes.find(p => p.name === 'Color').options.find(op=>op.name ===  name)
+                image: this.product.attributes.find(p => p.name === 'Color').options.find(op => op.name === name)
             };
-            this.productMaterialChoice=this.product.material[0]
+            this.productMaterialChoice = this.product.material[0]
 
             console.log(this.product)
         },
@@ -334,15 +342,15 @@
                 currentModal: 'paymentInfoModal',
                 sideModal: false,
                 currentSideItem: 'productCare',
-                productColor:{
-                    name:null,
-                    image:null
+                productColor: {
+                    name: null,
+                    image: null
                 },
-                productMaterialChoice:{
-                    name:null,
-                    image:null
+                productMaterialChoice: {
+                    name: null,
+                    image: null
                 },
-                productMaterial:null,
+                productMaterial: null,
                 content: "Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien :\n" +
                     "\n" +
                     "Veillez à ne pas érafler ou frotter votre article contre des surfaces abrasives, en particulier les finitions en cuir.\n" +

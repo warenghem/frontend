@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import axios from 'axios'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -54,6 +55,28 @@ export default {
     '@nuxtjs/sitemap',
     'cookie-universal-nuxt',
   ],
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        document.priceEuro = document.offers ? parseFloat(document.offers.price) : null;
+        let currency = [];
+        if (document.priceEuro) {
+          axios.get("https://api.exchangeratesapi.io/latest?base=EUR").then(res => {
+            Object.entries(res.data.rates).forEach(([key, value]) => {
+              if (['EUR', 'CAD', 'USD', 'GBP'].includes(key)) {
+                currency.push({name: key, price: (value * document.priceEuro).toFixed(2)})
+              }
+            });
+            document.currency = currency;
+          }).catch(() => {
+            document.currency = currency
+          });
+        }
+
+
+      }
+    }
+  },
 
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
