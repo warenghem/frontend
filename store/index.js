@@ -27,11 +27,10 @@ export const actions = {
       commit("SET_FOREST_DETAILS", {tree_count: 0, co2_compensated: 0});
     }
   },
-  async nuxtServerInit({dispatch,commit}) {
+  async nuxtServerInit({dispatch,commit},context) {
+
     await dispatch('getForestDetail');
-    if (this.$cookies.get('currency_default')) {
-      commit('product/SET_CURRENCY', this.$cookies.get('currency_default'))
-    }
+    console.log(context);
   }
 };
 export const modules = {

@@ -55,6 +55,42 @@ export default {
     '@nuxtjs/sitemap',
     'cookie-universal-nuxt',
   ],
+  i18n: {
+    strategy: 'prefix_and_default',
+    lazy: true,
+    langDir: 'locales/',
+    defaultLocale: 'fr',
+    detectBrowserLanguage: {
+      alwaysRedirect: true,
+      fallbackLocale: 'fr',
+      onlyOnRoot: true,
+      useCookie: true,
+      cookieCrossOrigin: false,
+      cookieDomain: null,
+      cookieKey: 'i18n_redirected',
+      cookieSecure: false
+    },
+    vueI18n: {
+      messages: {
+        fr: require('./locales/fr-fr.json'),
+        en: require('./locales/en-us.json'),
+      },
+    },
+    locales: [
+      {
+        code: 'en',
+        iso: 'en-us',
+        name: 'English',
+        langFile:require('./locales/en-us.json')
+      },
+      {
+        code: 'fr',
+        iso: 'fr-fr',
+        name: 'Français',
+        langFile:require('./locales/fr-fr.json')
+      },
+    ],
+  },
   hooks: {
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
@@ -63,7 +99,7 @@ export default {
         if (document.priceEuro) {
           axios.get("https://api.exchangeratesapi.io/latest?base=EUR").then(res => {
             Object.entries(res.data.rates).forEach(([key, value]) => {
-              if (['EUR', 'CAD', 'USD', 'GBP'].includes(key)) {
+              if (['EUR', 'CAD', 'USD', 'GBP','CHF'].includes(key)) {
                 currency.push({name: key, price: (value * document.priceEuro).toFixed(2)})
               }
             });
@@ -102,40 +138,6 @@ export default {
     }
   },
 
-  i18n: {
-    strategy: 'prefix_and_default',
-    lazy: true,
-    langDir: 'locales/',
-    defaultLocale: 'fr',
-    detectBrowserLanguage: {
-      alwaysRedirect: true,
-      fallbackLocale: 'fr',
-      onlyOnRoot: true,
-      useCookie: true,
-      cookieCrossOrigin: false,
-      cookieDomain: null,
-      cookieKey: 'i18n_redirected',
-      cookieSecure: false
-    },
-    vueI18n: {
-      messages: {
-        fr: require('./locales/fr-fr.json'),
-        en: require('./locales/en-us.json'),
-      },
-    },
-    locales: [
-      {
-        code: 'en',
-        iso: 'en-us',
-        name: 'English',
-      },
-      {
-        code: 'fr',
-        iso: 'fr-fr',
-        name: 'Français',
-      },
-    ],
-  },
 
   snipcart: {
     // Options available
