@@ -62,6 +62,7 @@
         >
           <v-menu
             offset-y
+
           >
             <template v-slot:activator="{ on, attrs }">
               <v-btn
@@ -69,7 +70,7 @@
                 v-bind="attrs"
                 v-on="on"
                 :ripple="false"
-                class="nohover item"
+                class="nohover item priceHide"
               >
                 <div>
                   <img :src="$store.state.langs.currentLang.img"

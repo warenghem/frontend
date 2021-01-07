@@ -78,7 +78,7 @@
 
           </div>
           <div class="d-flex justify-space-between align-center mt-3">
-            <h3 style="font-weight: 900">{{product.price}}
+            <h3 style="font-weight: 900" class="priceHide">{{product.price}}
               {{$store.state.langs.currentLang.sign}}</h3>
             <div>
 
