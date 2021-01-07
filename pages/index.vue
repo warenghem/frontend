@@ -5,13 +5,13 @@
     <VideoSection id="videoSection"/>
     <MissionSection id="missionSection"/>
     <v-container fluid class="homegrid py-4">
-      <v-card class="bgcard item1">
+      <v-card class="item1">
         <ProductSection id="productSection"/>
       </v-card>
       <v-card class="bgcard item2">
         <MapSection id="mapTreeSection"/>
       </v-card>
-      <v-card class="bgcard item3">
+      <v-card class="bgcard item3 d-none d-sm-block">
         <StudioSection id="studioSection"/>
       </v-card>
       <v-card dark color="darkbugattiblue" class="item4">

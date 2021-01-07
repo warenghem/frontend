@@ -180,18 +180,16 @@ export default {
           },
           primary: {
             base: '#19110b',
-            lighten3: '#ffb700',
-            darken3: '#ff6200'
+            lighten1: '#ffb700',
           },
           secondary: {
             base: '#86868b',
-            lighten3: '#4696bf',
-            darken3: '#466ebf'
+            lighten1: '#E6a9a9ac',
+            lighten2: '#d4d4d6'
+
           },
           tertiary: {
             base: '#4682bf',
-            lighten3: '#4696bf',
-            darken3: '#466ebf'
           },
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,

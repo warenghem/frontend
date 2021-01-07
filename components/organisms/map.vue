@@ -501,7 +501,7 @@
 }
   .treemap {
     z-index: 1;
-    min-height:400px;
+    min-height:350px;
     }
 
   .slideArea {
