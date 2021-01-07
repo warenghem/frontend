@@ -75,6 +75,7 @@
                   <img :src="$store.state.langs.currentLang.img"
                        width="24"
                        alt="lang flag"
+                       v-if="$store.state.langs.currentLang.img"
                   />
                 </div>
                 <span class="px-2">/</span>

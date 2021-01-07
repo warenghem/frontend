@@ -21,8 +21,10 @@
               isLoading:false,
           }
         },
-        beforeCreate(){
+        mounted(){
+            this.$store.commit('product/SET_LOAD');
             if(this.$cookies.get('currentLang')){
+
                 this.$store.commit('langs/SET_LANG',this.$cookies.get('currentLang'))
             }
         },

@@ -282,7 +282,7 @@
                 if (currency) {
                     this.productItem.price = currency.price;
                 } else {
-                    this.productItem.price = parseFloat(this.productItem.offers.price).toFixed(2);
+                    this.productItem.price = this.productItem.offers.price;
                 }
                 return this.productItem;
             },

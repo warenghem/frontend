@@ -17,6 +17,13 @@ export const mutations = {
   RESET_EXCHANGE_RATE(state) {
     state.exchange_rate = 1;
   },
+  SET_LOAD(state){
+    state.loading=true;
+    setTimeout(()=>{
+      state.loading=false;
+    },1000);
+
+  },
 
   initRecentProduct(state, data) {
     state.recent_products = data

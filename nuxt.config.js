@@ -100,7 +100,7 @@ export default {
           axios.get("https://api.exchangeratesapi.io/latest?base=EUR").then(res => {
             Object.entries(res.data.rates).forEach(([key, value]) => {
               if (['EUR', 'CAD', 'USD', 'GBP','CHF'].includes(key)) {
-                currency.push({name: key, price: (value * document.priceEuro).toFixed(2)})
+                currency.push({name: key, price: (value * document.priceEuro+document.priceEuro*0.01).toFixed(0)})
               }
             });
             document.currency = currency;
