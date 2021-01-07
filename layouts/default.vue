@@ -22,8 +22,8 @@
           }
         },
         beforeCreate(){
-            if(this.$cookies.get('currency_default')){
-                this.$store.dispatch('product/setCurrency',this.$cookies.get('currency_default'))
+            if(this.$cookies.get('currentLang')){
+                this.$store.commit('langs/SET_LANG',this.$cookies.get('currentLang'))
             }
         },
 

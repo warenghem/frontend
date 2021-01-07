@@ -33,7 +33,7 @@
     </div>
     <div class="subtitlesmall teradeli-light text-left" v-if="product.offers">
       {{product.price}}
-      {{$store.state.product.currency_default}}
+      {{$store.state.langs.currentLang.sign}}
     </div>
   </div>
 </template>
@@ -60,7 +60,7 @@
         computed: {
             product() {
                let currency = this.productItem.currency.find(currency => {
-                    return currency.name === this.$store.state.product.currency_default
+                    return currency.name === this.$store.state.langs.currentLang.currency
                 });
                 if (currency) {
                     this.productItem.price = currency.price;

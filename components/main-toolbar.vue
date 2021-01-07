@@ -71,16 +71,15 @@
                 :ripple="false"
                 class="nohover item"
               >
-                <div v-for="(flag,idx) in $store.state.langs.items" :key="'flag_'+idx">
-                  <img :src="flag.img"
+                <div>
+                  <img :src="$store.state.langs.currentLang.img"
                        width="24"
                        alt="lang flag"
-                       v-if="'/'+$i18n.locale===flag.lang"
                   />
                 </div>
                 <span class="px-2">/</span>
                 <div >
-                  {{$store.state.product.currency_default}}
+                  {{$store.state.langs.currentLang.currency}}
                 </div>
               </v-btn>
             </template>
@@ -90,42 +89,17 @@
                 <v-list-item
                   v-for="(flag,idx) in $store.state.langs.items"
                   :key="'flag_list_'+idx"
-                  class="text-center"
+                  style="min-height: 30px" class="langChanger"
+                             :class="{'active':$store.state.langs.currentLang.iso===flag.iso}"
                 >
-                  <v-list-item-title class="cursor-pointer">
-                    <NuxtLink :to="{path:flag.path}">
-                      <img :src="flag.img"
-                           width="24"
-                           alt="flag"
-                      />
-                    </NuxtLink>
-                  </v-list-item-title>
-                </v-list-item>
-                <v-divider></v-divider>
-                <v-list-item style="min-height: 30px" class="langChanger"
-                             :class="{'active':$store.state.product.currency_default==='USD'}">
-                  <v-list-item-title class="cursor-pointer"
-                                     @click="$store.dispatch('product/setCurrency','USD')"
-                  >
-                    &dollar;
-                  </v-list-item-title>
-                </v-list-item>
-                <v-list-item style="min-height: 30px" class="langChanger"
-                             :class="{'active':$store.state.product.currency_default==='EUR'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','EUR')">
-                    &euro;
-                  </v-list-item-title>
-                </v-list-item>
-                <v-list-item style="min-height: 30px" class="langChanger"
-                             :class="{'active':$store.state.product.currency_default==='GBP'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','GBP')">
-                    &pound;
-                  </v-list-item-title>
-                </v-list-item>
-                <v-list-item style="min-height: 30px" class="langChanger"
-                             :class="{'active':$store.state.product.currency_default==='CAD'}">
-                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('product/setCurrency','CAD')">
-                   C$
+                  <v-list-item-title class="cursor-pointer"  @click="$store.dispatch('langs/setLang',flag)">
+<!--                    <NuxtLink :to="{path:flag.path}">-->
+<!--                      <img :src="flag.img"-->
+<!--                           width="24"-->
+<!--                           alt="flag"-->
+<!--                      />-->
+<!--                    </NuxtLink>-->
+                    {{flag.iso}}
                   </v-list-item-title>
                 </v-list-item>
               </v-list>

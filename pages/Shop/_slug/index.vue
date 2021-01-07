@@ -79,7 +79,7 @@
           </div>
           <div class="d-flex justify-space-between align-center mt-3">
             <h3 style="font-weight: 900">{{product.price}}
-              {{$store.state.product.currency_default}}</h3>
+              {{$store.state.langs.currentLang.sign}}</h3>
             <div>
 
               <v-icon small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
@@ -277,7 +277,7 @@
         computed: {
             product() {
                 let currency = this.productItem.currency.find(currency => {
-                    return currency.name === this.$store.state.product.currency_default
+                    return currency.name === this.$store.state.langs.currentLang.currency
                 });
                 if (currency) {
                     this.productItem.price = currency.price;
@@ -333,7 +333,6 @@
             };
             this.productMaterialChoice = this.product.material[0]
 
-            console.log(this.product)
         },
         data() {
             return {

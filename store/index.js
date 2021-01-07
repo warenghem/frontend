@@ -27,10 +27,8 @@ export const actions = {
       commit("SET_FOREST_DETAILS", {tree_count: 0, co2_compensated: 0});
     }
   },
-  async nuxtServerInit({dispatch,commit},context) {
-
+  async nuxtServerInit({dispatch}) {
     await dispatch('getForestDetail');
-    console.log(context);
   }
 };
 export const modules = {

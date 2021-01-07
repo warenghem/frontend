@@ -66,8 +66,6 @@ export default {
             this.loading = true;
 
             const url = `${this.url}?${this.data}`;
-            console.log(this.data, url);
-
             jsonp(url, {param: 'c'}, this.onResponse)
         },
 
