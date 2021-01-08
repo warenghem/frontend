@@ -12,7 +12,7 @@
           <v-row>
 
             <v-col :cols="12" class="pl-lg-0 py-2 position-relative">
-              <v-btn :to="{path:'/en/shop/'}" type="dark" class="backButton" tile>
+              <v-btn :to="{name:'shop___'+$i18n.locale}" type="dark" class="backButton" tile>
                 <v-icon>mdi-keyboard-backspace</v-icon>
               </v-btn>
               <VueSlickCarousel v-bind="settingsSingle" v-viewer>
