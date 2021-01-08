@@ -26,7 +26,14 @@
 
             {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
           </div>
-          <h3 class="teradeli-light priceHide" >{{product.price}} {{$store.state.langs.currentLang.sign}}</h3>
+          <v-progress-circular
+            indeterminate
+            color="primary"
+            :size="20"
+            v-show="$store.state.product.loading"
+          ></v-progress-circular>
+          <h3 class="teradeli-light priceHide" v-show="!$store.state.product.loading">
+            {{product.price}} {{$store.state.langs.currentLang.sign}}</h3>
         </div>
         <div class="pa-2">
           <v-btn tile large dark @click="$store.commit('product/OPEN_PAY_MODAL')">

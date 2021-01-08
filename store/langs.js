@@ -39,7 +39,6 @@ export const mutations = {
 };
 export const actions = {
   setLang({commit,dispatch}, flag){
-    this.$cookies.set('currentLang', flag);
     commit('SET_LANG',flag);
     this.$router.push({path:flag.path});
   },

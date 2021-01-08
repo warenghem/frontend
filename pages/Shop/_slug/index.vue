@@ -78,7 +78,13 @@
 
           </div>
           <div class="d-flex justify-space-between align-center mt-3">
-            <h3 style="font-weight: 900" class="priceHide">{{product.price}}
+            <v-progress-circular
+              indeterminate
+              color="primary"
+              :size="20"
+              v-show="$store.state.product.loading"
+            ></v-progress-circular>
+            <h3 style="font-weight: 900" class="priceHide" v-show="!$store.state.product.loading">{{product.price}}
               {{$store.state.langs.currentLang.sign}}</h3>
             <div>
 

@@ -65,12 +65,19 @@
 
           >
             <template v-slot:activator="{ on, attrs }">
+               <v-progress-circular
+                indeterminate
+                color="primary"
+                :size="20"
+                v-show="$store.state.product.loading"
+              ></v-progress-circular>
               <v-btn
                 text
                 v-bind="attrs"
                 v-on="on"
                 :ripple="false"
                 class="nohover item priceHide"
+                v-show="!$store.state.product.loading"
               >
                 <div>
                   <img :src="$store.state.langs.currentLang.img"
@@ -80,10 +87,11 @@
                   />
                 </div>
                 <span class="px-2">/</span>
-                <div >
+                <div>
                   {{$store.state.langs.currentLang.currency}}
                 </div>
               </v-btn>
+
             </template>
             <slot name="langSwitcher">
               <v-list
@@ -92,15 +100,15 @@
                   v-for="(flag,idx) in $store.state.langs.items"
                   :key="'flag_list_'+idx"
                   style="min-height: 30px" class="langChanger"
-                             :class="{'active':$store.state.langs.currentLang.iso===flag.iso}"
+                  :class="{'active':$store.state.langs.currentLang.iso===flag.iso}"
                 >
-                  <v-list-item-title class="cursor-pointer"  @click="$store.dispatch('langs/setLang',flag)">
-<!--                    <NuxtLink :to="{path:flag.path}">-->
-<!--                      <img :src="flag.img"-->
-<!--                           width="24"-->
-<!--                           alt="flag"-->
-<!--                      />-->
-<!--                    </NuxtLink>-->
+                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('langs/setLang',flag)">
+                    <!--                    <NuxtLink :to="{path:flag.path}">-->
+                    <!--                      <img :src="flag.img"-->
+                    <!--                           width="24"-->
+                    <!--                           alt="flag"-->
+                    <!--                      />-->
+                    <!--                    </NuxtLink>-->
                     {{flag.iso}}
                   </v-list-item-title>
                 </v-list-item>

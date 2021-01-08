@@ -31,7 +31,13 @@
         </button>
       </div>
     </div>
-    <div class="subtitlesmall teradeli-light text-left" v-if="product.offers">
+    <v-progress-circular
+      indeterminate
+      color="primary"
+      :size="20"
+      v-show="$store.state.product.loading"
+    ></v-progress-circular>
+    <div class="subtitlesmall teradeli-light text-left" v-if="product.offers" v-show="!$store.state.product.loading">
       {{product.price}}
       {{$store.state.langs.currentLang.sign}}
     </div>
@@ -59,7 +65,7 @@
         },
         computed: {
             product() {
-               let currency = this.productItem.currency.find(currency => {
+                let currency = this.productItem.currency.find(currency => {
                     return currency.name === this.$store.state.langs.currentLang.currency
                 });
                 if (currency) {
