@@ -56,7 +56,7 @@ export default {
     'cookie-universal-nuxt',
   ],
   i18n: {
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
     lazy: true,
     langDir: 'locales/',
     defaultLocale: 'fr',

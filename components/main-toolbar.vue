@@ -102,7 +102,7 @@
                   style="min-height: 30px" class="langChanger"
                   :class="{'active':$store.state.langs.currentLang.iso===flag.iso}"
                 >
-                  <v-list-item-title class="cursor-pointer" @click="$store.dispatch('langs/setLang',flag)">
+                  <v-list-item-title class="cursor-pointer" @click="changeLang(flag)">
                     <!--                    <NuxtLink :to="{path:flag.path}">-->
                     <!--                      <img :src="flag.img"-->
                     <!--                           width="24"-->
@@ -137,6 +137,19 @@
                 default: false
             }
         },
+        methods:{
+            changeLang(flag){
+                this.$store.dispatch('langs/setLang',flag);
+                if( this.$route.params.slug){
+                    this.$router.push({path:flag.path});
+                }else{
+                    this.$router.push({path:this.switchLocalePath(flag.path)});
+                }
+
+            }
+
+        }
+
 
     }
 </script>

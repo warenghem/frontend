@@ -273,8 +273,8 @@
         async asyncData(context) {
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
-            const productItem = await $content(`${app.i18n.locale}/Shop`, slug).fetch();
-            const productsItem = await $content(`${app.i18n.locale}/Shop`).fetch();
+            const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
+            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
             context.store.commit('langs/SET_LANG_NAV', productItem.Languages || []);
             return {
                 productItem, productsItem

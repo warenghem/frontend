@@ -29,12 +29,11 @@
         components: {FilterBar, ProductItem},
         async asyncData(context) {
             const {$content, app} = context;
-            const productsItem = await $content(`${app.i18n.locale}/Shop`).fetch();
+            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
             return {
                 productsItem,
             }
         },
-
         created() {
             this.$store.commit('langs/RESET_LANG');
         },
