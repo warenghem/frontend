@@ -16,12 +16,11 @@
         mounted() {
             if (this.$i18n.getLocaleCookie()) {
                 const lang = this.$store.state.langs.items.find(lan => lan.lang === this.$i18n.getLocaleCookie());
-                if(lang.iso) {
+                if (lang.iso) {
                     this.$store.commit('langs/SET_LANG', lang);
-                    this.$store.commit('product/SET_LOAD')
                 }
             }
-
+            this.$store.commit('product/SET_LOAD')
 
         },
 
