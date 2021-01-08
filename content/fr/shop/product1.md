@@ -69,12 +69,12 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-path: /en/Shop/product1
+path: /en/shop/product1
 Languages:
 - locale: en
-  path: /en/Shop/product1
+  path: /en/shop/product1
 - locale: fr
-  path: /fr/Shop/product1
+  path: /fr/shop/product1
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
