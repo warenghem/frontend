@@ -88,7 +88,7 @@
                     products: [
                         {
                             tag: 'Available soon - 30 pieces',
-                            title: 'The 48H bag',
+                            title: 'Dionysos Boots 48H',
                             summary: 'Vines and flax. Such is his destiny. ',
                             desc: 'The biggest of the bags. Composed of grapes and a French linen lining. ' +
                                 'Indispensable for weekends, sports, or short stays. This is the room ' +
@@ -97,7 +97,7 @@
                         },
                         {
                             tag: 'Available soon - 30 pieces',
-                            title: 'The belt',
+                            title: 'Dionysos Belt',
                             summary: "She won't let you down.All in nobility.",
                             desc: 'Wide and thick, with saddle finish, it also fits well on' +
                                 'a suit than jeans.',
@@ -105,7 +105,7 @@
                         },
                         {
                             tag: 'Available soon - 30 pieces',
-                            title: 'The portfolio',
+                            title: 'Dionysos Wallet',
                             summary: 'Plant like its leaves. Obviously.',
                             desc: 'Ally of your daily life, it is competed around oblique lines representing the' +
                                 'W emblematic of the brand. Each of them has space for your cards.',
@@ -113,7 +113,7 @@
                         },
                         {
                             tag: 'Visuals to come',
-                            title: 'The shoes',
+                            title: 'Dionysos Boots',
                             summary: "",
                             desc: "",
                             visualtocome: 'Visual to come',
@@ -125,7 +125,7 @@
                     products: [
                         {
                             tag: 'Disponible prochainement - 30 pièces',
-                            title: 'Le sac 48H',
+                            title: 'Dionysos 48H',
                             summary: 'Des vignes et du lin. Tel est son destin.',
                             desc: 'Le plus grand des sacs. Composé de raisins et d’une doublure en lin francais. ' +
                                 'Indispensable pour le week-end, le sport, ou les courts séjours. C’est la pièce ' +
@@ -134,7 +134,7 @@
                         },
                         {
                             tag: 'Disponible prochainement - 30 pièces',
-                            title: 'La ceinture',
+                            title: 'Dionysos Belt',
                             summary: 'Elle ne vous laissera pas tomber.',
                             desc: 'Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur ' +
                                 'un costume que sur un jean.',
@@ -142,7 +142,7 @@
                         },
                         {
                             tag: 'Disponible prochainement - 30 pièces',
-                            title: 'Le portefeuille',
+                            title: 'Dionysos Wallet',
                             summary: 'Végétal comme ses feuilles.',
                             desc: 'Allié de votre quotidien, il est concu autours de lignes obliques représentant le' +
                                 ' W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.',
@@ -150,7 +150,7 @@
                         },
                         {
                             tag: 'En cours de création',
-                            title: 'La chaussure',
+                            title: 'Dionysos Boots',
                             summary: 'Les pieds sur terre. Tournée vers le futur.',
                             desc: '',
                             visualtocome: 'Visuels à venir',
