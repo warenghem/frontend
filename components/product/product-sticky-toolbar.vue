@@ -7,27 +7,38 @@
       </v-app-bar-nav-icon>
       <div class="d-flex align-center">
         <div class="ma-2 grey">
-          <ik-image
-            path="/Products/PFsolomoutain_V__6TkALbMDj.jpg"
-            :transformation="[{quality: 80, width:55}]"
-            width="55"
-          ></ik-image>
+          <img :src="product.image[0].src"
+               :lazy-src="require('../../assets/images/image-loader.gif')"
+               class="lazyload"
+               alt=""
+               height="55px"
+          >
+
         </div>
-        <div class="sub-title pa-2">SAC À DOS TRIO</div>
+        <div class="sub-title pa-2">{{product.name}}</div>
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center">
         <div class="pa-2">
           <div>
 
-            <v-icon small>mdi-circle</v-icon>
+            <v-icon small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
 
-            Disponible
+            {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
           </div>
-          <h3  class="teradeli-light">2 600,00€</h3>
+          <v-progress-circular
+            indeterminate
+            color="primary"
+            :size="20"
+            v-show="$store.state.product.loading"
+          ></v-progress-circular>
+          <h3 class="teradeli-light priceHide" v-show="!$store.state.product.loading">
+            {{product.price}} {{$store.state.langs.currentLang.sign}}</h3>
         </div>
         <div class="pa-2">
-          <button class="btn-theme">À VOTRE PANIER</button>
+          <v-btn tile large dark @click="$store.commit('product/OPEN_PAY_MODAL')">
+            {{$t('product.cartBtn')}}
+          </v-btn>
         </div>
 
       </div>
@@ -42,6 +53,13 @@
             return {
                 fixedOnScroll: false,
                 sidebar: false,
+            }
+        },
+        props: {
+            product: {
+                type: Object,
+                default: () => {
+                }
             }
         },
         methods: {

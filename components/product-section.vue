@@ -29,7 +29,7 @@
                                 <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
                                     {{product.desc}}
                                 </div>
-                                <v-card-text class="teradeli-light mt-5 pa-0" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
+                                <v-card-text class="teradeli-light pa-0" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
                                     {{product.tag}}
                                 </v-card-text> 
                                 <v-card-text elevation="4" class="catalogue-item-content-title mt-3 pa-0">

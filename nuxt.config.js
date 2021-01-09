@@ -1,4 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
+import axios from 'axios'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -73,12 +74,8 @@ export default {
     '@nuxt/content',
     '@nuxtjs/sitemap',
     '@nuxtjs/gtm',
+    'cookie-universal-nuxt',
   ],
-
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
-  axios: {
-    baseURL: 'https://tree-nation.com/api/',
-  },
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
   content: {},
@@ -100,7 +97,7 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
     lazy: true,
     langDir: 'locales/',
     defaultLocale: 'fr',
@@ -125,13 +122,40 @@ export default {
         code: 'en',
         iso: 'en-us',
         name: 'English',
+        langFile:require('./locales/en-us.json')
       },
       {
         code: 'fr',
         iso: 'fr-fr',
         name: 'Français',
+        langFile:require('./locales/fr-fr.json')
       },
     ],
+  },
+  hooks: {
+    'content:file:beforeInsert': (document) => {
+      if (document.extension === '.md') {
+        document.priceEuro = document.offers ? parseFloat(document.offers.price) : null;
+        let currency = [];
+        if (document.priceEuro) {
+          axios.get("https://api.exchangeratesapi.io/latest?base=EUR").then(res => {
+            Object.entries(res.data.rates).forEach(([key, value]) => {
+              if (['EUR', 'CAD', 'USD', 'GBP','CHF'].includes(key)) {
+                currency.push({name: key, price: (value * document.priceEuro+document.priceEuro*0.01).toFixed(0)})
+              }
+            });
+            document.currency = currency;
+          }).catch(() => {
+            document.currency = currency
+          });
+        }
+      }
+    }
+  },
+
+      // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+  axios: {
+    baseURL: 'https://tree-nation.com/api/',
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
@@ -244,15 +268,18 @@ export default {
                 "html",
                 "nuxt-progress",
                 /col-*/,
+                /v-dialog*/,
               ],
               deep: [
                 /page-enter/,
                 /page-leave/,
                 /dialog-transition/,
                 /tab-transition/,
-                /tab-reversetransition/
+                /tab-reversetransition/,
+                /slide-fade/,
+                /bottom-sheet-transition/,
               ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/]
             }
           }
         }

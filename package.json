@@ -18,6 +18,7 @@
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/snipcart": "^1.1.0",
+    "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.6.5",
     "gsap": "^3.5.1",
     "instafeed": "^1.4.0",
@@ -28,6 +29,7 @@
     "nuxt-i18n": "^6.15.4",
     "v-viewer": "^1.5.1",
     "vue": "^2.6.12",
+    "vue-foldable": "^1.0.0",
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
     "vue2-leaflet": "^2.6.0"

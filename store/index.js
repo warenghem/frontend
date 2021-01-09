@@ -1,6 +1,7 @@
 import link from './link'
 import langs from './langs'
 import picture from './picture'
+import product from './product'
 
 export const state = () => ({
   tree_count: 0,
@@ -26,10 +27,10 @@ export const actions = {
       commit("SET_FOREST_DETAILS", {tree_count: 0, co2_compensated: 0});
     }
   },
-  async nuxtServerInit({dispatch}) {
-    await dispatch('getForestDetail')
+  async nuxtServerInit({dispatch,commit}) {
+    await dispatch('getForestDetail');
   }
 };
 export const modules = {
-  link, langs, picture
+  link, langs, picture, product
 };

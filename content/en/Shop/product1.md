@@ -1,7 +1,7 @@
 ---
-id: '1'
+id: '2'
 sku: M45604
-name: Some Amazing Product
+name: Product 1
 description: This new bags ... 
 additionalProperty:
 - details: Leather Goods
@@ -15,12 +15,12 @@ material:
 - name: Dionysos Leather
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Linen
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Ecological
-  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 offers:
   priceCurrency: EUR
   price: '390'
@@ -69,12 +69,12 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-path: /en/shop/hello
+path: /en/shop/product1
 Languages:
 - locale: en
-  path: /en/shop/hello
+  path: /en/shop/product1
 - locale: fr
-  path: /fr/shop/bonjour
+  path: /fr/shop/product1
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

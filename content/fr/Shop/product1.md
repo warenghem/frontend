@@ -1,7 +1,7 @@
 ---
-id: '1'
+id: '2'
 sku: M45604
-name: Some Amazing Product
+name: Product 1
 description: This new bags ... 
 additionalProperty:
 - details: Leather Goods
@@ -38,13 +38,13 @@ tags:
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
   attributes: "NaturalBlack"
-  material: Dionysos Leather
+  material: Cuit Dionysos
   name: ''
   alt: ''
   availability: true
 - src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
   attributes: "DeserticCamel"
-  material: Linen
+  material: Lin
   name: ''
   alt: ''
   availability: false
@@ -69,12 +69,12 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-path: /en/shop/hello
+path: /en/shop/product1
 Languages:
 - locale: en
-  path: /en/shop/hello
+  path: /en/shop/product1
 - locale: fr
-  path: /fr/shop/bonjour
+  path: /fr/shop/product1
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

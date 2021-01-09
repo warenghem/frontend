@@ -567,9 +567,6 @@ body {
 .v-application--is-ltr .v-snack__action {
   margin-right: 0px!important;
 }
-.v-dialog {
-  margin: 8px !important;
-}
 
 @keyframes bounceInLeft {
   from,
@@ -601,6 +598,52 @@ body {
   to {
     -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+  }
+}
+
+.custom-side-modal {
+  position: fixed;
+  right: 0;
+  max-height: 100vh !important;
+  height: 100vh !important;
+  margin: 0 !important;
+}
+.filter-bar {
+  .v-toolbar__content {
+    flex-wrap: wrap;
+    height: unset !important;
+  }
+
+  height: unset !important;
+  @media(min-width: 768px) {
+    height: 70px !important;
+    .v-toolbar__content {
+      height: 70px !important;
+    }
+  }
+}
+.custom-list {
+  .v-list-item--active {
+    color: #19110b !important;
+    font-weight: 900;
+  }
+}
+
+.stickyFilterBar {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.v-carousel__controls__item.v-btn.v-btn--icon {
+  color: #b2b2b2 !important;
+}
+
+
+.modalContent {
+  ul {
+    list-style-type: none !important;
+    padding-left: 0 !important;
   }
 }
 
@@ -901,13 +944,16 @@ body {
 }
 
 .slide-fade-enter-active {
-  transition: all .3s ease;
+  transition: all 2s ease;
 }
+
 .slide-fade-leave-active {
   transition: all .8s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
+
 .slide-fade-enter, .slide-fade-leave-to
-/* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
+  /* .slide-fade-leave-active below version 2.1.8 */
+{
+  transform: translateX(500px);
   opacity: 0;
 }

@@ -25,6 +25,7 @@
                         dark
                         icon
                         target="_blank" 
+                        href="https://www.instagram.com/warenghem.studios/"
                     >
                         <v-icon class="d-block" size="24px">{{ svgPath }}</v-icon>
                     </v-btn>
@@ -33,6 +34,7 @@
                         dark
                         icon
                         target="_blank" 
+                        href="https://www.facebook.com/warenghem.studios/"
                     >
                         <v-icon class="d-block" size="24px">{{ svgPath2 }}</v-icon>
                     </v-btn>

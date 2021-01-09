@@ -25,8 +25,9 @@
 </template>
 
 <script>
+
     export default {
-        name: 'home',
+        name: 'default',
         methods: {
             hideModal() {
                 document.querySelector('.indianforest').classList.remove('active');
@@ -35,7 +36,10 @@
                 const el = document.body;
                 el.classList.remove('modal-open');
                 document.documentElement.style.overflowY = 'auto'
-            },
+            }
+        },
+        created() {
+            this.$store.commit('langs/RESET_LANG');
         },
         head() {
             return {

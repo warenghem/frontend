@@ -61,48 +61,7 @@
           text
           class="px-0"
         >
-          <v-menu
-            offset-y
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                text
-                v-bind="attrs"
-                v-on="on"
-                :ripple="false"
-                class="nohover"
-              >
-                <div v-for="(flag,idx) in $store.state.langs.items" :key="'flag_'+idx">
-                  <img :src="flag.img"
-                       width="24"
-                       alt="lang flag"
-                       v-if="$i18n.locale===flag.lang"
-                  />
-                </div>
-
-              </v-btn>
-            </template>
-            <slot name="langSwitcher">
-              <v-list
-              >
-                <v-list-item
-                  v-for="(flag,idx) in $store.state.langs.items"
-                  :key="'flag_list_'+idx"
-                >
-                  <v-list-item-title class="cursor-pointer">
-                    <NuxtLink :to="{path:flag.path}">
-                      <img :src="flag.img"
-                           width="24"
-                           alt="flag"
-                      />
-                    </NuxtLink>
-
-                  </v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </slot>
-
-          </v-menu>
+          <Internationalization/>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -110,12 +69,9 @@
 </template>
 
 <script>
-    import link from './../../store/link'
-    import langs from './../../store/langs'
     import { mdiMenu } from '@mdi/js'
     import Logo from "~/assets/images/warenghem.svg?raw"
     import LogoSm from "~/assets/images/WA-mif-g-vf.svg?raw"
-
     export default {
         name: "main-toolbar",
         data() {
@@ -123,14 +79,9 @@
                 Logo,LogoSm,
                 sidebar: false,
                 svgPath: mdiMenu
-            }
+              }
         },
-        props: {
-            type: {
-                type: Boolean,
-                default: false
-            }
-        }
+
     }
 </script>
 

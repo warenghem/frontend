@@ -1,23 +1,94 @@
 ---
-title: Getting started
-category: web
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-media: https://images.unsplash.com/photo-1592500103620-1ab8f2c666a5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=3000&q=80
-
-locale: en
-path: /en/my-first-article
+id: '1'
+sku: M45604
+name: Un produit incroyable
+description: Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition
+  et modernité. Confectionné en toile
+additionalProperty:
+- details:  ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien
+- care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse,
+    nous vous recommandons de suivre ces conseils d’entretien
+dimensions:
+  length: '290'
+  width: '100'
+  height: '250'
+manufacturer: ''
+material:
+- name: Cuit Dionysos
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+- name: Lin
+  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+award:
+- name: Vegan
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+- name: Ecologique
+  slug: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+offers:
+  priceCurrency: EUR
+  price: '390'
+  availability: http://schema.org/InStock
+categories:
+- name: Leather Goods
+  slug: leathergoods
+  depth: '1'
+- name: Bags
+  slug: bags
+  depth: '2'
+tags:
+- name: Leather Goods
+- name: Bags
+image:
+- src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
+  attributes: "NaturalBlack"
+  material: Cuit Dionysos
+  name: ''
+  alt: ''
+  availability: true
+- src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
+  attributes: "DeserticCamel"
+  material: Lin
+  name: ''
+  alt: ''
+  availability: false
+attributes:
+- name: Color
+  options:
+  - name: NaturalBlack
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - name: DeserticCamel
+    icon: "/deserticcamel.jpeg"
+- name: Size
+  options:
+  - '41'
+  - '42'
+  - '43'
+default_attributes:
+- name: Color
+  option: NaturalBlack
+- name: Size
+  option: '41'
+isRelatedTo: ''
+isSimilarTo: shoes
+brand:
+  name: Warenghem
+path: /fr/shop/bonjour
+Languages:
+- locale: en
+  path: /en/shop/hello
+- locale: fr
+  path: /fr/shop/bonjour
 ---
 
-Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Renforcez votre application NuxtJS avec le module `@ nuxtjs / content`: écrivez dans un répertoire` content /` et récupérez vos fichiers Markdown, JSON, YAML et CSV via une API similaire à MongoDB, agissant comme un ** CMS Headless basé sur Git ** .
 
-## Writing content
+## Rédaction de contenu
 
-Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
+Apprenez à écrire votre `content /`, en prenant en charge Markdown, YAML, CSV et JSON: https://content.nuxtjs.org/writing.
 
-## Fetching content
+## Récupération du contenu
 
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+Apprenez à récupérer votre contenu avec `$ content`: https://content.nuxtjs.org/fetching.
 
-## Displaying content
+## Affichage du contenu
 
-Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+Apprenez à afficher votre contenu Markdown avec le composant `<nuxt-content>` `directement dans votre modèle: https://content.nuxtjs.org/displaying.
