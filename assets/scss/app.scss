@@ -257,6 +257,13 @@ body {
   right: 0;
   text-align: center;
 }
+.boxcenterabsolute {
+  display: flex; // make us of Flexbox
+  align-items: center; // does vertically center the desired content
+  justify-content: center; // horizontally centers single line items
+  text-align: center; // optional, but helps horizontally center text that breaks into multiple lines
+  height:100%;
+}
 .btn-theme {
   color: #fff!important;
   border: none;
@@ -428,6 +435,9 @@ body {
 
 .appBar {
 
+  header {
+    background: white!important;
+  }
   .whiteBack .theme--light.v-btn.v-btn--icon {
     color: #19110b !important;
   }
