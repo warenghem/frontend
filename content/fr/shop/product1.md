@@ -1,30 +1,52 @@
 ---
-id: '2'
+id: '1'
 sku: M45604
-name: Product 1
-description: This new bags ... 
+name: Un produit 1
+description: Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition
+  et modernité. Confectionné en toile
 additionalProperty:
-- details: Leather Goods
-- care: Care for this product
+- details:  ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien
+- care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse,
+    nous vous recommandons de suivre ces conseils d’entretien
 dimensions:
   length: '290'
   width: '100'
   height: '250'
 manufacturer: ''
+colors:
+  - id: 1
+    name: NaturalBlack
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 2
+    name: DeserticCamel
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 material:
-- name: Dionysos Leather
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-- name: Linen
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 1
+    name: Leather
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    color:
+      - id: 1
+        name: NaturalBlack
+        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 2
+    name: Lin
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    color:
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-- name: Ecological
-  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+- name: Ecologique
+  slug: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: true
+  availability: http://schema.org/InStock
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -37,24 +59,18 @@ tags:
 - name: Bags
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
-  attributes: "NaturalBlack"
-  material: Cuit Dionysos
+  color: 2
+  material: 1
   name: ''
   alt: ''
   availability: true
 - src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
-  attributes: "DeserticCamel"
-  material: Lin
+  color: 1
+  material: 2
   name: ''
   alt: ''
   availability: false
 attributes:
-- name: Color
-  options:
-  - name: NaturalBlack
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-  - name: DeserticCamel
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - name: Size
   options:
   - '41'
@@ -69,24 +85,24 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-path: /en/shop/product1
+path: /fr/shop/bonjour
 Languages:
 - locale: en
-  path: /en/shop/product1
+  path: /en/shop/hello
 - locale: fr
-  path: /fr/shop/product1
+  path: /fr/shop/bonjour
 ---
 
-Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
+Renforcez votre application NuxtJS avec le module `@ nuxtjs / content`: écrivez dans un répertoire` content /` et récupérez vos fichiers Markdown, JSON, YAML et CSV via une API similaire à MongoDB, agissant comme un ** CMS Headless basé sur Git ** .
 
-## Writing content
+## Rédaction de contenu
 
-Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
+Apprenez à écrire votre `content /`, en prenant en charge Markdown, YAML, CSV et JSON: https://content.nuxtjs.org/writing.
 
-## Fetching content
+## Récupération du contenu
 
-Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+Apprenez à récupérer votre contenu avec `$ content`: https://content.nuxtjs.org/fetching.
 
-## Displaying content
+## Affichage du contenu
 
-Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
+Apprenez à afficher votre contenu Markdown avec le composant `<nuxt-content>` `directement dans votre modèle: https://content.nuxtjs.org/displaying.

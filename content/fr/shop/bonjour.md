@@ -13,11 +13,31 @@ dimensions:
   width: '100'
   height: '250'
 manufacturer: ''
+colors:
+  - id: 1
+    name: NaturalBlack
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 2
+    name: DeserticCamel
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 material:
-- name: Cuit Dionysos
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-- name: Lin
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 1
+    name: Leather
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    color:
+      - id: 1
+        name: NaturalBlack
+        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 2
+    name: Lin
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    color:
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
@@ -39,24 +59,18 @@ tags:
 - name: Bags
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
-  attributes: "NaturalBlack"
-  material: Cuit Dionysos
+  color: 2
+  material: 1
   name: ''
   alt: ''
   availability: true
 - src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
-  attributes: "DeserticCamel"
-  material: Lin
+  color: 1
+  material: 2
   name: ''
   alt: ''
   availability: false
 attributes:
-- name: Color
-  options:
-  - name: NaturalBlack
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-  - name: DeserticCamel
-    icon: "/deserticcamel.jpeg"
 - name: Size
   options:
   - '41'

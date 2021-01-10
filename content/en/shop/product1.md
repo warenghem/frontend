@@ -1,5 +1,5 @@
 ---
-id: '2'
+id: '1'
 sku: M45604
 name: Product 1
 description: This new bags ... 
@@ -11,16 +11,36 @@ dimensions:
   width: '100'
   height: '250'
 manufacturer: ''
+colors:
+  - id: 1
+    name: NaturalBlack
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 2
+    name: DeserticCamel
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 material:
-- name: Dionysos Leather
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-- name: Linen
-  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 1
+    name: Leather
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    color:
+      - id: 1
+        name: NaturalBlack
+        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 2
+    name: Lin
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    color:
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Ecological
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 offers:
   priceCurrency: EUR
   price: '390'
@@ -37,24 +57,18 @@ tags:
 - name: Bags
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
-  attributes: "NaturalBlack"
-  material: Dionysos Leather
+  color: 2
+  material: 1
   name: ''
   alt: ''
   availability: true
 - src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
-  attributes: "DeserticCamel"
-  material: Linen
+  color: 1
+  material: 2
   name: ''
   alt: ''
   availability: false
 attributes:
-- name: Color
-  options:
-  - name: NaturalBlack
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-  - name: DeserticCamel
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - name: Size
   options:
   - '41'
@@ -69,12 +83,12 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-path: /en/shop/product1
+path: /en/shop/hello
 Languages:
 - locale: en
-  path: /en/shop/product1
+  path: /en/shop/hello
 - locale: fr
-  path: /fr/shop/product1
+  path: /fr/shop/bonjour
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

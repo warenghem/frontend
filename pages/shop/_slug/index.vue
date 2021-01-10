@@ -57,7 +57,7 @@
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productColor.name}}
-              <img :src="productColor.image.icon" alt="" v-if="productColor.image" width="40px" class="mx-3">
+              <img :src="productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3">
               <v-icon class="float-right">mdi-chevron-right</v-icon>
             </div>
 
@@ -71,7 +71,7 @@
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productMaterialChoice.name}}
-              <img :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image" width="40px"
+              <img :src="productMaterialChoice.icon" alt="" v-if="productMaterialChoice.icon" width="40px"
                    class="mx-3">
               <v-icon class="float-right">mdi-chevron-right</v-icon>
             </div>
@@ -332,11 +332,7 @@
 
         },
         mounted() {
-            var name = this.product.default_attributes.find(p => p.name === 'Color').option;
-            this.productColor = {
-                name: name,
-                image: this.product.attributes.find(p => p.name === 'Color').options.find(op => op.name === name)
-            };
+            this.productColor = this.product.colors[0];
             this.productMaterialChoice = this.product.material[0]
 
         },
