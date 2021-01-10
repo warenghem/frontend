@@ -15,10 +15,10 @@
               <v-btn :to="{name:'shop___'+$i18n.locale}" type="dark" class="backButton" tile>
                 <v-icon>mdi-keyboard-backspace</v-icon>
               </v-btn>
-              <VueSlickCarousel v-bind="settingsSingle" v-viewer>
+              <VueSlickCarousel v-bind="settingsSingle" v-viewer v-if="productImages.length > 0">
                 <div
                   class="pa-2 img-wrapper"
-                  v-for="(img,i_dx) in product.image"
+                  v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
 
                 >
@@ -239,7 +239,7 @@
     <pay-modal :product="product"></pay-modal>
     <info-modal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"></info-modal>
     <side-modal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
-                :product="product">
+                :product="product" @colorSelect="colorSelect" @materialSelect="materialSelect">
     </side-modal>
   </div>
 
@@ -280,7 +280,9 @@
                 productItem, productsItem
             }
         },
+
         computed: {
+
             product() {
                 let currency = this.productItem.currency.find(currency => {
                     return currency.name === this.$store.state.langs.currentLang.currency
@@ -333,7 +335,8 @@
         },
         mounted() {
             this.productColor = this.product.colors[0];
-            this.productMaterialChoice = this.product.material[0]
+            this.productMaterialChoice = this.product.material[0];
+            this.productImages = this.product.image
 
         },
         data() {
@@ -347,6 +350,9 @@
                     name: null,
                     image: null
                 },
+                productImages: [],
+                selectedColor: null,
+                selectedMaterial: null,
                 productMaterialChoice: {
                     name: null,
                     image: null
@@ -424,6 +430,22 @@
                 const el = document.body;
                 el.classList.remove("modal-open");
                 document.documentElement.style.overflowY = 'auto';
+            },
+            colorSelect(val) {
+                this.selectedColor = val;
+                this.productImages = this.product.image.filter(img => {
+                    if (img.color === parseInt(this.selectedColor)) {
+                        return img
+                    }
+                });
+            },
+            materialSelect(val) {
+                this.selectedMaterial = val;
+                this.productImages = this.product.image.filter(img => {
+                    if (img.material === parseInt(this.selectedMaterial)) {
+                        return img
+                    }
+                });
             }
 
         },

@@ -28,9 +28,10 @@
         <v-row>
           <v-col lg="6" v-for="item in product.colors"
                  :key="item.id">
-            <input type="radio" hidden :id="'color_'+item.id" :value="item.id" v-model="selectedColor"
-                   @input="colorSelect"
+            <input type="radio" hidden :id="'color_'+item.id" :value="item.id"
                     class="radioSelect"
+                    @input="$emit('colorSelect',$event.target.value)"
+                   name="colorSelect"
             >
             <label :for="'color_'+item.id">
               <v-card
@@ -63,14 +64,15 @@
       <v-card-text class="pa-4" v-if="current === 'materialSide'">
         <v-row>
           <v-col lg="4" v-for="item in product.material"
-                 :key="item.materials">
+                 :key="item.id">
              <input type="radio"
                    hidden
                    :id="'mat_'+item.id"
                    :value="item.id"
-                   v-model="selectedMaterial"
                    class="radioSelect"
-                   @input="materialSelect">
+                     name="matSelect"
+                    @input="$emit('materialSelect',$event.target.value)"
+                   >
             <label :for="'mat_'+item.id">
               <v-card
                 class="mx-auto"
@@ -122,12 +124,6 @@
             closeModal() {
                 this.$emit('closeModal')
             },
-            colorSelect() {
-                console.log(this.selectedColor)
-            },
-            materialSelect() {
-                console.log(this.selectedMaterial)
-            }
         },
         data() {
             return {
@@ -135,8 +131,6 @@
                     modalTitle: '',
                     modalContent: ''
                 },
-                selectedMaterial: 1,
-                selectedColor: 1
             }
         },
         i18n: {
