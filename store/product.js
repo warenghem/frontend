@@ -20,7 +20,7 @@ export const mutations = {
   SET_LOAD(state){
     setTimeout(()=>{
       state.loading=false;
-    },3000);
+    },1000);
 
   },
 
