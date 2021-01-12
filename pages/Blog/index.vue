@@ -135,22 +135,17 @@
     methods: {
         formatDate(date) {
           const options = { year: 'numeric', month: 'long', day: 'numeric' }
-          return new Date(date).toLocaleDateString('fr', options)
-        }
-    },
-    i18n: {
-        messages: {
-            en: {
-                title: "The latest news on supply chain transparency, product traceability, and the quest for conscious consumption, empowered by technology.",
-                subtitle:"From the team at Provenance, invited experts, and you?",
-                link: " Contribute"
-            },
-            fr: {
-                title: "Les dernières nouvelles sur la transparence de la chaîne d'approvisionnement, la traçabilité des produits et la quête d'une consommation consciente, renforcée par la technologie.",
-                subtitle:"De l'équipe de Provenance, des experts invités et vous?",
-                link: " Contribuer"
-            }
+          return new Date(date).toLocaleDateString(`${this.$i18n.locale}`, options)
         }
     },
   }
 </script>
+<i18n>
+{
+	"fr": {
+      "title": "Les dernières nouvelles sur la transparence de la chaîne d'approvisionnement, la traçabilité des produits et la quête d'une consommation consciente, renforcée par la technologie.",
+      "subtitle":"De l'équipe de Provenance, des experts invités et vous?",
+      "link": " Contribuer"
+  }
+}
+</i18n>

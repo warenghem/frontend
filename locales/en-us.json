@@ -1,5 +1,5 @@
 {
-  "message": "i am hasib",
+  "message": "en data",
   "secondtoolbar": {
     "message": "Free delivery"
   },
@@ -9,6 +9,39 @@
     "calendar": "calendar",
     "studio": "studio",
     "reforest": "reforestation"
+  },
+  "product": {
+    "cartBtn": "Place in Cart",
+    "stock": "In stock",
+    "notInStock": "Not In stock",
+    "findStore": "Find In Store",
+    "continueBtn": "Continue Shopping",
+    "viewCart": "View My Cart",
+    "careBtn": "Product Care",
+    "readMore": "Read More",
+    "readLess": "Read less",
+    "materialTitle": "Matières et entretien",
+    "payInfoBtn": {
+      "title": "Payment",
+      "desc": "Credit card, debit card, PayPal, Apple Pay"
+    },
+    "shipBtn": {
+      "title": "Shipping & Delivery",
+      "desc": "Complimentary Standard Shipping"
+    },
+    "returnBtn": {
+      "title": "Returns & Exchanges",
+      "desc": "Complimentary"
+    },
+    "packageBtn": {
+      "title": "Packaging",
+      "desc": "Contemporary and eco-friendly wrapping inspired by our Heritage"
+    },
+    "like": "You may also like",
+    "recommend": "Recommended",
+    "recent": "recently viewed",
+    "color":"Colours",
+    "material": "Materials"
   },
   "btnTitle": "I plant a tree for free",
   "router": {

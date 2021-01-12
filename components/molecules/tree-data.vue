@@ -56,24 +56,22 @@
               }
           }
         },
-        i18n: {
-            messages: {
-                en: {
-                    term1: 'planted trees',
-                    term2: 'To CO2 compensated',
-                    term3: 'reforested Ha',
-
-                },
-                fr: {
-                    term1: 'arbres plantés',
-                    term2: 'To CO2 compensées',
-                    term3: 'Ha reforestés',
-                }
-            }
-        },
     }
 </script>
-
+<i18n>
+{
+	"fr": {
+		"term1": "arbres plantés",
+		"term2": "To CO2 compensées",
+		"term3": "Ha reforestés"
+	},
+	"en": {
+		"term1": "planted trees",
+		"term2": "To CO2 compensated",
+		"term3": "Ha reforested"
+	}
+}
+</i18n>
 <style scoped>
 .tree-number {
     font-size: 20px;

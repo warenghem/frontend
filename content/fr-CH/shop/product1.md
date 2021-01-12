@@ -1,7 +1,7 @@
 ---
-id: '3'
+id: '2'
 sku: M45604
-name: Product 2
+name: Product 1
 description: This new bags ... 
 additionalProperty:
 - details: Leather Goods
@@ -33,8 +33,8 @@ categories:
   slug: bags
   depth: '2'
 tags:
-- name: Man
-- name: Cloth
+- name: Leather Goods
+- name: Bags
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
   attributes: "NaturalBlack"
@@ -69,12 +69,6 @@ isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-path: /en/shop/product2
-Languages:
-- locale: en
-  path: /en/shop/product2
-- locale: fr
-  path: /fr/shop/product2
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

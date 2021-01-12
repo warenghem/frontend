@@ -33,40 +33,39 @@ export default {
                 tabs: this.$t('tabs'),
             }
         },
-        i18n: {
-            messages: {
-                en: {
-                    title: "Legal",
-                    tabs: [
-                        {
-                            menu: 'Politique de protection des données',
-                        },
-                        {
-                            menu: 'Confitions générales de ventes',
-                        },
-                        {
-                            menu: 'Mentions Légales',
-                        },
-                    ]
-                },
-                fr: {
-                    title: "Mentions Légales",
-                    tabs: [
-                        {
-                            menu: 'Politique de protection des données',
-                        },
-                        {
-                            menu: 'Confitions générales de ventes',
-                        },
-                        {
-                            menu: 'Mentions Légales',
-                        },
-                    ]
-                },
-            }
-        },
 }
 </script>
-
+<i18n>
+{
+	"fr": {
+		"tabs": [
+			{
+				"menu": "Politique de protection des données"
+			},
+			{
+				"menu": "Confitions générales de ventes"
+			},
+			{
+				"menu": "Mentions Légales"
+			}
+		],
+		"title": "Mentions Légales"
+	},
+	"en": {
+		"tabs": [
+			{
+				"menu": "Data protection policy"
+			},
+			{
+				"menu": "General sales conditions"
+			},
+			{
+				"menu": "Legal Notice"
+			}
+		],
+		"title": "Legal Notice"
+	}
+}
+</i18n>
 <style scoped lang="scss">
 </style>

@@ -1,54 +1,77 @@
 <template>
   <div v-click-outside="closeSideModal">
     <ProductStickyToolbar class="stickyBar" :product="product"/>
-    <v-container fluid>
+    <v-container fluid class="pa-0">
       <v-row
-        class="mb-6"
+        class="ma-0"
       >
         <v-col
           lg="8"
-
+          class="pa-0"
         >
-          <v-row>
-
-            <v-col :cols="12" class="pl-lg-0 py-2 position-relative">
-              <v-btn :to="{name:'shop___'+$i18n.locale}" type="dark" class="backButton" tile>
-                <v-icon>mdi-keyboard-backspace</v-icon>
-              </v-btn>
-              <VueSlickCarousel v-bind="settingsSingle" v-viewer>
+          <v-row class="ma-0">
+            <div style="z-index:2" class="position-absolute">
+              <Backbutton/>
+            </div>
+            <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
+              <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :arrow="true">
                 <div
-                  class="pa-2 img-wrapper"
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
-
+                  style="outline: none;"
                 >
-                  <img
-                    :src="img.src"
-                    :lazy-src="require('../../../assets/images/image-loader.gif')"
-                    class="lazyload"
-                    alt=""
-                  >
-
+                  <div class="wa-smart-picture square-ratio skeletton wa-product-image">
+                    <img
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/'+ img.src +' 2500w,'" 
+                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/'+ img.src"
+                      class="lazyload mediabox-img"
+                      alt=""
+                    >
+                  </div>
                 </div>
               </VueSlickCarousel>
-
+              <VueSlickCarousel class="mt-3" v-bind="settingsSingle" ref="c2" :asNavFor="$refs.c1" :slidesToShow="4" :focusOnSelect="true">
+                <div
+                  v-for="(img,i_dx) in product.image"
+                  :key="'image_'+i_dx"
+                >
+                  <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mr-3">
+                    <img
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/'+ img.src +' 2500w,'" 
+                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/'+ img.src"
+                      class="bgcard lazyload mediabox-img"
+                      alt=""
+                    >
+                  </div>
+                </div>
+              </VueSlickCarousel>
             </v-col>
           </v-row>
         </v-col>
         <v-col
           lg="4"
-          class="pa-7"
+          class="pvw"
         >
-          <div class="d-flex justify-space-between">
+          <div style="margin-top: -10px;" class="d-flex justify-space-between mt-5 mt-lg-0">
             <div>{{product.sku}}</div>
+          </div>
+          <div class="page-title px-0 text-left">{{product.name}}</div>
+          <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2 pb-7">{{product.description}}</div>
+          <div class="py-5 d-flex align-center justify-space-between">
+            <v-row justify="center" class="pa-0 text-center">
+              <v-card
+               v-if="productMaterialChoice.name"
+               >
+               <img class="rounded-lg" :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image">
+               <v-card-text class="pa-0">
+                 {{productMaterialChoice.name}}
+               </v-card-text>
+              </v-card>
+            </v-row>
             <div>
-              <v-btn icon>
-                <v-icon>mdi-heart</v-icon>
-              </v-btn>
             </div>
           </div>
-          <div class="bold-title text-left pt-2 pb-7">{{product.name}}</div>
-          <div class="border-top-1 border-bottom-1 cursor-pointer py-5 d-flex align-center justify-space-between"
+          <div style="height:60px" class="border-top-2 pb-5 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
                v-if="productColor.name"
           >
@@ -58,22 +81,7 @@
             <div class="d-flex align-center justify-space-between">
               {{productColor.name}}
               <img :src="productColor.image.icon" alt="" v-if="productColor.image" width="40px" class="mx-3">
-              <v-icon class="float-right">mdi-chevron-right</v-icon>
-            </div>
-
-          </div>
-          <div class="border-top-1 border-bottom-1 cursor-pointer py-5 d-flex align-center justify-space-between"
-               @click="openSideModal('materialSide')"
-               v-if="productMaterialChoice.name"
-          >
-            <div>
-              {{$t('product.material')}}
-            </div>
-            <div class="d-flex align-center justify-space-between">
-              {{productMaterialChoice.name}}
-              <img :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image" width="40px"
-                   class="mx-3">
-              <v-icon class="float-right">mdi-chevron-right</v-icon>
+              <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
           </div>
@@ -87,46 +95,34 @@
             <h3 style="font-weight: 900" class="priceHide" v-show="!$store.state.product.loading">{{product.price}}
               {{$store.state.langs.currentLang.sign}}</h3>
             <div>
-
-              <v-icon small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
-
+              <v-icon small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
               {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
             </div>
           </div>
-          <v-btn large block tile color="black" class="py-3 my-3" dark height="50px"
-                 @click="$store.commit('product/OPEN_PAY_MODAL')">
-            {{$t('product.cartBtn')}}
-          </v-btn>
-          <div>
-            Cette année, les Fêtes sont en avance ! Passez commande dès à présent, livraison à domicile offerte sous 2 à
-            3
-            jours ouvrés.
-          </div>
-          <v-btn large block tile outlined color="black" class="py-3 my-3" height="50px">
-            {{$t('product.findStore')}}
-          </v-btn>
-          <div>
-            <foldable :minHeight="200" height="50%">
+          <Buybutton/>
+          <div class="mt-5">
+            <foldable :minHeight="100" height="20%">
               <div v-html="product.additionalProperty[0].details"
-              ></div>
-              <p align="center" class="my-foldable"
+              >
+              </div>
+              <p align="center" class="my-foldable hand"
                  slot="view-more" slot-scope="{ toggle, collapsed }" @click="toggle">
                 {{ collapsed ? $t('product.readMore') : $t('product.readLess') }}
               </p>
             </foldable>
           </div>
           <div class="mb-7">
-            <div class="border-top-1 border-bottom-1 cursor-pointer py-5"
+            <div class="border-top-2 border-bottom-2 cursor-pointer py-3"
                  @click="openSideModal('productCare')"
             >
               {{$t('product.materialTitle')}}
-              <v-icon class="float-right">mdi-chevron-right</v-icon>
+              <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
+          <div class="d-flex align-center justify-space-between py-3 border-bottom-2 cursor-pointer"
                @click="openModal('paymentInfoModal')">
             <div class="d-flex align-center">
-              <v-icon class="pr-5 right-icon">mdi-credit-card</v-icon>
+              <v-icon class="pr-5 right-icon">{{ svgPath2 }}</v-icon>
               <div>
                 <div class="right-title">{{$t('product.payInfoBtn.title')}}</div>
                 <span class="teradeli-light">{{$t('product.payInfoBtn.desc')}}</span>
@@ -134,13 +130,13 @@
             </div>
 
             <div>
-              <v-icon>mdi-content-copy</v-icon>
+              <v-icon>{{ svgPath3 }}</v-icon>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
+          <div class="d-flex align-center justify-space-between py-3 border-bottom-2 cursor-pointer"
                @click="openModal('shippingModal')">
             <div class="d-flex align-center">
-              <v-icon class="pr-5 right-icon">mdi-truck-delivery</v-icon>
+              <v-icon class="pr-5 right-icon">{{ svgPath5 }}</v-icon>
               <div>
                 <div class="right-title">{{$t('product.shipBtn.title')}}</div>
                 <span class="teradeli-light">{{$t('product.shipBtn.desc')}}</span>
@@ -148,13 +144,13 @@
             </div>
 
             <div>
-              <v-icon>mdi-content-copy</v-icon>
+              <v-icon>{{ svgPath3 }}</v-icon>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between py-5 border-bottom-1 cursor-pointer"
+          <div class="d-flex align-center justify-space-between py-3 border-bottom-2 cursor-pointer"
                @click="openModal('returnModal')">
             <div class="d-flex align-center">
-              <v-icon class="pr-5 right-icon">mdi-sync</v-icon>
+              <v-icon class="pr-5 right-icon">{{ svgPath6 }}</v-icon>
               <div>
                 <div class="right-title">{{$t('product.returnBtn.title')}}</div>
                 <span class="teradeli-light">{{$t('product.returnBtn.desc')}}</span>
@@ -162,12 +158,12 @@
             </div>
 
             <div>
-              <v-icon>mdi-content-copy</v-icon>
+              <v-icon>{{ svgPath3 }}</v-icon>
             </div>
           </div>
-          <div class="d-flex align-center justify-space-between py-5 cursor-pointer" @click="openModal('packageModal')">
+          <div class="d-flex align-center justify-space-between py-3 cursor-pointer" @click="openModal('packageModal')">
             <div class="d-flex align-center">
-              <v-icon class="pr-5 right-icon">mdi-package-variant-closed</v-icon>
+              <v-icon class="pr-5 right-icon">{{ svgPath7 }}</v-icon>
               <div>
                 <div class="right-title">{{$t('product.packageBtn.title')}}</div>
                 <span class="teradeli-light">{{$t('product.packageBtn.desc')}}</span>
@@ -175,7 +171,7 @@
             </div>
 
             <div>
-              <v-icon>mdi-content-copy</v-icon>
+              <v-icon>{{ svgPath3 }}</v-icon>
             </div>
           </div>
 
@@ -236,7 +232,6 @@
         </v-col>
       </v-row>
     </v-container>
-    <PayModal :product="product"/>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
                 :product="product"/>
@@ -245,10 +240,10 @@
 </template>
 
 <script>
+    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
     import "viewerjs/dist/viewer.css";
     import Viewer from "v-viewer";
     import Vue from "vue";
-
     Vue.use(Viewer, {
         defaultOptions: {
             zIndex: 300002
@@ -262,8 +257,44 @@
     import VueFoldable from 'vue-foldable'
     import 'vue-foldable/dist/vue-foldable.css'
     Vue.component('foldable', VueFoldable);
+
     export default {
         name: 'post',
+        data() {
+            return {
+                svgPath1: mdiChevronRight,
+                svgPath2: mdiCreditCard,
+                svgPath3: mdiContentCopy,
+                svgPath4: mdiCircle,
+                svgPath5: mdiTruckDelivery,
+                svgPath6: mdiSync,
+                svgPath7: mdiPackageVariantClosed,
+                read_more: true,
+                infoModal: false,
+                currentModal: 'paymentInfoModal',
+                sideModal: false,
+                currentSideItem: 'productCare',
+                productColor: {
+                    name: null,
+                    image: null
+                },
+                productMaterialChoice: {
+                    name: null,
+                    image: null
+                },
+                productMaterial: null,
+                settings: {
+                    "infinite": false,
+                    "speed": 500,
+                    "slidesToShow": 3,
+                    "slidesToScroll": 3,
+                    "initialSlide": 0,
+                    "dots": false,
+                    "draggable": true,
+                    "arrows": false,
+                },
+            }
+        },
         components: {
             VueSlickCarousel
         },
@@ -272,7 +303,6 @@
             const slug = params.slug;
             const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
             const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
-            context.store.commit('langs/SET_LANG_NAV', productItem.Languages || []);
             return {
                 productItem, productsItem
             }
@@ -337,66 +367,6 @@
             this.productMaterialChoice = this.product.material[0]
 
         },
-        data() {
-            return {
-                read_more: true,
-                infoModal: false,
-                currentModal: 'paymentInfoModal',
-                sideModal: false,
-                currentSideItem: 'productCare',
-                productColor: {
-                    name: null,
-                    image: null
-                },
-                productMaterialChoice: {
-                    name: null,
-                    image: null
-                },
-                productMaterial: null,
-                settings: {
-                    "dots": false,
-                    "infinite": false,
-                    "arrow": false,
-                    "speed": 500,
-                    "slidesToShow": 3,
-                    "slidesToScroll": 3,
-                    "initialSlide": 0,
-                    "responsive": [
-                        {
-                            "breakpoint": 1024,
-                            "settings": {
-                                "slidesToShow": 3,
-                                "slidesToScroll": 3,
-                                "infinite": true,
-                                "dots": true
-                            }
-                        },
-                        {
-                            "breakpoint": 768,
-                            "settings": {
-                                "slidesToShow": 2,
-                                "slidesToScroll": 2,
-                                "initialSlide": 2
-                            }
-                        },
-                        {
-                            "breakpoint": 480,
-                            "settings": {
-                                "slidesToShow": 1,
-                                "slidesToScroll": 1
-                            }
-                        }
-                    ]
-                },
-                settingsSingle: {
-                    "dots": true,
-                    "infinite": false,
-                    "speed": 500,
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1,
-                }
-            }
-        },
         methods: {
             openModal(modalName) {
                 this.currentModal = modalName;
@@ -444,34 +414,13 @@
     }
 </script>
 <style lang="scss">
-  .bold-title {
-    font-size: 2.125rem;
-    line-height: 2.125rem;
-    color: inherit;
-    font-weight: 700;
-    text-transform: uppercase;
-    text-align: center;
-  }
-
-  .backButton {
-    position: absolute;
-    left: 5px;
-    top: 8px;
-    z-index: 1;
-  }
-
-  .border-bottom-1 {
-    border-bottom: solid 1px #cbcbcb99 !important;
-  }
-
-  .border-top-1 {
-    border-top: solid 1px #cbcbcb99 !important;
-  }
 
   .right-icon {
     font-size: 35px !important;
   }
-
+  .slick-slide > div > div {
+      outline: none;
+  }
   .right-title {
     font-size: 18px;
     font-weight: 500;
@@ -480,18 +429,6 @@
 
   span.teradeli-light {
     font-size: 14px;
-  }
-
-  .img-wrapper {
-    img {
-      max-height: 84vh;
-      max-width: 100%;
-      margin: auto;
-    }
-
-    &:focus {
-      outline: none !important;
-    }
   }
 
   .vue-foldable-container {

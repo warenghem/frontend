@@ -16,16 +16,6 @@
 
     export default {
         name: "app-footer",
-        i18n: {
-            messages: {
-                en: {
-                    references: "Warenghem Studio",
-                },
-                fr: {
-                    references: "Nos certifications",
-                }
-            }
-        },
        data() {
             return {
                 CO2SiteLogo,CO2TechLogo,PETALogo,

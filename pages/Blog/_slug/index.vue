@@ -64,7 +64,6 @@
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
             const post = await $content(`${app.i18n.locale}/blog`, slug).fetch();
-            context.store.commit('langs/SET_LANG_NAV', post.Languages || []);
             return {
                 post,
             }
@@ -73,6 +72,58 @@
             Languages() {
                 return this.post.Languages || []
             },
+        },
+        methods: {
+            formatDate(date) {
+              const options = { year: 'numeric', month: 'long', day: 'numeric' }
+              return new Date(date).toLocaleDateString(`${this.$i18n.locale}`, options)
+            }
+        },
+        head() {
+            return {
+                title: this.post.title,
+                htmlAttrs: {
+                    lang: this.$i18n.locale,
+                },
+                meta: [
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content: this.post.description,
+                    },
+                    {
+                        property: 'og:title',
+                        hid: 'og:title',
+                        content: this.post.title,
+                    },
+                    {
+                        hid: 'og:image',
+                        property: 'og:image',
+                        content: this.post.media,
+                    },
+                ],
+            };
+        },
+    }
+/*
+    export default {
+        name: 'post',
+        transition: 'home',
+        middleware ({ app, params, redirect }) {
+          if (params.pathMatch === 'index') {
+            redirect(app.localePath('/'))
+          }
+        },
+        async asyncData ({ $content, store, app, params, error }) {
+          const path = `/${app.i18n.locale}/${params.pathMatch || 'index'}`
+          const [post] = await $content({ deep: true }).where({ path }).fetch()
+          const [prev, next] = await $content(app.i18n.locale, { deep: true })
+            .fetch()
+          return {
+            post,
+            prev,
+            next
+          }
         },
         methods: {
             formatDate(date) {
@@ -106,7 +157,5 @@
             };
         },
     }
+  */
 </script>
-<style scoped lang="scss">
-
-</style>

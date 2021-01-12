@@ -207,67 +207,65 @@
             //     }, 100);
             // }
         },
-        methods: {},
-        i18n: {
-            messages: {
-                en: {
-                    video: {
-                        title: 'Inspired by tradition. ',
-                        title2: 'Made for the future.',
-                        subtitle: 'Meeting between French leather traditions and our wine leathers',
-                        tag1: 'Ecological / Vegan',
-                        tag2: 'Made in France',
-                        tag3: 'Sustainable technology',
-                        forest: {
-                            term1: 'trees planted',
-                            term2: 'tonnes of CO2 offset',
-                            term3: 'reforested hectares'
-                        },
-                        rightSection: {
-                            title: 'Project progress',
-                            tag: 'Creation <br> of 3D objects',
-                            subtitle: "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed of the progress of the project.",
-                            label1: 'FIRST NAME',
-                            label2: 'EMAIL',
-                            alerttitle: 'Warenghem says',
-                            alerttime: 'just now',
-                            error: 'looks invalid or already subscribed. ',
-                            success: 'Thank you! To avoid SPAM, we have sent you a confirmation email before ' +
-                                'start planting ... see you soon!'
-                        }
-                    }
-                },
-                fr: {
-                    video: {
-                        title: 'Inspiré par la tradition. ',
-                        title2: 'Fabriqué pour le futur.',
-                        subtitle: 'Chaussures et maroquinerie en cuir vététal de vin',
-                        tag1: 'Ecologique / Vegan',
-                        tag2: 'Made in France',
-                        tag3: 'Technologie durable',
-                        forest: {
-                            term1: 'arbres plantés',
-                            term2: 'tonnes CO2 compensées',
-                            term3: 'hectares reforestés'
-                        },
-                        rightSection: {
-                            title: 'Avancement du projet',
-                            tag: 'Création <br> d’objets en 3D',
-                            subtitle: 'Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.',
-                            label1: 'PRENOM ',
-                            label2: 'EMAIL',
-                            alerttitle: 'Warenghem dit',
-                            alerttime: 'maintenant',
-                            error: 'semble invalide ou déjà enregistré.',
-                            success: 'Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de ' +
-                                'commencer la plantation... A tout de suite!'
-                        }
-                    }
-                },
-            }
-        }
     }
 </script>
+
+<i18n>
+{
+	"fr": {
+		"video": {
+			"forest": {
+				"term1": "arbres plantés",
+				"term2": "tonnes CO2 compensées",
+				"term3": "hectares reforestés"
+			},
+			"rightSection": {
+				"alerttime": "maintenant",
+				"alerttitle": "Warenghem dit",
+				"error": "semble invalide ou déjà enregistré.",
+				"label1": "PRENOM ",
+				"label2": "EMAIL",
+				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
+				"tag": "Création <br> d’objets en 3D",
+				"title": "Avancement du projet"
+			},
+			"subtitle": "Chaussures et maroquinerie en cuir vététal de vin",
+			"tag1": "Ecologique / Vegan",
+			"tag2": "Made in France",
+			"tag3": "Technologie durable",
+			"title": "Inspiré par la tradition. ",
+			"title2": "Fabriqué pour le futur."
+		}
+	},
+	"en": {
+		"video": {
+			"forest": {
+				"term1": "planted trees",
+				"term2": "tonnes of CO2 offset",
+				"term3": "reforested hectares"
+			},
+			"rightSection": {
+				"alerttime": "Now",
+				"alerttitle": "Warenghem says",
+				"error": "seems invalid or already registered.",
+				"label1": "First Name",
+				"label2": "e-mail",
+				"subtitle": "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed about the progress of the project.",
+				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
+				"tag": "Creation <br> of 3D objects",
+				"title": "Project progress"
+			},
+			"subtitle": "Wine vetal leather shoes and leather goods",
+			"tag1": "Ecological / Vegan",
+			"tag2": "Made in France",
+			"tag3": "Sustainable technology",
+			"title": "Inspired by tradition. ",
+			"title2": "Made for the future."
+		}
+	}
+}
+</i18n>
 
 <style scoped lang="scss">
   @import "../assets/scss/home/video";

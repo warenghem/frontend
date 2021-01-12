@@ -957,3 +957,12 @@ body {
   transform: translateX(500px);
   opacity: 0;
 }
+
+.wa-product-image {
+  object-fit: contain;
+  max-height: 70vh;
+}
+
+.vue-foldable .vue-foldable-mask {
+  bottom: 28px!important;
+}

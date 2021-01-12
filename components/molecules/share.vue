@@ -34,21 +34,6 @@
         mounted() {
           console.log(this.$route.params.slug);
         },
-        i18n: {
-            messages: {
-                en: {
-                    term1: 'planted trees',
-                    term2: 'ton of CO2 compensated',
-                    term3: 'reforested hectares',
-
-                },
-                fr: {
-                    term1: 'arbres plantés',
-                    term2: 'tonnes de CO2 compensées',
-                    term3: 'hectares reforestés',
-                }
-            }
-        },
     }
 </script>
 

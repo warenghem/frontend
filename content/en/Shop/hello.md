@@ -1,18 +1,18 @@
 ---
 id: '1'
-sku: M45604
-name: Some Amazing Product
-description: This new bags ... 
+sku: WA48NB
+name: Dionysos 48H
+description: Vines and flax. Such is his destiny.
 additionalProperty:
-- details: Leather Goods
+- details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 - care: Care for this product
 dimensions:
-  length: '290'
-  width: '100'
-  height: '250'
+  length: '536'
+  width: '201'
+  height: '288'
 manufacturer: ''
 material:
-- name: Dionysos Leather
+- name: Dionysos® Wine Leather
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Linen
   image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
@@ -24,7 +24,7 @@ award:
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: true
+  availability: Available soon - 30 pieces
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -36,14 +36,14 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
+- src: "Products/sac_face.png"
   attributes: "NaturalBlack"
   material: Dionysos Leather
   name: ''
   alt: ''
   availability: true
-- src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
-  attributes: "DeserticCamel"
+- src: "Products/sac_cote.png"
+  attributes: "Desertic Camel"
   material: Linen
   name: ''
   alt: ''
@@ -51,9 +51,9 @@ image:
 attributes:
 - name: Color
   options:
-  - name: NaturalBlack
+  - name: Natural Black
     icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-  - name: DeserticCamel
+  - name: Desertic Camel
     icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - name: Size
   options:
@@ -62,19 +62,13 @@ attributes:
   - '43'
 default_attributes:
 - name: Color
-  option: NaturalBlack
+  option: Natural Black
 - name: Size
   option: '41'
 isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
-path: /en/shop/hello
-Languages:
-- locale: en
-  path: /en/shop/hello
-- locale: fr
-  path: /fr/shop/bonjour
 ---
 
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.

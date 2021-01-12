@@ -81,87 +81,78 @@
                 products: this.$t('products'),
             }
         },
-        i18n: {
-            messages: {
-                en: {
-                    productTitle: 'Objects in creation',
-                    products: [
-                        {
-                            tag: 'Available soon - 30 pieces',
-                            title: 'Dionysos Boots 48H',
-                            summary: 'Vines and flax. Such is his destiny. ',
-                            desc: 'The biggest of the bags. Composed of grapes and a French linen lining. ' +
-                                'Indispensable for weekends, sports, or short stays. This is the room ' +
-                                'mistress, which sets the tone for the collection.',
-                            visualtocome: '',
-                        },
-                        {
-                            tag: 'Available soon - 30 pieces',
-                            title: 'Dionysos Belt',
-                            summary: "She won't let you down.All in nobility.",
-                            desc: 'Wide and thick, with saddle finish, it also fits well on' +
-                                'a suit than jeans.',
-                            visualtocome: '',
-                        },
-                        {
-                            tag: 'Available soon - 30 pieces',
-                            title: 'Dionysos Wallet',
-                            summary: 'Plant like its leaves. Obviously.',
-                            desc: 'Ally of your daily life, it is competed around oblique lines representing the' +
-                                'W emblematic of the brand. Each of them has space for your cards.',
-                            visualtocome: '',
-                        },
-                        {
-                            tag: 'Visuals to come',
-                            title: 'Dionysos Boots',
-                            summary: "",
-                            desc: "",
-                            visualtocome: 'Visual to come',
-                        },
-                    ]
-                },
-                fr: {
-                    productTitle: 'Les objets en création',
-                    products: [
-                        {
-                            tag: 'Disponible prochainement - 30 pièces',
-                            title: 'Dionysos 48H',
-                            summary: 'Des vignes et du lin. Tel est son destin.',
-                            desc: 'Le plus grand des sacs. Composé de raisins et d’une doublure en lin francais. ' +
-                                'Indispensable pour le week-end, le sport, ou les courts séjours. C’est la pièce ' +
-                                'maitresse, qui donne le ton de la collection.',
-                            visualtocome: '',
-                        },
-                        {
-                            tag: 'Disponible prochainement - 30 pièces',
-                            title: 'Dionysos Belt',
-                            summary: 'Elle ne vous laissera pas tomber.',
-                            desc: 'Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur ' +
-                                'un costume que sur un jean.',
-                            visualtocome: '',
-                        },
-                        {
-                            tag: 'Disponible prochainement - 30 pièces',
-                            title: 'Dionysos Wallet',
-                            summary: 'Végétal comme ses feuilles.',
-                            desc: 'Allié de votre quotidien, il est concu autours de lignes obliques représentant le' +
-                                ' W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.',
-                            visualtocome: '',
-                        },
-                        {
-                            tag: 'En cours de création',
-                            title: 'Dionysos Boots',
-                            summary: 'Les pieds sur terre. Tournée vers le futur.',
-                            desc: '',
-                            visualtocome: 'Visuels à venir',
-                        },
-
-                    ]
-                }
-            }
-        },
     }
 </script>
+<i18n>
+{
+	"fr": {
+		"productTitle": "Les objets en création",
+		"products": [
+			{
+				"desc": "Le plus grand des sacs. Composé de raisins et d’une doublure en lin francais. Indispensable pour le week-end, le sport, ou les courts séjours. C’est la pièce maitresse, qui donne le ton de la collection.",
+				"summary": "Des vignes et du lin. Tel est son destin.",
+				"tag": "Disponible prochainement - 30 pièces",
+				"title": "Dionysos 48H",
+				"visualtocome": ""
+			},
+			{
+				"desc": "Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur un costume que sur un jean.",
+				"summary": "Elle ne vous laissera pas tomber.",
+				"tag": "Disponible prochainement - 30 pièces",
+				"title": "Dionysos Belt",
+				"visualtocome": ""
+			},
+			{
+				"desc": "Allié de votre quotidien, il est concu autours de lignes obliques représentant le W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.",
+				"summary": "Végétal comme ses feuilles.",
+				"tag": "Disponible prochainement - 30 pièces",
+				"title": "Dionysos Wallet",
+				"visualtocome": ""
+			},
+			{
+				"desc": "",
+				"summary": "Les pieds sur terre. Tournée vers le futur.",
+				"tag": "En cours de création",
+				"title": "Dionysos Boots",
+				"visualtocome": "Visuels à venir"
+			}
+		]
+	},
+	"en": {
+		"productTitle": "Objects in creation",
+		"products": [
+			{
+				"desc": "The largest of the bags. Composed of grapes and a French linen lining. Indispensable for weekends, sports, or short stays. This is the centerpiece, which sets the tone for the collection.",
+				"summary": "Vines and flax. Such is his destiny.",
+				"tag": "Available soon - 30 pieces",
+				"title": "Dionysos 48H",
+				"visualtocome": ""
+			},
+			{
+				"desc": "Large and thick, with saddle finish, it fits just as well with a suit as with jeans.",
+				"summary": "She won't let you down.",
+				"tag": "Available soon - 30 pieces",
+				"title": "Dionysos Belt",
+				"visualtocome": ""
+			},
+			{
+				"desc": "Ally of your daily life, it is designed around oblique lines representing the emblematic W of the brand. Each of them has space for your cards.",
+				"summary": "Vegetal like its leaves.",
+				"tag": "Available soon - 30 pieces",
+				"title": "Dionysos Wallet",
+				"visualtocome": ""
+			},
+			{
+				"desc": "",
+				"summary": "Feet on the ground. Looking to the future.",
+				"tag": "Being created",
+				"title": "Dionysos Boots",
+				"visualtocome": "Visuals to come"
+			}
+		]
+	}
+}
+</i18n>
 
 <style scoped lang="scss">
 @import "../assets/scss/home/product";

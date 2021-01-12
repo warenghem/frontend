@@ -3,7 +3,7 @@
     <div class="topBar text-center d-none">
       {{$t('secondtoolbar.message')}}
     </div>
-    <v-navigation-drawer v-model="sidebar" clipped app class="d-md-none" v-bind:width="304">
+    <v-navigation-drawer v-model="sidebar" temporary app v-bind:width="304">
       <v-toolbar-title class="text-center py-10">
           <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
             <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
@@ -23,9 +23,9 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar class="menu-bar border-bottom-md-2" flat height="50px" :dark="type">
+    <v-app-bar clipped-left class="menu-bar border-bottom-md-2" flat height="42px" :dark="type">
 
-      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
+      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-3">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>
       <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
@@ -39,7 +39,7 @@
         </v-btn>
       </v-toolbar-items>
       <v-spacer></v-spacer>
-      <v-toolbar-title class="centerabsolute v-toolbar__logo pt-2">
+      <v-toolbar-title class="centerabsolute v-toolbar__logo pt-1">
         <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
           <div class="svglogo logo" width="140" v-html="Logo" />
         </nuxt-link>
@@ -61,7 +61,7 @@
           text
           class="px-0"
         >
-          <Internationalization/>
+          <AppLangSwitcher/>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -70,7 +70,7 @@
 
 <script>
     import { mdiMenu } from '@mdi/js'
-    import Logo from "~/assets/images/warenghem.svg?raw"
+    import Logo from "~/assets/images/Warenghem-w-noparis-vf.svg?raw"
     import LogoSm from "~/assets/images/WA-mif-g-vf.svg?raw"
     export default {
         name: "main-toolbar",

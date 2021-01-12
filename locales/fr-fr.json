@@ -1,5 +1,5 @@
 {
-  "message": "mera hasib",
+  "message": "fr data",
   "secondtoolbar": {
     "message": "Livraison gratuite à partir de 100 euros"
   },
@@ -9,6 +9,39 @@
     "calendar": "calendrier",
     "studio": "studio",
     "reforest": "reforestation"
+  },
+  "product": {
+    "cartBtn": "Placer dans le panier",
+    "stock": "En stock",
+    "notInStock": "Not En stock",
+    "findStore": "Find In Store",
+    "continueBtn": "Continuer vos achats",
+    "viewCart": "Afficher mon panier",
+    "careBtn": "Entretien du produit",
+    "readMore": "Lire la suite",
+    "readLess": "Lire moins",
+    "materialTitle": "Matières et entretien",
+    "payInfoBtn": {
+      "title": "Informations sur le paiement",
+      "desc": "Paiement par carte bancaire ou par Paypal."
+    },
+    "shipBtn": {
+      "title": "Informations sur la livraison",
+      "desc": "Livraison offerte à domicile"
+    },
+    "returnBtn": {
+      "title": "Informations sur les retours",
+      "desc": "Gratuit"
+    },
+    "packageBtn": {
+      "title": "Emballage",
+      "desc": "Emballage contemporain et écologique inspiré de notre patrimoine"
+    },
+    "like": "Vous pouvez aussi aimer",
+    "recommend": "recommandé",
+    "recent": "récemment consulté",
+    "color":"Couleurs",
+    "material": "Matières"
   },
   "btnTitle": "Je plante un arbre gratuitement",
   "router": {

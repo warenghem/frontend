@@ -8,7 +8,7 @@ export default {
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - frontend',
-    title: 'frontend',
+    title: 'Warenghem',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
@@ -43,6 +43,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
+    {src: '~/plugins/init', ssr: true},
+    {src: '~/plugins/i18n.client', ssr: true},
     {src: '~/plugins/lazysizes', ssr: false},
   ],
 
@@ -87,7 +89,7 @@ export default {
       appleStatusBarStyle: 'black',
       author: 'Kevin Brosseau',
       description: 'Warenghem App',
-      lang: 'fr',
+      lang: 'fr-FR',
       ogHost: 'www.warenghem.com',
       ogSiteName: 'Warenghem Studios',
       ogDescription: 'À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com',
@@ -98,37 +100,83 @@ export default {
 
   i18n: {
     strategy: 'prefix',
+    baseUrl: 'https://www.warenghem.com',
+    seo: false,
     lazy: true,
+    vueI18nLoader: true,
     langDir: 'locales/',
-    defaultLocale: 'fr',
+    defaultLocale: 'fr-FR',
     detectBrowserLanguage: {
-      alwaysRedirect: true,
-      fallbackLocale: 'fr',
-      onlyOnRoot: true,
       useCookie: true,
-      cookieCrossOrigin: false,
-      cookieDomain: null,
       cookieKey: 'i18n_redirected',
-      cookieSecure: false
+      cookieSecure: false,
+      cookieDomain: null,
+      alwaysRedirect: true,
+      onlyOnRoot: true,
+      cookieCrossOrigin: false,
     },
     vueI18n: {
       messages: {
-        fr: require('./locales/fr-fr.json'),
-        en: require('./locales/en-us.json'),
+        fr: require('./locales/fr-FR.json'),
+        en: require('./locales/en-US.json'),
       },
     },
     locales: [
       {
-        code: 'en',
-        iso: 'en-us',
-        name: 'English',
-        langFile:require('./locales/en-us.json')
+        code: 'fr-FR',
+        iso: 'fr-FR',
+        name: 'France',
+        langFile:require('./locales/fr-fr.json'),
+        currency: 'EUR',
+        currencySign: '€',
       },
       {
-        code: 'fr',
-        iso: 'fr-fr',
-        name: 'Français',
-        langFile:require('./locales/fr-fr.json')
+        code: 'en-GB',
+        iso: 'en-GB',
+        name: 'United Kingdom',
+        langFile:require('./locales/en-us.json'),
+        currency: 'GBP', 
+        currencySign: '£',
+      },
+      {
+        code: 'en-US',
+        iso: 'en-US',
+        name: 'United States',
+        langFile:require('./locales/en-us.json'),
+        currency: 'USD', 
+        currencySign: '$',
+      },
+      {
+        code: 'fr-CA',
+        iso: 'fr-CA',
+        name: 'Canada (Francais)',
+        langFile:require('./locales/fr-fr.json'),
+        currency: 'CAD', 
+        currencySign: 'C$',
+      },
+      {
+        code: 'en-CA',
+        iso: 'en-CA',
+        name: 'Canada (English)',
+        langFile:require('./locales/en-us.json'),
+        currency: 'CAD', 
+        currencySign: 'C$',
+      },
+      {
+        code: 'fr-CH',
+        iso: 'fr-CH',
+        name: 'Switzerland',
+        langFile:require('./locales/fr-fr.json'),
+        currency: 'CAD', 
+        currencySign: 'C$',
+      },
+      {
+        code: 'en',
+        iso: 'en',
+        name: 'European-Union (English)',
+        langFile:require('./locales/en-us.json'),
+        currency: 'EUR', 
+        currencySign: '€',
       },
     ],
   },

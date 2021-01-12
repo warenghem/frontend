@@ -119,12 +119,6 @@
                 }
             }
         },
-        i18n: {
-            messages: {
-                en: {},
-                fr: {}
-            }
-        },
         updated() {
             if (this.current === 'productCare') {
                 this.currentModal.modalTitle = this.$t('product.materialTitle');
@@ -136,8 +130,3 @@
         }
     }
 </script>
-
-<style scoped>
-
-</style>
-

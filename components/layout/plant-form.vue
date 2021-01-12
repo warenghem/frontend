@@ -117,42 +117,6 @@
         components: {
             MailchimpSubscribe,
         },
-        i18n: {
-            messages: {
-                en: {
-                    video: {
-                        rightSection: {
-                            title: 'Project progress',
-                            tag: 'Creation <br> of 3D objects',
-                            subtitle: "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed of the progress of the project.",
-                            label1: 'FIRST NAME',
-                            label2: 'EMAIL',
-                            alerttitle: 'Warenghem says',
-                            alerttime: 'just now',
-                            error: 'Your email looks invalid or already subscribed. Please contact us:',
-                            success: 'Thank you! To avoid SPAM, we have sent you a confirmation email before ' +
-                                'start planting ... see you soon!'
-                        }
-                    }
-                },
-                fr: {
-                    video: {
-                        rightSection: {
-                            title: 'Avancement du projet',
-                            tag: 'Création <br> d’objets en 3D',
-                            subtitle: 'Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.',
-                            label1: 'PRENOM ',
-                            label2: 'EMAIL',
-                            alerttitle: 'Warenghem dit',
-                            alerttime: 'maintenant',
-                            error: 'Votre email semble invalide ou déjà enregistré. Contactez nous:',
-                            success: 'Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de ' +
-                                'commencer la plantation... A tout de suite!'
-                        }
-                    }
-                },
-            }
-        },
         data() {
             return {
                 snackbarSuccess: false,
@@ -164,7 +128,40 @@
         },
     }
 </script>
-
+<i18n>
+{
+	"fr": {
+		"video": {
+			"rightSection": {
+				"alerttime": "maintenant",
+				"alerttitle": "Warenghem dit",
+				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
+				"label1": "PRENOM ",
+				"label2": "EMAIL",
+				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
+				"tag": "Création <br> d’objets en 3D",
+				"title": "Avancement du projet"
+			}
+		}
+	},
+	"en": {
+		"video": {
+			"rightSection": {
+				"alerttime": "Now",
+				"alerttitle": "Warenghem says",
+				"error": "Your email appears to be invalid or already registered. Contact us:",
+				"label1": "First Name",
+				"label2": "e-mail",
+				"subtitle": "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed about the progress of the project.",
+				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
+				"tag": "Creation <br> of 3D objects",
+				"title": "Project progress"
+			}
+		}
+	}
+}
+</i18n>
 <style scoped>
 
 </style>

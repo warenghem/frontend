@@ -170,7 +170,38 @@
             }
         }
     }
-
+/*
+<i18n locale="fr" lang="json5">
+{
+  "fr": {
+        "title": "Warenghem Studios",
+        "subtitle":"Nos bureaux sont situés à Paris et dans le Var, nos usines sont situées un peu partout en France. Notre équipe s'agrandie, écrivez nous...",
+        "profiles": [
+            {
+                "key": 1,
+                "role": "Fondateur & Directeur Artistique",
+                "biography": "Convaincu par un monde ou la nature serait omniprésente autour de nous, j’ai décidé d’utiliser mes connaissances acquises dans le monde de l’entreprise pour des causes qui nous tiennent à cœur. Créons ensemble des objets français écologiquement parfaits et intuitifs."
+            },
+            {
+                "key": 2,
+                "role": "Designer",
+                "biography": "Après avoir étudié le style et le modélisme à Esmod Paris, j’ai fait mes armes au sein du studio créatif de la maison Courrèges. Je créé des produits à la fois fonctionnels et esthétiques, mêlant références architecturales, design graphique, et mode, convaincu que ces différentes typologies sont complémentaires.",
+            },
+            {
+                "key": 3,
+                "role": "Designer",
+                "biography": "Ancienne étudiante à Esmod Paris, jai commencé ma carrière en tant que styliste au sein de diverses maisons, et dans un second temps en lancant ma marque de maroquinerie. Aujourd’hui, j’évolue à travers différents univers qui mêlent design et photographie. J’adore porter un regard global sur une création, et lui trouver une identité forte qui la distinguera des autres.",
+            },
+            {
+                "key": 4,
+                "role": "Recherche & Developpement / Matières & Technologies",
+                "biography": "Après quelques années à travailler comme ingénieur spatial chez Airbus, j’ai repris un Master Gestion de l’écosystème et de la biodiversité à l’Université de Montréal. Je recherche les matières végétales les plus écologiques et les technologies durables qui pourraient nous accompagner."
+            }
+        ],
+    }
+}
+</i18n>
+*/
 </script>
 <style scoped lang="scss">
     .team-section {
