@@ -15,12 +15,12 @@
                 class="d-none"
             />
             <v-icon>{{ svgPath }}</v-icon>
-            <span style="font-size: 1.5em;" class="px-2 d-none">-</span>
-            <div class="d-none" style="font-size: 1.5em;">
-                {{$i18n.localeProperties}}
+            <span class="px-2">-</span>
+            <div>
+                {{$i18n.localeProperties.name}}
             </div>
         </v-btn>
-    </template>  
+    </template> 
     <slot name="langSwitcher">
         <div class="bg-white">
             <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
@@ -43,7 +43,7 @@
                                 class="flex items-center whitespace-no-wrap"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-xl pa-5"
+                                    class="bg-white rounded-lg pa-5"
                                     @click="sheet = false"
                                     ripple
                                 >

@@ -1,41 +1,29 @@
 <template>
   <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
 
-    <v-app-bar class="menu-bar pr-4" flat height="48px">
-      <div class="d-flex align-center">
-        <div class="ma-2 grey">
-          <img :src="product.image[0].src"
-               :lazy-src="require('../../assets/images/image-loader.gif')"
-               class="lazyload"
+    <v-app-bar class="menu-bar pr-1" flat height="48px">
+      <div class="d-flex align-center ml-1">
+        <div style="width:40px" class="wa-smart-picture square-ratio skeletton wa-product-image bgcard">
+          <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1/'+ product.image[0].src"
+               class="lazyload mediabox-img"
                alt=""
-               height="40px"
-               width="40px"
           >
         </div>
         <div style="font-weight:600" class="sub-title text-uppercase pa-2 d-none d-md-block">{{product.name}}</div>
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center">
-        <div class="pa-2">
+        <div class="smalltext ml-3">
           <div>
-
-            <v-icon small :class="{'available':product.offers.availability}">{{ svgPath1 }}</v-icon>
-
+            <v-icon x-small :class="{'available':product.offers.availability}">{{ svgPath1 }}</v-icon>
             {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
           </div>
-          <v-progress-circular
-            indeterminate
-            color="primary"
-            :size="20"
-            v-show="$store.state.product.loading"
-          ></v-progress-circular>
-          <h3 class="teradeli-light priceHide" v-show="!$store.state.product.loading">
-            {{product.price}} {{$store.state.langs.currentLang.sign}}</h3>
+          <h3 class="teradeli-book">
+            {{product.price}} {{$i18n.localeProperties.currencySign}}</h3>
         </div>
-        <div class="pa-2">
+        <div>
           <Buybutton/>
         </div>
-
       </div>
     </v-app-bar>
   </section>

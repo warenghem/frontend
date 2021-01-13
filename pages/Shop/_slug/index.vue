@@ -71,7 +71,7 @@
             <div>
             </div>
           </div>
-          <div style="height:60px" class="border-top-2 pb-5 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
+          <div style="height:60px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
                v-if="productColor.name"
           >
@@ -80,27 +80,21 @@
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productColor.name}}
-              <img :src="productColor.image.icon" alt="" v-if="productColor.image" width="40px" class="mx-3">
+              <img :src="productColor.image.icon" alt="" v-if="productColor.image" width="40px" class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
           </div>
           <div class="d-flex justify-space-between align-center mt-3">
-            <v-progress-circular
-              indeterminate
-              color="primary"
-              :size="20"
-              v-show="$store.state.product.loading"
-            ></v-progress-circular>
-            <h3 style="font-weight: 900" class="priceHide" v-show="!$store.state.product.loading">{{product.price}}
-              {{$store.state.langs.currentLang.sign}}</h3>
-            <div>
-              <v-icon small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
+            <h3 class="teradeli-book">{{product.price}}
+              {{$i18n.localeProperties.currencySign}}</h3>
+            <div class="smalltext">
+              <v-icon x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
               {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
             </div>
           </div>
           <Buybutton/>
-          <div class="mt-5">
+          <div class="my-5">
             <foldable :minHeight="100" height="20%">
               <div v-html="product.additionalProperty[0].details"
               >
@@ -310,7 +304,7 @@
         computed: {
             product() {
                 let currency = this.productItem.currency.find(currency => {
-                    return currency.name === this.$store.state.langs.currentLang.currency
+                    return currency.name === this.$i18n.localeProperties.currencySign
                 });
                 if (currency) {
                     this.productItem.price = currency.price;
