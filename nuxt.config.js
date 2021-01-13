@@ -100,7 +100,6 @@ export default {
 
   i18n: {
     strategy: 'prefix',
-    baseUrl: 'https://www.warenghem.com',
     seo: false,
     lazy: true,
     vueI18nLoader: true,
@@ -115,17 +114,12 @@ export default {
       onlyOnRoot: true,
       cookieCrossOrigin: false,
     },
-    vueI18n: {
-      messages: {
-        fr: require('./locales/fr-FR.json'),
-        en: require('./locales/en-US.json'),
-      },
-    },
     locales: [
       {
         code: 'fr-FR',
         iso: 'fr-FR',
         name: 'France',
+        region: 'Europe',
         file: 'fr-FR.json',
         currency: 'EUR',
         currencySign: '€',
@@ -134,6 +128,7 @@ export default {
         code: 'en-GB',
         iso: 'en-GB',
         name: 'United Kingdom',
+        region: 'Europe',
         file: 'en-US.json',
         currency: 'GBP', 
         currencySign: '£',
@@ -143,6 +138,7 @@ export default {
         iso: 'en-US',
         name: 'United States',
         file: 'en-US.json',
+        region: 'America',
         currency: 'USD', 
         currencySign: '$',
       },
@@ -150,6 +146,7 @@ export default {
         code: 'fr-CA',
         iso: 'fr-CA',
         name: 'Canada (Francais)',
+        region: 'America',
         file: 'fr-FR.json',
         currency: 'CAD', 
         currencySign: 'C$',
@@ -158,6 +155,7 @@ export default {
         code: 'en-CA',
         iso: 'en-CA',
         name: 'Canada (English)',
+        region: 'America',
         file: 'en-US.json',
         currency: 'CAD', 
         currencySign: 'C$',
@@ -166,6 +164,7 @@ export default {
         code: 'fr-CH',
         iso: 'fr-CH',
         name: 'Switzerland',
+        region: 'Europe',
         file: 'fr-FR.json',
         currency: 'CAD', 
         currencySign: 'C$',
@@ -173,12 +172,19 @@ export default {
       {
         code: 'en',
         iso: 'en',
-        name: 'European-Union (English)',
+        name: 'Other European Union Regions (English)',
+        region: 'Europe',
         file: 'en-US.json',
         currency: 'EUR', 
         currencySign: '€',
       },
     ],
+  },
+  vueI18n: {
+    messages: {
+      fr: require('./locales/fr-FR.json'),
+      en: require('./locales/en-US.json'),
+    },
   },
   hooks: {
     'content:file:beforeInsert': (document) => {

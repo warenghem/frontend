@@ -62,7 +62,7 @@
               <v-card
                v-if="productMaterialChoice.name"
                >
-               <img class="rounded-lg" :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image">
+               <img width="40px" class="rounded-lg" :src="productMaterialChoice.icon" alt="" v-if="productMaterialChoice.icon">
                <v-card-text class="pa-0">
                  {{productMaterialChoice.name}}
                </v-card-text>
@@ -80,7 +80,7 @@
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productColor.name}}
-              <img :src="productColor.image.icon" alt="" v-if="productColor.image" width="40px" class="mx-3 rounded-lg">
+              <img :src="productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
@@ -227,7 +227,7 @@
     </v-container>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
-                :product="product"/>
+                :product="product" @colorSelect="colorSelect" @materialSelect="materialSelect"/>
   </div>
 
 </template>
@@ -271,6 +271,9 @@
                     name: null,
                     image: null
                 },
+                productImages: [],
+                selectedColor: null,
+                selectedMaterial: null,
                 productMaterialChoice: {
                     name: null,
                     image: null
@@ -352,13 +355,9 @@
 
         },
         mounted() {
-            var name = this.product.default_attributes.find(p => p.name === 'Color').option;
-            this.productColor = {
-                name: name,
-                image: this.product.attributes.find(p => p.name === 'Color').options.find(op => op.name === name)
-            };
-            this.productMaterialChoice = this.product.material[0]
-
+            this.productColor = this.product.colors[0];
+            this.productMaterialChoice = this.product.material[0];
+            this.productImages = this.product.image
         },
         methods: {
             openModal(modalName) {
@@ -377,8 +376,23 @@
                 const el = document.body;
                 el.classList.remove("modal-open");
                 document.documentElement.style.overflowY = 'auto';
-            }
-
+            },
+            colorSelect(val) {
+                this.selectedColor = val;
+                this.productImages = this.product.image.filter(img => {
+                    if (img.color === parseInt(this.selectedColor)) {
+                        return img
+                    }
+                });
+            },
+            materialSelect(val) {
+                this.selectedMaterial = val;
+                this.productImages = this.product.image.filter(img => {
+                    if (img.material === parseInt(this.selectedMaterial)) {
+                        return img
+                    }
+                });
+              }
         },
         head() {
             return {

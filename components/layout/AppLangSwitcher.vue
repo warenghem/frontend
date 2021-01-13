@@ -43,18 +43,20 @@
                                 class="flex items-center whitespace-no-wrap"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-lg pa-5"
+                                    class="bg-white rounded-lg pa-5 h-100"
                                     @click="sheet = false"
                                     ripple
                                 >
-                                    <img :src="locale.img"
-                                        width="24"
-                                        class="ml-3 d-none"
-                                        alt="lang flag"
-                                    />
-                                    {{ locale.name }}
-                                    <span class="px-2">-</span>
-                                    {{ locale.currencySign }}
+                                    <v-card-actions class="justify-center h-100">
+                                        <img :src="locale.img"
+                                            width="24"
+                                            class="ml-3 d-none"
+                                            alt="lang flag"
+                                        />
+                                        {{ locale.name }}
+                                        <span class="px-2">-</span>
+                                        {{ locale.currencySign }}
+                                    </v-card-actions>
                                 </v-card>
                             </nuxt-link>
                         </div>

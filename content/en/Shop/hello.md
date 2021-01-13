@@ -7,15 +7,35 @@ additionalProperty:
 - details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 - care: Care for this product
 dimensions:
-  length: '536'
-  width: '201'
-  height: '288'
+  length: '290'
+  width: '100'
+  height: '250'
 manufacturer: ''
+colors:
+  - id: 1
+    name: Natural Black
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 2
+    name: Desertic Camel
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 material:
-- name: Dionysos® Wine Leather
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-- name: Linen
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 1
+    name: Dionysos® Wine Leather
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    color:
+      - id: 1
+        name: Natural Black
+        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+      - id: 2
+        name: Desertic Camel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 2
+    name: Linen
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow" 
+    color:
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
@@ -24,7 +44,7 @@ award:
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: Available soon - 30 pieces
+  availability: true
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -37,24 +57,18 @@ tags:
 - name: Bags
 image:
 - src: "Products/sac_face.png"
-  attributes: "NaturalBlack"
-  material: Dionysos Leather
+  color: 2
+  material: 1
   name: ''
   alt: ''
   availability: true
 - src: "Products/sac_cote.png"
-  attributes: "Desertic Camel"
-  material: Linen
+  color: 1
+  material: 2
   name: ''
   alt: ''
   availability: false
 attributes:
-- name: Color
-  options:
-  - name: Natural Black
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-  - name: Desertic Camel
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - name: Size
   options:
   - '41'

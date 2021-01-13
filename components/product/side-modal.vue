@@ -26,58 +26,72 @@
       </v-card-text>
       <v-card-text class="pa-4" v-if="current === 'colorSide'">
         <v-row>
-          <v-col lg="6" v-for="item in product.image"
-                 :key="item.attributes">
-            <v-card
-              class="mx-auto"
-              max-width="344"
-
+          <v-col lg="6" v-for="item in product.colors"
+                 :key="item.id">
+            <input type="radio" hidden :id="'color_'+item.id" :value="item.id"
+                    class="radioSelect"
+                    @input="$emit('colorSelect',$event.target.value)"
+                   name="colorSelect"
             >
-              <v-img
-                :src="item.src"
-                height="200px"
-                class="mx-2 bg-light"
-                style="top:7px"
-              ></v-img>
+            <label :for="'color_'+item.id">
+              <v-card
+                class="mx-auto"
+                max-width="344"
 
-              <v-card-subtitle class="pt-4 pb-1">
-                {{item.attributes}}
-              </v-card-subtitle>
-              <v-card-subtitle class="pb-2 pt-0">
-                <v-icon x-small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
+              >
+                <v-img
+                  :src="product.image.find(img => img.color === item.id).src"
+                  height="200px"
+                  class="mx-2 bg-light"
+                  style="top:7px"
+                ></v-img>
 
-                {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
-              </v-card-subtitle>
-            </v-card>
+                <v-card-subtitle class="pt-4 pb-1">
+                  {{item.name}}
+                </v-card-subtitle>
+                <v-card-subtitle class="pb-2 pt-0">
+                  <v-icon x-small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
+
+                  {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
+                </v-card-subtitle>
+              </v-card>
+            </label>
+
           </v-col>
 
         </v-row>
       </v-card-text>
       <v-card-text class="pa-4" v-if="current === 'materialSide'">
         <v-row>
-          <v-col lg="6" v-for="item in product.image"
-                 :key="item.materials">
-            <v-card
-              class="mx-auto"
-              max-width="344"
+          <v-col lg="4" v-for="item in product.material"
+                 :key="item.id">
+             <input type="radio"
+                   hidden
+                   :id="'mat_'+item.id"
+                   :value="item.id"
+                   class="radioSelect"
+                     name="matSelect"
+                    @input="$emit('materialSelect',$event.target.value)"
+                   >
+            <label :for="'mat_'+item.id">
+              <v-card
+                class="mx-auto"
+                max-width="344"
 
-            >
-              <v-img
-                :src="item.src"
-                height="200px"
-                class="mx-2 bg-light"
-                style="top:7px"
-              ></v-img>
+              >
+                <v-img
+                  :src="item.icon"
+                  height="100px"
+                  class="mx-2 bg-light"
+                  style="top:7px"
+                ></v-img>
 
-              <v-card-subtitle class="pt-4 pb-1">
-                {{item.material}}
-              </v-card-subtitle>
-              <v-card-subtitle class="pb-2 pt-0">
-                <v-icon x-small :class="{'available':product.offers.availability}">mdi-circle</v-icon>
+                <v-card-subtitle class="pt-4 pb-1">
+                  {{item.name}}
+                </v-card-subtitle>
+              </v-card>
+            </label>
 
-                {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
-              </v-card-subtitle>
-            </v-card>
           </v-col>
 
         </v-row>
@@ -109,14 +123,20 @@
         methods: {
             closeModal() {
                 this.$emit('closeModal')
-            }
+            },
         },
         data() {
             return {
                 currentModal: {
                     modalTitle: '',
                     modalContent: ''
-                }
+                },
+            }
+        },
+        i18n: {
+            messages: {
+                en: {},
+                fr: {}
             }
         },
         updated() {
@@ -127,6 +147,14 @@
             } else if (this.current === 'materialSide') {
                 this.currentModal.modalTitle = this.$t('product.material');
             }
-        }
+        },
     }
 </script>
+
+<style lang="scss">
+.radioSelect:checked + label {
+  .v-card{
+    border: 2px solid #2c3338;
+  }
+}
+</style>

@@ -12,20 +12,40 @@ dimensions:
   width: '201'
   height: '288'
 manufacturer: ''
+colors:
+  - id: 1
+    name: Natural Black
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 2
+    name: Desertic Camel
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 material:
-- name: Cuir de vin Dionysos®
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-- name: Lin
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 1
+    name: Cuir de Vin Dionysos®
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    color:
+      - id: 1
+        name: NaturalBlack
+        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  - id: 2
+    name: Lin
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    color:
+      - id: 2
+        name: DeserticCamel
+        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-- name: Ecologique
-  slug: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+- name: Ecological
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: Disponible prochainement - 30 pièces
+  availability: Available soon - 30 pieces
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -38,24 +58,18 @@ tags:
 - name: Bags
 image:
 - src: "Products/sac_face.png"
-  attributes: "NaturalBlack"
-  material: Cuir de vin Dionysos
+  color: 2
+  material: 1
   name: ''
   alt: ''
   availability: true
 - src: "Products/sac_cote.png"
-  attributes: "Desertic Camel"
-  material: Lin
+  color: 1
+  material: 2
   name: ''
   alt: ''
   availability: false
 attributes:
-- name: Color
-  options:
-  - name: Natural Black
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-  - name: Desertic Camel
-    icon: "/deserticcamel.jpeg"
 - name: Size
   options:
   - '41'
@@ -72,16 +86,16 @@ brand:
   name: Warenghem
 ---
 
-Renforcez votre application NuxtJS avec le module `@ nuxtjs / content`: écrivez dans un répertoire` content /` et récupérez vos fichiers Markdown, JSON, YAML et CSV via une API similaire à MongoDB, agissant comme un ** CMS Headless basé sur Git ** .
+Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
-## Rédaction de contenu
+## Writing content
 
-Apprenez à écrire votre `content /`, en prenant en charge Markdown, YAML, CSV et JSON: https://content.nuxtjs.org/writing.
+Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
 
-## Récupération du contenu
+## Fetching content
 
-Apprenez à récupérer votre contenu avec `$ content`: https://content.nuxtjs.org/fetching.
+Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
 
-## Affichage du contenu
+## Displaying content
 
-Apprenez à afficher votre contenu Markdown avec le composant `<nuxt-content>` `directement dans votre modèle: https://content.nuxtjs.org/displaying.
+Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
