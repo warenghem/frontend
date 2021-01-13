@@ -43,19 +43,6 @@ export const actions = {
     await dispatch('getForestDetail');
   },
 
-/* From Nuxt Team */
-  async fetchCategories ({ commit, state }) {
-    // Avoid re-fetching in production
-    if (process.dev === false && state.categories[this.$i18n.locale]) {
-      return
-    }
-    const docs = await this.$content(this.$i18n.locale, { deep: true }).only(['title', 'menuTitle', 'category', 'slug', 'version', 'to']).sortBy('position', 'asc').fetch()
-
-    const categories = groupBy(docs, 'category')
-
-    commit('SET_CATEGORIES', categories)
-  },
-
 };
 
 export const modules = {
