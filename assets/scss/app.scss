@@ -970,3 +970,8 @@ body {
   font-size: 0.875rem;
   line-height: 1.2rem;
 }
+@media(max-width:64em) {
+  .mobilescrollable {
+    overflow: auto;
+  }
+}

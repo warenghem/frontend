@@ -2,7 +2,6 @@ import Vue from 'vue'
 import groupBy from 'lodash.groupby'
 
 import link from './link'
-import langs from './langs'
 import picture from './picture'
 import product from './product'
 
@@ -60,5 +59,5 @@ export const actions = {
 };
 
 export const modules = {
-  link, langs, picture, product
+  link, picture, product
 };

@@ -93,8 +93,6 @@
 
 <script>
     import link from './../../store/link'
-    import langs from './../../store/langs'
-
 
     export default {
         name: "appmain-toolbar",
