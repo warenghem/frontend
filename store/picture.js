@@ -1,4 +1,3 @@
-import {mutations} from "~/store/langs";
 
 const state = () => ({
   backgroundImages: [

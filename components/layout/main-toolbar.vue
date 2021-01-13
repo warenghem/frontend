@@ -5,7 +5,7 @@
     </div>
     <v-navigation-drawer v-model="sidebar" temporary app v-bind:width="304">
       <v-toolbar-title class="text-center py-10">
-          <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
+          <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
             <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
           </nuxt-link>
       </v-toolbar-title>
@@ -40,7 +40,7 @@
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo pt-1">
-        <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
+        <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
           <div class="svglogo logo" width="140" v-html="Logo" />
         </nuxt-link>
       </v-toolbar-title>
@@ -56,7 +56,7 @@
           {{$t(link.name)}}
         </v-btn>
       </v-toolbar-items>
-      <v-toolbar-items class="d-none d-md-block">
+      <v-toolbar-items>
         <v-btn
           text
           class="px-0"

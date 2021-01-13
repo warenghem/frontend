@@ -2,7 +2,7 @@
     <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
         <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
-              <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
+              <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
                 <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
               </nuxt-link>
           </v-toolbar-title>         
@@ -27,7 +27,7 @@
               <v-icon>{{ svgPath }}</v-icon>
             </v-app-bar-nav-icon>
             <v-toolbar-title class="d-md-block pr-4 d-none">
-                <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
+                <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
                   <div style="fill: #19110b;stroke: #19110b;width:35px" v-html="LogoSmSm" />
                 </nuxt-link>
             </v-toolbar-title>

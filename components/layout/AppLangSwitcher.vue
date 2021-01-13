@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-sheet v-if="availableLocales.length" v-model="sheet">
+  <v-bottom-sheet scrollable v-if="availableLocales.length" v-model="sheet">
     <template v-slot:activator="{ on, attrs }">
         <v-btn
             text
@@ -8,22 +8,19 @@
             :ripple="false"
             class="nohover item priceHide"
         >
-            <img :src="$i18n.localeProperties"
+            <img :src="$i18n.localeProperties.img"
                 width="24"
                 alt="lang flag"
-                style="margin-top:2px"
-                class="d-none"
             />
-            <v-icon>{{ svgPath }}</v-icon>
-            <span class="px-2">-</span>
-            <div>
-                {{$i18n.localeProperties.name}}
+            <span class="px-0 px-sm-2"></span>
+            <div class="d-none d-sm-block" style="font-size:1.2rem">
+                {{$i18n.localeProperties.currencySign}}
             </div>
         </v-btn>
     </template> 
     <slot name="langSwitcher">
-        <div class="bg-white">
-            <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
+        <div class="bg-white mobileoverflow">
+            <div style="height: 60px;" class="d-flex justify-space-between align-center border-bottom-2">
                 <div class="text-center sub-title pl-3">Choose your region</div>
                 <v-btn
                     text
@@ -35,44 +32,48 @@
                     <v-icon>{{ svgPath2 }}</v-icon>
                 </v-btn>
             </div>
-                <v-row class="pvw bgcard">
-                    <v-container fluid class="productgridhome">
-                        <div v-for="locale in availableLocales" :key="locale.code">
-                            <nuxt-link
-                                :to="switchLocalePath(locale.code)"
-                                class="flex items-center whitespace-no-wrap"
-                                >
-                                <v-card 
-                                    class="bg-white rounded-lg pa-5 h-100"
-                                    @click="sheet = false"
-                                    ripple
-                                >
-                                    <v-card-actions class="justify-center h-100">
+            <v-card-text style="overflow: auto;" class="pa-0 h-100">
+            <v-row class="ma-0 bgcard">
+                <v-container fluid class="productgridhome">
+                    <div v-for="locale in availableLocales" :key="locale.code">
+                        <nuxt-link
+                            :to="switchLocalePath(locale.code)"
+                            class="flex items-center whitespace-no-wrap"
+                            >
+                            <v-card 
+                                class="bg-white rounded-lg pa-5 h-100"
+                                @click="sheet = false"
+                                ripple
+                            >
+                                <v-card-actions class="justify-center h-100">
+                                    <div>
                                         <img :src="locale.img"
                                             width="24"
-                                            class="ml-3 d-none"
+                                            class="mr-3"
                                             alt="lang flag"
+                                            style="transform: translateY(6px);"
                                         />
                                         {{ locale.name }}
-                                        <span class="px-2">-</span>
+                                        <span class="pr-2"></span>
                                         {{ locale.currencySign }}
-                                    </v-card-actions>
-                                </v-card>
-                            </nuxt-link>
-                        </div>
-                    </v-container>
-                </v-row>
-            </div> 
+                                    </div>
+                                </v-card-actions>
+                            </v-card>
+                        </nuxt-link>
+                    </div>
+                </v-container>
+            </v-row>
+            </v-card-text>
+        </div> 
     </slot>
   </v-bottom-sheet>
 </template>
 
 <script>
-import { mdiTranslate, mdiClose } from '@mdi/js'
+import { mdiClose } from '@mdi/js'
 export default {
     data() {
         return {
-            svgPath: mdiTranslate,
             svgPath2: mdiClose
             }
     },
