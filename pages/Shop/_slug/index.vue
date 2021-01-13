@@ -171,13 +171,12 @@
 
         </v-col>
       </v-row>
-      <v-row>
+      <v-row class="d-none">
         <v-col cols="12">
           <div class="bold-title">{{$t('product.like')}}</div>
-        </v-col>
-        <v-col cols="12">
           <v-tabs
             :centered="true"
+            class
           >
             <v-tab
               href="#recentTab"
