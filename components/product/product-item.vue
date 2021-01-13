@@ -39,7 +39,7 @@
     ></v-progress-circular>
     <div class="subtitlesmall teradeli-light text-left" v-if="product.offers" v-show="!$store.state.product.loading">
       {{product.price}}
-      {{$store.state.langs.currentLang.sign}}
+      {{$i18n.localeProperties.currencySign}}
     </div>
   </div>
 </template>
@@ -70,7 +70,7 @@
         computed: {
             product() {
                 let currency = this.productItem.currency.find(currency => {
-                    return currency.name === this.$store.state.langs.currentLang.currency
+                    return currency.name === this.$i18n.localeProperties.currencySign
                 });
                 if (currency) {
                     this.productItem.price = currency.price;
