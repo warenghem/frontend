@@ -1,16 +1,9 @@
 const state = () => ({
-  productPayModal: false,
   exchange_rate: 1,
   recent_products: [],
   loading: true
 });
 export const mutations = {
-  OPEN_PAY_MODAL(state) {
-    state.productPayModal = true;
-  },
-  CLOSE_PAY_MODAL(state) {
-    state.productPayModal = false;
-  },
   SET_EXCHANGE_RATE(state, data) {
     state.exchange_rate = data;
   },

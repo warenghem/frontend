@@ -1,47 +1,84 @@
 <template>
-  <div>
-    <div class="container mx-auto pt-6">
-      <article v-if="post">
-        <header class="grid grid-cols-2 gap-4 mb-12 rounded shadow-lg p-4">
-          <img :src="post.media" alt="post.title"/>
-          <div class="">
-            <h2 class="text-lg font-bold text-gray-800 mb-2">{{ post.title }}</h2>
-            <p class="text-sm text-gray-700">
-              {{ $t('published-at') }} {{ getDate }}
-            </p>
+  <div class="">
+    <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
+      <Backbutton/>
+      <div class="pl-5 d-flex border-left-2">
+        <div class="d-inline-flex flex-column justify-center">
+          <div class="teradeli-medium text-uppercase label">
+            {{ post.category }}
           </div>
+          <div class="teradeli-medium appbartitle text-uppercase">
+            {{ post.title }}
+          </div>
+        </div>
+      </div>
+      <client-only>
+        <LazyReadprogressbar/>
+      </client-only>
+    </v-toolbar-bar>
+    <article class="wa-magazine" v-if="post">
+      <div class="mb-5 wa-smart-picture wa-panoramic-picture square-ratio skeletton">
+        <picture class="gradientoverlay blackoverlay">
+          <source media="screen and (min-width: 64em)"
+            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/'+ post.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/'+ post.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/'+ post.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/'+ post.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/'+ post.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/'+ post.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/'+ post.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,fo-bottom/'+ post.media"
+          >
+          <source media="screen and (min-width: 48em)"
+            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,fo-bottom,c-maintain_ratio/'+ post.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,fo-bottom,c-maintain_ratio/'+ post.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,fo-bottom,c-maintain_ratio/'+ post.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,fo-bottom,c-maintain_ratio/'+ post.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,fo-bottom,c-maintain_ratio/'+ post.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,fo-bottom,c-maintain_ratio/'+ post.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,fo-bottom,c-maintain_ratio/'+ post.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-640,fo-bottom/'+ post.media"
+          >
+          <source
+            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-640,fo-bottom,c-maintain_ratio/'+ post.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-768,fo-bottom,c-maintain_ratio/'+ post.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1024,fo-bottom,c-maintain_ratio/'+ post.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1366,fo-bottom,c-maintain_ratio/'+ post.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1600,fo-bottom,c-maintain_ratio/'+ post.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1920,fo-bottom,c-maintain_ratio/'+ post.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-2500,fo-bottom,c-maintain_ratio/'+ post.media +' 2500w,'" 
+            :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,ar-3-5,bl-10,w-640,fo-bottom/'+ post.media"
+          >
+          <img class="lazyload mediabox-img" 
+            :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/'+ post.media +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/'+ post.media +' 2x'" 
+            data-sizes="auto" />
+        </picture>
+      </div>
+      <div class="pvw">
+        <header>
+          <div class="mb-5 d-flex justify-space-between flex-md-column">
+            <div class="teradeli-medium text-uppercase label">
+              {{ post.category }}
+            </div>
+            <div class="teradeli-medium text-uppercase label">
+              {{ formatDate(post.updatedAt) }}
+            </div>
+            <Share/>
+          </div>
+          <h1 class="page-title text-left px-0 mb-2">{{ post.title }}</h1>
+          <h2 class="body-xl text-left px-0 mb-2">{{ post.description }}</h2>
         </header>
-        <nuxt-content class="text-gray-800" :document="post"/>
-      </article>
-    </div>
+        <nuxt-content class="my-5" :document="post"/>
+      </div>
+    </article>
   </div>
-
 </template>
 
 <script>
-    import {format} from 'date-fns';
-
     export default {
         name: 'post',
-
+        transition: 'home',
         async asyncData(context) {
             const {$content, params, app, route, redirect} = context;
             const slug = params.slug;
             const post = await $content(`${app.i18n.locale}/blog`, slug).fetch();
-            context.store.commit('langs/SET_LANG_NAV', post.Languages || []);
             return {
                 post,
             }
         },
         computed: {
-            getDate() {
-                return format(new Date(this.post.createdAt), 'dd/MM');
-            },
             Languages() {
                 return this.post.Languages || []
             },
         },
-
+        methods: {
+            formatDate(date) {
+              const options = { year: 'numeric', month: 'long', day: 'numeric' }
+              return new Date(date).toLocaleDateString(`${this.$i18n.locale}`, options)
+            }
+        },
         head() {
             return {
                 title: this.post.title,
@@ -68,4 +105,57 @@
             };
         },
     }
+/*
+    export default {
+        name: 'post',
+        transition: 'home',
+        middleware ({ app, params, redirect }) {
+          if (params.pathMatch === 'index') {
+            redirect(app.localePath('/'))
+          }
+        },
+        async asyncData ({ $content, store, app, params, error }) {
+          const path = `/${app.i18n.locale}/${params.pathMatch || 'index'}`
+          const [post] = await $content({ deep: true }).where({ path }).fetch()
+          const [prev, next] = await $content(app.i18n.locale, { deep: true })
+            .fetch()
+          return {
+            post,
+            prev,
+            next
+          }
+        },
+        methods: {
+            formatDate(date) {
+              const options = { year: 'numeric', month: 'long', day: 'numeric' }
+              return new Date(date).toLocaleDateString('fr', options)
+            }
+        },
+        head() {
+            return {
+                title: this.post.title,
+                htmlAttrs: {
+                    lang: this.$i18n.locale,
+                },
+                meta: [
+                    {
+                        hid: 'og:description',
+                        property: 'og:description',
+                        content: this.post.description,
+                    },
+                    {
+                        property: 'og:title',
+                        hid: 'og:title',
+                        content: this.post.title,
+                    },
+                    {
+                        hid: 'og:image',
+                        property: 'og:image',
+                        content: this.post.media,
+                    },
+                ],
+            };
+        },
+    }
+  */
 </script>

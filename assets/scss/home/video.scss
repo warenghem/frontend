@@ -1,11 +1,10 @@
 .videoSection {
   position: relative;
-  background-color: #000;
-  height: 95vh !important;
+  background-color: #888;
+  height: 80vh !important;
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
-  border-bottom: solid 0.5px rgba(255, 255, 255, 0.1);
   color: white;
   margin-top: -51px;
 
@@ -17,7 +16,7 @@
     &::after, &::before {
       content: "";
       position: absolute;
-      top: 0;
+      top: 0; 
       right: 0;
       left: 0;
       bottom: 0;
@@ -28,11 +27,17 @@
       position: relative;
       z-index: 3
     }
-    @media(min-width: 960px) {
       .topCenter {
-        margin-top: 125px!important;
+        margin-top: 135px!important;
+        @media(max-width: 425px) {
+            margin-top: 65px!important;
+          }
+        .logosvg {
+          @media(max-width: 425px) {
+          display: none;
+          }
+        }
       }
-    }
   }
 
 
@@ -52,13 +57,6 @@
     height: auto;
   }
 
-  .topCenter {
-    margin-bottom: 30% !important;
-    @media(max-width: 768px) {
-      margin-bottom: 50%!important;
-    }
-  }
-
   .bannerLeft {
     margin-top: 40px;
     @media(max-width: 768px) {
@@ -69,7 +67,7 @@
       padding-bottom: 20px;
       font-size: 40px !important;
       color: white;
-      letter-spacing: -.009em;
+      letter-spacing: -.009em!important;
       font-family: 'teradeli-medium', sans-serif !important;
       line-height: 1 !important;
       transition: all .3s cubic-bezier(.39, .575, .565, 1);
@@ -87,7 +85,7 @@
       line-height: 1.10722 !important;
       transition: all .3s cubic-bezier(.39, .575, .565, 1);
       padding-bottom: 20px;
-      font-size: 18px !important;
+      font-size: 24px !important;
       @media(max-width: 768px) {
         text-align: left !important;
         margin: 0 auto;
@@ -107,24 +105,15 @@
         p {
           margin-bottom: 0 !important;
         }
-
-        img {
-          padding-right: 10px;
-          width: 30px;
+        svg {
+          margin-right: 10px;
+          width: 21px;
         }
       }
     }
 
-    img {
-      width: 30px;
-      margin: 0 auto;
-      display: block;
-      opacity: 0.7;
-    }
-
     span {
       font-size: 18px;
-      opacity: 0.7;
       color: #fff;
     }
   }
@@ -291,7 +280,7 @@ input.form-theme {
 
     &::after {
       content: '';
-      background-color: rgba(255, 255, 255, .6);
+      background-color: #0081a7;
       width: 5px;
       height: 5px;
       border-radius: 100%;
@@ -531,4 +520,3 @@ input.form-theme {
     opacity: 1
   }
 }
-

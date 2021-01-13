@@ -5,7 +5,7 @@
   position: relative;
   transition: background-position 1200ms cubic-bezier(0.694, 0, 0.335, 1);
   overflow: hidden;
-  background: black;
+  background:#888;
 }
 
 .fp-tableCell {
@@ -58,11 +58,14 @@
   width: 25%;
   text-align: center;
   line-height: 1.4;
-  transform: translateY(100%) translateY(-155px) translateY(-64px);
+  transform: translateY(100%) translateY(-155px) translateY(-104px);
   padding-bottom: 30px;
   transition: all .3s cubic-bezier(0.39, 0.575, 0.565, 1);
   opacity: 1;
   z-index: 10;
+  @media (max-width: 1600px) {
+    transform: translateY(100%) translateY(-155px) translateY(-125px);
+  }
 
   a {
     text-decoration: none;
@@ -130,7 +133,16 @@
     transition: opacity 0.5s;
   }
 }
-
+.theme--dark .homepage-catalogue-background-lines {
+  div {
+    &:not(:last-of-type) {
+      &::after {
+        background-color: rgba(84, 84, 88, 0.65);
+        opacity: 1;
+      }
+    }
+  }
+}
 .homepage-catalogue-background-lines {
   position: absolute;
   top: 0;

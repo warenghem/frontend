@@ -17,7 +17,6 @@
     "findStore": "Find In Store",
     "continueBtn": "Continuer vos achats",
     "viewCart": "Afficher mon panier",
-    "cartModalTitle": "AJOUT AU PANIER",
     "careBtn": "Entretien du produit",
     "readMore": "Lire la suite",
     "readLess": "Lire moins",
@@ -31,14 +30,14 @@
       "desc": "Livraison offerte à domicile"
     },
     "returnBtn": {
-      "title": "INFORMATIONS SUR LES RETOURS",
+      "title": "Informations sur les retours",
       "desc": "Gratuit"
     },
     "packageBtn": {
-      "title": "EMBALLAGE CADEAU",
+      "title": "Emballage",
       "desc": "Emballage contemporain et écologique inspiré de notre patrimoine"
     },
-    "like": "VOUS POUVEZ AUSSI AIMER",
+    "like": "Vous pouvez aussi aimer",
     "recommend": "recommandé",
     "recent": "récemment consulté",
     "color":"Couleurs",

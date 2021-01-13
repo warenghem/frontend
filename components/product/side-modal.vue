@@ -148,17 +148,13 @@
                 this.currentModal.modalTitle = this.$t('product.material');
             }
         },
-
     }
 </script>
 
 <style lang="scss">
-
 .radioSelect:checked + label {
   .v-card{
     border: 2px solid #2c3338;
   }
-
 }
 </style>
-

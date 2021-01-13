@@ -1,35 +1,59 @@
 <template>
-    <section class="team-section py-10">
-        <h2 class="page-title py-md-5 py-4">{{$t('title')}}</h2>
-        <v-row no-gutters class="pt-4">
-            <v-col cols="12" lg="6" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
-                <div class="item-inner py-2 px-3 px-md-5">
-                    <div class="profile-holder mb-3">
-                        <!--<ik-image
-                            :path="profile.img"
-                            :lqip="{active:true, quality: 40, blur: 5}"
-                            :transformation="[{quality: 65, width:400, dpr:2, radius:'max'}]"
-                            loading="lazy"
-                            width="400"
-                        />-->
+    <section class="team-section pvw">
+        <h2 class="page-title px-0">{{$t('title')}}</h2>
+        <div class="pb-3 py-2 text-center secondary--text"> {{$t('subtitle')}}</div>
+        <v-row no-gutters class="pa-0">
+            <v-col cols="12" lg="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
+                <v-card align=center class="bgcard item-inner px-0 py-3 py-sm-3 d-flex">
+                    <div class="profile-holder mb-0 pa-0 col-4 col-sm-3 skeletton wa-smart-picture rounded-circle square-ratio">
                         <img
                             :data-srcset="profile.img" 
-                            :src="profile.imglqip" 
-                            class="lazyload" 
-                            width="200"
+                            :data-lowsrc="profile.imglqip" 
+                            class="lazyload profil mediabox-img" 
                         />
                     </div>
-                    <div class="content-holder text-left">
-                        <h4 class="titlesmall">{{profile.name}}</h4>
-                        <div class="subtitlesmall">
+                    <div class="content-holder text-left pl-4 pa-0 col-8 col-sm-9">
+                        <div class="titlesmall teradeli-medium primary--text">{{profile.name}}</div>
+                        <div class="subtitlesmall secondary--text">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
                         </div>
-                        <div class="item-details">
+                        <div class="item-details d-none">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
                         </div>
+                        <v-card-actions class="p-0">
+                        <v-btn
+                            text
+                            color="teal accent-4"
+                            @click="reveal = true"
+                            class="d-none pa-0"
+                        >
+                            Learn More
+                        </v-btn>
+                        </v-card-actions>
                     </div>
-                </div>
-
+                    <v-expand-transition>
+                    <v-card
+                        v-if="reveal"
+                        class="transition-fast-in-fast-out v-card--reveal"
+                        style="height: 100%;"
+                    >
+                        <v-card-text class="pb-0">
+                            <div class="item-details">
+                                {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
+                            </div>
+                        </v-card-text>
+                        <v-card-actions class="pt-0">
+                        <v-btn
+                            text
+                            color="teal accent-4"
+                            @click="reveal = false"
+                        >
+                            Close
+                        </v-btn>
+                        </v-card-actions>
+                    </v-card>
+                    </v-expand-transition>
+                </v-card>
             </v-col>
         </v-row>
     </section>
@@ -41,6 +65,7 @@
             messages: {
                 en: {
                     title: "Warenghem Studios",
+                    subtitle:"Our offices are located in Paris and in the Var, our factories are located all over France. Our team is growing, write to us ...",
                     profiles: [
                         {
                             key: 1,
@@ -78,6 +103,7 @@
                 },
                 fr: {
                     title: "Warenghem Studios",
+                    subtitle:"Nos bureaux sont situés à Paris et dans le Var, nos usines sont situées un peu partout en France. Notre équipe s'agrandie, écrivez nous...",
                     profiles: [
                         {
                             key: 1,
@@ -117,6 +143,7 @@
         },
         data() {
             return {
+                reveal: false,
                 profiles: [
                     {
                         key: 1,
@@ -143,18 +170,54 @@
             }
         }
     }
-
+/*
+<i18n locale="fr" lang="json5">
+{
+  "fr": {
+        "title": "Warenghem Studios",
+        "subtitle":"Nos bureaux sont situés à Paris et dans le Var, nos usines sont situées un peu partout en France. Notre équipe s'agrandie, écrivez nous...",
+        "profiles": [
+            {
+                "key": 1,
+                "role": "Fondateur & Directeur Artistique",
+                "biography": "Convaincu par un monde ou la nature serait omniprésente autour de nous, j’ai décidé d’utiliser mes connaissances acquises dans le monde de l’entreprise pour des causes qui nous tiennent à cœur. Créons ensemble des objets français écologiquement parfaits et intuitifs."
+            },
+            {
+                "key": 2,
+                "role": "Designer",
+                "biography": "Après avoir étudié le style et le modélisme à Esmod Paris, j’ai fait mes armes au sein du studio créatif de la maison Courrèges. Je créé des produits à la fois fonctionnels et esthétiques, mêlant références architecturales, design graphique, et mode, convaincu que ces différentes typologies sont complémentaires.",
+            },
+            {
+                "key": 3,
+                "role": "Designer",
+                "biography": "Ancienne étudiante à Esmod Paris, jai commencé ma carrière en tant que styliste au sein de diverses maisons, et dans un second temps en lancant ma marque de maroquinerie. Aujourd’hui, j’évolue à travers différents univers qui mêlent design et photographie. J’adore porter un regard global sur une création, et lui trouver une identité forte qui la distinguera des autres.",
+            },
+            {
+                "key": 4,
+                "role": "Recherche & Developpement / Matières & Technologies",
+                "biography": "Après quelques années à travailler comme ingénieur spatial chez Airbus, j’ai repris un Master Gestion de l’écosystème et de la biodiversité à l’Université de Montréal. Je recherche les matières végétales les plus écologiques et les technologies durables qui pourraient nous accompagner."
+            }
+        ],
+    }
+}
+</i18n>
+*/
 </script>
 <style scoped lang="scss">
     .team-section {
         .item-inner {
             padding: 30px;
             height: 100%;
+            align-items: center;
 
             .profile-holder {
                 text-align: center;
+                max-width: 120px;
+                width: 100%;
             }
-
+            img {
+                width: 100%;
+            }
             .item-details {
                 margin-bottom: 15px;
                 color: #86868b;
@@ -167,4 +230,10 @@
             }
         }
     }
+.v-card--reveal {
+  bottom: 0;
+  opacity: 1 !important;
+  position: absolute;
+  width: 100%;
+}
 </style>

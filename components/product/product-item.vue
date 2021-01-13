@@ -45,10 +45,14 @@
 </template>
 
 <script>
-    import product from "../../store/product";
+    import product from "../../store/product"
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
 
     export default {
         name: "product-item",
+        components: { VueSlickCarousel },
         data() {
             return {
                 colors: ['red', 'green'],

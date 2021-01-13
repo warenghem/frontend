@@ -1,22 +1,20 @@
 <template>
     <div>
-        <div class="fp-section d-none d-lg-table finebordert elevation-3">
+        <div class="fp-section d-none d-lg-table finebordert">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
-            <div class="fp-tableCell" style="height: 900px;">
+            <div class="fp-tableCell" style="height: 80vh!important">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
                             <div class="homepage-catalogue-background-big">
-                                <!--<ik-image
-                                        :path="backgroundImage"
-                                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
-                                        class="cover "
-                                />-->
-                                <img
-                                  data-sizes="auto"
-                                  :data-srcset="backgroundImage"
-                                  class="lazyload cover"
-                                />
+                                <div class="skeletton">
+                                    <img
+                                    data-sizes="auto"
+                                    :srcset="backgroundImage.img"
+                                    :data-lowsrc="backgroundImage.blur_v"
+                                    class="lazyload mediabox-img"
+                                    alt="bg image"/>
+                                </div>
                             </div>
                             <div class="homepage-catalogue-background-lines"
                                  :class="{'opacity-02':currentMissionHover}"
@@ -26,25 +24,29 @@
                                 <div></div>
                                 <div></div>
                             </div>
-                            <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
-
-                                <div v-for="(bgImage,idx) in backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
+                            <div class="homepage-catalogue-background-divided d-none">
+                                <div v-for="(bgLogo,idx) in $store.state.picture.backgroundlogos" :key="'bg_logo_'+idx">
                                     <div>
-                                        <!--<ik-image
-                                            :path="bgImage"
-                                            :lqip="{active:true, quality: 40, blur: 5}"
-                                            :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
-                                            loading="lazy"
-                                            class="cover"
-                                        />-->
                                         <img
                                           data-sizes="auto"
-                                          :data-srcset="bgImage"
-                                          :src="backgroundImageslqip"
-                                          class="lazyload cover"
+                                          :data-src="bgLogo.img"
+                                          class="lazyload d-none position-relative"
+                                          style="z-index:10"
                                       />
                                         </div>
                                     </div>
+                            </div>
+                            <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
+                                <div v-for="(bgImage,idx) in $store.state.picture.backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
+                                    <div class="skeletton">
+                                            <img
+                                            data-sizes="auto"
+                                            :data-srcset="bgImage.img"
+                                            :data-lowsrc="bgImage.blur_v"
+                                            class="lazyload mediabox-img lazypreload"
+                                            />
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
@@ -56,7 +58,7 @@
                                  :key="'mission_'+m_idx"
                             >
                                 <div class="pb-3">
-                                    <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/magazine-plus.svg">
+                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="mx-auto" v-html="MagazinePlus" />
                                 </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
                                     <a>
@@ -90,38 +92,26 @@
                 </div>
             </div>
         </div>
-        <div class="d-lg-none mission-accordion finebordert" style="background:black">
+        <div class="d-lg-none mission-accordion finebordert">
             <v-expansion-panels accordion>
                 <div v-for="(mission,m_idx) in $t('mission.sections').slice().reverse()" :key="'mission_ac'+m_idx" class="w-100">
                     <v-expansion-panel
                             style="min-height: 33vw"
                             class="gradientoverlay blackoverlay backgroundcover"
                     >
-                    <!--<ik-image
-                        :path="backgroundImages[backgroundImages.length-1-m_idx]"
-                        :lqip="{active:true, quality: 40, blur: 5}"
-                        :transformation="[{quality: 65, width:1500, dpr:2, focus: 'bottom'}]"
-                        loading="lazy"
-                        class="cover position-absolute"
-                    />-->
-                    <img
-                        data-sizes="auto"
-                        :data-srcset="backgroundImages[backgroundImages.length-1-m_idx]"
-                        :src="backgroundImageslqip"
-                        class="lazyload cover position-absolute"
-                    />
+                        <div class="skeletton">
+                            <img
+                                data-sizes="auto"
+                                :data-srcset="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].img"
+                                :data-lowsrc="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].blur_v"
+                                class="lazyload mediabox-img"
+                            />
+                        </div>
                         <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
-                            <div class="pa-sm-10 pa-3 h-100 z-2">
-                                <div class="pb-3">
-                                    <img width="35px" src="../assets/images/magazine-plus.svg"
-                                         alt="Wait For It"
-                                         class="plusIcon"
-                                    >
-                                    <img style="padding-bottom:2px" width="35px"
-                                         src="../assets/images/magazine-minus.svg"
-                                         alt="Wait For It"
-                                         class="minusIcon"
-                                    >
+                            <div class="pa-sm-10 pvw h-100 z-2">
+                                <div style="height:49px" class="pb-3">
+                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="plusIcon" v-html="MagazinePlus" />
+                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="minusIcon" v-html="MagazineMinus" />
                                 </div>
                                 <div class="sub-title text-white">
                                     {{mission.title}}
@@ -131,7 +121,7 @@
                                 </div>
                             </div>
                         </v-expansion-panel-header>
-                        <v-expansion-panel-content>
+                        <v-expansion-panel-content :eager="true">
                             <div>
                                 <ul class="text-left mb-4 teradeli-light z-2">
                                     <li class="fp-list-item" v-for="(item,idx) in mission.items"
@@ -153,40 +143,32 @@
 </template>
 
 <script>
+    import MagazinePlus from "~/assets/images/magazine-plus.svg?raw";
+    import MagazineMinus from "~/assets/images/magazine-minus.svg?raw";
     export default {
         name: "mission-section",
         data() {
             return {
+                MagazinePlus,MagazineMinus,
                 currentMissionHover: null,
-                backgroundImages: [
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 2500w",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/studio_65kZ-dLBvomY.jpg 2500w",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/roche_AT2d0GTl7n9w.png 2500w",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 2500w",
-                ],
-                backgroundImageslqip: [
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/tech_mx5bGeVoG3pm.jpg",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/studio_65kZ-dLBvomY.jpg",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/roche_AT2d0GTl7n9w.png",
-                    "https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/home_gCAPosI9qrtpP.jpg",
-                ],
-                backgroundImage: ''
+                backgroundImage: '',
+                backgroundImagesL:''
             }
         },
         methods: {
             fpMouseOver(idx) {
                 this.currentMissionHover = idx;
-                this.backgroundImage = this.backgroundImages[idx - 1];
-            }
-        }
-        ,
+                this.backgroundImage = this.$store.state.picture.backgroundImages[idx - 1];
+                this.backgroundlogos = this.$store.state.picture.backgroundlogos[idx - 1];
+            },
+        }, 
         i18n: {
             messages: {
                 en: {
                     mission: {
                         title: "The mission: to reunite man with nature",
                         sections: [{
-                            title: "Sustainable technologies. Total traceability.",
+                            title: "Total traceability via our Blockchain technology",
                             subtitle: "Powerful, CO2 neutral, our technologies support the regeneration of nature.",
                             items:
                                 [
@@ -243,15 +225,14 @@
                         title: "La mission: réunifier l’Homme à la nature",
                         sections: [
                             {
-                                title: "Technologies durables. Tracabilité totale.",
+                                title: "Tracabilité totale via notre technologie ORIGIN®.",
                                 subtitle:
-                                    "Puissantes, neutres en CO2, nos technologies accompagnent la régénération de la nature.",
+                                    "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons.",
                                 items:
                                     [
-                                        "Technologie Blockchain. Pour une transparence sans faille.",
-                                        "Bio-Technologies. Comme alternative au cuir animal.",
-                                        "Technologies neutres en CO2. Alimentées par des énergies renouvelables.",
-                                        "Technologies et electroniques fabriquées en France. Nos usines cherchent à innover sans altérer l’environnement."
+                                        "Tagez un QR code pour découvrir l'histoire de vos produits et de leurs fabriquants.",
+                                        "Notre application est basée sur la Blockchain, une base de donnée publique et décentralisée. Infalsifiable.",
+                                        "Elle est Neutre en CO2 grâce à nos projets de reforestation.",
                                     ]
                             }
                             , {
@@ -260,36 +241,31 @@
                                     "Intuitives, brutes, sans excès, nos créations sont pensées pour l’usage.",
                                 items:
                                     [
-                                        "Passionés par des objets qui durent. Le design est pensé intemporel, échappant à toute mode éphémère.",
-                                        "Inspirées par les architectes et designers. La personnalité affirmée de nos " +
-                                        "objets casse les codes de la maroquinerie classique.",
-                                        "Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la " +
-                                        "fonctionnalité et le quotidien.",
-                                        "Focalisés sur un futur que nous devons réinventer. Le style de chaque matière est " +
-                                        "étudié pour confondre l’objet dans le paysage.",
+                                        "Le design est pensé intemporel, échappant à toute mode éphémère.",
+                                        "Inspirées par les architectes et designers du monde. Nos objets casse les codes de la maroquinerie classique.",
+                                        "Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la fonctionnalité et le quotidien."
                                     ]
                             }
                             , {
                                 title: " Fabriqué en France. Point.",
                                 subtitle:
-                                    "Raffinés, artisanaux, locaux, nos objets développent l’industrie et le savoir-faire français.",
+                                    "Raffinés, locaux, nos objets développent le savoir-faire français.",
                                 items:
                                     [
                                         "Local : Véritable projet français de A à Z.",
                                         "Social : Développer les emplois et les traditions francaises.",
                                         "Éthique : Ne pas profiter de pays à bas couts (y compris en Europe).",
-                                        "Écologique : Éviter les transports et l’opacité de pays en dehors de nos règlementations nationales."
+                                        "Écologique : Éviter les transports et l’opacité de pays en dehors de nos règlementations."
                                     ]
                             }
                             , {
-                                title: "Cuir de vin Dionysos®. Végétalement noble.",
+                                title: "Végétalement noble. Nos cuirs de vin DIONYSOS®.",
                                 subtitle:
-                                    "Performantes, naturelles, solides, nos matières sont issues de la terre et des vendanges.",
+                                    "Solides, performantes, nos matières sont issues de la terre et des vendanges.",
                                 items:
                                     [
                                         "Issues de la rencontre entre la nature et nos innovations technologiques.",
-                                        "Beaucoup plus écologiques et aussi solides que le cuir traditionnel.",
-                                        "Ne demande aucun entretien",
+                                        "Beaucoup plus écologiques et aussi solides que le cuir animal. Sans entretient",
                                         "Sans matière animale. Sans souffrance.",
                                     ]
                             }]
@@ -299,6 +275,100 @@
             }
         }
     }
+/*
+<i18n>
+{
+	"fr": {
+		"mission": {
+			"sections": [
+				{
+					"items": [
+						"Tagez un QR code pour découvrir l'histoire de vos produits et de leurs fabriquants.",
+						"Notre application est basée sur la Blockchain, une base de donnée publique et décentralisée. Infalsifiable.",
+						"Elle est Neutre en CO2 grâce à nos projets de reforestation."
+					],
+					"subtitle": "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons.",
+					"title": "Tracabilité totale via notre technologie ORIGIN®."
+				},
+				{
+					"items": [
+						"Le design est pensé intemporel, échappant à toute mode éphémère.",
+						"Inspirées par les architectes et designers du monde. Nos objets casse les codes de la maroquinerie classique.",
+						"Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la fonctionnalité et le quotidien."
+					],
+					"subtitle": "Intuitives, brutes, sans excès, nos créations sont pensées pour l’usage.",
+					"title": "Design en studio. Naturellement sobre."
+				},
+				{
+					"items": [
+						"Local : Véritable projet français de A à Z.",
+						"Social : Développer les emplois et les traditions francaises.",
+						"Éthique : Ne pas profiter de pays à bas couts (y compris en Europe).",
+						"Écologique : Éviter les transports et l’opacité de pays en dehors de nos règlementations."
+					],
+					"subtitle": "Raffinés, locaux, nos objets développent le savoir-faire français.",
+					"title": " Fabriqué en France. Point."
+				},
+				{
+					"items": [
+						"Issues de la rencontre entre la nature et nos innovations technologiques.",
+						"Beaucoup plus écologiques et aussi solides que le cuir animal. Sans entretient",
+						"Sans matière animale. Sans souffrance."
+					],
+					"subtitle": "Solides, performantes, nos matières sont issues de la terre et des vendanges.",
+					"title": "Végétalement noble. Nos cuirs de vin DIONYSOS®."
+				}
+			],
+			"title": "La mission: réunifier l’Homme à la nature"
+		}
+	},
+	"en": {
+		"mission": {
+			"sections": [
+				{
+					"items": [
+						"Tag a QR code to discover the history of your products and their manufacturers.",
+						"Our application is based on the Blockchain, a public and decentralized database. Tamper-proof.",
+						"It is CO2 neutral thanks to our reforestation projects."
+					],
+					"subtitle": "Track the origin of your products from raw material to delivery.",
+					"title": "Total traceability via our ORIGIN® technology."
+				},
+				{
+					"items": [
+						"The design is thought to be timeless, escaping any ephemeral fashion.",
+						"Inspired by architects and designers around the world. Our objects break the codes of classic leather goods.",
+						"Centered on the relationship between man and object. Design is built for functionality and everyday."
+					],
+					"subtitle": "Intuitive, raw, without excess, our creations are designed for use.",
+					"title": "Design in studio. Naturally sober."
+				},
+				{
+					"items": [
+						"Local: Genuine French project from A to Z.",
+						"Social: Develop French jobs and traditions.",
+						"Ethics: Do not take advantage of low-cost countries (including Europe).",
+						"Ecological: Avoid transport and the opacity of countries outside our regulations."
+					],
+					"subtitle": "Refined, local, our objects develop French know-how.",
+					"title": " Made in France. Point."
+				},
+				{
+					"items": [
+						"From the encounter between nature and our technological innovations.",
+						"Much more ecological and as strong as animal leather. Without maintenance",
+						"Without animal matter. Without suffering."
+					],
+					"subtitle": "Solid, efficient, our materials come from the soil and the harvest.",
+					"title": "Vegetally noble. Our DIONYSOS® wine leathers."
+				}
+			],
+			"title": "The mission: reunite man with nature"
+		}
+	}
+}
+</i18n>
+*/
 </script>
 
 <style scoped lang="scss">

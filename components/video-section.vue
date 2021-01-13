@@ -2,50 +2,49 @@
   <div>
     <div class="videoSection">
       <div class="homepage-slider-background" ref="backgroundImg">
-        <div class="homepage-slider-background-item active activeNew gradientoverlay blackoverlay">
+        <div class="homepage-slider-background-item active activeNew skeletton mediabox">
         <!--<ik-image
-            path="/S048_PF_TEuxOrfV7C_a.png"
+            path="/allproductmountain_LkUAFK3bIdhb.jpg"
             :lqip="{active:true, quality: 40, blur: 5}"
             :transformation="[{quality: 65, width:1500, height:800, dpr:2, focus: 'bottom'}]"
             loading="lazy"
             class="cover"
           />-->
-        <picture>
+        <picture class="invgradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 768w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1024w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1366w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
-              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 640w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 768w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1024w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1366w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1600w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1920w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,fo-bottom/allproductmountain_LkUAFK3bIdhb.jpg"
           >
           <source media="screen and (min-width: 48em)"
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 768w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1024w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1366w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
-              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-100,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 640w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 768w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1024w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1366w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1600w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1920w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-1000,fo-bottom/allproductmountain_LkUAFK3bIdhb.jpg"
           >
           <source
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-3-5,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 640w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 768w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1024w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1366w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1600w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2500w," 
-              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,ar-3-5,fo-bottom/S048_PF_TEuxOrfV7C_a.png"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-3-5,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 640w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 768w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1024w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1366w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1600w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1920w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,ar-3-5,fo-bottom/allproductmountain_LkUAFK3bIdhb.jpg"
           >
-          <img class="lazyload cover" 
-                data-src="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 1x,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/S048_PF_TEuxOrfV7C_a.png 2x" 
-                src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1500,h-800,fo-bottom/S048_PF_TEuxOrfV7C_a.png" 
-                data-sizes="auto" />
+          <img class="lazyload mediabox-img lazypreload"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2x" 
+            data-sizes="auto" />
         </picture>
         </div>
 
@@ -73,28 +72,22 @@
         </div>
       </div>
       <v-row no-gutters class="homepage-slider-content">
-        <v-col class="topCenter my-auto col-12">
+        <v-col class="topCenter col-12">
           <div class="bannerLeft px-2 text-center">
             <h2 class="title"> {{$t('video.title')}}{{$t('video.title2')}}</h2>
             <h4 class="subtitle">{{$t('video.subtitle')}}</h4>
           </div>
-          <div class="row col-md-10 mx-auto text-center inner">
+          <div class="row col-md-10 mx-auto text-center inner d-none d-md-flex">
             <div class="col-md-4">
-              <p>
-                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/ecological.svg">
-              </p>
+                <div class="logosvg pr-5 pr-md-0 logosvg" v-html="Eco" />
               <span>{{$t('video.tag1')}}</span>
             </div>
             <div class="col-md-4">
-              <p>
-                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/france.svg">
-              </p>
+                <div class="logosvg pr-5 pr-md-0 logosvg" v-html="France" />
               <span>{{$t('video.tag2')}}</span>
             </div>
             <div class="col-md-4">
-              <p>
-                <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65/Icons/tech.svg">
-              </p>              
+                <div class="logosvg pr-5 pr-md-0 logosvg" v-html="Tech" />
               <span>{{$t('video.tag3')}}</span>
             </div>
           </div>
@@ -131,19 +124,18 @@
 
       </v-row>
     </div>
-
-
   </div>
 </template>
 
 <script>
-
-
+    import Eco from "~/assets/images/ecological.svg?raw";
+    import France from "~/assets/images/france.svg?raw";
+    import Tech from "~/assets/images/tech.svg?raw";
     export default {
         name: "video-section",
-
         data() {
             return {
+                Eco,France,Tech,
                 dialog: false,
                 interval: {},
                 progressValue: 0,
@@ -215,69 +207,66 @@
             //     }, 100);
             // }
         },
-        methods: {},
-        i18n: {
-            messages: {
-                en: {
-                    video: {
-                        title: 'Vegetable shoes & leather goods of the future. ',
-                        title2: 'Now.',
-                        subtitle: 'Meeting between French leather traditions and our wine leathers',
-                        tag1: 'Ecological / Vegan',
-                        tag2: 'Made in France',
-                        tag3: 'Sustainable technology',
-                        forest: {
-                            term1: 'trees planted',
-                            term2: 'tonnes of CO2 offset',
-                            term3: 'reforested hectares'
-                        },
-                        rightSection: {
-                            title: 'Project progress',
-                            tag: 'Creation <br> of 3D objects',
-                            subtitle: "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed of the progress of the project.",
-                            label1: 'FIRST NAME',
-                            label2: 'EMAIL',
-                            alerttitle: 'Warenghem says',
-                            alerttime: 'just now',
-                            error: 'looks invalid or already subscribed. ',
-                            success: 'Thank you! To avoid SPAM, we have sent you a confirmation email before ' +
-                                'start planting ... see you soon!'
-                        }
-                    }
-                },
-                fr: {
-                    video: {
-                        title: ' Maroquinerie & chaussures végétales du futur. ',
-                        title2: ' Dès à présent.',
-                        subtitle: 'Rencontre entre les traditions maroquinières francaises et nos cuirs de vin',
-                        tag1: 'Ecologique / Vegan',
-                        tag2: 'Made in France',
-                        tag3: 'Technologie durable',
-                        forest: {
-                            term1: 'arbres plantés',
-                            term2: 'tonnes CO2 compensées',
-                            term3: 'hectares reforestés'
-                        },
-                        rightSection: {
-                            title: 'Avancement du projet',
-                            tag: 'Création <br> d’objets en 3D',
-                            subtitle: 'Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.',
-                            label1: 'PRENOM ',
-                            label2: 'EMAIL',
-                            alerttitle: 'Warenghem dit',
-                            alerttime: 'maintenant',
-                            error: 'semble invalide ou déjà enregistré.',
-                            success: 'Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de ' +
-                                'commencer la plantation... A tout de suite!'
-                        }
-                    }
-                },
-            }
-        }
     }
 </script>
 
+<i18n>
+{
+	"fr": {
+		"video": {
+			"forest": {
+				"term1": "arbres plantés",
+				"term2": "tonnes CO2 compensées",
+				"term3": "hectares reforestés"
+			},
+			"rightSection": {
+				"alerttime": "maintenant",
+				"alerttitle": "Warenghem dit",
+				"error": "semble invalide ou déjà enregistré.",
+				"label1": "PRENOM ",
+				"label2": "EMAIL",
+				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
+				"tag": "Création <br> d’objets en 3D",
+				"title": "Avancement du projet"
+			},
+			"subtitle": "Chaussures et maroquinerie en cuir vététal de vin",
+			"tag1": "Ecologique / Vegan",
+			"tag2": "Made in France",
+			"tag3": "Technologie durable",
+			"title": "Inspiré par la tradition. ",
+			"title2": "Fabriqué pour le futur."
+		}
+	},
+	"en": {
+		"video": {
+			"forest": {
+				"term1": "planted trees",
+				"term2": "tonnes of CO2 offset",
+				"term3": "reforested hectares"
+			},
+			"rightSection": {
+				"alerttime": "Now",
+				"alerttitle": "Warenghem says",
+				"error": "seems invalid or already registered.",
+				"label1": "First Name",
+				"label2": "e-mail",
+				"subtitle": "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed about the progress of the project.",
+				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
+				"tag": "Creation <br> of 3D objects",
+				"title": "Project progress"
+			},
+			"subtitle": "Wine vetal leather shoes and leather goods",
+			"tag1": "Ecological / Vegan",
+			"tag2": "Made in France",
+			"tag3": "Sustainable technology",
+			"title": "Inspired by tradition. ",
+			"title2": "Made for the future."
+		}
+	}
+}
+</i18n>
+
 <style scoped lang="scss">
   @import "../assets/scss/home/video";
-
 </style>

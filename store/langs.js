@@ -2,17 +2,17 @@ import product from "~/store/product";
 const state = () => ({
 
   items: [
-    {img: require('../assets/images/flag.jpg'),path: 'fr', lang: 'fr', full: 'Francais', currency: 'EUR', sign: '€', iso: 'fr-fr'},
-    {img: require('../assets/images/flag.jpg'),path: 'fr', lang: 'fr', full: 'Francais', currency: 'CHF', sign: '₣', iso: 'fr-ch'},
-    {img: require('../assets/images/flag.jpg'),path: 'fr', lang: 'fr', full: 'Francais', currency: 'CAD', sign: 'C$', iso: 'fr-ca'},
-    {img: require('../assets/images/united-kingdom.svg'),path: 'en', lang: 'en', full: 'English', currency: 'GBP', sign: '£', iso: 'en-gb'},
-    {img: require('../assets/images/united-kingdom.svg'),path: 'en', lang: 'en', full: 'English', currency: 'USD', sign: '$', iso: 'en-us'},
-    {img: require('../assets/images/united-kingdom.svg'),path: 'en', lang: 'en', full: 'English', currency: 'EUR', sign: '€', iso: 'en'},
-    {img: require('../assets/images/united-kingdom.svg'),path: 'en', lang: 'en', full: 'English', currency: 'CAD', sign: 'C$', iso: 'en-ca'},
+    {img: require('../assets/images/flags/france.svg'),path: 'fr-FR', lang: 'fr-FR', full: 'France', currency: 'EUR', sign: '€', iso: 'fr-FR'},
+    {img: require('../assets/images/flags/united-kingdom.svg'),path: 'en-GB', lang: 'en-GB', full: 'United Kingdom', currency: 'GBP', sign: '£', iso: 'en-GB'},
+    {img: require('../assets/images/flags/switzerland.svg'),path: 'fr-CH', lang: 'fr-CH', full: 'Switzerland', currency: 'CHF', sign: '₣', iso: 'fr-CH'},
+    {img: require('../assets/images/flags/european-union.svg'),path: 'en', lang: 'en', full: 'European-Union (English)', currency: 'EUR', sign: '€', iso: 'en'},
+    {img: require('../assets/images/flags/canada.svg'),path: 'fr-CA', lang: 'fr-CA', full: 'Canada (Francais)', currency: 'CAD', sign: 'C$', iso: 'fr-CA'},
+    {img: require('../assets/images/flags/canada.svg'),path: 'en-CA', lang: 'en-CA', full: 'Canada (English)', currency: 'CAD', sign: 'C$', iso: 'en-CA'},
+    {img: require('../assets/images/flags/united-states-of-america.svg'),path: 'en-US', lang: 'en-US', full: 'United States', currency: 'USD', sign: '$', iso: 'en-US'},
   ],
-  currentLang:{img: require('../assets/images/flag.jpg'),path: 'fr', lang: 'fr', full: 'Francais', currency: 'EUR', sign: '€', iso: 'fr-fr'}
+  currentLang:{img: require('../assets/images/flags/france.svg'),path: 'fr-FR', lang: 'fr-FR', full: 'Francais', currency: 'EUR', sign: '€', iso: 'fr-FR'}
 });
-export const mutations = {
+/*export const mutations = {
   SET_LANG_NAV(state, Lang) {
     state.items = state.items.map(lan => {
       return {
@@ -38,10 +38,10 @@ export const actions = {
   setLang({commit,dispatch}, flag){
     commit('SET_LANG',flag);
   },
-};
+};*/
 export default {
   namespaced: true,
   state,
-  mutations,
-  actions
+  /*mutations,
+  actions*/
 }

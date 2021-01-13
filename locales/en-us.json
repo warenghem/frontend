@@ -17,7 +17,6 @@
     "findStore": "Find In Store",
     "continueBtn": "Continue Shopping",
     "viewCart": "View My Cart",
-    "cartModalTitle": "ADDED TO CART",
     "careBtn": "Product Care",
     "readMore": "Read More",
     "readLess": "Read less",
@@ -38,7 +37,7 @@
       "title": "Packaging",
       "desc": "Contemporary and eco-friendly wrapping inspired by our Heritage"
     },
-    "like": "YOU MAY ALSO LIKE",
+    "like": "You may also like",
     "recommend": "Recommended",
     "recent": "recently viewed",
     "color":"Colours",

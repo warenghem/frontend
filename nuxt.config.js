@@ -1,21 +1,39 @@
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
+import i18n from './config/i18n'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
+
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - frontend',
-    title: 'frontend',
+    title: 'Warenghem',
     meta: [
       {charset: 'utf-8'},
       {name: 'viewport', content: 'width=device-width, initial-scale=1'},
       {hid: 'description', name: 'description', content: ''}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: "preconnect", href: "https://ik.imagekit.io", crossorigin: true},
+      {rel: "preconnect", href: "https://app.snipcart.com", crossorigin: true},
+      {rel: "preconnect", href: "https://cdn.snipcart.com", crossorigin: true},
+      {rel: "preconnect", href: "d33wubrfki0l68.cloudfront.net", crossorigin: true},
+      {rel: "preconnect", href: "www.google-analytics.com", crossorigin: true},
     ]
+  },
+  render: {
+    asyncScripts: true,
+    bundleRenderer: {
+      shouldPreload: (_, type) => {
+        return type === 'image'
+      }
+    },
+    static: {
+      maxAge: 1000 * 60 * 60 * 24 * 7
+    }
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -26,8 +44,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    {src: '~/plugins/vue-leaflet', ssr: false},
-    {src: '~/plugins/vue-carousel', ssr: true},
+    {src: '~/plugins/init', ssr: true},
+    {src: '~/plugins/i18n.client', ssr: true},
     {src: '~/plugins/lazysizes', ssr: false},
   ],
 
@@ -38,58 +56,125 @@ export default {
   buildModules: [
     // https://go.nuxtjs.dev/vuetify
     '@nuxtjs/vuetify',
-    "@nuxtjs/svg",
-    '@nuxtjs/date-fns',
-    '@nuxtjs/snipcart',
+    '@nuxtjs/svg',
+    '@nuxtjs/google-analytics',
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    [
+      '@nuxtjs/component-cache',
+      {
+        max: 10000,
+        maxAge: 1000 * 60 * 60
+      }
+    ],
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     'nuxt-i18n',
     '@nuxt/content',
-    '@nuxtjs/color-mode',
     '@nuxtjs/sitemap',
+    '@nuxtjs/gtm',
     'cookie-universal-nuxt',
   ],
+
+  // Content module configuration (https://go.nuxtjs.dev/config-content)
+  content: {},
+
+  pwa: {
+    meta: {
+      mobileAppIOS: 'false',
+      theme_color: '#153038',
+      appleStatusBarStyle: 'black',
+      author: 'Kevin Brosseau',
+      description: 'Warenghem App',
+      lang: 'fr-FR',
+      ogHost: 'www.warenghem.com',
+      ogSiteName: 'Warenghem Studios',
+      ogDescription: 'À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com',
+      twitterCard: 'summary',
+      twitterSite: 'www.warenghem.com',
+    }
+  },
+
   i18n: {
     strategy: 'prefix',
+    baseUrl: 'https://www.warenghem.com',
+    seo: false,
     lazy: true,
+    vueI18nLoader: true,
     langDir: 'locales/',
-    defaultLocale: 'fr',
+    defaultLocale: 'fr-FR',
     detectBrowserLanguage: {
-      alwaysRedirect: true,
-      fallbackLocale: 'fr',
-      onlyOnRoot: true,
       useCookie: true,
-      cookieCrossOrigin: false,
-      cookieDomain: null,
       cookieKey: 'i18n_redirected',
-      cookieSecure: false
-    },
-    vueI18n: {
-      messages: {
-        fr: require('./locales/fr-fr.json'),
-        en: require('./locales/en-us.json'),
-      },
+      cookieSecure: false,
+      cookieDomain: null,
+      alwaysRedirect: true,
+      onlyOnRoot: true,
+      cookieCrossOrigin: false,
     },
     locales: [
       {
-        code: 'en',
-        iso: 'en-us',
-        name: 'English',
-        langFile:require('./locales/en-us.json')
+        code: 'fr-FR',
+        iso: 'fr-FR',
+        name: 'France',
+        file: 'fr-FR.json',
+        currency: 'EUR',
+        currencySign: '€',
       },
       {
-        code: 'fr',
-        iso: 'fr-fr',
-        name: 'Français',
-        langFile:require('./locales/fr-fr.json')
+        code: 'en-GB',
+        iso: 'en-GB',
+        name: 'United Kingdom',
+        file: 'en-US.json',
+        currency: 'GBP', 
+        currencySign: '£',
+      },
+      {
+        code: 'en-US',
+        iso: 'en-US',
+        name: 'United States',
+        file: 'en-US.json',
+        currency: 'USD', 
+        currencySign: '$',
+      },
+      {
+        code: 'fr-CA',
+        iso: 'fr-CA',
+        name: 'Canada (Francais)',
+        file: 'fr-FR.json',
+        currency: 'CAD', 
+        currencySign: 'C$',
+      },
+      {
+        code: 'en-CA',
+        iso: 'en-CA',
+        name: 'Canada (English)',
+        file: 'en-US.json',
+        currency: 'CAD', 
+        currencySign: 'C$',
+      },
+      {
+        code: 'fr-CH',
+        iso: 'fr-CH',
+        name: 'Switzerland',
+        file: 'fr-FR.json',
+        currency: 'CAD', 
+        currencySign: 'C$',
+      },
+      {
+        code: 'en',
+        iso: 'en',
+        name: 'European-Union (English)',
+        file: 'en-US.json',
+        currency: 'EUR', 
+        currencySign: '€',
       },
     ],
+    vueI18n: i18n
   },
   hooks: {
     'content:file:beforeInsert': (document) => {
@@ -112,44 +197,79 @@ export default {
     }
   },
 
-  // Axios module configuration (https://go.nuxtjs.dev/config-axios)
+      // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: 'https://tree-nation.com/api/',
-  },
-
-  // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
-
-  pwa: {
-    meta: {
-      mobileAppIOS: 'false',
-      theme_color: '#153038',
-      appleStatusBarStyle: 'black',
-      author: 'Kevin Brosseau',
-      description: 'Warenghem App',
-      lang: 'fr',
-      ogHost: 'www.warenghem.com',
-      ogSiteName: 'Warenghem Studios',
-      ogDescription: 'À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com',
-      twitterCard: 'summary',
-      twitterSite: 'www.warenghem.com',
-    }
-  },
-
-
-  snipcart: {
-    // Options available
-    key: "N2VkOWYwOTgtNDYxMC00YWFmLWFjYzEtMDllZmY0YzdmZmUyNjM3Mzk5NDI5MzA2MTE0MDg2",
-    addProductBehavior: false,
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
+    treeShake: true,
+    defaultAssets: false,
     theme: {
-      disable: true,
+      options: {
+        customProperties: true,
+      },
+      themes: {
+        dark: {
+          background: '#000',
+          bgcard: {
+            base: '#1E1E1F',
+            darken3: '#161617'
+          },
+          primary: {
+            base: '#ffffff',
+            lighten3: '#ffb700',
+            darken3: '#ff6200'
+          },
+          secondary: {
+            base: '#ffffff',
+            lighten3: '#FBFBFD'
+          },
+          tertiary: {
+            base: '#ffffff',
+          },
+          accent: colors.grey.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base, 
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+          darkbugattiblue: '#153038',
+          lightbugattiblue: '#3D8EBE',
+          wablack: '#19110b'
+        },
+        light: {
+          background: colors.white,
+          bgcard: {
+            base: '#f6f5f3',
+            lighten3: '#ffb700',
+            darken3: '#161617'
+          },
+          primary: {
+            base: '#19110b',
+            lighten1: '#ffb700',
+          },
+          secondary: {
+            base: '#86868b',
+            lighten1: '#E6a9a9ac',
+            lighten2: '#d4d4d6'
+
+          },
+          tertiary: {
+            base: '#4682bf',
+          },
+          accent: colors.grey.darken3,
+          info: colors.teal.lighten1,
+          warning: colors.amber.base,
+          error: colors.deepOrange.accent4,
+          success: colors.green.accent3,
+          darkbugattiblue: '#153038',
+          lightbugattiblue: '#3D8EBE',
+          wablack: '#000000'
+        }
+      }
     },
-    materialIcons: true,
     css: true,
   },
   sitemap: {
@@ -159,13 +279,60 @@ export default {
     gzip: true,
   },
 
+  googleAnalytics: {
+    id: 'UA-156842548-1'
+  },
+
+  gtm: {
+    id: '	GTM-NXPG4SV'
+  },
+
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    extend(config, {isDev, isClient, loaders: {vue}}) {
+    extend (config, { isDev, isClient, loaders: { vue } }) {
       if (isClient) {
         vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     },
-  }
+    postcss: {
+      plugins: {
+          "@fullhuman/postcss-purgecss": {
+            content: [
+              'components/**/*.vue',
+              'layouts/**/*.vue',
+              'pages/**/*.vue',
+              'plugins/**/*.js',
+              'node_modules/vuetify/src/**/*.ts',
+            ],
+            styleExtensions: ['.css'],
+            safelist: {
+              standard: [
+                "body",
+                "html",
+                "nuxt-progress",
+                /col-*/,
+                /v-dialog*/,
+              ],
+              deep: [
+                /page-enter/,
+                /page-leave/,
+                /dialog-transition/,
+                /tab-transition/,
+                /tab-reversetransition/,
+                /slide-fade/,
+                /bottom-sheet-transition/,
+              ],
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/]
+            }
+          }
+        }
+    },
+    /*
+    ** You can extend webpack config here
+    */
+    extend(config, ctx) {
+    },
+  },
+  
 }
