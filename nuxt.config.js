@@ -1,6 +1,5 @@
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
-import i18n from './config/i18n'
 
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
@@ -121,6 +120,7 @@ export default {
         code: 'fr-FR',
         iso: 'fr-FR',
         name: 'France',
+        region: 'Europe',
         file: 'fr-FR.json',
         currency: 'EUR',
         currencySign: '€',
@@ -129,6 +129,7 @@ export default {
         code: 'en-GB',
         iso: 'en-GB',
         name: 'United Kingdom',
+        region: 'Europe',
         file: 'en-US.json',
         currency: 'GBP', 
         currencySign: '£',
@@ -138,6 +139,7 @@ export default {
         iso: 'en-US',
         name: 'United States',
         file: 'en-US.json',
+        region: 'America',
         currency: 'USD', 
         currencySign: '$',
       },
@@ -145,6 +147,7 @@ export default {
         code: 'fr-CA',
         iso: 'fr-CA',
         name: 'Canada (Francais)',
+        region: 'America',
         file: 'fr-FR.json',
         currency: 'CAD', 
         currencySign: 'C$',
@@ -153,6 +156,7 @@ export default {
         code: 'en-CA',
         iso: 'en-CA',
         name: 'Canada (English)',
+        region: 'America',
         file: 'en-US.json',
         currency: 'CAD', 
         currencySign: 'C$',
@@ -161,6 +165,7 @@ export default {
         code: 'fr-CH',
         iso: 'fr-CH',
         name: 'Switzerland',
+        region: 'Europe',
         file: 'fr-FR.json',
         currency: 'CAD', 
         currencySign: 'C$',
@@ -168,13 +173,19 @@ export default {
       {
         code: 'en',
         iso: 'en',
-        name: 'European-Union (English)',
+        name: 'Other European Union Regions (English)',
+        region: 'Europe',
         file: 'en-US.json',
         currency: 'EUR', 
         currencySign: '€',
       },
     ],
-    vueI18n: i18n
+  },
+  vueI18n: {
+    messages: {
+      fr: require('./locales/fr-FR.json'),
+      en: require('./locales/en-US.json'),
+    },
   },
   hooks: {
     'content:file:beforeInsert': (document) => {
