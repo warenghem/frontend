@@ -115,12 +115,6 @@ export default {
       onlyOnRoot: true,
       cookieCrossOrigin: false,
     },
-    vueI18n: {
-      messages: {
-        fr: require('./locales/fr-FR.json'),
-        en: require('./locales/en-US.json'),
-      },
-    },
     locales: [
       {
         code: 'fr-FR',
