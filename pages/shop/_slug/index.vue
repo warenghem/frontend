@@ -14,9 +14,9 @@
               <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-viewer v-if="productImages.length > 0" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :arrow="true">
+              <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :arrow="true">
                 <div
-                  v-for="(img,i_dx) in productImages"
+                  v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
                   style="outline: none;"
                 >
