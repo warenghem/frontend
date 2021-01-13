@@ -1,7 +1,7 @@
 ---
 id: '3'
 sku: M45604
-name: Product 2
+name: Some Amazing Product
 description: This new bags ... 
 additionalProperty:
 - details: Leather Goods
@@ -33,8 +33,8 @@ categories:
   slug: bags
   depth: '2'
 tags:
-- name: Man
-- name: Cloth
+- name: Leather Goods
+- name: Bags
 image:
 - src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
   attributes: "NaturalBlack"

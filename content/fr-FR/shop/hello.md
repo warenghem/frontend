@@ -19,8 +19,9 @@ colors:
   - id: 2
     name: Desertic Camel
     icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+material:
   - id: 1
-    name: Leather
+    name: Cuir de Vin Dionysos®
     icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
     color:
       - id: 1

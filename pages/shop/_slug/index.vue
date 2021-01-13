@@ -62,7 +62,7 @@
               <v-card
                v-if="productMaterialChoice.name"
                >
-               <img class="rounded-lg" :src="productMaterialChoice.image" alt="" v-if="productMaterialChoice.image">
+               <img width="40px" class="rounded-lg" :src="productMaterialChoice.icon" alt="" v-if="productMaterialChoice.icon">
                <v-card-text class="pa-0">
                  {{productMaterialChoice.name}}
                </v-card-text>
@@ -80,7 +80,7 @@
             </div>
             <div class="d-flex align-center justify-space-between">
               {{productColor.name}}
-              <img :src="productColor.image.icon" alt="" v-if="productColor.image" width="40px" class="mx-3 rounded-lg">
+              <img :src="productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
@@ -356,7 +356,6 @@
         },
         mounted() {
             this.productColor = this.product.colors[0];
-            this.productMaterialChoice = this.product.material[0]
             this.productMaterialChoice = this.product.material[0];
             this.productImages = this.product.image
         },

@@ -1,7 +1,7 @@
 ---
 id: '2'
 sku: M45604
-name: Product 1
+name: Some Amazing Product
 description: This new bags ... 
 additionalProperty:
 - details: Leather Goods
@@ -15,12 +15,12 @@ material:
 - name: Dionysos Leather
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Linen
-  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - name: Ecological
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 offers:
   priceCurrency: EUR
   price: '390'
