@@ -20,7 +20,7 @@
             </v-list>
         </v-navigation-drawer>
 
-        <v-app-bar flat class="border-bottom-2" height="50px"
+        <v-app-bar flat class="border-bottom-2" height="48px"
                    >
 
             <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
