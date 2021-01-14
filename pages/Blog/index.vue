@@ -125,9 +125,8 @@
     transition: 'home',
     async asyncData(context) {
       const { $content, params, app } = context;
-      const defaultLocale = app.i18n.locale;
-      const firstpost = await $content(`${defaultLocale }/blog`, params.slug).limit(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
-      const posts = await $content(`${defaultLocale }/blog`, params.slug).skip(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
+      const firstpost = await $content(`${app.i18n.locale}/blog`, params.slug).limit(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
+      const posts = await $content(`${app.i18n.locale}/blog`, params.slug).skip(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
       return {
         posts: posts,firstposts: firstpost
       }
