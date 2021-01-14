@@ -12,7 +12,7 @@
     "@amcharts/amcharts4": "^4.10.11",
     "@amcharts/amcharts4-geodata": "^4.1.19",
     "@nuxt/content": "^1.9.0",
-    "@nuxtjs/axios": "^5.12.2",
+    "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/component-cache": "^1.1.6",
     "@nuxtjs/gtm": "^2.4.0",
     "@nuxtjs/pwa": "^3.0.2",

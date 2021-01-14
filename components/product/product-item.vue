@@ -40,7 +40,6 @@
     <div class="subtitlesmall teradeli-light text-left" v-if="product.offers" v-show="!$store.state.product.loading">
       {{product.price}}
       {{$i18n.localeProperties.currencySign}}
-
     </div>
   </div>
 </template>

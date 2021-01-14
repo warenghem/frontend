@@ -14,7 +14,7 @@
               <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :arrow="true">
+              <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-if="productImages.length > 0" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :arrow="true">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
@@ -171,59 +171,6 @@
 
         </v-col>
       </v-row>
-      <v-row class="d-none">
-        <v-col cols="12">
-          <div class="bold-title">{{$t('product.like')}}</div>
-          <v-tabs
-            :centered="true"
-            class
-          >
-            <v-tab
-              href="#recentTab"
-              v-if="recentProducts.length>0"
-            >
-              {{$t('product.recent')}}
-
-            </v-tab>
-            <v-tab
-              href="#recommendTab"
-              v-if="recommendedProducts.length>0"
-            >
-              {{$t('product.recommend')}}
-            </v-tab>
-            <v-tab-item
-              value="recentTab"
-              style="height: 700px"
-              v-if="recentProducts.length>0"
-            >
-              <VueSlickCarousel v-bind="settings">
-                <div v-for="(rc_productItem,i_dx) in recentProducts"
-                     :key="'recent_'+i_dx"
-                     class="text-center pa-2"
-                >
-                  <product-item :productItem="rc_productItem"></product-item>
-
-                </div>
-              </VueSlickCarousel>
-
-            </v-tab-item>
-            <v-tab-item
-              value="recommendTab"
-              style="height: 700px"
-              v-if="recommendedProducts.length>0"
-            >
-              <VueSlickCarousel v-bind="settings">
-                <div v-for="(productItem,i_dx) in recommendedProducts"
-                     :key="'recommend'+i_dx"
-                     class="pa-2"
-                >
-                  <product-item :productItem="productItem"></product-item>
-                </div>
-              </VueSlickCarousel>
-            </v-tab-item>
-          </v-tabs>
-        </v-col>
-      </v-row>
     </v-container>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
@@ -233,6 +180,12 @@
 </template>
 
 <script>
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+    import "viewerjs/dist/viewer.css";
+    import VueFoldable from 'vue-foldable'
+    import 'vue-foldable/dist/vue-foldable.css'
     import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
     import "viewerjs/dist/viewer.css";
     import Viewer from "v-viewer";
@@ -242,13 +195,6 @@
             zIndex: 300002
         }
     });
-    import VueSlickCarousel from 'vue-slick-carousel'
-    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-    import "viewerjs/dist/viewer.css";
-    import {format} from 'date-fns';
-    import VueFoldable from 'vue-foldable'
-    import 'vue-foldable/dist/vue-foldable.css'
     Vue.component('foldable', VueFoldable);
 
     export default {
@@ -339,9 +285,6 @@
 
                 }
                 return rc_products;
-            },
-            Languages() {
-                return this.productItem.Languages || []
             },
         },
         beforeCreate() {

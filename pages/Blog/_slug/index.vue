@@ -68,11 +68,6 @@
                 post,
             }
         },
-        computed: {
-            Languages() {
-                return this.post.Languages || []
-            },
-        },
         methods: {
             formatDate(date) {
               const options = { year: 'numeric', month: 'long', day: 'numeric' }
