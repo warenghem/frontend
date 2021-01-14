@@ -180,6 +180,12 @@
 </template>
 
 <script>
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+    import "viewerjs/dist/viewer.css";
+    import VueFoldable from 'vue-foldable'
+    import 'vue-foldable/dist/vue-foldable.css'
     import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
     import "viewerjs/dist/viewer.css";
     import Viewer from "v-viewer";
@@ -189,13 +195,6 @@
             zIndex: 300002
         }
     });
-    import VueSlickCarousel from 'vue-slick-carousel'
-    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-    import "viewerjs/dist/viewer.css";
-    import {format} from 'date-fns';
-    import VueFoldable from 'vue-foldable'
-    import 'vue-foldable/dist/vue-foldable.css'
     Vue.component('foldable', VueFoldable);
 
     export default {
@@ -242,7 +241,7 @@
             VueSlickCarousel
         },
         async asyncData(context) {
-            const {$content, params, app, route, redirect} = context;
+            const {$content, params, app} = context;
             const slug = params.slug;
             const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
             const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
@@ -262,44 +261,6 @@
                 }
                 return this.productItem;
             },
-            recommendedProducts() {
-                var tags = this.productItem.tags.map(tag => {
-                    return tag.name
-                });
-                var r_products = [];
-                this.productsItem.forEach(product => {
-                    if (product.tags.filter(value => tags.includes(value.name)).length > 0 && product.id !== this.product.id) {
-                        r_products.push(product)
-                    }
-                });
-                return r_products;
-            },
-            recentProducts() {
-                var rc_products = [];
-                var recent_products = this.$store.state.product.recent_products;
-                if (recent_products.length > 0) {
-                    recent_products.forEach(p_id => {
-                        if (p_id !== this.product.id) {
-                            rc_products.push(this.productsItem.find(p => p.id === p_id))
-                        }
-                    });
-
-                }
-                return rc_products;
-            },
-            Languages() {
-                return this.productItem.Languages || []
-            },
-        },
-        beforeCreate() {
-            let rc_products = this.$cookies.get('recent_products');
-            if (rc_products.length > 0) {
-                this.$store.commit('product/initRecentProduct', rc_products);
-            }
-        },
-        created() {
-            this.$store.dispatch('product/setRecentProducts', this.product.id);
-
         },
         mounted() {
             this.productColor = this.product.colors[0];
