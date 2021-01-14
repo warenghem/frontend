@@ -43,8 +43,8 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    {src: '~/plugins/init', ssr: true},
-    {src: '~/plugins/i18n.client', ssr: true},
+    // {src: '~/plugins/init', ssr: true},
+    // {src: '~/plugins/i18n.client', ssr: true},
     {src: '~/plugins/lazysizes', ssr: false},
   ],
 

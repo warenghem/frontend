@@ -11,8 +11,8 @@ export const state = () => ({
   reforest: 0,
   plantModal: false,
 
-/* From Nuxt Team */
-  categories: {},
+/* From Nuxt Team 
+  categories: {},*/
 });
 
 export const mutations = {
@@ -22,11 +22,11 @@ export const mutations = {
     state.reforest = (parseInt(state.tree_count, 10) / 1000).toFixed(3).toLocaleString();
   },
 
-/* From Nuxt Team */
+/* From Nuxt Team 
   SET_CATEGORIES (state, categories) {
     // Vue Reactivity rules since we add a nested object
     Vue.set(state.categories, this.$i18n.locale, categories)
-  },
+  },*/
 };
 
 export const actions = {
@@ -42,6 +42,19 @@ export const actions = {
   async nuxtServerInit({dispatch,commit}) {
     await dispatch('getForestDetail');
   },
+
+/* From Nuxt Team 
+  async fetchCategories ({ commit, state }) {
+    // Avoid re-fetching in production
+    if (process.dev === false && state.categories[this.$i18n.locale]) {
+      return
+    }
+    const docs = await this.$content(this.$i18n.locale, { deep: true }).only(['title', 'menuTitle', 'category', 'slug', 'version', 'to']).sortBy('position', 'asc').fetch()
+
+    const categories = groupBy(docs, 'category')
+
+    commit('SET_CATEGORIES', categories)
+  },*/
 
 };
 

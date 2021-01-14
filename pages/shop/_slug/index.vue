@@ -14,7 +14,7 @@
               <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :arrow="true">
+              <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-if="productImages.length > 0" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :arrow="true">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
@@ -169,59 +169,6 @@
             </div>
           </div>
 
-        </v-col>
-      </v-row>
-      <v-row class="d-none">
-        <v-col cols="12">
-          <div class="bold-title">{{$t('product.like')}}</div>
-          <v-tabs
-            :centered="true"
-            class
-          >
-            <v-tab
-              href="#recentTab"
-              v-if="recentProducts.length>0"
-            >
-              {{$t('product.recent')}}
-
-            </v-tab>
-            <v-tab
-              href="#recommendTab"
-              v-if="recommendedProducts.length>0"
-            >
-              {{$t('product.recommend')}}
-            </v-tab>
-            <v-tab-item
-              value="recentTab"
-              style="height: 700px"
-              v-if="recentProducts.length>0"
-            >
-              <VueSlickCarousel v-bind="settings">
-                <div v-for="(rc_productItem,i_dx) in recentProducts"
-                     :key="'recent_'+i_dx"
-                     class="text-center pa-2"
-                >
-                  <product-item :productItem="rc_productItem"></product-item>
-
-                </div>
-              </VueSlickCarousel>
-
-            </v-tab-item>
-            <v-tab-item
-              value="recommendTab"
-              style="height: 700px"
-              v-if="recommendedProducts.length>0"
-            >
-              <VueSlickCarousel v-bind="settings">
-                <div v-for="(productItem,i_dx) in recommendedProducts"
-                     :key="'recommend'+i_dx"
-                     class="pa-2"
-                >
-                  <product-item :productItem="productItem"></product-item>
-                </div>
-              </VueSlickCarousel>
-            </v-tab-item>
-          </v-tabs>
         </v-col>
       </v-row>
     </v-container>
