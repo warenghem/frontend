@@ -17,7 +17,7 @@
                 {{$i18n.localeProperties.currencySign}}
             </div>
         </v-btn>
-    </template> 
+    </template>
     <slot name="langSwitcher">
         <div class="bg-white mobileoverflow">
             <div style="height: 60px;" class="d-flex justify-space-between align-center border-bottom-2">
@@ -40,7 +40,7 @@
                             :to="switchLocalePath(locale.code)"
                             class="flex items-center whitespace-no-wrap"
                             >
-                            <v-card 
+                            <v-card
                                 class="bg-white rounded-lg pa-5 h-100"
                                 @click="sheet = false"
                                 ripple
@@ -64,7 +64,7 @@
                 </v-container>
             </v-row>
             </v-card-text>
-        </div> 
+        </div>
     </slot>
   </v-bottom-sheet>
 </template>
@@ -74,7 +74,8 @@ import { mdiClose } from '@mdi/js'
 export default {
     data() {
         return {
-            svgPath2: mdiClose
+            svgPath2: mdiClose,
+            sheet:false,
             }
     },
   computed: {
