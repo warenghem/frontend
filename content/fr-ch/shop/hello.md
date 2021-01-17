@@ -1,32 +1,51 @@
 ---
 id: '1'
-sku: M45604
-name: Un produit incroyable
-description: Ce nouveau sac à dos Trio est un modèle avant-gardiste qui mêle tradition
-  et modernité. Confectionné en toile
+sku: WA48NB
+name: Dionysos 48H
+description: Des vignes et du lin. Tel est son destin.
 additionalProperty:
-- details:  ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien
+- details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
 - care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse,
     nous vous recommandons de suivre ces conseils d’entretien
 dimensions:
-  length: '290'
-  width: '100'
-  height: '250'
+  length: '536'
+  width: '201'
+  height: '288'
 manufacturer: ''
+colors:
+  - id: 1
+    name: Natural Black
+    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 2
+    name: Desertic Camel
+    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 material:
-- name: Cuit Dionysos
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-- name: Lin
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  - id: 1
+    name: Cuir de Vin Dionysos®
+    icon: "leather.jpg"
+    color:
+      - id: 1
+        name: Natural Black
+        icon: "leather.jpg"
+      - id: 2
+        name: Desertic Camel
+        icon: "leather.jpg"
+  - id: 2
+    name: Lin Bio Francais
+    icon: "linen_camel.jpg" 
+    color:
+      - id: 2
+        name: DeserticCamel
+        icon: "linen_camel.jpg"
 award:
 - name: Vegan
-  image: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-- name: Ecologique
-  slug: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+- name: Ecological
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: http://schema.org/InStock
+  availability: true
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -38,25 +57,19 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "https://ik.imagekit.io/g1noocuou2/Products/S48mountain.2carre2.jpg"
-  attributes: "NaturalBlack"
-  material: Cuit Dionysos
+- src: "sac_face.png"
+  color: 2
+  material: 1
   name: ''
   alt: ''
   availability: true
-- src: "https://ik.imagekit.io/g1noocuou2/Products/Porte_carte_15102020.3.jpg"
-  attributes: "DeserticCamel"
-  material: Lin
+- src: "sac_cote.png"
+  color: 1
+  material: 2
   name: ''
   alt: ''
   availability: false
 attributes:
-- name: Color
-  options:
-  - name: NaturalBlack
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
-  - name: DeserticCamel
-    icon: "/deserticcamel.jpeg"
 - name: Size
   options:
   - '41'
@@ -64,7 +77,7 @@ attributes:
   - '43'
 default_attributes:
 - name: Color
-  option: NaturalBlack
+  option: Natural Black
 - name: Size
   option: '41'
 isRelatedTo: ''
@@ -73,16 +86,16 @@ brand:
   name: Warenghem
 ---
 
-Renforcez votre application NuxtJS avec le module `@ nuxtjs / content`: écrivez dans un répertoire` content /` et récupérez vos fichiers Markdown, JSON, YAML et CSV via une API similaire à MongoDB, agissant comme un ** CMS Headless basé sur Git ** .
+Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
-## Rédaction de contenu
+## Writing content
 
-Apprenez à écrire votre `content /`, en prenant en charge Markdown, YAML, CSV et JSON: https://content.nuxtjs.org/writing.
+Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
 
-## Récupération du contenu
+## Fetching content
 
-Apprenez à récupérer votre contenu avec `$ content`: https://content.nuxtjs.org/fetching.
+Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
 
-## Affichage du contenu
+## Displaying content
 
-Apprenez à afficher votre contenu Markdown avec le composant `<nuxt-content>` `directement dans votre modèle: https://content.nuxtjs.org/displaying.
+Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
