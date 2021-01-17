@@ -5,11 +5,6 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
-  path: content/en/blog
-  label: Blog - English
-  create: all
-  match: "**/*"
-- type: directory
   path: content/fr-fr/shop
   label: Shop - Francais
   create: all
@@ -22,6 +17,11 @@ sections:
 - type: directory
   path: content/fr-fr/blog
   label: Blog - Francais
+  create: all
+  match: "**/*"
+- type: directory
+  path: content/en/blog
+  label: Blog - English
   create: all
   match: "**/*"
 upload_dir: uploads
