@@ -24,15 +24,15 @@
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <img
                       v-if="productImages.length > 0" 
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/'+ img.src +' 2500w,'" 
-                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/'+ img.src"
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ img.src +' 2500w,'" 
+                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/Products/'+ img.src"
                       class="lazyload mediabox-img"
                       alt=""
                     >
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-3" ref="c2" :asNavFor="$refs.c1" :slidesToShow="4" :focusOnSelect="true">
+              <VueSlickCarousel class="mt-3" ref="c2" :slidesToShow="4" :asNavFor="$refs.c1" :focusOnSelect="true">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
@@ -40,8 +40,8 @@
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mr-3">
                     <img
                       v-if="productImages.length > 0" 
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/'+ img.src +' 2500w,'" 
-                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/'+ img.src"
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'" 
+                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/Products/'+ img.src"
                       class="bgcard lazyload mediabox-img"
                       alt=""
                     >
@@ -62,13 +62,13 @@
           <div class="page-title px-0 text-left">{{product.name}}</div>
           <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2 pb-7">{{product.description}}</div>
           <div class="py-5 d-flex align-center justify-space-between">
-            <v-row style="height:75px" justify="center" class="pa-0 text-center">
+            <v-row style="height:92px" justify="center" class="pa-0 text-center">
               <v-card
                   v-for="(mtr,i_dx) in product.material"
                   :key="'material_'+i_dx"
-                  width="120px"
+                  width="110px"
                >
-               <img width="40px" class="rounded-lg" :src="mtr.icon" alt="">
+               <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ mtr.icon" alt="">
                <v-card-text class="pa-0">
                  {{mtr.name}}
                </v-card-text>
@@ -85,7 +85,7 @@
             </div>
             <div class="d-flex align-center justify-space-between" v-if="productColor.name">
               {{productColor.name}}
-              <img :src="productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3 rounded-lg">
+              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
@@ -100,7 +100,7 @@
           </div>
           <Buybutton/>
           <div class="my-5">
-            <foldable :minHeight="100" height="20%">
+            <foldable>
               <div v-html="product.additionalProperty[0].details"
               >
               </div>

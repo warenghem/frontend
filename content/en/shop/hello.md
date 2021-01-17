@@ -14,28 +14,28 @@ manufacturer: ''
 colors:
   - id: 1
     name: Natural Black
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    icon: "leather.jpg"
   - id: 2
     name: Desertic Camel
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    icon: "leather.jpg"
 material:
   - id: 1
     name: Dionysos® Wine Leather
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    icon: "leather.jpg"
     color:
       - id: 1
         name: Natural Black
-        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+        icon: "leather.jpg"
       - id: 2
         name: Desertic Camel
-        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+        icon: "leather.jpg"
   - id: 2
-    name: Linen
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow" 
+    name: Organic French Linen
+    icon: "linen_camel.jpg" 
     color:
       - id: 2
         name: DeserticCamel
-        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+        icon: "linen_camel.jpg"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
@@ -56,13 +56,13 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "Products/sac_face.png"
+- src: "sac_face.png"
   color: 2
   material: 1
   name: ''
   alt: ''
   availability: true
-- src: "Products/sac_cote.png"
+- src: "sac_cote.png"
   color: 1
   material: 2
   name: ''

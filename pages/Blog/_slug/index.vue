@@ -61,7 +61,7 @@
         name: 'post',
         transition: 'home',
         async asyncData(context) {
-            const {$content, params, app, route, redirect} = context;
+            const {$content, params, app} = context;
             const slug = params.slug;
             const post = await $content(`${app.i18n.locale}/blog`, slug).fetch();
             return {

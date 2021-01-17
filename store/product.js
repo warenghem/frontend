@@ -1,7 +1,7 @@
 const state = () => ({
   exchange_rate: 1,
   recent_products: [],
-  loading: false
+  loading: true
 });
 export const mutations = {
   SET_EXCHANGE_RATE(state, data) {

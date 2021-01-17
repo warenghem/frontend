@@ -132,7 +132,7 @@ export default {
         name: 'United Kingdom',
         region: 'Europe',
         file: 'en-us.json',
-        currency: 'GBP',
+        currency: 'GBP', 
         currencySign: '£',
         img: '/flags/united-kingdom.svg',
       },
@@ -142,7 +142,7 @@ export default {
         name: 'Switzerland',
         region: 'Europe',
         file: 'fr-fr.json',
-        currency: 'CHF',
+        currency: 'CHF', 
         currencySign: '₣',
         img: '/flags/switzerland.svg',
       },
@@ -152,7 +152,7 @@ export default {
         name: 'Other European Union Regions (English)',
         region: 'Europe',
         file: 'en-us.json',
-        currency: 'EUR',
+        currency: 'EUR', 
         currencySign: '€',
         img: '/flags/european-union.svg',
       },
@@ -162,7 +162,7 @@ export default {
         name: 'United States',
         file: 'en-us.json',
         region: 'America',
-        currency: 'USD',
+        currency: 'USD', 
         currencySign: '$',
         img: '/flags/united-states-of-america.svg',
       },
@@ -172,7 +172,7 @@ export default {
         name: 'Canada (Francais)',
         region: 'America',
         file: 'fr-fr.json',
-        currency: 'CAD',
+        currency: 'CAD', 
         currencySign: 'C$',
         img: '/flags/canada.svg',
       },
@@ -182,7 +182,7 @@ export default {
         name: 'Canada (English)',
         region: 'America',
         file: 'en-us.json',
-        currency: 'CAD',
+        currency: 'CAD', 
         currencySign: 'C$',
         img: '/flags/canada.svg',
       },
@@ -250,7 +250,7 @@ export default {
           },
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
-          warning: colors.amber.base,
+          warning: colors.amber.base, 
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
           darkbugattiblue: '#153038',
@@ -309,7 +309,7 @@ export default {
   build: {
     extend (config, { isDev, isClient, loaders: { vue } }) {
       if (isClient) {
-        vue.transformAssetUrls.img = ['data-src', 'src'];
+        vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     },
@@ -349,6 +349,8 @@ export default {
     /*
     ** You can extend webpack config here
     */
+    extend(config, ctx) {
+    },
   },
-
+  
 }
