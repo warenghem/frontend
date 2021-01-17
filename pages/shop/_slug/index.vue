@@ -6,6 +6,7 @@
         class="ma-0"
       >
         <v-col
+          cols="12"
           lg="8"
           class="pa-0"
         >
@@ -14,12 +15,7 @@
               <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard"
-                                v-bind="settingsSingle"
-                                v-if="productImages.length > 0" v-viewer ref="c1"
-                                :asNavFor="$refs.c2"
-                                :focusOnSelect="true"
-                                :arrow="true">
+              <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
@@ -27,7 +23,8 @@
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <img
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/'+ img.src +' 2500w,'"
+                      v-if="productImages.length > 0" 
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/'+ img.src +' 2500w,'" 
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/'+ img.src"
                       class="lazyload mediabox-img"
                       alt=""
@@ -35,14 +32,15 @@
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-3" v-bind="settingsSingle" ref="c2" :asNavFor="$refs.c1" :slidesToShow="4" :focusOnSelect="true">
+              <VueSlickCarousel class="mt-3" ref="c2" :asNavFor="$refs.c1" :slidesToShow="4" :focusOnSelect="true">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mr-3">
                     <img
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/'+ img.src +' 2500w,'"
+                      v-if="productImages.length > 0" 
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/'+ img.src +' 2500w,'" 
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/'+ img.src"
                       class="bgcard lazyload mediabox-img"
                       alt=""
@@ -54,6 +52,7 @@
           </v-row>
         </v-col>
         <v-col
+          cols="12"
           lg="4"
           class="pvw"
         >
@@ -63,13 +62,15 @@
           <div class="page-title px-0 text-left">{{product.name}}</div>
           <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2 pb-7">{{product.description}}</div>
           <div class="py-5 d-flex align-center justify-space-between">
-            <v-row justify="center" class="pa-0 text-center">
+            <v-row style="height:75px" justify="center" class="pa-0 text-center">
               <v-card
-               v-if="productMaterialChoice.name"
+                  v-for="(mtr,i_dx) in product.material"
+                  :key="'material_'+i_dx"
+                  width="120px"
                >
-               <img width="40px" class="rounded-lg" :src="productMaterialChoice.icon" alt="" v-if="productMaterialChoice.icon">
+               <img width="40px" class="rounded-lg" :src="mtr.icon" alt="">
                <v-card-text class="pa-0">
-                 {{productMaterialChoice.name}}
+                 {{mtr.name}}
                </v-card-text>
               </v-card>
             </v-row>
@@ -78,12 +79,11 @@
           </div>
           <div style="height:60px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
-               v-if="productColor.name"
           >
             <div>
               {{$t('product.color')}}
             </div>
-            <div class="d-flex align-center justify-space-between">
+            <div class="d-flex align-center justify-space-between" v-if="productColor.name">
               {{productColor.name}}
               <img :src="productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
@@ -204,6 +204,14 @@
 
     export default {
         name: 'post',
+        async asyncData(context) {
+            const {$content, params, app} = context;
+            const slug = params.slug;
+            const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
+            return {
+                productItem,
+            }
+        },
         data() {
             return {
                 svgPath1: mdiChevronRight,
@@ -230,43 +238,15 @@
                     image: null
                 },
                 productMaterial: null,
-                settings: {
-                    "infinite": false,
-                    "speed": 500,
-                    "slidesToShow": 3,
-                    "slidesToScroll": 3,
-                    "initialSlide": 0,
-                    "dots": false,
-                    "draggable": true,
-                    "arrows": false,
-                },
-                settingsSingle: {
-                    "dots": true,
-                    "arrow": true,
-                    "infinite": false,
-                    "speed": 500,
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1,
-                }
             }
         },
         components: {
             VueSlickCarousel
         },
-        async asyncData(context) {
-            const {$content, params, app, route, redirect} = context;
-            const slug = params.slug;
-            const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
-            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
-
-            return {
-                productItem, productsItem
-            }
-        },
         computed: {
             product() {
                 let currency = this.productItem.currency.find(currency => {
-                    return currency.name === this.$i18n.localeProperties.currency
+                    return currency.name === this.$i18n.localeProperties.currencySign
                 });
                 if (currency) {
                     this.productItem.price = currency.price;
@@ -275,45 +255,9 @@
                 }
                 return this.productItem;
             },
-            recommendedProducts() {
-                var tags = this.productItem.tags.map(tag => {
-                    return tag.name
-                });
-                var r_products = [];
-                this.productsItem.forEach(product => {
-                    if (product.tags.filter(value => tags.includes(value.name)).length > 0 && product.id !== this.product.id) {
-                        r_products.push(product)
-                    }
-                });
-                return r_products;
-            },
-            recentProducts() {
-                var rc_products = [];
-                var recent_products = this.$store.state.product.recent_products;
-                if (recent_products.length > 0) {
-                    recent_products.forEach(p_id => {
-                        if (p_id !== this.product.id) {
-                            rc_products.push(this.productsItem.find(p => p.id === p_id))
-                        }
-                    });
-
-                }
-                return rc_products;
-            },
-        },
-        beforeCreate() {
-            let rc_products = this.$cookies.get('recent_products');
-            if (rc_products.length > 0) {
-                this.$store.commit('product/initRecentProduct', rc_products);
-            }
         },
         created() {
-            this.$store.dispatch('product/setRecentProducts', this.product.id);
-
-        },
-        mounted() {
             this.productColor = this.product.colors[0];
-            this.productMaterialChoice = this.product.material[0];
             this.productImages = this.product.image
         },
         methods: {
