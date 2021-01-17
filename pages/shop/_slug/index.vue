@@ -15,11 +15,12 @@
               <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" v-viewer ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true">
+              <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
                   style="outline: none;"
+                  v-viewer
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <img
@@ -60,7 +61,7 @@
             <div>{{product.sku}}</div>
           </div>
           <div class="page-title px-0 text-left">{{product.name}}</div>
-          <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2 pb-7">{{product.description}}</div>
+          <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2">{{product.description}}</div>
           <div class="py-5 d-flex align-center justify-space-between">
             <v-row style="height:92px" justify="center" class="pa-0 text-center">
               <v-card
@@ -179,19 +180,12 @@
     </v-container>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
-                :product="product" @colorSelect="colorSelect" @materialSelect="materialSelect"/>
+                :product="product" @colorSelect="colorSelect" />
   </div>
 
 </template>
 
 <script>
-    import VueSlickCarousel from 'vue-slick-carousel'
-    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-    import "viewerjs/dist/viewer.css";
-    import VueFoldable from 'vue-foldable'
-    import 'vue-foldable/dist/vue-foldable.css'
-    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
     import "viewerjs/dist/viewer.css";
     import Viewer from "v-viewer";
     import Vue from "vue";
@@ -200,6 +194,13 @@
             zIndex: 300002
         }
     });
+    import VueSlickCarousel from 'vue-slick-carousel'
+    import 'vue-slick-carousel/dist/vue-slick-carousel.css'
+    import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
+    import VueFoldable from 'vue-foldable'
+    import 'vue-foldable/dist/vue-foldable.css'
+    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
+    import "viewerjs/dist/viewer.css";
     Vue.component('foldable', VueFoldable);
 
     export default {
@@ -232,12 +233,6 @@
                 },
                 productImages: [],
                 selectedColor: null,
-                selectedMaterial: null,
-                productMaterialChoice: {
-                    name: null,
-                    image: null
-                },
-                productMaterial: null,
             }
         },
         components: {
@@ -258,6 +253,8 @@
         },
         created() {
             this.productColor = this.product.colors[0];
+        },
+        mounted() {
             this.productImages = this.product.image
         },
         methods: {
@@ -286,14 +283,6 @@
                     }
                 });
             },
-            materialSelect(val) {
-                this.selectedMaterial = val;
-                this.productImages = this.product.image.filter(img => {
-                    if (img.material === parseInt(this.selectedMaterial)) {
-                        return img
-                    }
-                });
-              }
         },
         head() {
             return {
