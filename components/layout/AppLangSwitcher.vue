@@ -74,7 +74,8 @@ import { mdiClose } from '@mdi/js'
 export default {
     data() {
         return {
-            svgPath2: mdiClose
+            svgPath2: mdiClose,
+            sheet:false,
             }
     },
   computed: {

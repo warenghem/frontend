@@ -23,7 +23,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar clipped-left class="menu-bar border-bottom-md-2" flat height="42px" :dark="type">
+    <v-app-bar clipped-left class="menu-bar border-bottom-md-2" flat height="42px">
 
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-3">
           <v-icon>{{ svgPath }}</v-icon>

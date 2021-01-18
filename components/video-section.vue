@@ -4,7 +4,7 @@
       <div class="homepage-slider-background" ref="backgroundImg">
         <div class="homepage-slider-background-item active activeNew skeletton mediabox">
         <!--<ik-image
-            path="/allproductmountain_LkUAFK3bIdhb.jpg"
+            path="/AllMountain.jpeg"
             :lqip="{active:true, quality: 40, blur: 5}"
             :transformation="[{quality: 65, width:1500, height:800, dpr:2, focus: 'bottom'}]"
             loading="lazy"
@@ -12,38 +12,38 @@
           />-->
         <picture class="invgradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 640w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 768w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1024w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1366w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1600w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2500w," 
-            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,fo-bottom/allproductmountain_LkUAFK3bIdhb.jpg"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/AllMountain.jpeg 640w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/AllMountain.jpeg 768w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1024w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1366w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1600w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1920w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,fo-bottom/AllMountain.jpeg"
           >
           <source media="screen and (min-width: 48em)"
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 640w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 768w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1024w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1366w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1600w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2500w," 
-            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-1000,fo-bottom/allproductmountain_LkUAFK3bIdhb.jpg"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3,fo-bottom,c-maintain_ratio/AllMountain.jpeg 640w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 768w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 1024w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 1366w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 1600w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 1920w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-1000,fo-bottom/AllMountain.jpeg"
           >
           <source
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-3-5,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 640w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 768w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1024w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1366w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1600w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2500w," 
-            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,ar-3-5,fo-bottom/allproductmountain_LkUAFK3bIdhb.jpg"
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-3-5,fo-bottom,c-maintain_ratio/AllMountain.jpeg 640w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 768w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 1024w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 1366w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 1600w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 1920w,
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 2500w," 
+            data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,ar-3-5,fo-bottom/AllMountain.jpeg"
           >
           <img class="lazyload mediabox-img lazypreload"
-            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 1x,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/allproductmountain_LkUAFK3bIdhb.jpg 2x" 
+            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1x,
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 2x" 
             data-sizes="auto" />
         </picture>
         </div>

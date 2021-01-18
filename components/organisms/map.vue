@@ -44,7 +44,7 @@
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
-            <treebutton/>
+            <treebutton class="d-none" @click="closeSlide"/>
           </div>
           <v-btn
             text
@@ -165,7 +165,7 @@
       <div class="card">
         <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
-            <treebutton/>
+            <treebutton class="d-none" @click="closeSlide"/>
           </div>
           <v-btn
             text
