@@ -177,6 +177,60 @@
 
         </v-col>
       </v-row>
+      <v-row>
+        <v-col cols="12">
+          <div class="bold-title">{{$t('product.like')}}</div>
+        </v-col>
+        <v-col cols="12">
+          <v-tabs
+            :centered="true"
+          >
+            <v-tab
+              href="#recentTab"
+              v-if="recentProducts.length>0"
+            >
+              {{$t('product.recent')}}
+
+            </v-tab>
+            <v-tab
+              href="#recommendTab"
+              v-if="recommendedProducts.length>0"
+            >
+              {{$t('product.recommend')}}
+            </v-tab>
+            <v-tab-item
+              value="recentTab"
+              style="height: 700px"
+              v-if="recentProducts.length>0"
+            >
+              <VueSlickCarousel v-bind="settings">
+                <div v-for="(rc_productItem,i_dx) in recentProducts"
+                     :key="'recent_'+i_dx"
+                     class="text-center pa-2"
+                >
+                  <product-item :productItem="rc_productItem"></product-item>
+
+                </div>
+              </VueSlickCarousel>
+
+            </v-tab-item>
+            <v-tab-item
+              value="recommendTab"
+              style="height: 700px"
+              v-if="recommendedProducts.length>0"
+            >
+              <VueSlickCarousel v-bind="settings">
+                <div v-for="(productItem,i_dx) in recommendedProducts"
+                     :key="'recommend'+i_dx"
+                     class="pa-2"
+                >
+                  <product-item :productItem="productItem"></product-item>
+                </div>
+              </VueSlickCarousel>
+            </v-tab-item>
+          </v-tabs>
+        </v-col>
+      </v-row>
     </v-container>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
@@ -241,7 +295,7 @@
         computed: {
             product() {
                 let currency = this.productItem.currency.find(currency => {
-                    return currency.name === this.$i18n.localeProperties.currencySign
+                    return currency.name === this.$i18n.localeProperties.currency
                 });
                 if (currency) {
                     this.productItem.price = currency.price;
@@ -250,8 +304,39 @@
                 }
                 return this.productItem;
             },
+            recommendedProducts() {
+                var tags = this.productItem.tags.map(tag => {
+                    return tag.name
+                });
+                var r_products = [];
+                this.productsItem.forEach(product => {
+                    if (product.tags.filter(value => tags.includes(value.name)).length > 0 && product.id !== this.product.id) {
+                        r_products.push(product)
+                    }
+                });
+                return r_products;
+            },
+            recentProducts() {
+                var rc_products = [];
+                var recent_products = this.$store.state.product.recent_products;
+                if (recent_products.length > 0) {
+                    recent_products.forEach(p_id => {
+                        if (p_id !== this.product.id) {
+                            rc_products.push(this.productsItem.find(p => p.id === p_id))
+                        }
+                    });
+                }
+                return rc_products;
+            },
+        },
+        beforeCreate() {
+            let rc_products = this.$cookies.get('recent_products');
+            if (rc_products.length > 0) {
+                this.$store.commit('product/initRecentProduct', rc_products);
+            }
         },
         created() {
+            this.$store.dispatch('product/setRecentProducts', this.product.id);
             this.productColor = this.product.colors[0];
         },
         mounted() {
