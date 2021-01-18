@@ -1,22 +1,21 @@
 <template>
   <div>
 
-    <VueSlickCarousel v-bind="settingsSingle" v-if="product.image">
+    <VueSlickCarousel class="bgcard" :dots="true" :infinite="false" v-if="product.image">
 
       <div
-        class="pa-2 img-wrapper"
+        class="wa-smart-picture square-ratio skeletton wa-product-image"
         v-for="(img,i_dx) in product.image"
         :key="'image_'+i_dx"
 
       >
         <img
-          :src="img.src"
-          :lazy-src="require('../../assets/images/image-loader.gif')"
-          class="lazyload"
+          :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'" 
+          :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/Products/'+ img.src"
+          class="lazyload mediabox-img"
           alt=""
           @click="$router.push({path:product.path})"
         >
-
       </div>
     </VueSlickCarousel>
     <div class="pt-3 pb-2 d-flex justify-space-between align-center titlesmall teradeli-medium">
@@ -57,14 +56,6 @@
             return {
                 colors: ['red', 'green'],
                 currentItem: 1,
-                settingsSingle: {
-                    "dots": true,
-                    "arrow": true,
-                    "infinite": false,
-                    "speed": 500,
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1,
-                }
             }
         },
         computed: {
@@ -97,17 +88,5 @@
     width: 15px;
     height: 15px;
     margin: 2px;
-  }
-
-  .img-wrapper {
-    img {
-      max-height: 84vh;
-      max-width: 100%;
-      margin: auto;
-    }
-
-    &:focus {
-      outline: none !important;
-    }
   }
 </style>

@@ -18,18 +18,18 @@
         data() {
             return {
                 mapshow: false,
-                treeData: {
+                /*treeData: {
                     treeCount: 0,
                     co2: 0,
                     reforest: 0
-                },
+                },*/
             };
         },
         methods: {
             mapIntersect() {
-                this.treeData.treeCount = this.$store.state.tree_count;
+                /*this.treeData.treeCount = this.$store.state.tree_count;
                 this.treeData.co2 = parseFloat(this.$store.state.co2_compensated);
-                this.treeData.reforest = parseFloat(this.$store.state.reforest);
+                this.treeData.reforest = parseFloat(this.$store.state.reforest);*/
                 this.mapshow = true;
             },
 

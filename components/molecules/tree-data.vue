@@ -1,43 +1,20 @@
 <template>
     <div class="tree-data d-flex justify-center py-3 py-md-0 flex-column flex-md-row">
       <div class="text-center py-3 py-md-4 d-flex d-sm-block">
-        <div class="pr-3 pr-md-0">
-          <animated-number ref="treeCount"
-                           :from="0"
-                           :to="treeData.treeCount"
-                           :duration="3"
-                           :delay="2"
-                           easing="Power1.easeOut"
-                           class="tree-number"
-          ></animated-number>
+        <div class="pr-3 pr-md-0 tree-number">
+          {{$store.state.tree_count.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}
         </div>
         <div style="line-height: 1.4rem;" class="secondary--text"> {{$t('term1')}}</div>
       </div>
       <div class="text-center py-3 py-md-4 d-flex d-sm-block">
-        <div class="pr-3 pr-md-0">
-          <animated-number ref="co2"
-                           :from="0"
-                           :to="treeData.co2"
-                           :format="2"
-                           :duration="3"
-                           :delay="2"
-                           easing="Power1.easeOut"
-                           class="tree-number"
-          ></animated-number>
+        <div class="pr-3 pr-md-0 tree-number">
+          {{parseFloat(this.$store.state.co2_compensated.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " "))}}
         </div>
         <div style="line-height: 1.4rem;" class="secondary--text">{{$t('term2')}}</div>
       </div>
       <div class="text-center py-3 py-md-4 d-flex d-sm-block">
-        <div class="pr-3 pr-md-0">
-          <animated-number ref="reforest"
-                           :from="0"
-                           :to="treeData.reforest"
-                           :duration="3"
-                           :delay="2"
-                           :format="3"
-                           easing="Power1.easeOut"
-                           class="tree-number"
-          ></animated-number>
+        <div class="pr-3 pr-md-0 tree-number">
+          {{parseFloat(this.$store.state.reforest.replace(/\B(?=(\d{3})+(?!\d))/g, " "))}}
         </div>
         <div style="line-height: 1.4rem;" class="secondary--text">{{$t('term3')}}</div>
       </div>

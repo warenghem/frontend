@@ -105,6 +105,6 @@ export default {
             error: this.error,
             success: this.success,
             loading: this.loading,
-        })
+        }) 
     },
 }

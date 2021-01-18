@@ -73,8 +73,8 @@
         data() {
             return {
                 backgroundImages: [
-                    "/Products/sac_cote.png",
-                    ",fo-top/Products/ceinture.png",
+                    "/Products/48H_black_blue_side_bottle.png",
+                    ",fo-top/Products/belt.png",
                     "/Products/portefeuille.png",
                     "/vide.png",
                 ],

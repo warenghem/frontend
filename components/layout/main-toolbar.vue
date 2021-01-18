@@ -14,7 +14,7 @@
           v-for="(link,l_idx) in $store.state.link.links"
           :class="{'current':$root.currentId===link.elId}"
           :to="'/'+$i18n.locale+link.elId"
-          :key="'link_'+l_idx" nuxt
+          :key="'link_'+l_idx" nuxt 
         >
           <v-list-item-content>
             {{$t(link.name)}}

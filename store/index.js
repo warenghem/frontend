@@ -19,7 +19,7 @@ export const mutations = {
   SET_FOREST_DETAILS(state, payload) {
     state.tree_count = payload.tree_count;
     state.co2_compensated = payload.co2_compensated;
-    state.reforest = (parseInt(state.tree_count, 10) / 1000).toFixed(3).toLocaleString();
+    state.reforest = (parseInt(state.tree_count, 10) / 1000).toFixed(0).toLocaleString();
   },
 
 /* From Nuxt Team 

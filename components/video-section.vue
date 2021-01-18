@@ -94,34 +94,13 @@
         </v-col>
 
         <div style="bottom:0;right:0" class="mx-auto position-absolute pa-5">
-          <treebutton/>
+          <Treebutton/>
         </div>
         <div class="bottomleft text-gray">
-          <animated-number ref="treeCount"
-                           :from="0"
-                           :to="treeData.treeCount"
-                           :duration="3"
-                           :delay="0"
-                           easing="Power1.easeOut"
-          ></animated-number> <span>{{$t('video.forest.term1')}}</span> <br>
-          <animated-number ref="co2"
-                           :from="0"
-                           :to="treeData.co2"
-                           :format="2"
-                           :duration="3"
-                           :delay="0"
-                           easing="Power1.easeOut"
-          ></animated-number> <span>{{$t('video.forest.term2')}}</span> <br>
-          <animated-number ref="reforest"
-                           :from="0"
-                           :to="treeData.reforest"
-                           :duration="3"
-                           :delay="0"
-                           :format="3"
-                           easing="Power1.easeOut"
-          ></animated-number> <span>{{$t('video.forest.term3')}}</span> <br>
+          <span class="pr-2">{{$store.state.tree_count.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</span><span>{{$t('video.forest.term1')}}</span> <br>
+          <span class="pr-2">{{parseFloat(this.$store.state.co2_compensated.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " "))}}</span><span>{{$t('video.forest.term2')}}</span> <br>
+          <span class="pr-2">{{parseFloat(this.$store.state.reforest.replace(/\B(?=(\d{3})+(?!\d))/g, " "))}}</span><span>{{$t('video.forest.term3')}}</span> <br>
         </div>
-
       </v-row>
     </div>
   </div>
@@ -137,20 +116,20 @@
             return {
                 Eco,France,Tech,
                 dialog: false,
-                interval: {},
-                progressValue: 0,
-                maxProgress: 30,
                 snackbarSuccess: false,
                 snackbarError: false,
                 email: '',
+                /*interval: {},
+                progressValue: 0,
+                maxProgress: 30,
                 treeData: {
                     treeCount: 0,
                     co2: 0,
                     reforest: 0
-                },
+                },*/
             }
         },
-        beforeDestroy() {
+        /*beforeDestroy() {
             clearInterval(this.interval)
         },
         mounted() {
@@ -161,7 +140,7 @@
                 if (this.progressValue < this.maxProgress) {
                     this.progressValue = this.progressValue < this.maxProgress ? this.progressValue + 1 : this.maxProgress;
                 }
-            }.bind(this), 50);
+            }.bind(this), 50);*/
             // changeBackground();
             //
             // function changeBackground() {
@@ -206,7 +185,7 @@
             //         }, 5000);
             //     }, 100);
             // }
-        },
+        // },
     }
 </script>
 

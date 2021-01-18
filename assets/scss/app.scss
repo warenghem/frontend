@@ -194,6 +194,9 @@ body {
     display: block;
     position: relative;
     overflow: hidden;
+    &:focus {
+      outline: none !important;
+    }
 }
 .square-ratio:before {
   padding-top: 100%;

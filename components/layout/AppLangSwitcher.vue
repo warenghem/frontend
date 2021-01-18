@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-sheet scrollable v-if="availableLocales.length" v-model="sheet">
+  <v-bottom-sheet scrollable v-model="sheet">
     <template v-slot:activator="{ on, attrs }">
         <v-btn
             text
@@ -9,7 +9,7 @@
             class="nohover item priceHide"
         >
             <img :src="$i18n.localeProperties.img"
-                width="24"
+                width="22"
                 alt="lang flag"
             />
             <span class="px-0 px-sm-2"></span>
@@ -34,8 +34,67 @@
             </div>
             <v-card-text style="overflow: auto;" class="pa-0 h-100">
             <v-row class="ma-0 bgcard">
+                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Europe</div>
                 <v-container fluid class="productgridhome">
-                    <div v-for="locale in availableLocales" :key="locale.code">
+                    <div v-for="locale in europeavailableLocales" :key="locale.code">
+                        <nuxt-link
+                            :to="switchLocalePath(locale.code)"
+                            class="flex items-center whitespace-no-wrap"
+                            >
+                            <v-card 
+                                class="bg-white rounded-lg pa-5 h-100"
+                                @click="sheet = false"
+                                ripple
+                            >
+                                <v-card-actions class="justify-center h-100">
+                                    <div>
+                                        <img :src="locale.img"
+                                            width="24"
+                                            class="mr-3"
+                                            alt="lang flag"
+                                            style="transform: translateY(6px);"
+                                        />
+                                        {{ locale.name }}
+                                        <span class="pr-2"></span>
+                                        {{ locale.currencySign }}
+                                    </div>
+                                </v-card-actions>
+                            </v-card>
+                        </nuxt-link>
+                    </div>
+                </v-container>
+                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Americas</div>
+                <v-container fluid class="productgridhome">
+                    <div v-for="locale in americasavailableLocales" :key="locale.code">
+                        <nuxt-link
+                            :to="switchLocalePath(locale.code)"
+                            class="flex items-center whitespace-no-wrap"
+                            >
+                            <v-card 
+                                class="bg-white rounded-lg pa-5 h-100"
+                                @click="sheet = false"
+                                ripple
+                            >
+                                <v-card-actions class="justify-center h-100">
+                                    <div>
+                                        <img :src="locale.img"
+                                            width="24"
+                                            class="mr-3"
+                                            alt="lang flag"
+                                            style="transform: translateY(6px);"
+                                        />
+                                        {{ locale.name }}
+                                        <span class="pr-2"></span>
+                                        {{ locale.currencySign }}
+                                    </div>
+                                </v-card-actions>
+                            </v-card>
+                        </nuxt-link>
+                    </div>
+                </v-container>
+                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Other Regions</div>
+                <v-container fluid class="productgridhome">
+                    <div v-for="locale in otheravailableLocales" :key="locale.code">
                         <nuxt-link
                             :to="switchLocalePath(locale.code)"
                             class="flex items-center whitespace-no-wrap"
@@ -79,8 +138,23 @@ export default {
             }
     },
   computed: {
-    availableLocales () {
-      return this.$i18n.locales/* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link*/
+    europeavailableLocales () {
+      return this.$i18n.locales.filter(function (locale) {
+        return locale.region == 'Europe'
+        })
+    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link*/
+    },
+    americasavailableLocales () {
+      return this.$i18n.locales.filter(function (locale) {
+        return locale.region == 'Americas'
+        })
+    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link*/
+    },
+    otheravailableLocales () {
+      return this.$i18n.locales.filter(function (locale) {
+        return locale.region == 'Other'
+        })
+    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link*/
     },
   }
 }

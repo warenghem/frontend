@@ -32,13 +32,14 @@
                 </nuxt-link>
             </v-toolbar-title>
             <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
-                             :key="'slink_btn_l_'+l_idx">
-                <v-btn text class="text-uppercase item"
-                       
-                      :to="'/'+$i18n.locale+link.elId"
-                >
-                    {{$t(link.name)}}
-                </v-btn>
+                            :key="'link_btn_l_'+l_idx">
+              <v-btn text class="text-uppercase item"
+                    :class="{'current':$root.currentId===link.elId}"
+                    :to="'/'+$i18n.locale+link.elId" nuxt
+                    v-if="link.position==='left'"
+              >
+                {{$t(link.name)}}
+              </v-btn>
             </v-toolbar-items>
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
