@@ -22,21 +22,21 @@ colors:
 material:
   - id: 1
     name: Cuir de Vin Dionysos®
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    icon: "leather.jpg"
     color:
       - id: 1
-        name: NaturalBlack
-        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+        name: Natural Black
+        icon: "leather.jpg"
       - id: 2
-        name: DeserticCamel
-        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+        name: Desertic Camel
+        icon: "leather.jpg"
   - id: 2
-    name: Lin
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    name: Lin Bio Francais
+    icon: "linen_camel.jpg" 
     color:
       - id: 2
         name: DeserticCamel
-        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+        icon: "linen_camel.jpg"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
@@ -45,7 +45,7 @@ award:
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: Available soon - 30 pieces
+  availability: true
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -57,13 +57,13 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "Products/sac_face.png"
+- src: "sac_face.png"
   color: 2
   material: 1
   name: ''
   alt: ''
   availability: true
-- src: "Products/sac_cote.png"
+- src: "sac_cote.png"
   color: 1
   material: 2
   name: ''

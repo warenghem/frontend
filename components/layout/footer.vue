@@ -85,7 +85,6 @@ v-bind:href="social.url" v-for="social in socials" :key="social"
 <script>
     import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
     import {mdiInstagram, mdiFacebook} from '@mdi/js'
-
     export default {
         data: () => ({
             LogoSmNp,

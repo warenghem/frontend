@@ -2,41 +2,40 @@
 id: '2'
 sku: WA48NB
 name: Dionysos 48H
-description: Des vignes et du lin. Tel est son destin.
+description: Vines and flax. Such is his destiny.
 additionalProperty:
 - details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-- care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse,
-    nous vous recommandons de suivre ces conseils d’entretien
+- care: Care for this product
 dimensions:
-  length: '536'
-  width: '201'
-  height: '288'
+  length: '290'
+  width: '100'
+  height: '250'
 manufacturer: ''
 colors:
   - id: 1
     name: Natural Black
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    icon: "leather.jpg"
   - id: 2
     name: Desertic Camel
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    icon: "leather.jpg"
 material:
   - id: 1
-    name: Cuir de Vin Dionysos®
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    name: Dionysos® Wine Leather
+    icon: "leather.jpg"
     color:
       - id: 1
-        name: NaturalBlack
-        icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+        name: Natural Black
+        icon: "leather.jpg"
       - id: 2
-        name: DeserticCamel
-        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+        name: Desertic Camel
+        icon: "leather.jpg"
   - id: 2
-    name: Lin
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    name: Organic French Linen
+    icon: "linen_camel.jpg" 
     color:
       - id: 2
         name: DeserticCamel
-        icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+        icon: "linen_camel.jpg"
 award:
 - name: Vegan
   image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
@@ -45,7 +44,7 @@ award:
 offers:
   priceCurrency: EUR
   price: '390'
-  availability: Available soon - 30 pieces
+  availability: true
 categories:
 - name: Leather Goods
   slug: leathergoods
@@ -57,13 +56,13 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "Products/sac_face.png"
+- src: "sac_face.png"
   color: 2
   material: 1
   name: ''
   alt: ''
   availability: true
-- src: "Products/sac_cote.png"
+- src: "sac_cote.png"
   color: 1
   material: 2
   name: ''

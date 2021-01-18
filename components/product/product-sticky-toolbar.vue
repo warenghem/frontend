@@ -4,7 +4,7 @@
     <v-app-bar class="menu-bar pr-1" flat height="48px">
       <div class="d-flex align-center ml-1">
         <div style="width:40px" class="wa-smart-picture square-ratio skeletton wa-product-image bgcard">
-          <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1/'+ product.image[0].src"
+          <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1/Products/'+ product.image[0].src"
                class="lazyload mediabox-img"
                alt=""
           >
