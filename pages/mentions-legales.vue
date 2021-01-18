@@ -49,7 +49,7 @@
                     tabs: [
                         {
                             menu: '1. QUELLES CATEGORIES DE DONNÉES COLLECTONS-NOUS ?',
-                            description: 'LV collecte les catégories de données suivantes, pour les finalités décrites ci-après dans Notre Politique:Votre identité et vos coordonnées (tels que nom, adresse, numéro de téléphone ou adresse e-mail), lorsque vous décidez de les communiquer, par exemple pour créer un compte en ligne, participer à un événement, effectuer un achat ou remplir un formulaire d'information du client en magasin, effectuer un retour ou un échange, ainsi que les informations de votre pièce d’identité lorsque vous sollicitez une détaxe ou un service «click and collect» en magasin.',
+                            description: 'LV collecte les catégories de données suivantes, pour les finalités décrites ci-après dans Notre Politique:Votre identité et vos coordonnées (tels que nom, adresse, numéro de téléphone ou adresse e-mail), lorsque vous décidez de les communiquer, par exemple pour créer un compte en ligne, participer à un événement, effectuer un achat ou remplir un formulaire ',
                         },
                         {
                             menu: '2. À QUELLES FINS UTILISONS-NOUS VOS DONNÉES ?',
