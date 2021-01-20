@@ -9,7 +9,6 @@
     <v-container class="px-lg-7" fluid>
       <v-row>
         <v-col lg="4" md="6" v-for="(product,idx) in productsItem" :key="'product_'+idx">
-          <ProductItem :productItem="product"/>
         </v-col>
       </v-row>
       <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
