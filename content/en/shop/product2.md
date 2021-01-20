@@ -1,21 +1,100 @@
 ---
-title: French article 2
-category: web
-cta: discover how
-tags:
-- name: Tech
+id: '3'
+sku: WA48NB
+name: Dionysos 48H
+description: Vines and flax. Such is his destiny.
+additionalProperty:
+- details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+- care: Care for this product
+dimensions:
+  length: '290'
+  width: '100'
+  height: '250'
+manufacturer: ''
+colors:
+  - id: 1
+    name: Natural Black
+    icon: "leather.jpg"
+  - id: 2
+    name: Desertic Camel
+    icon: "leather.jpg"
+material:
+  - id: 1
+    name: Dionysos® Wine Leather
+    icon: "leather.jpg"
+    color:
+      - id: 1
+        name: Natural Black
+        icon: "leather.jpg"
+      - id: 2
+        name: Desertic Camel
+        icon: "leather.jpg"
+  - id: 2
+    name: Organic French Linen
+    icon: "linen_camel.jpg" 
+    color:
+      - id: 2
+        name: DeserticCamel
+        icon: "linen_camel.jpg"
+award:
+- name: Vegan
+  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+- name: Ecological
+  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+offers:
+  priceCurrency: EUR
+  price: '390'
+  availability: true
+categories:
 - name: Leather Goods
-description: 'Empower your NuxtJS application with @nuxt/content module: write in a content/ directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a Git-based Headless CMS.'
-media: S048_PF_TEuxOrfV7C_a.png
-
+  slug: leathergoods
+  depth: '1'
+- name: Bags
+  slug: bags
+  depth: '2'
+tags:
+- name: Leather Goods
+- name: Bags
+image:
+- src: "sac_face.png"
+  color: 2
+  material: 1
+  name: ''
+  alt: ''
+  availability: true
+- src: "sac_cote.png"
+  color: 1
+  material: 2
+  name: ''
+  alt: ''
+  availability: false
+attributes:
+- name: Size
+  options:
+  - '41'
+  - '42'
+  - '43'
+default_attributes:
+- name: Color
+  option: Natural Black
+- name: Size
+  option: '41'
+isRelatedTo: ''
+isSimilarTo: shoes
+brand:
+  name: Warenghem
 ---
-TRADUCTION
-Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
 
-Quam ob rem circumspecta cautela observatum est deinceps et cum edita montium petere coeperint grassatores, loci iniquitati milites cedunt. ubi autem in planitie potuerint reperiri, quod contingit adsidue, nec exsertare lacertos nec crispare permissi tela, quae vehunt bina vel terna, pecudum ritu inertium trucidantur.
+Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
-Cum autem commodis intervallata temporibus convivia longa et noxia coeperint apparari vel distributio sollemnium sportularum, anxia deliberatione tractatur an exceptis his quibus vicissitudo debetur, peregrinum invitari conveniet, et si digesto plene consilio id placuerit fieri, is adhibetur qui pro domibus excubat aurigarum aut artem tesserariam profitetur aut secretiora quaedam se nosse confingit.
+## Writing content
 
-Soleo saepe ante oculos ponere, idque libenter crebris usurpare sermonibus, omnis nostrorum imperatorum, omnis exterarum gentium potentissimorumque populorum, omnis clarissimorum regum res gestas, cum tuis nec contentionum magnitudine nec numero proeliorum nec varietate regionum nec celeritate conficiendi nec dissimilitudine bellorum posse conferri; nec vero disiunctissimas terras citius passibus cuiusquam potuisse peragrari, quam tuis non dicam cursibus, sed victoriis lustratae sunt.
+Learn how to write your `content/`, supporting Markdown, YAML, CSV and JSON: https://content.nuxtjs.org/writing.
 
-Post emensos insuperabilis expeditionis eventus languentibus partium animis, quas periculorum varietas fregerat et laborum, nondum tubarum cessante clangore vel milite locato per stationes hibernas, fortunae saevientis procellae tempestates alias rebus infudere communibus per multa illa et dira facinora Caesaris Galli, qui ex squalore imo miseriarum in aetatis adultae primitiis ad principale culmen insperato saltu provectus ultra terminos potestatis delatae procurrens asperitate nimia cuncta foedabat. propinquitate enim regiae stirpis gentilitateque etiam tum Constantini nominis efferebatur in fastus, si plus valuisset, ausurus hostilia in auctorem suae felicitatis, ut videbatur.
+## Fetching content
+
+Learn how to fetch your content with `$content`: https://content.nuxtjs.org/fetching.
+
+## Displaying content
+
+Learn how to display your Markdown content with the `<nuxt-content>` component directly in your template: https://content.nuxtjs.org/displaying.
