@@ -56,13 +56,13 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "48H_face.png"
+- src: "sac_face.png"
   color: 2
   material: 1
   name: ''
   alt: ''
   availability: true
-- src: "48H_cote.png"
+- src: "sac_cote.png"
   color: 1
   material: 2
   name: ''

@@ -14,7 +14,7 @@
           v-for="(link,l_idx) in $store.state.link.links"
           :class="{'current':$root.currentId===link.elId}"
           :to="'/'+$i18n.locale+link.elId"
-          :key="'link_'+l_idx" nuxt 
+          :key="'link_'+l_idx" nuxt
         >
           <v-list-item-content>
             {{$t(link.name)}}
@@ -23,9 +23,9 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar clipped-left class="menu-bar border-bottom-md-2" flat height="42px">
+    <v-app-bar clipped-left class="menu-bar border-bottom-2" flat height="42px">
 
-      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-3">
+      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>
       <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"

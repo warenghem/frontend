@@ -616,14 +616,7 @@ body {
     flex-wrap: wrap;
     height: unset !important;
   }
-
-  height: unset !important;
-  @media(min-width: 768px) {
-    height: 70px !important;
-    .v-toolbar__content {
-      height: 70px !important;
-    }
-  }
+  height: 50px !important;
 }
 .custom-list {
   .v-list-item--active {
@@ -662,9 +655,12 @@ body {
 }
 
 .sub-title {
+font-size: 22px;
+font-family: 'teradeli-medium', sans-serif;
+letter-spacing: .009em;
+  @media(min-width:48em) {
   font-size: 24px;
-  font-family: 'teradeli-medium', sans-serif;
-  letter-spacing: .009em;
+  }
 }
 
 .text-white {
@@ -853,6 +849,7 @@ body {
 .BgTransparent {
   .menu-bar {
     background: transparent !important;
+    border-bottom: none!important;
     @media(min-width: 961px) {
       border-bottom: solid 1px rgba(255,255,255,0.4)!important;
     }

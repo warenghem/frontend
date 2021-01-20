@@ -57,7 +57,7 @@
                                     :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
                                     :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
                                 >
-                                <img class="lazyload mediabox-img"
+                                <img class="lazyload mediabox-img" :class="classe[p_idx]"
                                     :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 2x'" 
                                     data-sizes="auto" />
                             </picture>
@@ -73,10 +73,16 @@
         data() {
             return {
                 backgroundImages: [
-                    "/Products/48H_black_blue_side_bottle.png",
+                    ",ar-6-4/Products/48H_black_blue_side_bottle.png",
                     ",fo-top/Products/belt.png",
                     "/Products/portefeuille.png",
                     "/vide.png",
+                ],
+                classe: [
+                    "bag",
+                    "belt",
+                    "wallet",
+                    "boots",
                 ],
                 products: this.$t('products'),
             }
@@ -170,9 +176,30 @@
     height: 33rem!important;
   }
 }
+
+ .productdescription {
+    max-width: 400px;
+    top: 0;
+    bottom: unset;
+    @media (min-width: 48em) {
+    top: unset;
+    bottom: 0;
+    }
+}
 .visualtocome {
   font-size: 3rem;
   line-height: 3rem;
+  @media (max-width: 48em) {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-gap: 0.5rem;
+    font-size: 2.5rem
+  }
+}
+ .visualtocome {
+    margin-top: 30px;
+    @media (min-width: 48em) {
+        margin-top: unset!important;
+    }
 }
 .productgridhome {
   margin: 0 auto;
@@ -190,15 +217,14 @@
     top: 0;
     bottom: unset;
 }
- .productdescription {
-    max-width: 400px;
-}
  .collectionlogo {
-    max-width: 250px;
+    max-width: 230px;
     @media (min-width: 32em) {
         max-width: 500px;
     }
 }
+
+
 /* @media (min-width: 48em) {
     .container.productgridhome div:nth-of-type(2) .productdescription {
         left: 0;

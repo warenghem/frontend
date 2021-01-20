@@ -41,7 +41,7 @@
     </div>
     <div class="slideArea mgforest">
       <div class="card">
-        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
+        <div style="height: 50px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton class="d-none" @click="closeSlide"/>
           </div>
@@ -162,7 +162,7 @@
     </div>
     <div class="slideArea indianforest">
       <div class="card">
-        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
+        <div style="height: 50px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton class="d-none" @click="closeSlide"/>
           </div>

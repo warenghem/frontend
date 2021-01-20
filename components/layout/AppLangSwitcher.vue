@@ -9,18 +9,19 @@
             class="nohover item priceHide"
         >
             <img :src="$i18n.localeProperties.img"
-                width="22"
+                width="24"
                 alt="lang flag"
+                class="rounded-lg"
             />
             <span class="px-0 px-sm-2"></span>
-            <div class="d-none d-sm-block" style="font-size:1.2rem">
+            <div class="d-none d-sm-block" style="font-size:1.1rem;margin-bottom:1px">
                 {{$i18n.localeProperties.currencySign}}
             </div>
         </v-btn>
     </template> 
     <slot name="langSwitcher">
-        <div class="bg-white mobileoverflow">
-            <div style="height: 60px;" class="d-flex justify-space-between align-center border-bottom-2">
+        <div class="bg-white">
+            <div style="height: 50px;" class="d-flex justify-space-between align-center border-bottom-2">
                 <div class="text-center sub-title pl-3">Choose your region</div>
                 <v-btn
                     text
@@ -42,17 +43,18 @@
                             class="flex items-center whitespace-no-wrap"
                             >
                             <v-card 
-                                class="bg-white rounded-lg pa-5 h-100"
+                                class="bg-white rounded-lg px-3"
                                 @click="sheet = false"
                                 ripple
+                                style="height:70px"
                             >
-                                <v-card-actions class="justify-center h-100">
+                                <v-card-actions class="justify-center h-100 text-center">
                                     <div>
                                         <img :src="locale.img"
                                             width="24"
-                                            class="mr-3"
+                                            class="mr-3 rounded-lg"
                                             alt="lang flag"
-                                            style="transform: translateY(6px);"
+                                            style="transform: translateY(7px);"
                                         />
                                         {{ locale.name }}
                                         <span class="pr-2"></span>
@@ -63,7 +65,7 @@
                         </nuxt-link>
                     </div>
                 </v-container>
-                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Americas</div>
+                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0 pt-0">Americas</div>
                 <v-container fluid class="productgridhome">
                     <div v-for="locale in americasavailableLocales" :key="locale.code">
                         <nuxt-link
@@ -71,17 +73,18 @@
                             class="flex items-center whitespace-no-wrap"
                             >
                             <v-card 
-                                class="bg-white rounded-lg pa-5 h-100"
+                                class="bg-white rounded-lg px-3"
                                 @click="sheet = false"
+                                style="height:70px"
                                 ripple
                             >
-                                <v-card-actions class="justify-center h-100">
+                                <v-card-actions class="justify-center h-100 text-center">
                                     <div>
                                         <img :src="locale.img"
                                             width="24"
-                                            class="mr-3"
+                                            class="mr-3 rounded-lg"
                                             alt="lang flag"
-                                            style="transform: translateY(6px);"
+                                            style="transform: translateY(7px);"
                                         />
                                         {{ locale.name }}
                                         <span class="pr-2"></span>
@@ -92,25 +95,26 @@
                         </nuxt-link>
                     </div>
                 </v-container>
-                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Other Regions</div>
-                <v-container fluid class="productgridhome">
+                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0 pt-0">Other Regions</div>
+                <v-container fluid class="productgridhome bug">
                     <div v-for="locale in otheravailableLocales" :key="locale.code">
                         <nuxt-link
                             :to="switchLocalePath(locale.code)"
                             class="flex items-center whitespace-no-wrap"
                             >
                             <v-card 
-                                class="bg-white rounded-lg pa-5 h-100"
+                                class="bg-white rounded-lg px-3"
+                                style="height:70px"
                                 @click="sheet = false"
                                 ripple
                             >
-                                <v-card-actions class="justify-center h-100">
+                                <v-card-actions class="justify-center h-100 text-center">
                                     <div>
                                         <img :src="locale.img"
                                             width="24"
-                                            class="mr-3"
+                                            class="mr-3 rounded-lg"
                                             alt="lang flag"
-                                            style="transform: translateY(6px);"
+                                            style="transform: translateY(7px);"
                                         />
                                         {{ locale.name }}
                                         <span class="pr-2"></span>
@@ -167,9 +171,14 @@ export default {
     grid-auto-rows: 1fr;
     padding: 1rem!important;
     grid-gap: 1rem;
-    @media (max-width: 48em) {
-        grid-template-columns: repeat(1, minmax(0, 1fr));
-        grid-gap: 0.5rem;
+        @media (max-width: 48em) {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+            grid-gap: 0.5rem;
+        }
     }
+    @media (max-width: 48em) {
+        .bug {
+            margin-bottom: 50px;
+        }
     }
 </style>

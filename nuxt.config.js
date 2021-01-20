@@ -139,7 +139,7 @@ export default {
       {
         code: 'fr-ch',
         iso: 'fr-CH',
-        name: 'Switzerland',
+        name: 'Switzerland (Francais)',
         region: 'Europe',
         file: 'fr-fr.json',
         currency: 'CHF', 
@@ -147,8 +147,8 @@ export default {
         img: '/flags/switzerland.svg',
       },
       {
-        code: 'en',
-        iso: 'en',
+        code: 'lu',
+        iso: 'lu',
         name: 'Other European Union Regions (English)',
         region: 'Europe',
         file: 'en-us.json',
@@ -187,8 +187,8 @@ export default {
         img: '/flags/canada.svg',
       },
       {
-        code: 'en-all',
-        iso: 'en-ALL',
+        code: 'en',
+        iso: 'en',
         name: 'Other World Regions (English)',
         region: 'Other',
         file: 'en-us.json',
@@ -197,11 +197,191 @@ export default {
         img: '/flags/monde.svg',
       },
     ],
-  },
-  vueI18n: {
-    messages: {
-      fr: require('./locales/fr-fr.json'),
-      en: require('./locales/en-us.json'),
+    vueI18n: {
+      messages: {
+        fr: require('./locales/fr-fr.json'),
+        en: require('./locales/en-us.json'),
+      },
+      numberFormats: {
+        'fr-fr': {
+          currency: {
+             style: 'currency', 
+              currency: 'EUR',
+              minimumFractionDigits: 0
+             }
+        },
+        'en-gb': {
+          currency: {
+             style: 'currency', 
+              currency: 'GBP',
+              minimumFractionDigits: 0
+             }
+        },
+        'fr-ch': {
+          currency: {
+             style: 'currency', 
+              currency: 'CHF',
+              minimumFractionDigits: 0
+             }
+        },
+        'lu': {
+          currency: {
+             style: 'currency', 
+              currency: 'EUR',
+              minimumFractionDigits: 0
+             }
+        },
+        'en-us': {
+          currency: {
+             style: 'currency', 
+              currency: 'USD',
+              minimumFractionDigits: 0
+             }
+        },
+        'fr-ca': {
+          currency: {
+             style: 'currency', 
+              currency: 'CAD',
+              minimumFractionDigits: 0
+             }
+        },
+        'en-ca': {
+          currency: {
+             style: 'currency', 
+              currency: 'CAD',
+              minimumFractionDigits: 0
+             }
+        },
+        'en': {
+          currency: {
+             style: 'currency', 
+              currency: 'USD',
+              minimumFractionDigits: 0
+             }
+        }
+      },
+      dateTimeFormats: {
+        'fr-fr': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en-gb': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'fr-ch': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'lu': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en-us': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'fr-ca': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en-ca': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        }
+      }
     },
   },
   hooks: {

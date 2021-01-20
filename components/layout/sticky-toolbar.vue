@@ -23,7 +23,7 @@
         <v-app-bar flat class="border-bottom-2" height="48px"
                    >
 
-            <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-3">
+            <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-2">
               <v-icon>{{ svgPath }}</v-icon>
             </v-app-bar-nav-icon>
             <v-toolbar-title class="d-md-block pr-4 d-none">
