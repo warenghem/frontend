@@ -5,6 +5,7 @@
       <v-row
         class="ma-0"
       >
+        {{productImages}}
         <v-col
           cols="12"
           lg="8"
@@ -15,16 +16,22 @@
               <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true">
+              <VueSlickCarousel class="bgcard"
+                                :arrows="false"
+                                :dots="false"
+                                ref="c1"
+                                :asNavFor="$refs.c2"
+                                :focusOnSelect="true"
+                                v-if="productImages.length > 0"
+              >
                 <div
-                  v-for="(img,i_dx) in product.image"
+                  v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
                   style="outline: none;"
-                  v-viewer
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <img
-                      v-if="productImages.length > 0"
+
                       :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ img.src +' 2500w,'"
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/Products/'+ img.src"
                       class="lazyload mediabox-img"
@@ -33,14 +40,19 @@
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-3" ref="c2" :slidesToShow="4" :asNavFor="$refs.c1" :focusOnSelect="true">
+              <VueSlickCarousel class="mt-3"
+                                ref="c2"
+                                :slidesToShow="4"
+                                :asNavFor="$refs.c1"
+                                :focusOnSelect="true"
+                                v-if="productImages.length > 0">
                 <div
-                  v-for="(img,i_dx) in product.image"
+                  v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
+             @click="$refs.c1.goTo(i_dx)"
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mr-3">
                     <img
-                      v-if="productImages.length > 0"
                       :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'"
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/Products/'+ img.src"
                       class="bgcard lazyload mediabox-img"
@@ -65,28 +77,36 @@
           <div class="py-5 d-flex align-center justify-space-between">
             <v-row style="height:92px" justify="center" class="pa-0 text-center">
               <v-card
-                  v-for="(mtr,i_dx) in product.material"
-                  :key="'material_'+i_dx"
-                  width="110px"
-               >
-               <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ mtr.icon" alt="">
-               <v-card-text class="pa-0">
-                 {{mtr.name}}
-               </v-card-text>
+                v-for="(mtr,i_dx) in product.material"
+                :key="'material_'+i_dx"
+                width="110px"
+              >
+                <img width="40px" class="rounded-lg"
+                     :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ mtr.icon"
+                     alt="">
+                <v-card-text class="pa-0">
+                  {{mtr.name}}
+                </v-card-text>
               </v-card>
             </v-row>
             <div>
             </div>
           </div>
-          <div style="height:60px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
+          <div style="height:60px"
+               class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
           >
             <div>
               {{$t('product.color')}}
             </div>
-            <div class="d-flex align-center justify-space-between" v-if="productColor.name">
-              {{productColor.name}}
-              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3 rounded-lg">
+            <div class="d-flex align-center justify-space-between">
+              <span v-if="selectedColor">{{selectedColor.name}}</span>
+              <img
+                :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ selectedColor.icon"
+                alt=""
+                v-if="selectedColor"
+                width="40px"
+                class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
@@ -234,29 +254,39 @@
         </v-col>
       </v-row>
     </v-container>
-    <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
+    <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"></InfoModal>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
-                :product="product" @colorSelect="colorSelect" />
+               :product="product" @colorSelect="colorSelect"></SideModal>
   </div>
 
 </template>
 
 <script>
     import "viewerjs/dist/viewer.css";
-    import Viewer from "v-viewer";
+    // import Viewer from "v-viewer";
     import Vue from "vue";
-    Vue.use(Viewer, {
-        defaultOptions: {
-            zIndex: 300002
-        }
-    });
+
+    // Vue.use(Viewer, {
+    //     defaultOptions: {
+    //         zIndex: 300002
+    //     }
+    // });
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     import VueFoldable from 'vue-foldable'
     import 'vue-foldable/dist/vue-foldable.css'
-    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
+    import {
+        mdiChevronRight,
+        mdiCreditCard,
+        mdiContentCopy,
+        mdiCircle,
+        mdiTruckDelivery,
+        mdiSync,
+        mdiPackageVariantClosed
+    } from '@mdi/js'
     import "viewerjs/dist/viewer.css";
+
     Vue.component('foldable', VueFoldable);
 
     export default {
@@ -285,11 +315,6 @@
                 currentModal: 'paymentInfoModal',
                 sideModal: false,
                 currentSideItem: 'productCare',
-                productColor: {
-                    name: null,
-                    image: null
-                },
-                productImages: [],
                 selectedColor: null,
                 settings: {
                     "dots": false,
@@ -332,7 +357,7 @@
                     "speed": 500,
                     "slidesToShow": 1,
                     "slidesToScroll": 1,
-                }
+                },
             }
         },
         components: {
@@ -349,6 +374,17 @@
                     this.productItem.price = this.productItem.offers.price;
                 }
                 return this.productItem;
+            },
+            productImages() {
+                if (this.selectedColor) {
+                    return this.productItem.image.filter(img => {
+                        if (img.color === parseInt(this.selectedColor.id)) {
+                            return img
+                        }
+                    });
+                } else {
+                    return this.productItem.image
+                }
             },
             recommendedProducts() {
                 var tags = this.productItem.tags.map(tag => {
@@ -374,47 +410,54 @@
                 }
                 return rc_products;
             },
-        },
+        }
+        ,
         beforeCreate() {
             let rc_products = this.$cookies.get('recent_products');
             if (rc_products.length > 0) {
                 this.$store.commit('product/initRecentProduct', rc_products);
             }
-        },
+        }
+        ,
         created() {
             this.$store.dispatch('product/setRecentProducts', this.product.id);
-            this.productColor = this.product.colors[0];
-        },
+        }
+        ,
         mounted() {
-            this.productImages = this.product.image
-        },
+            this.colorSelect()
+        }
+        ,
         methods: {
             openModal(modalName) {
                 this.currentModal = modalName;
                 this.infoModal = true
-            },
+            }
+            ,
             openSideModal(modalName) {
                 this.currentSideItem = modalName;
                 this.sideModal = true;
                 const el = document.body;
                 el.classList.add("modal-open");
                 document.documentElement.style.overflowY = 'hidden';
-            },
+            }
+            ,
             closeSideModal() {
                 this.sideModal = false;
                 const el = document.body;
                 el.classList.remove("modal-open");
                 document.documentElement.style.overflowY = 'auto';
-            },
+            }
+            ,
             colorSelect(val) {
-                this.selectedColor = val;
-                this.productImages = this.product.image.filter(img => {
-                    if (img.color === parseInt(this.selectedColor)) {
-                        return img
-                    }
-                });
-            },
-        },
+                if (val) {
+                    this.selectedColor = this.product.colors.find(color => color.id === parseInt(val));
+                } else {
+                    this.selectedColor = null
+                }
+            }
+            ,
+        }
+        ,
         head() {
             return {
                 htmlAttrs: {
@@ -438,7 +481,8 @@
                     },
                 ],
             };
-        },
+        }
+        ,
     }
 </script>
 <style lang="scss">
@@ -446,9 +490,11 @@
   .right-icon {
     font-size: 35px !important;
   }
+
   .slick-slide > div > div {
-      outline: none;
+    outline: none;
   }
+
   .right-title {
     font-size: 18px;
     font-weight: 500;
@@ -467,7 +513,8 @@
     transition: opacity 3s;
     bottom: 24px;
   }
-   .bold-title {
+
+  .bold-title {
     font-size: 2.125rem;
     line-height: 2.125rem;
     color: inherit;
@@ -475,12 +522,14 @@
     text-transform: uppercase;
     text-align: center;
   }
+
   .img-wrapper {
     img {
       max-height: 84vh;
       max-width: 100%;
       margin: auto;
     }
+
     &:focus {
       outline: none !important;
     }
