@@ -29,24 +29,24 @@
           <v-col lg="6" v-for="item in product.colors"
                  :key="item.id">
             <input type="radio" hidden :id="'color_'+item.id" :value="item.id"
-                    class="radioSelect"
-                    @input="$emit('colorSelect',$event.target.value)"
+                   class="radioSelect"
+                   @input="$emit('colorSelect',$event.target.value)"
                    name="colorSelect"
             >
             <label :for="'color_'+item.id">
               <v-card
                 class="mx-auto"
                 max-width="344"
-
+                v-if="product.image.length>0"
               >
-                <v-img
-                  :src="product.image.find(img => img.color === item.id).src"
-                  height="200px"
-                  class="mx-2 bg-light"
-                  style="top:7px"
-                ></v-img>
-
-                <v-card-subtitle class="pt-4 pb-1">
+                <img
+                  :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src +' 2500w,'"
+                  :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/Products/'+ product.image.find(img => img.color === item.id).src"
+                  class="lazyload mx-2 bg-light w-100"
+                  alt=""
+                 >
+                <div>
+                  <v-card-subtitle class="pt-4 pb-1">
                   {{item.name}}
                 </v-card-subtitle>
                 <v-card-subtitle class="pb-2 pt-0">
@@ -54,6 +54,8 @@
 
                   {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
                 </v-card-subtitle>
+                </div>
+
               </v-card>
             </label>
 
@@ -65,14 +67,14 @@
         <v-row>
           <v-col lg="4" v-for="item in product.material"
                  :key="item.id">
-             <input type="radio"
+            <input type="radio"
                    hidden
                    :id="'mat_'+item.id"
                    :value="item.id"
                    class="radioSelect"
-                     name="matSelect"
-                    @input="$emit('materialSelect',$event.target.value)"
-                   >
+                   name="matSelect"
+                   @input="$emit('materialSelect',$event.target.value)"
+            >
             <label :for="'mat_'+item.id">
               <v-card
                 class="mx-auto"
@@ -152,9 +154,9 @@
 </script>
 
 <style lang="scss">
-.radioSelect:checked + label {
-  .v-card{
-    border: 2px solid #2c3338;
+  .radioSelect:checked + label {
+    .v-card {
+      border: 2px solid #2c3338;
+    }
   }
-}
 </style>

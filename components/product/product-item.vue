@@ -10,7 +10,7 @@
 
       >
         <img
-          :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'" 
+          :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'"
           class="lazyload"
           alt=""
           @click="$router.push({path:product.path})"
@@ -20,13 +20,12 @@
     <div class="pt-3 pb-2 d-flex justify-space-between align-center titlesmall teradeli-medium">
       <strong>{{product.name}}</strong>
       <div>
-        <button v-for="(item,idx) in colors"
-                :key="'color'+item"
-                :style="'background-color:'+item"
+        <img v-for="(item,idx) in product.colors"
+                :key="'color'+item.id"
+                :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+item.icon"
                 class="color-button"
-                @click="currentItem=idx"
+                @click="currentItem=item.id"
         >
-        </button>
       </div>
     </div>
     <v-progress-circular
@@ -53,7 +52,6 @@
         components: { VueSlickCarousel },
         data() {
             return {
-                colors: ['red', 'green'],
                 currentItem: 1,
                 settingsSingle: {
                     "dots": true,
@@ -67,15 +65,14 @@
         },
         computed: {
             product() {
-                console.log(this.productItem)
-                // let currency = this.productItem?this.productItem.currency.find(currency => {
-                //     return currency.name === this.$i18n.localeProperties.currencySign
-                // }):{};
-                // if (currency) {
-                //     this.productItem.price = currency.price;
-                // } else {
-                //     this.productItem.price = this.productItem.offers.price;
-                // }
+                let currency = this.productItem?this.productItem.currency.find(currency => {
+                    return currency.name === this.$i18n.localeProperties.currency
+                }):{};
+                if (currency) {
+                    this.productItem.price = currency.price;
+                } else {
+                    this.productItem.price = this.productItem.offers.price;
+                }
 
                 return this.productItem;
             }
@@ -93,8 +90,8 @@
 
 <style lang="scss">
   .color-button {
-    width: 15px;
-    height: 15px;
+    width: 20px;
+    height: 20px;
     margin: 2px;
   }
 
