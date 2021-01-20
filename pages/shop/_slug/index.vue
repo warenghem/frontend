@@ -24,8 +24,8 @@
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <img
-                      v-if="productImages.length > 0" 
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ img.src +' 2500w,'" 
+                      v-if="productImages.length > 0"
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ img.src +' 2500w,'"
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/Products/'+ img.src"
                       class="lazyload mediabox-img"
                       alt=""
@@ -40,8 +40,8 @@
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mr-3">
                     <img
-                      v-if="productImages.length > 0" 
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'" 
+                      v-if="productImages.length > 0"
+                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'"
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/Products/'+ img.src"
                       class="bgcard lazyload mediabox-img"
                       alt=""
@@ -188,6 +188,7 @@
             <v-tab
               href="#recentTab"
               v-if="recentProducts.length>0"
+              class="pa-2"
             >
               {{$t('product.recent')}}
 
@@ -195,6 +196,7 @@
             <v-tab
               href="#recommendTab"
               v-if="recommendedProducts.length>0"
+              class="pa-2"
             >
               {{$t('product.recommend')}}
             </v-tab>
@@ -263,7 +265,9 @@
             const {$content, params, app} = context;
             const slug = params.slug;
             const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
+            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
             return {
+                productsItem,
                 productItem,
             }
         },
@@ -287,6 +291,48 @@
                 },
                 productImages: [],
                 selectedColor: null,
+                settings: {
+                    "dots": false,
+                    "infinite": false,
+                    "arrow": false,
+                    "speed": 500,
+                    "slidesToShow": 3,
+                    "slidesToScroll": 3,
+                    "initialSlide": 0,
+                    "responsive": [
+                        {
+                            "breakpoint": 1024,
+                            "settings": {
+                                "slidesToShow": 3,
+                                "slidesToScroll": 3,
+                                "infinite": true,
+                                "dots": true
+                            }
+                        },
+                        {
+                            "breakpoint": 768,
+                            "settings": {
+                                "slidesToShow": 2,
+                                "slidesToScroll": 2,
+                                "initialSlide": 2
+                            }
+                        },
+                        {
+                            "breakpoint": 480,
+                            "settings": {
+                                "slidesToShow": 1,
+                                "slidesToScroll": 1
+                            }
+                        }
+                    ]
+                },
+                settingsSingle: {
+                    "dots": true,
+                    "infinite": false,
+                    "speed": 500,
+                    "slidesToShow": 1,
+                    "slidesToScroll": 1,
+                }
             }
         },
         components: {
@@ -420,5 +466,23 @@
   .vue-foldable-mask {
     transition: opacity 3s;
     bottom: 24px;
+  }
+   .bold-title {
+    font-size: 2.125rem;
+    line-height: 2.125rem;
+    color: inherit;
+    font-weight: 700;
+    text-transform: uppercase;
+    text-align: center;
+  }
+  .img-wrapper {
+    img {
+      max-height: 84vh;
+      max-width: 100%;
+      margin: auto;
+    }
+    &:focus {
+      outline: none !important;
+    }
   }
 </style>

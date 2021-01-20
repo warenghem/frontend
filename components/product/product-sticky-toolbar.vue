@@ -13,7 +13,7 @@
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center">
-        <div class="smalltext ml-3">
+        <div class="smalltext mx-3">
           <div>
             <v-icon x-small :class="{'available':product.offers.availability}">{{ svgPath1 }}</v-icon>
             {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}

@@ -26,7 +26,6 @@
         async asyncData(context) {
             const {$content, app} = context;
             const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
-            console.log(productsItem)
             return {
                 productsItem,
             }
