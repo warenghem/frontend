@@ -65,17 +65,16 @@
         },
         computed: {
             product() {
-                let currency = this.productItem?this.productItem.currency.find(currency => {
+                let currency = this.productItem.currency.find(currency => {
                     return currency.name === this.$i18n.localeProperties.currency
-                }):{};
+                });
                 if (currency) {
                     this.productItem.price = currency.price;
                 } else {
                     this.productItem.price = this.productItem.offers.price;
                 }
-
                 return this.productItem;
-            }
+            },
         },
         props: {
             productItem: {
