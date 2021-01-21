@@ -41,7 +41,9 @@
     "recommend": "Recommended",
     "recent": "recently viewed",
     "color":"Colours",
-    "material": "Materials"
+    "material": "Materials",
+    "size": "(Length x Height x Width)",
+    "details": "Detailed Features"
   },
   "btnTitle": "I plant a tree for free",
   "router": {

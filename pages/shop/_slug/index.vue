@@ -7,7 +7,7 @@
       >
         <v-col
           cols="12"
-          lg="8"
+          md="8"
           class="pa-0"
         >
           <v-row class="ma-0">
@@ -54,29 +54,29 @@
         </v-col>
         <v-col
           cols="12"
-          lg="4"
+          md="4"
           class="pvw"
         >
           <div style="margin-top: -10px;" class="d-flex justify-space-between mt-5 mt-lg-0">
             <div>{{product.sku}}</div>
           </div>
           <div class="page-title px-0 text-left">{{product.name}}</div>
-          <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2">{{product.description}}</div>
+          <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2">{{product.slogan}}</div>
           <div class="py-5 d-flex align-center justify-space-between">
-            <v-row style="height:92px" justify="center" class="pa-0 text-center">
+            <v-row style="" justify="center" class="pa-0 ma-0 text-center">
               <v-card
-                  v-for="(mtr,i_dx) in product.material"
-                  :key="'material_'+i_dx"
-                  width="110px"
+                  v-for="(ad,i_dx) in product.award"
+                  :key="'award'+i_dx"
+                  width="120px"
+                  class="mx-5"
                >
-               <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ mtr.icon" alt="">
-               <v-card-text class="pa-0">
-                 {{mtr.name}}
-               </v-card-text>
+               <div style="height:60px">
+                <img width="120" class="h-100 contain" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-120,dpr-2/Logos/'+ ad.image" alt="">
+               </div>
               </v-card>
             </v-row>
           </div>
-          <div style="height:60px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
+          <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
           >
             <div>
@@ -89,18 +89,48 @@
             </div>
 
           </div>
-          <div class="d-flex justify-space-between align-center mt-3">
+          <div class="d-flex justify-space-between align-center my-5">
             <h3 class="teradeli-book">{{ $n(product.price, 'currency') }}</h3>
             <div class="smalltext">
-              <v-icon x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
+              <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
               {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
             </div>
           </div>
           <Buybutton/>
-          <div class="my-5">
-            <foldable>
-              <div v-html="product.additionalProperty[0].details"
+          <div class="mt-5" v-html="product.description">
+          </div>
+          <v-subheader>{{$t('product.details')}}</v-subheader>
+          <div class="py-5 d-flex align-center justify-space-between">
+            <v-row style="height:92px" justify="center" class="pa-0 ma-0 text-center">
+              <v-card
+                  v-for="(mtr,i_dx) in product.material"
+                  :key="'material_'+i_dx"
+                  width="110px"
+                  class="mx-1"
               >
+              <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ mtr.icon" alt="">
+              <v-card-text class="pa-0">
+                {{mtr.name}}
+              </v-card-text>
+              </v-card>
+            </v-row>
+          </div>
+          <div class="mb-5">
+            <foldable height="%70">
+              <span class="pt-2">{{product.dimensions.length}} x {{product.dimensions.height}} x {{product.dimensions.width}} {{product.dimensions.unit}}</span>
+              <span class="teradeli-light">{{$t('product.size')}}</span>
+              <div class="py-4">
+                <v-chip-group
+                  active-class="primary--text"
+                  column
+                >
+                  <v-chip
+                    v-for="(det,i_dx) in product.details"
+                    :key="'award'+i_dx"
+                  >
+                    {{ det.dot }}
+                  </v-chip>
+                </v-chip-group>
               </div>
               <p align="center" class="my-foldable hand"
                  slot="view-more" slot-scope="{ toggle, collapsed }" @click="toggle">
@@ -109,7 +139,7 @@
             </foldable>
           </div>
           <div class="mb-7">
-            <div class="border-top-2 border-bottom-2 cursor-pointer py-3"
+            <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                  @click="openSideModal('productCare')"
             >
               {{$t('product.materialTitle')}}
@@ -125,7 +155,6 @@
                 <span class="teradeli-light">{{$t('product.payInfoBtn.desc')}}</span>
               </div>
             </div>
-
             <div>
               <v-icon>{{ svgPath3 }}</v-icon>
             </div>
@@ -166,46 +195,47 @@
                 <span class="teradeli-light">{{$t('product.packageBtn.desc')}}</span>
               </div>
             </div>
-
             <div>
               <v-icon>{{ svgPath3 }}</v-icon>
             </div>
           </div>
-
         </v-col>
       </v-row>
-      <v-row>
-        <v-col cols="12">
-          <div class="bold-title">{{$t('product.like')}}</div>
+      <v-row class="border-top-2 ma-0 px-0 pvw">
+        <v-col cols="12" class="pa-0">
+          <div class="sub-title text-center pb-10">{{$t('product.like')}}</div>
         </v-col>
-        <v-col cols="12">
+        <v-col cols="12" class="pa-0 mx-n2">
           <v-tabs
-            :centered="true"
+            centered
+            class="pb-5"
+            fixed-tabs
           >
             <v-tab
               href="#recentTab"
               v-if="recentProducts.length>0"
-              class="pa-2"
+              class="border-top-2 border-bottom-2"
+              style="height:50px"
             >
               {{$t('product.recent')}}
-
             </v-tab>
             <v-tab
               href="#recommendTab"
               v-if="recommendedProducts.length>0"
-              class="pa-2"
+              class="border-top-2 border-bottom-2"
+              style="height:50px"
             >
               {{$t('product.recommend')}}
             </v-tab>
             <v-tab-item
               value="recentTab"
-              style="height: 700px"
+              class="mt-5"
               v-if="recentProducts.length>0"
             >
               <VueSlickCarousel v-bind="settings">
                 <div v-for="(rc_productItem,i_dx) in recentProducts"
                      :key="'recent_'+i_dx"
-                     class="text-center pa-2"
+                     class="text-center px-2"
                 >
                   <product-item :productItem="rc_productItem"></product-item>
 
@@ -215,13 +245,13 @@
             </v-tab-item>
             <v-tab-item
               value="recommendTab"
-              style="height: 700px"
+              class="mt-5"
               v-if="recommendedProducts.length>0"
             >
               <VueSlickCarousel v-bind="settings">
                 <div v-for="(productItem,i_dx) in recommendedProducts"
                      :key="'recommend'+i_dx"
-                     class="pa-2"
+                     class="text-center px-2"
                 >
                   <product-item :productItem="productItem"></product-item>
                 </div>
@@ -290,12 +320,13 @@
                 selectedColor: null,
                 settings: {
                     "dots": false,
+                    "row": 1,
                     "infinite": false,
                     "arrow": false,
-                    "speed": 500,
                     "slidesToShow": 3,
                     "slidesToScroll": 3,
                     "initialSlide": 0,
+                    "draggable": true,
                     "responsive": [
                         {
                             "breakpoint": 1024,
@@ -303,22 +334,27 @@
                                 "slidesToShow": 3,
                                 "slidesToScroll": 3,
                                 "infinite": true,
-                                "dots": true
+                                "dots": true,
                             }
                         },
                         {
                             "breakpoint": 768,
                             "settings": {
+                                "centerMode": true,
+                                "focusOnSelect": true,
                                 "slidesToShow": 2,
                                 "slidesToScroll": 2,
-                                "initialSlide": 2
+                                "centerMode": true
                             }
                         },
                         {
                             "breakpoint": 480,
                             "settings": {
+                                "centerMode": true,
+                                "focusOnSelect": true,
                                 "slidesToShow": 1,
-                                "slidesToScroll": 1
+                                "slidesToScroll": 1,
+                                "centerMode": true,
                             }
                         }
                     ]
@@ -439,7 +475,9 @@
     }
 </script>
 <style lang="scss">
-
+button.slick-arrow.slick-next {
+    display: none!important;
+}
   .right-icon {
     font-size: 35px !important;
   }
@@ -451,7 +489,6 @@
     font-weight: 500;
 
   }
-
   span.teradeli-light {
     font-size: 14px;
   }
@@ -459,9 +496,11 @@
   .vue-foldable-container {
     transition: max-height 0.7s;
   }
-
   .vue-foldable-mask {
     transition: opacity 3s;
     bottom: 24px;
   }
+  .slick-list {
+    padding-left: 0!important;
+}
 </style>

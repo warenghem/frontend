@@ -383,9 +383,8 @@ body {
     font-family: 'teradeli-medium', sans-serif;
   }
 }
-
 .pvw {
-  padding: 6vw 2vw;
+  padding: 6vw 2vw!important;
   @media(min-width: 48em) {
       padding: 3.125vw!important;
   }
@@ -396,7 +395,6 @@ body {
       padding: 3.33333vw!important;
   }
 }
-
 .appshadow {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, .04), 0 12px 20px 0 rgba(0, 0, 0, .08);
   transition: 0.2s;
@@ -961,6 +959,9 @@ letter-spacing: .009em;
 .wa-product-image {
   object-fit: contain;
   max-height: 70vh;
+}
+.contain {
+  object-fit: contain;
 }
 
 .vue-foldable .vue-foldable-mask {

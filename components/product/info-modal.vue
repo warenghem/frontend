@@ -8,28 +8,37 @@
     scrollable
   >
     <v-card>
-      <v-card-title>
-        <div class="d-flex justify-space-between align-center w-100">
-          <h4>{{currentModal.modalTitle}}</h4>
-          <span>
-              <v-icon @click="closeModal">mdi-close</v-icon>
-            </span>
-
-        </div>
-
-      </v-card-title>
-      <v-divider></v-divider>
-      <v-card-text class="pa-4">
+      <div style="height: 50px;" class="d-flex justify-space-between align-center border-bottom-2">
+          <div class="text-center sub-title pl-3">{{currentModal.modalTitle}}</div>
+          <v-btn
+              text
+              color="black"
+              style="font-size: 26px"
+              class="px-0 h-100 border-left-2 rounded-0"
+          >
+              <v-icon @click="closeModal">{{ svgPath }}</v-icon>
+          </v-btn>
+      </div>
+      <v-card-text class="pvw">
         <div v-html="currentModal.modalContent" class="modalContent"></div>
       </v-card-text>
-
     </v-card>
   </v-dialog>
 </template>
 
 <script>
+    import { mdiClose } from '@mdi/js'
     export default {
         name: "info-modal",
+        data() {
+            return {
+                svgPath: mdiClose,
+                currentModal: {
+                    modalTitle: '',
+                    modalContent: ''
+                }
+            }
+        },
         props: {
             isModal: {
                 type: Boolean,
@@ -43,14 +52,6 @@
         methods: {
             closeModal() {
                 this.$emit('closeModal')
-            }
-        },
-        data() {
-            return {
-                currentModal: {
-                    modalTitle: '',
-                    modalContent: ''
-                }
             }
         },
         updated() {

@@ -41,7 +41,9 @@
     "recommend": "recommandé",
     "recent": "récemment consulté",
     "color":"Couleurs",
-    "material": "Matières"
+    "material": "Matières",
+    "size": "(Longueur x Hauteur x Largeur)",
+    "details": "Détails"
   },
   "btnTitle": "Je plante un arbre gratuitement",
   "router": {
