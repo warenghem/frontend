@@ -10,7 +10,7 @@ details:
 - dot: 'Pièces métalliques couleur argentée'
 - dot: 'Double fermeture zippée fabriqué en France'
 - dot: 'Bandoulière amovible, ajustable. Jusqu'a 50cm'
-care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien
+care: "Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien"
 dimensions:
   length: '54'
   height: '29'
@@ -20,28 +20,17 @@ manufacturer: ''
 colors:
   - id: 1
     name: Natural Black
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    icon: "leather.jpg"
   - id: 2
     name: Desertic Camel
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    icon: "leather.jpg"
 material:
   - id: 1
-    name: Cuir de Vin Dionysos®
+    name: Dionysos® Wine Leather
     icon: "leather.jpg"
-    color:
-      - id: 1
-        name: Natural Black
-        icon: "leather.jpg"
-      - id: 2
-        name: Desertic Camel
-        icon: "leather.jpg"
   - id: 2
-    name: Lin Bio Francais
+    name: Organic French Linen
     icon: "linen_camel.jpg" 
-    color:
-      - id: 2
-        name: DeserticCamel
-        icon: "linen_camel.jpg"
 award:
 - name: Made in France
   image: "madeinfrance.png"

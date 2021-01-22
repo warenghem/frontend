@@ -2,46 +2,40 @@
 id: '2'
 sku: WA48NB
 name: Dionysos 48H
-description: Des vignes et du lin. Tel est son destin.
-additionalProperty:
-- details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-- care: Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse,
-    nous vous recommandons de suivre ces conseils d’entretien
+slogan: Des vignes et du lin. Tel est son destin.
+description: "Le Dionysos 48H est la pièce maitresse de la collection. Léger, souple et toujours prêt pour vous accompagner dans vos déplacements, le sac fait honneur à son nom: les experts du bagage logeront facilement une semaine de vêtements dans son intérieur généreux, aux dimensions de bagage cabine."
+details:   
+- dot: "Taille cabine"
+- dot: "Doublure en lin francais Bio"
+- dot: "Pièces métalliques couleur argentée"
+- dot: "Double fermeture zippée fabriqué en France"
+- dot: "Bandoulière amovible, ajustable. Jusqu'à 50cm"
+care: "Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien"
 dimensions:
-  length: '536'
-  width: '201'
-  height: '288'
+  length: '54'
+  height: '29'
+  width: '20'
+  unit: 'cm'
 manufacturer: ''
 colors:
   - id: 1
     name: Natural Black
-    icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
+    icon: "leather.jpg"
   - id: 2
     name: Desertic Camel
-    icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+    icon: "leather.jpg"
 material:
   - id: 1
-    name: Cuir de Vin Dionysos®
+    name: Dionysos® Wine Leather
     icon: "leather.jpg"
-    color:
-      - id: 1
-        name: Natural Black
-        icon: "leather.jpg"
-      - id: 2
-        name: Desertic Camel
-        icon: "leather.jpg"
   - id: 2
-    name: Lin Bio Francais
+    name: Organic French Linen
     icon: "linen_camel.jpg" 
-    color:
-      - id: 2
-        name: DeserticCamel
-        icon: "linen_camel.jpg"
 award:
+- name: Made in France
+  image: "madeinfrance.png"
 - name: Vegan
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-- name: Ecological
-  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  image: "PETA.png"
 offers:
   priceCurrency: EUR
   price: '390'

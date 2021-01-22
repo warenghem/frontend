@@ -15,7 +15,7 @@
               <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true">
+              <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :key="selectedColor">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
@@ -33,10 +33,11 @@
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-3" ref="c2" :slidesToShow="4" :asNavFor="$refs.c1" :focusOnSelect="true">
+              <VueSlickCarousel class="mt-3" ref="c2" :slidesToShow="4" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
                 <div
                   v-for="(img,i_dx) in product.image"
                   :key="'image_'+i_dx"
+                  @click="$refs.c1.goTo(i_dx)"
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mr-3">
                     <img
@@ -291,8 +292,9 @@
         async asyncData(context) {
             const {$content, params, app} = context;
             const slug = params.slug;
-            const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
-            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
+            const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
+            const productItem = await $content(`${lang_path}/shop`, slug).fetch();
+            const productsItem = await $content(`${lang_path}/shop`).fetch();
             return {
                 productsItem,
                 productItem,
