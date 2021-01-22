@@ -22,6 +22,7 @@
                                 :asNavFor="$refs.c2"
                                 :focusOnSelect="true"
                                 v-if="productImages.length > 0"
+                                :key="selectedColor"
               >
                 <div
                   v-for="(img,i_dx) in productImages"
@@ -44,7 +45,9 @@
                                 :slidesToShow="4"
                                 :asNavFor="$refs.c1"
                                 :focusOnSelect="true"
-                                v-if="productImages.length > 0">
+                                v-if="productImages.length > 0"
+                                :key="selectedColor"
+              >
                 <div
                   v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
@@ -293,7 +296,6 @@
         async asyncData(context) {
             const {$content, params, app} = context;
             const slug = params.slug;
-            console.log(app.i18n.locale)
             const productItem = await $content(`${app.i18n.locale.split('-')[0]}/shop`, slug).fetch();
             const productsItem = await $content(`${app.i18n.locale.split('-')[0]}/shop`).fetch();
             return {
