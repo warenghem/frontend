@@ -25,7 +25,8 @@
         name: 'shop',
         async asyncData(context) {
             const {$content, app} = context;
-            const productsItem = await $content(`${app.i18n.locale.split('-')[0]}/shop`).fetch();
+            const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
+            const productsItem = await $content(`${lang_path}/shop`).fetch();
             return {
                 productsItem,
             }
