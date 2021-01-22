@@ -1,0 +1,172 @@
+---
+label: Shop - Article
+hide_body: false
+fields:
+- type: text
+  name: id
+  label: id
+- type: text
+  name: sku
+  label: sku
+- type: text
+  name: name
+  label: name
+- type: text
+  name: slogan
+  label: slogan
+- type: textarea
+  name: description
+  label: description
+- type: field_group_list
+  name: details
+  label: details
+  fields:
+  - type: text
+    name: dot
+    label: dot
+- type: text
+  name: care
+  label: care
+- type: field_group
+  name: dimensions
+  label: dimensions
+  fields:
+  - type: text
+    name: length
+    label: length
+  - type: text
+    name: height
+    label: height
+  - type: text
+    name: width
+    label: width
+  - type: text
+    name: unit
+    label: unit
+- type: text
+  name: manufacturer
+  label: manufacturer
+- type: field_group_list
+  name: colors
+  label: colors
+  fields:
+  - type: number
+    name: id
+    label: id
+  - type: text
+    name: name
+    label: name
+  - type: file
+    name: icon
+    label: icon
+- type: field_group_list
+  name: material
+  label: material
+  fields:
+  - type: number
+    name: id
+    label: id
+  - type: text
+    name: name
+    label: name
+  - type: file
+    name: icon
+    label: icon
+- type: field_group_list
+  name: award
+  label: award
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: file
+    name: image
+    label: image
+- type: field_group
+  name: offers
+  label: offers
+  fields:
+  - type: text
+    name: priceCurrency
+    label: priceCurrency
+  - type: text
+    name: price
+    label: price
+  - type: boolean
+    name: availability
+    label: availability
+- type: field_group_list
+  name: categories
+  label: categories
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: slug
+    label: slug
+  - type: text
+    name: depth
+    label: depth
+- type: field_group_list
+  name: tags
+  label: tags
+  fields:
+  - type: text
+    name: name
+    label: name
+- type: field_group_list
+  name: image
+  label: image
+  fields:
+  - type: file
+    name: src
+    label: src
+  - type: number
+    name: color
+    label: color
+  - type: number
+    name: material
+    label: material
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: alt
+    label: alt
+  - type: boolean
+    name: availability
+    label: availability
+- type: field_group_list
+  name: attributes
+  label: attributes
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: list
+    name: options
+    label: options
+- type: field_group_list
+  name: default_attributes
+  label: default_attributes
+  fields:
+  - type: text
+    name: name
+    label: name
+  - type: text
+    name: option
+    label: option
+- type: text
+  name: isRelatedTo
+  label: isRelatedTo
+- type: text
+  name: isSimilarTo
+  label: isSimilarTo
+- type: field_group
+  name: brand
+  label: brand
+  fields:
+  - type: text
+    name: name
+    label: name
