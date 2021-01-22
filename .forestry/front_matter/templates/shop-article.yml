@@ -17,39 +17,70 @@ fields:
 - type: textarea
   name: description
   label: Description
-- type: field_group_list
-  name: details
-  label: Details
-  fields:
-  - type: text
-    name: dot
-    label: List
-- type: text
-  name: care
+- name: details
+  type: list
+  config:
+    use_select: false
+    min: 
+    max: 
+  label: Product details
+- name: care
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
   label: Materials and care
 - type: field_group
   name: dimensions
   label: Dimensions
   fields:
-  - type: text
-    name: length
-    label: Length
+  - name: lenght
+    type: number
+    label: Lenght
     description: cm or inches
-  - type: text
-    name: height
-    label: Height
-    description: cm or inches
-  - type: text
-    name: width
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: width
+    type: number
     label: Width
     description: cm or inches
-  - type: text
-    name: unit
-    label: unit
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: height
+    type: number
+    label: Height
     description: cm or inches
-- type: text
-  name: manufacturer
-  label: manufacturer
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+  - name: unit
+    type: select
+    default: ''
+    config:
+      required: false
+      options:
+      - cm
+      - inches
+      source:
+        type: simple
+        section: shop-english-5fd19823-02bb-41dd-b7ff-0abb2ca61f88
+        file: content/en-us/shop/bag-dionysos-48h.md
+        path: 
+    label: Unit
 - type: field_group_list
   name: colors
   label: colors
@@ -69,108 +100,147 @@ fields:
   fields:
   - type: number
     name: id
-    label: id
+    label: Id
   - type: text
     name: name
-    label: name
+    label: Name
   - type: file
     name: icon
-    label: icon
+    label: Icon
+    description: Only the name of the file and extension
 - type: field_group_list
   name: award
   label: award
   fields:
   - type: text
     name: name
-    label: name
+    label: Name
   - type: file
     name: image
-    label: image
+    label: Image
+    description: Only the name of the file and extension
 - type: field_group
   name: offers
   label: offers
   fields:
   - type: text
     name: priceCurrency
-    label: priceCurrency
-  - type: text
-    name: price
-    label: price
+    label: Currency
+    hidden: true
+    default: EUR
+  - name: price
+    type: number
+    description: In Euros
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
+    label: Price
   - type: boolean
     name: availability
-    label: availability
+    label: Stock
 - type: field_group_list
   name: categories
-  label: categories
+  label: Categories
   fields:
   - type: text
     name: name
-    label: name
+    label: Name
   - type: text
     name: slug
-    label: slug
+    label: Slug
   - type: text
     name: depth
-    label: depth
-- type: field_group_list
-  name: tags
-  label: tags
-  fields:
-  - type: text
-    name: name
-    label: name
+    label: Depth
+- name: tags
+  type: tag_list
+  default: []
+  label: Tags
 - type: field_group_list
   name: image
-  label: image
+  label: Images
   fields:
   - type: file
     name: src
-    label: src
+    label: Image
+    description: Only the name of the file and extension
   - type: number
     name: color
-    label: color
-  - type: number
-    name: material
-    label: material
+    label: ID of related color
   - type: text
     name: name
-    label: name
+    label: Name
+    description: For SEO
   - type: text
     name: alt
-    label: alt
+    label: ALT
+    description: For SEO
   - type: boolean
     name: availability
-    label: availability
+    label: Stock
 - type: field_group_list
   name: attributes
   label: attributes
   fields:
   - type: text
     name: name
-    label: name
+    label: Name
   - type: list
     name: options
-    label: options
+    label: Options
 - type: field_group_list
   name: default_attributes
   label: default_attributes
   fields:
   - type: text
     name: name
-    label: name
+    label: Name
   - type: text
     name: option
-    label: option
+    label: Option
 - type: text
   name: isRelatedTo
-  label: isRelatedTo
+  label: Related articles
 - type: text
   name: isSimilarTo
   label: isSimilarTo
 - type: field_group
   name: brand
-  label: brand
+  label: Brand
   fields:
   - type: text
     name: name
     label: name
+    default: Warenghem
+    hidden: true
+  hidden: true
+- type: text
+  name: manufacturer
+  label: Manufacturer
+  hidden: true
+- name: related_articles
+  type: select
+  default: 
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: shop-francais
+      file: 
+      path: 
+  label: Related Articles
+- name: similar_articles
+  type: select
+  default: []
+  config:
+    required: false
+    options: []
+    source:
+      type: pages
+      section: shop-francais
+      file: 
+      path: 
+  label: Similar Articles
