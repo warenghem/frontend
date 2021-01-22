@@ -4,45 +4,49 @@ hide_body: false
 fields:
 - type: text
   name: id
-  label: id
+  label: Product ID
 - type: text
   name: sku
-  label: sku
+  label: SKU
 - type: text
   name: name
-  label: name
+  label: Name
 - type: text
   name: slogan
-  label: slogan
+  label: Slogan
 - type: textarea
   name: description
-  label: description
+  label: Description
 - type: field_group_list
   name: details
-  label: details
+  label: Details
   fields:
   - type: text
     name: dot
-    label: dot
+    label: List
 - type: text
   name: care
-  label: care
+  label: Materials and care
 - type: field_group
   name: dimensions
-  label: dimensions
+  label: Dimensions
   fields:
   - type: text
     name: length
-    label: length
+    label: Length
+    description: cm or inches
   - type: text
     name: height
-    label: height
+    label: Height
+    description: cm or inches
   - type: text
     name: width
-    label: width
+    label: Width
+    description: cm or inches
   - type: text
     name: unit
     label: unit
+    description: cm or inches
 - type: text
   name: manufacturer
   label: manufacturer
