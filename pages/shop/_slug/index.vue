@@ -5,7 +5,6 @@
       <v-row
         class="ma-0"
       >
-        {{productImages}}
         <v-col
           cols="12"
           lg="8"
@@ -294,8 +293,9 @@
         async asyncData(context) {
             const {$content, params, app} = context;
             const slug = params.slug;
-            const productItem = await $content(`${app.i18n.locale}/shop`, slug).fetch();
-            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
+            console.log(app.i18n.locale)
+            const productItem = await $content(`${app.i18n.locale.split('-')[0]}/shop`, slug).fetch();
+            const productsItem = await $content(`${app.i18n.locale.split('-')[0]}/shop`).fetch();
             return {
                 productsItem,
                 productItem,
