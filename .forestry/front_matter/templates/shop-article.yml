@@ -214,6 +214,50 @@ fields:
   - type: boolean
     name: availability
     label: Stock
+- name: related_articles
+  type: field_group_list
+  fields:
+  - name: first
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: shop-francais
+        file: 
+        path: 
+    label: First
+  - name: second
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: shop-english-5fd19823-02bb-41dd-b7ff-0abb2ca61f88
+        file: 
+        path: 
+    label: Second
+  - name: third
+    type: select
+    default: []
+    config:
+      required: false
+      options: []
+      source:
+        type: pages
+        section: shop-english-5fd19823-02bb-41dd-b7ff-0abb2ca61f88
+        file: 
+        path: 
+    label: Third
+  config:
+    min: 
+    max: 
+    labelField: 
+  label: Related Articles
 - type: field_group_list
   name: attributes
   label: Attributes
@@ -234,12 +278,6 @@ fields:
   - type: text
     name: option
     label: Option
-- type: text
-  name: isRelatedTo
-  label: Related articles
-- type: text
-  name: isSimilarTo
-  label: Similar Articles
 - type: field_group
   name: brand
   label: Brand
@@ -254,29 +292,5 @@ fields:
   name: manufacturer
   label: Manufacturer
   hidden: true
-- name: related_articles
-  type: select
-  default: 
-  config:
-    required: false
-    options: []
-    source:
-      type: pages
-      section: shop-francais
-      file: 
-      path: 
-  label: Related Articles
-- name: similar_articles
-  type: select
-  default: []
-  config:
-    required: false
-    options: []
-    source:
-      type: pages
-      section: shop-francais
-      file: 
-      path: 
-  label: Similar Articles
 pages:
 - content/fr-fr/shop/bag-dionysos-48h.md
