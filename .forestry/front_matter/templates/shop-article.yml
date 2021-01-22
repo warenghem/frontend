@@ -94,13 +94,16 @@ fields:
   fields:
   - type: number
     name: id
-    label: id
+    label: ID
   - type: text
     name: name
-    label: name
-  - type: file
-    name: icon
-    label: icon
+    label: Name
+  - name: icon
+    type: text
+    config:
+      required: false
+    label: Icon
+    description: Only filename and extension in (Imagekit)
 - type: field_group_list
   name: material
   label: Material
@@ -111,10 +114,12 @@ fields:
   - type: text
     name: name
     label: Name
-  - type: file
-    name: icon
+  - name: icon
+    type: text
+    config:
+      required: false
+    description: Only filename and extension in (Imagekit)
     label: Icon
-    description: Only the name of the file and extension
 - type: field_group_list
   name: award
   label: Labels
@@ -122,10 +127,12 @@ fields:
   - type: text
     name: name
     label: Name
-  - type: file
-    name: image
+  - name: image
+    type: text
+    config:
+      required: false
     label: Image
-    description: Only the name of the file and extension
+    description: Only filename and extension in (Imagekit)
 - type: field_group
   name: offers
   label: Offer
@@ -152,15 +159,33 @@ fields:
   name: categories
   label: Categories
   fields:
-  - type: text
-    name: name
+  - name: name
+    type: select
+    default: []
+    config:
+      required: false
+      options:
+      - leathergoods
+      - bag
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
     label: Name
   - type: text
     name: slug
     label: Slug
-  - type: text
-    name: depth
+  - name: depth
+    type: number
     label: Depth
+    description: ''
+    default: 0
+    required: true
+    config:
+      min: 
+      max: 
+      step: 
 - name: tags
   type: tag_list
   default: []
@@ -169,10 +194,12 @@ fields:
   name: image
   label: Images
   fields:
-  - type: file
-    name: src
+  - name: src
+    type: text
+    config:
+      required: false
     label: Image
-    description: Only the name of the file and extension
+    description: Only filename and extension (in Imagekit)
   - type: number
     name: color
     label: ID of related color
