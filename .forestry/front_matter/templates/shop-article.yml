@@ -2,9 +2,16 @@
 label: Shop - Article
 hide_body: false
 fields:
-- type: text
-  name: id
+- name: id
+  type: number
   label: Product ID
+  description: ''
+  default: 0
+  required: true
+  config:
+    min: 
+    max: 
+    step: 
 - type: text
   name: sku
   label: SKU
@@ -24,15 +31,6 @@ fields:
     min: 
     max: 
   label: Product details
-- name: care
-  type: textarea
-  default: ''
-  config:
-    required: false
-    wysiwyg: false
-    schema:
-      format: markdown
-  label: Materials and care
 - type: field_group
   name: dimensions
   label: Dimensions
@@ -81,9 +79,18 @@ fields:
         file: content/en-us/shop/bag-dionysos-48h.md
         path: 
     label: Unit
+- name: care
+  type: textarea
+  default: ''
+  config:
+    required: false
+    wysiwyg: false
+    schema:
+      format: markdown
+  label: Materials and care
 - type: field_group_list
   name: colors
-  label: colors
+  label: Colors
   fields:
   - type: number
     name: id
@@ -96,7 +103,7 @@ fields:
     label: icon
 - type: field_group_list
   name: material
-  label: material
+  label: Material
   fields:
   - type: number
     name: id
@@ -110,7 +117,7 @@ fields:
     description: Only the name of the file and extension
 - type: field_group_list
   name: award
-  label: award
+  label: Labels
   fields:
   - type: text
     name: name
@@ -121,7 +128,7 @@ fields:
     description: Only the name of the file and extension
 - type: field_group
   name: offers
-  label: offers
+  label: Offer
   fields:
   - type: text
     name: priceCurrency
@@ -182,7 +189,7 @@ fields:
     label: Stock
 - type: field_group_list
   name: attributes
-  label: attributes
+  label: Attributes
   fields:
   - type: text
     name: name
@@ -192,7 +199,7 @@ fields:
     label: Options
 - type: field_group_list
   name: default_attributes
-  label: default_attributes
+  label: Default_attributes
   fields:
   - type: text
     name: name
@@ -205,7 +212,7 @@ fields:
   label: Related articles
 - type: text
   name: isSimilarTo
-  label: isSimilarTo
+  label: Similar Articles
 - type: field_group
   name: brand
   label: Brand
