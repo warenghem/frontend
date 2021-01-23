@@ -1,68 +1,66 @@
 ---
-id: '3'
+id: 3
 sku: WA48NB
 name: Dionysos 48H
-description: Vines and flax. Such is his destiny.
-additionalProperty:
-- details: Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-- care: Care for this product
+slogan: Vines and flax. Such is his destiny.
+description: 'The Dionysos 48H is the centerpiece of the collection. Lightweight,
+  flexible and always ready to accompany you on your travels, the bag lives up to
+  its name: luggage experts will easily accommodate a week''s worth of clothing in
+  its generous interior. of cabin baggage. '
+details:
+- Cabin size
+- Organic French linen lining
+- Metallic pieces in silver color
+- Double zipped closure made in France
+- Removable, adjustable shoulder strap. Up to 50cm
+care: Care for this product
 dimensions:
-  length: '290'
-  width: '100'
-  height: '250'
+  length: 21
+  height: 11
+  width: 8
+  unit: inches
 manufacturer: ''
 colors:
-  - id: 1
-    name: Natural Black
-    icon: "leather.jpg"
-  - id: 2
-    name: Desertic Camel
-    icon: "leather.jpg"
+- id: 1
+  name: Natural Black
+  icon: leather.jpg
+- id: 2
+  name: Desertic Camel
+  icon: leather.jpg
 material:
-  - id: 1
-    name: Dionysos® Wine Leather
-    icon: "leather.jpg"
-    color:
-      - id: 1
-        name: Natural Black
-        icon: "leather.jpg"
-      - id: 2
-        name: Desertic Camel
-        icon: "leather.jpg"
-  - id: 2
-    name: Organic French Linen
-    icon: "linen_camel.jpg" 
-    color:
-      - id: 2
-        name: DeserticCamel
-        icon: "linen_camel.jpg"
+- id: 1
+  name: Dionysos® Wine Leather
+  icon: leather.jpg
+- id: 2
+  name: Organic French Linen
+  icon: linen_camel.jpg
 award:
+- name: Made in France
+  image: madeinfrance.png
 - name: Vegan
-  image: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-- name: Ecological
-  slug: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
+  image: PETA.png
 offers:
   priceCurrency: EUR
-  price: '390'
+  price: 390
   availability: true
 categories:
-- name: Leather Goods
+- name: ''
   slug: leathergoods
-  depth: '1'
+  depth: 1
 - name: Bags
   slug: bags
-  depth: '2'
+  depth: 2
 tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: "sac_face.png"
+- src: 48H_face.png
   color: 2
   material: 1
   name: ''
   alt: ''
   availability: true
-- src: "sac_cote.png"
+- src: 48H_cote.png
   color: 1
   material: 2
   name: ''
@@ -78,13 +76,17 @@ default_attributes:
 - name: Color
   option: Natural Black
 - name: Size
-  option: '41'
+  option: "41"
 isRelatedTo: ''
 isSimilarTo: shoes
 brand:
   name: Warenghem
----
+related_articles:
+- first: []
+  second: []
+  third: []
 
+---
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
 ## Writing content

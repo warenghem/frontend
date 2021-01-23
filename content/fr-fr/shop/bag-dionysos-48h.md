@@ -38,7 +38,7 @@ award:
   image: PETA.png
 offers:
   priceCurrency: EUR
-  price: '390'
+  price: 390
   availability: true
 categories:
 - name: ''
