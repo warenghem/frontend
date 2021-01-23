@@ -35,9 +35,9 @@ fields:
   name: dimensions
   label: Dimensions
   fields:
-  - name: lenght
+  - name: length
     type: number
-    label: Lenght
+    label: Length
     description: cm or inches
     default: 0
     required: true
