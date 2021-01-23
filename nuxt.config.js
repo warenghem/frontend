@@ -531,7 +531,7 @@ export default {
                 /slide-fade/,
                 /bottom-sheet-transition/,
               ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable*/]
             }
           }
         }

@@ -32,13 +32,13 @@
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-3" ref="c2" :slidesToShow="4" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
+              <VueSlickCarousel class="mt-2 mx-n1" ref="c2" :slidesToShow="2" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
                 <div
                   v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
                   @click="$refs.c1.goTo(i_dx)"
                 >
-                  <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mr-3">
+                  <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mx-1">
                     <img
                       v-if="productImages.length > 0" 
                       :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'" 
