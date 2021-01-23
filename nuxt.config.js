@@ -521,6 +521,7 @@ export default {
                 "nuxt-progress",
                 /col-*/,
                 /v-dialog*/,
+                /vue-foldable*/,
               ],
               deep: [
                 /page-enter/,
