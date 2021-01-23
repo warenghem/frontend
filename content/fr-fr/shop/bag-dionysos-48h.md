@@ -12,10 +12,10 @@ details:
 - Bandoulière amovible, ajustable. Jusqu'a 50cm
 care: "Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien"
 dimensions:
-  lenght: 21
-  height: 11
-  width: 8
-  unit: inches
+  length: 54
+  height: 29
+  width: 20
+  unit: cm
 manufacturer: ''
 colors:
 - id: 1

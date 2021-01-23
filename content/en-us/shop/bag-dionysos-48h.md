@@ -15,7 +15,7 @@ details:
 - Removable, adjustable shoulder strap. Up to 50cm
 care: Care for this product
 dimensions:
-  lenght: 21
+  length: 21
   height: 11
   width: 8
   unit: inches
