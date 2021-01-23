@@ -15,11 +15,10 @@ details:
 - Removable, adjustable shoulder strap. Up to 50cm
 care: Care for this product
 dimensions:
-  length: '21'
+  lenght: 21
   height: 11
   width: 8
   unit: inches
-  lenght: 
 manufacturer: ''
 colors:
 - id: 1
@@ -55,13 +54,13 @@ tags:
 - name: Leather Goods
 - name: Bags
 image:
-- src: sac_face.png
+- src: 48H_face.png
   color: 2
   material: 1
   name: ''
   alt: ''
   availability: true
-- src: sac_cote.png
+- src: 48H_cote.png
   color: 1
   material: 2
   name: ''

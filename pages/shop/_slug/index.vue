@@ -17,10 +17,9 @@
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
               <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :key="selectedColor">
                 <div
-                  v-for="(img,i_dx) in product.image"
+                  v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
                   style="outline: none;"
-                  v-viewer
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <img
@@ -35,7 +34,7 @@
               </VueSlickCarousel>
               <VueSlickCarousel class="mt-3" ref="c2" :slidesToShow="4" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
                 <div
-                  v-for="(img,i_dx) in product.image"
+                  v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
                   @click="$refs.c1.goTo(i_dx)"
                 >
@@ -83,9 +82,14 @@
             <div>
               {{$t('product.color')}}
             </div>
-            <div class="d-flex align-center justify-space-between" v-if="productColor.name">
-              {{productColor.name}}
-              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ productColor.icon" alt="" v-if="productColor.icon" width="40px" class="mx-3 rounded-lg">
+            <div class="d-flex align-center justify-space-between">
+              <span v-if="selectedColor">{{selectedColor.name}}</span>
+              <img
+                :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ selectedColor.icon"
+                alt=""
+                v-if="selectedColor"
+                width="40px"
+                class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
@@ -129,7 +133,7 @@
                     v-for="(det,i_dx) in product.details"
                     :key="'award'+i_dx"
                   >
-                    {{ det.dot }}
+                    {{ det }}
                   </v-chip>
                 </v-chip-group>
               </div>
@@ -271,20 +275,21 @@
 
 <script>
     import "viewerjs/dist/viewer.css";
-    import Viewer from "v-viewer";
+    // import Viewer from "v-viewer";
     import Vue from "vue";
-    Vue.use(Viewer, {
-        defaultOptions: {
-            zIndex: 300002
-        }
-    });
+
+    // Vue.use(Viewer, {
+    //     defaultOptions: {
+    //         zIndex: 300002
+    //     }
+    // });
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     import VueFoldable from 'vue-foldable'
     import 'vue-foldable/dist/vue-foldable.css'
     import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
-    import "viewerjs/dist/viewer.css";
+    // import "viewerjs/dist/viewer.css";
     Vue.component('foldable', VueFoldable);
 
     export default {
@@ -314,11 +319,6 @@
                 currentModal: 'paymentInfoModal',
                 sideModal: false,
                 currentSideItem: 'productCare',
-                productColor: {
-                    name: null,
-                    image: null
-                },
-                productImages: [],
                 selectedColor: null,
                 settings: {
                     "dots": false,
@@ -385,6 +385,17 @@
                 }
                 return this.productItem;
             },
+            productImages() {
+                if (this.selectedColor) {
+                    return this.productItem.image.filter(img => {
+                        if (img.color === parseInt(this.selectedColor.id)) {
+                            return img
+                        }
+                    });
+                } else {
+                    return this.productItem.image
+                }
+            },
             recommendedProducts() {
                 var tags = this.productItem.tags.map(tag => {
                     return tag.name
@@ -418,10 +429,9 @@
         },
         created() {
             this.$store.dispatch('product/setRecentProducts', this.product.id);
-            this.productColor = this.product.colors[0];
         },
         mounted() {
-            this.productImages = this.product.image
+            this.colorSelect()
         },
         methods: {
             openModal(modalName) {
@@ -442,13 +452,12 @@
                 document.documentElement.style.overflowY = 'auto';
             },
             colorSelect(val) {
-                this.selectedColor = val;
-                this.productImages = this.product.image.filter(img => {
-                    if (img.color === parseInt(this.selectedColor)) {
-                        return img
-                    }
-                });
-            },
+                if (val) {
+                    this.selectedColor = this.product.colors.find(color => color.id === parseInt(val));
+                } else {
+                    this.selectedColor = null
+                }
+            }
         },
         head() {
             return {
