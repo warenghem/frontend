@@ -3,14 +3,31 @@ id: 1
 sku: WA48NB
 name: Dionysos 48H
 slogan: Des vignes et du lin. Tel est son destin.
-description: "Le Dionysos 48H est la pièce maitresse de la collection. Léger, souple et toujours prêt pour vous accompagner dans vos déplacements, le sac fait honneur à son nom : les experts du bagage logeront facilement une semaine de vêtements dans son intérieur généreux, aux dimensions de bagage cabine."
+description: 'Le Dionysos 48H est la pièce maitresse de la collection. Léger, souple
+  et toujours prêt pour vous accompagner dans vos déplacements, le sac fait honneur
+  à son nom : les experts du bagage logeront facilement une semaine de vêtements dans
+  son intérieur généreux, aux dimensions de bagage cabine.'
 details:
 - Taille cabine
 - Doublure en lin francais Bio
 - Pièces métalliques couleur argentée
 - Double fermeture zippée fabriqué en France
 - Bandoulière amovible, ajustable. Jusqu'a 50cm
-care: "Pour préserver au fil des ans la beauté de cet article en toile Monogram Éclipse, nous vous recommandons de suivre ces conseils d’entretien"
+care: "<p><strong>Notre cuir de vin Dionysos</strong>®<strong> a été longuement testé.
+  Il est aussi solide que du cuir animal et - <em>a contrario </em>- ne demande que
+  très peu d'entretien.</strong></p><p>Mais pour préserver au fil des ans la beauté
+  de cet article, nous vous recommandons de suivre ces conseils :</p><ul><li><p>Veillez
+  à ne pas érafler ou frotter votre article contre des surfaces abrasives, en particulier
+  les finitions en cuir.</p></li><li><p>Nous vous conseillons de protéger votre article
+  de l’humidité et de le maintenir à l’abri des sources directes de chaleur, comme
+  les radiateurs et l’habitacle des voitures en été.</p></li><li><p>Évitez de mettre
+  votre article en contact avec des liquides, de la crème et du désinfectant pour
+  les mains, du maquillage et du parfum.</p></li><li><p>Pour nettoyer votre article,
+  essuyez délicatement la toile avec un chiffon doux imbibé d’eau légèrement savonneuse.</p></li><li><p>Quand
+  vous ne vous en servez pas, rangez l’article dans la feutrine fournie lors de l’achat.
+  Nous vous conseillons de le conserver à l’abri des températures élevées, de l’humidité
+  excessive ou des zones non ventilées.</p></li></ul><p>Pour toute question relative
+  à votre article, veuillez prendre contact avec nous.</p>"
 dimensions:
   length: 54
   height: 29
