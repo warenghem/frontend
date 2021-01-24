@@ -3,10 +3,19 @@ id: 1
 sku: WA48NB
 name: Dionysos 48H
 slogan: Vines and flax. Such is his destiny.
-description: 'The Dionysos 48H is the centerpiece of the collection. Lightweight,
-  flexible and always ready to accompany you on your travels, the bag lives up to
-  its name: luggage experts will easily accommodate a week''s worth of clothing in
-  its generous interior. of cabin baggage. '
+description: "<p><strong>Our Dionysos® wine leather has been extensively tested. It
+  is as strong as animal leather and - <em>on the contrary</em> - requires very little
+  maintenance.</strong></p><p>But to preserve the beauty of this item over the years,
+  we recommend that you follow these tips:</p><ul><li><p>Be careful not to scratch
+  or rub your item against abrasive surfaces, especially leather finishes.</p></li><li><p>We
+  recommend that you protect your item from moisture and keep it away from direct
+  sources of heat, such as radiators and car interiors in summer.</p></li><li><p>Avoid
+  contacting your item with liquids, hand cream and sanitizer, makeup, and perfume.</p></li><li><p>To
+  clean your item, gently wipe the canvas with a soft cloth dampened with mild soapy
+  water.</p></li><li><p>When not in use, store the item in the felt provided with
+  purchase. We recommend that you keep it away from high temperatures, excessive humidity
+  or unventilated areas.</p></li></ul><p>If you have any questions about your item,
+  please contact us.</p>"
 details:
 - Cabin size
 - Organic French linen lining
