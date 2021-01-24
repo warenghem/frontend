@@ -20,8 +20,8 @@
         </v-btn>
     </template> 
     <slot name="langSwitcher">
-        <div class="bg-white">
-            <div style="height: 50px;" class="d-flex justify-space-between align-center border-bottom-2">
+        <div style="overflow: auto;" class="bg-white">
+            <div style="height: 50px;position: fixed;width: 100%;background: white;z-index: 2;" class="d-flex justify-space-between align-center border-bottom-2">
                 <div class="text-center sub-title pl-3">Choose your region</div>
                 <v-btn
                     text
@@ -33,99 +33,86 @@
                     <v-icon>{{ svgPath2 }}</v-icon>
                 </v-btn>
             </div>
-            <v-card-text style="overflow: auto;" class="pa-0 h-100">
-            <v-row class="ma-0 bgcard">
-                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Europe</div>
-                <v-container fluid class="productgridhome">
-                    <div v-for="locale in europeavailableLocales" :key="locale.code">
-                        <nuxt-link
-                            :to="switchLocalePath(locale.code)"
-                            class="flex items-center whitespace-no-wrap"
-                            >
-                            <v-card 
-                                class="bg-white rounded-lg px-3"
+            <v-card-text style="margin-top:50px" class="pa-0 h-100">
+                <v-row class="ma-0 bgcard">
+                    <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Europe</div>
+                    <v-container fluid class="productgridhome">
+                        <div v-for="locale in europeavailableLocales" :key="locale.code">
+                            <nuxt-link
+                                :to="switchLocalePath(locale.code)"
+                                class="flex items-center whitespace-no-wrap"
+                                >
+                                <v-card 
+                                    class="bg-white rounded-lg px-3"
+                                    @click="sheet = false"
+                                    ripple
+                                    style="height:70px"
+                                >
+                                    <v-card-actions class="justify-center h-100 text-center">
+                                        <div>
+                                            <span  style="height:24px">
+                                                <img :src="locale.img"
+                                                    width="24"
+                                                    class="mr-3 rounded-lg"
+                                                    alt="lang flag"
+                                                    style="transform: translateY(7px);"
+                                                />
+                                            </span>
+                                            {{ locale.name }}
+                                            <span class="pr-2"></span>
+                                            {{ locale.currencySign }}
+                                        </div>
+                                    </v-card-actions>
+                                </v-card>
+                            </nuxt-link>
+                        </div>
+                    </v-container>
+                    <div class="titlesmall teradeli-medium primary--text pa-5 pb-0 pt-0">Americas</div>
+                    <v-container fluid class="productgridhome">
+                        <div v-for="locale in americasavailableLocales" :key="locale.code">
+                            <nuxt-link
+                                :to="switchLocalePath(locale.code)"
+                                class="flex items-center whitespace-no-wrap"
+                                >
+                                <v-card 
+                                    class="bg-white rounded-lg px-3"
+                                    @click="sheet = false"
+                                    style="height:70px"
+                                    ripple
+                                >
+                                    <v-card-actions class="justify-center h-100 text-center">
+                                        <div>
+                                            <span  style="height:24px">
+                                                <img :src="locale.img"
+                                                    width="24"
+                                                    class="mr-3 rounded-lg"
+                                                    alt="lang flag"
+                                                    style="transform: translateY(7px);"
+                                                />
+                                            </span>
+                                            {{ locale.name }}
+                                            <span class="pr-2"></span>
+                                            {{ locale.currencySign }}
+                                        </div>
+                                    </v-card-actions>
+                                </v-card>
+                            </nuxt-link>
+                        </div>
+                    </v-container>
+                    <div class="pa-5 pt-0">
+                        <span class="titlesmall teradeli-medium primary--text">Other Regions : </span>
+                        <span v-for="locale in otheravailableLocales" :key="locale.code">
+                            <nuxt-link
+                                :to="switchLocalePath(locale.code)"
                                 @click="sheet = false"
-                                ripple
-                                style="height:70px"
-                            >
-                                <v-card-actions class="justify-center h-100 text-center">
-                                    <div>
-                                        <img :src="locale.img"
-                                            width="24"
-                                            class="mr-3 rounded-lg"
-                                            alt="lang flag"
-                                            style="transform: translateY(7px);"
-                                        />
-                                        {{ locale.name }}
-                                        <span class="pr-2"></span>
-                                        {{ locale.currencySign }}
-                                    </div>
-                                </v-card-actions>
-                            </v-card>
-                        </nuxt-link>
+                                >
+                                {{ locale.name }}
+                                <span class="pr-2"></span>
+                                {{ locale.currencySign }}
+                            </nuxt-link>
+                        </span>
                     </div>
-                </v-container>
-                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0 pt-0">Americas</div>
-                <v-container fluid class="productgridhome">
-                    <div v-for="locale in americasavailableLocales" :key="locale.code">
-                        <nuxt-link
-                            :to="switchLocalePath(locale.code)"
-                            class="flex items-center whitespace-no-wrap"
-                            >
-                            <v-card 
-                                class="bg-white rounded-lg px-3"
-                                @click="sheet = false"
-                                style="height:70px"
-                                ripple
-                            >
-                                <v-card-actions class="justify-center h-100 text-center">
-                                    <div>
-                                        <img :src="locale.img"
-                                            width="24"
-                                            class="mr-3 rounded-lg"
-                                            alt="lang flag"
-                                            style="transform: translateY(7px);"
-                                        />
-                                        {{ locale.name }}
-                                        <span class="pr-2"></span>
-                                        {{ locale.currencySign }}
-                                    </div>
-                                </v-card-actions>
-                            </v-card>
-                        </nuxt-link>
-                    </div>
-                </v-container>
-                <div class="titlesmall teradeli-medium primary--text pa-5 pb-0 pt-0">Other Regions</div>
-                <v-container fluid class="productgridhome bug">
-                    <div v-for="locale in otheravailableLocales" :key="locale.code">
-                        <nuxt-link
-                            :to="switchLocalePath(locale.code)"
-                            class="flex items-center whitespace-no-wrap"
-                            >
-                            <v-card 
-                                class="bg-white rounded-lg px-3"
-                                style="height:70px"
-                                @click="sheet = false"
-                                ripple
-                            >
-                                <v-card-actions class="justify-center h-100 text-center">
-                                    <div>
-                                        <img :src="locale.img"
-                                            width="24"
-                                            class="mr-3 rounded-lg"
-                                            alt="lang flag"
-                                            style="transform: translateY(7px);"
-                                        />
-                                        {{ locale.name }}
-                                        <span class="pr-2"></span>
-                                        {{ locale.currencySign }}
-                                    </div>
-                                </v-card-actions>
-                            </v-card>
-                        </nuxt-link>
-                    </div>
-                </v-container>
-            </v-row>
+                </v-row>
             </v-card-text>
         </div> 
     </slot>
@@ -174,11 +161,6 @@ export default {
         @media (max-width: 48em) {
             grid-template-columns: repeat(1, minmax(0, 1fr));
             grid-gap: 0.5rem;
-        }
-    }
-    @media (max-width: 48em) {
-        .bug {
-            margin-bottom: 50px;
         }
     }
 </style>

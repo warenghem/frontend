@@ -46,6 +46,7 @@
     "details": "Detailed Features"
   },
   "btnTitle": "I plant a tree for free",
+  "btnDiscover": "Discover",
   "router": {
     "home": {
       "title": "i am home"

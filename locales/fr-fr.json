@@ -46,6 +46,7 @@
     "details": "Détails"
   },
   "btnTitle": "Je plante un arbre gratuitement",
+  "btnDiscover": "Découvrir",
   "router": {
     "home": {
       "title": "La home"

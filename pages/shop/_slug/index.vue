@@ -67,11 +67,10 @@
               <v-card
                   v-for="(ad,i_dx) in product.award"
                   :key="'award'+i_dx"
-                  width="120px"
-                  class="mx-5"
+                  class="mx-5 award-img"
                >
                <div style="height:60px">
-                <img width="120" class="h-100 contain" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-120,dpr-2/Logos/'+ ad.image" alt="">
+                <img width="100%" class="h-100 contain" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-120,dpr-2/Logos/'+ ad.image" alt="">
                </div>
               </v-card>
             </v-row>
@@ -503,15 +502,10 @@ button.slick-arrow.slick-next {
   span.teradeli-light {
     font-size: 14px;
   }
-
-  .vue-foldable-container {
-    transition: max-height 0.7s;
+.award-img {
+    width: 35%;
+    @media (min-width:48em) {
+      width: 25%;
+     }
   }
-  .vue-foldable-mask {
-    transition: opacity 3s;
-    bottom: 24px;
-  }
-  .slick-list {
-    padding-left: 0!important;
-}
 </style>

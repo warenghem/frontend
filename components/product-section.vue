@@ -38,6 +38,17 @@
                                             {{product.summary}}
                                         </span>
                                 </v-card-text>
+                                <v-btn
+                                    elevation="0"
+                                    rounded
+                                    nuxt
+                                    dark
+                                    style="z-index:2"
+                                    :to="'/'+$i18n.locale+link[p_idx]"
+                                    class="darkbugattiblue mt-2"
+                                    >
+                                    {{$t('btnDiscover')}}
+                                </v-btn>
                             </div>
                             <div class="position-absolute h-100 w-100 px-3">
                                 <div class="boxcenterabsolute teradeli-medium secondary--text visualtocome">
@@ -77,6 +88,12 @@
                     ",fo-top/Products/belt.png",
                     "/Products/portefeuille.png",
                     "/vide.png",
+                ],
+                link: [
+                    "/shop/bag-dionysos-48h/",
+                    "/shop/belt-dionysos-belt/",
+                    "/shop/wallet-dionysos-wallet/",
+                    "",
                 ],
                 classe: [
                     "bag",

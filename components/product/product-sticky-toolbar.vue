@@ -21,7 +21,7 @@
           <h3 class="teradeli-book">
             {{product.price}} {{$i18n.localeProperties.currencySign}}</h3>
         </div>
-        <div>
+        <div class="mr-3">
           <Buybutton/>
         </div>
       </div>
