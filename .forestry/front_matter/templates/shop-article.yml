@@ -24,6 +24,10 @@ fields:
 - type: textarea
   name: description
   label: Description
+  config:
+    wysiwyg: true
+    schema:
+      format: html-blocks
 - name: details
   type: list
   config:
@@ -84,9 +88,9 @@ fields:
   default: ''
   config:
     required: false
-    wysiwyg: false
+    wysiwyg: true
     schema:
-      format: markdown
+      format: html-blocks
   label: Materials and care
 - type: field_group_list
   name: colors
