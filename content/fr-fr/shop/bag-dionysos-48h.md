@@ -69,15 +69,13 @@ offers:
   price: 390
   availability: true
 categories:
-- name: ''
-  slug: leathergoods
-  depth: 1
 - name: Bags
   slug: bags
   depth: 2
 tags:
-- name: Leather Goods
-- name: Bags
+- 48H
+- dionysos
+- bag
 image:
 - src: 48H_face.png
   color: 2
@@ -131,8 +129,8 @@ isSimilarTo: shoes
 brand:
   name: Warenghem
 related_articles:
-- first: []
-  second: []
+- first: content/fr-fr/shop/belt-dionysos.md
+  second: content/en-us/shop/wallet-dionysos.md
   third: []
 
 ---
