@@ -8,8 +8,7 @@ description: "<p>Its avant-garde architecture grouping together two pieces has b
   on your travels. The luggage experts will easily fit a week's worth of clothing
   in its generous interior, the size of cabin luggage. All the clothing is made in
   France in our workshop in Anjou specializing in fine leather goods. The edges of
-  the leather are hand-waxed in a Bugatti blue color (light or dark) contrasting the
-  black vegetable leather.</p>"
+  the leather are hand-waxed in a Bugatti blue color (light or dark).</p>"
 details:
 - Cabin size
 - Organic French linen lining
