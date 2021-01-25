@@ -7,9 +7,9 @@ description: "<p>Son architecture avant-gardiste regroupant deux pièces a été
   par nos designers afin qu'il soit léger, souple et toujours prêt pour vous accompagner
   dans vos déplacements. Les experts du bagage logeront facilement une semaine de
   vêtements dans son intérieur généreux, aux dimensions de bagage cabine. L'intégralité
-  de la confection est réalisée en France dans notre atelier en Anjou spécialisé dans
-  la haute maroquinerie. Les tranches du cuir sont cirées à la main dans un coloris
-  bleu Bugatti (clair ou foncé).</p>"
+  de la confection est réalisée en France dans notre atelier en Anjou spécialisé en
+  haute maroquinerie. Les tranches du cuir sont cirées à la main dans un coloris bleu
+  Bugatti (clair ou foncé).</p>"
 details:
 - Doublure en lin francais Bio
 - Pièces métalliques couleur argentée
