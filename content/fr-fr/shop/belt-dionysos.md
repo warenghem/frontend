@@ -69,7 +69,7 @@ offers:
   price: 99
   availability: true
 categories:
-- name: ''
+- name: accessories
   slug: leathergoods
   depth: 1
 tags:
