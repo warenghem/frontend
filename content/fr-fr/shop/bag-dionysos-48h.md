@@ -6,7 +6,7 @@ slogan: Des vignes et du lin. Tel est son destin.
 description: "<p>Son architecture avant-gardiste regroupant deux pièces a été conçue
   par nos designers afin qu'il soit léger, souple et toujours prêt pour vous accompagner
   dans vos déplacements. Les experts du bagage logeront facilement une semaine de
-  vêtements dans son intérieur généreux, aux dimensions de bagage cabine. L'intégralité
+  vêtements dans son intérieur généreux, aux dimensions de bagage cabine. </p><p>L'intégralité
   de la confection est réalisée en France dans notre atelier en Anjou spécialisé en
   haute maroquinerie. Les tranches du cuir sont cirées à la main dans un coloris bleu
   Bugatti (clair ou foncé).</p>"
