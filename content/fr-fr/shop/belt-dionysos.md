@@ -73,10 +73,10 @@ categories:
   slug: leathergoods
   depth: 1
 tags:
-- ceinture
 - dionysos
 - simple
-- etain
+- belt
+- pewter
 image:
 - src: belt-blackblue-1.png
   color: 2
