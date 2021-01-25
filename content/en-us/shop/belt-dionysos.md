@@ -64,11 +64,10 @@ offers:
   price: 99
   availability: true
 categories:
-- name: Leather Goods
-  slug: leathergoods
+- name: accessories
+  slug: ''
   depth: 1
-tags:
-- name: Leather Goods
+tags: []
 image:
 - src: 48H_face.png
   color: 2
