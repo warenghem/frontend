@@ -91,11 +91,11 @@ image:
   name: ''
   alt: ''
   availability: false
-- src: bag-black_blue-deepest.png
+- src: bag-blackblue-deepest.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: bag-blackblue-deepest
+  alt: sac vegan noir raisin made in france
   availability: true
 - src: bag-black_blue-side.png
   color: 1
