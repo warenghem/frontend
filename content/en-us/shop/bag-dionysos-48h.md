@@ -3,13 +3,13 @@ id: 1
 sku: WAD48NB
 name: Dionysos 48H
 slogan: Vines and flax. Such is his destiny.
-description: "<p>The Dionysos 48H is the centerpiece of the collection. Its avant-garde
-  architecture grouping together two pieces has been designed by our designers to
-  be light, flexible and always ready to accompany you on your travels. The luggage
-  experts will easily fit a week's worth of clothing in its generous interior, the
-  size of cabin luggage. All the clothing is made in France in our workshop in Anjou
-  specializing in luxury leather goods. The edges of the leather are waxed by hand
-  in a Bugatti blue color (light or dark) contrasting the black vegetable leather.</p>"
+description: "<p>Its avant-garde architecture grouping together two pieces has been
+  designed by our designers to be light, flexible and always ready to accompany you
+  on your travels. The luggage experts will easily fit a week's worth of clothing
+  in its generous interior, the size of cabin luggage. All the clothing is made in
+  France in our workshop in Anjou specializing in fine leather goods. The edges of
+  the leather are hand-waxed in a Bugatti blue color (light or dark) contrasting the
+  black vegetable leather.</p>"
 details:
 - Cabin size
 - Organic French linen lining
@@ -18,11 +18,10 @@ details:
 - Double zipped closure made in France
 - Removable, adjustable shoulder strap. Up to 50cm
 care: "<p><strong>Our Dionysos® wine leather has been extensively tested. Produced
-  thanks to an innovative production process which transforms the fibers and vegetable
-  oils present in the grape pomace into an ecological material having the same mechanical,
-  aesthetic and sensory characteristics as a traditional leather and - conversely
-  - requires very little maintenance.</strong></p><p>But to preserve the beauty of
-  this item over the years, we recommend that you follow these tips:</p><ul><li><p>Be
+  using an innovative process that transforms the fibers of the grape into an ecological
+  material with the same mechanical, aesthetic and sensory characteristics as traditional
+  leather and - conversely - requiring little maintenance.</strong></p><p>But to preserve
+  the beauty of this item over the years, we recommend that you follow these tips:</p><ul><li><p>Be
   careful not to scratch or rub your item against abrasive surfaces, especially leather
   finishes.</p></li><li><p>We recommend that you protect your item from moisture and
   keep it away from direct sources of heat, such as radiators and car interiors in
@@ -33,12 +32,11 @@ care: "<p><strong>Our Dionysos® wine leather has been extensively tested. Produ
   from high temperatures, excessive humidity or unventilated areas.</p></li></ul><p>If
   you have any questions about your item, please contact us.</p><p><strong>Ecological
   characteristics:</strong></p><p>Around 27 billion liters of wine are produced worldwide
-  each year. And with it, a huge amount of leftovers too - everything that doesn't
-  end up in the bottle, around seven billion tons of stems, skins and seeds. These
-  leftovers from the wine industry can be produced to be transformed into a high added
-  value raw material.</p><p>Unlike traditional leather, it does not need water or
-  complex and toxic tanning processes responsible for polluting soil and water to
-  be produced. Has no impact on ecosystems, and obviously does not cause animal suffering.</p>"
+  each year, including a huge amount of material that is not found in a bottle. These
+  leftovers from the wine industry can be transformed into raw material with high
+  added value.</p><p>Unlike traditional leather, it does not need water or toxic tanning
+  processes responsible for polluting soil and water to be produced. Has no impact
+  on ecosystems, and obviously does not cause animal suffering.</p>"
 dimensions:
   length: 21
   height: 11
