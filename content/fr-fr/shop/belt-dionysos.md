@@ -54,10 +54,10 @@ colors:
   icon: leather.jpg
 material:
 - id: 1
-  name: Dionysos® Wine Leather
+  name: Cuir végétal de vin Dionysos®
   icon: leather.jpg
 - id: 2
-  name: Natural recyclable metal
+  name: Metal naturel recyclable
   icon: metal-brushed.jpg
 award:
 - name: Made in France

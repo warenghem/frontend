@@ -49,7 +49,7 @@ colors:
   icon: leather.jpg
 material:
 - id: 1
-  name: Dionysos® Wine Leather
+  name: Dionysos® vegetable Wine Leather
   icon: leather.jpg
 - id: 2
   name: Natural recyclable metal
@@ -65,21 +65,45 @@ offers:
   availability: true
 categories:
 - name: accessories
-  slug: ''
+  slug: leathergoods
   depth: 1
-tags: []
+tags:
+- dionysos
+- simple
+- belt
+- pewter
 image:
-- src: 48H_face.png
+- src: belt-blackblue-1.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: belt-blackblue-1
+  alt: vegan belt men grape made in france
   availability: true
-- src: 48H_cote.png
+- src: belt-blackblue-above2.png
   color: 1
   material: 2
-  name: ''
-  alt: ''
+  name: belt-blackblue-above2
+  alt: vegan belt men grape made in france
+  availability: false
+- src: belt-blackblue-above.png
+  color: 1
+  name: belt-blackblue-above
+  alt: vegan belt men grape made in france
+  availability: false
+- src: belt-blackblue-below.png
+  color: 
+  name: belt-blackblue-below
+  alt: vegan belt men grape made in france
+  availability: false
+- src: belt-blackblue-2.png
+  color: 2
+  name: belt-blackblue-2
+  alt: vegan belt men grape made in france
+  availability: false
+- src: belt-blackblue-side.png
+  color: 2
+  name: belt-blackblue-side
+  alt: vegan belt men grape made in france
   availability: false
 attributes:
 - name: Size

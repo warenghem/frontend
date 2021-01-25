@@ -54,7 +54,7 @@ colors:
   icon: leather.jpg
 material:
 - id: 1
-  name: Dionysos® Wine Leather
+  name: Cuir végétal de vin Dionysos®
   icon: leather.jpg
 award:
 - name: Made in France

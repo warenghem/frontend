@@ -85,14 +85,14 @@
             return {
                 backgroundImages: [
                     ",ar-6-4/Products/48H_black_blue_side_bottle.png",
-                    ",fo-top/Products/belt.png",
-                    "/Products/portefeuille.png",
+                    ",fo-top/Products/belt-blackblue-2.png",
+                    "/Products/pf-blackblue-side.png",
                     "/vide.png",
                 ],
                 link: [
                     "/shop/bag-dionysos-48h/",
-                    "/shop/belt-dionysos-belt/",
-                    "/shop/wallet-dionysos-wallet/",
+                    "/shop/belt-dionysos/",
+                    "/shop/wallet-dionysos/",
                     "",
                 ],
                 classe: [

@@ -51,7 +51,7 @@ colors:
   icon: leather.jpg
 material:
 - id: 1
-  name: Dionysos® Wine Leather
+  name: Dionysos® vegetable Wine Leather
   icon: leather.jpg
 - id: 2
   name: Organic French Linen
@@ -66,51 +66,49 @@ offers:
   price: 390
   availability: true
 categories:
-- name: ''
-  slug: leathergoods
-  depth: 1
 - name: Bags
   slug: bags
   depth: 2
 tags:
-- name: Leather Goods
-- name: Bags
+- 48H
+- dionysos
+- bag
 image:
 - src: 48H_face.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: 48H_face
+  alt: vegan bag man black grape made in france
   availability: true
 - src: 48H_cote.png
   color: 1
   material: 2
-  name: ''
-  alt: ''
+  name: 48H_cote.png
+  alt: vegan bag man black grape made in france
   availability: false
-- src: bag-black_blue-deepest.png
+- src: bag-blackblue-deepest.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: bag-blackblue-deepest
+  alt: vegan bag man black grape made in france
   availability: true
-- src: bag-black_blue-side.png
-  color: 1
-  material: 2
-  name: ''
-  alt: ''
-  availability: false
-- src: bag-black_blue-above.png
+- src: bag-blackblue-above.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: bag-blackblue-above
+  alt: vegan bag man black grape made in france
   availability: true
-- src: bag-black_blue-back.png
+- src: bag-blackblue-below.png
   color: 1
   material: 2
-  name: ''
-  alt: ''
+  name: bag-blackblue-side
+  alt: vegan bag man black grape made in france
+  availability: false
+- src: bag-blackblue-back.png
+  color: 1
+  material: 2
+  name: bag-blackblue-back
+  alt: vegan bag man black grape made in france
   availability: false
 attributes:
 - name: Size
@@ -128,10 +126,10 @@ isSimilarTo: shoes
 brand:
   name: Warenghem
 related_articles:
-- first: []
-  second: []
+- first: content/fr-fr/shop/belt-dionysos.md
+  second: content/en-us/shop/wallet-dionysos.md
   third: []
-
+  
 ---
 Empower your NuxtJS application with `@nuxtjs/content` module: write in a `content/` directory and fetch your Markdown, JSON, YAML and CSV files through a MongoDB like API, acting as a **Git-based Headless CMS**.
 
