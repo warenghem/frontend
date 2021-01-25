@@ -1,19 +1,17 @@
 ---
-id: 1
-sku: WAD48NB
-name: Dionysos 48H
-slogan: Vines and flax. Such is his destiny.
+id: 2
+sku: WADBTNB
+name: Dionysos Belt
+slogan: She won't let you down.
 description: 'The Dionysos 48H is the centerpiece of the collection. Lightweight, flexible
   and always ready to accompany you on your travels, the bag does justice to
   to his name: luggage experts will easily accommodate a week of clothing in
   its generous interior, with cabin baggage dimensions. '
 details:
-- Cabin size
-- Organic French linen lining
-- Metallic pieces in silver color
+- Warenghem engraving on the side
+- Made in France engraving on the other side
+- Metal buckle made in France with brushed palladium finish
 - Dark Bugatti blue slice wax
-- Double zipped closure made in France
-- Removable, adjustable shoulder strap. Up to 50cm
 care: "<p><strong>Our Dionysos® wine leather has been extensively tested. It
   is as strong as animal leather and - <em>on the contrary</em> - requires very little
   maintenance.</strong></p><p>But to preserve the beauty of this item over the years,
@@ -28,9 +26,9 @@ care: "<p><strong>Our Dionysos® wine leather has been extensively tested. It
   or unventilated areas.</p></li></ul><p>If you have any questions about your item,
   please contact us.</p>"
 dimensions:
-  length: 21
-  height: 11
-  width: 8
+  length: 41
+  height: 14
+  width: 0.2
   unit: inches
 manufacturer: ''
 colors:
@@ -45,8 +43,8 @@ material:
   name: Dionysos® Wine Leather
   icon: leather.jpg
 - id: 2
-  name: Organic French Linen
-  icon: linen_camel.jpg
+  name: Natural recyclable metal
+  icon: metal-brushed.jpg
 award:
 - name: Made in France
   image: madeinfrance.png
@@ -54,18 +52,14 @@ award:
   image: PETA.png
 offers:
   priceCurrency: EUR
-  price: 390
+  price: 99
   availability: true
 categories:
-- name: ''
+- name: 'Leather Goods'
   slug: leathergoods
   depth: 1
-- name: Bags
-  slug: bags
-  depth: 2
 tags:
 - name: Leather Goods
-- name: Bags
 image:
 - src: 48H_face.png
   color: 2
@@ -74,30 +68,6 @@ image:
   alt: ''
   availability: true
 - src: 48H_cote.png
-  color: 1
-  material: 2
-  name: ''
-  alt: ''
-  availability: false
-- src: bag-black_blue-deepest.png
-  color: 2
-  material: 1
-  name: ''
-  alt: ''
-  availability: true
-- src: bag-black_blue-side.png
-  color: 1
-  material: 2
-  name: ''
-  alt: ''
-  availability: false
-- src: bag-black_blue-above.png
-  color: 2
-  material: 1
-  name: ''
-  alt: ''
-  availability: true
-- src: bag-black_blue-back.png
   color: 1
   material: 2
   name: ''

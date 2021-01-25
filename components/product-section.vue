@@ -115,28 +115,28 @@
 				"desc": "Le plus grand des sacs. Composé de raisins et d’une doublure en lin francais. Indispensable pour le week-end, le sport, ou les courts séjours. C’est la pièce maitresse, qui donne le ton de la collection.",
 				"summary": "Des vignes et du lin. Tel est son destin.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos 48H",
+				"title": "Dionysos 48H.",
 				"visualtocome": ""
 			},
 			{
 				"desc": "Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur un costume que sur un jean.",
 				"summary": "Elle ne vous laissera pas tomber.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos Belt",
+				"title": "Dionysos Belt.",
 				"visualtocome": ""
 			},
 			{
 				"desc": "Allié de votre quotidien, il est concu autours de lignes obliques représentant le W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.",
 				"summary": "Végétal comme ses feuilles.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos Wallet",
+				"title": "Dionysos Wallet.",
 				"visualtocome": ""
 			},
 			{
 				"desc": "",
 				"summary": "Les pieds sur terre. Tournée vers le futur.",
 				"tag": "En cours de création",
-				"title": "Dionysos Boots",
+				"title": "Dionysos Boots.",
 				"visualtocome": "Visuels à venir"
 			}
 		]

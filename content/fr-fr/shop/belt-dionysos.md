@@ -1,18 +1,17 @@
 ---
-id: 1
-sku: WA48NB
-name: Dionysos 48H
-slogan: Des vignes et du lin. Tel est son destin.
+id: 2
+sku: WADBTNB
+name: Dionysos Belt
+slogan: Elle ne vous laissera pas tomber.
 description: 'Le Dionysos 48H est la pièce maitresse de la collection. Léger, souple
   et toujours prêt pour vous accompagner dans vos déplacements, le sac fait honneur
   à son nom : les experts du bagage logeront facilement une semaine de vêtements dans
   son intérieur généreux, aux dimensions de bagage cabine.'
 details:
-- Taille cabine
-- Doublure en lin francais Bio
-- Pièces métalliques couleur argentée
-- Double fermeture zippée fabriqué en France
-- Bandoulière amovible, ajustable. Jusqu'a 50cm
+- Gravure Warenghem sur la tranche
+- Gravure "made in France" sur l'autre tranche
+- Boucle en métal fabriquée en France, avec finition palladium brossée
+- Cires tranches Bleu clair Bugatti
 care: "<p><strong>Notre cuir de vin Dionysos</strong>®<strong> a été longuement testé.
   Il est aussi solide que du cuir animal et - <em>a contrario </em>- ne demande que
   très peu d'entretien.</strong></p><p>Mais pour préserver au fil des ans la beauté
@@ -29,9 +28,9 @@ care: "<p><strong>Notre cuir de vin Dionysos</strong>®<strong> a été longueme
   excessive ou des zones non ventilées.</p></li></ul><p>Pour toute question relative
   à votre article, veuillez prendre contact avec nous.</p>"
 dimensions:
-  length: 54
-  height: 29
-  width: 20
+  length: 105
+  height: 35
+  width: 0.5
   unit: cm
 manufacturer: ''
 colors:
@@ -43,11 +42,11 @@ colors:
   icon: leather.jpg
 material:
 - id: 1
-  name: Cuir végétal de vin Dionysos®
+  name: Dionysos® Wine Leather
   icon: leather.jpg
 - id: 2
-  name: Lin Francais Bio
-  icon: linen_camel.jpg
+  name: Natural recyclable metal
+  icon: metal-brushed.jpg
 award:
 - name: Made in France
   image: madeinfrance.png
@@ -55,18 +54,14 @@ award:
   image: PETA.png
 offers:
   priceCurrency: EUR
-  price: 390
+  price: 99
   availability: true
 categories:
-- name: ''
+- name: 'Leather Goods'
   slug: leathergoods
   depth: 1
-- name: Bags
-  slug: bags
-  depth: 2
 tags:
 - name: Leather Goods
-- name: Bags
 image:
 - src: 48H_face.png
   color: 2
@@ -75,30 +70,6 @@ image:
   alt: ''
   availability: true
 - src: 48H_cote.png
-  color: 1
-  material: 2
-  name: ''
-  alt: ''
-  availability: false
-- src: bag-black_blue-deepest.png
-  color: 2
-  material: 1
-  name: ''
-  alt: ''
-  availability: true
-- src: bag-black_blue-side.png
-  color: 1
-  material: 2
-  name: ''
-  alt: ''
-  availability: false
-- src: bag-black_blue-above.png
-  color: 2
-  material: 1
-  name: ''
-  alt: ''
-  availability: true
-- src: bag-black_blue-back.png
   color: 1
   material: 2
   name: ''

@@ -6,6 +6,15 @@ html {
   height: inherit;
 }
 /*Vuetify*/
+.multilinechip {
+  width:500px
+}
+.v-chip {
+  height: auto!important;
+  white-space: inherit!important;
+  min-height: 32px;
+  padding: 6px 12px!important;
+}
 .v-tabs-bar {
   height: 100%!important;
 }

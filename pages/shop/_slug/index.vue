@@ -32,7 +32,7 @@
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-2 mx-n1" ref="c2" :slidesToShow="2" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
+              <VueSlickCarousel class="mt-2 mx-n1" ref="c2" v-bind="settingsnav" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
                 <div
                   v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
@@ -104,43 +104,44 @@
           <div class="mt-5" v-html="product.description">
           </div>
           <v-subheader>{{$t('product.details')}}</v-subheader>
-          <div class="py-5 d-flex align-center justify-space-between">
-            <v-row style="height:92px" justify="center" class="pa-0 ma-0 text-center">
-              <v-card
-                  v-for="(mtr,i_dx) in product.material"
-                  :key="'material_'+i_dx"
-                  width="110px"
-                  class="mx-1"
-              >
-              <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ mtr.icon" alt="">
-              <v-card-text class="pa-0">
-                {{mtr.name}}
-              </v-card-text>
-              </v-card>
-            </v-row>
-          </div>
-          <div class="mb-5">
-            <foldable height="%70">
-              <span class="pt-2">{{product.dimensions.length}} x {{product.dimensions.height}} x {{product.dimensions.width}} {{product.dimensions.unit}}</span>
-              <span class="teradeli-light">{{$t('product.size')}}</span>
-              <div class="py-4">
-                <v-chip-group
-                  active-class="primary--text"
-                  column
+          <div class="mx-5">
+            <div class="py-5 d-flex align-center justify-space-between">
+              <v-row style="height:92px" justify="center" class="pa-0 ma-0 text-center">
+                <v-card
+                    v-for="(mtr,i_dx) in product.material"
+                    :key="'material_'+i_dx"
+                    width="110px"
                 >
-                  <v-chip
-                    v-for="(det,i_dx) in product.details"
-                    :key="'award'+i_dx"
+                <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ mtr.icon" alt="">
+                <v-card-text class="pa-0">
+                  {{mtr.name}}
+                </v-card-text>
+                </v-card>
+              </v-row>
+            </div>
+            <div class="mb-5">
+              <foldable height="%70">
+                <span class="pt-2">{{product.dimensions.length}} x {{product.dimensions.height}} x {{product.dimensions.width}} {{product.dimensions.unit}}</span>
+                <span class="teradeli-light">{{$t('product.size')}}</span>
+                <div class="py-4">
+                  <v-chip-group
+                    active-class="primary--text"
+                    column
                   >
-                    {{ det }}
-                  </v-chip>
-                </v-chip-group>
-              </div>
-              <p align="center" class="my-foldable hand"
-                 slot="view-more" slot-scope="{ toggle, collapsed }" @click="toggle">
-                {{ collapsed ? $t('product.readMore') : $t('product.readLess') }}
-              </p>
-            </foldable>
+                    <v-chip
+                      v-for="(det,i_dx) in product.details"
+                      :key="'award'+i_dx"
+                    >
+                      {{ det }}
+                    </v-chip>
+                  </v-chip-group>
+                </div>
+                <p align="center" class="my-foldable hand"
+                  slot="view-more" slot-scope="{ toggle, collapsed }" @click="toggle">
+                  {{ collapsed ? $t('product.readMore') : $t('product.readLess') }}
+                </p>
+              </foldable>
+            </div>
           </div>
           <div class="mb-7">
             <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
@@ -319,6 +320,31 @@
                 sideModal: false,
                 currentSideItem: 'productCare',
                 selectedColor: null,
+                settingsnav: {
+                    "slidesToShow": 3,
+                    "rows": 2,
+                    "slidesPerRow": 1,
+                    "responsive": [
+                        {
+                            "breakpoint": 1450,
+                            "settings": {
+                                "slidesToShow": 2,
+                                "rows": 3,
+                            }
+                        },
+                        {
+                            "breakpoint": 768,
+                            "settings": {
+                              "centerMode": true,
+                              "infinite": true,
+                              "slidesToShow": 2,
+                              "slidesToScroll": 2,
+                              "rows": 1,
+                              "initialSlide": 2,
+                            }
+                        },
+                    ]
+                },
                 settings: {
                     "dots": false,
                     "row": 1,
@@ -326,8 +352,6 @@
                     "arrow": false,
                     "slidesToShow": 3,
                     "slidesToScroll": 3,
-                    "initialSlide": 0,
-                    "draggable": true,
                     "responsive": [
                         {
                             "breakpoint": 1024,
@@ -360,13 +384,6 @@
                         }
                     ]
                 },
-                settingsSingle: {
-                    "dots": true,
-                    "infinite": false,
-                    "speed": 500,
-                    "slidesToShow": 1,
-                    "slidesToScroll": 1,
-                }
             }
         },
         components: {
@@ -508,4 +525,37 @@ button.slick-arrow.slick-next {
       width: 25%;
      }
   }
+/* purgecss start ignore */
+  .vue-foldable-container {
+    transition: max-height 0.7s;
+  }
+  .vue-foldable-mask {
+    transition: opacity 3s;
+    bottom: 24px;
+  }
+  .slick-list {
+    padding-left: 0!important;
+}
+.vue-foldable .vue-foldable-container {
+    overflow: hidden;
+}
+.vue-foldable {
+    position: relative;
+}
+.vue-foldable .vue-foldable-mask.collapsed {
+    opacity: 1;
+    background: linear-gradient(to bottom, rgba(55,55,55,0), #fff);
+}
+.vue-foldable .vue-foldable-mask:not(.collapsed) {
+    opacity: 0;
+}
+.vue-foldable .vue-foldable-mask {
+    position: absolute;
+    bottom: 30px /* view-more's height */;
+    height: 80px;
+    width: 100%;
+    background: transparent;
+    pointer-events: none;
+}
+/* purgecss end ignore */
 </style>
