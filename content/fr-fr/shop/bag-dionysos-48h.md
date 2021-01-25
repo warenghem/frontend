@@ -3,31 +3,45 @@ id: 1
 sku: WA48NB
 name: Dionysos 48H
 slogan: Des vignes et du lin. Tel est son destin.
-description: 'Le Dionysos 48H est la pièce maitresse de la collection. Léger, souple
-  et toujours prêt pour vous accompagner dans vos déplacements, le sac fait honneur
-  à son nom : les experts du bagage logeront facilement une semaine de vêtements dans
-  son intérieur généreux, aux dimensions de bagage cabine.'
+description: "<p>Le Dionysos 48H est la pièce maitresse de la collection. Son architecture
+  avant-gardiste regroupant deux pièces a été conçue par nos designers afin qu'il
+  soit léger, souple et toujours prêt pour vous accompagner dans vos déplacements.
+  Les experts du bagage logeront facilement une semaine de vêtements dans son intérieur
+  généreux, aux dimensions de bagage cabine. L'intégralité de la confection est réalisée
+  en France dans notre atelier en Anjou spécialisé dans la maroquinerie de luxe. Les
+  tranches du cuir sont cirée à la main dans un coloris bleu Bugatti (clair ou foncé)
+  contrastant le cuir végétal noir.</p>"
 details:
-- Taille cabine
 - Doublure en lin francais Bio
 - Pièces métalliques couleur argentée
 - Double fermeture zippée fabriqué en France
 - Bandoulière amovible, ajustable. Jusqu'a 50cm
 care: "<p><strong>Notre cuir de vin Dionysos</strong>®<strong> a été longuement testé.
-  Il est aussi solide que du cuir animal et - <em>a contrario </em>- ne demande que
-  très peu d'entretien.</strong></p><p>Mais pour préserver au fil des ans la beauté
-  de cet article, nous vous recommandons de suivre ces conseils :</p><ul><li><p>Veillez
-  à ne pas érafler ou frotter votre article contre des surfaces abrasives, en particulier
-  les finitions en cuir.</p></li><li><p>Nous vous conseillons de protéger votre article
-  de l’humidité et de le maintenir à l’abri des sources directes de chaleur, comme
-  les radiateurs et l’habitacle des voitures en été.</p></li><li><p>Évitez de mettre
-  votre article en contact avec des liquides, de la crème et du désinfectant pour
-  les mains, du maquillage et du parfum.</p></li><li><p>Pour nettoyer votre article,
-  essuyez délicatement la toile avec un chiffon doux imbibé d’eau légèrement savonneuse.</p></li><li><p>Quand
-  vous ne vous en servez pas, rangez l’article dans la feutrine fournie lors de l’achat.
-  Nous vous conseillons de le conserver à l’abri des températures élevées, de l’humidité
-  excessive ou des zones non ventilées.</p></li></ul><p>Pour toute question relative
-  à votre article, veuillez prendre contact avec nous.</p>"
+  Produit grâce à un procédé de production innovant qui transforme les fibres et les
+  huiles végétales présentes dans le marc de raisin en une matière écologique ayant
+  les mêmes caractéristiques mécaniques, esthétiques et sensorielles qu'un cuir traditionnel
+  et - <em>a contrario </em>- ne demande que très peu d'entretien.</strong></p><p>Mais
+  pour préserver au fil des ans la beauté de cet article, nous vous recommandons de
+  suivre ces conseils :</p><ul><li><p>Veillez à ne pas érafler ou frotter votre article
+  contre des surfaces abrasives, en particulier les finitions en cuir.</p></li><li><p>Nous
+  vous conseillons de protéger votre article de l’humidité et de le maintenir à l’abri
+  des sources directes de chaleur, comme les radiateurs et l’habitacle des voitures
+  en été.</p></li><li><p>Évitez de mettre votre article en contact avec des liquides,
+  de la crème et du désinfectant pour les mains, du maquillage et du parfum.</p></li><li><p>Pour
+  nettoyer votre article, essuyez délicatement la toile avec un chiffon doux imbibé
+  d’eau légèrement savonneuse.</p></li><li><p>Quand vous ne vous en servez pas, rangez
+  l’article dans la feutrine fournie lors de l’achat. Nous vous conseillons de le
+  conserver à l’abri des températures élevées, de l’humidité excessive ou des zones
+  non ventilées.</p></li></ul><p>Pour toute question relative à votre article, veuillez
+  prendre contact avec nous.</p><p><strong>Caractéristiques écologiques :</strong></p><p>Environ
+  27 milliards de litres de vin sont produits dans le monde chaque année. Et avec
+  lui, une énorme quantité de restes aussi - tout ce qui ne se retrouve pas dans la
+  bouteille, environ sept milliards de tonnes de tiges, de peaux et de graines. Ces
+  restes de l'industrie du vin peuvent être produits pour être transformées en matière
+  première à haute valeur ajoutée. </p><p>Contrairement au cuir traditionnel, il n'a
+  pas besoin d'eau ni de processus de tannage complexe et toxique responsables de
+  la pollution des sols et des eaux pour être produit. N’a aucun impact sur les écosystèmes,
+  et évidemment n'engendre aucune souffrance animale.</p><p></p>"
 dimensions:
   length: 54
   height: 29

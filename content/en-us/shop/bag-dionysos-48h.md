@@ -3,10 +3,13 @@ id: 1
 sku: WAD48NB
 name: Dionysos 48H
 slogan: Vines and flax. Such is his destiny.
-description: 'The Dionysos 48H is the centerpiece of the collection. Lightweight, flexible
-  and always ready to accompany you on your travels, the bag does justice to
-  to his name: luggage experts will easily accommodate a week of clothing in
-  its generous interior, with cabin baggage dimensions. '
+description: "<p>The Dionysos 48H is the centerpiece of the collection. Its avant-garde
+  architecture grouping together two pieces has been designed by our designers to
+  be light, flexible and always ready to accompany you on your travels. The luggage
+  experts will easily fit a week's worth of clothing in its generous interior, the
+  size of cabin luggage. All the clothing is made in France in our workshop in Anjou
+  specializing in luxury leather goods. The edges of the leather are waxed by hand
+  in a Bugatti blue color (light or dark) contrasting the black vegetable leather.</p>"
 details:
 - Cabin size
 - Organic French linen lining
@@ -14,19 +17,28 @@ details:
 - Dark Bugatti blue slice wax
 - Double zipped closure made in France
 - Removable, adjustable shoulder strap. Up to 50cm
-care: "<p><strong>Our Dionysos® wine leather has been extensively tested. It
-  is as strong as animal leather and - <em>on the contrary</em> - requires very little
-  maintenance.</strong></p><p>But to preserve the beauty of this item over the years,
-  we recommend that you follow these tips:</p><ul><li><p>Be careful not to scratch
-  or rub your item against abrasive surfaces, especially leather finishes.</p></li><li><p>We
-  recommend that you protect your item from moisture and keep it away from direct
-  sources of heat, such as radiators and car interiors in summer.</p></li><li><p>Avoid
-  contacting your item with liquids, hand cream and sanitizer, makeup, and perfume.</p></li><li><p>To
-  clean your item, gently wipe the canvas with a soft cloth dampened with mild soapy
-  water.</p></li><li><p>When not in use, store the item in the felt provided with
-  purchase. We recommend that you keep it away from high temperatures, excessive humidity
-  or unventilated areas.</p></li></ul><p>If you have any questions about your item,
-  please contact us.</p>"
+care: "<p><strong>Our Dionysos® wine leather has been extensively tested. Produced
+  thanks to an innovative production process which transforms the fibers and vegetable
+  oils present in the grape pomace into an ecological material having the same mechanical,
+  aesthetic and sensory characteristics as a traditional leather and - conversely
+  - requires very little maintenance.</strong></p><p>But to preserve the beauty of
+  this item over the years, we recommend that you follow these tips:</p><ul><li><p>Be
+  careful not to scratch or rub your item against abrasive surfaces, especially leather
+  finishes.</p></li><li><p>We recommend that you protect your item from moisture and
+  keep it away from direct sources of heat, such as radiators and car interiors in
+  summer.</p></li><li><p>Avoid contacting your item with liquids, hand cream and sanitizer,
+  makeup, and perfume.</p></li><li><p>To clean your item, gently wipe the canvas with
+  a soft cloth dampened with mild soapy water.</p></li><li><p>When not in use, store
+  the item in the felt provided with purchase. We recommend that you keep it away
+  from high temperatures, excessive humidity or unventilated areas.</p></li></ul><p>If
+  you have any questions about your item, please contact us.</p><p><strong>Ecological
+  characteristics:</strong></p><p>Around 27 billion liters of wine are produced worldwide
+  each year. And with it, a huge amount of leftovers too - everything that doesn't
+  end up in the bottle, around seven billion tons of stems, skins and seeds. These
+  leftovers from the wine industry can be produced to be transformed into a high added
+  value raw material.</p><p>Unlike traditional leather, it does not need water or
+  complex and toxic tanning processes responsible for polluting soil and water to
+  be produced. Has no impact on ecosystems, and obviously does not cause animal suffering.</p>"
 dimensions:
   length: 21
   height: 11
