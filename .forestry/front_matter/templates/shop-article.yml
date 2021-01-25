@@ -171,6 +171,7 @@ fields:
       options:
       - leathergoods
       - bag
+      - accessories
       source:
         type: simple
         section: 
