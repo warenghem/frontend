@@ -82,8 +82,8 @@ image:
 - src: 48H_face.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: bag-blackblue-front
+  alt: sac vegan homme noir raisin made in france
   availability: true
 - src: 48H_cote.png
   color: 1
@@ -95,25 +95,25 @@ image:
   color: 2
   material: 1
   name: bag-blackblue-deepest
-  alt: sac vegan noir raisin made in france
+  alt: sac vegan homme noir raisin made in france
   availability: true
-- src: bag-black_blue-side.png
-  color: 1
-  material: 2
-  name: ''
-  alt: ''
-  availability: false
-- src: bag-black_blue-above.png
+- src: bag-blackblue-above.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: bag-blackblue-above
+  alt: sac vegan homme raisin made in france
   availability: true
-- src: bag-black_blue-back.png
+- src: bag-blackblue-below.png
   color: 1
   material: 2
-  name: ''
-  alt: ''
+  name: bag-blackblue-side
+  alt: sac vegan homme noir raisin made in france
+  availability: false
+- src: bag-blackblue-back.png
+  color: 1
+  material: 2
+  name: bag-blackblue-back
+  alt: sac vegan homme noir raisin made in france
   availability: false
 attributes:
 - name: Size
