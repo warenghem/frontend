@@ -1,7 +1,7 @@
 ---
 id: 2
 sku: WADBTNB
-name: Dionysos Belt
+name: Ceinture Dionysos
 slogan: Elle ne vous laissera pas tomber.
 description: "<p>La ceinture Dionysos est assortie aux articles de maroquinerie, elle
   s’accorde avec toutes vos tenues, des plus formelles aux plus décontractés. Ses
@@ -68,6 +68,7 @@ offers:
   priceCurrency: EUR
   price: 99
   availability: true
+  pieces: Available soon - 30 pieces
 categories:
 - name: accessories
   slug: leathergoods

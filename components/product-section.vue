@@ -122,21 +122,21 @@
 				"desc": "Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur un costume que sur un jean.",
 				"summary": "Elle ne vous laissera pas tomber.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos Belt.",
+				"title": "Ceinture Dionysos.",
 				"visualtocome": ""
 			},
 			{
 				"desc": "Allié de votre quotidien, il est concu autours de lignes obliques représentant le W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.",
 				"summary": "Végétal comme ses feuilles.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos Wallet.",
+				"title": "Portefeuille Dionysos.",
 				"visualtocome": ""
 			},
 			{
 				"desc": "",
 				"summary": "Les pieds sur terre. Tournée vers le futur.",
 				"tag": "En cours de création",
-				"title": "Dionysos Boots.",
+				"title": "Bottines Dionysos.",
 				"visualtocome": "Visuels à venir"
 			}
 		]

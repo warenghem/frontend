@@ -95,9 +95,13 @@
           </div>
           <div class="d-flex justify-space-between align-center my-5">
             <h3 class="teradeli-book">{{ $n(product.price, 'currency') }}</h3>
-            <div class="smalltext">
+            <div class="smalltext d-none">
               <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
               {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
+            </div>
+            <div class="smalltext">
+              <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
+              {{product.offers.pieces}}
             </div>
           </div>
           <Buybutton/>
