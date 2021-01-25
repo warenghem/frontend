@@ -38,7 +38,7 @@ care: "<p><strong>Notre cuir de vin Dionysos</strong>®<strong> a été longueme
   ajoutée.</p><p>Contrairement au cuir traditionnel, elle n'a pas besoin d'eau ni
   de processus de tannage toxique responsables de la pollution des sols et des eaux
   pour être produite. N’a aucun impact sur les écosystèmes, et évidemment n'engendre
-  aucune souffrance animale.</p><p></p>"
+  aucune souffrance animale.</p>"
 dimensions:
   length: 54
   height: 29
