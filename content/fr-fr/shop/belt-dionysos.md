@@ -69,23 +69,46 @@ offers:
   price: 99
   availability: true
 categories:
-- name: Leather Goods
+- name: ''
   slug: leathergoods
   depth: 1
 tags:
-- name: Leather Goods
+- ceinture
+- dionysos
+- simple
+- etain
 image:
-- src: 48H_face.png
+- src: belt-blackblue-1.png
   color: 2
   material: 1
-  name: ''
-  alt: ''
+  name: belt-blackblue-1
+  alt: ceinture vegan homme raisin made in france
   availability: true
-- src: 48H_cote.png
+- src: belt-blackblue-above2.png
   color: 1
   material: 2
-  name: ''
-  alt: ''
+  name: belt-blackblue-above2
+  alt: ceinture vegan homme raisin made in france
+  availability: false
+- src: belt-blackblue-above.png
+  color: 1
+  name: belt-blackblue-above
+  alt: ceinture vegan homme raisin made in france
+  availability: false
+- src: belt-blackblue-below.png
+  color: 
+  name: belt-blackblue-below
+  alt: ceinture vegan homme noir raisin made in france
+  availability: false
+- src: belt-blackblue-2.png
+  color: 2
+  name: belt-blackblue-2
+  alt: ceinture vegan homme noir raisin made in france
+  availability: false
+- src: belt-blackblue-side.png
+  color: 2
+  name: belt-blackblue-side
+  alt: ceinture vegan noir homme raisin made in france
   availability: false
 attributes:
 - name: Size
