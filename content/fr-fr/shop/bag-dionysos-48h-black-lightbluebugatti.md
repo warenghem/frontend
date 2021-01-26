@@ -1,6 +1,6 @@
 ---
-id: 1
-sku: WAD48NB
+id: 4
+sku: WAD48NBDB
 name: Dionysos 48H
 slogan: Des vignes et du lin. Tel est son destin.
 description: "<p>Son architecture avant-gardiste regroupant deux pièces a été conçue

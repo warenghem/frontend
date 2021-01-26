@@ -147,8 +147,8 @@ export default {
         img: '/flags/switzerland.svg',
       },
       {
-        code: 'en-eu',
-        iso: 'en-EU',
+        code: 'en-ie',
+        iso: 'en-IE',
         name: 'Other European Union Regions (English)',
         region: 'Europe',
         file: 'en-us.json',

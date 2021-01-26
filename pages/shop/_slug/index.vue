@@ -75,27 +75,18 @@
               </v-card>
             </v-row>
           </div>
-          <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
+          <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between d-none"
                @click="openSideModal('colorSide')"
           >
             <div>
               {{$t('product.color')}}
             </div>
-            <div class="d-flex align-center justify-space-between d-none">
+            <div class="d-flex align-center justify-space-between">
               <span v-if="selectedColor">{{selectedColor.name}}</span>
               <img
                 :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ selectedColor.icon"
                 alt=""
                 v-if="selectedColor"
-                width="40px"
-                class="mx-3 rounded-lg">
-              <v-icon class="float-right">{{ svgPath1 }}</v-icon>
-            </div>
-            <div class="d-flex align-center justify-space-between">
-              <span >{{product.colors.name}}</span>
-              <img
-                :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ product.colors.icon"
-                alt=""
                 width="40px"
                 class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
@@ -578,6 +569,9 @@ button.slick-arrow.slick-next {
     transition: opacity 3s;
     bottom: 34px;
   }
+  .v-slide-group__wrapper {
+    touch-action: unset!important;
+}
   .baidu-view-more {
     background-color: #fff;
     transition: background-color .1s ease-in-out;

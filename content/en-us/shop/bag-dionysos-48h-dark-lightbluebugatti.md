@@ -1,6 +1,6 @@
 ---
-id: 1
-sku: WAD48NB
+id: 4
+sku: WAD48NBLB
 name: Dionysos 48H
 slogan: Vines and flax. Such is his destiny.
 description: "<p>Its avant-garde architecture grouping together two pieces has been
