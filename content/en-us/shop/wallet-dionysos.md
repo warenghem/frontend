@@ -44,7 +44,7 @@ colors:
   icon: leather.jpg
 material:
 - id: 1
-  name: Cuir végétal de vin Dionysos®
+  name: Dionysos® vegetable Wine Leather
   icon: leather.jpg
 award:
 - name: Made in France
@@ -55,7 +55,7 @@ offers:
   priceCurrency: EUR
   price: 129
   availability: true
-  pieces : Disponible prochainement - 30 pièces
+  pieces : Available soon - 30 pieces
 categories:
 - name: ''
   slug: leathergoods

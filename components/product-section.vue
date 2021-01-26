@@ -39,13 +39,14 @@
                                         </span>
                                 </v-card-text>
                                 <v-btn
+                                    :class="disabled[p_idx]"
                                     elevation="0"
                                     rounded
                                     nuxt
                                     dark
                                     style="z-index:2"
                                     :to="'/'+$i18n.locale+link[p_idx]"
-                                    class="darkbugattiblue mt-2"
+                                    class="homebutton darkbugattiblue mt-2"
                                     >
                                     {{$t('btnDiscover')}}
                                 </v-btn>
@@ -68,7 +69,7 @@
                                     :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
                                     :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
                                 >
-                                <img class="lazyload mediabox-img" :class="classe[p_idx]"
+                                <img class="lazyload mediabox-img"
                                     :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 2x'" 
                                     data-sizes="auto" />
                             </picture>
@@ -95,11 +96,11 @@
                     "/shop/wallet-dionysos/",
                     "",
                 ],
-                classe: [
-                    "bag",
-                    "belt",
-                    "wallet",
-                    "boots",
+                disabled: [
+                    "",
+                    "",
+                    "",
+                    "d-none",
                 ],
                 products: this.$t('products'),
             }
@@ -240,8 +241,20 @@
         max-width: 500px;
     }
 }
-
-
+.boots .v-btn {
+    display: none;
+}
+@media (max-width: 48em) {
+    .homebutton {
+        position: absolute;
+        margin-left: auto;
+        margin-right: auto;
+        left: 20px;
+        right: 20px;
+        bottom:20px;
+        text-align: center;
+    }
+}
 /* @media (min-width: 48em) {
     .container.productgridhome div:nth-of-type(2) .productdescription {
         left: 0;

@@ -68,7 +68,7 @@ offers:
   priceCurrency: EUR
   price: 99
   availability: true
-  pieces: Available soon - 30 pieces
+  pieces: Disponible prochainement - 30 pièces
 categories:
 - name: accessories
   slug: leathergoods

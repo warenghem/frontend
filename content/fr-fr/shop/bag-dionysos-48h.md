@@ -68,7 +68,7 @@ offers:
   priceCurrency: EUR
   price: 390
   availability: true
-  pieces: Available soon - 30 pieces
+  pieces: Disponible prochainement - 30 pièces
 categories:
 - name: Bags
   slug: bags
