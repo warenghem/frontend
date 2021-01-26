@@ -23,19 +23,15 @@
     "materialTitle": "Matières et entretien",
     "payInfoBtn": {
       "title": "Payment",
-      "desc": "Credit card, debit card, PayPal, Apple Pay"
+      "desc": "Credit card or PayPal"
     },
     "shipBtn": {
       "title": "Shipping & Delivery",
-      "desc": "Complimentary Standard Shipping"
-    },
-    "returnBtn": {
-      "title": "Returns & Exchanges",
-      "desc": "Complimentary"
+      "desc": "Shipping worldwide"
     },
     "packageBtn": {
       "title": "Packaging",
-      "desc": "Contemporary and eco-friendly wrapping inspired by our Heritage"
+      "desc": "Contemporary and eco-friendly"
     },
     "like": "You may also like",
     "recommend": "Recommended",

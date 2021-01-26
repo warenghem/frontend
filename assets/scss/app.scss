@@ -14,6 +14,7 @@ html {
   white-space: inherit!important;
   min-height: 32px;
   padding: 6px 12px!important;
+  overflow: unset!important;
 }
 .v-tabs-bar {
   height: 100%!important;
@@ -665,6 +666,7 @@ body {
 font-size: 22px;
 font-family: 'teradeli-medium', sans-serif;
 letter-spacing: .009em;
+line-height: 1.3rem;
   @media(min-width:48em) {
   font-size: 24px;
   }
@@ -985,3 +987,11 @@ letter-spacing: .009em;
     overflow: auto;
   }
 }
+.bottom-dialog {
+  height: 90%;
+  margin: 0!important;
+  align-self: flex-end;
+  @media(min-width:48em) {
+      height: 40%;
+    }
+  }

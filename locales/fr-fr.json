@@ -23,19 +23,15 @@
     "materialTitle": "Matières et entretien",
     "payInfoBtn": {
       "title": "Informations sur le paiement",
-      "desc": "Paiement par carte bancaire ou par Paypal."
+      "desc": "Paiement par carte bancaire ou Paypal"
     },
     "shipBtn": {
       "title": "Informations sur la livraison",
-      "desc": "Livraison offerte à domicile"
-    },
-    "returnBtn": {
-      "title": "Informations sur les retours",
-      "desc": "Gratuit"
+      "desc": "Livraison à domicile dans le monde"
     },
     "packageBtn": {
       "title": "Emballage",
-      "desc": "Emballage contemporain et écologique inspiré de notre patrimoine"
+      "desc": "Contemporain et écologique"
     },
     "like": "Vous pouvez aussi aimer",
     "recommend": "recommandé",

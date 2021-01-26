@@ -531,6 +531,7 @@ export default {
                 /tab-reversetransition/,
                 /slide-fade/,
                 /bottom-sheet-transition/,
+                /dialog-bottom-transition/,
                 /^vue-foldable/,
                 /^viewer/
               ],

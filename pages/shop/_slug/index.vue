@@ -81,12 +81,21 @@
             <div>
               {{$t('product.color')}}
             </div>
-            <div class="d-flex align-center justify-space-between">
+            <div class="d-flex align-center justify-space-between d-none">
               <span v-if="selectedColor">{{selectedColor.name}}</span>
               <img
                 :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ selectedColor.icon"
                 alt=""
                 v-if="selectedColor"
+                width="40px"
+                class="mx-3 rounded-lg">
+              <v-icon class="float-right">{{ svgPath1 }}</v-icon>
+            </div>
+            <div class="d-flex align-center justify-space-between">
+              <span >{{product.colors.name}}</span>
+              <img
+                :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+ product.colors.icon"
+                alt=""
                 width="40px"
                 class="mx-3 rounded-lg">
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
@@ -124,26 +133,40 @@
               </v-row>
             </div>
             <div class="mb-5">
-              <foldable height="%70">
-                <span class="pt-2">{{product.dimensions.length}} x {{product.dimensions.height}} x {{product.dimensions.width}} {{product.dimensions.unit}}</span>
-                <span class="teradeli-light">{{$t('product.size')}}</span>
-                <div class="py-4">
-                  <v-chip-group
-                    active-class="primary--text"
-                    column
-                  >
-                    <v-chip
-                      v-for="(det,i_dx) in product.details"
-                      :key="'award'+i_dx"
+              <foldable class="baidu-foldable" height="%50">
+                <slot>
+                  <span class="pt-2">{{product.dimensions.length}} x {{product.dimensions.height}} x {{product.dimensions.width}} {{product.dimensions.unit}}</span>
+                  <span class="teradeli-light">{{$t('product.size')}}</span>
+                  <div class="py-4">
+                    <v-chip-group
+                      active-class="primary--text"
+                      column
                     >
-                      {{ det }}
-                    </v-chip>
-                  </v-chip-group>
-                </div>
-                <p align="center" class="my-foldable hand"
-                  slot="view-more" slot-scope="{ toggle, collapsed }" @click="toggle">
-                  {{ collapsed ? $t('product.readMore') : $t('product.readLess') }}
-                </p>
+                      <v-chip
+                        v-for="(det,i_dx) in product.details"
+                        :key="'award'+i_dx"
+                      >
+                        {{ det }}
+                      </v-chip>
+                    </v-chip-group>
+                  </div>
+                </slot>
+                <template slot="view-more" slot-scope="{ toggle, collapsed }">
+                  <div @click="toggle"
+                      class="baidu-view-more"
+                      :class="{ 'collapsed': collapsed }">
+                    <svg class="baidu-view-more-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="20"
+                        height="20" fill="#3596ff">
+                      <path
+                        d="M512 0c-281.6 0-512 230.4-512 512s230.4 512 512 512 512-230.4 512-512-230.4-512-512-512z m0 938.666667c-234.666667 0-426.666667-192-426.666667-426.666667s192-426.666667 426.666667-426.666667 426.666667 192 426.666667 426.666667-192 426.666667-426.666667 426.666667z"
+                        p-id="3018"></path>
+                      <path
+                        d="M793.6 396.8c-17.066667-17.066667-42.666667-17.066667-59.733333 0l-221.866667 221.866667-221.866667-221.866667c-17.066667-17.066667-42.666667-17.066667-59.733333 0-17.066667 17.066667-17.066667 42.666667 0 59.733333l251.733333 251.733334c17.066667 17.066667 42.666667 17.066667 59.733334 0l251.733333-251.733334c17.066667-12.8 17.066667-42.666667 0-59.733333z"
+                        p-id="3019"></path>
+                    </svg>
+                    <span class="baidu-view-more-text">{{ collapsed ? $t('product.readMore') : $t('product.readLess') }}</span>
+                  </div>
+                </template>                
               </foldable>
             </div>
           </div>
@@ -175,20 +198,6 @@
               <div>
                 <div class="right-title">{{$t('product.shipBtn.title')}}</div>
                 <span class="teradeli-light">{{$t('product.shipBtn.desc')}}</span>
-              </div>
-            </div>
-
-            <div>
-              <v-icon>{{ svgPath3 }}</v-icon>
-            </div>
-          </div>
-          <div class="d-flex align-center justify-space-between py-3 border-bottom-2 cursor-pointer"
-               @click="openModal('returnModal')">
-            <div class="d-flex align-center">
-              <v-icon class="pr-5 right-icon">{{ svgPath6 }}</v-icon>
-              <div>
-                <div class="right-title">{{$t('product.returnBtn.title')}}</div>
-                <span class="teradeli-light">{{$t('product.returnBtn.desc')}}</span>
               </div>
             </div>
 
@@ -292,7 +301,7 @@
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     import VueFoldable from 'vue-foldable'
     import 'vue-foldable/dist/vue-foldable.css'
-    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiSync, mdiPackageVariantClosed } from '@mdi/js'
+    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiPackageVariantClosed } from '@mdi/js'
     // import "viewerjs/dist/viewer.css";
     Vue.component('foldable', VueFoldable);
 
@@ -316,7 +325,6 @@
                 svgPath3: mdiContentCopy,
                 svgPath4: mdiCircle,
                 svgPath5: mdiTruckDelivery,
-                svgPath6: mdiSync,
                 svgPath7: mdiPackageVariantClosed,
                 read_more: true,
                 infoModal: false,
@@ -555,11 +563,45 @@ button.slick-arrow.slick-next {
 }
 .vue-foldable .vue-foldable-mask {
     position: absolute;
-    bottom: 30px /* view-more's height */;
+    bottom: 30px;
     height: 80px;
     width: 100%;
     background: transparent;
     pointer-events: none;
+}
+.vue-foldable.baidu-foldable
+{
+  .vue-foldable-container {
+    transition: max-height 0.3s;
+  }
+  .vue-foldable-mask {
+    transition: opacity 3s;
+    bottom: 34px;
+  }
+  .baidu-view-more {
+    background-color: #fff;
+    transition: background-color .1s ease-in-out;
+    color: #3D8EBE;
+    padding: 0 8px;
+    font-size: 14px;
+    border-radius: 4px;
+    text-align: center;
+    height: 34px;
+    line-height: 32px;
+    min-width: 72px;
+    cursor: pointer;
+    .baidu-view-more-icon {
+      vertical-align: middle;
+    }
+    .baidu-view-more-text {
+      vertical-align: middle;
+    }
+    &:not(.collapsed) {
+      .baidu-view-more-icon {
+        transform: scaleY(-1);
+      }
+    }
+  }
 }
 /* purgecss end ignore */
 </style>
