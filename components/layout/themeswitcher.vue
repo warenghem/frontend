@@ -2,7 +2,7 @@
     <v-tooltip v-if="!$vuetify.theme.dark" bottom>
     <template v-slot:activator="{ on }">
         <v-btn v-on="on" depressed @click="darkMode">
-        <v-icon class="mr-1">mdi-moon-waxing-crescent</v-icon>
+        <v-icon class="mr-1">{{ svgPath1 }}</v-icon>
         </v-btn>
     </template>
     <span>Dark Mode On</span>
@@ -10,7 +10,7 @@
     <v-tooltip v-else bottom>
     <template v-slot:activator="{ on }">
         <v-btn v-on="on" depressed @click="darkMode">
-        <v-icon >mdi-white-balance-sunny</v-icon>
+        <v-icon >{{ svgPath2 }}</v-icon>
         </v-btn>
     </template>
     <span>Dark Mode Off</span>
@@ -18,8 +18,15 @@
 </template>
 
 <script>
+    import { mdiWhiteBalanceSunny, mdiMoonWaxingCrescent } from '@mdi/js'
     export default {
         name: "themeswitcher",
+        data() {
+            return {
+                svgPath1: mdiMoonWaxingCrescent,
+                svgPath2: mdiWhiteBalanceSunny
+              }
+        },
         methods: {
           darkMode() {
             this.$vuetify.theme.dark = !this.$vuetify.theme.dark;

@@ -26,6 +26,7 @@
     <v-app-bar flat height="50px" :dark="type">
 
       <v-app-bar-nav-icon class="ml-1" @click="sidebar = !sidebar">
+        <v-icon>{{ svgPath1 }}</v-icon>
       </v-app-bar-nav-icon>
 
       <v-spacer></v-spacer>
@@ -38,53 +39,12 @@
       <v-toolbar-items>
         <themeswitcher/>
       </v-toolbar-items>
-      <v-toolbar-items class="d-none d-md-block">
+      <v-toolbar-items>
         <v-btn
           text
           class="px-0"
         >
-          <v-menu
-            offset-y
-          >
-            <template v-slot:activator="{ on, attrs }">
-              <v-btn
-                text
-                v-bind="attrs"
-                v-on="on"
-                :ripple="false"
-                class="nohover"
-              >
-                <div v-for="(flag,idx) in $store.state.langs.items" :key="'flag_'+idx">
-                  <img :src="flag.img"
-                       width="24"
-                       alt="lang flag"
-                       v-if="$i18n.locale===flag.lang"
-                  />
-                </div>
-
-              </v-btn>
-            </template>
-            <slot name="langSwitcher">
-              <v-list
-              >
-                <v-list-item
-                  v-for="(flag,idx) in $store.state.langs.items"
-                  :key="'flag_list_'+idx"
-                >
-                  <v-list-item-title class="cursor-pointer">
-                    <NuxtLink :to="{path:flag.path}">
-                      <img :src="flag.img"
-                           width="24"
-                           alt="flag"
-                      />
-                    </NuxtLink>
-
-                  </v-list-item-title>
-                </v-list-item>
-              </v-list>
-            </slot>
-
-          </v-menu>
+          <AppLangSwitcher/>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
@@ -93,11 +53,12 @@
 
 <script>
     import link from './../../store/link'
-
+    import { mdiMenu } from '@mdi/js'
     export default {
         name: "appmain-toolbar",
         data() {
             return {
+                svgPath1: mdiMenu,
                 sidebar: false,
                 goDark: false,
             }
