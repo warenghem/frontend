@@ -91,7 +91,7 @@
                     "/vide.png",
                 ],
                 link: [
-                    "/shop/bag-dionysos-48h/",
+                    "/shop/bag-dionysos-48h-black-darkbluebugatti/",
                     "/shop/belt-dionysos/",
                     "/shop/wallet-dionysos/",
                     "",

@@ -210,7 +210,7 @@
           </div>
         </v-col>
       </v-row>
-      <v-row class="border-top-2 ma-0 px-0 pvw">
+      <v-row class="border-top-2 ma-0 px-0 pvw d-none">
         <v-col cols="12" class="pa-0">
           <div class="sub-title text-center pb-10">{{$t('product.like')}}</div>
         </v-col>
