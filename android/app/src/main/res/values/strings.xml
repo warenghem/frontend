@@ -1,7 +1,0 @@
-<?xml version='1.0' encoding='utf-8'?>
-<resources>
-    <string name="app_name">warenghemapp</string>
-    <string name="title_activity_main">warenghemapp</string>
-    <string name="package_name">com.warenghem.app</string>
-    <string name="custom_url_scheme">com.warenghem.app</string>
-</resources>
