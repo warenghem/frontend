@@ -7,7 +7,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - frontend',
+    titleTemplate: '%s - App',
     title: 'Warenghem',
     meta: [
       {charset: 'utf-8'},
@@ -24,12 +24,12 @@ export default {
     ]
   },
   render: {
-    /*asyncScripts: true,
+    asyncScripts: true,
     bundleRenderer: {
       shouldPreload: (_, type) => {
         return type === 'image'
       }
-    },*/
+    },
     static: {
       maxAge: 1000 * 60 * 60 * 24 * 7
     }

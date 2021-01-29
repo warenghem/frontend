@@ -247,5 +247,5 @@
 </i18n>
 
 <style scoped lang="scss">
-  @import "../assets/scss/home/video";
+  @import "~/assets/scss/home/video";
 </style>

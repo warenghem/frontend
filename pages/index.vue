@@ -11,8 +11,8 @@
       <v-card class="bgcard item2">
         <MapSection id="mapTreeSection"/>
       </v-card>
-      <v-card class="bgcard item3 d-none d-sm-block">
-        <StudioSection id="studioSection"/>
+      <v-card class="bgcard item3 homecard">
+        <NewsletterSection id="studioSection"/>
       </v-card>
       <v-card dark color="darkbugattiblue" class="item4">
         <References/>

@@ -664,8 +664,9 @@ body {
 .sub-title {
 font-size: 22px;
 font-family: 'teradeli-medium', sans-serif;
+z-index: 1;
+position: relative;
 letter-spacing: .009em;
-line-height: 1.3rem;
   @media(min-width:48em) {
   font-size: 24px;
   }
@@ -695,12 +696,20 @@ line-height: 1.3rem;
   font-family: 'teradeli-medium', sans-serif;
   line-height: 1;
   font-size: 30px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-weight: 500;
   text-align: center;
+  letter-spacing: -0.03em;
   z-index: 2;
+  position: relative;
 }
-
+.page-subtitle {
+  z-index: 2;
+  position: relative;
+  font-size: 18px;
+  line-height: 1.21053;
+  font-weight: 400;
+  letter-spacing: -0.02em;
+}
 .mission-accordion {
   .v-expansion-panel {
     background-size: cover;
@@ -883,7 +892,12 @@ line-height: 1.3rem;
     border-bottom: solid 1px #c0c0c080!important;
   }
 }
-
+.homecard {
+  height: 28rem!important;
+  @media (min-width: 48em) {
+    height: 33rem!important;
+  }
+}
 .productgrid {
   margin: 0 auto;
   display: grid;

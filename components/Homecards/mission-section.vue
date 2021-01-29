@@ -372,5 +372,5 @@
 </script>
 
 <style scoped lang="scss">
-    @import "../assets/scss/home/mission";
+    @import "~/assets/scss/home/mission";
 </style>

@@ -21,59 +21,56 @@
                         :key="p_idx"
                         height= "100%"
                         lazy
-                        class="productcard bgcard"
+                        class="homecard bgcard hand"
                     >
-                        <div class="h-100 img-fluid theme--light position-relative skeletton">
-                            <div class="productdescription position-absolute pa-3 w-100" style="bottom:0;z-index:5">
-                                <v-spacer></v-spacer>
-                                <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
-                                    {{product.desc}}
+                        <NuxtLink :to="'/'+$i18n.locale+link[p_idx]"> 
+                            <div class="h-100 img-fluid theme--light position-relative skeletton">
+                                <div class="productdescription position-absolute pa-3 w-100" style="bottom:0;z-index:5">
+                                    <v-spacer></v-spacer>
+                                    <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
+                                        {{product.desc}}
+                                    </div>
+                                    <v-card-text class="teradeli-light pa-0" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
+                                        {{product.tag}}
+                                    </v-card-text> 
+                                    <v-card-text elevation="4" class="catalogue-item-content-title mt-3 pa-0">
+                                            <span class="pr-1 sub-title teradeli-medium">{{product.title}}</span>
+                                            <span class="sub-title teradeli-medium secondary--text">
+                                                {{product.summary}}
+                                            </span>
+                                    </v-card-text>
+                                    <v-text
+                                        :class="disabled[p_idx]"
+                                        style="z-index:2"
+                                        class="mt-2 text-uppercase d-none lightbugattiblue--text"
+                                        >
+                                        {{$t('btnDiscover')}}
+                                    </v-text>
                                 </div>
-                                <v-card-text class="teradeli-light pa-0" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
-                                    {{product.tag}}
-                                </v-card-text> 
-                                <v-card-text elevation="4" class="catalogue-item-content-title mt-3 pa-0">
-                                        <span class="pr-1 sub-title teradeli-medium">{{product.title}}</span>
-                                        <span class="sub-title teradeli-medium secondary--text">
-                                            {{product.summary}}
-                                        </span>
-                                </v-card-text>
-                                <v-btn
-                                    :class="disabled[p_idx]"
-                                    elevation="0"
-                                    rounded
-                                    nuxt
-                                    dark
-                                    style="z-index:2"
-                                    :to="'/'+$i18n.locale+link[p_idx]"
-                                    class="homebutton darkbugattiblue mt-2"
+                                <div class="position-absolute h-100 w-100 px-3">
+                                    <div class="boxcenterabsolute teradeli-medium secondary--text visualtocome">
+                                        {{product.visualtocome}}
+                                    </div>
+                                </div>
+                                <picture>
+                                    <source media="screen and (min-width: 64em)"
+                                        :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
+                                        :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
                                     >
-                                    {{$t('btnDiscover')}}
-                                </v-btn>
+                                    <source media="screen and (min-width: 48em)"
+                                        :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
+                                        :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
+                                    >
+                                    <source
+                                        :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
+                                        :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
+                                    >
+                                    <img class="lazyload mediabox-img"
+                                        :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 2x'" 
+                                        data-sizes="auto" />
+                                </picture>
                             </div>
-                            <div class="position-absolute h-100 w-100 px-3">
-                                <div class="boxcenterabsolute teradeli-medium secondary--text visualtocome">
-                                    {{product.visualtocome}}
-                                </div>
-                            </div>
-                            <picture>
-                                <source media="screen and (min-width: 64em)"
-                                    :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
-                                    :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
-                                >
-                                <source media="screen and (min-width: 48em)"
-                                    :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
-                                    :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
-                                >
-                                <source
-                                    :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
-                                    :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
-                                >
-                                <img class="lazyload mediabox-img"
-                                    :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 2x'" 
-                                    data-sizes="auto" />
-                            </picture>
-                        </div>
+                        </NuxtLink>
                     </v-card>
                 </v-container>
         </div>
@@ -179,7 +176,7 @@
 </i18n>
 
 <style scoped lang="scss">
-@import "../assets/scss/home/product";
+@import "~/assets/scss/home/product";
 
 @media (min-width: 1263px) {
     .shop div:nth-of-type(4) {
@@ -187,12 +184,6 @@
         flex: 0 0 100%;
         max-width: 100%;
     }
-}
-.productcard {
-  height: 28rem!important;
-  @media (min-width: 48em) {
-    height: 33rem!important;
-  }
 }
 
  .productdescription {
