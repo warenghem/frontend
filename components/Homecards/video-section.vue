@@ -190,32 +190,6 @@
 
 <i18n>
 {
-	"fr": {
-		"video": {
-			"forest": {
-				"term1": "arbres plantés",
-				"term2": "tonnes CO2 compensées",
-				"term3": "hectares reforestés"
-			},
-			"rightSection": {
-				"alerttime": "maintenant",
-				"alerttitle": "Warenghem dit",
-				"error": "semble invalide ou déjà enregistré.",
-				"label1": "PRENOM ",
-				"label2": "EMAIL",
-				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
-				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
-				"tag": "Création <br> d’objets en 3D",
-				"title": "Avancement du projet"
-			},
-			"subtitle": "Maroquinerie et chaussures en cuir vététal de vin",
-			"tag1": "Ecologique / Vegan",
-			"tag2": "Made in France",
-			"tag3": "Technologie durable",
-			"title": "Inspiré par la tradition. ",
-			"title2": "Fabriqué pour le futur."
-		}
-	},
 	"en": {
 		"video": {
 			"forest": {
@@ -240,6 +214,32 @@
 			"tag3": "Sustainable technology",
 			"title": "Inspired by tradition. ",
 			"title2": "Made for the future."
+		}
+	},
+	"fr": {
+		"video": {
+			"forest": {
+				"term1": "arbres plantés",
+				"term2": "tonnes CO2 compensées",
+				"term3": "hectares reforestés"
+			},
+			"rightSection": {
+				"alerttime": "maintenant",
+				"alerttitle": "Warenghem dit",
+				"error": "semble invalide ou déjà enregistré.",
+				"label1": "PRENOM ",
+				"label2": "EMAIL",
+				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
+				"tag": "Création <br> d’objets en 3D",
+				"title": "Avancement du projet"
+			},
+			"subtitle": "Maroquinerie et chaussures en cuir vététal de vin",
+			"tag1": "Ecologique / Vegan",
+			"tag2": "Made in France",
+			"tag3": "Technologie durable",
+			"title": "Inspiré par la tradition. ",
+			"title2": "Fabriqué pour le futur."
 		}
 	}
 }

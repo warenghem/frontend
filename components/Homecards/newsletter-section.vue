@@ -44,10 +44,15 @@
 
 <i18n>
 {
+	"en": {
+		"btnDiscover": "I subscribe",
+		"subtitle": "The incredible story of objects that bring nature and humans together<br/>1 article per week",
+		"title": "Wildly beautiful"
+	},
 	"fr": {
-		"title": "Sauvagement beau",
-        "subtitle": "L'incroyable histoire des objects qui rapprochent la nature et l'humain<br/>1 article par semaine",
-        "btnDiscover": "Je m'abonne"
+		"btnDiscover": "Je m'abonne",
+		"subtitle": "L'incroyable histoire des objects qui rapprochent la nature et l'humain<br/>1 article par semaine",
+		"title": "Sauvagement beau"
 	}
 }
 </i18n>

@@ -38,12 +38,12 @@
 </script>
 <i18n>
 {
-	"fr": {
-		"subtitle": "Les arbres de nos projets sont tracés et certifiés. Pour compenser nos émissions de CO2, celle vos visites, et l’électricité de nos technologies.",
-		"title": "Reforestation"
-	},
 	"en": {
 		"subtitle": "The trees of our projects are traced and certified. To offset our CO2 emissions, that of your visits, and the electricity from our technologies.",
+		"title": "Reforestation"
+	},
+	"fr": {
+		"subtitle": "Les arbres de nos projets sont tracés et certifiés. Pour compenser nos émissions de CO2, celle vos visites, et l’électricité de nos technologies.",
 		"title": "Reforestation"
 	}
 }

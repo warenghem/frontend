@@ -278,50 +278,6 @@
 /*
 <i18n>
 {
-	"fr": {
-		"mission": {
-			"sections": [
-				{
-					"items": [
-						"Tagez un QR code pour découvrir l'histoire de vos produits et de leurs fabriquants.",
-						"Notre application est basée sur la Blockchain, une base de donnée publique et décentralisée. Infalsifiable.",
-						"Elle est Neutre en CO2 grâce à nos projets de reforestation."
-					],
-					"subtitle": "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons.",
-					"title": "Tracabilité totale via notre technologie ORIGIN®."
-				},
-				{
-					"items": [
-						"Le design est pensé intemporel, échappant à toute mode éphémère.",
-						"Inspirées par les architectes et designers du monde. Nos objets casse les codes de la maroquinerie classique.",
-						"Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la fonctionnalité et le quotidien."
-					],
-					"subtitle": "Intuitives, brutes, sans excès, nos créations sont pensées pour l’usage.",
-					"title": "Design en studio. Naturellement sobre."
-				},
-				{
-					"items": [
-						"Local : Véritable projet français de A à Z.",
-						"Social : Développer les emplois et les traditions francaises.",
-						"Éthique : Ne pas profiter de pays à bas couts (y compris en Europe).",
-						"Écologique : Éviter les transports et l’opacité de pays en dehors de nos règlementations."
-					],
-					"subtitle": "Raffinés, locaux, nos objets développent le savoir-faire français.",
-					"title": " Fabriqué en France. Point."
-				},
-				{
-					"items": [
-						"Issues de la rencontre entre la nature et nos innovations technologiques.",
-						"Beaucoup plus écologiques et aussi solides que le cuir animal. Sans entretient",
-						"Sans matière animale. Sans souffrance."
-					],
-					"subtitle": "Solides, performantes, nos matières sont issues de la terre et des vendanges.",
-					"title": "Végétalement noble. Nos cuirs de vin DIONYSOS®."
-				}
-			],
-			"title": "La mission: réunifier l’Homme à la nature"
-		}
-	},
 	"en": {
 		"mission": {
 			"sections": [
@@ -364,6 +320,50 @@
 				}
 			],
 			"title": "The mission: reunite man with nature"
+		}
+	},
+	"fr": {
+		"mission": {
+			"sections": [
+				{
+					"items": [
+						"Tagez un QR code pour découvrir l'histoire de vos produits et de leurs fabriquants.",
+						"Notre application est basée sur la Blockchain, une base de donnée publique et décentralisée. Infalsifiable.",
+						"Elle est Neutre en CO2 grâce à nos projets de reforestation."
+					],
+					"subtitle": "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons.",
+					"title": "Tracabilité totale via notre technologie ORIGIN®."
+				},
+				{
+					"items": [
+						"Le design est pensé intemporel, échappant à toute mode éphémère.",
+						"Inspirées par les architectes et designers du monde. Nos objets casse les codes de la maroquinerie classique.",
+						"Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la fonctionnalité et le quotidien."
+					],
+					"subtitle": "Intuitives, brutes, sans excès, nos créations sont pensées pour l’usage.",
+					"title": "Design en studio. Naturellement sobre."
+				},
+				{
+					"items": [
+						"Local : Véritable projet français de A à Z.",
+						"Social : Développer les emplois et les traditions francaises.",
+						"Éthique : Ne pas profiter de pays à bas couts (y compris en Europe).",
+						"Écologique : Éviter les transports et l’opacité de pays en dehors de nos règlementations."
+					],
+					"subtitle": "Raffinés, locaux, nos objets développent le savoir-faire français.",
+					"title": " Fabriqué en France. Point."
+				},
+				{
+					"items": [
+						"Issues de la rencontre entre la nature et nos innovations technologiques.",
+						"Beaucoup plus écologiques et aussi solides que le cuir animal. Sans entretient",
+						"Sans matière animale. Sans souffrance."
+					],
+					"subtitle": "Solides, performantes, nos matières sont issues de la terre et des vendanges.",
+					"title": "Végétalement noble. Nos cuirs de vin DIONYSOS®."
+				}
+			],
+			"title": "La mission: réunifier l’Homme à la nature"
 		}
 	}
 }
