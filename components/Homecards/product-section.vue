@@ -24,7 +24,7 @@
                         class="homecard bgcard hand"
                     >
                         <NuxtLink :to="'/'+$i18n.locale+link[p_idx]"> 
-                            <div class="h-100 mt-5 img-fluid theme--light position-relative skeletton">
+                            <div class="h-100 img-fluid theme--light position-relative skeletton">
                                 <div class="position-absolute h-100 w-100 px-3">
                                     <div class="boxcenterabsolute teradeli-medium secondary--text visualtocome">
                                         {{product.visualtocome}}
@@ -75,7 +75,7 @@
                 svgPath1: mdiChevronRight,
                 backgroundImages: [
                     ",ar-6-4/Products/48H_black_blue_side_bottle.png",
-                    ",fo-top/Products/belt-blackblue-2.png",
+                    ",fo-top/Products/belt-blackblue-above2bis.png",
                     "/Products/pf-blackblue-side.png",
                     "/vide.png",
                 ],
