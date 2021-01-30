@@ -24,33 +24,23 @@
                         class="homecard bgcard hand"
                     >
                         <NuxtLink :to="'/'+$i18n.locale+link[p_idx]"> 
-                            <div class="h-100 img-fluid theme--light position-relative skeletton">
-                                <div class="productdescription position-absolute pa-3 w-100" style="bottom:0;z-index:5">
-                                    <v-spacer></v-spacer>
-                                    <div class="catalogue-item-content-list px-4 py-4 teradeli-light text-white">
-                                        {{product.desc}}
-                                    </div>
-                                    <v-card-text class="teradeli-light pa-0" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
-                                        {{product.tag}}
-                                    </v-card-text> 
-                                    <v-card-text elevation="4" class="catalogue-item-content-title mt-3 pa-0">
-                                            <span class="pr-1 sub-title teradeli-medium">{{product.title}}</span>
-                                            <span class="sub-title teradeli-medium secondary--text">
-                                                {{product.summary}}
-                                            </span>
-                                    </v-card-text>
-                                    <v-text
-                                        :class="disabled[p_idx]"
-                                        style="z-index:2"
-                                        class="mt-2 text-uppercase d-none lightbugattiblue--text"
-                                        >
-                                        {{$t('btnDiscover')}}
-                                    </v-text>
-                                </div>
+                            <div class="h-100 mt-5 img-fluid theme--light position-relative skeletton">
                                 <div class="position-absolute h-100 w-100 px-3">
                                     <div class="boxcenterabsolute teradeli-medium secondary--text visualtocome">
                                         {{product.visualtocome}}
                                     </div>
+                                </div>
+                                <div class="pvw text-center">
+                                    <h2 class="page-title teradeli-medium px-0">{{product.title}}</h2>
+                                    <div class="py-2 page-subtitle"> {{product.summary}}</div>
+                                    <v-text
+                                        :class="disabled[p_idx]"
+                                        style="z-index:2"
+                                        class="text-center lightbugattiblue--text"
+                                        >
+                                        {{$t('btnDiscover')}}
+                                        <v-icon  color="lightbugattiblue" small>{{ svgPath1 }}</v-icon>
+                                    </v-text>
                                 </div>
                                 <picture>
                                     <source media="screen and (min-width: 64em)"
@@ -65,7 +55,7 @@
                                         :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
                                         :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380'+ backgroundImages[p_idx]"
                                     >
-                                    <img class="lazyload mediabox-img"
+                                    <img style="top:50px" class="lazyload mediabox-img"
                                         :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 2x'" 
                                         data-sizes="auto" />
                                 </picture>
@@ -77,10 +67,12 @@
 </template>
 
 <script>
+    import { mdiChevronRight } from '@mdi/js'
     export default {
         name: "product-section",
         data() {
             return {
+                svgPath1: mdiChevronRight,
                 backgroundImages: [
                     ",ar-6-4/Products/48H_black_blue_side_bottle.png",
                     ",fo-top/Products/belt-blackblue-2.png",
@@ -113,28 +105,28 @@
 				"desc": "Le plus grand des sacs. Composé de raisins et d’une doublure en lin francais. Indispensable pour le week-end, le sport, ou les courts séjours. C’est la pièce maitresse, qui donne le ton de la collection.",
 				"summary": "Des vignes et du lin. Tel est son destin.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos 48H.",
+				"title": "Dionysos 48H",
 				"visualtocome": ""
 			},
 			{
 				"desc": "Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur un costume que sur un jean.",
 				"summary": "Elle ne vous laissera pas tomber.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Ceinture Dionysos.",
+				"title": "Ceinture Dionysos",
 				"visualtocome": ""
 			},
 			{
 				"desc": "Allié de votre quotidien, il est concu autours de lignes obliques représentant le W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.",
 				"summary": "Végétal comme ses feuilles.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Portefeuille Dionysos.",
+				"title": "Portefeuille Dionysos",
 				"visualtocome": ""
 			},
 			{
 				"desc": "",
 				"summary": "Les pieds sur terre. Tournée vers le futur.",
 				"tag": "En cours de création",
-				"title": "Bottines Dionysos.",
+				"title": "Bottines Dionysos",
 				"visualtocome": "Visuels à venir"
 			}
 		]
@@ -186,15 +178,6 @@
     }
 }
 
- .productdescription {
-    max-width: 400px;
-    top: 0;
-    bottom: unset;
-    @media (min-width: 48em) {
-    top: unset;
-    bottom: 0;
-    }
-}
 .visualtocome {
   font-size: 3rem;
   line-height: 3rem;
@@ -222,10 +205,10 @@
     grid-gap: 0.5rem;
   }
 }
-.container.productgridhome div:nth-of-type(2) .productdescription {
+/*.container.productgridhome div:nth-of-type(2) .productdescription {
     top: 0;
     bottom: unset;
-}
+}*/
  .collectionlogo {
     max-width: 230px;
     @media (min-width: 32em) {

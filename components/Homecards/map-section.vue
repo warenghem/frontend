@@ -2,7 +2,7 @@
   <div class="treemapwhole position-relative" v-intersect.quiet="{handler: mapIntersect,options: {rootMargin: '50px', threshold: [0, 0.5, 1.0]}}">
     <div class="pb-0 pvw treemapheader px-10 pb-3">
       <h2 class="page-title px-0">{{$t('title')}}</h2>
-      <div class="page-subtitle py-2 text-center secondary--text">{{$t('subtitle')}}</div>
+      <div class="page-subtitle py-2 text-center">{{$t('subtitle')}}</div>
     </div>
     <div class="treemapcontainer">
       <TreeData :treeData="treeData"/>

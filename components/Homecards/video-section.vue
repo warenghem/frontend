@@ -75,9 +75,12 @@
         <v-col class="topCenter col-12">
           <div class="bannerLeft px-2 text-center">
             <h2 class="title"> {{$t('video.title')}}{{$t('video.title2')}}</h2>
-            <h4 class="subtitle">{{$t('video.subtitle')}}</h4>
+            <h4 class="subtitle mb-2">{{$t('video.subtitle')}}</h4>
           </div>
-          <div class="row col-md-10 mx-auto text-center inner d-none d-md-flex">
+          <div style="bottom:0; left:0; right:0" class="mx-auto text-center position-sm-relative position-absolute pb-5 px-5">
+            <Treebutton/>
+          </div>
+          <div class="row col-md-10 mx-auto text-center inner">
             <div class="col-md-4">
                 <div class="logosvg pr-5 pr-md-0 logosvg" v-html="Eco" />
               <span>{{$t('video.tag1')}}</span>
@@ -92,10 +95,6 @@
             </div>
           </div>
         </v-col>
-
-        <div style="bottom:0;right:0" class="mx-auto position-absolute pa-5">
-          <Treebutton/>
-        </div>
         <div class="bottomleft text-gray">
           <span class="pr-2">{{$store.state.tree_count.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</span><span>{{$t('video.forest.term1')}}</span> <br>
           <span class="pr-2">{{parseFloat(this.$store.state.co2_compensated.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " "))}}</span><span>{{$t('video.forest.term2')}}</span> <br>
@@ -209,7 +208,7 @@
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"
 			},
-			"subtitle": "Chaussures et maroquinerie en cuir vététal de vin",
+			"subtitle": "Maroquinerie et chaussures en cuir vététal de vin",
 			"tag1": "Ecologique / Vegan",
 			"tag2": "Made in France",
 			"tag3": "Technologie durable",

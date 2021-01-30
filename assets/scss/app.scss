@@ -565,6 +565,11 @@ body {
 .position-relative {
   position: relative !important;
 }
+@media (min-width: 48em) {
+  .position-sm-relative {
+    position: relative !important;
+  }
+}
 
 .v-expansion-panel-content__wrap {
   padding: 0px 10px;
@@ -665,6 +670,7 @@ body {
 font-size: 22px;
 font-family: 'teradeli-medium', sans-serif;
 z-index: 1;
+line-height: 1.8rem;
 position: relative;
 letter-spacing: .009em;
   @media(min-width:48em) {
@@ -708,7 +714,6 @@ letter-spacing: .009em;
   font-size: 18px;
   line-height: 1.21053;
   font-weight: 400;
-  letter-spacing: -0.02em;
 }
 .mission-accordion {
   .v-expansion-panel {
@@ -794,7 +799,7 @@ letter-spacing: .009em;
     right: 0;
     left: 0;
     background-color: #121217;
-    opacity: 0.1;
+    opacity: 0.2;
     z-index: 1 !important;
     transition: opacity 0.5s !important;
   }

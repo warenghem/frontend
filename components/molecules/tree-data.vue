@@ -4,20 +4,20 @@
         <div class="pr-3 pr-md-0 tree-number">
           {{$store.state.tree_count.replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}
         </div>
-        <div style="line-height: 1.4rem;" class="secondary--text"> {{$t('term1')}}</div>
+        <div style="line-height: 1.4rem;" class="mx-2 secondary--text"> {{$t('term1')}}</div>
       </div>
       <div class="text-center py-3 py-md-4 d-flex d-sm-block">
         <div class="pr-3 pr-md-0 tree-number">
           {{parseFloat(this.$store.state.co2_compensated.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " "))}}
         </div>
-        <div style="line-height: 1.4rem;" class="secondary--text">{{$t('term2')}}</div>
+        <div style="line-height: 1.4rem;" class="mx-2 secondary--text">{{$t('term2')}}</div>
       </div>
-      <div class="text-center py-3 py-md-4 d-flex d-sm-block">
+      <!--<div class="text-center py-3 py-md-4 d-flex d-sm-block">
         <div class="pr-3 pr-md-0 tree-number">
           {{parseFloat(this.$store.state.reforest.replace(/\B(?=(\d{3})+(?!\d))/g, " "))}}
         </div>
-        <div style="line-height: 1.4rem;" class="secondary--text">{{$t('term3')}}</div>
-      </div>
+        <div style="line-height: 1.4rem;" class="mx-2 secondary--text">{{$t('term3')}}</div>
+      </div>-->
 
     </div>
 </template>

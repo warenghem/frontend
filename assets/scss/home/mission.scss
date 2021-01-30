@@ -58,13 +58,13 @@
   width: 25%;
   text-align: center;
   line-height: 1.4;
-  transform: translateY(100%) translateY(-155px) translateY(-104px);
+  transform: translateY(100%) translateY(-155px) translateY(-64px);
   padding-bottom: 30px;
   transition: all .3s cubic-bezier(0.39, 0.575, 0.565, 1);
   opacity: 1;
   z-index: 10;
   @media (max-width: 1600px) {
-    transform: translateY(100%) translateY(-155px) translateY(-125px);
+    transform: translateY(100%) translateY(-155px) translateY(-95px);
   }
 
   a {

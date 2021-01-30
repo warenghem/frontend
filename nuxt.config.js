@@ -493,6 +493,7 @@ export default {
 
   gtm: {
     id: 'GTM-NXPG4SV',
+    respectDoNotTrack: false,
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
