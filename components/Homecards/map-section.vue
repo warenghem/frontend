@@ -1,8 +1,16 @@
 <template>
   <div class="treemapwhole position-relative" v-intersect.quiet="{handler: mapIntersect,options: {rootMargin: '50px', threshold: [0, 0.5, 1.0]}}">
-    <div class="pb-0 pvw treemapheader px-10 pb-3">
+    <div class="pb-0 pvw treemapheader px-10 pb-3 text-center">
       <h2 class="page-title px-0">{{$t('title')}}</h2>
-      <div class="page-subtitle py-2 text-center">{{$t('subtitle')}}</div>
+      <div class="page-subtitle py-2">{{$t('subtitle')}}</div>
+      <v-text
+          @click="$store.state.plantModal=true"
+          style="z-index:2"
+          class="text-center hand position-relative lightbugattiblue--text "
+          >
+          {{$t('btnTitle')}}
+          <v-icon color="lightbugattiblue" small>{{ svgPath1 }}</v-icon>
+      </v-text>
     </div>
     <div class="treemapcontainer">
       <TreeData :treeData="treeData"/>
@@ -13,10 +21,12 @@
   </div>
 </template>
 <script>
+    import { mdiChevronRight } from '@mdi/js'
     export default {
         name: 'map-section',
         data() {
             return {
+                svgPath1: mdiChevronRight,
                 mapshow: false,
                 /*treeData: {
                     treeCount: 0,
@@ -43,7 +53,7 @@
 		"title": "Reforestation"
 	},
 	"fr": {
-		"subtitle": "Les arbres de nos projets sont tracés et certifiés. Pour compenser nos émissions de CO2, celle vos visites, et l’électricité de nos technologies.",
+		"subtitle": "Vos visites et vos commandes plantent des arbres. Ils sont tracés et certifiés. Découvrez nos projets en cliquant sur les localisations.",
 		"title": "Reforestation"
 	}
 }

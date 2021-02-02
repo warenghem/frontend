@@ -124,7 +124,7 @@
 			},
 			{
 				"desc": "",
-				"summary": "Feet on the ground. Looking to the future.",
+				"summary": "Feet on the ground.",
 				"tag": "Being created",
 				"title": "Dionysos Boots",
 				"visualtocome": "Visuals to come"
@@ -157,7 +157,7 @@
 			},
 			{
 				"desc": "",
-				"summary": "Les pieds sur terre. Tournée vers le futur.",
+				"summary": "Les pieds sur terre.",
 				"tag": "En cours de création",
 				"title": "Bottines Dionysos",
 				"visualtocome": "Visuels à venir"
@@ -210,9 +210,9 @@
     bottom: unset;
 }*/
  .collectionlogo {
-    max-width: 230px;
+    max-width: 200px;
     @media (min-width: 32em) {
-        max-width: 500px;
+        max-width: 430px;
     }
 }
 .boots .v-btn {

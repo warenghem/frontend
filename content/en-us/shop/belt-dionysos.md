@@ -74,6 +74,11 @@ tags:
 - belt
 - pewter
 image:
+- src: belt-blackblue-above.png
+  color: 1
+  name: belt-blackblue-above
+  alt: vegan belt men grape made in france
+  availability: false
 - src: belt-blackblue-1.png
   color: 2
   material: 1
@@ -84,11 +89,6 @@ image:
   color: 1
   material: 2
   name: belt-blackblue-above2
-  alt: vegan belt men grape made in france
-  availability: false
-- src: belt-blackblue-above.png
-  color: 1
-  name: belt-blackblue-above
   alt: vegan belt men grape made in france
   availability: false
 - src: belt-blackblue-below.png

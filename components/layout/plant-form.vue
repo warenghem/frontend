@@ -16,8 +16,7 @@
                     <v-card-text
                     class="pa-3 pa-sm-5">
                         <div class="d-flex flex-column align-center justify-center h-100">
-                            <p class="pb-3 px-4 text-justify bottomText">
-                                {{$t('video.rightSection.subtitle')}}
+                            <p class="pb-3 px-4 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
                             </p>
                             <div class="w-100 px-sm-5">
                                 <mailchimp-subscribe
@@ -41,14 +40,14 @@
                                             >
                                             <div class="mx-auto">
                                                     <v-btn
-                                                        elevation="2"
+                                                        elevation="0"
                                                         large
                                                         :loading="loading"
                                                         class="btn-theme"
                                                         type="submit"
                                                         style="max-width: 250px;border-radius: 28px;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
                                                         >
-                                                            {{$t('btnTitle')}}
+                                                            {{$t('btnDiscover')}}
                                                     </v-btn>
                                             </div>
                                         </form>

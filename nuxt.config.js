@@ -224,7 +224,7 @@ export default {
               minimumFractionDigits: 0
              }
         },
-        'lu': {
+        'en-ie': {
           currency: {
              style: 'currency', 
               currency: 'EUR',
@@ -306,7 +306,7 @@ export default {
             minute: 'numeric'
           }
         },
-        'lu': {
+        'en-ie': {
           short: {
             year: 'numeric',
             month: 'short',
