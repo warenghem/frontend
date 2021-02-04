@@ -2,14 +2,14 @@
     <div>
         <div class="mx-auto text-center">
             <v-dialog
-                    v-model="$store.state.newsletterModal"
+                    v-model="$store.state.historiesModal"
                     persistent
                     max-width="600px"
             >
                 <v-card>
                     <v-btn
                             icon
-                            @click="$store.state.newsletterModal = false"
+                            @click="$store.state.historiesModal = false"
                     >
                         <v-icon>{{ svgPath }}</v-icon>
                     </v-btn>
@@ -22,7 +22,7 @@
                                 <mailchimp-subscribe
                                         url="https://warenghem.us20.list-manage.com/subscribe/post-json"
                                         user-id="2f7dbf20677f88c14c1389365"
-                                        list-id="ee2afb40a2"
+                                        list-id="e86339e7ff"
                                         @error="snackbarError=true"
                                         @success="snackbarSuccess=true"
                                 >
@@ -112,7 +112,7 @@
     import MailchimpSubscribe from './mailchp-subscribe'
     import { mdiClose } from '@mdi/js'
     export default {
-        name: "newsletter-form",
+        name: "histories-form",
         components: {
             MailchimpSubscribe,
         },

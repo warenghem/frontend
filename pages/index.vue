@@ -15,10 +15,10 @@
         <ProjectsSection/>
       </v-card>
       <v-card class="bgcard item3 homecard">
-        <NewsletterSection/>
+        <HistoriesSection/>
       </v-card>
       <v-card class="bgcard item3 homecard">
-        <NewsletterSection2/>
+        <NewsletterSection/>
       </v-card>
       <v-card dark color="darkbugattiblue" class="item4">
         <References/>

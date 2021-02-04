@@ -3,10 +3,10 @@
         elevation="0"
         rounded
         
-        @click="$store.state.newsletterModal=true"
-        class="btn-theme darkbugattiblue"
+        @click="$store.state.productModal=true"
+        class="btn-theme"
         style="max-width:100%;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
         >
-        {{$t('btnTitle')}}
+        {{$t('btnWaitforit')}}
     </v-btn>
 </template>

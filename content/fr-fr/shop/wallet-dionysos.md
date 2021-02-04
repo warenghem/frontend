@@ -15,30 +15,20 @@ details:
 - Sur la droite, trois compartiments pour cartes de visite, reçus, autres cartes
 - Deux poches horizontales
 - Cire tranche bleu foncé Bugatti
-care: "<p><strong>Notre cuir de vin Dionysos</strong>®<strong> a été longuement testé.
-  Produit grâce à un procédé innovant qui transforme les fibres du raisin en une matière
-  écologique ayant les mêmes caractéristiques mécaniques, esthétiques et sensorielles
-  qu'un cuir traditionnel et - <em>a contrario </em>- ne demandant que peu d'entretien.</strong></p><p>Mais
-  pour préserver au fil des ans la beauté de cet article, nous vous recommandons de
-  suivre ces conseils :</p><ul><li><p>Veillez à ne pas érafler ou frotter votre article
-  contre des surfaces abrasives, en particulier les finitions en cuir.</p></li><li><p>Nous
-  vous conseillons de protéger votre article de l’humidité et de le maintenir à l’abri
-  des sources directes de chaleur, comme les radiateurs et l’habitacle des voitures
-  en été.</p></li><li><p>Évitez de mettre votre article en contact avec des liquides,
-  de la crème et du désinfectant pour les mains, du maquillage et du parfum.</p></li><li><p>Pour
-  nettoyer votre article, essuyez délicatement la toile avec un chiffon doux imbibé
-  d’eau légèrement savonneuse.</p></li><li><p>Quand vous ne vous en servez pas, rangez
-  l’article dans la feutrine fournie lors de l’achat. Nous vous conseillons de le
-  conserver à l’abri des températures élevées, de l’humidité excessive ou des zones
-  non ventilées.</p></li></ul><p>Pour toute question relative à votre article, veuillez
-  prendre contact avec nous.</p><p><strong>Caractéristiques écologiques :</strong></p><p>Environ
-  27 milliards de litres de vin sont produits dans le monde chaque année, dont une
-  énorme quantité de matière qui ne se retrouve pas dans une bouteille. Ces restes
-  de l'industrie du vin peuvent être transformées en matière première à haute valeur
-  ajoutée.</p><p>Contrairement au cuir traditionnel, elle n'a pas besoin d'eau ni
-  de processus de tannage toxique responsables de la pollution des sols et des eaux
-  pour être produite. N’a aucun impact sur les écosystèmes, et évidemment n'engendre
-  aucune souffrance animale.</p>"
+care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procédé innovant
+  qui transforme les fibres du raisin en une matière écologique. </strong></p><p><strong>Il
+  a été longuement testé afin qu''il ait les mêmes caractéristiques qu''un cuir traditionnel
+  :</strong></p><ul><li><p><strong>Mécaniques : forte résistance et imperméabilité
+  totale</strong></p></li><li><p><strong>Esthétiques : grain fin et harmonieux</strong></p></li><li><p><strong>Sensorielles
+  : touché doux et agréable, sans odeur</strong></p></li></ul><p><strong>Contrairement
+  au cuir animal, il ne demande pas d''entretien.</strong></p><p>Mais pour préserver
+  au fil des ans la beauté de cet article, nous vous recommandons :</p><ul><li><p>De
+  veillez à ne pas érafler ou frotter votre article contre des surfaces abrasives,
+  en particulier les finitions en cuir.</p></li><li><p>De protéger votre article de
+  l’humidité excessive et de le maintenir à l’abri des sources directes de chaleur.</p></li><li><p>De
+  nettoyer délicatement la toile avec un chiffon doux imbibé d’eau légèrement savonneuse.</p></li></ul><p>Pour
+  toute question relative à votre article, veuillez prendre contact avec nous &lt;a
+  href="mailto:hello@warenghem.com"&gt;ici&lt;/a&gt; ou sur les réseaux sociaux.</p>'
 dimensions:
   length: 10.8
   height: 1.5

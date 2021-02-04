@@ -41,8 +41,9 @@
     "size": "(Length x Height x Width)",
     "details": "Detailed Features"
   },
-  "btnTitle": "I plant a tree for free",
-  "btnNewsletter": "Discover the back store",
+  "btnTitle": "Plant a tree for free",
+  "btnWaitforit": "Reserve your item",
+  "btnNewsletter": "Follow us",
   "btnDiscover": "Discover",
   "router": {
     "home": {

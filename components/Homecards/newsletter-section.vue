@@ -1,16 +1,16 @@
 <template>
-    <section class="team-section invgradientoverlay blackoverlay text-center pvw">
-        <h2 class="page-title teradeli-medium text-white px-0">{{$t('title')}}</h2>
-        <div class=" pb-3 py-2 page-subtitle text-white" v-html="$t('subtitle')"></div>
+    <section class="team-section text-center pvw">
+        <h2 class="page-title teradeli-medium px-0">{{$t('title')}}</h2>
+        <div class=" pb-3 py-2 page-subtitle " v-html="$t('subtitle')"></div>
         <v-text
-            @click="$store.state.plantModal=true"
+            @click="$store.state.newsletterModal=true"
             style="z-index:2"
-            class="text-center hand position-relative text-white "
+            class="text-center hand position-relative lightbugattiblue--text"
             >
             {{$t('btnDiscover')}}
-            <v-icon color="white" small>{{ svgPath1 }}</v-icon>
+            <v-icon color="lightbugattiblue" small>{{ svgPath1 }}</v-icon>
         </v-text>
-        <picture>
+        <!--<picture>
             <source media="screen and (min-width: 64em)"
                 data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 1500w," 
                 data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-380/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg"
@@ -26,7 +26,7 @@
             <img class="lazyload mediabox-img"
                 data-src="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 2x" 
                 data-sizes="auto" />
-        </picture>
+        </picture>-->
     </section>
 </template>
 
@@ -45,14 +45,14 @@
 <i18n>
 {
 	"en": {
-		"btnDiscover": "I subscribe",
-		"subtitle": "The incredible story of objects that bring nature and humans together<br/>1 article per week - Unsubscribe in one click",
-		"title": "Wildly beautiful"
+		"btnDiscover": "follow us",
+		"subtitle": "Regularly, we will send you short articles on our manufacturing processes, our developments, and our news - Unsubscribe in one click.",
+		"title": "Discover the back store"
 	},
 	"fr": {
-		"btnDiscover": "Je m'abonne",
-		"subtitle": "L'incroyable histoire des objets qui rapprochent la nature et l'humain<br/>1 article par semaine - Désinscription en un clic",
-		"title": "Sauvagement beau"
+		"btnDiscover": "Suivez nous",
+		"subtitle": "Régulièrement, nous vous enverrons de courts articles sur nos procédés de fabrication, nos développements, et nos actualités - Désinscription en un clic.",
+		"title": "Découvrez l'arrière boutique"
 	}
 }
 </i18n>

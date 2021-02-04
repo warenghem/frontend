@@ -1,10 +1,10 @@
 <template>
   <div class="treemapwhole position-relative" v-intersect.quiet="{handler: mapIntersect,options: {rootMargin: '50px', threshold: [0, 0.5, 1.0]}}">
-    <div class="pb-0 pvw treemapheader px-10 pb-3 text-center">
+    <div class="pvw treemapheader px-10 text-center position-absolute w-100">
       <h2 class="page-title px-0">{{$t('title')}}</h2>
       <div class="page-subtitle py-2">{{$t('subtitle')}}</div>
       <v-text
-          @click="$store.state.plantModal=true"
+          @click="$store.state.newsletterModal=true"
           style="z-index:2"
           class="text-center hand position-relative lightbugattiblue--text "
           >
@@ -49,11 +49,11 @@
 <i18n>
 {
 	"en": {
-		"subtitle": "The trees of our projects are traced and certified. To offset our CO2 emissions, that of your visits, and the electricity from our technologies.",
+		"subtitle": "Your visits and your orders plant trees. They are traced and certified.",
 		"title": "Reforestation"
 	},
 	"fr": {
-		"subtitle": "Vos visites et vos commandes plantent des arbres. Ils sont tracés et certifiés. Découvrez nos projets en cliquant sur les localisations.",
+		"subtitle": "Vos visites et vos commandes plantent des arbres. Ils sont tracés et certifiés.",
 		"title": "Reforestation"
 	}
 }
@@ -70,14 +70,20 @@
 }
 .tree-data {
     position: absolute;
+    bottom: 0;
+    right: 0;
     z-index: 3;
     max-width: 300px;
     margin: 15px;
     border-radius: 5px;
     padding: 15px;
-    background: white;
     @media(min-width:48em) {
       max-width: 400px;
     }
+}
+.treemapheader {
+    z-index: 2;
+    background: rgb(246,245,243);
+    background: linear-gradient(180deg, rgba(246,245,243,1) 0%, rgba(246,245,243,0.923406862745098) 50%, rgba(246,245,243,0.7693452380952381) 78%, rgba(246,245,243,0) 100%);
 }
 </style>

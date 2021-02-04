@@ -772,7 +772,7 @@ letter-spacing: .009em;
 .stickyBar {
   transition: ease-in-out 0.4s;
   position: fixed;
-  z-index: 1000;
+  z-index: 200;
   transform: translate3D(0, 0, 0);
   top: -71px;
   width: 100%;
@@ -928,6 +928,7 @@ letter-spacing: .009em;
   padding:1rem!important;
   @media (max-width: 960px) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-rows: auto auto auto auto auto;
     padding:0!important;
   }
   @media (min-width: 960px) {

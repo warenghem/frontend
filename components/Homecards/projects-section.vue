@@ -51,7 +51,7 @@
 	},
 	"fr": {
 		"btnDiscover": "Je m'abonne",
-		"subtitle": "Participez bientôt à leurs créations",
+		"subtitle": "Participez bientôt à leur création",
 		"title": "Objets à venir"
 	}
 }
