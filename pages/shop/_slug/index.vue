@@ -75,7 +75,7 @@
               </v-card>
             </v-row>
           </div>
-          <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between d-none"
+          <!--<div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
           >
             <div>
@@ -92,7 +92,7 @@
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
-          </div>
+          </div>-->
           <div class="d-flex justify-space-between align-center my-5">
             <h3 class="teradeli-book">{{ $n(product.price, 'currency') }}</h3>
             <div class="smalltext d-none">
@@ -104,7 +104,7 @@
               {{product.offers.pieces}}
             </div>
           </div>
-          <Buybutton/>
+          <Reservebutton class="w-100" />
           <div class="mt-5" v-html="product.description">
           </div>
           <v-subheader>{{$t('product.details')}}</v-subheader>
