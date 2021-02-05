@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fp-section d-none d-lg-table finebordert">
+        <div class="fp-section d-none d-md-table finebordert">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
             <div class="fp-tableCell" style="height: 80vh!important">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
@@ -22,7 +22,7 @@
                                 <div></div>
                                 <div></div>
                                 <div></div>
-                                <div></div>
+                                <!--<div></div>-->
                             </div>
                             <div class="homepage-catalogue-background-divided d-none">
                                 <div v-for="(bgLogo,idx) in $store.state.picture.backgroundlogos" :key="'bg_logo_'+idx">
@@ -92,7 +92,7 @@
                 </div>
             </div>
         </div>
-        <div class="d-lg-none mission-accordion finebordert">
+        <div class="d-md-none mission-accordion finebordert">
             <v-expansion-panels accordion>
                 <div v-for="(mission,m_idx) in $t('mission.sections').slice().reverse()" :key="'mission_ac'+m_idx" class="w-100">
                     <v-expansion-panel
@@ -178,7 +178,7 @@
                                     "Technologies and electronics made in France. Our factories seek to innovate without altering the environment."
                                 ]
                         }
-                            , {
+                            , /*{
                                 title: "Design in the studio. Naturally understated.",
                                 subtitle:
                                     "Intuitive, raw, without excess, our creations are designed for use.",
@@ -193,7 +193,7 @@
                                         "studied to confuse the object in the landscape.",
                                     ]
                             }
-                            , {
+                            ,*/ {
                                 title: "Made in France. Point.",
                                 subtitle:
                                     "Refined, artisanal, local, our objects develop French industry and know-how.",
@@ -235,7 +235,7 @@
                                         "Elle est Neutre en CO2 grâce à nos projets de reforestation.",
                                     ]
                             }
-                            , {
+                            ,/* {
                                 title: "Design en studio. Naturellement sobre.",
                                 subtitle:
                                     "Intuitives, brutes, sans excès, nos créations sont pensées pour l’usage.",
@@ -246,7 +246,7 @@
                                         "Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la fonctionnalité et le quotidien."
                                     ]
                             }
-                            , {
+                            ,*/ {
                                 title: " Fabriqué en France. Point.",
                                 subtitle:
                                     "Raffinés, locaux, nos objets développent le savoir-faire français.",

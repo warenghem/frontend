@@ -9,6 +9,10 @@ html {
 .multilinechip {
   width:500px
 }
+.v-input__prepend-outer, .v-input__icon {
+  padding-right: 22px!important;
+  margin-top: 4px!important;
+}
 .v-chip {
   height: auto!important;
   white-space: inherit!important;

@@ -38,7 +38,8 @@
     "vue-foldable": "^1.0.0",
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
-    "vue2-leaflet": "^2.6.0"
+    "vue2-leaflet": "^2.6.0",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
