@@ -23,9 +23,9 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar clipped-left class="menu-bar border-bottom-md-2" flat height="42px">
+    <v-app-bar clipped-left class="menu-bar border-bottom-2" flat height="42px">
 
-      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-3">
+      <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>
       <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
@@ -45,17 +45,6 @@
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
-      <!--<v-toolbar-items class="d-none d-md-block"
-                       v-for="(link,l_idx) in $store.state.link.links"
-                       :key="'link_btn_r_'+l_idx">
-        <v-btn text class="text-uppercase item"
-               :class="{'current':$root.currentId===link.elId}"
-               :to="'/'+$i18n.locale+link.elId"
-               v-if="link.position==='right'"
-        >
-          {{$t(link.name)}}
-        </v-btn>
-      </v-toolbar-items>-->
       <v-toolbar-items>
         <v-btn
           text

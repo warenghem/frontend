@@ -43,7 +43,7 @@
               {{ post.category }}
             </div>
             <div class="teradeli-medium text-uppercase label">
-              {{ formatDate(post.updatedAt) }}
+              {{ $d(new Date(post.updatedAt), 'short') }}
             </div>
             <Share/>
           </div>

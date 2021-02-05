@@ -21,10 +21,10 @@
 <style scoped lang="scss">
   .backbutton {
     background: none!important;
-    height: 64px!important;
+    height: 50px!important;
     width: 64px!important;
     @media screen and (min-width: 48rem){
-      height: 56px!important;
+      height: 50px!important;
       width: 56px!important;
     }
   }

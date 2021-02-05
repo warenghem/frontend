@@ -24,6 +24,7 @@ body {
   background-color: var(--bg);
   color: var(--color-primary);
   transition: background-color .3s;
+  letter-spacing: -0.02em;
 }
 a {
   color: var(--color-primary);

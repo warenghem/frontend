@@ -11,6 +11,10 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.11",
     "@amcharts/amcharts4-geodata": "^4.1.19",
+    "@capacitor/android": "^2.4.6",
+    "@capacitor/cli": "^2.4.6",
+    "@capacitor/core": "^2.4.6",
+    "@capacitor/ios": "^2.4.6",
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/component-cache": "^1.1.6",
@@ -34,7 +38,8 @@
     "vue-foldable": "^1.0.0",
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
-    "vue2-leaflet": "^2.6.0"
+    "vue2-leaflet": "^2.6.0",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",

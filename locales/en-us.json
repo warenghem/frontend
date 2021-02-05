@@ -23,27 +23,28 @@
     "materialTitle": "Matières et entretien",
     "payInfoBtn": {
       "title": "Payment",
-      "desc": "Credit card, debit card, PayPal, Apple Pay"
+      "desc": "Credit card or PayPal"
     },
     "shipBtn": {
       "title": "Shipping & Delivery",
-      "desc": "Complimentary Standard Shipping"
-    },
-    "returnBtn": {
-      "title": "Returns & Exchanges",
-      "desc": "Complimentary"
+      "desc": "Shipping worldwide"
     },
     "packageBtn": {
       "title": "Packaging",
-      "desc": "Contemporary and eco-friendly wrapping inspired by our Heritage"
+      "desc": "Contemporary and eco-friendly"
     },
     "like": "You may also like",
     "recommend": "Recommended",
     "recent": "recently viewed",
     "color":"Colours",
-    "material": "Materials"
+    "material": "Materials",
+    "size": "(Length x Height x Width)",
+    "details": "Detailed Features"
   },
-  "btnTitle": "I plant a tree for free",
+  "btnTitle": "Plant a tree for free",
+  "btnWaitforit": "Reserve your item",
+  "btnNewsletter": "Follow us",
+  "btnDiscover": "Discover",
   "router": {
     "home": {
       "title": "i am home"

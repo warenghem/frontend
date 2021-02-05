@@ -1,9 +1,6 @@
 <template>
   <div class="h-100">
     <div class="h-100 pa-0">
-      <div style="z-index: 2; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;" class="position-absolute text-center mb-3">
-        {{$t('informations')}}
-      </div>
       <l-map
         style="width: 100%"
         class="treemap h-100"
@@ -23,16 +20,15 @@
             :icon-url="marker.image"
             className="mapClass hand"
                         icon-class="e"
-
           >
-            <div style="transform: translateY(-20px);" class="card">
+            <div class="card">
               <div class="card-header name hand d-none">
                {{marker.text}}
                <div style="font-size: 16px" class="subtitlesmall d-none">En savoir plus</div>
               </div>
               <div>
-                <div class="blob white rounded-circle" style="width:45px; height:45px">
-                  <img :src="marker.image" alt="" width="45" height="45">
+                <div class="blob white rounded-circle" style="width:35px; height:35px">
+                  <img :src="marker.image" alt="" width="35" height="35">
                 </div>
               </div>
             </div>
@@ -42,7 +38,7 @@
     </div>
     <div class="slideArea mgforest">
       <div class="card">
-        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
+        <div style="height: 50px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton class="d-none" @click="closeSlide"/>
           </div>
@@ -163,7 +159,7 @@
     </div>
     <div class="slideArea indianforest">
       <div class="card">
-        <div style="height: 60px" class="d-flex justify-space-between align-center border-bottom-2">
+        <div style="height: 50px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
             <treebutton class="d-none" @click="closeSlide"/>
           </div>
@@ -300,7 +296,7 @@
             return {
                 svgPath: mdiClose,
                 zoom: 3,
-                center: [3.770449, 64.38911],
+                center: [20, 66],
                 url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                 showParagraph: false,
                 showMap: true,
@@ -441,7 +437,6 @@
 				"title": "Lien Google Map."
 			}
 		},
-		"informations": "Cliquez sur les localisations pour plus d'informations",
 		"madagascar": {
 			"section1": {
 				"paraText": "<p>Madagascar dispose de plus de 200 000 espèces de plantes et d’animaux qui n’existent nulle part ailleurs dans le monde. 90% des forêts ont été détruites, déplaçant des espèces animales entières et les Malgaches.</p>",
@@ -490,7 +485,6 @@
 				"title": "Google Map link."
 			}
 		},
-		"informations": "Click on the locations for more information",
 		"madagascar": {
 			"section1": {
 				"paraText": "<p>Madagascar has over 200,000 species of plants and animals that are not found anywhere else in the world. 90% of the forests have been destroyed, displacing entire animal species and Malagasy people.</p>",
@@ -523,7 +517,6 @@
 }
   .treemap {
     z-index: 1;
-    min-height:350px;
     }
 
   .slideArea {
@@ -627,7 +620,7 @@
 
     70% {
     transform: scale(1);
-    box-shadow: 0 0 0 20px rgba(0, 129, 167, 0);
+    box-shadow: 0 0 0 10px rgba(0, 129, 167, 0);
     }
 
     100% {

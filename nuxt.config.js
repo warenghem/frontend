@@ -7,7 +7,7 @@ export default {
 
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - frontend',
+    titleTemplate: '%s - App',
     title: 'Warenghem',
     meta: [
       {charset: 'utf-8'},
@@ -99,7 +99,7 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
     baseUrl: 'https://www.warenghem.com',
     seo: false,
     lazy: true,
@@ -120,6 +120,7 @@ export default {
         code: 'fr-fr',
         iso: 'fr-FR',
         name: 'France',
+        language: 'Francais',
         region: 'Europe',
         file: 'fr-fr.json',
         currency: 'EUR',
@@ -130,6 +131,7 @@ export default {
         code: 'en-gb',
         iso: 'en-GB',
         name: 'United Kingdom',
+        language: 'English',
         region: 'Europe',
         file: 'en-us.json',
         currency: 'GBP', 
@@ -139,7 +141,8 @@ export default {
       {
         code: 'fr-ch',
         iso: 'fr-CH',
-        name: 'Switzerland',
+        name: 'Switzerland (Francais)',
+        language: 'Francais',
         region: 'Europe',
         file: 'fr-fr.json',
         currency: 'CHF', 
@@ -147,9 +150,10 @@ export default {
         img: '/flags/switzerland.svg',
       },
       {
-        code: 'en',
-        iso: 'en',
+        code: 'en-ie',
+        iso: 'en-IE',
         name: 'Other European Union Regions (English)',
+        language: 'English',
         region: 'Europe',
         file: 'en-us.json',
         currency: 'EUR', 
@@ -160,8 +164,9 @@ export default {
         code: 'en-us',
         iso: 'en-US',
         name: 'United States',
+        language: 'English',
         file: 'en-us.json',
-        region: 'America',
+        region: 'Americas',
         currency: 'USD', 
         currencySign: '$',
         img: '/flags/united-states-of-america.svg',
@@ -170,7 +175,8 @@ export default {
         code: 'fr-ca',
         iso: 'fr-CA',
         name: 'Canada (Francais)',
-        region: 'America',
+        language: 'Francais',
+        region: 'Americas',
         file: 'fr-fr.json',
         currency: 'CAD', 
         currencySign: 'C$',
@@ -180,18 +186,210 @@ export default {
         code: 'en-ca',
         iso: 'en-CA',
         name: 'Canada (English)',
-        region: 'America',
+        language: 'English',
+        region: 'Americas',
         file: 'en-us.json',
         currency: 'CAD', 
         currencySign: 'C$',
         img: '/flags/canada.svg',
       },
+      {
+        code: 'en',
+        iso: 'en',
+        name: 'Other World Regions (English)',
+        language: 'English',
+        region: 'Other',
+        file: 'en-us.json',
+        currency: 'USD', 
+        currencySign: '$',
+        img: '/flags/monde.svg',
+      },
     ],
-  },
-  vueI18n: {
-    messages: {
-      fr: require('./locales/fr-fr.json'),
-      en: require('./locales/en-us.json'),
+    vueI18n: {
+      messages: {
+        fr: require('./locales/fr-fr.json'),
+        en: require('./locales/en-us.json'),
+      },
+      numberFormats: {
+        'fr-fr': {
+          currency: {
+             style: 'currency', 
+              currency: 'EUR',
+              minimumFractionDigits: 0
+             }
+        },
+        'en-gb': {
+          currency: {
+             style: 'currency', 
+              currency: 'GBP',
+              minimumFractionDigits: 0
+             }
+        },
+        'fr-ch': {
+          currency: {
+             style: 'currency', 
+              currency: 'CHF',
+              minimumFractionDigits: 0
+             }
+        },
+        'en-ie': {
+          currency: {
+             style: 'currency', 
+              currency: 'EUR',
+              minimumFractionDigits: 0
+             }
+        },
+        'en-us': {
+          currency: {
+             style: 'currency', 
+              currency: 'USD',
+              minimumFractionDigits: 0
+             }
+        },
+        'fr-ca': {
+          currency: {
+             style: 'currency', 
+              currency: 'CAD',
+              minimumFractionDigits: 0
+             }
+        },
+        'en-ca': {
+          currency: {
+             style: 'currency', 
+              currency: 'CAD',
+              minimumFractionDigits: 0
+             }
+        },
+        'en': {
+          currency: {
+             style: 'currency', 
+              currency: 'USD',
+              minimumFractionDigits: 0
+             }
+        }
+      },
+      dateTimeFormats: {
+        'fr-fr': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en-gb': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'fr-ch': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en-ie': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en-us': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'fr-ca': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en-ca': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        },
+        'en': {
+          short: {
+            year: 'numeric',
+            month: 'short',
+            day: 'numeric'
+          },
+          long: {
+            year: 'numeric',
+            month: 'long',
+            day: 'numeric',
+            weekday: 'long',
+            hour: 'numeric',
+            minute: 'numeric'
+          }
+        }
+      }
     },
   },
   hooks: {
@@ -302,7 +500,8 @@ export default {
   },
 
   gtm: {
-    id: '	GTM-NXPG4SV'
+    id: 'GTM-NXPG4SV',
+    respectDoNotTrack: false,
   },
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
@@ -331,6 +530,7 @@ export default {
                 "nuxt-progress",
                 /col-*/,
                 /v-dialog*/,
+                /^vue-foldable/
               ],
               deep: [
                 /page-enter/,
@@ -340,11 +540,21 @@ export default {
                 /tab-reversetransition/,
                 /slide-fade/,
                 /bottom-sheet-transition/,
+                /dialog-bottom-transition/,
+                /^vue-foldable/,
+                /^viewer/
               ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/]
             }
           }
         }
     },
   },
+  generate: {
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
+  }
 }

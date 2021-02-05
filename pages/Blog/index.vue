@@ -92,7 +92,7 @@
                     <span class="titlesmall teradeli-medium secondary--text">
                     </span>
                     <div class="teradeli-medium text-uppercase label">
-                      {{ formatDate(post.updatedAt) }}
+                      {{ $d(new Date(post.updatedAt), 'short') }}
                     </div>
             </v-card-text>
           </nuxt-link>

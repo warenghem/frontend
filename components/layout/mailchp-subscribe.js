@@ -36,7 +36,7 @@ export default {
                 id: this.listId,
                 EMAIL: this.email,
                 FNAME: this.name,
-                LANGUAGE: this.$store.state.langs.items.find(lang => lang.lang === this.$i18n.locale).full
+                LANGUAGE: this.$i18n.localeProperties.language
             })
         },
     },
@@ -48,13 +48,6 @@ export default {
         },
         setName(value = '') {
             this.name = value.trim()
-        },
-        getLang(){
-            this.lang=this.$store.state.langs.items.some(lang => {
-                    if (lang.lang === this.$i18n.locale) {
-                        return lang.full
-                    }
-                })
         },
         subscribe() {
             if (this.email === null || this.name === null || this.loading) {
@@ -105,6 +98,6 @@ export default {
             error: this.error,
             success: this.success,
             loading: this.loading,
-        })
+        }) 
     },
 }

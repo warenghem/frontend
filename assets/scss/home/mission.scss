@@ -55,16 +55,16 @@
 
   position: absolute;
   bottom: 0;
-  width: 25%;
+  width: 33.33%;
   text-align: center;
   line-height: 1.4;
-  transform: translateY(100%) translateY(-155px) translateY(-104px);
+  transform: translateY(100%) translateY(-155px) translateY(-44px);
   padding-bottom: 30px;
   transition: all .3s cubic-bezier(0.39, 0.575, 0.565, 1);
   opacity: 1;
   z-index: 10;
-  @media (max-width: 1600px) {
-    transform: translateY(100%) translateY(-155px) translateY(-125px);
+  @media (max-width: 1300px) {
+    transform: translateY(100%) translateY(-155px) translateY(-95px);
   }
 
   a {
@@ -77,16 +77,16 @@
   }
 
   &:nth-of-type(2) {
-    right: 25% !important;
+    right: 33.33% !important;
   }
 
   &:nth-of-type(3) {
-    right: 50% !important;
+    right: 66.66% !important;
   }
 
-  &:nth-of-type(4) {
-    right: 75% !important;
-  }
+  //&:nth-of-type(4) {
+  //  right: 75% !important;
+  //}
 }
 
 .homepage-catalogue-background {
@@ -154,7 +154,7 @@
 
   div {
     &:first-of-type {
-      right: 25% !important;
+      right: 33.33% !important;
     }
 
     position: absolute;
@@ -175,16 +175,16 @@
     }
 
     &:nth-of-type(2) {
-      right: 50% !important;
+      right: 66.66% !important;
     }
 
     &:nth-of-type(3) {
-      right: 75% !important;
-    }
-
-    &:nth-of-type(4) {
       right: 100% !important;
     }
+
+    /*&:nth-of-type(4) {
+      right: 100% !important;
+    }*/
   }
 }
 
@@ -203,7 +203,7 @@
       background-position: right center;
 
       div {
-        transform: translateX(-75%) !important;
+        transform: translateX(-66.66%) !important;
       }
     }
 
@@ -211,32 +211,32 @@
     top: 0;
     bottom: 0;
     overflow: hidden;
-    width: 25% !important;
+    width: 33.33% !important;
 
     &:nth-of-type(2) {
       div {
-        transform: translateX(-50%) !important;
+        transform: translateX(-33.33%) !important;
       }
 
-      background-position: right 20% center;
-      right: 25% !important;
+      background-position: right 33.33% center;
+      right: 33.33% !important;
     }
 
     &:nth-of-type(3) {
       div {
-        transform: translateX(-25%) !important;
+        transform: translateX(-0%) !important;
       }
 
-      background-position: right 40% center;
-      right: 50% !important;
+      background-position: right 66.66% center;
+      right: 66.66% !important;
     }
 
-    &:nth-of-type(4) {
+    /*&:nth-of-type(4) {
       div {
         transform: translateX(-20%);
       }
 
-      right: 60%;
+      right: 99.99%;
       background-position: right 60% center;
     }
 
@@ -247,7 +247,7 @@
 
       background-position: right 80% center;
       right: 75% !important;
-    }
+    }*/
 
     > div {
       position: absolute;
@@ -258,7 +258,7 @@
       -webkit-background-size: cover;
       background-size: cover;
       background-position: center center;
-      width: 400% !important;
+      width: 300% !important;
     }
   }
 }

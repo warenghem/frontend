@@ -9,7 +9,9 @@
       </slot>
       <Footer/>
     </div>
-    <LazyPlantForm v-if="$store.state.plantModal" />
+    <LazyPlantForm v-if="$store.state.newsletterModal" />
+    <LazyHistoriesForm v-if="$store.state.historiesModal" />
+    <LazyProductsForm v-if="$store.state.productModal" />
   </v-app>
 </template>
 

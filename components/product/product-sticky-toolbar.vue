@@ -13,15 +13,15 @@
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center">
-        <div class="smalltext mx-3">
-          <div>
-            <v-icon x-small :class="{'available':product.offers.availability}">{{ svgPath1 }}</v-icon>
+        <div class="smalltext mr-3">
+          <div class="d-none">
+            <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath1 }}</v-icon>
             {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
           </div>
           <h3 class="teradeli-book">
             {{product.price}} {{$i18n.localeProperties.currencySign}}</h3>
         </div>
-        <div>
+        <div class="mr-3">
           <Buybutton/>
         </div>
       </div>

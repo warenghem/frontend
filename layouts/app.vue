@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app dark>
     <div>
         <appmain-toolbar/>
         <nuxt/>

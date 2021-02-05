@@ -23,27 +23,28 @@
     "materialTitle": "Matières et entretien",
     "payInfoBtn": {
       "title": "Informations sur le paiement",
-      "desc": "Paiement par carte bancaire ou par Paypal."
+      "desc": "Paiement par carte bancaire ou Paypal"
     },
     "shipBtn": {
       "title": "Informations sur la livraison",
-      "desc": "Livraison offerte à domicile"
-    },
-    "returnBtn": {
-      "title": "Informations sur les retours",
-      "desc": "Gratuit"
+      "desc": "Livraison à domicile dans le monde"
     },
     "packageBtn": {
       "title": "Emballage",
-      "desc": "Emballage contemporain et écologique inspiré de notre patrimoine"
+      "desc": "Contemporain et écologique"
     },
     "like": "Vous pouvez aussi aimer",
     "recommend": "recommandé",
     "recent": "récemment consulté",
     "color":"Couleurs",
-    "material": "Matières"
+    "material": "Matières",
+    "size": "(Longueur x Hauteur x Largeur)",
+    "details": "Détails"
   },
-  "btnTitle": "Je plante un arbre gratuitement",
+  "btnTitle": "Planter un arbre gratuitement",
+  "btnWaitforit": "Reserver votre article",
+  "btnNewsletter": "Suivez nous",
+  "btnDiscover": "Découvrir",
   "router": {
     "home": {
       "title": "La home"
