@@ -137,7 +137,7 @@
 				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
 				"label1": "PRENOM ",
 				"label2": "EMAIL",
-				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"subtitle": "Notre inspiration se puise chez les architectes et designers qui conjuguent nature au future. Chaque semaine, découvrez un court article illustré sur de magnifiques project architecturaux et artistiques.<br><br>Architecture et design organique, bio-mimétisme, énergies renouvelables... Nous verrons ensemble que le future nous réserve bien des surprises...",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"
@@ -152,7 +152,7 @@
 				"error": "Your email appears to be invalid or already registered. Contact us:",
 				"label1": "First Name",
 				"label2": "e-mail",
-				"subtitle": "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed about the progress of the project.",
+				"subtitle": "Our inspiration is drawn from architects and designers who combine nature with the future. Each week, discover a short illustrated article on magnificent architectural and artistic projects. <br><br> Architecture and organic design, bio-mimicry, renewable energies ... We will see together that the future holds many surprises ...",
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
 				"title": "Project progress"

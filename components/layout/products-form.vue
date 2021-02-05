@@ -7,12 +7,17 @@
                     max-width="700px"
             >
                 <v-card>
-                    <v-btn
-                            icon
-                            @click="$store.state.productModal = false"
-                    >
-                        <v-icon>{{ svgPath }}</v-icon>
-                    </v-btn>
+                    <div style="height: 50px;" class="d-flex justify-space-between align-center border-bottom-2">
+                        <div class="sub-title pl-3">{{$t('btnWaitforit')}}</div>
+                        <v-btn
+                            text
+                            color="black"
+                            style="font-size: 26px"
+                            class="px-0 h-100 border-left-2 rounded-0"
+                        >
+                            <v-icon @click="$store.state.productModal = false">{{ svgPath }}</v-icon>
+                        </v-btn>
+                    </div>
                     <v-card-text
                     class="pa-3 pa-sm-5">
                         <div class="d-flex flex-column align-center justify-center h-100">
@@ -55,7 +60,7 @@
                                 </mailchimp-subscribe>-->
 <!-- Begin Mailchimp Signup Form -->
 <div id="mc_embed_signup">
-<v-form v-model="isFormValid" action="https://warenghem.us20.list-manage.com/subscribe/post-json?u=2f7dbf20677f88c14c1389365&amp;id=7e113bce09&c=?" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+<v-form action="https://warenghem.us20.list-manage.com/subscribe/post?u=2f7dbf20677f88c14c1389365&amp;id=7e113bce09" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
     <div id="mc_embed_signup_scroll">
     <div class="mc-field-group">
         <v-text-field
@@ -274,7 +279,7 @@
 				"alerttitle": "Warenghem dit",
 				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
 				"label1": "Prénom ",
-				"label2": "Email",
+                "label2": "Email",
 				"subtitle": "<strong>30 pièces par modèle sont en cours de production.</strong><br>Pour réserver votre article, indiquez votre prénom et votre adresse email. Puis selectionnez le ou les articles souhaités. Aucun paiement n'est requis.",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",
@@ -289,7 +294,7 @@
 				"alerttitle": "Warenghem says",
 				"error": "Your email appears to be invalid or already registered. Contact us:",
 				"label1": "First Name",
-				"label2": "e-mail",
+                "label2": "e-mail",
 				"subtitle": "<strong>30 pieces per model are in production.</strong><br>To reserve your item, enter your first name and email address. Then select the desired item (s). No payment is required.",
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
