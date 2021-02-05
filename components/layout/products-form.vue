@@ -275,7 +275,7 @@
 				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
 				"label1": "Prénom ",
 				"label2": "Email",
-				"subtitle": "<strong>Seules 30 pièces par modèle sont en cours de production.</strong><br>Pour réserver votre article, indiquez votre prénom et votre adresse email. Puis selectionnez le ou les articles souhaités. Aucun paiement n'est requis.",
+				"subtitle": "<strong>30 pièces par modèle sont en cours de production.</strong><br>Pour réserver votre article, indiquez votre prénom et votre adresse email. Puis selectionnez le ou les articles souhaités. Aucun paiement n'est requis.",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"
@@ -290,7 +290,7 @@
 				"error": "Your email appears to be invalid or already registered. Contact us:",
 				"label1": "First Name",
 				"label2": "e-mail",
-				"subtitle": "<strong>Only 30 pieces per model are in production.</strong><br>To reserve your item, enter your first name and email address. Then select the desired item (s). No payment is required.",
+				"subtitle": "<strong>30 pieces per model are in production.</strong><br>To reserve your item, enter your first name and email address. Then select the desired item (s). No payment is required.",
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
 				"title": "Project progress"
