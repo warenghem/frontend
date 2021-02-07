@@ -3,6 +3,8 @@
         <div class="mx-auto text-center">
             <v-dialog
                     v-model="$store.state.historiesModal"
+                    transition="dialog-bottom-transition"
+                    content-class="bg-white bottom-dialog rounded-0"
                     persistent
                     max-width="600px"
             >

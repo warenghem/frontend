@@ -3,6 +3,8 @@
         <div class="mx-auto text-center">
             <v-dialog
                     v-model="$store.state.productModal"
+                    transition="dialog-bottom-transition"
+                    content-class="bg-white bottom-dialog rounded-0"
                     persistent
                     max-width="700px"
             >
@@ -19,9 +21,9 @@
                         </v-btn>
                     </div>
                     <v-card-text
-                    class="pa-3 pa-sm-5">
+                        class="pa-3 pa-sm-5">
                         <div class="d-flex flex-column align-center justify-center h-100">
-                            <p class="pb-3 px-4 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
+                            <p class="px-4 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
                             </p>
                             <div class="w-100 px-sm-5">
                                 <!--<mailchimp-subscribe
@@ -94,7 +96,7 @@
         ></v-select>
     </div>
     <v-row class="line mb-5"> 
-        <v-col cols="4" class="mc-field-group input-group c-choiceCard_innerContainer"> 
+        <v-col cols="4" class="mc-field-group input-group c-choiceCard_innerContainer p-0"> 
             <input type="checkbox" class="c-choiceCard_input av-checkbox" name="BAG" id="mce-BAG-0"> 
             <label for="mce-BAG-0" class="c-choiceCard_label border-gray border-radius--lv1 padding--lv4 alignc rounded-xl">
                 <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
@@ -102,7 +104,7 @@
                 </div>
             </label> 
         </v-col> 
-        <v-col cols="4" class="mc-field-group input-group c-choiceCard_innerContainer"> 
+        <v-col cols="4" class="mc-field-group input-group c-choiceCard_innerContainer p-0"> 
             <input type="checkbox" class="c-choiceCard_input av-checkbox"  name="BELT" id="mce-BELT-0">
             <label for="mce-BELT-0" class="c-choiceCard_label border-gray border-radius--lv1 padding--lv4 alignc rounded-xl"> 
                 <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
@@ -110,7 +112,7 @@
                 </div>
             </label> 
         </v-col> 
-        <v-col cols="4" class="mc-field-group input-group c-choiceCard_innerContainer"> 
+        <v-col cols="4" class="mc-field-group input-group c-choiceCard_innerContainer p-0"> 
             <input type="checkbox" class="c-choiceCard_input av-checkbox" name="WALLET" id="mce-WALLET-0"> 
             <label for="mce-WALLET-0" class="c-choiceCard_label border-gray border-radius--lv1 padding--lv4 alignc rounded-xl"> 
                 <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">

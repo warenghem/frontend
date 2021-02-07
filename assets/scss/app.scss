@@ -169,7 +169,7 @@ body {
   font-family: "blur-up: auto", "object-fit: cover";
   object-fit: cover;
 }
-.ls-blur-up-img {
+/*.ls-blur-up-img {
   filter: blur(10px);
   opacity: 1;
   transition: opacity 1000ms, filter 1500ms;
@@ -177,7 +177,7 @@ body {
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
   filter: blur(5px);
-}
+}*/
 // THE LOADING EFFECT
 /* .skeletton .lazyload, .skeletton .lazyloaded {
   background-color: #e2e5e7;
@@ -1015,6 +1015,6 @@ letter-spacing: .009em;
   margin: 0!important;
   align-self: flex-end;
   @media(min-width:48em) {
-      height: 40%;
+      height: 70%;
     }
   }
