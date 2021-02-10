@@ -41,19 +41,19 @@
                 <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
                   <div v-for="(material,m_idx) in materials" :key="'mat_'+m_idx">
                     <div class="d-flex">
-                        <input type="radio"
-                               v-model="filterChecked.material"
-                               :value="material"
-                               hidden
-                               :id="'mat_radio_'+m_idx"
-                               class="filter-radio"
-                        >
-                        <label
-                          :for="'mat_radio_'+m_idx"
-                          :class="{'active':filterChecked.material===material}"
-                        >
-                          <h4 class="text-capitalize">{{material.name}}</h4>
-                        </label>
+                      <input type="radio"
+                             v-model="filterChecked.material"
+                             :value="material"
+                             hidden
+                             :id="'mat_radio_'+m_idx"
+                             class="filter-radio"
+                      >
+                      <label
+                        :for="'mat_radio_'+m_idx"
+                        :class="{'active':filterChecked.material===material}"
+                      >
+                        <h4 class="text-capitalize">{{material.name}}</h4>
+                      </label>
                     </div>
                   </div>
                 </div>
@@ -100,23 +100,23 @@
                 <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 100px">
                   <div v-for="(material,m_idx) in materials" :key="'mat_'+m_idx">
                     <div class="d-flex">
-                        <input type="radio"
-                               v-model="filterChecked.material"
-                               :value="material"
-                               hidden
-                               :id="'mat_radio_'+m_idx"
-                               class="filter-radio"
-                        >
-                        <label
-                          :for="'mat_radio_'+m_idx"
-                          :class="{'active':filterChecked.material===material}"
-                        >
-                          <h4 class="text-capitalize">{{material.name}}</h4>
-                        </label>
-                      </div>
-
-
+                      <input type="radio"
+                             v-model="filterChecked.material"
+                             :value="material"
+                             hidden
+                             :id="'mat_radio_'+m_idx"
+                             class="filter-radio"
+                      >
+                      <label
+                        :for="'mat_radio_'+m_idx"
+                        :class="{'active':filterChecked.material===material}"
+                      >
+                        <h4 class="text-capitalize">{{material.name}}</h4>
+                      </label>
                     </div>
+
+
+                  </div>
                 </div>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -231,6 +231,11 @@
                 default: () => {
                 }
             },
+            updateFilter:{
+                type:Function,
+                default: function () {
+                }
+            }
         },
         methods: {
             handleScroll() {
@@ -248,6 +253,14 @@
             },
             togglePanel() {
                 this.panel = this.panel[0] === 0 ? [] : [0]
+            }
+        },
+        watch: {
+            filterChecked: {
+                handler(val) {
+                    this.$emit('updateFilter',val)
+                },
+                deep: true,
             }
         },
         created() {
@@ -307,7 +320,8 @@
     top: 50px;
     z-index: 1000;
   }
-  label.active{
+
+  label.active {
     text-decoration: underline;
   }
 </style>
