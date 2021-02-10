@@ -5,7 +5,7 @@
       <div class="py-2 text-center secondary--text">{{$t('subtitle')}}</div>
     </div>
     <div class="treemapcontainer">
-      <TreeData :treeData="treeData"/>
+<!--      <TreeData :treeData="treeData"/>-->
       <client-only placeholder="Loading...">
         <LazyMap v-if="mapshow"/>
       </client-only>

@@ -10,14 +10,14 @@
       class="white--text text-center w-100 px-3 px-sm-15"
     >
       <v-card-title class="px-0 pb-0 d-block d-md-flex">
-        <v-text flat tile class="d-block d-md-flex">
+        <div class="d-block d-md-flex">
           <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
           <v-breadcrumbs dark :items="items">
             <template v-slot:divider>
               <v-icon>mdi-forward</v-icon>
             </template>
           </v-breadcrumbs>
-        </v-text>
+        </div>
         <v-spacer></v-spacer>
 
           <v-btn

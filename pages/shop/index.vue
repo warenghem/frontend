@@ -5,11 +5,12 @@
                 :colors="colors"
                 :collections="collections"
                 :category-name="null"
-                :materials="materials"/>
+               :materials="materials">
+    </FilterBar>
     <v-container class="px-lg-7" fluid>
       <v-row>
         <v-col lg="4" md="6" v-for="(product,idx) in productsItem" :key="'product_'+idx">
-          <ProductItem :productItem="product"/>
+          <ProductItem :productItem="product"></ProductItem>
         </v-col>
       </v-row>
       <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
