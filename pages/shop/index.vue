@@ -1,11 +1,9 @@
 <template>
   <div>
     <FilterBar class="stickyFilterBar" :products="productsItem.length"
-                :categories="categories"
-                :colors="colors"
-                :collections="collections"
-                :category-name="null"
-               :materials="materials">
+               :colors="filter.colors"
+               :materials="filter.materials"
+    >
     </FilterBar>
     <v-container class="px-lg-7" fluid>
       <v-row>
@@ -26,9 +24,15 @@
         name: 'shop',
         async asyncData(context) {
             const {$content, app} = context;
-            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
+            const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
+            const productsItem = await $content(`${lang_path}/shop`).fetch();
+            const filter = await $content(`${lang_path}/filter`, 'type').fetch();
             return {
                 productsItem,
+                filter: {
+                    colors: filter.colors,
+                    materials: filter.materials
+                }
             }
         },
         methods: {

@@ -3,16 +3,13 @@
 
     <v-app-bar class="menu-bar  pr-4 filter-bar" flat>
       <div class="d-flex align-center">
-        <div class="ma-2 font-weight-bold title">
-          {{categoryName?categoryName:'Tous les sacs'}}
-        </div>
-        <div class="teradeli-light">
+        <div class="teradeli-light  pl-2">
           ({{products}} Produits)
         </div>
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center title">
-        <div class="pa-2  border-left-2 d-flex align-center" style="height: 70px">
+        <div class="pa-2  border-left-2 d-flex align-center" style="height: 50px">
           <v-checkbox
             v-model="online"
             class="no-message"
@@ -20,7 +17,7 @@
           ></v-checkbox>
         </div>
 
-        <div class="pa-2 border-left-2 d-flex align-center " style="height: 70px">
+        <div class="pa-2 border-left-2 d-flex align-center " style="height: 50px">
           <div class="cursor-pointer" @click="togglePanel">
             <v-icon class="m-2">mdi-filter</v-icon>
             Filterer
@@ -38,85 +35,25 @@
             class="w-100 d-none d-lg-block"
           >
             <v-slide-item
-
-            >
-              <div class="slide-item">
-                <div class="font-weight-bold py-3 title">Catégories</div>
-                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
-                  <v-list flat class="custom-list">
-                    <v-list-item-group
-                      color="primary"
-                    >
-                      <v-list-item
-                        v-for="(item, c_idx) in categories"
-                        :key="'cat_'+c_idx"
-                        link
-                        style="border-bottom: none!important;min-height: 10px!important;"
-                        class="py-1"
-                      >
-                        <v-list-item-content class="py-1">
-                          <v-list-item-title v-text="item"></v-list-item-title>
-                        </v-list-item-content>
-                      </v-list-item>
-                    </v-list-item-group>
-                  </v-list>
-                </div>
-              </div>
-            </v-slide-item>
-            <v-slide-item
-            >
-              <div class="slide-item">
-                <div class="font-weight-bold py-3 title">Collections</div>
-                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
-                  <v-list flat class="custom-list">
-                    <v-list-item-group
-                      color="primary"
-                    >
-                      <v-list-item
-                        v-for="(item, c_idx) in collections"
-                        :key="'col_'+c_idx"
-                        link
-                        style="border-bottom: none!important;min-height: 10px!important;"
-                        class="py-1"
-                      >
-                        <v-list-item-content class="py-1">
-                          <v-list-item-title v-text="item"></v-list-item-title>
-                        </v-list-item-content>
-                      </v-list-item>
-                    </v-list-item-group>
-                  </v-list>
-                </div>
-              </div>
-            </v-slide-item>
-            <v-slide-item
             >
               <div class="slide-item">
                 <div class="font-weight-bold py-3 title">Materials</div>
                 <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
                   <div v-for="(material,m_idx) in materials" :key="'mat_'+m_idx">
-                    <h4 class="text-capitalize">{{material.name}}</h4>
                     <div class="d-flex">
-                      <div v-for="(item,idx) in material.items"
-                           :key="'item_'+m_idx+'_'+idx">
                         <input type="radio"
-                               v-model="filter"
-
-                               :value="item.id"
+                               v-model="filterChecked.material"
+                               :value="material"
                                hidden
-                               :id="'mat_radio_'+m_idx+'_'+idx"
+                               :id="'mat_radio_'+m_idx"
                                class="filter-radio"
                         >
                         <label
-                          :for="'mat_radio_'+m_idx+'_'+idx"
+                          :for="'mat_radio_'+m_idx"
+                          :class="{'active':filterChecked.material===material}"
                         >
-                          <img class="color-box"
-                               :src="item.image"
-                               alt=""
-                          >
+                          <h4 class="text-capitalize">{{material.name}}</h4>
                         </label>
-                      </div>
-
-
                     </div>
                   </div>
                 </div>
@@ -130,7 +67,7 @@
                   <div class="d-flex">
                     <div v-for="(color,c_idx) in colors" :key="'color_'+c_idx">
                       <input type="radio"
-                             v-model="filter"
+                             v-model="filterChecked.color"
                              :value="color"
                              hidden
                              :id="'color_radio_'+c_idx"
@@ -138,11 +75,12 @@
                       >
                       <label
                         :for="'color_radio_'+c_idx"
+                        :class="{'active':filterChecked.color===color}"
                       >
                         <div class="color-box">
-                          <div
-                            :style="'background-color:'+color"
-                          ></div>
+                          <img
+                            :src="color.icon"
+                          >
                         </div>
 
                       </label>
@@ -156,89 +94,29 @@
           <v-expansion-panels class="d-lg-none overflow-y-auto" accordion style="max-height: 50vh">
             <v-expansion-panel>
               <v-expansion-panel-header>
-                <div class="font-weight-bold">Catégories</div>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 300px">
-                  <v-list flat class="custom-list">
-                    <v-list-item-group
-                      color="primary"
-                    >
-                      <v-list-item
-                        v-for="(item, c_idx) in categories"
-                        :key="'cat_'+c_idx"
-                        link
-                        style="border-bottom: none!important;min-height: 10px!important;"
-                        class="py-1"
-                        :active-class="categoryName"
-                      >
-                        <v-list-item-content class="py-1">
-                          <v-list-item-title v-text="item"></v-list-item-title>
-                        </v-list-item-content>
-                      </v-list-item>
-                    </v-list-item-group>
-                  </v-list>
-                </div>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-            <v-expansion-panel>
-              <v-expansion-panel-header>
-                <div class="font-weight-bold">Collections</div>
-              </v-expansion-panel-header>
-              <v-expansion-panel-content>
-                <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 100px">
-                  <v-list flat class="custom-list">
-                    <v-list-item-group
-                      color="primary"
-                    >
-                      <v-list-item
-                        v-for="(item, c_idx) in collections"
-                        :key="'col_'+c_idx"
-                        link
-                        style="border-bottom: none!important;min-height: 10px!important;"
-                        class="py-1"
-                      >
-                        <v-list-item-content class="py-1">
-                          <v-list-item-title v-text="item"></v-list-item-title>
-                        </v-list-item-content>
-                      </v-list-item>
-                    </v-list-item-group>
-                  </v-list>
-                </div>
-              </v-expansion-panel-content>
-            </v-expansion-panel>
-            <v-expansion-panel>
-              <v-expansion-panel-header>
                 <div class="font-weight-bold ">Materials</div>
               </v-expansion-panel-header>
               <v-expansion-panel-content>
                 <div class="overflow-y-auto d-flex flex-wrap flex-column" style="height: 100px">
                   <div v-for="(material,m_idx) in materials" :key="'mat_'+m_idx">
-                    <h4 class="text-capitalize">{{material.name}}</h4>
                     <div class="d-flex">
-                      <div v-for="(item,idx) in material.items"
-                           :key="'item_'+m_idx+'_'+idx">
                         <input type="radio"
-                               v-model="filter"
-
-                               :value="item.id"
+                               v-model="filterChecked.material"
+                               :value="material"
                                hidden
-                               :id="'mat_radio_'+m_idx+'_'+idx"
+                               :id="'mat_radio_'+m_idx"
                                class="filter-radio"
                         >
                         <label
-                          :for="'mat_radio_'+m_idx+'_'+idx"
+                          :for="'mat_radio_'+m_idx"
+                          :class="{'active':filterChecked.material===material}"
                         >
-                          <img class="color-box"
-                               :src="item.image"
-                               alt=""
-                          >
+                          <h4 class="text-capitalize">{{material.name}}</h4>
                         </label>
                       </div>
 
 
                     </div>
-                  </div>
                 </div>
               </v-expansion-panel-content>
             </v-expansion-panel>
@@ -251,7 +129,7 @@
                   <div class="d-flex">
                     <div v-for="(color,c_idx) in colors" :key="'color_'+c_idx">
                       <input type="radio"
-                             v-model="filter"
+                             v-model="filterChecked.color"
                              :value="color"
                              hidden
                              :id="'color_radio_'+c_idx"
@@ -259,11 +137,12 @@
                       >
                       <label
                         :for="'color_radio_'+c_idx"
+                        :class="{'active':filterChecked.color===color}"
                       >
                         <div class="color-box">
-                          <div
-                            :style="'background-color:'+color"
-                          ></div>
+                          <img
+                            :src="color.icon"
+                          >
                         </div>
 
                       </label>
@@ -282,16 +161,20 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-    <v-app-bar class="menu-bar  pr-4 filter-bar" flat v-if="filter.length">
+    <v-app-bar class="menu-bar  pr-4 filter-bar" flat v-if="filterChecked.color || filterChecked.material">
       <div class="d-flex align-center">
-        <v-btn color="secondary" v-for="(fil,f_idx) in filter" :key="fil" class="ma-2" dark>
-          {{fil}}
-          <v-icon class="pl-2">mdi-close</v-icon>
+        <v-btn color="secondary" class="ma-2" dark v-if="filterChecked.color">
+          {{filterChecked.color.name}}
+          <v-icon class="pl-2" @click="filterChecked.color=null">mdi-close</v-icon>
+        </v-btn>
+        <v-btn color="secondary" class="ma-2" dark v-if="filterChecked.material">
+          {{filterChecked.material.name}}
+          <v-icon class="pl-2" @click="filterChecked.material=null">mdi-close</v-icon>
         </v-btn>
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center title">
-        <h5 class="cursor-pointer" @click="filter=[]" style="text-decoration: underline;">
+        <h5 class="cursor-pointer" @click="emptyFilter" style="text-decoration: underline;">
           Effacer tous les filtres
         </h5>
 
@@ -312,7 +195,10 @@
                 sidebar: false,
                 online: false,
                 panel: [],
-                filter: ['material 1', 'red']
+                filterChecked: {
+                    material: null,
+                    color: null
+                }
 
             }
         },
@@ -354,6 +240,12 @@
                     this.fixedOnScroll = false
                 }
             },
+            emptyFilter() {
+                this.filterChecked = {
+                    material: null,
+                    color: null
+                }
+            },
             togglePanel() {
                 this.panel = this.panel[0] === 0 ? [] : [0]
             }
@@ -368,6 +260,7 @@
                 window.addEventListener('scroll', this.handleScroll)
             }
         },
+
     }
 </script>
 
@@ -396,10 +289,9 @@
     height: 45px;
     padding: 4px;
 
-    div {
+    img {
       width: 35px;
       height: 35px;
-      border: 1px solid #c1c1c1;
     }
   }
 
@@ -408,10 +300,14 @@
       border: 1px solid;
     }
   }
-  .expan-panel{
+
+  .expan-panel {
     position: absolute;
     width: 100%;
-    top:71px;
+    top: 50px;
     z-index: 1000;
+  }
+  label.active{
+    text-decoration: underline;
   }
 </style>
