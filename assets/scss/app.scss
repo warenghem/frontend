@@ -169,7 +169,7 @@ body {
   font-family: "blur-up: auto", "object-fit: cover";
   object-fit: cover;
 }
-/*.ls-blur-up-img {
+.ls-blur-up-img {
   filter: blur(10px);
   opacity: 1;
   transition: opacity 1000ms, filter 1500ms;
@@ -177,7 +177,7 @@ body {
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
   filter: blur(5px);
-}*/
+}
 // THE LOADING EFFECT
 /* .skeletton .lazyload, .skeletton .lazyloaded {
   background-color: #e2e5e7;
@@ -803,7 +803,21 @@ letter-spacing: .009em;
     right: 0;
     left: 0;
     background-color: #121217;
-    opacity: 0.2;
+    opacity: 0.1;
+    z-index: 1 !important;
+    transition: opacity 0.5s !important;
+  }
+}
+.blackoverlay2 {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #121217;
+    opacity: 0.5;
     z-index: 1 !important;
     transition: opacity 0.5s !important;
   }

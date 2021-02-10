@@ -24,12 +24,12 @@ export default {
     ]
   },
   render: {
-    asyncScripts: true,
+    /*asyncScripts: true,
     bundleRenderer: {
       shouldPreload: (_, type) => {
         return type === 'image'
       }
-    },
+    },*/
     static: {
       maxAge: 1000 * 60 * 60 * 24 * 7
     }
@@ -506,6 +506,7 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
+    analyze: true,
     extend (config, { isDev, isClient, loaders: { vue } }) {
       if (isClient) {
         vue.transformAssetUrls.img = ['data-src', 'src'];
@@ -556,5 +557,5 @@ export default {
       const files = await $content({ deep: true }).only(['path']).fetch()
       return files.map(file => file.path === '/index' ? '/' : file.path)
     }
-  }
+  },
 }

@@ -1,15 +1,16 @@
 <template>
   <div>
-    <FilterBar class="stickyFilterBar" :products="productsItem.length"
-                :categories="categories"
-                :colors="colors"
-                :collections="collections"
-                :category-name="null"
-                :materials="materials"/>
+    <FilterBar class="stickyFilterBar" :products="filteredProducts.length"
+               :colors="filter.colors"
+               :materials="filter.materials"
+               @updateFilter="updateFilter"
+               ref="filter"
+    >
+    </FilterBar>
     <v-container class="px-lg-7" fluid>
       <v-row>
-        <v-col lg="4" md="6" v-for="(product,idx) in productsItem" :key="'product_'+idx">
-          <ProductItem :productItem="product"/>
+        <v-col lg="4" md="6" v-for="(product,idx) in filteredProducts" :key="'product_'+idx">
+          <ProductItem :productItem="product"></ProductItem>
         </v-col>
       </v-row>
       <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
@@ -25,14 +26,52 @@
         name: 'shop',
         async asyncData(context) {
             const {$content, app} = context;
-            const productsItem = await $content(`${app.i18n.locale}/shop`).fetch();
+            const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
+            const productsItem = await $content(`${lang_path}/shop`).fetch();
+            const filter = await $content(`${lang_path}/filter`, 'type').fetch();
             return {
                 productsItem,
+                filter: {
+                    colors: filter.colors,
+                    materials: filter.materials
+                }
+            }
+        },
+        data() {
+            return {
+                filterChecked: {
+                    material: null,
+                    color: null
+                }
+            }
+        },
+        computed: {
+            filteredProducts() {
+                if (this.filterChecked.material || this.filterChecked.color) {
+                    var items = this.productsItem
+                    if (this.filterChecked.material) {
+                        items = items.filter(item => {
+                            return item.material.some(mat => mat.id === this.filterChecked.material.id)
+                        })
+                    }
+                    if (this.filterChecked.color) {
+                        items = items.filter(item => {
+                            return item.colors.some(col => col.id === this.filterChecked.color.id)
+                        })
+                    }
+                    return items;
+                } else {
+                    return this.productsItem
+                }
+
             }
         },
         methods: {
             infiniteScrolling() {
                 this.productCount = this.productCount + 10;
+            },
+            updateFilter(data) {
+                this.filterChecked = data
             }
         }
 

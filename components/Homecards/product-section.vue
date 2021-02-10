@@ -62,6 +62,9 @@
                             </div>
                         </NuxtLink>
                     </v-card>
+                    <v-card class="bgcard homecard item2">
+                        <ProjectsSection/>
+                    </v-card>
                 </v-container>
         </div>
 </template>
@@ -77,19 +80,19 @@
                     ",ar-6-4/Products/48H_black_blue_side_bottle.png",
                     ",fo-top/Products/belt-blackblue-above2bis.png",
                     "/Products/pf-blackblue-side.png",
-                    "/vide.png",
+                    /*"/vide.png",*/
                 ],
                 link: [
                     "/shop/bag-dionysos-48h-black-darkbluebugatti/",
                     "/shop/belt-dionysos/",
                     "/shop/wallet-dionysos/",
-                    "",
+                    /*"",*/
                 ],
                 disabled: [
                     "",
                     "",
                     "",
-                    "d-none",
+                    /*"d-none",*/
                 ],
                 products: this.$t('products'),
             }
@@ -121,13 +124,6 @@
 				"tag": "Available soon - 30 pieces",
 				"title": "Dionysos Wallet",
 				"visualtocome": ""
-			},
-			{
-				"desc": "",
-				"summary": "Feet on the ground.",
-				"tag": "Being created",
-				"title": "Dionysos Boots",
-				"visualtocome": "Visuals to come"
 			}
 		]
 	},
@@ -154,13 +150,6 @@
 				"tag": "Disponible prochainement - 30 pièces",
 				"title": "Portefeuille Dionysos",
 				"visualtocome": ""
-			},
-			{
-				"desc": "",
-				"summary": "Les pieds sur terre.",
-				"tag": "En cours de création",
-				"title": "Bottines Dionysos",
-				"visualtocome": "Visuels à venir"
 			}
 		]
 	}
