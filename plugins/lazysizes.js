@@ -1,4 +1,4 @@
 import lazySizes from 'lazysizes'
-import 'lazysizes/plugins/blur-up/ls.blur-up';
+/*import 'lazysizes/plugins/blur-up/ls.blur-up';*/
 
 export default lazySizes

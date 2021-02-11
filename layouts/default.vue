@@ -1,12 +1,14 @@
 <template>
   <v-app>
     <div>
-      <slot name="header">
+      <!--<slot name="header">-->
         <MainToolbar/>
-      </slot>
-      <slot name="content">
-        <nuxt/>
-      </slot>
+      <!--</slot>-->
+      <!--<slot name="content">-->
+        <v-content>
+          <nuxt/>
+        </v-content>
+      <!--</slot>-->
       <Footer/>
     </div>
     <LazyPlantForm v-if="$store.state.newsletterModal" />

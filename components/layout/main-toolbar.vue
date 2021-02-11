@@ -76,9 +76,9 @@
 
 <style scoped lang="scss">
 
-  .appBar {
+  .menu-bar {
+    z-index: 6;
     position: relative;
-    z-index: 300001;
 
     .topBar {
       background: #0A3137;

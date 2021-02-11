@@ -1,6 +1,6 @@
 <template>
     <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
-        <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
+        <!--<v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
               <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
                 <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
@@ -18,15 +18,13 @@
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
-        </v-navigation-drawer>
+        </v-navigation-drawer>-->
 
-        <v-app-bar flat class="border-bottom-2" height="48px"
-                   >
-
-            <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-2">
+        <v-app-bar flat class="border-bottom-2" height="48px">
+            <!--<v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-2">
               <v-icon>{{ svgPath }}</v-icon>
-            </v-app-bar-nav-icon>
-            <v-toolbar-title class="d-md-block pr-4 d-none">
+            </v-app-bar-nav-icon>-->
+            <v-toolbar-title class="d-md-block px-4 d-none">
                 <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
                   <div style="fill: #19110b;stroke: #19110b;width:35px" v-html="LogoSmSm" />
                 </nuxt-link>

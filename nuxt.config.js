@@ -4,7 +4,6 @@ import axios from 'axios'
 export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
-
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
     titleTemplate: '%s - App',
@@ -22,6 +21,14 @@ export default {
       {rel: "preconnect", href: "d33wubrfki0l68.cloudfront.net", crossorigin: true},
       {rel: "preconnect", href: "www.google-analytics.com", crossorigin: true},
     ]
+  },
+  pageTransition: {
+    transition(to, from) {
+      if (!from) {
+        return 'slide-left'
+      }
+      return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+    },
   },
   render: {
     /*asyncScripts: true,
@@ -558,4 +565,6 @@ export default {
       return files.map(file => file.path === '/index' ? '/' : file.path)
     }
   },
+  router: {
+  }
 }

@@ -3,7 +3,7 @@
     v-model="isModal"
     max-width="500px"
     @click:outside="closeModal"
-    content-class="bg-white custom-side-modal rounded-0"
+    content-class="border-left-2 bg-white custom-side-modal rounded-0"
     style='z-index:300002;'
     transition="slide-fade"
     scrollable

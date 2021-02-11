@@ -1,7 +1,16 @@
 <template>
     <section class="team-section invgradientoverlay blackoverlay text-center pvw">
         <h2 class="page-title teradeli-medium text-white px-0">{{$t('title')}}</h2>
-        <div class=" pb-3 py-2 page-subtitle text-white" v-html="$t('subtitle')"></div>
+        <div class=" pb-3 py-2 page-subtitle text-white mb-5" v-html="$t('subtitle')"></div>
+        <v-btn
+            elevation="0"
+            rounded
+            dark
+            class="btn-theme darkbugattiblue"
+            style="max-width:100%;word-break: break-word;outline: 0;display: inline-block;white-space: normal;z-index:1"
+            >
+            {{$t('shoes')}}
+        </v-btn>
         <!--<v-text
             @click="$store.state.plantModal=true"
             style="z-index:2"
@@ -47,12 +56,14 @@
 	"en": {
 		"btnDiscover": "I subscribe",
 		"subtitle": "Participate soon in their creations",
-		"title": "Upcoming objects"
+		"title": "Upcoming objects",
+        "shoes": "Dionysos Boots"
 	},
 	"fr": {
 		"btnDiscover": "Je m'abonne",
 		"subtitle": "Participez bientôt à leur création",
-		"title": "Objets à venir"
+		"title": "Objets à venir",
+        "shoes": "Bottines Dionysos"
 	}
 }
 </i18n>
