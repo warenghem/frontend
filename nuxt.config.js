@@ -538,7 +538,8 @@ export default {
                 "nuxt-progress",
                 /col-*/,
                 /v-dialog*/,
-                /^vue-foldable/
+                /^vue-foldable/,
+                /^slide-left/
               ],
               deep: [
                 /page-enter/,
@@ -550,9 +551,10 @@ export default {
                 /bottom-sheet-transition/,
                 /dialog-bottom-transition/,
                 /^vue-foldable/,
-                /^viewer/
+                /^viewer/,
+                /^slide-left/
               ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/]
             }
           }
         }
