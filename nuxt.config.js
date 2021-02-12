@@ -81,9 +81,9 @@ export default {
     '@nuxtjs/pwa',
     'nuxt-i18n',
     '@nuxt/content',
-    '@nuxtjs/sitemap',
     '@nuxtjs/gtm',
     'cookie-universal-nuxt',
+    '@nuxtjs/sitemap',
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -498,8 +498,16 @@ export default {
   sitemap: {
     path: '/sitemapindex.xml',
     hostname: 'https://www.warenghem.com',
+    exclude: [
+      /^\/filter/ 
+    ],
     i18n: true,
     gzip: true,
+    routes: async () => {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).only(['path']).fetch()
+      return files.map(file => file.path === '/index' ? '/' : file.path)
+    }
   },
 
   googleAnalytics: {
@@ -513,7 +521,6 @@ export default {
 
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    analyze: true,
     extend (config, { isDev, isClient, loaders: { vue } }) {
       if (isClient) {
         vue.transformAssetUrls.img = ['data-src', 'src'];
@@ -561,6 +568,9 @@ export default {
     },
   },
   generate: {
+    exclude: [
+      /^\/filter/ 
+    ],
     async routes () {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).only(['path']).fetch()
