@@ -1,20 +1,20 @@
 ---
-id: 4
-sku: WAD48NBLB
-name: Dionysos 48H
-slogan: Des vignes et du lin. Tel est son destin.
-description: "<p>Son architecture avant-gardiste regroupant deux pièces a été conçue
-  par nos designers afin qu'il soit léger, souple et toujours prêt pour vous accompagner
-  dans vos déplacements. Les experts du bagage logeront facilement une semaine de
-  vêtements dans son intérieur généreux, aux dimensions de bagage cabine. </p><p>L'intégralité
-  de la confection est réalisée en France dans notre atelier en Anjou spécialisé en
-  haute maroquinerie. Les tranches du cuir sont cirées à la main dans un coloris bleu
-  Bugatti (clair ou foncé).</p>"
+id: 2
+sku: WADBTNB
+name: Ceinture Dionysos
+slogan: Elle ne vous laissera pas tomber.
+description: "<p>La ceinture Dionysos est assortie aux articles de maroquinerie, elle
+  s’accorde avec toutes vos tenues, des plus formelles aux plus décontractés. Ses
+  cires tranches colorées bleu Bugatti et ses surpiqures fines et régulières affirment
+  le savoir faire Français. Toujours fabriquée dans notre atelier en Anjou, spécialisé
+  en haute maroquinerie.</p><p>La boucle sur-mesure imaginée par nos designer lui
+  confère un rendu graphique et épuré, aux lignes rappelant le W de la marque. Bien
+  sûr fabriquée en France, près de Romans sur Isère.</p>"
 details:
-- Doublure en lin francais Bio
-- Pièces métalliques couleur argentée
-- Double fermeture zippée fabriqué en France
-- Bandoulière amovible, ajustable. Jusqu'a 50cm
+- Gravure Warenghem sur la tranche
+- Gravure "made in France" sur l'autre tranche
+- Boucle en métal fabriquée en France, avec finition palladium brossée
+- Cires tranches bleu foncé Bugatti
 care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procédé innovant
   qui transforme les fibres du raisin en une matière écologique. </strong></p><p><strong>Il
   a été longuement testé afin qu''il ait les mêmes caractéristiques qu''un cuir traditionnel
@@ -30,9 +30,9 @@ care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procéd�
   toute question relative à votre article, veuillez prendre contact avec nous &lt;a
   href="mailto:hello@warenghem.com"&gt;ici&lt;/a&gt; ou sur les réseaux sociaux.</p>'
 dimensions:
-  length: 54
-  height: 29
-  width: 20
+  length: 105
+  height: 35
+  width: 0.5
   unit: cm
 manufacturer: ''
 colors:
@@ -47,8 +47,8 @@ material:
   name: Cuir végétal de vin Dionysos®
   icon: leather.jpg
 - id: 2
-  name: Lin Francais Bio
-  icon: linen_camel.jpg
+  name: Metal naturel recyclable
+  icon: metal-brushed.jpg
 award:
 - name: Made in France
   image: madeinfrance.png
@@ -56,53 +56,50 @@ award:
   image: PETA.png
 offers:
   priceCurrency: EUR
-  price: 390
+  price: 99
   availability: true
   pieces: Disponible prochainement - 30 pièces
 categories:
-- name: Bags
-  slug: bags
-  depth: 2
+- name: accessories
+  slug: leathergoods
+  depth: 1
 tags:
-- 48H
 - dionysos
-- bag
+- simple
+- belt
+- pewter
 image:
-- src: 48H_face.png
-  color: 2
-  material: 1
-  name: bag-blackblue-front
-  alt: sac vegan homme noir raisin made in france
-  availability: true
-- src: 48H_cote.png
+- src: belt-blackblue-above.png
   color: 1
-  material: 2
-  name: 48H_cote
-  alt: 'sac vegan homme noir raisin made in france'
+  name: belt-blackblue-above
+  alt: ceinture vegan homme raisin made in france
   availability: false
-- src: bag-blackblue-deepest.png
+- src: belt-blackblue-1.png
   color: 2
   material: 1
-  name: bag-blackblue-deepest
-  alt: sac vegan homme noir raisin made in france
+  name: belt-blackblue-1
+  alt: ceinture vegan homme raisin made in france
   availability: true
-- src: bag-blackblue-above.png
-  color: 2
-  material: 1
-  name: bag-blackblue-above
-  alt: sac vegan homme raisin made in france
-  availability: true
-- src: bag-blackblue-below.png
+- src: belt-blackblue-above2.png
   color: 1
   material: 2
-  name: bag-blackblue-side
-  alt: sac vegan homme noir raisin made in france
+  name: belt-blackblue-above2
+  alt: ceinture vegan homme raisin made in france
   availability: false
-- src: bag-blackblue-back.png
-  color: 1
-  material: 2
-  name: bag-blackblue-back
-  alt: sac vegan homme noir raisin made in france
+- src: belt-blackblue-below.png
+  color: 
+  name: belt-blackblue-below
+  alt: ceinture vegan homme noir raisin made in france
+  availability: false
+- src: belt-blackblue-2.png
+  color: 2
+  name: belt-blackblue-2
+  alt: ceinture vegan homme noir raisin made in france
+  availability: false
+- src: belt-blackblue-side.png
+  color: 2
+  name: belt-blackblue-side
+  alt: ceinture vegan noir homme raisin made in france
   availability: false
 attributes:
 - name: Size
@@ -120,8 +117,8 @@ isSimilarTo: shoes
 brand:
   name: Warenghem
 related_articles:
-- first: content/fr-fr/shop/belt-dionysos.md
-  second: content/en-us/shop/wallet-dionysos.md
+- first: []
+  second: []
   third: []
 
 ---

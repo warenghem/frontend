@@ -7,16 +7,13 @@ colors:
   name: Desertic Camel
   icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 - id: 3
-  name: Red
+  name: Rouge
   icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
-- id: 4
-  name: Blue
-  icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 materials:
 - id: 1
-  name: Dionysos® vegetable Wine Leather
+  name: Cuir végétal de vin Dionysos®
   icon: "https://www.louisvuitton.com/images/AEL-LG-C01_taiga"
 - id: 2
-  name: Organic French Linen
+  name: Lin Francais Bio
   icon: "https://www.louisvuitton.com/images/MKG-LG-Monogram-Shadow"
 ---

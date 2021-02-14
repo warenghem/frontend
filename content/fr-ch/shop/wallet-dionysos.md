@@ -1,20 +1,20 @@
 ---
-id: 4
-sku: WAD48NBLB
-name: Dionysos 48H
-slogan: Des vignes et du lin. Tel est son destin.
-description: "<p>Son architecture avant-gardiste regroupant deux pièces a été conçue
-  par nos designers afin qu'il soit léger, souple et toujours prêt pour vous accompagner
-  dans vos déplacements. Les experts du bagage logeront facilement une semaine de
-  vêtements dans son intérieur généreux, aux dimensions de bagage cabine. </p><p>L'intégralité
-  de la confection est réalisée en France dans notre atelier en Anjou spécialisé en
-  haute maroquinerie. Les tranches du cuir sont cirées à la main dans un coloris bleu
-  Bugatti (clair ou foncé).</p>"
+id: 3
+sku: WADWTNB
+name: Portefeuille Dionysos
+slogan: Végétal comme ses feuilles.
+description: "<p>Le portefeuille Dionysos est l'incarnation de l'élégance décontractée.
+  D’un design compact, il est suffisamment fin pour se glisser dans la poche arrière
+  d’un jean. Nos designers ont imaginé des lignes graphiques: deux faces aux fentes
+  symétriques, dont celles de droite représentant le W iconique de la marque.</p><p>Confectionné
+  en France en Anjou au sein de notre atelier spécialisé en haute maroquinerie. Ses
+  cires tranches colorées bleu Bugatti et ses surpiqures fines et régulières affirment
+  le savoir faire Français.</p><p></p>"
 details:
-- Doublure en lin francais Bio
-- Pièces métalliques couleur argentée
-- Double fermeture zippée fabriqué en France
-- Bandoulière amovible, ajustable. Jusqu'a 50cm
+- Sur la gauche, trois emplacements pour cartes
+- Sur la droite, trois compartiments pour cartes de visite, reçus, autres cartes
+- Deux poches horizontales
+- Cire tranche bleu foncé Bugatti
 care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procédé innovant
   qui transforme les fibres du raisin en une matière écologique. </strong></p><p><strong>Il
   a été longuement testé afin qu''il ait les mêmes caractéristiques qu''un cuir traditionnel
@@ -30,9 +30,9 @@ care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procéd�
   toute question relative à votre article, veuillez prendre contact avec nous &lt;a
   href="mailto:hello@warenghem.com"&gt;ici&lt;/a&gt; ou sur les réseaux sociaux.</p>'
 dimensions:
-  length: 54
-  height: 29
-  width: 20
+  length: 10.8
+  height: 1.5
+  width: 9
   unit: cm
 manufacturer: ''
 colors:
@@ -46,9 +46,6 @@ material:
 - id: 1
   name: Cuir végétal de vin Dionysos®
   icon: leather.jpg
-- id: 2
-  name: Lin Francais Bio
-  icon: linen_camel.jpg
 award:
 - name: Made in France
   image: madeinfrance.png
@@ -56,53 +53,49 @@ award:
   image: PETA.png
 offers:
   priceCurrency: EUR
-  price: 390
+  price: 129
   availability: true
   pieces: Disponible prochainement - 30 pièces
 categories:
-- name: Bags
-  slug: bags
-  depth: 2
+- name: ''
+  slug: leathergoods
+  depth: 1
 tags:
-- 48H
 - dionysos
-- bag
+- leathergoods
+- wallet
 image:
-- src: 48H_face.png
-  color: 2
-  material: 1
-  name: bag-blackblue-front
-  alt: sac vegan homme noir raisin made in france
-  availability: true
-- src: 48H_cote.png
+- src: pf-blackblue-side.png
   color: 1
-  material: 2
-  name: 48H_cote
-  alt: 'sac vegan homme noir raisin made in france'
+  name: pf-blackblue-side
+  alt: portefeuille vegan homme noir raisin made in france
   availability: false
-- src: bag-blackblue-deepest.png
-  color: 2
-  material: 1
-  name: bag-blackblue-deepest
-  alt: sac vegan homme noir raisin made in france
-  availability: true
-- src: bag-blackblue-above.png
-  color: 2
-  material: 1
-  name: bag-blackblue-above
-  alt: sac vegan homme raisin made in france
-  availability: true
-- src: bag-blackblue-below.png
-  color: 1
-  material: 2
-  name: bag-blackblue-side
-  alt: sac vegan homme noir raisin made in france
+- src: pf-blackblue-side2.png
+  color: 
+  name: pf-blackblue-side2
+  alt: portefeuille vegan homme noir raisin made in france
   availability: false
-- src: bag-blackblue-back.png
+- src: pf-blackblue-above2.png
+  name: pf-blackblue-above2.png
+  alt: portefeuille vegan homme noir raisin made in france
+  color: 
+  availability: false
+- src: pf-blackblue-back.png
+  name: pf-blackblue-back
+  alt: portefeuille vegan homme noir raisin made in france
+  color: 
+  availability: false
+- src: pf-blackblue-below.png
+  color: 2
+  material: 1
+  name: pf-blackblue-below
+  alt: portefeuille vegan homme noir raisin made in france
+  availability: true
+- src: pf-blackblue-above.png
   color: 1
   material: 2
-  name: bag-blackblue-back
-  alt: sac vegan homme noir raisin made in france
+  name: pf-blackblue-above
+  alt: portefeuille vegan homme noir raisin made in france
   availability: false
 attributes:
 - name: Size
@@ -120,8 +113,8 @@ isSimilarTo: shoes
 brand:
   name: Warenghem
 related_articles:
-- first: content/fr-fr/shop/belt-dionysos.md
-  second: content/en-us/shop/wallet-dionysos.md
+- first: content/fr-fr/shop/bag-dionysos-48h.md
+  second: content/en-us/shop/belt-dionysos.md
   third: []
 
 ---

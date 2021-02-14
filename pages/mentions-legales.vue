@@ -1,63 +1,52 @@
 <template>
-  <div>
-    <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
-      <Backbutton/>
-      <div class="pl-5 d-flex border-left-2">
-        <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
-          {{$t('title')}}
+<body>
+    <div id="app">
+        <div v-for="item in arr" :key="item.mainId">
+            MainId : {{item.mainId}}
+            <p v-for="subitem in item.subItems" :key="subitem.subId">
+                SubItem Name : {{subitem.property.name}}
+                <hr/>
+            </p>
         </div>
-      </div>
-      <v-spacer></v-spacer>
-      <v-tabs
-        v-model="tab"
-        right
-        show-arrows
-      >
-        <v-tabs-slider color="#0081a7"></v-tabs-slider>
-
-        <v-tab
-          v-for="(tab,t_idx) in tabs"
-          :key="t_idx"
-        >
-          {{ tab.menu }}
-        </v-tab>
-      </v-tabs>
-      <v-tabs-items v-model="tab">
-        <v-tab-item
-        >
-          <div
-          >
-            <v-tabs vertical
-              v-for="(sub,s_idx) in tabs.sub"
-              :key="s_idx"
-            >
-              <v-tab>
-                {{ sub.title }}
-              </v-tab>
-              <v-tab-item>
-                <v-card flat>
-                  <v-card-text>
-                    <p>
-                    </p>
-                  </v-card-text>
-                </v-card>
-              </v-tab-item>
-            </v-tabs>
-          </div>
-        </v-tab-item>
-      </v-tabs-items>
-    </v-toolbar-bar>
-  </div>
+    </div>
+</body>
 </template>
 
 <script>
     export default {
         name: 'mentions-legales',
-        data() {
-            return {
-                tabs: this.$t('tabs'),
-            }
+    data: { 
+        arr: [
+        {
+            mainId: 8,
+            subItems: [
+            {
+                subId: 1,
+                property: {
+                    subSubId: 1,
+                    name: 'Name1'
+                }
+            }]
         },
+        {
+            mainId: 5,
+            subItems: [{
+                subId: 2,
+                    property: {
+                        subSubId: 3,
+                        name: 'Name2'
+                    }
+                },
+                {
+                    subId: 3,
+                    property: {
+                        subSubId: 4,
+                        name: 'Name3'
+                    }
+                }
+            ]
+        }]    
+    },
         i18n: {
             messages: {
                 en: {

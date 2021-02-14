@@ -1,5 +1,5 @@
 ---
-title: French article 3
+title: French article 2
 category: web
 cta: discover how
 tags:
@@ -9,7 +9,7 @@ description: 'Empower your NuxtJS application with @nuxt/content module: write i
 media: S048_PF_TEuxOrfV7C_a.png
 
 ---
-
+TRADUCTION
 Isdem diebus Apollinaris Domitiani gener, paulo ante agens palatii Caesaris curam, ad Mesopotamiam missus a socero per militares numeros immodice scrutabatur, an quaedam altiora meditantis iam Galli secreta susceperint scripta, qui conpertis Antiochiae gestis per minorem Armeniam lapsus Constantinopolim petit exindeque per protectores retractus artissime tenebatur.
 
 Quam ob rem circumspecta cautela observatum est deinceps et cum edita montium petere coeperint grassatores, loci iniquitati milites cedunt. ubi autem in planitie potuerint reperiri, quod contingit adsidue, nec exsertare lacertos nec crispare permissi tela, quae vehunt bina vel terna, pecudum ritu inertium trucidantur.
