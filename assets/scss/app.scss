@@ -683,7 +683,7 @@ letter-spacing: .009em;
 }
 
 .text-white {
-  color: white;
+  color: white!important;
 }
 
 .text-lightblue {
@@ -1014,7 +1014,7 @@ letter-spacing: .009em;
   transition: all .1s ease;
 }
 .page-leave-active {
-  transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .page-enter, .page-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {

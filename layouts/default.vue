@@ -16,12 +16,47 @@
     <LazyProductsForm v-if="$store.state.productModal" />
   </v-app>
 </template>
-
+<i18n>
+{
+  "fr": {
+    "title:": "hello title",
+    "description": "hello world!"
+  },
+  "en": {
+    "title": "Hola tital!",
+    "description": "Hola mondial!"
+  }
+}
+</i18n>
 <script>
   export default {
     head () {
-        return this.$nuxtI18nSeo()
-    },
+      const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
+      return {
+        htmlAttrs: {
+          myAttribute: 'My Value',
+          ...i18nHead.htmlAttrs
+        },
+        title: this.$t('title'),
+        meta: [
+          {
+            hid: 'description',
+            name: 'description',
+            content: this.$t('description'),
+          },
+          ...i18nHead.meta
+        ],
+        link: [
+          {
+            hid: 'apple-touch-icon',
+            rel: 'apple-touch-icon',
+            sizes: '180x180',
+            href: '/apple-touch-icon.png'
+          },
+          ...i18nHead.link
+      ]
+      }
+    }
 /*    mounted() {
         if (this.$i18n.getLocaleCookie()) {
             const lang = this.$store.state.langs.items.find(lan => lan.lang === this.$i18n.getLocaleCookie());

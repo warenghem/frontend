@@ -32,7 +32,7 @@
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-2 mx-n1" ref="c2" v-bind="settingsnav" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
+              <VueSlickCarousel class="mt-2" ref="c2" v-bind="settingsnav" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
                 <div
                   v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
@@ -439,6 +439,16 @@
                 }
                 return rc_products;
             },
+            meta() {
+              const metaData = {
+                type: "shop",
+                title: this.product.title,
+                description: this.product.description,
+                url: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
+                mainImage: this.product.image,
+              };
+              return getSiteMeta(metaData);
+            }
         },
         beforeCreate() {
             let rc_products = this.$cookies.get('recent_products');
@@ -479,29 +489,39 @@
             }
         },
         head() {
-            return {
-                htmlAttrs: {
-                    lang: this.$i18n.locale,
-                },
-                meta: [
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: this.product.description,
-                    },
-                    {
-                        property: 'og:title',
-                        hid: 'og:title',
-                        content: this.product.name,
-                    },
-                    {
-                        hid: 'og:image',
-                        property: 'og:image',
-                        content: this.product.image,
-                    },
-                ],
-            };
-        },
+          return {
+            title: this.product.title,
+            meta: [
+              ...this.meta,
+              {
+                property: "product:published_time",
+                content: this.product.createdAt,
+              },
+              {
+                property: "product:modified_time",
+                content: this.product.updatedAt,
+              },
+              {
+                property: "product:tag",
+                content: this.product.tags ? this.product.tags.toString() : "",
+              },
+              { name: "twitter:label1", content: "Written by" },
+              { name: "twitter:data1", content: "Bob Ross" },
+              { name: "twitter:label2", content: "Filed under" },
+              {
+                name: "twitter:data2",
+                content: this.product.tags ? this.product.tags.toString() : "",
+              },
+            ],
+            link: [
+              {
+                hid: "canonical",
+                rel: "canonical",
+                href: `https://www.warenghem.com/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
+              },
+            ],
+          };
+        }
     }
 </script>
 <style lang="scss">

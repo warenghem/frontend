@@ -12,11 +12,22 @@
       <v-card-title class="px-0 pb-0 d-block d-md-flex">
         <div class="d-block d-md-flex">
           <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
-          <v-breadcrumbs dark :items="items">
-            <template v-slot:divider>
-              <v-icon>mdi-forward</v-icon>
+          <!--<v-breadcrumbs class="justify-center" style="margin-bottom:5px" dark :items="crumbs">
+            <template v-slot:item="{ item }">
+              <v-breadcrumbs-item
+                nuxt
+                ripple
+                :disabled="item.disabled"
+              >
+                <a :href="item.to" class="text-white">
+                  {{ item.title }}
+                </a>
+              </v-breadcrumbs-item>
             </template>
-          </v-breadcrumbs>
+            <template v-slot:divider>
+              <v-icon small>{{ svgPath3 }}</v-icon>
+            </template>
+          </v-breadcrumbs>-->
         </div>
         <v-spacer></v-spacer>
 
@@ -73,23 +84,16 @@
   </v-footer>
 </template>
 
-<!--'Home',
-'About Us',
-'Team',
-'Services',
-'Blog',
-'Contact Us',
-v-bind:href="social.url" v-for="social in socials" :key="social"
--->
-
 <script>
+    import startCase from 'lodash.startcase'
     import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
-    import {mdiInstagram, mdiFacebook} from '@mdi/js'
+    import {mdiInstagram, mdiFacebook, mdiChevronRight} from '@mdi/js'
     export default {
         data: () => ({
             LogoSmNp,
             svgPath: mdiInstagram,
             svgPath2: mdiFacebook,
+            svgPath3: mdiChevronRight,
             links: [
                 {title: "HOME", url: "/"},
             ],

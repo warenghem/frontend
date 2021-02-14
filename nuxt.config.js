@@ -1,3 +1,5 @@
+import getSiteMeta from "./utils/getSiteMeta";
+const meta = getSiteMeta();
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
 
@@ -6,14 +8,31 @@ export default {
   target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
   head: {
-    titleTemplate: '%s - App',
-    title: 'Warenghem',
+    titleTemplate: '%s - ' + ' | Warenghem App',
+    title: 'Somewhere...',
     meta: [
-      {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: ''}
+      ...meta,
+      { charset: "utf-8" },
+      { name: "HandheldFriendly", content: "True" },
+      { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { property: "og:site_name", content: "Bob Ross" },
+      {
+        hid: "description",
+        name: "description",
+        content:
+          "Articles focused on the beautiful art of landscape painting.",
+      },
+      { property: "og:image:width", content: "740" },
+      { property: "og:image:height", content: "300" },
+      { name: "twitter:site", content: "@bobross" },
+      { name: "twitter:card", content: "summary_large_image" },
     ],
     link: [
+      {
+        hid: "canonical",
+        rel: "canonical",
+        href: process.env.BASE_URL,
+      },
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: "preconnect", href: "https://ik.imagekit.io", crossorigin: true},
       {rel: "preconnect", href: "https://app.snipcart.com", crossorigin: true},
@@ -50,8 +69,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    // {src: '~/plugins/init', ssr: true},
-    // {src: '~/plugins/i18n.client', ssr: true},
+    '~/plugins/router',
     {src: '~/plugins/lazysizes', ssr: false},
   ],
 
@@ -113,6 +131,7 @@ export default {
     vueI18nLoader: true,
     langDir: 'locales/',
     defaultLocale: 'fr-fr',
+    skipSettingLocaleOnNavigate: true,
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
@@ -498,16 +517,13 @@ export default {
   sitemap: {
     path: '/sitemapindex.xml',
     hostname: 'https://www.warenghem.com',
-    exclude: [
-      /^\/filter/ 
-    ],
     i18n: true,
     gzip: true,
     routes: async () => {
       const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).only(['path']).fetch()
+      const files = await $content({ deep: true }).only(['path']).where({ slug: { $ne: 'type' } }).fetch()
       return files.map(file => file.path === '/index' ? '/' : file.path)
-    }
+    },
   },
 
   googleAnalytics: {
@@ -568,15 +584,10 @@ export default {
     },
   },
   generate: {
-    exclude: [
-      /^\/filter/ 
-    ],
     async routes () {
       const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).only(['path']).fetch()
+      const files = await $content({ deep: true }).where({ slug: { $ne: 'type' } }).only(['path']).fetch()
       return files.map(file => file.path === '/index' ? '/' : file.path)
-    }
+    },
   },
-  router: {
-  }
 }

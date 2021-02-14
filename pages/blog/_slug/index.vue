@@ -74,31 +74,52 @@
               return new Date(date).toLocaleDateString(`${this.$i18n.locale}`, options)
             }
         },
-        head() {
-            return {
-                title: this.post.title,
-                htmlAttrs: {
-                    lang: this.$i18n.locale,
-                },
-                meta: [
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: this.post.description,
-                    },
-                    {
-                        property: 'og:title',
-                        hid: 'og:title',
-                        content: this.post.title,
-                    },
-                    {
-                        hid: 'og:image',
-                        property: 'og:image',
-                        content: this.post.media,
-                    },
-                ],
+        computed: {
+          meta() {
+            const metaData = {
+              type: "blog",
+              title: this.post.title,
+              description: this.post.description,
+              url: `${this.$config.baseUrl}/${this.$i18n.locale}/blog/${this.$route.params.slug}`,
+              mainImage: this.post.image,
             };
+            return getSiteMeta(metaData);
+          }
         },
+        head() {
+          return {
+            title: this.post.title,
+            meta: [
+              ...this.meta,
+              {
+                property: "post:published_time",
+                content: this.post.createdAt,
+              },
+              {
+                property: "post:modified_time",
+                content: this.post.updatedAt,
+              },
+              {
+                property: "post:tag",
+                content: this.post.tags ? this.post.tags.toString() : "",
+              },
+              { name: "twitter:label1", content: "Written by" },
+              { name: "twitter:data1", content: "Bob Ross" },
+              { name: "twitter:label2", content: "Filed under" },
+              {
+                name: "twitter:data2",
+                content: this.post.tags ? this.post.tags.toString() : "",
+              },
+            ],
+            link: [
+              {
+                hid: "canonical",
+                rel: "canonical",
+                href: `https://www.warenghem.com/${this.$i18n.locale}/blog/${this.$route.params.slug}`,
+              },
+            ],
+          };
+        }
     }
 /*
     export default {

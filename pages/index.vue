@@ -29,12 +29,17 @@
 
   export default {
       name: 'default',
-      transition(to, from) {
+      /*transition(to, from) {
         if (!from) {
-          return 'slide-left' /* don't work */
+          return 'slide-left'  don't work 
         }
-        return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left' /* slide-right don't work */
+        return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left' slide-right don't work 
       },
+      transition: {
+        beforeEnter() {
+          this.$i18n.finalizePendingLocaleChange()
+        }
+      }*/
       methods: {
           hideModal() {
               document.querySelector('.indianforest').classList.remove('active');
