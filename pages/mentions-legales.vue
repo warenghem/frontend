@@ -1,52 +1,28 @@
 <template>
-<body>
-    <div id="app">
-        <div v-for="item in arr" :key="item.mainId">
-            MainId : {{item.mainId}}
-            <p v-for="subitem in item.subItems" :key="subitem.subId">
-                SubItem Name : {{subitem.property.name}}
-                <hr/>
-            </p>
-        </div>
-    </div>
-</body>
+  <div id="app">
+    <v-tabs v-model="activeClass" slider-color="blue">
+      <v-tab v-for="n in classTypes" :key="n.id" ripple>{{ n.text }}</v-tab>
+      <v-tab-item v-for="(n, index) in classTypes" :key="n.id">
+        <v-tabs v-model="activeTab[index]" slider-color="blue" v-if="activeClass === index">
+          <v-tab>First child</v-tab>
+          <v-tab>Second child</v-tab>
+        </v-tabs>
+      </v-tab-item>
+    </v-tabs>
+  </div>
+
 </template>
 
 <script>
     export default {
         name: 'mentions-legales',
-    data: { 
-        arr: [
-        {
-            mainId: 8,
-            subItems: [
-            {
-                subId: 1,
-                property: {
-                    subSubId: 1,
-                    name: 'Name1'
-                }
-            }]
-        },
-        {
-            mainId: 5,
-            subItems: [{
-                subId: 2,
-                    property: {
-                        subSubId: 3,
-                        name: 'Name2'
-                    }
-                },
-                {
-                    subId: 3,
-                    property: {
-                        subSubId: 4,
-                        name: 'Name3'
-                    }
-                }
-            ]
-        }]    
-    },
+  data() {
+    return {
+      classTypes: [{ id: 1, text: "First" }, { id: 2, text: "Second" }],
+      activeClass: "1",
+      activeTab: []
+    };
+  },
         i18n: {
             messages: {
                 en: {
@@ -66,20 +42,9 @@
                 fr: {
                     title: "Mentions Légales",
                     description: "Cette Politique de Protection des Données (la « Politique ») décrit comment Louis Vuitton Malletier SAS, société de droit français dont le siège social est situé 2 rue du Pont Neuf, 75001 Paris, France, et/ou ses sociétés affiliées (« LV ») traitent, en qualité de responsable de traitement, les données à caractère personnel de leurs clients et prospects (« Vous », « Votre », « Vos ») afin de Vous fournir la meilleur expérience client possible. Vous pouvez obtenir le nom et l’adresse de l’entité Louis Vuitton responsable du traitement dans votre juridiction en cliquant ici. Louis Vuitton Malletier et/ou Votre entité Louis Vuitton responsable localement ( « Nous », « Notre », ou « Nos ») collecte, conserve, traite, utilise et communique des données à caractère personnel vous concernant lorsque Vous utilisez les sites internet et applications mobiles LV, Nos produits connectés (si et lorsque celles-ci sont disponibles), ou lorsque Vous visitez Nos pages sur les réseaux sociaux, ou que Vous vous rendez dans l’un de Nos magasins Louis Vuitton dans Votre pays/région.",
-                    tabs: [
-                      {
-                        menu: "Politique de protection des données",
-                        sub: [{ title: 'SubItem Item 1-1'}, { title: 'SubItem Item 1-2'}],
-                      },
-                      {
-                        menu: "Confitions générales de ventes",
-                        sub: [{ title: 'SubItem Item 1-1'}, { title: 'SubItem Item 1-2'}],
-                      },
-                      {
-                        menu: "Mentions Légales",
-                        sub: [{ title: 'SubItem Item 1-1'}, { title: 'SubItem Item 1-2'}],
-                      }
-                    ],
+                    classTypes: [{ id: 1, text: "First" }, { id: 2, text: "Second" }],
+                    activeClass: "1",
+                    activeTab: []
                 },
             }
         },
