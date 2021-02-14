@@ -23,7 +23,6 @@
                 >
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <img
-                      v-if="productImages.length > 0"
                       :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ img.src +' 2500w,'"
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/Products/'+ img.src"
                       class="lazyload mediabox-img"
@@ -210,7 +209,7 @@
           </div>
         </v-col>
       </v-row>
-      <v-row class="border-top-2 ma-0 px-0 pvw d-none">
+      <!--<v-row class="border-top-2 ma-0 px-0 pvw d-none">
         <v-col cols="12" class="pa-0">
           <div class="sub-title text-center pb-10">{{$t('product.like')}}</div>
         </v-col>
@@ -268,7 +267,7 @@
             </v-tab-item>
           </v-tabs>
         </v-col>
-      </v-row>
+      </v-row>-->
     </v-container>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
@@ -295,6 +294,7 @@
     import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiPackageVariantClosed } from '@mdi/js'
     // import "viewerjs/dist/viewer.css";
     Vue.component('foldable', VueFoldable);
+    import getSiteMeta from '@/utils/getSiteMeta';
 
     export default {
         name: 'post',
@@ -415,7 +415,7 @@
                     return this.productItem.image
                 }
             },
-            recommendedProducts() {
+            /*recommendedProducts() {
                 var tags = this.productItem.tags.map(tag => {
                     return tag.name
                 });
@@ -438,7 +438,7 @@
                     });
                 }
                 return rc_products;
-            },
+            },*/
             meta() {
               const metaData = {
                 type: "shop",
@@ -450,7 +450,7 @@
               return getSiteMeta(metaData);
             }
         },
-        beforeCreate() {
+        /*beforeCreate() {
             let rc_products = this.$cookies.get('recent_products');
             if (rc_products.length > 0) {
                 this.$store.commit('product/initRecentProduct', rc_products);
@@ -458,7 +458,7 @@
         },
         created() {
             this.$store.dispatch('product/setRecentProducts', this.product.id);
-        },
+        },*/
         mounted() {
             this.colorSelect()
         },

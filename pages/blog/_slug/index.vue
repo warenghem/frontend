@@ -57,6 +57,7 @@
 </template>
 
 <script>
+    import getSiteMeta from '@/utils/getSiteMeta';
     export default {
         name: 'post',
         transition: 'home',

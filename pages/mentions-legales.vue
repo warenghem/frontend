@@ -1,35 +1,52 @@
 <template>
   <div>
-    <TabBar/>
-    <v-tabs-items v-model="tab">
-      <v-tab-item
+    <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
+      <Backbutton/>
+      <div class="pl-5 d-flex border-left-2">
+        <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
+          {{$t('title')}}
+        </div>
+      </div>
+      <v-spacer></v-spacer>
+      <v-tabs
+        v-model="tab"
+        right
+        show-arrows
+      >
+        <v-tabs-slider color="#0081a7"></v-tabs-slider>
+
+        <v-tab
           v-for="(tab,t_idx) in tabs"
           :key="t_idx"
-      >
-        <div>
-          <div class="teradeli-medium">
-            {{$t('title')}}
+        >
+          {{ tab.menu }}
+        </v-tab>
+      </v-tabs>
+      <v-tabs-items v-model="tab">
+        <v-tab-item
+        >
+          <div
+          >
+            <v-tabs vertical
+              v-for="(sub,s_idx) in tabs.sub"
+              :key="s_idx"
+            >
+              <v-tab>
+                {{ sub.title }}
+              </v-tab>
+              <v-tab-item>
+                <v-card flat>
+                  <v-card-text>
+                    <p>
+                    </p>
+                  </v-card-text>
+                </v-card>
+              </v-tab-item>
+            </v-tabs>
           </div>
-          <div class="a">
-            {{$t('description')}}
-          </div>
-          <v-tabs vertical>
-            <v-tab>
-              {{ tab.menu }}
-            </v-tab>
-            <v-tab-item>
-              <v-card flat>
-                <v-card-text>
-                  <p>
-                    {{ tab.description }}
-                  </p>
-                </v-card-text>
-              </v-card>
-            </v-tab-item>
-          </v-tabs>
-        </div>
-      </v-tab-item>
-    </v-tabs-items>
+        </v-tab-item>
+      </v-tabs-items>
+    </v-toolbar-bar>
   </div>
 </template>
 
@@ -61,15 +78,19 @@
                     title: "Mentions Légales",
                     description: "Cette Politique de Protection des Données (la « Politique ») décrit comment Louis Vuitton Malletier SAS, société de droit français dont le siège social est situé 2 rue du Pont Neuf, 75001 Paris, France, et/ou ses sociétés affiliées (« LV ») traitent, en qualité de responsable de traitement, les données à caractère personnel de leurs clients et prospects (« Vous », « Votre », « Vos ») afin de Vous fournir la meilleur expérience client possible. Vous pouvez obtenir le nom et l’adresse de l’entité Louis Vuitton responsable du traitement dans votre juridiction en cliquant ici. Louis Vuitton Malletier et/ou Votre entité Louis Vuitton responsable localement ( « Nous », « Notre », ou « Nos ») collecte, conserve, traite, utilise et communique des données à caractère personnel vous concernant lorsque Vous utilisez les sites internet et applications mobiles LV, Nos produits connectés (si et lorsque celles-ci sont disponibles), ou lorsque Vous visitez Nos pages sur les réseaux sociaux, ou que Vous vous rendez dans l’un de Nos magasins Louis Vuitton dans Votre pays/région.",
                     tabs: [
-                        {
-                            menu: 'ARTICLE PRÉLIMINAIRE',
-                            description: 'La société des magasins Louis Vuitton - France (ci-après dénommée " Louis Vuitton") commercialise les articles Louis Vuitton en France. Soucieuse de toujours mieux répondre aux attentes de ses clients, Louis Vuitton a souhaité mettre en place, parallèlement au réseau de magasins',
-                        },
-                        {
-                            menu: 'ARTICLE 1 : CHAMP APPLICATION',
-                            description: 'Ces Conditions Générales de Vente sont applicables à toutes les ventes',
-                        },
-                    ]
+                      {
+                        menu: "Politique de protection des données",
+                        sub: [{ title: 'SubItem Item 1-1'}, { title: 'SubItem Item 1-2'}],
+                      },
+                      {
+                        menu: "Confitions générales de ventes",
+                        sub: [{ title: 'SubItem Item 1-1'}, { title: 'SubItem Item 1-2'}],
+                      },
+                      {
+                        menu: "Mentions Légales",
+                        sub: [{ title: 'SubItem Item 1-1'}, { title: 'SubItem Item 1-2'}],
+                      }
+                    ],
                 },
             }
         },
