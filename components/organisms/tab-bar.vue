@@ -7,20 +7,25 @@
         </div>
       </div>
       <v-spacer></v-spacer>
-      <v-tabs
-        v-model="tab"
-        right
-        show-arrows
-      >
-        <v-tabs-slider color="#0081a7"></v-tabs-slider>
-
-        <v-tab
-          v-for="(tab,t_idx) in tabs"
-          :key="t_idx"
+        <v-tabs
+            v-model="tab"
+            background-color="deep-purple accent-4"
+            centered
+            dark
+            icons-and-text
         >
-          {{ tab.menu }}
-        </v-tab>
-      </v-tabs>
+            <v-tabs-slider></v-tabs-slider>
+
+            <v-tab href="#protection">
+                Subscribe
+                <v-icon>mdi-phone</v-icon>
+            </v-tab>
+
+            <v-tab href="#contact">
+                Contact
+                <v-icon>mdi-heart</v-icon>
+            </v-tab>
+        </v-tabs>
     </v-toolbar-bar>
 </template>
 
@@ -30,40 +35,46 @@ export default {
         name: "calender-section",
         data() {
             return {
-                tabs: this.$t('tabs'),
+                tab: "subscribe"
             }
         },
 }
 </script>
 <i18n>
 {
-	"fr": {
-		"tabs": [
-			{
-				"menu": "Politique de protection des données"
-			},
-			{
-				"menu": "Confitions générales de ventes"
-			},
-			{
-				"menu": "Mentions Légales"
-			}
-		],
-		"title": "Mentions Légales"
-	},
 	"en": {
 		"tabs": [
 			{
+				"href": "protection",
 				"menu": "Data protection policy"
 			},
 			{
+				"href": "protection",
 				"menu": "General sales conditions"
 			},
 			{
+				"href": "protection",
 				"menu": "Legal Notice"
 			}
 		],
 		"title": "Legal Notice"
+	},
+	"fr": {
+		"tabs": [
+			{
+				"href": "#protection",
+				"menu": "Politique de protection des données"
+			},
+			{
+				"href": "#conditions",
+				"menu": "Conditions générales de ventes"
+			},
+			{
+				"href": "#mentions",
+				"menu": "Mentions Légales"
+			}
+		],
+		"title": "Mentions Légales"
 	}
 }
 </i18n>

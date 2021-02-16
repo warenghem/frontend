@@ -129,21 +129,6 @@
 </script>
 <i18n>
 {
-	"fr": {
-		"video": {
-			"rightSection": {
-				"alerttime": "maintenant",
-				"alerttitle": "Warenghem dit",
-				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
-				"label1": "PRENOM ",
-				"label2": "EMAIL",
-				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
-				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
-				"tag": "Création <br> d’objets en 3D",
-				"title": "Avancement du projet"
-			}
-		}
-	},
 	"en": {
 		"video": {
 			"rightSection": {
@@ -156,6 +141,21 @@
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
 				"title": "Project progress"
+			}
+		}
+	},
+	"fr": {
+		"video": {
+			"rightSection": {
+				"alerttime": "maintenant",
+				"alerttitle": "Warenghem dit",
+				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
+				"label1": "PRENOM ",
+				"label2": "EMAIL",
+				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
+				"tag": "Création <br> d’objets en 3D",
+				"title": "Avancement du projet"
 			}
 		}
 	}

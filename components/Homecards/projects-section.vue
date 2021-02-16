@@ -55,15 +55,15 @@
 {
 	"en": {
 		"btnDiscover": "I subscribe",
+		"shoes": "Dionysos Boots",
 		"subtitle": "Participate soon in their creations",
-		"title": "Upcoming objects",
-        "shoes": "Dionysos Boots"
+		"title": "Upcoming objects"
 	},
 	"fr": {
 		"btnDiscover": "Je m'abonne",
+		"shoes": "Bottines Dionysos",
 		"subtitle": "Participez bientôt à leur création",
-		"title": "Objets à venir",
-        "shoes": "Bottines Dionysos"
+		"title": "Objets à venir"
 	}
 }
 </i18n>

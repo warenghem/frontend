@@ -37,15 +37,15 @@
 </script>
 <i18n>
 {
-	"fr": {
-		"term1": "arbres plantés",
-		"term2": "CO2 compensées",
-		"term3": "Ha reforestés"
-	},
 	"en": {
 		"term1": "planted trees",
 		"term2": "CO2 compensated",
 		"term3": "Ha reforested"
+	},
+	"fr": {
+		"term1": "arbres plantés",
+		"term2": "CO2 compensées",
+		"term3": "Ha reforestés"
 	}
 }
 </i18n>

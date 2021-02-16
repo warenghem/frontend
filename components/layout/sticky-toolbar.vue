@@ -29,16 +29,6 @@
                   <div style="fill: #19110b;stroke: #19110b;width:35px" v-html="LogoSmSm" />
                 </nuxt-link>
             </v-toolbar-title>
-            <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
-                            :key="'link_btn_l_'+l_idx">
-              <v-btn text class="text-uppercase item"
-                    :class="{'current':$root.currentId===link.elId}"
-                    :to="'/'+$i18n.locale+link.elId" nuxt
-                    v-if="link.position==='left'"
-              >
-                {{$t(link.name)}}
-              </v-btn>
-            </v-toolbar-items>
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>

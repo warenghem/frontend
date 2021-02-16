@@ -55,23 +55,23 @@
         no-gutters
       >
         <v-btn
-          v-for="link in links" :key="link.title"
-          color="white"
-          text
-          rounded
-          class="my-2 d-none"
-          :to="link.url" nuxt
-        >
-          {{ link.title }}
-        </v-btn>
-        <v-btn
           color="white"
           text
           rounded
           class="my-2"
           @click="$store.state.plantModal=true"
         >
-          NEWSLETTER
+          Newsletter
+        </v-btn>
+        <v-btn
+          v-for="link in links" :key="link.title"
+          color="white"
+          text
+          rounded
+          class="my-2"
+          :to="link.url" nuxt
+        >
+          {{ link.title }}
         </v-btn>
       </v-row>
 
@@ -85,23 +85,34 @@
 </template>
 
 <script>
-    import startCase from 'lodash.startcase'
     import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
     import {mdiInstagram, mdiFacebook, mdiChevronRight} from '@mdi/js'
     export default {
-        data: () => ({
-            LogoSmNp,
-            svgPath: mdiInstagram,
-            svgPath2: mdiFacebook,
-            svgPath3: mdiChevronRight,
-            links: [
-                {title: "HOME", url: "/"},
-            ],
-            items: [],
-            socials: [
-                {name: "instagram", icon: "'svgPath'", url: "https://www.instagram.com/warenghem.studios/"},
-                {name: "facebook", icon: "'svgPath2'", url: "https://www.facebook.com/warenghem.studios/"},
-            ],
-        }),
-    }
+      data: function () {
+          return {
+                  LogoSmNp,
+                  svgPath: mdiInstagram,
+                  svgPath2: mdiFacebook,
+                  svgPath3: mdiChevronRight,
+                  links: [
+                      {title: this.$i18n.t('protection'), url: "/legal/"},
+                  ],
+                  items: [],
+                  socials: [
+                      {name: "instagram", icon: "'svgPath'", url: "https://www.instagram.com/warenghem.studios/"},
+                      {name: "facebook", icon: "'svgPath2'", url: "https://www.facebook.com/warenghem.studios/"},
+                  ],
+              };
+          }
+      }
 </script>
+<i18n>
+{
+	"en": {
+		"protection": "Legal notices and Data policy"
+	},
+	"fr": {
+		"protection": "Mentions légales et Données personnelles"
+	}
+}
+</i18n>

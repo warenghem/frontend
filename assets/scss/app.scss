@@ -22,6 +22,9 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .v-tabs-bar {
   height: 100%!important;
 }
+.v-tabs-items {
+  background-color: inherit!important;
+}
 .v-toolbar__content {
   padding: 0!important;
 }
