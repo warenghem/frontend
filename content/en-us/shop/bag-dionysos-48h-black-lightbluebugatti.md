@@ -1,39 +1,49 @@
 ---
-id: 4
-sku: WAD48NBLB
+id: 1
+sku: WAD48NB
 name: Dionysos 48H
-slogan: Vines and flax. Such is his destiny.
-description: "<p>Its avant-garde architecture grouping together two pieces has been
-  designed by our designers to be light, flexible and always ready to accompany you
-  on your travels. The luggage experts will easily fit a week's worth of clothing
-  in its generous interior, the size of cabin luggage. All the clothing is made in
-  France in our workshop in Anjou specializing in fine leather goods. The edges of
-  the leather are hand-waxed in a Bugatti blue color (light or dark).</p>"
+slogan: Des vignes et du lin. Tel est son destin.
+description: "<p>Son architecture avant-gardiste regroupant deux pièces a été conçue
+  par nos designers afin qu'il soit léger, souple et toujours prêt pour vous accompagner
+  dans vos déplacements. Les experts du bagage logeront facilement une semaine de
+  vêtements dans son intérieur généreux, aux dimensions de bagage cabine. </p><p>L'intégralité
+  de la confection est réalisée en France dans notre atelier en Anjou spécialisé en
+  haute maroquinerie. Les tranches du cuir sont cirées à la main dans un coloris bleu
+  Bugatti (clair ou foncé).</p>"
 details:
-- Cabin size
-- Organic French linen lining
-- Metallic pieces in silver color
-- Dark Bugatti blue slice wax
-- Double zipped closure made in France
-- Removable, adjustable shoulder strap. Up to 50cm
-care: '<p><strong>Our Dionysos® wine leather is produced using an innovative process
-  that transforms the fibers of the grape into an ecological material.</strong></p><p><strong>It
-  has been extensively tested so that it has the same characteristics as traditional
-  leather:</strong></p><ul><li><p><strong>Mechanical: high resistance and total impermeability</strong></p></li><li><p><strong>Aesthetics:
-  fine and harmonious grain</strong></p></li><li><p><strong>Sensory: soft and pleasant
-  to the touch, odorless</strong></p></li></ul><p><strong>Unlike animal leather, it
-  does not require maintenance.</strong></p><p>But to preserve the beauty of this
-  item over the years, we recommend that you:</p><ul><li><p>Be careful not to scratch
-  or rub your item against abrasive surfaces, especially leather finishes.</p></li><li><p>Protect
-  your item from excessive moisture and keep it away from direct sources of heat.</p></li><li><p>Gently
-  clean the canvas with a soft cloth dampened with slightly soapy water.</p></li></ul><p>For
-  any questions regarding your article, please contact us by email <a href="mailto:hello@warenghem.com"
-  title="Here" target="_blank">here</a> or on social networks.</p>'
+- Doublure en lin francais Bio
+- Pièces métalliques couleur argentée
+- Double fermeture zippée fabriqué en France
+- Bandoulière amovible, ajustable. Jusqu'a 50cm
+care: "<p><strong>Notre cuir de vin Dionysos</strong>®<strong> a été longuement testé.
+  Produit grâce à un procédé innovant qui transforme les fibres du raisin en une matière
+  écologique ayant les mêmes caractéristiques mécaniques, esthétiques et sensorielles
+  qu'un cuir traditionnel et - <em>a contrario </em>- ne demandant que peu d'entretien.</strong></p><p>Mais
+  pour préserver au fil des ans la beauté de cet article, nous vous recommandons de
+  suivre ces conseils :</p><ul><li><p>Veillez à ne pas érafler ou frotter votre article
+  contre des surfaces abrasives, en particulier les finitions en cuir.</p></li><li><p>Nous
+  vous conseillons de protéger votre article de l’humidité et de le maintenir à l’abri
+  des sources directes de chaleur, comme les radiateurs et l’habitacle des voitures
+  en été.</p></li><li><p>Évitez de mettre votre article en contact avec des liquides,
+  de la crème et du désinfectant pour les mains, du maquillage et du parfum.</p></li><li><p>Pour
+  nettoyer votre article, essuyez délicatement la toile avec un chiffon doux imbibé
+  d’eau légèrement savonneuse.</p></li><li><p>Quand vous ne vous en servez pas, rangez
+  l’article dans la feutrine fournie lors de l’achat. Nous vous conseillons de le
+  conserver à l’abri des températures élevées, de l’humidité excessive ou des zones
+  non ventilées.</p></li></ul><p>Pour toute question relative à votre article, veuillez
+  prendre contact avec nous.</p><p><strong>Caractéristiques écologiques :</strong></p><p>Environ
+  27 milliards de litres de vin sont produits dans le monde chaque année, dont une
+  énorme quantité de matière qui ne se retrouve pas dans une bouteille. Ces restes
+  de l'industrie du vin peuvent être transformées en matière première à haute valeur
+  ajoutée.</p><p>Contrairement au cuir traditionnel, elle n'a pas besoin d'eau ni
+  de processus de tannage toxique responsables de la pollution des sols et des eaux
+  pour être produite. N’a aucun impact sur les écosystèmes, et évidemment n'engendre
+  aucune souffrance animale.</p>"
 dimensions:
-  length: 21
-  height: 11
-  width: 8
-  unit: inches
+  length: 54
+  height: 29
+  width: 20
+  unit: cm
 manufacturer: ''
 colors:
 - id: 1
@@ -44,10 +54,10 @@ colors:
   icon: leather.jpg
 material:
 - id: 1
-  name: Dionysos® vegetable Wine Leather
+  name: Cuir végétal de vin Dionysos®
   icon: leather.jpg
 - id: 2
-  name: Organic French Linen
+  name: Lin Francais Bio
   icon: linen_camel.jpg
 award:
 - name: Made in France
@@ -58,7 +68,7 @@ offers:
   priceCurrency: EUR
   price: 390
   availability: true
-  pieces: Available soon - 30 pieces
+  pieces: Disponible prochainement - 30 pièces
 categories:
 - name: Bags
   slug: bags
@@ -71,38 +81,38 @@ image:
 - src: 48H_face.png
   color: 2
   material: 1
-  name: 48H_face
-  alt: vegan bag man black grape made in france
+  name: bag-blackblue-front
+  alt: sac vegan homme noir raisin made in france
   availability: true
 - src: 48H_cote.png
   color: 1
   material: 2
-  name: 48H_cote.png
-  alt: vegan bag man black grape made in france
+  name: 48H_cote
+  alt: 'sac vegan homme noir raisin made in france'
   availability: false
 - src: bag-blackblue-deepest.png
   color: 2
   material: 1
   name: bag-blackblue-deepest
-  alt: vegan bag man black grape made in france
+  alt: sac vegan homme noir raisin made in france
   availability: true
 - src: bag-blackblue-above.png
   color: 2
   material: 1
   name: bag-blackblue-above
-  alt: vegan bag man black grape made in france
+  alt: sac vegan homme raisin made in france
   availability: true
 - src: bag-blackblue-below.png
   color: 1
   material: 2
   name: bag-blackblue-side
-  alt: vegan bag man black grape made in france
+  alt: sac vegan homme noir raisin made in france
   availability: false
 - src: bag-blackblue-back.png
   color: 1
   material: 2
   name: bag-blackblue-back
-  alt: vegan bag man black grape made in france
+  alt: sac vegan homme noir raisin made in france
   availability: false
 attributes:
 - name: Size
