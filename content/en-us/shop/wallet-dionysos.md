@@ -9,19 +9,20 @@ details:
 - On the right, three compartments for business cards, receipts, other cards
 - Two horizontal pockets
 - Dark Bugatti blue slice wax
-care: '<p><strong>Our Dionysos® wine leather is produced using an innovative process
-  that transforms the fibers of the grape into an ecological material.</strong></p><p><strong>It
-  has been extensively tested so that it has the same characteristics as traditional
-  leather:</strong></p><ul><li><p><strong>Mechanical: high resistance and total impermeability</strong></p></li><li><p><strong>Aesthetics:
-  fine and harmonious grain</strong></p></li><li><p><strong>Sensory: soft and pleasant
-  to the touch, odorless</strong></p></li></ul><p><strong>Unlike animal leather, it
-  does not require maintenance.</strong></p><p>But to preserve the beauty of this
-  item over the years, we recommend that you:</p><ul><li><p>Be careful not to scratch
-  or rub your item against abrasive surfaces, especially leather finishes.</p></li><li><p>Protect
-  your item from excessive moisture and keep it away from direct sources of heat.</p></li><li><p>Gently
-  clean the canvas with a soft cloth dampened with slightly soapy water.</p></li></ul><p>For
-  any questions regarding your article, please contact us by email <a href="mailto:hello@warenghem.com"
-  title="Here" target="_blank">here</a> or on social networks.</p>'
+care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procédé innovant
+  qui transforme les fibres du raisin en une matière écologique.</strong></p><p><strong>Il
+  a été longuement testé afin qu''il ait les mêmes caractéristiques qu''un cuir traditionnel
+  :</strong></p><ul><li><p><strong>Mécaniques : forte résistance et imperméabilité
+  totale</strong></p></li><li><p><strong>Esthétiques : grain fin et harmonieux</strong></p></li><li><p><strong>Sensorielles
+  : touché doux et agréable, sans odeur</strong></p></li></ul><p><strong>Contrairement
+  au cuir animal, il ne demande pas d''entretien.</strong></p><p>Mais pour préserver
+  au fil des ans la beauté de cet article, nous vous recommandons :</p><ul><li><p>De
+  veillez à ne pas érafler ou frotter votre article contre des surfaces abrasives,
+  en particulier les finitions en cuir.</p></li><li><p>De protéger votre article de
+  l’humidité excessive et de le maintenir à l’abri des sources directes de chaleur.</p></li><li><p>De
+  nettoyer délicatement la toile avec un chiffon doux imbibé d’eau légèrement savonneuse.</p></li></ul><p>Pour
+  toute question relative à votre article, veuillez prendre contact avec nous <a href="mailto:hello@warenghem.com"
+  title="mail">ici</a> ou sur les réseaux sociaux.</p>'
 dimensions:
   length: 10.8
   height: 1.5
