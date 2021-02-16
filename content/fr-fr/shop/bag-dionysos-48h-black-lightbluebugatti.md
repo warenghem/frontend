@@ -78,7 +78,7 @@ image:
   color: 1
   material: 2
   name: 48H_cote
-  alt: 'sac vegan homme noir raisin made in france'
+  alt: sac vegan homme noir raisin made in france
   availability: false
 - src: bag-blackblue-deepest.png
   color: 2
