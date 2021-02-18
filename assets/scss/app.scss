@@ -546,7 +546,7 @@ body {
 }
 
 .opacity-02 {
-  opacity: 0.2 !important;
+  opacity: 0 !important;
 }
 
 .absolute-title {
@@ -849,7 +849,7 @@ letter-spacing: .009em;
     left: 0;
     bottom: 0;
     z-index: 1;
-    opacity: 0.3 !important;
+    opacity: 0.5 !important;
   }
 }
 
@@ -893,9 +893,9 @@ letter-spacing: .009em;
   .menu-bar {
     background: transparent !important;
     border-bottom: none!important;
-    @media(min-width: 961px) {
+    /*@media(min-width: 961px) {
       border-bottom: solid 1px rgba(255,255,255,0.4)!important;
-    }
+    }*/
     .brand {
       filter: brightness(0) invert(1);
     }
@@ -913,11 +913,11 @@ letter-spacing: .009em;
     }
   }
 }
-.BgTransparent .theme--dark .menu-bar {
+/*.BgTransparent .theme--dark .menu-bar {
   @media(min-width: 961px) {
     border-bottom: solid 1px #c0c0c080!important;
   }
-}
+}*/
 .homecard {
   height: 28rem!important;
   @media (min-width: 48em) {
@@ -1017,7 +1017,7 @@ letter-spacing: .009em;
   transition: all .1s ease;
 }
 .page-leave-active {
-  transition: all .2s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+  transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .page-enter, .page-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {

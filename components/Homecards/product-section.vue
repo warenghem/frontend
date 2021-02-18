@@ -32,7 +32,7 @@
                                 </div>
                                 <div class="pvw text-center">
                                     <h2 class="page-title teradeli-medium px-0">{{product.title}}</h2>
-                                    <div class="py-2 page-subtitle"> {{product.summary}}</div>
+                                    <div class="pt-2 page-subtitle"> {{product.summary}}</div>
                                     <v-text
                                         :class="disabled[p_idx]"
                                         style="z-index:2"

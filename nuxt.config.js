@@ -7,25 +7,31 @@ export default {
   // Target (https://go.nuxtjs.dev/config-target)
   target: 'static',
   // Global page headers (https://go.nuxtjs.dev/config-head)
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
+  },
+  publicRuntimeConfig: {
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+  },
   head: {
-    titleTemplate: '%s - ' + ' | Warenghem App',
+    titleTemplate: '%s' + ' | Warenghem App',
     title: 'Somewhere...',
     meta: [
       ...meta,
       { charset: "utf-8" },
       { name: "HandheldFriendly", content: "True" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { property: "og:site_name", content: "Bob Ross" },
+      { property: "og:site_name", content: "Warenghem Studios" },
       {
         hid: "description",
         name: "description",
         content:
-          "Articles focused on the beautiful art of landscape painting.",
+          "À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com'",
       },
       { property: "og:image:width", content: "740" },
       { property: "og:image:height", content: "300" },
-      { name: "twitter:site", content: "@bobross" },
-      { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:site", content: "@warenghem.studios" },
+      { name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1200,ar-1.91-1,dpr-2/AllMountain.jpeg" },
     ],
     link: [
       {
@@ -69,7 +75,7 @@ export default {
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
-    '~/plugins/router',
+    /*'~/plugins/router',*/
     {src: '~/plugins/lazysizes', ssr: false},
   ],
 
@@ -124,14 +130,14 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
     baseUrl: 'https://www.warenghem.com',
     seo: false,
     lazy: true,
     vueI18nLoader: true,
     langDir: 'locales/',
     defaultLocale: 'fr-fr',
-    skipSettingLocaleOnNavigate: true,
+    /*skipSettingLocaleOnNavigate: true, issue, see next release*/
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
@@ -567,6 +573,7 @@ export default {
               deep: [
                 /page-enter/,
                 /page-leave/,
+                /.*-transition/,
                 /dialog-transition/,
                 /tab-transition/,
                 /tab-reversetransition/,

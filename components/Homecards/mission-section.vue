@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="fp-section d-none d-md-table finebordert">
+        <div class="fp-section d-none d-md-table">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
             <div class="fp-tableCell" style="height: 80vh!important">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
@@ -50,7 +50,7 @@
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
-                            <div class=" homepage-catalogue-links-item"
+                            <div class=" homepage-catalogue-links-item px-4"
                                  v-for="(mission,m_idx) in $t('mission.sections')"
                                  @mouseover="fpMouseOver(m_idx+1)"
                                  @mouseout="currentMissionHover=null"

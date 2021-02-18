@@ -19,11 +19,11 @@
 <i18n>
 {
   "fr": {
-    "title:": "hello title",
-    "description": "hello world!"
+    "title:": "Warenghem - Chaussures et maroquinerie en cuir végétal de vin, Made in France",
+    "description": "Warenghem fabrique de la maroquinerie et des chaussures vegan Made in France en cuir végétal de vin pour homme : Sacs de voyage, Sacs de ville, Sacs à dos, Portefeuille, Ceintures"
   },
   "en": {
-    "title": "Hola tital!",
+    "title": "Warenghem - Shoes and bags made from wine leather, Made in France",
     "description": "Hola mondial!"
   }
 }

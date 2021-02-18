@@ -3,7 +3,7 @@
     <sticky-toolbar class="stickyBar"/>
     <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
-    <MissionSection id="missionSection"/>
+    <MissionSection class="pt-4 px-0 px-md-4" id="missionSection"/>
     <v-container fluid class="homegrid py-4">
       <v-card class="item1">
         <ProductSection id="productSection"/>

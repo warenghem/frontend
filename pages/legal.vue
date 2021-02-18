@@ -39,7 +39,7 @@
               <v-card class="bgcard">
                 <v-tabs vertical class="pb-10">
                   <div class="page-subtitle teradeli-medium pl-3 py-10">
-                    {{$t('tabs[0].subtitle')}}
+                    {{$t('protection.subtitle')}}
                   </div>
                   <v-tab 
                     v-for="(tab,m_idx) in $t('tab.sections1')"
@@ -71,7 +71,7 @@
               <v-card class="bgcard">
                 <v-tabs vertical class="pb-10">
                   <div class="page-subtitle teradeli-medium pl-3 py-10">
-                    {{$t('tabs[1].subtitle')}}
+                    {{$t('conditions.subtitle')}}
                   </div>
                   <v-tab 
                     v-for="(tab,m_idx) in $t('tab.sections2')"
@@ -110,7 +110,7 @@
                 <v-card-text v-html="tab.subtitle">
                 </v-card-text>
                 <div class="page-subtitle teradeli-medium pl-5 pb-5">
-                  {{$t('tabs[2].subtitle')}}
+                  {{$t('mentions.subtitle')}}
                 </div>
                 <v-card-text class="bg-white pvw rounded-lg" v-html="tab.text">
                 </v-card-text>
@@ -134,10 +134,10 @@
           <v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
 			<div class="d-block">
 				<div class="teradeli-medium pb-1">
-					{{$t('tabs[0].menu')}}
+					{{$t('protection.menu')}}
 				</div>
 				<div class="teradeli-light">
-					{{$t('tabs[0].subtitle')}}
+					{{$t('protection.subtitle')}}
 				</div>
 			</div>
           </v-expansion-panel-header>
@@ -160,10 +160,10 @@
           <v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
 			<div class="d-block">
 				<div class="teradeli-medium pb-1">
-					{{$t('tabs[1].menu')}}
+					{{$t('conditions.menu')}}
 				</div>
 				<div class="teradeli-light">
-					{{$t('tabs[1].subtitle')}}
+					{{$t('conditions.subtitle')}}
 				</div>
 			</div>
           </v-expansion-panel-header>
@@ -186,10 +186,10 @@
           <v-expansion-panel-header :expand-icon="svgPath3">
 			<div class="d-block">
 				<div class="teradeli-medium pb-1">
-					{{$t('tabs[2].menu')}}
+					{{$t('mentions.menu')}}
 				</div>
 				<div class="teradeli-light">
-					{{$t('tabs[2].subtitle')}}
+					{{$t('mentions.subtitle')}}
 				</div>
 			</div>
           </v-expansion-panel-header>
@@ -226,10 +226,33 @@
 				svgPath2: mdiChevronLeft,
 				svgPath3: mdiChevronDown,
 				svgPath4: mdiPlus,
-                tabs: this.$t('tabs'),
                 tab: "subscribe"
             }
         },
+		computed: {
+			tabs() {
+					return [
+						{ 
+							href: "#protection",
+							id: "protection",
+							menu: this.$i18n.t('protection.menu'),
+							subtitle: this.$i18n.t('protection.subtitle'),
+						},
+						{ 
+							href: "#conditions",
+							id: "conditions",
+							menu: this.$i18n.t('conditions.menu'),
+							subtitle: this.$i18n.t('conditions.subtitle'),
+						},
+						{ 
+							href: "#mentions",
+							id: "mentions",
+							menu: this.$i18n.t('mentions.menu'),
+							subtitle: this.$i18n.t('mentions.subtitle'),
+						},
+					];
+				}
+		},
         head() {
             return {
             }
@@ -241,6 +264,18 @@
 <i18n>
 {
 	"en": {
+		"conditions": {
+			"menu": "Terms and conditions",
+			"subtitle": "Version 1.0"
+		},
+		"mentions": {
+			"menu": "Legal Notice",
+			"subtitle": "Version 1.0"
+		},
+		"protection": {
+			"menu": "Data protection policy",
+			"subtitle": "Updated on 01/04/2021"
+		},
 		"tab": {
 			"menu": "Data protection policy",
 			"sections1": [
@@ -371,29 +406,21 @@
 				}
 			]
 		},
-		"tabs": [
-			{
-				"href": "#protection",
-				"id": "protection",
-				"menu": "Data protection policy",
-				"subtitle": "Updated on 01/04/2021"
-			},
-			{
-				"href": "#conditions",
-				"id": "conditions",
-				"menu": "Terms and conditions",
-				"subtitle": "Version 1.0"
-			},
-			{
-				"href": "#mentions",
-				"id": "mentions",
-				"menu": "Legal Notice",
-				"subtitle": "Version 1.0"
-			}
-		],
 		"title": "Legal Notice"
 	},
 	"fr": {
+		"conditions": {
+			"menu": "Conditions générales de ventes",
+			"subtitle": "Version 1.0"
+		},
+		"mentions": {
+			"menu": "Mentions Légales",
+			"subtitle": "Version 1.0"
+		},
+		"protection": {
+			"menu": "Politique de protection des données",
+			"subtitle": "Mis à jour le 04/01/2021"
+		},
 		"tab": {
 			"menu": "Politique de protection des données",
 			"sections1": [
@@ -524,26 +551,6 @@
 				}
 			]
 		},
-		"tabs": [
-			{
-				"href": "#protection",
-				"id": "protection",
-				"menu": "Politique de protection des données",
-				"subtitle": "Mis à jour le 04/01/2021"
-			},
-			{
-				"href": "#conditions",
-				"id": "conditions",
-				"menu": "Conditions générales de ventes",
-				"subtitle": "Version 1.0"
-			},
-			{
-				"href": "#mentions",
-				"id": "mentions",
-				"menu": "Mentions Légales",
-				"subtitle": "Version 1.0"
-			}
-		],
 		"title": "Mentions Légales"
 	}
 }

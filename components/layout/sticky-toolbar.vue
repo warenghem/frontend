@@ -20,7 +20,7 @@
             </v-list>
         </v-navigation-drawer>-->
 
-        <v-app-bar flat class="border-bottom-2" height="48px">
+        <v-app-bar flat class="border-bottom-2" height="42px">
             <!--<v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-2">
               <v-icon>{{ svgPath }}</v-icon>
             </v-app-bar-nav-icon>-->
@@ -32,7 +32,7 @@
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
-            <v-toolbar-items class="toolbarcta py-1 mr-3">
+            <v-toolbar-items class="toolbarcta py-1 mr-3 align-items-center" style="height:44px!important">
                 <treebutton/>
             </v-toolbar-items>
         </v-app-bar>

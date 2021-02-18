@@ -442,10 +442,10 @@
             meta() {
               const metaData = {
                 type: "shop",
-                title: this.product.title,
+                title: this.product.name,
                 description: this.product.description,
                 url: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
-                mainImage: this.product.image,
+                mainImage: 'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1200,ar-1.91-1,dpr-2/Products/'+ this.product.image[0].src
               };
               return getSiteMeta(metaData);
             }
@@ -490,7 +490,7 @@
         },
         head() {
           return {
-            title: this.product.title,
+            title: this.product.name,
             meta: [
               ...this.meta,
               {

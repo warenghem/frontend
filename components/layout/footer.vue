@@ -58,20 +58,23 @@
           color="white"
           text
           rounded
-          class="my-2"
+          class="my-2 text-capitalize"
           @click="$store.state.plantModal=true"
+          style="letter-spacing:inherit!important"
         >
           Newsletter
         </v-btn>
         <v-btn
-          v-for="link in links" :key="link.title"
+          v-for="(link,p_idx) in links"
+          :key="p_idx"
           color="white"
           text
           rounded
-          class="my-2"
+          class="my-2 text-capitalize"
           :to="link.url" nuxt
+          style="letter-spacing:inherit!important"
         >
-          {{ link.title }}
+          {{$t(link.title)}}
         </v-btn>
       </v-row>
 
@@ -88,31 +91,35 @@
     import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
     import {mdiInstagram, mdiFacebook, mdiChevronRight} from '@mdi/js'
     export default {
-      data: function () {
+        data() {
           return {
                   LogoSmNp,
                   svgPath: mdiInstagram,
                   svgPath2: mdiFacebook,
                   svgPath3: mdiChevronRight,
-                  links: [
-                      {title: this.$i18n.t('protection'), url: "/legal/"},
-                  ],
                   items: [],
                   socials: [
                       {name: "instagram", icon: "'svgPath'", url: "https://www.instagram.com/warenghem.studios/"},
                       {name: "facebook", icon: "'svgPath2'", url: "https://www.facebook.com/warenghem.studios/"},
                   ],
               };
+        },
+          computed: {
+            links() {
+                  return [
+                    { title: this.$i18n.t('protection'), url: "/legal/" },
+                  ];
+                }
           }
       }
 </script>
 <i18n>
 {
 	"en": {
-		"protection": "Legal notices and Data policy"
+		"protection": "Legal notices and data policy"
 	},
 	"fr": {
-		"protection": "Mentions légales et Données personnelles"
+		"protection": "Mentions légales et données personnelles"
 	}
 }
 </i18n>

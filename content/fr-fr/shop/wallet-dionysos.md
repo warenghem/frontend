@@ -16,7 +16,7 @@ details:
 - Deux poches horizontales
 - Cire tranche bleu foncé Bugatti
 care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procédé innovant
-  qui transforme les fibres du raisin en une matière écologique. </strong></p><p><strong>Il
+  qui transforme les fibres du raisin en une matière écologique.</strong></p><p><strong>Il
   a été longuement testé afin qu''il ait les mêmes caractéristiques qu''un cuir traditionnel
   :</strong></p><ul><li><p><strong>Mécaniques : forte résistance et imperméabilité
   totale</strong></p></li><li><p><strong>Esthétiques : grain fin et harmonieux</strong></p></li><li><p><strong>Sensorielles
@@ -27,8 +27,8 @@ care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procéd�
   en particulier les finitions en cuir.</p></li><li><p>De protéger votre article de
   l’humidité excessive et de le maintenir à l’abri des sources directes de chaleur.</p></li><li><p>De
   nettoyer délicatement la toile avec un chiffon doux imbibé d’eau légèrement savonneuse.</p></li></ul><p>Pour
-  toute question relative à votre article, veuillez prendre contact avec nous &lt;a
-  href="mailto:hello@warenghem.com"&gt;ici&lt;/a&gt; ou sur les réseaux sociaux.</p>'
+  toute question relative à votre article, veuillez prendre contact avec nous <a href="mailto:hello@warenghem.com"
+  title="mail">ici</a> ou sur les réseaux sociaux.</p>'
 dimensions:
   length: 10.8
   height: 1.5
