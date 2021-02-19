@@ -39,7 +39,7 @@
           "url" : "https://www.warenghem.com/",
           "logo" : {
           "@type":"ImageObject",
-          "url":"https://ik.imagekit.io/g1noocuou2/Logos/logo_picture.png"
+          "url":"https://ik.imagekit.io/g1noocuou2/Logos/logo-meta.png"
           },
           "sameAs": [
           "https://www.facebook.com/warenghem.studios",

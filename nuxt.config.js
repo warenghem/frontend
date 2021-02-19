@@ -32,7 +32,7 @@ export default {
       { property: "og:image:width", content: "740" },
       { property: "og:image:height", content: "300" },
       { name: "twitter:site", content: "@warenghemparis" },
-      { name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/Logos/logo_picture.png" },
+      { name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/Logos/logo-meta.png" },
     ],
     link: [
       {
