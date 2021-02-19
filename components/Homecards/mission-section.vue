@@ -24,7 +24,7 @@
                                 <div></div>
                                 <!--<div></div>-->
                             </div>
-                            <div class="homepage-catalogue-background-divided d-none">
+                            <!--<div class="homepage-catalogue-background-divided d-none">
                                 <div v-for="(bgLogo,idx) in $store.state.picture.backgroundlogos" :key="'bg_logo_'+idx">
                                     <div>
                                         <img
@@ -35,9 +35,36 @@
                                       />
                                         </div>
                                     </div>
-                            </div>
+                            </div>-->
                             <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
-                                <div v-for="(bgImage,idx) in $store.state.picture.backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
+                                <div class="blackoverlay gradientoverlay">
+                                    <div class="skeletton">
+                                            <img
+                                            data-sizes="auto"
+                                            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 2500w"
+                                            class="lazyload mediabox-img lazypreload"
+                                            />
+                                    </div>
+                                </div>
+                                <div class="blackoverlay gradientoverlay">
+                                    <div class="skeletton">
+                                        <video width="720" height="405" autoplay controls loop>
+                                            <source src="https://res.cloudinary.com/dfnpkqf5d/video/upload/v1613767325/pexels-alessandro-giordano-5494638_zbuos5.mp4" type="video/mp4">
+                                            <source src="http://www.webestools.com/page/media/videoTag/BigBuckBunny.ogg" type="video/ogg">
+                                            <source src="http://www.webestools.com/page/media/videoTag/BigBuckBunny.webm" type="video/webm">
+                                        </video>
+                                    </div>
+                                </div>
+                                <div class="blackoverlay gradientoverlay">
+                                    <div class="skeletton">
+                                            <img
+                                            data-sizes="auto"
+                                            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 2500w"
+                                            class="lazyload mediabox-img lazypreload"
+                                            />
+                                    </div>
+                                </div>
+                                <!--<div v-for="(bgImage,idx) in $store.state.picture.backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
                                     <div class="skeletton">
                                             <img
                                             data-sizes="auto"
@@ -46,7 +73,7 @@
                                             class="lazyload mediabox-img lazypreload"
                                             />
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
@@ -373,4 +400,17 @@
 
 <style scoped lang="scss">
     @import "~/assets/scss/home/mission";
+    video {
+    position: fixed;
+    top: 50%;
+    left: 65%;
+    z-index: -100;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    }
 </style>

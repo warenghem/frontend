@@ -2,7 +2,7 @@ const type = "website";
 const url = "https://www.warenghem.com";
 const title = "Warenghem Studios";
 const description = "À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com'";
-const mainImage = "https://ik.imagekit.io/g1noocuou2/Logos/logo-meta.png";
+const mainImage = "https://ik.imagekit.io/g1noocuou2/logo-meta.png";
 
 export default (meta) => {
   return [

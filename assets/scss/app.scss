@@ -836,7 +836,7 @@ letter-spacing: .009em;
     left: 0;
     bottom: 0;
     z-index: 1;
-    opacity: 0.3 !important;
+    opacity: 0.5 !important;
   }
 }
 .invgradientoverlay {
@@ -919,7 +919,7 @@ letter-spacing: .009em;
   }
 }*/
 .homecard {
-  height: 28rem!important;
+  height: 25rem!important;
   @media (min-width: 48em) {
     height: 33rem!important;
   }

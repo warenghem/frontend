@@ -17,18 +17,18 @@
         </div>
       </div>
     </VueSlickCarousel>
-    <div class="pt-3 pb-2 d-flex justify-space-between align-center titlesmall teradeli-medium">
-      <strong>{{product.name}}</strong>
+    <div class="pt-6 d-flex justify-space-between align-center titlesmall teradeli-medium">
+      <div class="teradeli-medium">{{product.name}}</div>
       <div>
         <img v-for="(item,idx) in product.colors"
                 :key="'color'+item.id"
                 :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+item.icon"
-                class="color-button"
+                class="color-button d-none"
                 @click="currentItem=item.id"
         >
       </div>
     </div>
-    <div class="subtitlesmall teradeli-light text-left" v-if="product.price" v-show="!$store.state.product.loading">
+    <div class="subtitlesmall text-left" style="line-height: 1rem;" v-if="product.price">
       {{ $n(product.price, 'currency') }}
     </div>
   </div>

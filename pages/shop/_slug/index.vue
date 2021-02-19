@@ -56,9 +56,9 @@
           md="4"
           class="pvw"
         >
-          <div style="margin-top: -10px;" class="d-flex justify-space-between mt-5 mt-lg-0">
+          <!--<div style="margin-top: -10px;" class="d-flex justify-space-between mt-5 mt-lg-0">
             <div>{{product.sku}}</div>
-          </div>
+          </div>-->
           <div class="page-title px-0 text-left">{{product.name}}</div>
           <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2">{{product.slogan}}</div>
           <div class="py-5 d-flex align-center justify-space-between">

@@ -8,7 +8,10 @@
     "product": "products",
     "calendar": "calendar",
     "studio": "studio",
-    "reforest": "reforestation"
+    "reforest": "reforestation",
+    "protection": "Legal notices and data policy",
+		"help": "Your questions",
+    "shop": "shop"
   },
   "product": {
     "cartBtn": "Place in Cart",

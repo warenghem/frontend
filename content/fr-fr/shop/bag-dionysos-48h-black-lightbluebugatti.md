@@ -56,9 +56,9 @@ award:
   image: PETA.png
 offers:
   priceCurrency: EUR
-  price: 390
+  price: 395
   availability: true
-  pieces: Disponible prochainement - 30 pièces
+  pieces: 30 pièces prochainement
 categories:
 - name: Bags
   slug: bags

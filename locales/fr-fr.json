@@ -8,7 +8,10 @@
     "product": "produits",
     "calendar": "calendrier",
     "studio": "studio",
-    "reforest": "reforestation"
+    "reforest": "reforestation",
+    "help": "Vos questions",
+    "protection": "Mentions légales et données personnelles",
+    "shop": "shop"
   },
   "product": {
     "cartBtn": "Placer dans le panier",

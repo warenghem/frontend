@@ -295,8 +295,8 @@
         data() {
             return {
                 svgPath: mdiClose,
-                zoom: 3,
-                center: [20, 66],
+                zoom: 2,
+                center: [30, 66],
                 url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                 showParagraph: false,
                 showMap: true,

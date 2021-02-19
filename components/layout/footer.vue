@@ -108,22 +108,10 @@
           computed: {
             links() {
                   return [
-                    { title: this.$i18n.t('protection'), url: "/legal/" },
-                    { title: this.$i18n.t('help'), url: "/help/" },
+                    { title: this.$i18n.t('toolbar.help'), url: "/help/" },
+                    { title: this.$i18n.t('toolbar.protection'), url: "/legal/" },
                   ];
                 }
           }
       }
 </script>
-<i18n>
-{
-	"en": {
-		"protection": "Legal notices and data policy",
-		"help": "Your questions"
-	},
-	"fr": {
-		"protection": "Mentions légales et données personnelles",
-		"help": "Vos questions"
-	}
-}
-</i18n>

@@ -42,7 +42,7 @@
                                         <v-icon  color="lightbugattiblue" small>{{ svgPath1 }}</v-icon>
                                     </v-text>
                                 </div>
-                                <div style="height: 100%;top: 50px;width: 100%;position: absolute">
+                                <div style="height: 100%;top: 70px;width: 100%;position: absolute">
                                     <picture>
                                         <source media="screen and (min-width: 64em)"
                                             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
@@ -85,7 +85,7 @@
                     /*"/vide.png",*/
                 ],
                 link: [
-                    "/shop/bag-dionysos-48h-black-darkbluebugatti/",
+                    "/shop/bag-dionysos-48h-black-lightbluebugatti/",
                     "/shop/belt-dionysos/",
                     "/shop/wallet-dionysos/",
                     /*"",*/
@@ -110,22 +110,19 @@
 				"desc": "The largest of the bags. Composed of grapes and a French linen lining. Indispensable for weekends, sports, or short stays. This is the centerpiece, which sets the tone for the collection.",
 				"summary": "Vines and flax. Such is his destiny.",
 				"tag": "Available soon - 30 pieces",
-				"title": "Dionysos 48H",
-				"visualtocome": ""
+				"title": "Dionysos 48H"
 			},
 			{
 				"desc": "Large and thick, with saddle finish, it fits just as well with a suit as with jeans.",
 				"summary": "She won't let you down.",
 				"tag": "Available soon - 30 pieces",
-				"title": "Dionysos Belt",
-				"visualtocome": ""
+				"title": "Dionysos Belt"
 			},
 			{
 				"desc": "Ally of your daily life, it is designed around oblique lines representing the emblematic W of the brand. Each of them has space for your cards.",
 				"summary": "Vegetal like its leaves.",
 				"tag": "Available soon - 30 pieces",
-				"title": "Dionysos Wallet",
-				"visualtocome": ""
+				"title": "Dionysos Wallet"
 			}
 		]
 	},
@@ -136,22 +133,19 @@
 				"desc": "Le plus grand des sacs. Composé de raisins et d’une doublure en lin francais. Indispensable pour le week-end, le sport, ou les courts séjours. C’est la pièce maitresse, qui donne le ton de la collection.",
 				"summary": "Des vignes et du lin. Tel est son destin.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos 48H",
-				"visualtocome": ""
+				"title": "Dionysos 48H"
 			},
 			{
 				"desc": "Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur un costume que sur un jean.",
 				"summary": "Elle ne vous laissera pas tomber.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Ceinture Dionysos",
-				"visualtocome": ""
+				"title": "Ceinture Dionysos"
 			},
 			{
 				"desc": "Allié de votre quotidien, il est concu autours de lignes obliques représentant le W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.",
 				"summary": "Végétal comme ses feuilles.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Portefeuille Dionysos",
-				"visualtocome": ""
+				"title": "Portefeuille Dionysos"
 			}
 		]
 	}
@@ -218,6 +212,9 @@
         bottom:20px;
         text-align: center;
     }
+    .mediabox-img {
+        height: 88%;
+     }
 }
 /* @media (min-width: 48em) {
     .container.productgridhome div:nth-of-type(2) .productdescription {
