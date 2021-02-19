@@ -53,12 +53,13 @@
       <v-row
         justify="center"
         no-gutters
+        class="mb-2"
       >
         <v-btn
           color="white"
           text
           rounded
-          class="my-2 text-capitalize"
+          class="text-capitalize"
           @click="$store.state.plantModal=true"
           style="letter-spacing:inherit!important"
         >
@@ -70,7 +71,7 @@
           color="white"
           text
           rounded
-          class="my-2 text-capitalize"
+          class="text-capitalize"
           :to="link.url" nuxt
           style="letter-spacing:inherit!important"
         >
@@ -108,6 +109,7 @@
             links() {
                   return [
                     { title: this.$i18n.t('protection'), url: "/legal/" },
+                    { title: this.$i18n.t('help'), url: "/help/" },
                   ];
                 }
           }
@@ -116,10 +118,12 @@
 <i18n>
 {
 	"en": {
-		"protection": "Legal notices and data policy"
+		"protection": "Legal notices and data policy",
+		"help": "Your questions"
 	},
 	"fr": {
-		"protection": "Mentions légales et données personnelles"
+		"protection": "Mentions légales et données personnelles",
+		"help": "Vos questions"
 	}
 }
 </i18n>
