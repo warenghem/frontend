@@ -30,9 +30,30 @@
 </i18n>
 <script>
   export default {
+    data() {
+      return {
+        structuredData: {
+          "@context" : "http://schema.org",
+          "@type" : "Organization",
+          "name" : "Warenghem",
+          "url" : "https://www.warenghem.com/",
+          "logo" : {
+          "@type":"ImageObject",
+          "url":"https://ik.imagekit.io/g1noocuou2/Logos/logo_picture.png"
+          },
+          "sameAs": [
+          "https://www.facebook.com/warenghem.studios",
+          "https://www.instagram.com/warenghem.studios/",
+          "https://twitter.com/warenghemparis",
+          "https://www.linkedin.com/company/70254555/",
+          ]
+        }
+      }
+    },
     head () {
       const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
       return {
+        script: [{ type: 'application/ld+json', json: this.structuredData }],
         htmlAttrs: {
           myAttribute: 'My Value',
           ...i18nHead.htmlAttrs

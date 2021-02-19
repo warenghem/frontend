@@ -14,6 +14,7 @@ export default {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   head: {
+    script: [{ type: 'application/ld+json', json: this.structuredData }],
     titleTemplate: '%s' + ' | Warenghem App',
     title: 'Somewhere...',
     meta: [
@@ -30,8 +31,8 @@ export default {
       },
       { property: "og:image:width", content: "740" },
       { property: "og:image:height", content: "300" },
-      { name: "twitter:site", content: "@warenghem.studios" },
-      { name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1200,ar-1.91-1,dpr-2/AllMountain.jpeg" },
+      { name: "twitter:site", content: "@warenghemparis" },
+      { name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/Logos/logo_picture.png" },
     ],
     link: [
       {
@@ -130,7 +131,7 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix_and_default',
+    strategy: 'prefix',
     baseUrl: 'https://www.warenghem.com',
     seo: false,
     lazy: true,
