@@ -1,9 +1,9 @@
 <template>
-<div class="position-absolute" style="left: 0px;
-    right: 0px;
-    bottom: 0px;">
-  <div
-
+  <v-footer
+    app
+    dark
+    padless
+    absolute
   >
     <v-card
       flat
@@ -87,8 +87,7 @@
         © {{ new Date().getFullYear() }} — Warenghem
       </v-card-text>
     </v-card>
-  </div>
-</div>
+  </v-footer>
 </template>
 
 <script>
