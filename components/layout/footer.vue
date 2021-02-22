@@ -1,7 +1,9 @@
 <template>
-  <v-footer
-    dark
-    padless
+<div class="position-absolute" style="left: 0px;
+    right: 0px;
+    bottom: 0px;">
+  <div
+
   >
     <v-card
       flat
@@ -60,7 +62,7 @@
           text
           rounded
           class="text-capitalize"
-          @click="$store.state.plantModal=true"
+          @click="$store.state.newsletterModal=true"
           style="letter-spacing:inherit!important"
         >
           Newsletter
@@ -85,7 +87,8 @@
         © {{ new Date().getFullYear() }} — Warenghem
       </v-card-text>
     </v-card>
-  </v-footer>
+  </div>
+</div>
 </template>
 
 <script>

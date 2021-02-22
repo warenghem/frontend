@@ -11,8 +11,8 @@
           class="pa-0"
         >
           <v-row class="ma-0">
-            <div style="z-index:2" class="position-absolute">
-              <Backbutton/>
+            <div style="z-index:1" class="position-absolute">
+              <Backbutton class="border-bottom-2"/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
               <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :key="selectedColor">
@@ -21,7 +21,9 @@
                   :key="'image_'+i_dx"
                   style="outline: none;"
                 >
+                  
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
+                    <div class="position-absolute px-3 realisation">{{$t('3drender')}}</div>
                     <img
                       :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ img.src +' 2500w,'"
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/Products/'+ img.src"

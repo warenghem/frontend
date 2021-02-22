@@ -48,10 +48,15 @@
 
 <i18n>
 {
-   "fr":{
-      "contact":"Contactez nous",
-      "contactsubtitle":"Des conseils personnalisés? Une question particulière? Des conseils à nous donner?",
-      "contacthours":"<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><p>Lundi – Samedi : 9h30 - 20h</p><p>Dimanche : 9h30 – 17h30</p>"
-   }
+	"en": {
+		"contact": "",
+		"contacthours": "",
+		"contactsubtitle": ""
+	},
+	"fr": {
+		"contact": "Contactez nous",
+		"contacthours": "<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><p>Lundi – Samedi : 9h30 - 20h</p><p>Dimanche : 9h30 – 17h30</p>",
+		"contactsubtitle": "Des conseils personnalisés? Une question particulière? Des conseils à nous donner?"
+	}
 }
 </i18n>

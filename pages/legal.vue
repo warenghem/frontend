@@ -2,7 +2,7 @@
   <div class="bgcard">
     <div class="d-none d-md-block">
       <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
-        <Backbutton/>
+        <Backbutton class="border-bottom-2"/>
         <div class="px-5 d-flex border-bottom-2 bg-white">
           <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
             {{$t('title')}}

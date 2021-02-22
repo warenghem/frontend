@@ -18,7 +18,7 @@
       <v-card dark color="darkbugattiblue" class="item4">
         <References/>
       </v-card>
-      <v-card dark class="item5">
+      <v-card dark class="item5" min-height="250">
         <SocialSection/>
       </v-card>
     </v-container>

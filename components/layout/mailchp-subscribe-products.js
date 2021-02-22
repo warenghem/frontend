@@ -23,11 +23,9 @@ export default {
         return {
             email: null,
             name: null,
-            baglbb: null,
-            bagdbb: null,
+            bag: null,
             belt: null,
             wallet: null,
-            boots: null,
             success: false,
             error: null,
             loading: false,
@@ -41,12 +39,10 @@ export default {
                 id: this.listId,
                 EMAIL: this.email,
                 FNAME: this.name,
-                BAGDBB: this.name,
-                BAGLBB: this.name,
-                BELT: this.name,
-                WALLET: this.name,
-                BOOTS: this.name,
-                LANGUAGE: this.$i18n.localeProperties.language
+                BAG: this.bag,
+                BELT: this.belt,
+                WALLET: this.wallet,
+                LANGUAGE: this.$i18n.localeProperties.language,
             })
         },
     },
@@ -59,8 +55,17 @@ export default {
         setName(value = '') {
             this.name = value.trim()
         },
+        setBag(value = '') {
+            this.bag = value.trim()
+        },
+        setBelt(value = '') {
+            this.belt = value.trim()
+        },
+        setWallet(value = '') {
+            this.wallet = value.trim()
+        },
         subscribe() {
-            if (this.email === null || this.name === null || this.baglbb === null || this.bagdbb === null || this.belt === null || this.wallet === null || this.boots === null || this.loading) {
+            if (this.email === null || this.name === null || this.bag === null || this.belt === null || this.wallet === null || this.loading) {
                 return
             }
 
@@ -91,11 +96,9 @@ export default {
                 this.success = true;
                 this.email = null;
                 this.name = null;
-                this.baglbb = null;
-                this.bagdbb = null;
+                this.bag = null;
                 this.belt = null;
                 this.wallet = null;
-                this.boots = null;
                 this.$emit('success')
             }
         },
@@ -110,6 +113,9 @@ export default {
             subscribe: this.subscribe,
             setEmail: this.setEmail,
             setName: this.setName,
+            setBag: this.setBag,
+            setBelt: this.setBelt,
+            setWallet: this.setWallet,
             error: this.error,
             success: this.success,
             loading: this.loading,

@@ -9,7 +9,7 @@
     </FilterBar>
     <v-container class="px-lg-7" fluid>
       <v-row>
-        <v-col lg="4" md="6" v-for="(product,idx) in filteredProducts" :key="'product_'+idx">
+        <v-col cols="12" lg="4" md="6" v-for="(product,idx) in filteredProducts" :key="'product_'+idx">
           <ProductItem :productItem="product"></ProductItem>
         </v-col>
       </v-row>
