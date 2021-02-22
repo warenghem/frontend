@@ -55,7 +55,6 @@
     "eslint-plugin-prettier": "^3.1.4",
     "fibers": "^5.0.0",
     "node-sass": "^5.0.0",
-    "prettier": "^2.1.2",
-    "vuetify-loader": "git+https://github.com/adrienbaron/vuetify-loader.git"
+    "prettier": "^2.1.2"
   }
 }

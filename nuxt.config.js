@@ -550,10 +550,6 @@ export default {
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     },
-    extractCSS: true,
-    loaders: {
-      vueStyle: { manualInject: true }
-    },
     postcss: {
       plugins: {
           "@fullhuman/postcss-purgecss": {

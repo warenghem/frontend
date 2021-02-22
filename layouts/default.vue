@@ -127,7 +127,7 @@
           ...i18nHead.link
       ]
       }
-    }
+    },
 /*    mounted() {
         if (this.$i18n.getLocaleCookie()) {
             const lang = this.$store.state.langs.items.find(lan => lan.lang === this.$i18n.getLocaleCookie());
