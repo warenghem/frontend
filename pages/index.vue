@@ -12,7 +12,7 @@
         <MapSection id="mapTreeSection"/>
       </v-card>
 
-      <v-card class="bgcard item3 homecard">
+      <v-card class="bgcard item3 homecard" @scroll="handleSCroll">
         <HistoriesSection/>
       </v-card>
       <v-card dark color="darkbugattiblue" class="item4">
@@ -56,7 +56,27 @@
                   class: 'BgTransparent'
               }
           }
-      }
+      },
+      methods:{
+          handleSCroll (event) {
+            let header = document.body;
+            if (window.scrollY > 100 && header.className.includes('BgTransparent')) {
+            header.classList.remove('BgTransparent'); 
+            } else if (window.scrollY < 100) {
+              document.body.classList.add('BgTransparent');
+            }
+          }
+        },
+        created () {
+          if (process.browser) {
+            window.addEventListener('scroll', this.handleSCroll);
+          }
+        },
+        destroyed () {
+          if (process.browser) {
+            window.removeEventListener('scroll', this.handleSCroll);
+           }
+        } 
   }
 
 </script>

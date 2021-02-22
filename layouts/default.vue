@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <v-app-bar style="z-index: 2;" class="menu-bar border-bottom-2 w-100" app hide-on-scroll flat height="42px">
+    <v-app-bar style="z-index: 4;" class="menu-bar border-bottom-2 w-100" app hide-on-scroll flat height="42px">
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>

@@ -275,7 +275,11 @@
                 window.addEventListener('scroll', this.handleScroll)
             }
         },
-
+        destroyed () {
+          if (process.browser) {
+            window.removeEventListener('scroll', this.handleSCroll);
+           }
+        }
     }
 </script>
 
