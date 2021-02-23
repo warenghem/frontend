@@ -14,9 +14,7 @@
         <div class="py-3">
         {{ firstpost.description }}
         </div>
-        <div class="py-3">
-        {{ formatDate(firstpost.updatedAt) }}
-        </div>  
+
         <v-btn
             elevation="0"
             rounded
@@ -79,9 +77,7 @@
                     <span class="pr-1 titlesmall teradeli-medium primary--text">{{ post.title }}</span>
                     <span class="titlesmall teradeli-medium secondary--text">
                     </span>
-                    <div class="teradeli-medium text-uppercase label">
-                      {{ $d(new Date(post.updatedAt), 'short') }}
-                    </div>
+
             </v-card-text>
           </nuxt-link>
         </v-card>
@@ -119,12 +115,7 @@
         posts: posts,firstposts: firstpost
       }
     },
-    methods: {
-        formatDate(date) {
-          const options = { year: 'numeric', month: 'long', day: 'numeric' }
-          return new Date(date).toLocaleDateString(``, options)
-        }
-    },
+
   }
 </script>
 <i18n>
