@@ -14,7 +14,6 @@ export default {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   head: {
-    script: [{ type: 'application/ld+json', json: this.structuredData }],
     titleTemplate: '%s' + ' | Warenghem App',
     title: 'Somewhere...',
     meta: [
@@ -138,7 +137,7 @@ export default {
     vueI18nLoader: true,
     langDir: 'locales/',
     defaultLocale: 'fr-fr',
-    /*skipSettingLocaleOnNavigate: true, issue, see next release*/
+    /*skipSettingLocaleOnNavigate: true, issue, see next release
     detectBrowserLanguage: {
       useCookie: true,
       cookieKey: 'i18n_redirected',
@@ -147,7 +146,7 @@ export default {
       alwaysRedirect: true,
       onlyOnRoot: true,
       cookieCrossOrigin: false,
-    },
+    },*/
     locales: [
       {
         code: 'fr-fr',
