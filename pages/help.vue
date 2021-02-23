@@ -2,7 +2,7 @@
   <div class="bgcard h-100">
 	<v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
 		<Backbutton class="border-bottom-2"/>
-		<div class="px-5 d-flex border-bottom-2 bg-white">
+		<div class="px-5 d-flex border-bottom-2 bg-white w-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 			{{$t('title')}}
 			</div>
@@ -256,11 +256,127 @@
 
 <i18n>
 {
-	"fr": {
-		"customers": {
-			"menu": "",
-			"subtitle": ""
+	"en": {
+		"material": {
+			"menu": "Materials and maintenance",
+			"subtitle": "Discover our natural materials and preserve the beauty of your item"
 		},
+		"questions": {
+			"menu": "Products",
+			"subtitle": "Learn more about us and our products"
+		},
+		"shipping": {
+			"menu": "Delivery, return, order",
+			"subtitle": "Your order made easy"
+		},
+		"tab": {
+			"menu": "",
+			"sections1": [
+				{
+					"text": "Yes, all our products are entirely made in France. This is our policy and our values.<br><br>To have more visibility on French traceability, you can use the ORIGIN application which will give you all the details of our products.<br><br>",
+					"title": "Are Warenghem products entirely made in France?"
+				},
+				{
+					"text": "Dionysos wine leather bags and leather goods are made at Ateliers Saint Germain near Angers, specializing in fine leather goods.<br>We have selected them because they also work with the largest houses in France, in order to provide a high-end finish.<br><br>\nThe belt buckles are made to measure at Les Ateliers de Mars near Romans sur Isère and are in certified natural pewter, infinitely recyclable. Why did we select it? For his experience and his achievements for big names.<br><br>\nThe shoes are made in the French shoe capital in Romans sur Isère at In-Soft. Our project was selected by the local economic development program and the \"Romans Cuir\" association for the creation of Dionysos boots.<br><br>\nIn these various workshops, the choice of noble natural materials and plants, the work of experienced craftsmen and the extreme care taken in each phase of the process of creating our products reinforce our tradition of excellence and refinement.",
+					"title": "Where are your manufacturing workshops located?"
+				},
+				{
+					"text": "Yes, all our products are certified by the vegan organization PETA, and therefore do not contain any animal matter. <br><br>\nOur linens are GOTS and OEKO-TEX® certified, which means that they are free from toxic products for the body and the environment. GOTS is the \"organic farming\" certification and OEKO-TEX® is the first label aimed at guaranteeing the human-ecological qualities of textiles.<br><br>\nOur linen is grown and woven in France.<br><br>\nOur products are audited to be certified of guaranteed French origin. But the process is unfortunately long and expensive. We will keep you posted on the progress of this project. In the meantime, use the ORIGIN application which traces the entire production from the raw material ...",
+					"title": "Does Warenghem have vegan and ecological certifications?"
+				},
+				{
+					"text": "Warenghem does not offer discounts or promo codes. Our concept is to eliminate all expensive intermediaries in order to offer you the best quality at the best price. Most fashion players artificially inflate prices in order to finance one-off or continuous promotional operations.",
+					"title": "Does Warenghem offer promo codes or discounts?"
+				},
+				{
+					"text": "Click on the Materials and Maintenance link on the product sheets for all maintenance recommendations.",
+					"title": "How to maintain Warenghem products?"
+				},
+				{
+					"text": "You can discover all the additional information on our collections on our website www.warenghem.com. Go to the product pages to discover all the information.<br>",
+					"title": "Where can I find additional information on Warenghem products?"
+				},
+				{
+					"text": "By subscribing to the Warenghem Newsletter, you will be among the first to be informed of new products, events and news from the House.<br><br>You can also click on the News section to find out about Warenghem news.",
+					"title": "How to be informed of Warenghem news?"
+				}
+			],
+			"sections2": [
+				{
+					"text": "<div><p><strong>Unlike animal leather, it does not require maintenance.</strong></p><p>But to preserve the beauty of this item over the years, we recommend that you:</p><ul><li><p>Be careful not to scratch or rub your item against abrasive surfaces, especially leather finishes.</p></li><li><p>Protect your item from excessive moisture and keep it away from direct sources of heat.</p></li><li><p>Gently clean the canvas with a soft cloth dampened with slightly soapy water.</p></li></ul><p>For any questions regarding your article, please contact us at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social media.</p></div>",
+					"title": "How to take care of leather goods from Dionysus wine?"
+				},
+				{
+					"text": "No maintenance is required for this material.<br><br>\nWe have used a heavy weight used for furniture, which gives it more resistance.<br><br>\nIn addition, the linen used is organic, cultivated and woven in France.<br><br>\nUnlike other brands, Warenghem uses a natural linen (not polyester) lining. Its raw appearance contrasts with the modern look of the products. Flax does not contain any chemicals.",
+					"title": "How is the linen lining taken care of?"
+				},
+				{
+					"text": "<div><p>Our Dionysos® wine leather is produced using an innovative process that transforms the fibers of the grape into an ecological material.</p><p>It has been extensively tested so that it has the same characteristics as a traditional leather:</p><ul><li><p>Mechanical: high resistance and total waterproofness</p></li><li><p>Aesthetics: fine and harmonious grain</p></li><li><p>Sensory: soft and pleasant to the touch, odorless</p></li></ul></div>",
+					"title": "Is Dionysus wine leather strong and durable?"
+				}
+			],
+			"sections3": [
+				{
+					"text": "Delivery in metropolitan France is free from 100 € of purchase. Below this amount, delivery is € 5.90 via Colissimo and € 4.50 via Mondial Relay.<br><br>\nWe also offer express delivery via Chronopost. The delivery will then be 10 € whatever the amount of your order.<br><br>\nFor Belgium, delivery is free from 100 € of purchase. Below this amount, Mondial Relay shipping is € 5.90 for home delivery, and € 4.50 for delivery to a relay point. Express delivery is provided by DHL at € 15, regardless of the amount of the order.<br><br>\nFor the countries of the European Union and the French overseas departments and territories, the delivery is 10 €. The delivery time is 4 to 6 working days after shipment.",
+					"title": "How much is shipping ?"
+				},
+				{
+					"text": "Your orders are prepared and shipped within 24 hours after your order (excluding weekends and holidays). <br><br>\nYou will be delivered within 2-3 working days after shipment of your order for delivery in France via Colissimo, in 3 to 5 days for delivery to relay points, and in 24 to 48 hours for express delivery via Chronopost.",
+					"title": "WHAT ARE THE DELIVERY TIMES ?"
+				},
+				{
+					"text": "What delivery methods do you offer?<br>All Warenghem products can be shipped by post via Colissimo, express delivery via Chronopost or delivered to relay points via Mondial Relay.",
+					"title": "What delivery methods do you offer?"
+				},
+				{
+					"text": "Don't panic, it happens to everyone! Contact us quickly at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social media, so that we can do what is necessary. If your order has not yet been shipped, we will do our best to accommodate your request!",
+					"title": "I made the wrong delivery address, product or size when ordering."
+				},
+				{
+					"text": "Yes, we deliver to countries in the European Union within 4 to 6 working days after the order has been shipped. The delivery costs are 10 €, whatever the amount of your order.<br><br>\nFor Belgium, delivery is free from 100 € of purchase. Below this amount, Mondial Relay shipping is € 5.90 for home delivery, and € 4.50 for delivery to a relay point. Express delivery is provided by DHL at € 15, regardless of the amount of the order.",
+					"title": "Can I have it delivered abroad?"
+				},
+				{
+					"text": "If you are not happy with your Warenghem products, no problem! You have 14 days to return your products to us. Send an email to <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social networks, specifying your order number and we will send you the procedure to print your return slip. The refund is made within 15 days and will be made automatically on the account associated with the credit card used during the purchase or on the Paypal account used for payment. <br><br>\nOur reimbursement conditions only apply to individuals. For businesses, products are not returned or exchanged if they have been washed or used.",
+					"title": "What is Warenghem's return policy?"
+				},
+				{
+					"text": "Did you get the wrong size or did the color not suit you? We accept exchanges of unwashed and unused products within 14 days of your purchase. Of course, we take care of the delivery costs. Send an email to <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social networks. specifying your order number and we will send you the procedure to print your return slip.",
+					"title": "What is Warenghem's trading policy?"
+				},
+				{
+					"text": "If the products have not been used or washed, we simply put them back into stock. Otherwise, products that cannot be put back for sale are repackaged by our logistics teams and / or recycled.",
+					"title": "What happens to the products that are returned to you?"
+				},
+				{
+					"text": "Your products are shipped the day after your order (excluding weekends and holidays). You will therefore receive within 48 hours of your order a shipment confirmation email containing a delivery tracking link. If you do not receive this confirmation email within 72 hours, we invite you to contact us at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social networks.",
+					"title": "What is the status of my order?"
+				},
+				{
+					"text": "Did you get the wrong size or just changed your mind? No problem, send us a quick email at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social media. We will cancel your order if it has not already been shipped. If it is already with the postman, you will have 14 days to return it to us free of charge.",
+					"title": "How can I cancel my order?"
+				},
+				{
+					"text": "We accept payment by credit card and Paypal. You can also pay for your order in 3x from 100 €.",
+					"title": "What payment methods do you offer?"
+				},
+				{
+					"text": "After choosing your products and validating your basket, you will simply have to click on Pay in 3 times in the payment step, then click on \"Validate payment\".",
+					"title": "How can I benefit from the payment in 3 installments?"
+				},
+				{
+					"text": "All transactions are secure. The Warenghem site is equipped with an SSL encryption system to protect personal data and payment data.<br><br>Warenghem undertakes not to keep your credit card details.",
+					"title": "Payment security"
+				},
+				{
+					"text": "Warenghem has implemented very strict security measures on its site www.warenghem.com in order to guarantee the protection of your personal data.<br><br>The Warenghem site is therefore equipped with an SSL encryption system aimed at protecting personal and payment data.<br><br>Warenghem undertakes not to keep your credit card number.",
+					"title": "Is the www.warenghem.com site secure / reliable?"
+				}
+			]
+		},
+		"title": "Your questions"
+	},
+	"fr": {
 		"material": {
 			"menu": "Matières et entretien",
 			"subtitle": "Découvrez nos matières naturelles et préserver la beauté de votre article"
