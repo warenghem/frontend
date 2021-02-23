@@ -3,16 +3,23 @@
         <div class="mx-auto text-center">
             <v-dialog
                     v-model="$store.state.productModal"
+                    transition="dialog-bottom-transition"
+                    content-class="bg-white bottom-dialog rounded-0"
                     persistent
-                    max-width="600px"
+                    max-width="700px"
             >
                 <v-card>
-                    <v-btn
-                            icon
-                            @click="$store.state.productModal = false"
-                    >
-                        <v-icon>{{ svgPath }}</v-icon>
-                    </v-btn>
+                    <div style="height: 50px;" class="d-flex justify-space-between align-center border-bottom-2">
+                        <div class="sub-title pl-3">{{$t('btnWaitforit')}}</div>
+                        <v-btn
+                            text
+                            color="black"
+                            style="font-size: 26px"
+                            class="px-0 h-100 border-left-2 rounded-0"
+                        >
+                            <v-icon @click="$store.state.productModal = false">{{ svgPath }}</v-icon>
+                        </v-btn>
+                    </div>
                     <v-card-text class="pa-3 pa-sm-5">
                         <div class="d-flex flex-column align-center justify-center h-100">
                             <p class="pb-3 px-4 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
@@ -26,20 +33,28 @@
                                         @success="snackbarSuccess=true"
                                 >
                                     <template v-slot="{ subscribe, setEmail, setName, setBag, setBelt, setWallet, loading }">
-                                        <form @submit.prevent="subscribe" class="d-flex flex-column w-100">
-                                            <input type="text"
-                                                   class="form-theme"
-                                                   :placeholder="$t('video.rightSection.label1')"
-                                                   @input="setName($event.target.value)"
-                                            >
-                                            <input type="email"
-                                                   class="form-theme"
-                                                   :placeholder="$t('video.rightSection.label2')"
-                                                   @input="setEmail($event.target.value)"
-                                            >
+                                        <v-form @submit.prevent="subscribe" class="d-flex flex-column w-100">
+                                            <v-text-field
+                                                v-model="name"
+                                                clearable
+                                                color="lightbugattiblue"
+                                                :prepend-icon="svgPath3"
+                                                :label="$t('video.rightSection.label1')"
+                                                type="text" value="" @input="setName($event.target.value)"
+                                            ></v-text-field>
+                                            <v-text-field
+                                                clearable
+                                                color="lightbugattiblue"
+                                                :prepend-icon="svgPath2"
+                                                :label="$t('video.rightSection.label2')"
+                                                v-model="email"
+                                                :error-messages="emailErrors"
+                                                :rules="[rules.required, rules.email]"
+                                                type="email" value="" @input="setEmail($event.target.value)"
+                                            ></v-text-field>
                                             <v-row class="line mb-5"> 
                                                 <v-col cols="4" class="p-0"> 
-                                                    <input type="checkbox" @input="setBag($event.target.value)"> 
+                                                    <input type="checkbox" @input="setBag($event.target.value)" id="mce-BAG-0"> 
                                                     <label for="mce-BAG-0" class="rounded-xl">
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/48H_cote.png" />
@@ -47,15 +62,15 @@
                                                     </label> 
                                                 </v-col> 
                                                 <v-col cols="4" class="p-0"> 
-                                                    <input type="checkbox" @input="setBelt($event.target.value)">
+                                                    <input type="checkbox" @input="setBelt($event.target.value)" id="mce-BELT-0">
                                                     <label for="mce-BELT-0" class="rounded-xl"> 
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/belt-blackblue-above2.png" />
                                                         </div>
                                                     </label> 
                                                 </v-col> 
-                                                <v-col cols="4" class="p-0" @input="setWallet($event.target.value)"> 
-                                                    <input type="checkbox"> 
+                                                <v-col cols="4" class="p-0"> 
+                                                    <input type="checkbox"  @input="setWallet($event.target.value)" id="mce-WALLET-0"> 
                                                     <label for="mce-WALLET-0" class="rounded-xl"> 
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/pf-blackblue-below.png" />
@@ -75,7 +90,7 @@
                                                             {{$t('btnDiscover')}}
                                                     </v-btn>
                                             </div>
-                                        </form>
+                                        </v-form>
                                     </template>
                                 </mailchimp-subscribe>
                             </div>
@@ -135,12 +150,24 @@
 
 <script>
     import MailchimpSubscribe from './mailchp-subscribe-products'
-    import { mdiClose } from '@mdi/js'
+    import { mdiClose, mdiEmail, mdiAccount } from '@mdi/js'
+    import { validationMixin } from 'vuelidate'
+    import { required, email } from 'vuelidate/lib/validators'
     export default {
-        name: "newsletter-form",
+        name: "products-form",
         components: {
             MailchimpSubscribe,
         },
+        /*mixins: [validationMixin],
+        validations: {
+            email: { required, email },
+            select: { required },
+            checkbox: {
+                checked (val) {
+                return val
+                },
+            },
+        },*/
         data() {
             return {
                 snackbarSuccess: false,
@@ -148,8 +175,52 @@
                 email: '',
                 loading: false,
                 svgPath: mdiClose,
+                isFormValid: false,
+                items: ['Francais', 'English'],
+                snackbarSuccess: false,
+                snackbarError: false,
+                loading: false,
+                svgPath: mdiClose,
+                svgPath2: mdiEmail,
+                svgPath3: mdiAccount,
+                name: '',
+                checkbox: false,
+                rules: {
+                required: value => !!value || 'Required.',
+                counter: value => value.length <= 20 || 'Max 20 characters',
+                email: value => {
+                    const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+                    return pattern.test(value) || 'Invalid e-mail.'
+                },
+                },
             }
         },
+        /*computed: {
+        checkboxErrors () {
+            const errors = []
+            if (!this.$v.checkbox.$dirty) return errors
+            !this.$v.checkbox.checked && errors.push('You must agree to continue!')
+            return errors
+        },
+        nameErrors () {
+            const errors = []
+            if (!this.$v.name.$dirty) return errors
+            !this.$v.name.required && errors.push('Name is required.')
+            return errors
+        },
+        emailErrors () {
+            const errors = []
+            if (!this.$v.email.$dirty) return errors
+            !this.$v.email.email && errors.push('Must be valid e-mail')
+            !this.$v.email.required && errors.push('E-mail is required')
+            return errors
+        },
+        },
+        methods: {
+        submit () {
+            this.$v.$touch()
+        },
+        },*/
     }
 </script>
 <i18n>
@@ -187,5 +258,27 @@
 }
 </i18n>
 <style scoped>
-
+    ul {
+    list-style-type: none;
+    }
+    li {
+    display: inline-block;
+    }
+    input[type="checkbox"][id^="mce-"] {
+    display: none!important;
+    }
+    label {
+    border: 1px solid #fff;
+    display: block;
+    position: relative;
+    margin: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.2s linear, margin 0.2s linear;
+    }
+    :checked + label {
+    box-shadow: 0px 0px 0px 2px #3D8EBE;
+    transition: box-shadow 0.2s linear, margin 0.2s linear;
+    margin: 0.5em;
+    outline: solid 10px transparent;
+    }
 </style>

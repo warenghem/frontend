@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <div>
     <v-app-bar style="z-index: 4;" class="menu-bar border-bottom-2 w-100" app hide-on-scroll flat height="42px">
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
@@ -42,6 +43,7 @@
           :class="{'current':$root.currentId===link.elId}"
           :to="'/'+$i18n.locale+link.elId"
           :key="'link_'+l_idx" nuxt
+          class="text-uppercase"
         >
           <v-list-item-content>
             {{$t(link.name)}}
@@ -55,6 +57,7 @@
       </v-container>
     </v-main>
     <Footer/>
+    </div>
     <LazyPlantForm v-if="$store.state.newsletterModal" />
     <LazyHistoriesForm v-if="$store.state.historiesModal" />
     <LazyProductsForm v-if="$store.state.productModal" />

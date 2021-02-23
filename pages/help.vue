@@ -138,6 +138,7 @@
 							</v-expansion-panels>
 						</v-expansion-panel-content>
 					</v-expansion-panel>
+					<!--fait chier*/-->
 					<v-expansion-panel>
 						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
 							<div class="d-block">
@@ -164,6 +165,7 @@
 							</v-expansion-panels>
 						</v-expansion-panel-content>
 					</v-expansion-panel>
+					<!--fait chier*/-->
 					<v-expansion-panel>
 						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
 							<div class="d-block">
@@ -313,7 +315,7 @@
 					"title": "Comment s'entretient la doublure en lin ? "
 				},
 				{
-					"text": "<div><p>Notre cuir de vin Dionysos® est produit grâce à un procédé innovant qui transforme les fibres du raisin en une matière écologique. </strong></p><p><strong>Il a été longuement testé afin qu'il ait les mêmes caractéristiques qu'un cuir traditionnel :</strong></p><ul><li><p><strong>Mécaniques : forte résistance et imperméabilité totale</strong></p></li><li><p><strong>Esthétiques : grain fin et harmonieux</strong></p></li><li><p><strong>Sensorielles : touché doux et agréable, sans odeur</p></li></ul></div>",
+					"text": "<div><p>Notre cuir de vin Dionysos® est produit grâce à un procédé innovant qui transforme les fibres du raisin en une matière écologique.</p><p>Il a été longuement testé afin qu'il ait les mêmes caractéristiques qu'un cuir traditionnel :</p><ul><li><p>Mécaniques : forte résistance et imperméabilité totale</p></li><li><p>Esthétiques : grain fin et harmonieux</p></li><li><p>Sensorielles : touché doux et agréable, sans odeur</p></li></ul></div>",
 					"title": "Le cuir de vin Dionysos est-il résistant et durable ?"
 				}
 			],

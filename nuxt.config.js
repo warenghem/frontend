@@ -131,7 +131,7 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix',
+    strategy: 'prefix_and_default',
     baseUrl: 'https://www.warenghem.com',
     seo: false,
     lazy: true,
