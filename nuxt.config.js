@@ -140,7 +140,6 @@ export default {
     /*skipSettingLocaleOnNavigate: true, issue, see next release*/
     detectBrowserLanguage: {
       useCookie: true,
-      cookieKey: 'i18n_redirected',
       alwaysRedirect: true,
       onlyOnRoot: true,
     },
