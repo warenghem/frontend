@@ -5,10 +5,8 @@
       <div class="pl-5 d-flex border-left-2">
         <div class="d-inline-flex flex-column justify-center">
           <div class="teradeli-medium text-uppercase label">
-            {{ post.category }}
           </div>
           <div class="teradeli-medium appbartitle text-uppercase">
-            {{ post.title }}
           </div>
         </div>
       </div>
