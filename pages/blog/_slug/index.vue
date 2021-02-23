@@ -18,14 +18,7 @@
     export default {
         name: 'post',
         transition: 'home',
-        async asyncData(context) {
-            const {$content, params, app} = context;
-            const slug = params.slug;
-            const post = await $content(`/blog`, slug).fetch();
-            return {
-                post,
-            }
-        },
+
     }
 /*
     export default {
