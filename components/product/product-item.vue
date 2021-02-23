@@ -29,7 +29,9 @@
         >
       </div>
     </div>
-
+    <div class="subtitlesmall text-left" style="line-height: 1rem;" v-if="product.price">
+      {{ $n(product.price, 'currency') }}
+    </div>
   </div>
 </template>
 
@@ -57,7 +59,20 @@
                 }
             }
         },
-        
+        computed: {
+            product() {
+                let currency = this.productItem.currency?this.productItem.currency.find(currency => {
+                    return currency.name === this.$i18n.localeProperties.currency
+                }):{};
+                if (currency) {
+                    this.productItem.price = currency.price;
+                } else {
+                    this.productItem.price = this.productItem.offers.price;
+                }
+
+                return this.productItem;
+            }
+        },
         props: {
             productItem: {
                 type: Object,

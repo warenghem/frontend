@@ -63,18 +63,6 @@
             <div class="gradientoverlay img-fluid theme--light wa-smart-picture square-ratio position-relative skeletton">
                 <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
                 <v-spacer></v-spacer>
-
-                <v-btn icon>
-                    <v-icon>mdi-heart</v-icon>
-                </v-btn>
-
-                <v-btn icon>
-                    <v-icon>mdi-bookmark</v-icon>
-                </v-btn>
-
-                <v-btn icon>
-                    <v-icon>mdi-share-variant</v-icon>
-                </v-btn>
                 </v-card-actions>
                     <img
                         data-sizes="auto"
@@ -125,8 +113,8 @@
     transition: 'home',
     async asyncData(context) {
       const { $content, params, app } = context;
-      const firstpost = await $content(`${app.i18n.locale}/blog`, params.slug).limit(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
-      const posts = await $content(`${app.i18n.locale}/blog`, params.slug).skip(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
+      const firstpost = await $content(`/blog`, params.slug).limit(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
+      const posts = await $content(`/blog`, params.slug).skip(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();
       return {
         posts: posts,firstposts: firstpost
       }
@@ -134,7 +122,7 @@
     methods: {
         formatDate(date) {
           const options = { year: 'numeric', month: 'long', day: 'numeric' }
-          return new Date(date).toLocaleDateString(`${this.$i18n.locale}`, options)
+          return new Date(date).toLocaleDateString(``, options)
         }
     },
   }

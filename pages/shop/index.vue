@@ -20,7 +20,6 @@
 </template>
 
 <script>
-    import product from "../../store/product";
 
     export default {
         name: 'shop',
