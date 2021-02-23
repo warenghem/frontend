@@ -21,7 +21,7 @@
         async asyncData(context) {
             const {$content, params, app} = context;
             const slug = params.slug;
-            const post = await $content(`${app.i18n.locale}/blog`, slug).fetch();
+            const post = await $content(`/blog`, slug).fetch();
             return {
                 post,
             }
