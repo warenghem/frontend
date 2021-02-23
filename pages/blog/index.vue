@@ -1,21 +1,7 @@
 <template>
 <div class="">
 
-  <div           
-    v-for="(firstpost, $index) in firstposts"
-    :key="`firstpost-${$index}`"
-    class="position-relative"
-    >
-    <div class="position-absolute w-100 h-100">
-      <div style="z-index: 2;max-width:600px" class="position-relative d-flex mx-auto h-100 justify-center align-center flex-column text-white text-center">
-        <div class="page-title py-3">
-        {{ firstpost.title }}
-        </div>
 
-      </div>
-    </div>
-
-  </div>
   
 
 </div>
