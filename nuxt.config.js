@@ -14,7 +14,6 @@ export default {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   head: {
-    script: [{ type: 'application/ld+json', json: this.structuredData }],
     titleTemplate: '%s' + ' | Warenghem App',
     title: 'Somewhere...',
     meta: [
