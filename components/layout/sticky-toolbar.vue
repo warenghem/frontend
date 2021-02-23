@@ -1,6 +1,6 @@
 <template>
     <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
-        <v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
+        <!--<v-navigation-drawer v-model="sidebar" dark app class="d-md-none" v-bind:width="304">
           <v-toolbar-title class="text-center py-10">
               <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
                 <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
@@ -18,33 +18,21 @@
                     </v-list-item-content>
                 </v-list-item>
             </v-list>
-        </v-navigation-drawer>
+        </v-navigation-drawer>-->
 
-        <v-app-bar flat class="border-bottom-2" height="48px"
-                   >
-
-            <v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-2">
+        <v-app-bar flat class="border-bottom-2" height="42px">
+            <!--<v-app-bar-nav-icon @click="sidebar = !sidebar" class="d-md-none ml-2">
               <v-icon>{{ svgPath }}</v-icon>
-            </v-app-bar-nav-icon>
-            <v-toolbar-title class="d-md-block pr-4 d-none">
+            </v-app-bar-nav-icon>-->
+            <v-toolbar-title class="d-md-block px-4 d-none">
                 <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
                   <div style="fill: #19110b;stroke: #19110b;width:35px" v-html="LogoSmSm" />
                 </nuxt-link>
             </v-toolbar-title>
-            <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
-                            :key="'link_btn_l_'+l_idx">
-              <v-btn text class="text-uppercase item"
-                    :class="{'current':$root.currentId===link.elId}"
-                    :to="'/'+$i18n.locale+link.elId" nuxt
-                    v-if="link.position==='left'"
-              >
-                {{$t(link.name)}}
-              </v-btn>
-            </v-toolbar-items>
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
-            <v-toolbar-items class="toolbarcta py-1 mr-3">
+            <v-toolbar-items class="toolbarcta py-1 mr-3 align-items-center" style="height:44px!important">
                 <treebutton/>
             </v-toolbar-items>
         </v-app-bar>
@@ -83,6 +71,11 @@ export default {
     if (process.browser) {
       window.addEventListener('scroll', this.handleScroll)
     }
+  },
+  destroyed () {
+    if (process.browser) {
+      window.removeEventListener('scroll', this.handleSCroll);
+      }
   }
 }
 </script>

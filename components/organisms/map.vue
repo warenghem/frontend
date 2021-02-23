@@ -1,9 +1,6 @@
 <template>
   <div class="h-100">
     <div class="h-100 pa-0">
-      <div style="z-index: 2; bottom: 0; margin-left: auto; margin-right: auto; left: 0; right: 0;" class="position-absolute text-center mb-3">
-        {{$t('informations')}}
-      </div>
       <l-map
         style="width: 100%"
         class="treemap h-100"
@@ -24,14 +21,14 @@
             className="mapClass hand"
                         icon-class="e"
           >
-            <div style="transform: translateY(-20px);" class="card">
+            <div class="card">
               <div class="card-header name hand d-none">
                {{marker.text}}
                <div style="font-size: 16px" class="subtitlesmall d-none">En savoir plus</div>
               </div>
               <div>
-                <div class="blob white rounded-circle" style="width:45px; height:45px">
-                  <img :src="marker.image" alt="" width="45" height="45">
+                <div class="blob white rounded-circle" style="width:35px; height:35px">
+                  <img :src="marker.image" alt="" width="35" height="35">
                 </div>
               </div>
             </div>
@@ -298,8 +295,8 @@
         data() {
             return {
                 svgPath: mdiClose,
-                zoom: 3,
-                center: [3.770449, 64.38911],
+                zoom: 2,
+                center: [30, 66],
                 url: 'https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png',
                 showParagraph: false,
                 showMap: true,
@@ -416,55 +413,6 @@
 </script>
 <i18n>
 {
-	"fr": {
-		"india": {
-			"section1": {
-				"paraText": "<p>Le parc national de Similipal est le 7e plus grand parc national d’Inde (2 750 km2), et fait partie du Réseau mondial des réserves de biosphère de l’UNESCO depuis 2009. Il abrite le tigre du Bengale, l’éléphant d’Asie, le gaur et le chausingha. Ainsi que les plus belles chutes d’eau comme Joranda et Barehipani Falls.</p>",
-				"paraTitle": "Faune et Flore locale.",
-				"subtitle": "Manguiers",
-				"term1": "Compensation CO2",
-				"term2": "Durée de vie",
-				"term2bis": "100ans",
-				"term3": "Taille",
-				"title": "Fôret"
-			},
-			"section2": {
-				"paraText1": "<p>Le projet vise 50 000 arbres en bordure du parc national de Similipal pour enrichir la fôret vierge locale, en particulier pour les tigres du Bengale.</p>",
-				"paraText2": "<p>La région du projet est habitée par une variété de communautés tribales (Bhumija, Gondas, Kolha… Environ 4 093 jours de travail seront créés pour eux.</p><p>L’aéroport le plus proche est celui de Biju Patnaik, situé de 200 km du site. La ville la plus proche est Jamshedpur à 105 km.</p>",
-				"paraTitle1": "Le livre de la jungle 2.",
-				"paraTitle2": "Et si nous passions les aider ?",
-				"subtitle": "Des arbres pour les tigres, Inde",
-				"title": "Projet"
-			},
-			"section3": {
-				"title": "Lien Google Map."
-			}
-		},
-		"informations": "Cliquez sur les localisations pour plus d'informations",
-		"madagascar": {
-			"section1": {
-				"paraText": "<p>Madagascar dispose de plus de 200 000 espèces de plantes et d’animaux qui n’existent nulle part ailleurs dans le monde. 90% des forêts ont été détruites, déplaçant des espèces animales entières et les Malgaches.</p>",
-				"paraTitle": "Faune et Flore locale.",
-				"subtitle": "Mangrove noire",
-				"term1": "Compensation CO2",
-				"term2": "Durée de vie",
-				"term2bis": "25ans",
-				"term3": "Taille",
-				"title": "Fôret"
-			},
-			"section2": {
-				"paraText1": "<p>Eden Reforestation Projects a lancé ce programme en 2007 suite à la perte critique de fôrets.</p><p>16 millions de mangroves ont été plantés. Des forêts saines commencent à émerger et tous les effets négatifs de la déforestation commencent à disparaître.</p>",
-				"paraText2": "<p>Les Vilamatsa avaient hâte de faire partie de cette initiative de reboisement en raison du succès d’une plantation à proximité.</p><p>Cela leur donne un revenu décent afin qu’ils puissent à nouveau subvenir aux besoins de leur famille.</p>",
-				"paraTitle1": "Incroyable projet. Réussite totale.",
-				"paraTitle2": "Une communauté locale active. A ne pas oublier.",
-				"subtitle": "Projet Paradis, Madagascar",
-				"title": "Projet"
-			},
-			"section3": {
-				"title": "Lien Google Map."
-			}
-		}
-	},
 	"en": {
 		"india": {
 			"section1": {
@@ -489,7 +437,6 @@
 				"title": "Google Map link."
 			}
 		},
-		"informations": "Click on the locations for more information",
 		"madagascar": {
 			"section1": {
 				"paraText": "<p>Madagascar has over 200,000 species of plants and animals that are not found anywhere else in the world. 90% of the forests have been destroyed, displacing entire animal species and Malagasy people.</p>",
@@ -513,6 +460,54 @@
 				"title": "Google Map link."
 			}
 		}
+	},
+	"fr": {
+		"india": {
+			"section1": {
+				"paraText": "<p>Le parc national de Similipal est le 7e plus grand parc national d’Inde (2 750 km2), et fait partie du Réseau mondial des réserves de biosphère de l’UNESCO depuis 2009. Il abrite le tigre du Bengale, l’éléphant d’Asie, le gaur et le chausingha. Ainsi que les plus belles chutes d’eau comme Joranda et Barehipani Falls.</p>",
+				"paraTitle": "Faune et Flore locale.",
+				"subtitle": "Manguiers",
+				"term1": "Compensation CO2",
+				"term2": "Durée de vie",
+				"term2bis": "100ans",
+				"term3": "Taille",
+				"title": "Fôret"
+			},
+			"section2": {
+				"paraText1": "<p>Le projet vise 50 000 arbres en bordure du parc national de Similipal pour enrichir la fôret vierge locale, en particulier pour les tigres du Bengale.</p>",
+				"paraText2": "<p>La région du projet est habitée par une variété de communautés tribales (Bhumija, Gondas, Kolha… Environ 4 093 jours de travail seront créés pour eux.</p><p>L’aéroport le plus proche est celui de Biju Patnaik, situé de 200 km du site. La ville la plus proche est Jamshedpur à 105 km.</p>",
+				"paraTitle1": "Le livre de la jungle 2.",
+				"paraTitle2": "Et si nous passions les aider ?",
+				"subtitle": "Des arbres pour les tigres, Inde",
+				"title": "Projet"
+			},
+			"section3": {
+				"title": "Lien Google Map."
+			}
+		},
+		"madagascar": {
+			"section1": {
+				"paraText": "<p>Madagascar dispose de plus de 200 000 espèces de plantes et d’animaux qui n’existent nulle part ailleurs dans le monde. 90% des forêts ont été détruites, déplaçant des espèces animales entières et les Malgaches.</p>",
+				"paraTitle": "Faune et Flore locale.",
+				"subtitle": "Mangrove noire",
+				"term1": "Compensation CO2",
+				"term2": "Durée de vie",
+				"term2bis": "25ans",
+				"term3": "Taille",
+				"title": "Fôret"
+			},
+			"section2": {
+				"paraText1": "<p>Eden Reforestation Projects a lancé ce programme en 2007 suite à la perte critique de fôrets.</p><p>16 millions de mangroves ont été plantés. Des forêts saines commencent à émerger et tous les effets négatifs de la déforestation commencent à disparaître.</p>",
+				"paraText2": "<p>Les Vilamatsa avaient hâte de faire partie de cette initiative de reboisement en raison du succès d’une plantation à proximité.</p><p>Cela leur donne un revenu décent afin qu’ils puissent à nouveau subvenir aux besoins de leur famille.</p>",
+				"paraTitle1": "Incroyable projet. Réussite totale.",
+				"paraTitle2": "Une communauté locale active. A ne pas oublier.",
+				"subtitle": "Projet Paradis, Madagascar",
+				"title": "Projet"
+			},
+			"section3": {
+				"title": "Lien Google Map."
+			}
+		}
 	}
 }
 </i18n>
@@ -522,7 +517,6 @@
 }
   .treemap {
     z-index: 1;
-    min-height:350px;
     }
 
   .slideArea {
@@ -626,7 +620,7 @@
 
     70% {
     transform: scale(1);
-    box-shadow: 0 0 0 20px rgba(0, 129, 167, 0);
+    box-shadow: 0 0 0 10px rgba(0, 129, 167, 0);
     }
 
     100% {

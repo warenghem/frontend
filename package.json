@@ -11,6 +11,10 @@
   "dependencies": {
     "@amcharts/amcharts4": "^4.10.11",
     "@amcharts/amcharts4-geodata": "^4.1.19",
+    "@capacitor/android": "^2.4.6",
+    "@capacitor/cli": "^2.4.6",
+    "@capacitor/core": "^2.4.6",
+    "@capacitor/ios": "^2.4.6",
     "@nuxt/content": "^1.9.0",
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/component-cache": "^1.1.6",
@@ -27,14 +31,17 @@
     "lazysizes": "^5.2.2",
     "leaflet": "^1.7.1",
     "lodash.groupby": "^4.6.0",
+    "lodash.startcase": "^4.4.0",
     "nuxt": "^2.14.6",
-    "nuxt-i18n": "^6.18.0",
+    "nuxt-i18n": "^6.20.0",
+    "sass-loader": "^10.1.1",
     "v-viewer": "^1.5.1",
     "vue": "^2.6.12",
     "vue-foldable": "^1.0.0",
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
-    "vue2-leaflet": "^2.6.0"
+    "vue2-leaflet": "^2.6.0",
+    "vuelidate": "^0.7.6"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
@@ -42,14 +49,12 @@
     "@nuxtjs/date-fns": "^1.4.1",
     "@nuxtjs/google-analytics": "^2.4.0",
     "@nuxtjs/svg": "^0.1.12",
-    "@nuxtjs/vuetify": "^1.11.2",
+    "@nuxtjs/vuetify": "^1.11.3",
     "deepmerge": "^4.2.2",
     "eslint-config-prettier": "^6.12.0",
     "eslint-plugin-prettier": "^3.1.4",
     "fibers": "^5.0.0",
     "node-sass": "^5.0.0",
-    "prettier": "^2.1.2",
-    "sass": "^1.29.0",
-    "sass-loader": "^8.0.2"
+    "prettier": "^2.1.2"
   }
 }

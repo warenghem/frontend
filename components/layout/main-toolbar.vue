@@ -1,30 +1,5 @@
 <template>
-  <section class="appBar">
-    <div class="topBar text-center d-none">
-      {{$t('secondtoolbar.message')}}
-    </div>
-    <v-navigation-drawer v-model="sidebar" temporary app v-bind:width="304">
-      <v-toolbar-title class="text-center py-10">
-          <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
-            <div style="fill: #706f6f;stroke: #706f6f;width:160px" class="mx-auto" v-html="LogoSm" />
-          </nuxt-link>
-      </v-toolbar-title>
-      <v-list>
-        <v-list-item
-          v-for="(link,l_idx) in $store.state.link.links"
-          :class="{'current':$root.currentId===link.elId}"
-          :to="'/'+$i18n.locale+link.elId"
-          :key="'link_'+l_idx" nuxt
-        >
-          <v-list-item-content>
-            {{$t(link.name)}}
-          </v-list-item-content>
-        </v-list-item>
-      </v-list>
-    </v-navigation-drawer>
-
-    <v-app-bar clipped-left class="menu-bar border-bottom-2" flat height="42px">
-
+    <v-app-bar class="menu-bar border-bottom-2 w-100" flat height="42px">
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>
@@ -54,7 +29,6 @@
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>
-  </section>
 </template>
 
 <script>
@@ -76,15 +50,8 @@
 
 <style scoped lang="scss">
 
-  .appBar {
+  .menu-bar {
+    z-index: 6;
     position: relative;
-    z-index: 300001;
-
-    .topBar {
-      background: #0A3137;
-      color: #fff;
-      padding: 7px;
-      font-size: 12px;
-    }
   }
 </style>

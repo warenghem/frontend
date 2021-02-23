@@ -1,6 +1,6 @@
 <template>
   <div>
-    <VueSlickCarousel class="bgcard" v-bind="settingsSingle" v-if="product.image">
+    <VueSlickCarousel class="bgcard hand" v-bind="settingsSingle" v-if="product.image">
       <div
         class="pa-2 img-wrapper"
         v-for="(img,i_dx) in product.image"
@@ -8,6 +8,7 @@
 
       >
         <div class="wa-smart-picture square-ratio skeletton wa-product-image">
+          <div class="position-absolute px-3 realisation">{{$t('3drender')}}</div>
           <img
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/Products/'+ img.src +' 2500w,'"
             class="lazyload mediabox-img"
@@ -17,18 +18,18 @@
         </div>
       </div>
     </VueSlickCarousel>
-    <div class="pt-3 pb-2 d-flex justify-space-between align-center titlesmall teradeli-medium">
-      <strong>{{product.name}}</strong>
+    <div class="pt-6 d-flex justify-space-between align-center titlesmall teradeli-medium">
+      <div class="teradeli-medium">{{product.name}}</div>
       <div>
         <img v-for="(item,idx) in product.colors"
                 :key="'color'+item.id"
                 :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Products/Materials/'+item.icon"
-                class="color-button"
+                class="color-button d-none"
                 @click="currentItem=item.id"
         >
       </div>
     </div>
-    <div class="subtitlesmall teradeli-light text-left" v-if="product.price" v-show="!$store.state.product.loading">
+    <div class="subtitlesmall text-left" style="line-height: 1rem;" v-if="product.price">
       {{ $n(product.price, 'currency') }}
     </div>
   </div>

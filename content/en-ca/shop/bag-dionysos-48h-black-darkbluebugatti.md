@@ -1,6 +1,6 @@
 ---
-id: 4
-sku: WAD48NBLB
+id: 1
+sku: WAD48NBDB
 name: Dionysos 48H
 slogan: Vines and flax. Such is his destiny.
 description: "<p>Its avant-garde architecture grouping together two pieces has been
@@ -16,26 +16,19 @@ details:
 - Dark Bugatti blue slice wax
 - Double zipped closure made in France
 - Removable, adjustable shoulder strap. Up to 50cm
-care: "<p><strong>Our Dionysos® wine leather has been extensively tested. Produced
-  using an innovative process that transforms the fibers of the grape into an ecological
-  material with the same mechanical, aesthetic and sensory characteristics as traditional
-  leather and - conversely - requiring little maintenance.</strong></p><p>But to preserve
-  the beauty of this item over the years, we recommend that you follow these tips:</p><ul><li><p>Be
-  careful not to scratch or rub your item against abrasive surfaces, especially leather
-  finishes.</p></li><li><p>We recommend that you protect your item from moisture and
-  keep it away from direct sources of heat, such as radiators and car interiors in
-  summer.</p></li><li><p>Avoid contacting your item with liquids, hand cream and sanitizer,
-  makeup, and perfume.</p></li><li><p>To clean your item, gently wipe the canvas with
-  a soft cloth dampened with mild soapy water.</p></li><li><p>When not in use, store
-  the item in the felt provided with purchase. We recommend that you keep it away
-  from high temperatures, excessive humidity or unventilated areas.</p></li></ul><p>If
-  you have any questions about your item, please contact us.</p><p><strong>Ecological
-  characteristics:</strong></p><p>Around 27 billion liters of wine are produced worldwide
-  each year, including a huge amount of material that is not found in a bottle. These
-  leftovers from the wine industry can be transformed into raw material with high
-  added value.</p><p>Unlike traditional leather, it does not need water or toxic tanning
-  processes responsible for polluting soil and water to be produced. Has no impact
-  on ecosystems, and obviously does not cause animal suffering.</p>"
+care: '<p><strong>Our Dionysos® wine leather is produced using an innovative process
+  that transforms the fibers of the grape into an ecological material.</strong></p><p><strong>It
+  has been extensively tested so that it has the same characteristics as traditional
+  leather:</strong></p><ul><li><p><strong>Mechanical: high resistance and total impermeability</strong></p></li><li><p><strong>Aesthetics:
+  fine and harmonious grain</strong></p></li><li><p><strong>Sensory: soft and pleasant
+  to the touch, odorless</strong></p></li></ul><p><strong>Unlike animal leather, it
+  does not require maintenance.</strong></p><p>But to preserve the beauty of this
+  item over the years, we recommend that you:</p><ul><li><p>Be careful not to scratch
+  or rub your item against abrasive surfaces, especially leather finishes.</p></li><li><p>Protect
+  your item from excessive moisture and keep it away from direct sources of heat.</p></li><li><p>Gently
+  clean the canvas with a soft cloth dampened with slightly soapy water.</p></li></ul><p>For
+  any questions regarding your article, please contact us by email <a href="mailto:hello@warenghem.com"
+  title="Here" target="_blank">here</a> or on social networks.</p>'
 dimensions:
   length: 21
   height: 11

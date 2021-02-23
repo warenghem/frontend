@@ -2,22 +2,21 @@
     <div>
         <div class="mx-auto text-center">
             <v-dialog
-                    v-model="$store.state.plantModal"
+                    v-model="$store.state.newsletterModal"
                     persistent
                     max-width="600px"
             >
                 <v-card>
                     <v-btn
                             icon
-                            @click="$store.state.plantModal = false"
+                            @click="$store.state.newsletterModal = false"
                     >
                         <v-icon>{{ svgPath }}</v-icon>
                     </v-btn>
                     <v-card-text
                     class="pa-3 pa-sm-5">
                         <div class="d-flex flex-column align-center justify-center h-100">
-                            <p class="pb-3 px-4 text-justify bottomText">
-                                {{$t('video.rightSection.subtitle')}}
+                            <p class="pb-3 px-4 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
                             </p>
                             <div class="w-100 px-sm-5">
                                 <mailchimp-subscribe
@@ -41,14 +40,14 @@
                                             >
                                             <div class="mx-auto">
                                                     <v-btn
-                                                        elevation="2"
+                                                        elevation="0"
                                                         large
                                                         :loading="loading"
                                                         class="btn-theme"
                                                         type="submit"
                                                         style="max-width: 250px;border-radius: 28px;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
                                                         >
-                                                            {{$t('btnTitle')}}
+                                                            {{$t('btnDiscover')}}
                                                     </v-btn>
                                             </div>
                                         </form>
@@ -113,7 +112,7 @@
     import MailchimpSubscribe from './mailchp-subscribe'
     import { mdiClose } from '@mdi/js'
     export default {
-        name: "plant-form",
+        name: "newsletter-form",
         components: {
             MailchimpSubscribe,
         },
@@ -130,21 +129,6 @@
 </script>
 <i18n>
 {
-	"fr": {
-		"video": {
-			"rightSection": {
-				"alerttime": "maintenant",
-				"alerttitle": "Warenghem dit",
-				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
-				"label1": "PRENOM ",
-				"label2": "EMAIL",
-				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
-				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
-				"tag": "Création <br> d’objets en 3D",
-				"title": "Avancement du projet"
-			}
-		}
-	},
 	"en": {
 		"video": {
 			"rightSection": {
@@ -157,6 +141,21 @@
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
 				"title": "Project progress"
+			}
+		}
+	},
+	"fr": {
+		"video": {
+			"rightSection": {
+				"alerttime": "maintenant",
+				"alerttitle": "Warenghem dit",
+				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
+				"label1": "PRENOM ",
+				"label2": "EMAIL",
+				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
+				"tag": "Création <br> d’objets en 3D",
+				"title": "Avancement du projet"
 			}
 		}
 	}

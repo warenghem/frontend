@@ -1,23 +1,24 @@
 <template>
   <div>
-    <sticky-toolbar class="stickyBar"/>
+    <!--<sticky-toolbar class="stickyBar"/>-->
     <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
-    <MissionSection id="missionSection"/>
+    <MissionSection class="pt-4 px-0 px-md-4" id="missionSection"/>
     <v-container fluid class="homegrid py-4">
       <v-card class="item1">
         <ProductSection id="productSection"/>
       </v-card>
-      <v-card class="bgcard item2">
+      <v-card class="bgcard homecard item2">
         <MapSection id="mapTreeSection"/>
       </v-card>
-      <v-card class="bgcard item3 d-none d-sm-block">
-        <StudioSection id="studioSection"/>
+
+      <v-card class="bgcard item3 homecard" @scroll="handleSCroll">
+        <HistoriesSection/>
       </v-card>
       <v-card dark color="darkbugattiblue" class="item4">
         <References/>
       </v-card>
-      <v-card dark class="item5">
+      <v-card dark class="item5" min-height="250">
         <SocialSection/>
       </v-card>
     </v-container>
@@ -26,25 +27,56 @@
 
 <script>
 
-    export default {
-        name: 'default',
-        methods: {
-            hideModal() {
-                document.querySelector('.indianforest').classList.remove('active');
-                document.querySelector('.mgforest').classList.remove('active');
-                document.getElementById('blackContent').classList.remove('overlay');
-                const el = document.body;
-                el.classList.remove('modal-open');
-                document.documentElement.style.overflowY = 'auto'
-            }
-        },
-        head() {
-            return {
-                bodyAttrs: {
-                    class: 'BgTransparent'
-                }
-            }
+  export default {
+      name: 'default',
+      /*transition(to, from) {
+        if (!from) {
+          return 'slide-left'  don't work 
         }
-    }
+        return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left' slide-right don't work 
+      },
+      transition: {
+        beforeEnter() {
+          this.$i18n.finalizePendingLocaleChange()
+        }
+      }*/
+      methods: {
+          hideModal() {
+              document.querySelector('.indianforest').classList.remove('active');
+              document.querySelector('.mgforest').classList.remove('active');
+              document.getElementById('blackContent').classList.remove('overlay');
+              const el = document.body;
+              el.classList.remove('modal-open');
+              document.documentElement.style.overflowY = 'auto'
+          }
+      },
+      head() {
+          return {
+              bodyAttrs: {
+                  class: 'BgTransparent'
+              }
+          }
+      },
+      methods:{
+          handleSCroll (event) {
+            let header = document.body;
+            if (window.scrollY > 100 && header.className.includes('BgTransparent')) {
+            header.classList.remove('BgTransparent'); 
+            } else if (window.scrollY < 100) {
+              document.body.classList.add('BgTransparent');
+            }
+          }
+        },
+        created () {
+          if (process.browser) {
+            window.addEventListener('scroll', this.handleSCroll);
+          }
+        },
+        destroyed () {
+          if (process.browser) {
+            window.removeEventListener('scroll', this.handleSCroll);
+           }
+        } 
+  }
 
 </script>

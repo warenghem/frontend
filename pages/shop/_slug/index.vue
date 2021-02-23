@@ -11,8 +11,8 @@
           class="pa-0"
         >
           <v-row class="ma-0">
-            <div style="z-index:2" class="position-absolute">
-              <Backbutton/>
+            <div style="z-index:1" class="position-absolute">
+              <Backbutton class="border-bottom-2"/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
               <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :key="selectedColor">
@@ -21,9 +21,10 @@
                   :key="'image_'+i_dx"
                   style="outline: none;"
                 >
+                  
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
+                    <div class="position-absolute px-3 realisation">{{$t('3drender')}}</div>
                     <img
-                      v-if="productImages.length > 0"
                       :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/Products/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/Products/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/Products/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/Products/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/Products/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/Products/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/Products/'+ img.src +' 2500w,'"
                       :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/Products/'+ img.src"
                       class="lazyload mediabox-img"
@@ -32,7 +33,7 @@
                   </div>
                 </div>
               </VueSlickCarousel>
-              <VueSlickCarousel class="mt-2 mx-n1" ref="c2" v-bind="settingsnav" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
+              <VueSlickCarousel class="mt-2" ref="c2" v-bind="settingsnav" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
                 <div
                   v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
@@ -57,9 +58,9 @@
           md="4"
           class="pvw"
         >
-          <div style="margin-top: -10px;" class="d-flex justify-space-between mt-5 mt-lg-0">
+          <!--<div style="margin-top: -10px;" class="d-flex justify-space-between mt-5 mt-lg-0">
             <div>{{product.sku}}</div>
-          </div>
+          </div>-->
           <div class="page-title px-0 text-left">{{product.name}}</div>
           <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2">{{product.slogan}}</div>
           <div class="py-5 d-flex align-center justify-space-between">
@@ -75,7 +76,7 @@
               </v-card>
             </v-row>
           </div>
-          <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between d-none"
+          <!--<div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
           >
             <div>
@@ -92,8 +93,8 @@
               <v-icon class="float-right">{{ svgPath1 }}</v-icon>
             </div>
 
-          </div>
-          <div class="d-flex justify-space-between align-center my-5">
+          </div>-->
+          <div class="d-flex justify-space-between align-center my-5 mx-3">
             <h3 class="teradeli-book">{{ $n(product.price, 'currency') }}</h3>
             <div class="smalltext d-none">
               <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
@@ -104,7 +105,7 @@
               {{product.offers.pieces}}
             </div>
           </div>
-          <Buybutton/>
+          <Reservebutton class="w-100" />
           <div class="mt-5" v-html="product.description">
           </div>
           <v-subheader>{{$t('product.details')}}</v-subheader>
@@ -157,7 +158,7 @@
                     </svg>
                     <span class="baidu-view-more-text">{{ collapsed ? $t('product.readMore') : $t('product.readLess') }}</span>
                   </div>
-                </template>
+                </template>        
               </foldable>
             </div>
           </div>
@@ -210,7 +211,7 @@
           </div>
         </v-col>
       </v-row>
-      <v-row class="border-top-2 ma-0 px-0 pvw d-none">
+      <!--<v-row class="border-top-2 ma-0 px-0 pvw d-none">
         <v-col cols="12" class="pa-0">
           <div class="sub-title text-center pb-10">{{$t('product.like')}}</div>
         </v-col>
@@ -268,7 +269,7 @@
             </v-tab-item>
           </v-tabs>
         </v-col>
-      </v-row>
+      </v-row>-->
     </v-container>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
@@ -295,6 +296,7 @@
     import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiPackageVariantClosed } from '@mdi/js'
     // import "viewerjs/dist/viewer.css";
     Vue.component('foldable', VueFoldable);
+    import getSiteMeta from '@/utils/getSiteMeta';
 
     export default {
         name: 'post',
@@ -368,6 +370,7 @@
                         {
                             "breakpoint": 768,
                             "settings": {
+                                "centerMode": true,
                                 "focusOnSelect": true,
                                 "slidesToShow": 2,
                                 "slidesToScroll": 2,
@@ -377,6 +380,7 @@
                         {
                             "breakpoint": 480,
                             "settings": {
+                                "centerMode": true,
                                 "focusOnSelect": true,
                                 "slidesToShow": 1,
                                 "slidesToScroll": 1,
@@ -413,7 +417,7 @@
                     return this.productItem.image
                 }
             },
-            recommendedProducts() {
+            /*recommendedProducts() {
                 var tags = this.productItem.tags.map(tag => {
                     return tag.name
                 });
@@ -436,9 +440,19 @@
                     });
                 }
                 return rc_products;
-            },
+            },*/
+            meta() {
+              const metaData = {
+                type: "shop",
+                title: this.product.name,
+                description: this.product.description,
+                url: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
+                mainImage: 'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1200,ar-1.91-1,dpr-2/Products/'+ this.product.image[0].src
+              };
+              return getSiteMeta(metaData);
+            }
         },
-        beforeCreate() {
+        /*beforeCreate() {
             let rc_products = this.$cookies.get('recent_products');
             if (rc_products.length > 0) {
                 this.$store.commit('product/initRecentProduct', rc_products);
@@ -446,7 +460,7 @@
         },
         created() {
             this.$store.dispatch('product/setRecentProducts', this.product.id);
-        },
+        },*/
         mounted() {
             this.colorSelect()
         },
@@ -477,29 +491,39 @@
             }
         },
         head() {
-            return {
-                htmlAttrs: {
-                    lang: this.$i18n.locale,
-                },
-                meta: [
-                    {
-                        hid: 'og:description',
-                        property: 'og:description',
-                        content: this.product.description,
-                    },
-                    {
-                        property: 'og:title',
-                        hid: 'og:title',
-                        content: this.product.name,
-                    },
-                    {
-                        hid: 'og:image',
-                        property: 'og:image',
-                        content: this.product.image,
-                    },
-                ],
-            };
-        },
+          return {
+            title: this.product.name,
+            meta: [
+              ...this.meta,
+              {
+                property: "product:published_time",
+                content: this.product.createdAt,
+              },
+              {
+                property: "product:modified_time",
+                content: this.product.updatedAt,
+              },
+              {
+                property: "product:tag",
+                content: this.product.tags ? this.product.tags.toString() : "",
+              },
+              { name: "twitter:label1", content: "Written by" },
+              { name: "twitter:data1", content: "Bob Ross" },
+              { name: "twitter:label2", content: "Filed under" },
+              {
+                name: "twitter:data2",
+                content: this.product.tags ? this.product.tags.toString() : "",
+              },
+            ],
+            link: [
+              {
+                hid: "canonical",
+                rel: "canonical",
+                href: `https://www.warenghem.com/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
+              },
+            ],
+          };
+        }
     }
 </script>
 <style lang="scss">
@@ -596,4 +620,5 @@ button.slick-arrow.slick-next {
   }
 }
 /* purgecss end ignore */
+
 </style>

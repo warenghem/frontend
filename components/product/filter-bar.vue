@@ -1,7 +1,8 @@
 <template>
-  <section class="appBar" v-bind:class="{ 'active': fixedOnScroll}">
+  <section class="appBar border-bottom-2"> <!--v-bind:class="{ 'active': fixedOnScroll}"-->
 
-    <v-app-bar class="menu-bar  pr-4 filter-bar" flat>
+    <v-app-bar class="menu-bar pr-4 filter-bar" flat style="height: 50px!important">
+      <Backbutton/>
       <div class="d-flex align-center">
         <div class="teradeli-light  pl-2">
           ({{products}} Produits)
@@ -9,20 +10,19 @@
       </div>
       <v-spacer></v-spacer>
       <div class="d-flex align-center title">
-        <div class="pa-2  border-left-2 d-flex align-center" style="height: 50px">
+        <!--<div class="pa-2 border-left-2 d-flex align-center">
           <v-checkbox
             v-model="online"
             class="no-message"
             label="Acheter en ligne"
           ></v-checkbox>
-        </div>
+        </div>-->
 
-        <div class="pa-2 border-left-2 d-flex align-center " style="height: 50px">
+        <!--<div class="pa-2 border-left-2 d-flex align-center" style="height: 50px">
           <div class="cursor-pointer" @click="togglePanel">
-            <v-icon class="m-2">mdi-filter</v-icon>
-            Filterer
+            <v-icon class="m-2">{{ svgPath }}</v-icon>
           </div>
-        </div>
+        </div>-->
 
       </div>
     </v-app-bar>
@@ -187,10 +187,12 @@
 </template>
 
 <script>
+    import { mdiFilter } from '@mdi/js'
     export default {
         name: 'filter-bar',
         data() {
             return {
+                svgPath: mdiFilter,
                 fixedOnScroll: false,
                 sidebar: false,
                 online: false,
@@ -273,7 +275,11 @@
                 window.addEventListener('scroll', this.handleScroll)
             }
         },
-
+        destroyed () {
+          if (process.browser) {
+            window.removeEventListener('scroll', this.handleSCroll);
+           }
+        }
     }
 </script>
 
@@ -284,10 +290,6 @@
       background: white;
       padding: 7px;
       font-size: 12px;
-    }
-
-    .menu-bar {
-      border-bottom: #eae8e4 solid 1px !important;
     }
   }
 

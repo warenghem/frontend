@@ -8,7 +8,10 @@
     "product": "produits",
     "calendar": "calendrier",
     "studio": "studio",
-    "reforest": "reforestation"
+    "reforest": "reforestation",
+    "help": "Vos questions",
+    "protection": "Mentions légales et données personnelles",
+    "shop": "shop"
   },
   "product": {
     "cartBtn": "Placer dans le panier",
@@ -41,8 +44,11 @@
     "size": "(Longueur x Hauteur x Largeur)",
     "details": "Détails"
   },
-  "btnTitle": "Je plante un arbre gratuitement",
+  "btnTitle": "Planter un arbre gratuitement",
+  "btnWaitforit": "Reserver votre article",
+  "btnNewsletter": "Suivez nous",
   "btnDiscover": "Découvrir",
+  "3drender": "réalisation 3D, nos prototype sont en cours",
   "router": {
     "home": {
       "title": "La home"
