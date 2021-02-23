@@ -55,12 +55,12 @@
 {
 	"en": {
 		"btnDiscover": "I subscribe",
-		"subtitle": "The incredible story of objects that bring nature and humans together<br/>1 article per week - Unsubscribe in one click",
+		"subtitle": "Discover our history and the incredible objects that bring nature and humans together<br/>1 article per week - Unsubscribe in one click",
 		"title": "Wildly beautiful"
 	},
 	"fr": {
 		"btnDiscover": "Je m'abonne",
-		"subtitle": "L'incroyable histoire des objets qui rapprochent la nature et l'humain<br/>1 article par semaine - Désinscription en un clic",
+		"subtitle": "Découvrez notre histoire et les incroyables objets qui rapprochent la nature et l'humain<br/>1 article par semaine - Désinscription en un clic",
 		"title": "Sauvagement beau"
 	}
 }

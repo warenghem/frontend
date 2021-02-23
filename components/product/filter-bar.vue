@@ -1,7 +1,7 @@
 <template>
-  <section class="appBar border-bottom-2"> <!--v-bind:class="{ 'active': fixedOnScroll}"-->
+  <section class="appBar"> <!--v-bind:class="{ 'active': fixedOnScroll}"-->
 
-    <v-app-bar class="menu-bar pr-4 filter-bar" flat style="height: 50px!important">
+    <v-app-bar class="menu-bar pr-4 filter-bar  border-bottom-2" flat style="height: 50px!important">
       <Backbutton/>
       <div class="d-flex align-center">
         <div class="teradeli-light  pl-2">

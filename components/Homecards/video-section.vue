@@ -105,11 +105,12 @@
             <h4 class="title mb-2">{{$t('video.subtitle')}}</h4>
             <h2 class="subtitle"> {{$t('video.title')}}{{$t('video.title2')}}</h2>
             <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5">
+              <p style="font-size:15px;line-height:16px" class="text-justify teradeli-light" v-html="$t('video.rightSection.subtitle')">
               <div>
-                <Reservebutton style="width:260px" class="mx-2 mb-2" />
+                <Reservebutton style="width:260px" class="mx-2 mb-2 d-none" />
               </div>
               <div>
-                <Treebutton style="width:260px" class="mx-2 mb-2" />
+                <Treebutton style="width:260px" class="lightbugattiblue mx-2 mb-2" />
               </div>
           </div>
           </div>

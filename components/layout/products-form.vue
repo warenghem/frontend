@@ -95,6 +95,9 @@
                                 </mailchimp-subscribe>
                             </div>
                         </div>
+                        <v-card-subtitle class="text-justify">
+                            {{$t('newsletterdisclaimer')}}
+                        </v-card-subtitle>
                     </v-card-text>
                 </v-card>
             </v-dialog>

@@ -47,14 +47,14 @@ export default {
       {rel: "preconnect", href: "www.google-analytics.com", crossorigin: true},
     ]
   },
-  pageTransition: {
+  /*pageTransition: {
     transition(to, from) {
       if (!from) {
         return 'slide-left'
       }
       return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
     },
-  },
+  },*/
   render: {
     /*asyncScripts: true,
     bundleRenderer: {
@@ -137,12 +137,12 @@ export default {
     vueI18nLoader: true,
     langDir: 'locales/',
     defaultLocale: 'fr-fr',
-    /*skipSettingLocaleOnNavigate: true, issue, see next release*/
+    /*skipSettingLocaleOnNavigate: true, issue, see next release
     detectBrowserLanguage: {
       useCookie: true,
       alwaysRedirect: true,
       onlyOnRoot: true,
-    },
+    },*/
     locales: [
       {
         code: 'fr-fr',

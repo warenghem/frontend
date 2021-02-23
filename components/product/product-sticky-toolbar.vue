@@ -22,7 +22,7 @@
             {{product.price}} {{$i18n.localeProperties.currencySign}}</h3>
         </div>
         <div class="mr-3">
-          <Buybutton/>
+          <Reservebutton class="w-100 d-none" />
         </div>
       </div>
     </v-app-bar>

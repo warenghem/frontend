@@ -10,15 +10,16 @@
                     <v-btn
                             icon
                             @click="$store.state.newsletterModal = false"
+                            class="position-absolute"
                     >
                         <v-icon>{{ svgPath }}</v-icon>
                     </v-btn>
                     <v-card-text
-                    class="pa-3 pa-sm-5">
-                        <div class="d-flex flex-column align-center justify-center h-100">
-                            <p class="pb-3 px-4 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
+                    class="pvw">
+                        <div class="d-flex flex-column align-center justify-center h-100 pb-5">
+                            <p class="pb-3 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
                             </p>
-                            <div class="w-100 px-sm-5">
+                            <div class="w-100">
                                 <mailchimp-subscribe
                                         url="https://warenghem.us20.list-manage.com/subscribe/post-json"
                                         user-id="2f7dbf20677f88c14c1389365"
@@ -55,6 +56,9 @@
                                 </mailchimp-subscribe>
                             </div>
                         </div>
+                        <v-card-subtitle class="text-justify">
+                            {{$t('newsletterdisclaimer')}}
+                        </v-card-subtitle>
                     </v-card-text>
                 </v-card>
             </v-dialog>
