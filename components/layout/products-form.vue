@@ -40,7 +40,7 @@
                                                 color="lightbugattiblue"
                                                 :prepend-icon="svgPath3"
                                                 :label="$t('video.rightSection.label1')"
-                                                type="text" value="" @input="setName($event.target.value)"
+                                                type="text" value="" @input="setName(name)"
                                             ></v-text-field>
                                             <v-text-field
                                                 clearable
@@ -50,33 +50,33 @@
                                                 v-model="email"
                                                 :error-messages="emailErrors"
                                                 :rules="[rules.required, rules.email]"
-                                                type="email" value="" @input="setEmail($event.target.value)"
+                                                type="email" value="" @input="setEmail(email)"
                                             ></v-text-field>
-                                            <v-row class="line mb-5"> 
-                                                <v-col cols="4" class="p-0"> 
-                                                    <input type="checkbox" @input="setBag($event.target.value)" id="mce-BAG-0"> 
+                                            <v-row class="line mb-5">
+                                                <v-col cols="4" class="p-0">
+                                                    <input type="checkbox" @input="setBag($event.target.value)" id="mce-BAG-0">
                                                     <label for="mce-BAG-0" class="rounded-xl">
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/48H_cote.png" />
                                                         </div>
-                                                    </label> 
-                                                </v-col> 
-                                                <v-col cols="4" class="p-0"> 
+                                                    </label>
+                                                </v-col>
+                                                <v-col cols="4" class="p-0">
                                                     <input type="checkbox" @input="setBelt($event.target.value)" id="mce-BELT-0">
-                                                    <label for="mce-BELT-0" class="rounded-xl"> 
+                                                    <label for="mce-BELT-0" class="rounded-xl">
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/belt-blackblue-above2.png" />
                                                         </div>
-                                                    </label> 
-                                                </v-col> 
-                                                <v-col cols="4" class="p-0"> 
-                                                    <input type="checkbox"  @input="setWallet($event.target.value)" id="mce-WALLET-0"> 
-                                                    <label for="mce-WALLET-0" class="rounded-xl"> 
+                                                    </label>
+                                                </v-col>
+                                                <v-col cols="4" class="p-0">
+                                                    <input type="checkbox"  @input="setWallet($event.target.value)" id="mce-WALLET-0">
+                                                    <label for="mce-WALLET-0" class="rounded-xl">
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/pf-blackblue-below.png" />
                                                         </div>
-                                                    </label> 
-                                                </v-col> 
+                                                    </label>
+                                                </v-col>
                                             </v-row>
                                             <div class="mx-auto">
                                                     <v-btn
@@ -120,7 +120,7 @@
                     <v-icon color="blue darken-2" class="pr-3" dark large>mdi-checkbox-marked-circle</v-icon>
                     <v-layout column>
                         <div>{{$t('video.rightSection.success')}}</div>
-                    </v-layout> 
+                    </v-layout>
                 </v-layout>
             </div>
         </v-snackbar>
@@ -161,7 +161,7 @@
         components: {
             MailchimpSubscribe,
         },
-        /*mixins: [validationMixin],
+        mixins: [validationMixin],
         validations: {
             email: { required, email },
             select: { required },
@@ -170,7 +170,7 @@
                 return val
                 },
             },
-        },*/
+        },
         data() {
             return {
                 snackbarSuccess: false,
@@ -180,10 +180,6 @@
                 svgPath: mdiClose,
                 isFormValid: false,
                 items: ['Francais', 'English'],
-                snackbarSuccess: false,
-                snackbarError: false,
-                loading: false,
-                svgPath: mdiClose,
                 svgPath2: mdiEmail,
                 svgPath3: mdiAccount,
                 name: '',
@@ -198,7 +194,7 @@
                 },
             }
         },
-        /*computed: {
+        computed: {
         checkboxErrors () {
             const errors = []
             if (!this.$v.checkbox.$dirty) return errors
@@ -223,7 +219,7 @@
         submit () {
             this.$v.$touch()
         },
-        },*/
+        },
     }
 </script>
 <i18n>

@@ -46,7 +46,7 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1366w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 2500w," 
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 2500w,"
             data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,fo-bottom/AllMountain.jpeg"
           >
           <source media="screen and (min-width: 48em)"
@@ -56,7 +56,7 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 1366w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 2500w," 
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-4-3,c-maintain_ratio/AllMountain.jpeg 2500w,"
             data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,ar-4-3,w-1000,fo-bottom/AllMountain.jpeg"
           >
           <source
@@ -66,12 +66,12 @@
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 1366w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 1600w,
                 https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 1920w,
-                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 2500w," 
+                https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,ar-3-5,c-maintain_ratio/AllMountain.jpeg 2500w,"
             data-lowsrc="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1000,ar-3-5,fo-bottom/AllMountain.jpeg"
           >
           <img class="lazyload mediabox-img lazypreload"
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 1x,
-                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 2x" 
+                          https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-bottom,c-maintain_ratio/AllMountain.jpeg 2x"
             data-sizes="auto" />
         </picture>
         </div>
@@ -107,7 +107,7 @@
             <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5">
               <p style="font-size:15px;line-height:16px" class="text-justify teradeli-light" v-html="$t('video.rightSection.subtitle')">
               <div>
-                <Reservebutton style="width:260px" class="mx-2 mb-2 d-none" />
+                <Reservebutton style="width:260px" class="mx-2 mb-2" />
               </div>
               <div>
                 <Treebutton style="width:260px" class="lightbugattiblue mx-2 mb-2" />
