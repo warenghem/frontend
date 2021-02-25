@@ -33,17 +33,36 @@
                                         @success="snackbarSuccess=true"
                                 >
                                     <template v-slot="{ subscribe, setEmail, setName, setBag, setBelt, setWallet, loading }">
+  <validation-observer
+    ref="observer"
+    v-slot="{ invalid }"
+  >
                                         <v-form @submit.prevent="subscribe" class="d-flex flex-column w-100">
+      <validation-provider
+        v-slot="{ errors }"
+        name="Name"
+        rules="required|max:20"
+      >
                                             <v-text-field
                                                 v-model="name"
+                                                required
+                                                :counter="20"
+                                                :error-messages="nameErrors"
                                                 clearable
                                                 color="lightbugattiblue"
                                                 :prepend-icon="svgPath3"
                                                 :label="$t('video.rightSection.label1')"
                                                 type="text" value="" @input="setName(name)"
                                             ></v-text-field>
+      </validation-provider>
+      <validation-provider
+        v-slot="{ errors }"
+        name="email"
+        rules="required|email"
+      >
                                             <v-text-field
                                                 clearable
+                                                required
                                                 color="lightbugattiblue"
                                                 :prepend-icon="svgPath2"
                                                 :label="$t('video.rightSection.label2')"
@@ -52,15 +71,29 @@
                                                 :rules="[rules.required, rules.email]"
                                                 type="email" value="" @input="setEmail(email)"
                                             ></v-text-field>
+      </validation-provider>
+
                                             <v-row class="line mb-5">
+       <validation-provider
+        v-slot="{ errors }"
+        rules="required"
+        name="checkbox"
+      >
                                                 <v-col cols="4" class="p-0">
-                                                    <input type="checkbox" @input="setBag($event.target.value)" id="mce-BAG-0">
+                                                    <input type="checkbox" :error-messages="errors" @input="setBag($event.target.value)" id="mce-BAG-0">
                                                     <label for="mce-BAG-0" class="rounded-xl">
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/48H_cote.png" />
                                                         </div>
                                                     </label>
                                                 </v-col>
+      </validation-provider>
+
+       <validation-provider
+        v-slot="{ errors }"
+        rules="required"
+        name="checkbox"
+      >
                                                 <v-col cols="4" class="p-0">
                                                     <input type="checkbox" @input="setBelt($event.target.value)" id="mce-BELT-0">
                                                     <label for="mce-BELT-0" class="rounded-xl">
@@ -69,20 +102,32 @@
                                                         </div>
                                                     </label>
                                                 </v-col>
+      </validation-provider>
+
+       <validation-provider
+        v-slot="{ errors }"
+        rules="required"
+        name="checkbox"
+      >
                                                 <v-col cols="4" class="p-0">
-                                                    <input type="checkbox"  @input="setWallet($event.target.value)" id="mce-WALLET-0">
+                                                    <input name="product" type="checkbox"  @input="setWallet($event.target.value)" id="mce-WALLET-0">
                                                     <label for="mce-WALLET-0" class="rounded-xl">
                                                         <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
                                                             <img class="mediabox-img" src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/pf-blackblue-below.png" />
                                                         </div>
                                                     </label>
                                                 </v-col>
+      </validation-provider>
+
                                             </v-row>
+
                                             <div class="mx-auto">
                                                     <v-btn
                                                         elevation="0"
                                                         large
+                                                        :disabled="invalid"
                                                         :loading="loading"
+                                                        @click="validate"
                                                         class="btn-theme"
                                                         type="submit"
                                                         style="max-width: 250px;border-radius: 28px;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
@@ -91,6 +136,7 @@
                                                     </v-btn>
                                             </div>
                                         </v-form>
+  </validation-observer>
                                     </template>
                                 </mailchimp-subscribe>
                             </div>
@@ -154,12 +200,32 @@
 <script>
     import MailchimpSubscribe from './mailchp-subscribe-products'
     import { mdiClose, mdiEmail, mdiAccount } from '@mdi/js'
-    import { validationMixin } from 'vuelidate'
-    import { required, email } from 'vuelidate/lib/validators'
+    import { extend, ValidationObserver, ValidationProvider, setInteractionMode } from 'vee-validate'
+    import { required, email, max } from 'vee-validate/dist/rules'
+
+  setInteractionMode('eager')
+
+  extend('required', {
+    ...required,
+    message: '{_field_} can not be empty',
+  })
+
+  extend('max', {
+    ...max,
+    message: '{_field_} may not be greater than {length} characters',
+  })
+
+  extend('email', {
+    ...email,
+    message: 'Email must be valid',
+  })
+
     export default {
         name: "products-form",
         components: {
             MailchimpSubscribe,
+            ValidationProvider,
+            ValidationObserver,
         },
         mixins: [validationMixin],
         validations: {
@@ -194,32 +260,11 @@
                 },
             }
         },
-        computed: {
-        checkboxErrors () {
-            const errors = []
-            if (!this.$v.checkbox.$dirty) return errors
-            !this.$v.checkbox.checked && errors.push('You must agree to continue!')
-            return errors
-        },
-        nameErrors () {
-            const errors = []
-            if (!this.$v.name.$dirty) return errors
-            !this.$v.name.required && errors.push('Name is required.')
-            return errors
-        },
-        emailErrors () {
-            const errors = []
-            if (!this.$v.email.$dirty) return errors
-            !this.$v.email.email && errors.push('Must be valid e-mail')
-            !this.$v.email.required && errors.push('E-mail is required')
-            return errors
-        },
-        },
         methods: {
-        submit () {
-            this.$v.$touch()
-        },
-        },
+            submit () {
+                this.$refs.observer.validate()
+            }
+        }
     }
 </script>
 <i18n>

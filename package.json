@@ -22,6 +22,7 @@
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/snipcart": "^1.1.0",
+    "@vee-validate/rules": "^4.1.20",
     "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.6.5",
     "gsap": "^3.5.1",
@@ -36,12 +37,12 @@
     "nuxt-i18n": "^6.20.0",
     "sass-loader": "^10.1.1",
     "v-viewer": "^1.5.1",
+    "vee-validate": "^4.2.0",
     "vue": "^2.6.12",
     "vue-foldable": "^1.0.0",
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
-    "vue2-leaflet": "^2.6.0",
-    "vuelidate": "^0.7.6"
+    "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
