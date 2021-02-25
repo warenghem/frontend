@@ -35,9 +35,8 @@
                   <template v-slot="{ subscribe, setEmail, setName, setBag, setBelt, setWallet, loading }">
                     <validation-observer
                       ref="observer"
-                      v-slot="{ invalid }"
                     >
-                      <v-form @submit.prevent="subscribe" class="d-flex flex-column w-100">
+                      <v-form @submit.prevent="subscribe" class="d-flex flex-column w-100" >
                         <validation-provider
                           v-slot="{ errors }"
                           name="Name"
@@ -73,11 +72,11 @@
                             @input="setEmail(email)"
                           ></v-text-field>
                         </validation-provider>
-<validation-provider
-                            v-slot="{ errors }"
-                            rules="required"
-                          >
-                        <v-row class="line mb-5">
+                        <validation-provider
+                          v-slot="{ errors }"
+                          rules="required"
+                        >
+                          <v-row class="line mb-5">
                             <v-col cols="4" class="p-0">
                               <input v-model="product"
                                      type="checkbox"
@@ -118,21 +117,23 @@
                                 </div>
                               </label>
                             </v-col>
-                        </v-row>
-                </validation-provider>
+                          </v-row>
+                          <div class="error--text">{{errors[0]?'Please select at least one':''}}</div>
+                        </validation-provider>
 
                         <div class="mx-auto">
                           <v-btn
                             elevation="0"
                             large
-                            :disabled="invalid"
                             :loading="loading"
                             class="btn-theme"
-                            type="submit"
+                            type="button"
+                            @click.prevent="submitForm"
                             style="max-width: 250px;border-radius: 28px;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
                           >
                             {{$t('btnDiscover')}}
                           </v-btn>
+                          <button class="hidden" type="submit" ref="mailForm"></button>
                         </div>
                       </v-form>
                     </validation-observer>
@@ -225,11 +226,19 @@
                 checkbox: false,
             }
         },
-        methods: {}
+        methods: {
+            async submitForm() {
+                const isValid = await this.$refs.observer.validate()
+                if (isValid) {
+                    console.log(this.$refs.mailForm)
+                    this.$refs.mailForm.click()
+                }
+            }
+        }
     }
 </script>
 <i18n>
-{
+ {
 	"en": {
 		"video": {
 			"rightSection": {
