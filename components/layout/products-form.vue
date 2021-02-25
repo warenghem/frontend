@@ -73,12 +73,11 @@
                             @input="setEmail(email)"
                           ></v-text-field>
                         </validation-provider>
-
-                        <v-row class="line mb-5">
-                          <validation-provider
+<validation-provider
                             v-slot="{ errors }"
                             rules="required"
                           >
+                        <v-row class="line mb-5">
                             <v-col cols="4" class="p-0">
                               <input v-model="product"
                                      type="checkbox"
@@ -119,9 +118,8 @@
                                 </div>
                               </label>
                             </v-col>
-                          </validation-provider>
-
                         </v-row>
+                </validation-provider>
 
                         <div class="mx-auto">
                           <v-btn
