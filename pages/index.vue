@@ -31,25 +31,15 @@
       name: 'default',
       /*transition(to, from) {
         if (!from) {
-          return 'slide-left'  don't work 
+          return 'slide-left'  don't work
         }
-        return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left' slide-right don't work 
+        return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left' slide-right don't work
       },
       transition: {
         beforeEnter() {
           this.$i18n.finalizePendingLocaleChange()
         }
       }*/
-      methods: {
-          hideModal() {
-              document.querySelector('.indianforest').classList.remove('active');
-              document.querySelector('.mgforest').classList.remove('active');
-              document.getElementById('blackContent').classList.remove('overlay');
-              const el = document.body;
-              el.classList.remove('modal-open');
-              document.documentElement.style.overflowY = 'auto'
-          }
-      },
       head() {
           return {
               bodyAttrs: {
@@ -58,10 +48,18 @@
           }
       },
       methods:{
+           hideModal() {
+              document.querySelector('.indianforest').classList.remove('active');
+              document.querySelector('.mgforest').classList.remove('active');
+              document.getElementById('blackContent').classList.remove('overlay');
+              const el = document.body;
+              el.classList.remove('modal-open');
+              document.documentElement.style.overflowY = 'auto'
+          },
           handleSCroll (event) {
             let header = document.body;
             if (window.scrollY > 100 && header.className.includes('BgTransparent')) {
-            header.classList.remove('BgTransparent'); 
+            header.classList.remove('BgTransparent');
             } else if (window.scrollY < 100) {
               document.body.classList.add('BgTransparent');
             }
@@ -76,7 +74,7 @@
           if (process.browser) {
             window.removeEventListener('scroll', this.handleSCroll);
            }
-        } 
+        }
   }
 
 </script>

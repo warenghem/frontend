@@ -77,6 +77,7 @@ export default {
   plugins: [
     /*'~/plugins/router',*/
     {src: '~/plugins/lazysizes', ssr: false},
+    {src: '~/plugins/vee-validate', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -162,7 +163,7 @@ export default {
         language: 'English',
         region: 'Europe',
         file: 'en-us.json',
-        currency: 'GBP', 
+        currency: 'GBP',
         currencySign: '£',
         img: '/flags/united-kingdom.svg',
       },
@@ -173,7 +174,7 @@ export default {
         language: 'Francais',
         region: 'Europe',
         file: 'fr-fr.json',
-        currency: 'CHF', 
+        currency: 'CHF',
         currencySign: '₣',
         img: '/flags/switzerland.svg',
       },
@@ -184,7 +185,7 @@ export default {
         language: 'English',
         region: 'Europe',
         file: 'en-us.json',
-        currency: 'EUR', 
+        currency: 'EUR',
         currencySign: '€',
         img: '/flags/european-union.svg',
       },
@@ -195,7 +196,7 @@ export default {
         language: 'English',
         file: 'en-us.json',
         region: 'Americas',
-        currency: 'USD', 
+        currency: 'USD',
         currencySign: '$',
         img: '/flags/united-states-of-america.svg',
       },
@@ -206,7 +207,7 @@ export default {
         language: 'Francais',
         region: 'Americas',
         file: 'fr-fr.json',
-        currency: 'CAD', 
+        currency: 'CAD',
         currencySign: 'C$',
         img: '/flags/canada.svg',
       },
@@ -217,7 +218,7 @@ export default {
         language: 'English',
         region: 'Americas',
         file: 'en-us.json',
-        currency: 'CAD', 
+        currency: 'CAD',
         currencySign: 'C$',
         img: '/flags/canada.svg',
       },
@@ -228,7 +229,7 @@ export default {
         language: 'English',
         region: 'Other',
         file: 'en-us.json',
-        currency: 'USD', 
+        currency: 'USD',
         currencySign: '$',
         img: '/flags/monde.svg',
       },
@@ -241,56 +242,56 @@ export default {
       numberFormats: {
         'fr-fr': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'EUR',
               minimumFractionDigits: 0
              }
         },
         'en-gb': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'GBP',
               minimumFractionDigits: 0
              }
         },
         'fr-ch': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'CHF',
               minimumFractionDigits: 0
              }
         },
         'en-ie': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'EUR',
               minimumFractionDigits: 0
              }
         },
         'en-us': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'USD',
               minimumFractionDigits: 0
              }
         },
         'fr-ca': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'CAD',
               minimumFractionDigits: 0
              }
         },
         'en-ca': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'CAD',
               minimumFractionDigits: 0
              }
         },
         'en': {
           currency: {
-             style: 'currency', 
+             style: 'currency',
               currency: 'USD',
               minimumFractionDigits: 0
              }
@@ -476,7 +477,7 @@ export default {
           },
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
-          warning: colors.amber.base, 
+          warning: colors.amber.base,
           error: colors.deepOrange.accent4,
           success: colors.green.accent3,
           darkbugattiblue: '#153038',

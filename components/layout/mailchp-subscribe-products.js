@@ -56,16 +56,16 @@ export default {
             this.name = value.trim()
         },
         setBag(value = '') {
-            this.bag = value.trim()
+            this.bag = value?'on':null
         },
         setBelt(value = '') {
-            this.belt = value.trim()
+            this.belt = value?'on':null
         },
         setWallet(value = '') {
-            this.wallet = value.trim()
+            this.wallet = value?'on':null
         },
         subscribe() {
-            if (this.email === null || this.name === null || this.bag === null || this.belt === null || this.wallet === null || this.loading) {
+            if (this.email === null || this.name === null || (this.bag === null && this.belt === null && this.wallet === null) || this.loading) {
                 return
             }
 
@@ -119,6 +119,6 @@ export default {
             error: this.error,
             success: this.success,
             loading: this.loading,
-        }) 
+        })
     },
 }
