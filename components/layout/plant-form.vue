@@ -7,13 +7,18 @@
                     max-width="600px"
             >
                 <v-card>
-                    <v-btn
-                            icon
-                            @click="$store.state.newsletterModal = false"
-                            class="position-absolute"
-                    >
+                    <div style="height: 50px;" class="d-flex justify-space-between align-center border-bottom-2">
+                        <div class="sub-title pl-3">{{$t('video.rightSection.title')}}</div>
+                        <v-btn
+                        text
+                        color="black"
+                        style="font-size: 26px"
+                        class="px-0 h-100 border-left-2 rounded-0"
+                        @click="$store.state.newsletterModal = false"
+                        >
                         <v-icon>{{ svgPath }}</v-icon>
-                    </v-btn>
+                        </v-btn>
+                    </div>
                     <v-card-text
                     class="pvw">
                         <div class="d-flex flex-column align-center justify-center h-100 pb-5">
@@ -141,6 +146,7 @@
 				"error": "Your email appears to be invalid or already registered. Contact us:",
 				"label1": "First Name",
 				"label2": "e-mail",
+                "title": "Plant a tree",
 				"subtitle": "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed about the progress of the project.",
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
@@ -156,6 +162,7 @@
 				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
 				"label1": "PRENOM ",
 				"label2": "EMAIL",
+                "title": "Planter un arbre",
 				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",

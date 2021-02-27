@@ -1,7 +1,7 @@
 ---
 id: 4
 sku: WAD48NBLB
-name: Dionysos 48H
+name: Dionysos Voyageur
 slogan: Des vignes et du lin. Tel est son destin.
 description: "<p>Son architecture avant-gardiste regroupant deux pièces a été conçue
   par nos designers afin qu'il soit léger, souple et toujours prêt pour vous accompagner

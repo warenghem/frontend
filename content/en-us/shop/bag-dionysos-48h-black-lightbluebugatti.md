@@ -1,7 +1,7 @@
 ---
 id: 4
 sku: WAD48NBLB
-name: Dionysos 48H
+name: Dionysos Voyageur
 slogan: Vines and flax. Such is his destiny.
 description: "<p>Its avant-garde architecture grouping together two pieces has been
   designed by our designers to be light, flexible and always ready to accompany you

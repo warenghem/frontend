@@ -105,7 +105,8 @@
               {{product.offers.pieces}}
             </div>
           </div>
-          <Reservebutton class="w-100 d-none" />
+          <Reservebutton class="w-100" />
+          <p class="text-center">{{$t('nopayment')}}</p>
           <div class="mt-5" v-html="product.description">
           </div>
           <v-subheader>{{$t('product.details')}}</v-subheader>

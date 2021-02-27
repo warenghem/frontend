@@ -49,7 +49,7 @@
                                 <div class="blackoverlay gradientoverlay">
                                     <div class="skeletton">
                                         <video width="720" height="405" autoplay controls loop>
-                                            <source src="https://res.cloudinary.com/dfnpkqf5d/video/upload/f_auto,q_auto:good,w_718/v1613767325/pexels-alessandro-giordano-5494638_zbuos5.mp4" type="video/mp4">
+                                            <source src="https://res.cloudinary.com/dfnpkqf5d/video/upload/f_auto,q_auto:good/v1613767325/pexels-alessandro-giordano-5494638_zbuos5.mp4" type="video/mp4">
                                         </video>
                                     </div>
                                 </div>

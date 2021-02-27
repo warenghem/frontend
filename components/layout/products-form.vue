@@ -4,7 +4,7 @@
       <v-dialog
         v-model="$store.state.productModal"
         transition="dialog-bottom-transition"
-        content-class="bg-white bottom-dialog rounded-0"
+        content-class="bg-white bottom-dialog rounded-b-0 rounded-t-lg"
         persistent
         max-width="700px"
       >
@@ -16,11 +16,12 @@
               color="black"
               style="font-size: 26px"
               class="px-0 h-100 border-left-2 rounded-0"
+              @click="$store.state.productModal = false"
             >
-              <v-icon @click="$store.state.productModal = false">{{ svgPath }}</v-icon>
+              <v-icon>{{ svgPath }}</v-icon>
             </v-btn>
           </div>
-          <v-card-text class="pa-3 pa-sm-5">
+          <v-card-text class="pvw">
             <div class="d-flex flex-column align-center justify-center h-100">
               <p class="pb-3 px-4 text-justify bottomText" v-html="$t('video.rightSection.subtitle')">
               </p>
@@ -202,7 +203,6 @@
     import MailchimpSubscribe from './mailchp-subscribe-products'
     import {mdiClose, mdiEmail, mdiAccount} from '@mdi/js'
     import {ValidationObserver, ValidationProvider} from "vee-validate";
-
     export default {
         name: "products-form",
         components: {
@@ -238,7 +238,7 @@
     }
 </script>
 <i18n>
- {
+{
 	"en": {
 		"video": {
 			"rightSection": {
@@ -262,7 +262,7 @@
 				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
 				"label1": "PRENOM ",
 				"label2": "EMAIL",
-				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"subtitle": "30 examplaires par produit sont en cours de production. Reservez les avant qu'il ne soit trop tard, aucun paiement n'est requis !",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"
