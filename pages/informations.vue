@@ -1,9 +1,9 @@
 <template>
   <div class="bgcard">
-    <div class="d-none d-md-block">
+    <div>
       <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
         <Backbutton class="border-bottom-2"/>
-        <div class="px-5 d-flex border-bottom-2 bg-white">
+        <div class="px-5 border-bottom-2 bg-white d-none d-md-flex">
           <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
             {{$t('title')}}
           </div>
@@ -13,10 +13,9 @@
             v-model="tab"
             right
 			center-active
-			show-arrows
 			:prev-icon="svgPath2"
 			:next-icon="svgPath1"
-            class="border-bottom-2"
+            class="border-bottom-2 toolbartabs"
           >
               <v-tabs-slider color="#0081a7"></v-tabs-slider>
               <v-tab 
@@ -35,26 +34,32 @@
           :key="1" value="protection"
         >
                 <v-container fluid class="grid-container pa-0">
+					<client-only placeholder="Loading...">
+						<LazyTypewriter :text='["Arya Stark","Jon Snow","Daenerys Targaryen","Melisandre","Tyrion Lannister"]'/>
+					</client-only>
                     <v-card 
                         v-for="(product,p_idx) in products"
                         :key="p_idx"
                         height= "100%"
                         lazy
-                        class="bgcard homecard"
+                        class="bgcard card"
 						:class="grid[p_idx]"
                     >
                             <div class="h-100 img-fluid theme--light skeletton">
+								<div style="z-index:2" class="text-uppercase text-center position-absolute d-flex justify-center h-100 w-100 pt-5">
+									{{product.subtitle}}
+								</div>
                                 <div style="z-index:2" class="text-center position-absolute d-flex justify-center align-center h-100 w-100">
 									<div class="text pvw">
 										<div>
 											<img width="200px" class="icon lazyload" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ icon[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ icon[p_idx] +' 683w'">
 										</div>
 										<div
-											class="text-center text-uppercase text-white app-title d-block" style="width:300px!important;font-weight: bold;"
+											class="text-center text-uppercase text-white app-title d-block" style="max-width:500px!important;font-weight: bold;"
 											>
 											{{product.title}}
 										</div>
-										<div class="text-center" v-html="product.summary"></div>
+										<div style="max-width:600px;margin-top: -20px;" class="text-center page-subtitle" v-html="product.summary"></div>
 									</div>
                                 </div>
                                 <div class="mediabox">
@@ -76,6 +81,10 @@
                             </div>
                     </v-card>
                 </v-container>
+				<v-container id="text" fluid class="text-center pa-0 my-10">
+					<div style="color:black;max-width: 500px !important; font-weight: bold;" class="text-uppercase app-title ma-auto py-5">{{$t('title2')}}</div>
+					<img style="max-width:800px" class="lazyload" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
+				</v-container>
         </v-tab-item>
 
       </v-tabs-items>
@@ -98,13 +107,19 @@
                     "/Products/bag-blackblue-deepest.png",
                     "/Environments/dionysos_suisse.jpg",
                     "/Environments/dionysos_grappes.PNG",
-                    "/home_gCAPosI9qrtpP.jpg"
+                    "/home_gCAPosI9qrtpP.jpg",
+					"/Environments/darkbugattiblue.png",
+                    "/Environments/Capture5.PNG",
+					"/Environments/17458143_1482974415066944_8248030493854566515_n.jpg"
                 ],
                 icon: [
                     "/Logos/Dionysos.svg",
-                    "",
+                    "/Environments/dionysos_27b.png",
                     "/Environments/dionysos_25_2.png",
-                    ""
+                    "/Environments/dionysos_2.7b.png",
+					"/Environments/strong2.png",
+					"/Environments/ecologic4.png",
+					"/Environments/recyclable4.png"
                 ],
                 link: [
                     "/shop/bag-dionysos-48h-black-lightbluebugatti/",
@@ -116,7 +131,10 @@
                     "div1",
                     "div2 blueoverlay",
                     "div3",
-                    "div4"
+                    "div4",
+					"div5",
+					"div6",
+					"div7"
                 ],
                 products: this.$t('products'),
             }
@@ -169,6 +187,7 @@
 			"subtitle": "Updated on 01/04/2021"
 		},
 		"title": "Informations",
+		"title2": "From grape harvest to wine leather",
 		"productTitle": "Objects in creation",
 		"products": [
 			{
@@ -211,23 +230,43 @@
 			"subtitle": "Mis à jour le 04/01/2021"
 		},
 		"title": "Informations",
+		"title2": "Des vendanges au cuir de vin",
 		"productTitle": "Les objets en création",
 		"products": [
 			{
-				"title": "Des chiffres et des lettres",
+				"title": "Une innovation végétale en chiffre et en lettre",
+				"subtitle": "",
 				"summary": ""
 			},
 			{
 				"title": "",
-				"summary": "Milliards de litres de vin produits dans le monde chaque année"
+				"subtitle": "Notre premier constat",
+				"summary": "Milliards de litres de vin sont produits chaque année dans le monde"
 			},
 			{
 				"title": "",
-				"summary": "<div>de matières qui ne se retrouvent pas dans une bouteille</div>"
+				"subtitle": "Notre second constat",
+				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>"
 			},
 			{
 				"title": "",
-				"summary": "Milliards de m2 de cuir de vin que l'on peux produire chaque année, rien qu'en valorisant des déchets de production"
+				"subtitle": "Notre solution innovante",
+				"summary": "Milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production"
+			},
+			{
+				"title": "",
+				"subtitle": "",
+				"summary": "<ul class='text-left text-white'><li><span >Notre cuir de vin a &eacute;t&eacute; longuement test&eacute;</span></li><li><span >M&ecirc;mes caract&eacute;ristiques m&eacute;caniques, esth&eacute;tiques et sensorielles qu'un cuir traditionnel</span></li><li><span >A contrario - ne demande que peu d'entretien</span></li></ul>"
+			},
+			{
+				"title": "",
+				"subtitle": "",
+				"summary": "<ul class='text-left'><li><span >Sans souffrance animale</span></li><li><span >Faible impact environnemental</span></li><li><span >Mati&egrave;re premi&egrave;re renouvelable</span></li></ul>"
+			},
+			{
+				"title": "",
+				"subtitle": "",
+				"summary": "<ul class='text-left text-white'><li><span >Nous r&eacute;cup&eacute;rons vos anciens produits en &eacute;change d'un bon de r&eacute;duction de 10% &agrave; valoir sur un prochain achat</span></li><li><span >Nous recyclerons la mati&egrave;re pour cr&eacute;er de nouveaux produits</span></li></ul>"
 			}
 		]
 	}
@@ -239,33 +278,56 @@
   display: grid;
   padding: 1rem!important;
   grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr 1fr 1fr;
   grid-template-areas:
-    "div1 div1 div1 div1"
-    "div2 div2 div3 div3"
-    "div4 div4 div4 div4";
+    "div1 div1 div1 div1 div1 div1"
+    "div2 div2 div2 div3 div3 div3"
+    "div4 div4 div4 div4 div4 div4"
+    "div5 div5 div6 div6 div7 div7";
+  @media (max-width: 48em) {
+  grid-template-areas:
+    "div1 div1 div1 div1 div1 div1"
+    "div2 div2 div2 div2 div2 div2"
+    "div3 div3 div3 div3 div3 div3"
+    "div4 div4 div4 div4 div4 div4"
+	"div5 div5 div5 div5 div5 div5"
+    "div6 div6 div6 div6 div6 div6"
+    "div7 div7 div7 div7 div7 div7";
+    grid-gap: 0.5rem;
+	padding: 0!important;
+  }
+}
+.card {
+  height: 25rem!important;
+  @media (min-width: 48em) {
+    height: 25rem!important;
+  }
 }
 .div1 { 
 	grid-area: div1; 
-	.text {
-		right: 0;
-		top: 20px;
-		color: white!important;
-		position: absolute;
-	}
+
 	.icon {
 		padding-bottom: 20px;
 	}
 }
-.div2 { 
+.div2, .div4 { 
 	grid-area: div2; 
+	color: white;
 	.text {
-		color: white;
 		margin: auto;
+	}
+}
+.div5, .div6, .div7 { 
+	.icon {
+		width: 80%;
+		margin-bottom: 20px;
 	}
 }
 .div3 { grid-area: div3; }
 .div4 { grid-area: div4; }
+.div5 { grid-area: div5; }
+.div6 { grid-area: div6; }
+.div7 { grid-area: div7; }
 
 </style>
