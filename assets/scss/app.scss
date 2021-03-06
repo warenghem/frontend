@@ -959,6 +959,9 @@ letter-spacing: .009em;
     border-bottom: solid 1px #c0c0c080!important;
   }
 }*/
+.toolbartabs {
+  width: calc(100% - 66px)!important;
+}
 .homecard {
   height: 25rem!important;
   @media (min-width: 48em) {
