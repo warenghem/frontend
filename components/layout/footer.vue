@@ -110,6 +110,7 @@
                   return [
                     { title: this.$i18n.t('toolbar.help'), url: "/help/" },
                     { title: this.$i18n.t('toolbar.payments'), url: "/payments/" },
+                    { title: this.$i18n.t('toolbar.shipping'), url: "/shipping/" },
                     { title: this.$i18n.t('toolbar.protection'), url: "/legal/" },
                   ];
                 }

@@ -44,13 +44,7 @@
           return {
               bodyAttrs: {
                   class: 'BgTransparent'
-              },
-              script: [
-                {       
-                  src:"//code.tidio.co/ogztu1mmmiluq02pe5ixizermbxx9irg.js",
-                  defer: true
-                 }
-              ]
+              }
           }
       },
       methods:{

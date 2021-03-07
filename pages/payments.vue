@@ -9,6 +9,24 @@
 		</div>
 		<v-spacer></v-spacer>
 	</v-toolbar-bar>
+    <article class="wa-magazine">
+      <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
+        <picture class="gradientoverlay blackoverlay">
+          <source media="screen and (min-width: 64em)"
+            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+          >
+          <source media="screen and (min-width: 48em)"
+            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+          >
+          <source
+            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-640,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-768,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1024,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1366,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1600,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1920,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-2500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+          >
+          <img class="lazyload mediabox-img" 
+            :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2x'" 
+            data-sizes="auto" />
+        </picture>
+      </div>
+    </article>
 	<v-row class="pa-0 ma-0">
 		<v-col cols="12" md="8" class="bgcard pvw">
 			<div class="d-none d-md-block">	
@@ -37,31 +55,15 @@
 			</div>
 			<div class="d-block d-md-none">
 				<v-expansion-panels flat class="pvw">
-					<v-expansion-panel>
-						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
-							<div class="d-block">
-								<div class="teradeli-medium pb-1">
-									{{$t('shipping.menu')}}
-								</div>
-								<div class="teradeli-light">
-									{{$t('shipping.subtitle')}}
-								</div>
-							</div>
+					<v-expansion-panel
+						v-for="(tab,m_idx) in $t('tab.sections3')"
+						:key="'tab_'+m_idx"
+					>
+						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
+						{{tab.title}}
 						</v-expansion-panel-header>
 						<v-expansion-panel-content eager>
-							<v-expansion-panels flat>
-								<v-expansion-panel
-									v-for="(tab,m_idx) in $t('tab.sections3')"
-									:key="'tab_'+m_idx"
-								>
-									<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
-									{{tab.title}}
-									</v-expansion-panel-header>
-									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
-									</v-expansion-panel-content>
-								</v-expansion-panel>
-							</v-expansion-panels>
+							<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 						</v-expansion-panel-content>
 					</v-expansion-panel>
 				</v-expansion-panels>

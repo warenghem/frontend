@@ -112,6 +112,12 @@
           ...i18nHead.htmlAttrs
         },
         title: this.$t('title'),
+        script: [
+          {       
+            src:"//code.tidio.co/ogztu1mmmiluq02pe5ixizermbxx9irg.js",
+            defer: true
+            }
+        ],
         meta: [
           {
             hid: 'description',

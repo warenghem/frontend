@@ -2,7 +2,7 @@
   <div>
     <div class="mx-auto text-center">
       <v-dialog
-        v-model="$store.state.productModal"
+                    v-model="$store.state.newsletterModal"
         content-class="bg-white bottom-dialog rounded-b-0 rounded-t-lg"
         persistent
         max-width="700px"
@@ -32,7 +32,7 @@
                   @error="snackbarError=true"
                   @success="snackbarSuccess=true"
                 >
-                  <template v-slot="{ subscribe, setEmail, setName, setBag, setBelt, setWallet, loading }">
+                  <template v-slot="{ subscribe, setEmail, setName, loading }">
                     <validation-observer
                       ref="observer"
                     >
@@ -174,7 +174,6 @@
                 svgPath2: mdiEmail,
                 svgPath3: mdiAccount,
                 name: '',
-                checkbox: false,
             }
         },
         methods: {
