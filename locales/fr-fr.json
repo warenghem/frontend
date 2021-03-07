@@ -48,8 +48,9 @@
   "btnWaitforit": "Reserver votre article",
   "btnNewsletter": "Suivez nous",
   "btnDiscover": "Découvrir",
+  "nopayment": "Aucun paiement requis",
   "3drender": "réalisation 3D, nos prototypes sont en cours",
-  "newsletterdisclaimer": "Aucune de vos données ne seront divulgée ou revendue. Vos données sont traitées par Warenghem pour nos projets de reforestation, vos préférences produit, et nos actualités.",
+  "newsletterdisclaimer": "Aucune de vos données ne seront divulgées ou revendues. Vos données sont traitées par Warenghem pour nos projets de reforestation, vos préférences produit, et nos actualités.",
   "router": {
     "home": {
       "title": "La home"

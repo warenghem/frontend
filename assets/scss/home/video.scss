@@ -62,35 +62,6 @@
     @media(max-width: 768px) {
       margin-top: 0;
     }
-
-    .title {
-      padding-bottom: 20px;
-      font-size: 40px !important;
-      color: white;
-      letter-spacing: -.009em!important;
-      font-family: 'teradeli-medium', sans-serif !important;
-      line-height: 1 !important;
-      transition: all .3s cubic-bezier(.39, .575, .565, 1);
-      @media(max-width: 768px) {
-        font-size: 35px !important;
-        text-align: left !important;
-        margin: 0 auto;
-      }
-    }
-
-    .subtitle {
-      letter-spacing: .004em;
-      font-family: 'teradeli-light', sans-serif !important;
-      color: #fff;
-      line-height: 1.10722 !important;
-      transition: all .3s cubic-bezier(.39, .575, .565, 1);
-      padding-bottom: 20px;
-      font-size: 24px !important;
-      @media(max-width: 768px) {
-        text-align: left !important;
-        margin: 0 auto;
-      }
-    }
   }
 
   .inner {

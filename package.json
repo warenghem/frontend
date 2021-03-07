@@ -42,6 +42,7 @@
     "vue-foldable": "^1.0.0",
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
+    "vue-typer": "^1.2.0",
     "vue2-leaflet": "^2.6.0"
   },
   "devDependencies": {

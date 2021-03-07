@@ -102,15 +102,14 @@
       <v-row no-gutters class="homepage-slider-content px-md-10 ma-md-10" style="max-width:600px">
         <v-col class="topCenter col-12">
           <div class="bannerLeft px-2 text-left">
-            <h4 class="title mb-2">{{$t('video.subtitle')}}</h4>
-            <h2 class="subtitle"> {{$t('video.title')}}{{$t('video.title2')}}</h2>
+            <h4 class="app-title mb-2">{{$t('video.subtitle')}}</h4>
+            <!--<h2 class="app-subtitle"> {{$t('video.title')}}{{$t('video.title2')}}</h2>-->
             <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5">
-              <p style="font-size:15px;line-height:16px" class="text-justify teradeli-light" v-html="$t('video.rightSection.subtitle')">
               <div>
                 <Reservebutton style="width:260px" class="mx-2 mb-2" />
               </div>
               <div>
-                <Treebutton style="width:260px" class="lightbugattiblue mx-2 mb-2" />
+                <Treebutton style="width:260px" class="mx-2 mb-2" />
               </div>
           </div>
           </div>
@@ -249,12 +248,12 @@
 				"error": "semble invalide ou déjà enregistré.",
 				"label1": "PRENOM ",
 				"label2": "EMAIL",
-				"subtitle": "Nous objets sont en cours de création. En attendant, reforestons la planète. Rentrez votre addresse mail pour planter un arbre et rester au courant de l’avancée du projet.",
+				"subtitle": "Nous objets sont en cours de production. En attendant, participez à nos projets de reforestation ou réservez votre article (aucun paiement n'est requis)",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"
 			},
-			"subtitle": "Maroquinerie et chaussures en cuir végétal de vin",
+			"subtitle": "Maroquinerie en cuir végétal de vin. Au masculin.",
 			"tag1": "Ecologique / Vegan",
 			"tag2": "Made in France",
 			"tag3": "Technologie durable",

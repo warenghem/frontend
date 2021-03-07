@@ -683,6 +683,34 @@ letter-spacing: .009em;
   font-size: 24px;
   }
 }
+.app-title {
+  padding-bottom: 20px;
+  font-size: 40px !important;
+  color: white;
+  letter-spacing: -.009em!important;
+  font-family: 'teradeli-medium', sans-serif !important;
+  line-height: 1 !important;
+  transition: all .3s cubic-bezier(.39, .575, .565, 1);
+  @media(max-width: 768px) {
+    font-size: 35px !important;
+    text-align: left !important;
+    margin: 0 auto;
+  }
+}
+
+.app-subtitle {
+  letter-spacing: .004em;
+  font-family: 'teradeli-light', sans-serif !important;
+  color: #fff;
+  line-height: 1.10722 !important;
+  transition: all .3s cubic-bezier(.39, .575, .565, 1);
+  padding-bottom: 20px;
+  font-size: 24px !important;
+  @media(max-width: 768px) {
+    text-align: left !important;
+    margin: 0 auto;
+  }
+}
 
 .text-white {
   color: white!important;
@@ -810,6 +838,20 @@ letter-spacing: .009em;
     transition: opacity 0.5s !important;
   }
 }
+.blueoverlay {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #153038;
+    opacity: 0.5;
+    z-index: 1 !important;
+    transition: opacity 0.5s !important;
+  }
+}
 .blackoverlay2 {
   &::before {
     content: "";
@@ -819,7 +861,7 @@ letter-spacing: .009em;
     right: 0;
     left: 0;
     background-color: #121217;
-    opacity: 0.5;
+    opacity: 0.2;
     z-index: 1 !important;
     transition: opacity 0.5s !important;
   }
@@ -917,6 +959,9 @@ letter-spacing: .009em;
     border-bottom: solid 1px #c0c0c080!important;
   }
 }*/
+.toolbartabs {
+  width: calc(100% - 66px)!important;
+}
 .homecard {
   height: 25rem!important;
   @media (min-width: 48em) {

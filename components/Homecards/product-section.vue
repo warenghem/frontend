@@ -133,7 +133,7 @@
 				"desc": "Le plus grand des sacs. Composé de raisins et d’une doublure en lin francais. Indispensable pour le week-end, le sport, ou les courts séjours. C’est la pièce maitresse, qui donne le ton de la collection.",
 				"summary": "Des vignes et du lin. Tel est son destin.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Dionysos 48H"
+				"title": "Dionysos Voyageur"
 			},
 			{
 				"desc": "Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur un costume que sur un jean.",
