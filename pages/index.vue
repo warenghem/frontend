@@ -49,6 +49,11 @@
                   id:"respondio__widget",
                   src:"https://cdn.respond.io/webchat/widget/widget.js?cId=3af7c8a4e25b0935bb12c63552ea8cbc7743aaead668db1e9b5d500cccc060f9",
                   defer: true
+                 },
+                {       
+                  id:"respondio__widget",
+                  src:"https://app.respond.io/facebook/chat/plugin/52040/972605962933949",
+                  defer: true
                  }
               ]
           }
