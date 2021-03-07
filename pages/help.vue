@@ -50,7 +50,8 @@
 										<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
 										{{tab.title}}
 										</v-expansion-panel-header>
-										<v-expansion-panel-content eager class="ma-10" style="font-size:0.9375rem" v-html="tab.text">
+										<v-expansion-panel-content eager>
+											<div class="ma-10" style="font-size:0.9375rem" v-html="tab.text"></div>
 										</v-expansion-panel-content>
 									</v-expansion-panel>
 								</v-expansion-panels>
@@ -63,7 +64,7 @@
 					>
 					<div>
 						<template>
-						<v-card>
+						<v-card class="bgcard">
 							<div class="page-title teradeli-medium pb-10 bgcard">
 								{{$t('material.subtitle')}}
 							</div>
@@ -75,7 +76,8 @@
 									<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
 									{{tab.title}}
 									</v-expansion-panel-header>
-									<v-expansion-panel-content eager class="ma-10" style="font-size:0.9375rem" v-html="tab.text">
+									<v-expansion-panel-content eager>
+										<div class="ma-10" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -88,7 +90,7 @@
 					>
 					<div>
 						<template>
-						<v-card>
+						<v-card class="bgcard">
 							<div class="page-title teradeli-medium pb-10 bgcard">
 								{{$t('shipping.subtitle')}}
 							</div>
@@ -100,7 +102,8 @@
 									<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
 									{{tab.title}}
 									</v-expansion-panel-header>
-									<v-expansion-panel-content eager class="ma-10" style="font-size:0.9375rem" v-html="tab.text">
+									<v-expansion-panel-content eager>
+										<div class="ma-10" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -132,7 +135,8 @@
 									<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
 									{{tab.title}}
 									</v-expansion-panel-header>
-									<v-expansion-panel-content eager class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text">
+									<v-expansion-panel-content eager>
+										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -159,7 +163,8 @@
 									<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
 									{{tab.title}}
 									</v-expansion-panel-header>
-									<v-expansion-panel-content eager class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text">
+									<v-expansion-panel-content eager>
+										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -186,7 +191,8 @@
 									<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
 									{{tab.title}}
 									</v-expansion-panel-header>
-									<v-expansion-panel-content eager class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text">
+									<v-expansion-panel-content eager>
+										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -273,7 +279,7 @@
 			"menu": "",
 			"sections1": [
 				{
-					"text": "Yes, all our products are entirely made in France. This is our policy and our values.<br><br>To have more visibility on French traceability, you can use the ORIGIN application which will give you all the details of our products.<br><br>",
+					"text": "Yes, all our products are entirely made in France. This is our policy and our values.<br><br>To have more visibility on French traceability, you can use the ORIGIN application which will give you all the details of our products.",
 					"title": "Are Warenghem products entirely made in France?"
 				},
 				{
@@ -329,7 +335,7 @@
 					"title": "What delivery methods do you offer?"
 				},
 				{
-					"text": "Don't panic, it happens to everyone! Contact us quickly at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social media, so that we can do what is necessary. If your order has not yet been shipped, we will do our best to accommodate your request!",
+					"text": "<div class='d-block'>Don't panic, it happens to everyone! Contact us quickly at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social media, so that we can do what is necessary. If your order has not yet been shipped, we will do our best to accommodate your request!</div>",
 					"title": "I made the wrong delivery address, product or size when ordering."
 				},
 				{
@@ -337,7 +343,7 @@
 					"title": "Can I have it delivered abroad?"
 				},
 				{
-					"text": "If you are not happy with your Warenghem products, no problem! You have 14 days to return your products to us. Send an email to <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social networks, specifying your order number and we will send you the procedure to print your return slip. The refund is made within 15 days and will be made automatically on the account associated with the credit card used during the purchase or on the Paypal account used for payment. <br><br>\nOur reimbursement conditions only apply to individuals. For businesses, products are not returned or exchanged if they have been washed or used.",
+					"text": "<div class='d-block'>If you are not happy with your Warenghem products, no problem! You have 14 days to return your products to us. Send an email to <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social networks, specifying your order number and we will send you the procedure to print your return slip. The refund is made within 15 days and will be made automatically on the account associated with the credit card used during the purchase or on the Paypal account used for payment. <br><br>\nOur reimbursement conditions only apply to individuals. For businesses, products are not returned or exchanged if they have been washed or used.</div>",
 					"title": "What is Warenghem's return policy?"
 				},
 				{
@@ -349,16 +355,20 @@
 					"title": "What happens to the products that are returned to you?"
 				},
 				{
-					"text": "Your products are shipped the day after your order (excluding weekends and holidays). You will therefore receive within 48 hours of your order a shipment confirmation email containing a delivery tracking link. If you do not receive this confirmation email within 72 hours, we invite you to contact us at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social networks.",
+					"text": "<div class='d-block'>Your products are shipped the day after your order (excluding weekends and holidays). You will therefore receive within 48 hours of your order a shipment confirmation email containing a delivery tracking link. If you do not receive this confirmation email within 72 hours, we invite you to contact us at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social networks.</div>",
 					"title": "What is the status of my order?"
 				},
 				{
-					"text": "Did you get the wrong size or just changed your mind? No problem, send us a quick email at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social media. We will cancel your order if it has not already been shipped. If it is already with the postman, you will have 14 days to return it to us free of charge.",
+					"text": "<div class='d-block'>Did you get the wrong size or just changed your mind? No problem, send us a quick email at <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> or on social media. We will cancel your order if it has not already been shipped. If it is already with the postman, you will have 14 days to return it to us free of charge.</div>",
 					"title": "How can I cancel my order?"
 				},
 				{
-					"text": "We accept payment by credit card and Paypal. You can also pay for your order in 3x from 100 €.",
+					"text": "We accept payments by credit card and Paypal (no need to create an account and no fees). You can also pay for your order in 3x from 100 €.",
 					"title": "What payment methods do you offer?"
+				},
+				{
+					"text": "Payments by credit card are provided by our partner Stripe, an organization approved by the Prudential Control Authority and member of the GIE bank card. At no time is Warenghem in possession of your bank details thanks to the SSL encryption process. <br> <br> Paypal is the leading electronic wallet system, recognized worldwide for its reliability.",
+					"title": "Are your payment systems regulated?"
 				},
 				{
 					"text": "After choosing your products and validating your basket, you will simply have to click on Pay in 3 times in the payment step, then click on \"Validate payment\".",
@@ -382,7 +392,7 @@
 			"subtitle": "Découvrez nos matières naturelles et préserver la beauté de votre article"
 		},
 		"questions": {
-			"menu": "Produits",
+			"menu": "Nous et nos produits",
 			"subtitle": "En savoir plus sur nous et nos produits"
 		},
 		"shipping": {
@@ -393,7 +403,7 @@
 			"menu": "",
 			"sections1": [
 				{
-					"text": "Oui, tous nos produits sont entièrement fabriqués en France. C'est notre politique et nos valeurs.<br><br>\nPour avoir plus de visibilité sur la tracabilité francaise, vous pouvez utiliser l'application ORIGIN qui vous donnera tous les détails de nos produits.<br><br>",
+					"text": "Oui, tous nos produits sont entièrement fabriqués en France. C'est notre politique et nos valeurs.<br><br>\nPour avoir plus de visibilité sur la tracabilité francaise, vous pouvez utiliser l'application ORIGIN qui vous donnera tous les détails de nos produits.",
 					"title": "Les produits Warenghem sont-ils entierement fabriqués en France ?"
 				},
 				{
@@ -449,7 +459,7 @@
 					"title": "Quels modes de livraison proposez-vous ?"
 				},
 				{
-					"text": "Pas de panique, cela arrive à tout le monde ! Contactez-nous rapidement à <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> ou sur les réseaux sociaux, pour que nous puissions faire le nécessaire. Si votre commande n’a pas encore été expédiée, nous ferons le maximum pour répondre à votre demande !",
+					"text": "<div class='d-block'>Pas de panique, cela arrive à tout le monde ! Contactez-nous rapidement à <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> ou sur les réseaux sociaux, pour que nous puissions faire le nécessaire. Si votre commande n’a pas encore été expédiée, nous ferons le maximum pour répondre à votre demande !</div>",
 					"title": "Je me suis trompé d’adresse de livraison, de produit ou de taille lors de ma commande."
 				},
 				{
@@ -457,7 +467,7 @@
 					"title": "Puis-je me faire livrer à l’étranger ?"
 				},
 				{
-					"text": "Si vous n’êtes pas satisfait de vos produits Warenghem, aucun problème ! Vous avez 14 jours pour nous renvoyer vos produits. Envoyez un mail à à <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> ou sur les réseaux sociaux, en précisant votre numéro de commande et nous vous enverrons la procédure pour imprimer votre bon de retour. Le remboursement s’effectue dans un délai de 15 jours et s’effectuera automatiquement sur le compte associé à la carte bancaire utilisée lors de l’achat ou sur le compte Paypal ayant servi au paiement. <br><br>\n\nNos conditions de remboursement ne s’appliquent qu’aux particuliers. Pour les entreprises, les produits ne sont ni repris ni échangés s’ils ont été lavés ou utilisés.",
+					"text": "<div class='d-block'>Si vous n’êtes pas satisfait de vos produits Warenghem, aucun problème ! Vous avez 14 jours pour nous renvoyer vos produits. Envoyez un mail à <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> ou sur les réseaux sociaux, en précisant votre numéro de commande et nous vous enverrons la procédure pour imprimer votre bon de retour. Le remboursement s’effectue dans un délai de 15 jours et s’effectuera automatiquement sur le compte associé à la carte bancaire utilisée lors de l’achat ou sur le compte Paypal ayant servi au paiement. <br><br>\n\nNos conditions de remboursement ne s’appliquent qu’aux particuliers. Pour les entreprises, les produits ne sont ni repris ni échangés s’ils ont été lavés ou utilisés.</div>",
 					"title": "Quelle est la politique de retours de Warenghem ?"
 				},
 				{
@@ -473,12 +483,16 @@
 					"title": "Quel est le statut de ma commande ?"
 				},
 				{
-					"text": "Vous vous êtes trompés dans la taille ou avez tout simplement changé d’avis ? Aucun problème, envoyez-nous un mail rapidement à <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> ou sur les réseaux sociaux.. Nous annulerons votre commande si celle-ci n’a pas déjà été expédiée. Si jamais elle déjà chez le facteur, vous aurez 14 jours pour nous la retourner gratuitement.",
+					"text": "<div class='d-block'>Vous vous êtes trompés dans la taille ou avez tout simplement changé d’avis ? Aucun problème, envoyez-nous un mail rapidement à <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com</a> ou sur les réseaux sociaux.. Nous annulerons votre commande si celle-ci n’a pas déjà été expédiée. Si jamais elle déjà chez le facteur, vous aurez 14 jours pour nous la retourner gratuitement.</div>",
 					"title": "Comment puis-je annuler ma commande ?"
 				},
 				{
-					"text": "Nous acceptons les paiements par carte bancaire et Paypal. Vous pouvez également payer votre commande en 3x dès 100€.",
+					"text": "Nous acceptons les paiements par carte bancaire et Paypal (sans avoir besoin de créer un compte et sans frais). Vous pouvez également payer votre commande en 3x dès 100€.",
 					"title": "Quelles méthodes de paiement proposez-vous ?"
+				},
+				{
+					"text": "Les paiements par carte bancaire sont assurés par notre partenaire Stripe, organisme agréé par l'Autorité de Contrôle Prudentiel et membre du GIE carte bancaire. A aucun moment, Warenghem n'est en possession de vos coordonnées bancaires grâce au processus de cryptage SSL.<br><br>Paypal est le système leader de porte-monnaie électronique, reconnu dans le monde entier pour sa fiabilité.",
+					"title": "Vos systèmes de paiement sont ils reglementés ?"
 				},
 				{
 					"text": "Après avoir choisi vos produits et validé votre panier, vous aurez simplement à cliquer sur Payez en 3 fois dans l’étape du paiement, puis à cliquer sur \"Valider le paiement\".",

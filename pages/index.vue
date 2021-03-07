@@ -24,7 +24,6 @@
     </v-container>
   </div>
 </template>
-
 <script>
 
   export default {
@@ -44,7 +43,14 @@
           return {
               bodyAttrs: {
                   class: 'BgTransparent'
-              }
+              },
+              script: [
+                {       
+                  id:"respondio__widget",
+                  src:"https://cdn.respond.io/webchat/widget/widget.js?cId=3af7c8a4e25b0935bb12c63552ea8cbc7743aaead668db1e9b5d500cccc060f9",
+                  defer: true
+                 }
+              ]
           }
       },
       methods:{

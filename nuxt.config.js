@@ -72,7 +72,7 @@ export default {
     '@/assets/scss/main.css',
     '@/assets/scss/app.scss',
   ],
-
+  
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     /*'~/plugins/router',*/

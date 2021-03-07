@@ -61,9 +61,8 @@
           color="white"
           text
           rounded
-          class="text-capitalize"
           @click="$store.state.newsletterModal=true"
-          style="letter-spacing:inherit!important"
+          style="letter-spacing:inherit!important;text-transform: inherit;"
         >
           Newsletter
         </v-btn>
@@ -73,9 +72,8 @@
           color="white"
           text
           rounded
-          class="text-capitalize"
           :to="link.url" nuxt
-          style="letter-spacing:inherit!important"
+          style="letter-spacing:inherit!important;text-transform: inherit;"
         >
           {{$t(link.title)}}
         </v-btn>
@@ -111,6 +109,7 @@
             links() {
                   return [
                     { title: this.$i18n.t('toolbar.help'), url: "/help/" },
+                    { title: this.$i18n.t('toolbar.payments'), url: "/payments/" },
                     { title: this.$i18n.t('toolbar.protection'), url: "/legal/" },
                   ];
                 }
