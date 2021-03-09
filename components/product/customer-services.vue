@@ -3,27 +3,32 @@
     <h3 class="page-title teradeli-medium pb-10">
       {{$t('contact')}}
     </h3>
-    <div>
-      <p class="page-subtitle mb-5">{{$t('contactsubtitle')}}</p>
+    <div class="text-center">
+      <p class="mb-5">{{$t('contactsubtitle')}}</p>
       <div class="mb-5"> 
-        <a class="text-center w-100" target="_blank" href="https://wa.me/%2B33442718968?text=">
+        <v-btn max-width="300px" depressed nuxt rounded class="text-center w-100" onclick="tidioChatApi.open()">
+          <v-icon color="lightbugattiblue">{{ svgPath9 }}</v-icon><span class="pl-3">{{$t('chat')}}</span>
+        </v-btn>
+      </div>
+      <div class="mb-5"> 
+        <v-btn max-width="300px" depressed nuxt rounded class="text-center w-100" target="_blank" href="https://wa.me/%2B33442718968?text=">
           <v-icon color="lightbugattiblue">{{ svgPath5 }}</v-icon><span class="pl-3">WhatsApp</span>
-        </a>
+        </v-btn>
       </div>
       <div class="mb-5">
-        <a class="text-center w-100" target="_blank" href="https://m.me/warenghem.studios">
+        <v-btn max-width="300px" depressed nuxt rounded class="text-center w-100" target="_blank" href="https://m.me/warenghem.studios">
           <v-icon color="lightbugattiblue">{{ svgPath7 }}</v-icon><span class="pl-3">Facebook Messenger</span>
-        </a>
+        </v-btn>
       </div>
       <div class="mb-5">
-        <a class="text-center w-100" target="_blank" href="https://www.instagram.com/warenghem.studios/">
+        <v-btn max-width="300px" depressed nuxt rounded class="text-center w-100" target="_blank" href="https://www.instagram.com/warenghem.studios/">
           <v-icon color="lightbugattiblue">{{ svgPath8 }}</v-icon><span class="pl-3">Instagram</span>
-        </a>
+        </v-btn>
       </div>
       <div class="mb-5">
-        <a class="text-center w-100" target="_blank" href="https://wa.me/%2B33442718968?text=">
+        <v-btn max-width="300px" depressed nuxt rounded class="text-center w-100" target="_blank" href="https://wa.me/%2B33442718968?text=">
           <v-icon color="lightbugattiblue">{{ svgPath6 }}</v-icon><span class="pl-3">Email</span>
-        </a>
+        </v-btn>
       </div>
     </div>
     <div v-html="$t('contacthours')">
@@ -32,11 +37,12 @@
 </template>
 
 <script>
-    import { mdiWhatsapp, mdiEmail, mdiFacebookMessenger, mdiInstagram } from '@mdi/js'
+    import { mdiWhatsapp, mdiEmail, mdiFacebookMessenger, mdiInstagram, mdiForum } from '@mdi/js'
     export default {
         name: "info-modal",
         data() {
             return {
+              svgPath9: mdiForum,
               svgPath5: mdiWhatsapp,
               svgPath6: mdiEmail,
               svgPath7: mdiFacebookMessenger,
@@ -49,13 +55,15 @@
 <i18n>
 {
 	"en": {
-		"contact": "",
-		"contacthours": "",
-		"contactsubtitle": ""
+    "chat": "Our online chat",
+		"contact": "Contact us",
+		"contacthours": "<p> We are at your disposal and we will be happy to answer all your questions. </p> <ul><li> Monday - Saturday: 10:00 am - 08:30 pm (UTC+01:00)</li> <li> Sunday: 10:00 am - 08:30 pm UTC+01:00</li></ul>",
+		"contactsubtitle": "Personalized advice? A specific question? Any advice for us?"
 	},
 	"fr": {
+    "chat": "Notre chat en ligne",
 		"contact": "Contactez nous",
-		"contacthours": "<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><p>Lundi – Samedi : 9h30 - 20h</p><p>Dimanche : 9h30 – 17h30</p>",
+		"contacthours": "<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><ul><li>Lundi – Samedi : 10h00 - 20h30</li><li>Dimanche : 10h00 – 20h30</li></ul>",
 		"contactsubtitle": "Des conseils personnalisés? Une question particulière? Des conseils à nous donner?"
 	}
 }

@@ -246,6 +246,97 @@
 
 <i18n>
 {
+	"en": {
+		"conditions": {
+			"menu": "",
+			"subtitle": ""
+		},
+		"mentions": {
+			"menu": "",
+			"subtitle": ""
+		},
+		"origins": [
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			}
+		],
+		"productTitle": "",
+		"products": [
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": ""
+			}
+		],
+		"protection": {
+			"menu": "",
+			"subtitle": ""
+		},
+		"title": "",
+		"title2": ""
+	},
 	"fr": {
 		"conditions": {
 			"menu": "Nos ateliers",
@@ -255,87 +346,87 @@
 			"menu": "Notre application Origin",
 			"subtitle": "Version 1.0"
 		},
+		"origins": [
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": "L'application qui revolutionne la transparence"
+			},
+			{
+				"subtitle": "Notre premier constat",
+				"summary": "Milliards de litres de vin sont produits chaque année dans le monde",
+				"title": ""
+			},
+			{
+				"subtitle": "Notre second constat",
+				"summary": "<div>le bas score de transparence de tracabilité moyen des marques de mode en 2020 (fashionrevolution.org)</div>",
+				"title": ""
+			},
+			{
+				"subtitle": "Notre solution innovante",
+				"summary": "Milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "<ul class='text-left text-white'><li><span >Notre cuir de vin a &eacute;t&eacute; longuement test&eacute;</span></li><li><span >M&ecirc;mes caract&eacute;ristiques m&eacute;caniques, esth&eacute;tiques et sensorielles qu'un cuir traditionnel</span></li><li><span >A contrario - ne demande que peu d'entretien</span></li></ul>",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "<ul class='text-left'><li><span >Sans souffrance animale</span></li><li><span >Faible impact environnemental</span></li><li><span >Mati&egrave;re premi&egrave;re renouvelable</span></li></ul>",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "<ul class='text-left text-white'><li><span >Nous r&eacute;cup&eacute;rons vos anciens produits en &eacute;change d'un bon de r&eacute;duction de 10% &agrave; valoir sur un prochain achat</span></li><li><span >Nous recyclerons la mati&egrave;re pour cr&eacute;er de nouveaux produits</span></li></ul>",
+				"title": ""
+			}
+		],
+		"productTitle": "Les objets en création",
+		"products": [
+			{
+				"subtitle": "",
+				"summary": "",
+				"title": "L'innovation végétale en chiffre et en lettre"
+			},
+			{
+				"subtitle": "Notre premier constat",
+				"summary": "milliards de litres de vin sont produits chaque année dans le monde",
+				"title": ""
+			},
+			{
+				"subtitle": "Notre second constat",
+				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>",
+				"title": ""
+			},
+			{
+				"subtitle": "Notre solution innovante",
+				"summary": "milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "<ul class='text-left text-white'><li><span >Notre cuir de vin a &eacute;t&eacute; longuement test&eacute;</span></li><li><span >M&ecirc;mes caract&eacute;ristiques m&eacute;caniques, esth&eacute;tiques et sensorielles qu'un cuir traditionnel</span></li><li><span >A contrario - ne demande que peu d'entretien</span></li></ul>",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "<ul class='text-left'><li><span >Sans souffrance animale</span></li><li><span >Faible impact environnemental</span></li><li><span >Mati&egrave;re premi&egrave;re renouvelable</span></li></ul>",
+				"title": ""
+			},
+			{
+				"subtitle": "",
+				"summary": "<ul class='text-left text-white'><li><span >Nous r&eacute;cup&eacute;rons vos anciens produits en &eacute;change d'un bon de r&eacute;duction de 10% &agrave; valoir sur un prochain achat</span></li><li><span >Nous recyclerons la mati&egrave;re pour cr&eacute;er de nouveaux produits</span></li></ul>",
+				"title": ""
+			}
+		],
 		"protection": {
 			"menu": "Nos cuirs Dionysos",
 			"subtitle": "Mis à jour le 04/01/2021"
 		},
 		"title": "Informations",
-		"title2": "Des vendanges au cuir de vin",
-		"productTitle": "Les objets en création",
-		"products": [
-			{
-				"title": "L'innovation végétale en chiffre et en lettre",
-				"subtitle": "",
-				"summary": ""
-			},
-			{
-				"title": "",
-				"subtitle": "Notre premier constat",
-				"summary": "milliards de litres de vin sont produits chaque année dans le monde"
-			},
-			{
-				"title": "",
-				"subtitle": "Notre second constat",
-				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>"
-			},
-			{
-				"title": "",
-				"subtitle": "Notre solution innovante",
-				"summary": "milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production"
-			},
-			{
-				"title": "",
-				"subtitle": "",
-				"summary": "<ul class='text-left text-white'><li><span >Notre cuir de vin a &eacute;t&eacute; longuement test&eacute;</span></li><li><span >M&ecirc;mes caract&eacute;ristiques m&eacute;caniques, esth&eacute;tiques et sensorielles qu'un cuir traditionnel</span></li><li><span >A contrario - ne demande que peu d'entretien</span></li></ul>"
-			},
-			{
-				"title": "",
-				"subtitle": "",
-				"summary": "<ul class='text-left'><li><span >Sans souffrance animale</span></li><li><span >Faible impact environnemental</span></li><li><span >Mati&egrave;re premi&egrave;re renouvelable</span></li></ul>"
-			},
-			{
-				"title": "",
-				"subtitle": "",
-				"summary": "<ul class='text-left text-white'><li><span >Nous r&eacute;cup&eacute;rons vos anciens produits en &eacute;change d'un bon de r&eacute;duction de 10% &agrave; valoir sur un prochain achat</span></li><li><span >Nous recyclerons la mati&egrave;re pour cr&eacute;er de nouveaux produits</span></li></ul>"
-			}
-		],
-		"origins": [
-			{
-				"title": "L'application qui revolutionne la transparence",
-				"subtitle": "",
-				"summary": ""
-			},
-			{
-				"title": "",
-				"subtitle": "Notre premier constat",
-				"summary": "Milliards de litres de vin sont produits chaque année dans le monde"
-			},
-			{
-				"title": "",
-				"subtitle": "Notre second constat",
-				"summary": "<div>le bas score de transparence de tracabilité moyen des marques de mode en 2020 (fashionrevolution.org)</div>"
-			},
-			{
-				"title": "",
-				"subtitle": "Notre solution innovante",
-				"summary": "Milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production"
-			},
-			{
-				"title": "",
-				"subtitle": "",
-				"summary": "<ul class='text-left text-white'><li><span >Notre cuir de vin a &eacute;t&eacute; longuement test&eacute;</span></li><li><span >M&ecirc;mes caract&eacute;ristiques m&eacute;caniques, esth&eacute;tiques et sensorielles qu'un cuir traditionnel</span></li><li><span >A contrario - ne demande que peu d'entretien</span></li></ul>"
-			},
-			{
-				"title": "",
-				"subtitle": "",
-				"summary": "<ul class='text-left'><li><span >Sans souffrance animale</span></li><li><span >Faible impact environnemental</span></li><li><span >Mati&egrave;re premi&egrave;re renouvelable</span></li></ul>"
-			},
-			{
-				"title": "",
-				"subtitle": "",
-				"summary": "<ul class='text-left text-white'><li><span >Nous r&eacute;cup&eacute;rons vos anciens produits en &eacute;change d'un bon de r&eacute;duction de 10% &agrave; valoir sur un prochain achat</span></li><li><span >Nous recyclerons la mati&egrave;re pour cr&eacute;er de nouveaux produits</span></li></ul>"
-			}
-		]
+		"title2": "Des vendanges au cuir de vin"
 	}
 }
 </i18n>

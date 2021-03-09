@@ -4,7 +4,7 @@
       <h2 class="page-title px-0">{{$t('title')}}</h2>
       <div class="page-subtitle py-2">{{$t('subtitle')}}</div>
       <v-text
-          @click="$store.state.newsletterModal=true"
+          @click="$store.state.plantModal=true"
           style="z-index:2"
           class="text-center hand position-relative lightbugattiblue--text "
           >

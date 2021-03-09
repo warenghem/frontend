@@ -58,8 +58,8 @@
     </v-main>
     <Footer/>
     </div>
-    <LazyPlantForm v-if="$store.state.newsletterModal" />
-    <LazyHistoriesForm v-if="$store.state.historiesModal" />
+    <LazyPlantForm v-if="$store.state.plantModal" />
+    <LazyNewsletterForm v-if="$store.state.newsletterModal" />
     <LazyProductsForm v-if="$store.state.productModal" />
   </v-app>
 </template>

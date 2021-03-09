@@ -59,4 +59,22 @@
 </script>
 
 <style scoped lang="scss">
+    #instaFeed {
+    @media only screen and (max-width: 599px) {
+        a:nth-child(n+5) {
+        display: none;
+        }
+        img {
+        width: 50%!important;
+        }
+    }
+    @media only screen and (min-width: 600px) and (max-width: 779px) {
+        a:nth-child(n+7) {
+        display: none!important;
+        }
+        img {
+        width: 33.33%!important;
+        }
+    }
+    }
 </style>
