@@ -72,7 +72,7 @@ export default {
     '@/assets/scss/main.css',
     '@/assets/scss/app.scss',
   ],
-  
+
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     /*'~/plugins/router',*/
@@ -465,15 +465,8 @@ export default {
           },
           primary: {
             base: '#ffffff',
-            lighten3: '#ffb700',
-            darken3: '#ff6200'
-          },
-          secondary: {
-            base: '#ffffff',
-            lighten3: '#FBFBFD'
-          },
-          tertiary: {
-            base: '#ffffff',
+            lighten2: '#767676',
+            lighten3: '#666666'
           },
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
@@ -494,15 +487,6 @@ export default {
           primary: {
             base: '#19110b',
             lighten1: '#ffb700',
-          },
-          secondary: {
-            base: '#86868b',
-            lighten1: '#E6a9a9ac',
-            lighten2: '#d4d4d6'
-
-          },
-          tertiary: {
-            base: '#4682bf',
           },
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
@@ -565,7 +549,7 @@ export default {
                 /col-*/,
                 /v-dialog*/,
                 /^vue-foldable/,
-                /^slide-left/
+                /^slide-left/,
               ],
               deep: [
                 /page-enter/,
@@ -579,7 +563,7 @@ export default {
                 /dialog-bottom-transition/,
                 /^vue-foldable/,
                 /^viewer/,
-                /^slide-left/
+                /^slide-left/,
               ],
               greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/]
             }
