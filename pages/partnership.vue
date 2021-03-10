@@ -29,7 +29,7 @@
     </article>
 	<v-row class="pa-0 ma-0">
 		<v-col cols="12" md="8" class="bgcard pvw">
-			<div class="d-none d-md-block">	
+			<div >	
 				<div>
 					<template>
 					<v-card class="bgcard">
@@ -41,11 +41,11 @@
 								v-for="(tab,m_idx) in $t('tab.sections3')"
 								:key="'tab_'+m_idx"
 							>
-								<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
+								<v-expansion-panel-header ripple class="border-bottom-2 py-0 py-md-6" :expand-icon="svgPath3">
 								{{tab.title}}
 								</v-expansion-panel-header>
 								<v-expansion-panel-content eager>
-									<div class="ma-10" style="font-size:0.9375rem" v-html="tab.text"></div>
+									<div class="pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
 								</v-expansion-panel-content>
 							</v-expansion-panel>
 						</v-expansion-panels>
@@ -53,24 +53,9 @@
 					</template>
 				</div>
 			</div>
-			<div class="d-block d-md-none">
-				<v-expansion-panels flat class="pvw">
-					<v-expansion-panel
-						v-for="(tab,m_idx) in $t('tab.sections3')"
-						:key="'tab_'+m_idx"
-					>
-						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
-						{{tab.title}}
-						</v-expansion-panel-header>
-						<v-expansion-panel-content eager>
-							<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
-						</v-expansion-panel-content>
-					</v-expansion-panel>
-				</v-expansion-panels>
-			</div>
 		</v-col>
 		<v-col col="12" md="4" class="pvw bg-white">
-			<CustomerServices/>
+			<CustomerServicesLayout/>
 		</v-col>
 	</v-row>
   </div>
@@ -132,7 +117,7 @@
 {
 	"en": {
 		"shipping": {
-			"subtitle": "Delivery and returns"
+			"subtitle": "Partnership, Press, Reseller"
 		},
 		"tab": {
 			"menu": "",
@@ -151,7 +136,7 @@
 				}
 			]
 		},
-		"title": "Delivery and returns"
+		"title": "Partnership, Press"
 	},
 	"fr": {
 		"shipping": {
@@ -174,7 +159,7 @@
 				}
 			]
 		},
-		"title": "Partenariat, Presse, Revendeur"
+		"title": "Partenariat, Presse"
 	}
 }
 </i18n>

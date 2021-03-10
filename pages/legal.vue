@@ -149,7 +149,7 @@
       </v-toolbar-bar>
       <v-expansion-panels flat class="pvw">
         <v-expansion-panel>
-          <v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
+          <v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">
 			<div class="d-block">
 				<div class="teradeli-medium pb-1">
 					{{$t('protection.menu')}}
@@ -165,17 +165,18 @@
                 v-for="(tab,m_idx) in $t('tab.sections1')"
                 :key="'tab_'+m_idx"
               >
-                <v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
+                <v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath4">
                   {{tab.title}}
                 </v-expansion-panel-header>
-                <v-expansion-panel-content eager class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text">
+                <v-expansion-panel-content eager>
+					<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
           </v-expansion-panel-content>
         </v-expansion-panel>
         <v-expansion-panel>
-          <v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
+          <v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">
 			<div class="d-block">
 				<div class="teradeli-medium pb-1">
 					{{$t('conditions.menu')}}
@@ -191,17 +192,18 @@
                 v-for="(tab,m_idx) in $t('tab.sections2')"
                 :key="'tab_'+m_idx"
               >
-                <v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
+                <v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath4">
                   {{tab.title}}
                 </v-expansion-panel-header>
-                <v-expansion-panel-content eager class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text">
+                <v-expansion-panel-content eager>
+					<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
           </v-expansion-panel-content>
         </v-expansion-panel>
         <v-expansion-panel>
-          <v-expansion-panel-header :expand-icon="svgPath3">
+          <v-expansion-panel-header ripple :expand-icon="svgPath3">
 			<div class="d-block">
 				<div class="teradeli-medium pb-1">
 					{{$t('mentions.menu')}}

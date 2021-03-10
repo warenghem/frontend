@@ -43,7 +43,7 @@
                                 class="flex items-center whitespace-no-wrap"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-lg px-3"
+                                    class="bg-white rounded-pill px-3"
                                     @click="sheet = false"
                                     ripple
                                     style="height:70px"
@@ -75,7 +75,7 @@
                                 class="flex items-center whitespace-no-wrap"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-lg px-3"
+                                    class="bg-white rounded-pill px-3"
                                     @click="sheet = false"
                                     style="height:70px"
                                     ripple

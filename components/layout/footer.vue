@@ -8,7 +8,7 @@
     <v-card
       flat
       tile
-      color="wablack"
+      color="#000000"
       class="white--text text-center w-100 px-3 px-sm-15"
     >
       <v-card-title class="px-0 pb-0 d-block d-md-flex">
@@ -58,7 +58,7 @@
         class="mb-2"
       >
         <v-btn
-          color="white"
+          color="#666666"
           text
           rounded
           @click="$store.state.newsletterModal=true"
@@ -71,7 +71,7 @@
           dark
           v-for="(link,p_idx) in links"
           :key="p_idx"
-          color="primary-lighten3"
+          color="#666666"
           text
           rounded
           :to="link.url" nuxt
@@ -84,7 +84,7 @@
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
+      <v-card-text color="#666666">
         © {{ new Date().getFullYear() }} — Warenghem
       </v-card-text>
     </v-card>

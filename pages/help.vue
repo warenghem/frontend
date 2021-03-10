@@ -65,7 +65,7 @@
 										v-for="(tab,m_idx) in $t('tab.sections1')"
 										:key="'tab_'+m_idx"
 									>
-										<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
+										<v-expansion-panel-header ripple class="border-bottom-2 py-6" :expand-icon="svgPath3">
 										{{tab.title}}
 										</v-expansion-panel-header>
 										<v-expansion-panel-content eager>
@@ -91,7 +91,7 @@
 									v-for="(tab,m_idx) in $t('tab.sections2')"
 									:key="'tab_'+m_idx"
 								>
-									<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
+									<v-expansion-panel-header ripple class="border-bottom-2 py-6" :expand-icon="svgPath3">
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
@@ -109,7 +109,7 @@
 					<div>
 						<template>
 						<v-card class="bgcard">
-							<div class="page-title teradeli-medium pb-10 bgcard">
+							<div class="page-title teradeli-medium bgcard">
 								{{$t('shipping.subtitle')}}
 							</div>
 							<v-expansion-panels focusable inset flat>
@@ -118,7 +118,7 @@
 									v-for="(tab,m_idx) in $t('tab.sections3.shipping')"
 									:key="'tab_'+m_idx"
 								>
-									<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
+									<v-expansion-panel-header ripple class="border-bottom-2 py-6" :expand-icon="svgPath3">
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
@@ -130,7 +130,7 @@
 									v-for="(tab,m_idx) in $t('tab.sections3.order')"
 									:key="'tab_'+m_idx"
 								>
-									<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
+									<v-expansion-panel-header ripple class="border-bottom-2 py-6" :expand-icon="svgPath3">
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
@@ -142,7 +142,7 @@
 									v-for="(tab,m_idx) in $t('tab.sections3.payment')"
 									:key="'tab_'+m_idx"
 								>
-									<v-expansion-panel-header class="border-bottom-2 py-6" :expand-icon="svgPath3">
+									<v-expansion-panel-header ripple class="border-bottom-2 py-6" :expand-icon="svgPath3">
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
@@ -159,7 +159,7 @@
 			<div class="d-block d-md-none">
 				<v-expansion-panels flat class="pvw">
 					<v-expansion-panel>
-						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
+						<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">
 							<div class="d-block">
 								<div class="teradeli-medium pb-1">
 									{{$t('questions.menu')}}
@@ -175,19 +175,18 @@
 									v-for="(tab,m_idx) in $t('tab.sections1')"
 									:key="'tab_'+m_idx"
 								>
-									<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
+									<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath4">
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
+										<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
 						</v-expansion-panel-content>
 					</v-expansion-panel>
-					<!--fait chier*/-->
 					<v-expansion-panel>
-						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
+						<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">
 							<div class="d-block">
 								<div class="teradeli-medium pb-1">
 									{{$t('material.menu')}}
@@ -203,19 +202,18 @@
 									v-for="(tab,m_idx) in $t('tab.sections2')"
 									:key="'tab_'+m_idx"
 								>
-									<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
+									<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath4">
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
+										<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
 						</v-expansion-panel-content>
 					</v-expansion-panel>
-					<!--fait chier*/-->
 					<v-expansion-panel>
-						<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath3">
+						<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">
 							<div class="d-block">
 								<div class="teradeli-medium pb-1">
 									{{$t('shipping.menu')}}
@@ -227,15 +225,40 @@
 						</v-expansion-panel-header>
 						<v-expansion-panel-content eager>
 							<v-expansion-panels flat>
+								<div class="teradeli-medium page-subtitle pt-10">{{$t('tab.sections3.shippingtitle')}}</div>
 								<v-expansion-panel
-									v-for="(tab,m_idx) in $t('tab.sections3')"
+									v-for="(tab,m_idx) in $t('tab.sections3.shipping')"
 									:key="'tab_'+m_idx"
 								>
-									<v-expansion-panel-header class="border-bottom-2" :expand-icon="svgPath4">
+									<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath4">
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
+										<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
+									</v-expansion-panel-content>
+								</v-expansion-panel>
+								<div class="teradeli-medium page-subtitle pt-10">{{$t('tab.sections3.ordertitle')}}</div>
+								<v-expansion-panel
+									v-for="(tab,m_idx) in $t('tab.sections3.order')"
+									:key="'tab_'+m_idx"
+								>
+									<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath4">
+									{{tab.title}}
+									</v-expansion-panel-header>
+									<v-expansion-panel-content eager>
+										<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
+									</v-expansion-panel-content>
+								</v-expansion-panel>
+								<div class="teradeli-medium page-subtitle pt-10">{{$t('tab.sections3.paymenttitle')}}</div>
+								<v-expansion-panel
+									v-for="(tab,m_idx) in $t('tab.sections3.payment')"
+									:key="'tab_'+m_idx"
+								>
+									<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath4">
+									{{tab.title}}
+									</v-expansion-panel-header>
+									<v-expansion-panel-content eager>
+										<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -245,7 +268,7 @@
 			</div>
 		</v-col>
 		<v-col col="12" md="4" class="pvw bg-white">
-			<CustomerServices/>
+			<CustomerServicesLayout/>
 		</v-col>
 	</v-row>
   </div>
@@ -326,7 +349,7 @@
 					"title": "Are Warenghem products entirely made in France?"
 				},
 				{
-					"text": "<p>Since the birth of Warenghem, we have worked hand in hand with French family businesses. From knitting cotton threads to making up including design and packaging, all stages of production are Made in France. Making French is the assurance of continuing to support our fine French companies, our genuine traditional know-how and offering you quality products.</p>Dionysos wine leather bags and leather goods are made at Ateliers Saint Germain near Angers, specializing in fine leather goods.<br>We have selected them because they also work with the largest houses in France, in order to provide a high-end finish.<br><br>\nThe belt buckles are made to measure at Les Ateliers de Mars near Romans sur Isère and are made of certified natural pewter, infinitely recyclable. Why did we select it? For his experience and his achievements for big names.<br><br>\nThe shoes are made in the French shoe capital in Romans sur Isère at In-Soft. Our project was selected by the local economic development program and the \"Romans Cuir\" association for the creation of Dionysos boots.<br><br>\nIn these different workshops, the choice of noble natural materials and plants, the work of experienced craftsmen and the extreme care taken in each phase of the process of creating our products reinforce our tradition of excellence and refinement.",
+					"text": "<p>Since the birth of Warenghem, we have worked hand in hand with French family businesses. From knitting linen threads to making up including design and packaging, all stages of production are Made in France. Making French is the assurance of continuing to support our fine French companies, our genuine traditional know-how and offering you quality products.</p>Dionysos wine leather bags and leather goods are made at Ateliers Saint Germain near Angers, specializing in fine leather goods.<br>We have selected them because they also work with the largest houses in France, in order to provide a high-end finish.<br><br>\nThe belt buckles are made to measure at Les Ateliers de Mars near Romans sur Isère and are made of certified natural pewter, infinitely recyclable. Why did we select it? For his experience and his achievements for big names.<br><br>\nThe shoes are made in the French shoe capital in Romans sur Isère at In-Soft. Our project was selected by the local economic development program and the \"Romans Cuir\" association for the creation of Dionysos boots.<br><br>\nIn these different workshops, the choice of noble natural materials and plants, the work of experienced craftsmen and the extreme care taken in each phase of the process of creating our products reinforce our tradition of excellence and refinement.",
 					"title": "Where are your manufacturing workshops located?"
 				},
 				{
@@ -458,7 +481,7 @@
 				"paymenttitle": "Payment and security",
 				"payment": [
 					{
-						"text": "We accept payments by credit card and Paypal (no need to create an account and no fees). You can also pay for your order in 3x from 100 €.",
+						"text": "We accept payments by credit card (Visa, Mastercard, American express) and Paypal (no need to create an account and no fees). You can also pay for your order in 3x from 100 €.",
 						"title": "What payment methods do you offer?"
 					},
 					{
@@ -507,7 +530,7 @@
 					"title": "Les produits Warenghem sont-ils entierement fabriqués en France ?"
 				},
 				{
-					"text": "<p>Depuis la naissance de Warenghem nous travaillons main dans la main avec des entreprises familiales françaises. Du tricotage des fils de coton à la confection en passant par le design et le packaging, toutes les étapes de fabrication sont Made in France. Fabriquer français c’est l’assurance de continuer à faire vivre nos belles entreprises françaises, nos véritables savoir-faire traditionnels et de vous proposer des produits de qualité.</p>Les sacs et la maroquinerie en cuir de vin Dionysos sont confectionnés aux Ateliers Saint Germain vers Angers, spécialisés en haute maroquinerie.<br>\nNous les avons sélectionné car ils travaillent également avec les plus grandes maisons en France, afin de fournir une finition haut de gamme.<br><br>\n\nLes boucles de ceinture sont réalisées sur mesure chez Les Ateliers de Mars proche de Romans sur Isère et sont en étain naturel certifié, recyclable à l'infini. Pourquoi nous l'avons sélectionné ? Pour son expérience et ses réalisations pour de grands noms.<br><br>\n\nLes souliers sont confectionnés au sein de la capitale francaise de la chaussure à Romans sur Isère chez In-Soft. Notre projet a été selectionné par le programme de développement économique local et l'association \"Romans Cuir\" pour la création des bottines Dionysos.<br><br>\n\nDans ces différents ateliers, le choix de matériaux naturels nobles et végétaux, l’œuvre d’artisans expérimentés et le soin extrême apporté à chacune des phases du processus de création de nos produits renforcent notre tradition de l’excellence et du raffinement.",
+					"text": "<p>Depuis la naissance de Warenghem nous travaillons main dans la main avec des entreprises familiales françaises. Du tricotage des fils de lin à la confection en passant par le design et le packaging, toutes les étapes de fabrication sont Made in France. Fabriquer français c’est l’assurance de continuer à faire vivre nos belles entreprises françaises, nos véritables savoir-faire traditionnels et de vous proposer des produits de qualité.</p>Les sacs et la maroquinerie en cuir de vin Dionysos sont confectionnés aux Ateliers Saint Germain vers Angers, spécialisés en haute maroquinerie.<br>\nNous les avons sélectionné car ils travaillent également avec les plus grandes maisons en France, afin de fournir une finition haut de gamme.<br><br>\n\nLes boucles de ceinture sont réalisées sur mesure chez Les Ateliers de Mars proche de Romans sur Isère et sont en étain naturel certifié, recyclable à l'infini. Pourquoi nous l'avons sélectionné ? Pour son expérience et ses réalisations pour de grands noms.<br><br>\n\nLes souliers sont confectionnés au sein de la capitale francaise de la chaussure à Romans sur Isère chez In-Soft. Notre projet a été selectionné par le programme de développement économique local et l'association \"Romans Cuir\" pour la création des bottines Dionysos.<br><br>\n\nDans ces différents ateliers, le choix de matériaux naturels nobles et végétaux, l’œuvre d’artisans expérimentés et le soin extrême apporté à chacune des phases du processus de création de nos produits renforcent notre tradition de l’excellence et du raffinement.",
 					"title": "Où se situent vos ateliers de fabrication ?"
 				},
 				{
@@ -520,7 +543,7 @@
 				},
 				{
 					"text": "Warenghem ne propose pas de réductions ni de codes promo. Notre concept est de supprimer tous les intermédiaires couteux afin de vous proposer la meilleure qualité au meilleur prix. La plupart des acteurs de la mode gonflent artificiellement les prix afin de financer les opérations de promotions ponctuelles ou continues.",
-					"title": "Est-ce que Warenghem proposent des codes promo ou des remises ?"
+					"title": "Est-ce que Warenghem propose des codes promo ou des remises ?"
 				},
 				{
 					"text": "Cliquez sur le lien Matières et Entretien des fiches produits pour obtenir l’ensemble des recommandations d’entretien.",
@@ -623,7 +646,7 @@
 				"paymenttitle": "Paiement et sécurité",
 				"payment": [
 					{
-						"text": "Nous acceptons les paiements par carte bancaire et Paypal (sans avoir besoin de créer un compte et sans frais). Vous pouvez également payer votre commande en 3x dès 100€.",
+						"text": "Nous acceptons les paiements par carte bancaire (Visa, Mastercard, American Express) et Paypal (sans avoir besoin de créer un compte et sans frais). Vous pouvez également payer votre commande en 3x dès 100€.",
 						"title": "Quelles méthodes de paiement proposez-vous ?"
 					},
 					{

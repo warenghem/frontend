@@ -463,11 +463,9 @@ export default {
             base: '#1E1E1F',
             darken3: '#161617'
           },
-          primary: {
-            base: '#ffffff',
-            lighten2: '#767676',
-            lighten3: '#666666'
-          },
+          primary: '#ffffff',
+          secondary:'#767676',
+          terciary: '#666666',
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
@@ -484,10 +482,9 @@ export default {
             lighten3: '#ffb700',
             darken3: '#161617'
           },
-          primary: {
-            base: '#19110b',
-            lighten1: '#ffb700',
-          },
+          primary: '#19110b',
+          secondary: '#424242',
+          terciary: '#ffb700',
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
@@ -495,7 +492,8 @@ export default {
           success: colors.green.accent3,
           darkbugattiblue: '#153038',
           lightbugattiblue: '#3D8EBE',
-          wablack: '#000000'
+          wablack: '#19110b',
+          appledarkfooter: '#1d1d1f'
         }
       }
     },

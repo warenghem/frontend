@@ -343,11 +343,6 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
   top: -10px;
   left: -8px;
 }
-
-.v-expansion-panel-content__wrap {
-  padding: 0 10px !important;
-}
-
 .conttext {
   background: white;
   padding: 10px;
@@ -529,7 +524,7 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 }
 
 .v-expansion-panel-content__wrap {
-  padding: 0px 10px;
+  padding: 0!important;
 }
 
 
