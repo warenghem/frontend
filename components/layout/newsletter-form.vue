@@ -2,7 +2,7 @@
     <div>
         <div class="mx-auto text-center">
             <v-dialog
-                    v-model="$store.state.plantModal"
+                    v-model="$store.state.newsletterModal"
                     persistent
                     transition="dialog-bottom-transition"
                     content-class="bg-white bottom-dialog rounded-b-0 rounded-t-lg w-100"
@@ -10,13 +10,13 @@
             >
                 <v-card style="max-width:inherit">
                     <div style="height: 50px;" class="d-flex justify-space-between align-center border-bottom-2 bar-fixed rounded-t-lg">
-                        <div class="sub-title text-capitalize pl-3">{{$t('toolbar.reforest')}}</div>
+                        <div class="sub-title text-capitalize pl-3">Newsletter</div>
                         <v-btn
                         text
                         color="black"
                         style="font-size: 26px"
                         class="px-0 h-100 border-left-2 rounded-0"
-                        @click="$store.state.plantModal = false"
+                        @click="$store.state.newsletterModal = false"
                         >
                         <v-icon>{{ svgPath }}</v-icon>
                         </v-btn>
@@ -25,7 +25,7 @@
                         <div class="wa-smart-picture large-ratio skeletton">
                             <img
                             data-sizes="auto"
-                            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/madagascar_river.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/madagascar_river.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/madagascar_river.jpg 2500w"
+                            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 2500w"
                             class="lazyload mediabox-img lazypreload"
                             />
                         </div>
@@ -96,7 +96,7 @@
                                                                 type="submit"
                                                                 style="max-width: 250px;border-radius: 28px;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
                                                                 >
-                                                                    {{$t('btnTitle')}}
+                                                                    {{$t('btnDiscover')}}
                                                             </v-btn>
                                                             <button class="hidden" type="submit" ref="mailForm"></button>
                                                     </div>
@@ -170,7 +170,7 @@
 
 <script>
     import MailchimpSubscribe from './mailchp-subscribe'
-    import {mdiClose, mdiEmail, mdiAccount} from '@mdi/js'
+    import {mdiClose, mdiEmail, mdiAccount, mdiAlertCircleOutline, mdiCheckboxMarkedCircle, mdiForum} from '@mdi/js'
     import {ValidationObserver, ValidationProvider} from "vee-validate";
     export default {
         name: "plant-form",
@@ -187,6 +187,9 @@
                 svgPath: mdiClose,
                 svgPath2: mdiEmail,
                 svgPath3: mdiAccount,
+                svgPath4: mdiAlertCircleOutline,
+                svgPath5: mdiCheckboxMarkedCircle,
+                svgPath9: mdiForum,
                 isFormValid: false,
 
             }
@@ -212,7 +215,7 @@
 				"error": "Your email appears to be invalid or already registered. Contact us:",
 				"label1": "FIRST NAME",
 				"label2": "E-MAIL",
-				"subtitle": "In addition to our creations, we finance reforestation projects. Participate in the Paradise project in Madagascar and receive your traceability certificate and all the details of the plantation.",
+				"subtitle": "Twice a month, discover our history and that of the incredible objects that bring nature and humans together. <br>Unsubscribe in one click",
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
 				"title": "Project progress"
@@ -224,10 +227,10 @@
 			"rightSection": {
 				"alerttime": "maintenant",
 				"alerttitle": "Warenghem dit",
-				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous:",
+				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous en cliquant ici:",
 				"label1": "PRENOM ",
 				"label2": "EMAIL",
-				"subtitle": "En plus de nos créations, nous financons des projets de reforestation. Participer au projet Paradis à Madagascar et recevez votre certificat de tracabilité et tous les détails de la plantation.",
+				"subtitle": "Deux fois par mois, découvrez notre histoire et celle des incroyables objets qui rapprochent la nature et l'humain.<br>Désinscription en un clic",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"

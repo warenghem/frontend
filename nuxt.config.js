@@ -463,18 +463,9 @@ export default {
             base: '#1E1E1F',
             darken3: '#161617'
           },
-          primary: {
-            base: '#ffffff',
-            lighten3: '#ffb700',
-            darken3: '#ff6200'
-          },
-          secondary: {
-            base: '#ffffff',
-            lighten3: '#FBFBFD'
-          },
-          tertiary: {
-            base: '#ffffff',
-          },
+          primary: '#ffffff',
+          secondary:'#767676',
+          terciary: '#666666',
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
@@ -491,19 +482,9 @@ export default {
             lighten3: '#ffb700',
             darken3: '#161617'
           },
-          primary: {
-            base: '#19110b',
-            lighten1: '#ffb700',
-          },
-          secondary: {
-            base: '#86868b',
-            lighten1: '#E6a9a9ac',
-            lighten2: '#d4d4d6'
-
-          },
-          tertiary: {
-            base: '#4682bf',
-          },
+          primary: '#19110b',
+          secondary: '#424242',
+          terciary: '#ffb700',
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
           warning: colors.amber.base,
@@ -511,7 +492,8 @@ export default {
           success: colors.green.accent3,
           darkbugattiblue: '#153038',
           lightbugattiblue: '#3D8EBE',
-          wablack: '#000000'
+          wablack: '#19110b',
+          appledarkfooter: '#1d1d1f'
         }
       }
     },
@@ -565,7 +547,7 @@ export default {
                 /col-*/,
                 /v-dialog*/,
                 /^vue-foldable/,
-                /^slide-left/
+                /^slide-left/,
               ],
               deep: [
                 /page-enter/,
@@ -579,7 +561,7 @@ export default {
                 /dialog-bottom-transition/,
                 /^vue-foldable/,
                 /^viewer/,
-                /^slide-left/
+                /^slide-left/,
               ],
               greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/]
             }

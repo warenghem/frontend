@@ -18,7 +18,7 @@
             <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath1 }}</v-icon>
             {{product.offers.availability?$t('product.stock'):$t('product.notInStock')}}
           </div>
-          <h3 class="teradeli-book">
+          <h3 class="teradeli-book d-none d-md-block">
             {{product.price}} {{$i18n.localeProperties.currencySign}}</h3>
         </div>
         <div class="mr-3">

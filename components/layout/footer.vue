@@ -8,7 +8,7 @@
     <v-card
       flat
       tile
-      color="wablack"
+      color="#000000"
       class="white--text text-center w-100 px-3 px-sm-15"
     >
       <v-card-title class="px-0 pb-0 d-block d-md-flex">
@@ -40,7 +40,7 @@
             target="_blank"
             href="https://www.instagram.com/warenghem.studios/"
           >
-            <v-icon class="d-block" size="24px">{{ svgPath }}</v-icon>
+            <v-icon color="white" class="d-block" size="24px">{{ svgPath }}</v-icon>
           </v-btn>
           <v-btn
             class="mx-3"
@@ -49,7 +49,7 @@
             target="_blank"
             href="https://www.facebook.com/warenghem.studios/"
           >
-            <v-icon class="d-block" size="24px">{{ svgPath2 }}</v-icon>
+            <v-icon color="white" class="d-block" size="24px">{{ svgPath2 }}</v-icon>
           </v-btn>
       </v-card-title>
       <v-row
@@ -58,24 +58,25 @@
         class="mb-2"
       >
         <v-btn
-          color="white"
+          color="#666666"
           text
           rounded
-          class="text-capitalize"
           @click="$store.state.newsletterModal=true"
-          style="letter-spacing:inherit!important"
+          style="letter-spacing:inherit!important;text-transform: inherit;"
+          class="font-weight-bold"
         >
           Newsletter
         </v-btn>
         <v-btn
+          dark
           v-for="(link,p_idx) in links"
           :key="p_idx"
-          color="white"
+          color="#666666"
           text
           rounded
-          class="text-capitalize"
           :to="link.url" nuxt
-          style="letter-spacing:inherit!important"
+          style="letter-spacing:inherit!important;text-transform: inherit;"
+          class="font-weight-bold"
         >
           {{$t(link.title)}}
         </v-btn>
@@ -83,7 +84,7 @@
 
       <v-divider></v-divider>
 
-      <v-card-text class="white--text">
+      <v-card-text color="#666666">
         © {{ new Date().getFullYear() }} — Warenghem
       </v-card-text>
     </v-card>
@@ -111,6 +112,9 @@
             links() {
                   return [
                     { title: this.$i18n.t('toolbar.help'), url: "/help/" },
+                    { title: this.$i18n.t('toolbar.payments'), url: "/payments/" },
+                    { title: this.$i18n.t('toolbar.shipping'), url: "/shipping/" },
+                    { title: this.$i18n.t('toolbar.partnership'), url: "/partnership/" },
                     { title: this.$i18n.t('toolbar.protection'), url: "/legal/" },
                   ];
                 }

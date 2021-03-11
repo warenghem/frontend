@@ -10,6 +10,9 @@
     "studio": "studio",
     "reforest": "reforestation",
     "help": "Vos questions",
+    "payments": "🔒 Paiement sécurisé",
+    "shipping": "Livraison et retours",
+    "partnership": "Partenariat, presse, revendeur",
     "protection": "Mentions légales et données personnelles",
     "shop": "shop"
   },
@@ -26,7 +29,7 @@
     "materialTitle": "Matières et entretien",
     "payInfoBtn": {
       "title": "Informations sur le paiement",
-      "desc": "Paiement par carte bancaire ou Paypal"
+      "desc": "Paiement par carte bancaireen 1 ou 3x ou Paypal"
     },
     "shipBtn": {
       "title": "Informations sur la livraison",

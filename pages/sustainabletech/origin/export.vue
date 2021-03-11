@@ -82,7 +82,7 @@
           <v-card-title>Suppliers</v-card-title>
           <template v-slot:actions>
             <v-icon color="error">
-              mdi-alert-circle
+              {{ svgPath1 }}
             </v-icon>
           </template>
         </v-expansion-panel-header>
@@ -188,7 +188,7 @@
                     <v-text-field
                       v-model="supplier.vegan.renewalDate"
                       label="Picker without buttons"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -256,7 +256,7 @@
                     <v-text-field
                       v-model="supplier.gots.renewalDate"
                       label="Renewal Date"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -290,7 +290,7 @@
                     <v-text-field
                       v-model="supplier.france.renewalDate"
                       label="Renewal Date"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="msvgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -306,7 +306,7 @@
                   label="Certification Method"
                   v-model="supplier.france.certification_method"
                 ></v-select>
-                 <v-radio
+                <v-radio
                   v-model="supplier.audited_working.is"
                   label="Audited working conditions"
                   color="blue darken-3"
@@ -324,7 +324,7 @@
                     <v-text-field
                       v-model="supplier.audited_working.renewalDate"
                       label="Renewal Date"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -355,7 +355,7 @@
           <v-card-title>Manufacturers</v-card-title>
           <template v-slot:actions>
             <v-icon color="teal">
-              mdi-check
+              {{ svgPath2 }}
             </v-icon>
           </template>
         </v-expansion-panel-header>
@@ -487,7 +487,7 @@
                     <v-text-field
                       v-model="date"
                       label="Picker without buttons"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -521,7 +521,7 @@
                     <v-text-field
                       v-model="date"
                       label="Renewal date"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -555,7 +555,7 @@
                     <v-text-field
                       v-model="date"
                       label="Renewal date"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -589,7 +589,7 @@
                     <v-text-field
                       v-model="date"
                       label="Renewal date"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -625,7 +625,7 @@
               @click="resetForm"
               v-on="on"
             >
-              <v-icon>mdi-refresh</v-icon>
+              <v-icon>{{ svgPath4 }}</v-icon>
             </v-btn>
           </template>
           <span>Refresh form</span>
@@ -644,11 +644,17 @@
 </template>
 
 <script>
+    import {mdiAlertCircle, mdiCalendar, mdiCheck, mdiRefresh} from '@mdi/js'
+
     export default {
         layout: 'app',
         // page component definitions
         name: 'export',
         data: () => ({
+            svgPath1: mdiAlertCircle,
+            svgPath2: mdiCalendar,
+            svgPath3: mdiCheck,
+            svgPath4: mdiRefresh,
             panel: [1, 0, 0],
             category: ['Bag', 'Wallet', 'Belt', 'Shoes'],
             supplierproducttype: ['Grappe Leather', 'Linen'],
@@ -687,25 +693,25 @@
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        menu:false
+                        menu: false
                     },
                     gots: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        menu:false
+                        menu: false
                     },
                     france: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        menu:false
+                        menu: false
                     },
                     audited_working: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        menu:false
+                        menu: false
                     },
 
                 }

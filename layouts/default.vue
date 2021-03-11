@@ -58,8 +58,8 @@
     </v-main>
     <Footer/>
     </div>
-    <LazyPlantForm v-if="$store.state.newsletterModal" />
-    <LazyHistoriesForm v-if="$store.state.historiesModal" />
+    <LazyPlantForm v-if="$store.state.plantModal" />
+    <LazyNewsletterForm v-if="$store.state.newsletterModal" />
     <LazyProductsForm v-if="$store.state.productModal" />
   </v-app>
 </template>
@@ -112,6 +112,12 @@
           ...i18nHead.htmlAttrs
         },
         title: this.$t('title'),
+        script: [
+          {       
+            src:"//code.tidio.co/ogztu1mmmiluq02pe5ixizermbxx9irg.js",
+            defer: true
+            }
+        ],
         meta: [
           {
             hid: 'description',

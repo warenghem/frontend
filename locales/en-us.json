@@ -11,6 +11,9 @@
     "reforest": "reforestation",
     "protection": "Legal notices and data policy",
 		"help": "Your questions",
+    "payments": "🔒 Secure payments",
+    "shipping": "Delivery and returns",
+    "partnership": "Partnership, press, reseller",
     "shop": "shop"
   },
   "product": {
@@ -26,7 +29,7 @@
     "materialTitle": "Matières et entretien",
     "payInfoBtn": {
       "title": "Payment",
-      "desc": "Credit card or PayPal"
+      "desc": "Credit card in one or three installments or PayPal"
     },
     "shipBtn": {
       "title": "Shipping & Delivery",
