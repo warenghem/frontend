@@ -234,7 +234,7 @@
                     <v-text-field
                       v-model="supplier.vegan.renewalDate"
                       label="Picker without buttons"
-                      prepend-icon="mdi-calendar"
+                      :prepend-icon="mdi-calendar"
                       readonly
                       v-bind="attrs"
                       v-on="on"
@@ -306,7 +306,7 @@
                     <v-text-field
                       v-model="supplier.france.renewalDate"
                       label="Renewal Date"
-                      :prepend-icon="msvgPath2"
+                      :prepend-icon="svgPath2"
                       readonly
                       v-bind="attrs"
                       v-on="on"
