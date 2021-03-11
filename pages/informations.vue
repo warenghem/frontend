@@ -54,10 +54,7 @@
 						:class="grid[p_idx]"
                     >
                             <div class="h-100 img-fluid theme--light skeletton">
-								<div style="z-index:2" class="text-uppercase text-center position-absolute d-flex justify-center h-100 w-100 pt-5">
-									{{product.subtitle}}
-								</div>
-                                <div style="z-index:2" class="text-center position-absolute d-flex justify-center align-center h-100 w-100">
+                                <div style="z-index:2" class="background text-center position-absolute d-flex justify-center align-center h-100 w-100">
 									<div class="text pvw">
 										<div>
 											<img width="200px" class="icon lazyload" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ icon[p_idx] +' 512w'">
@@ -89,6 +86,13 @@
                             </div>
                     </v-card>
                 </v-container>
+				<div style="margin-top:200px;margin-bottom:100px" class="text-center app-title">Nous ne nous y attendions pas... Et pourtant</div>
+				<div class="position-relative" style="height:70vh;background:black">
+					<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
+						<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_2.7b.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_2.7b.png 683w'">
+						<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production. C'est plus que la production annuelle de cuir animal (environs 1,8 million) dont 80% sont traités chimiquements.</div>
+					</div>
+				</div>
 				<v-container id="text" fluid class="text-center pa-0 my-10">
 					<div style="color:black;max-width: 500px !important; font-weight: bold;" class="text-uppercase app-title ma-auto py-5">{{$t('title2')}}</div>
 					<img style="max-width:800px" class="lazyload" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
@@ -112,7 +116,7 @@
 								<div style="z-index:2" class="text-uppercase text-center position-absolute d-flex justify-center h-100 w-100 pt-5">
 									{{origin.subtitle}}
 								</div>
-                                <div style="z-index:2" class="text-center position-absolute d-flex justify-center align-center h-100 w-100">
+                                <div style="z-index:2" class="background text-center position-absolute d-flex justify-center align-center h-100 w-100">
 									<div class="text pvw">
 										<div>
 											<img width="200px" class="icon lazyload" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ originicon[o_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ originicon[o_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ originicon[o_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ originicon[o_idx] +' 683w'">
@@ -167,11 +171,7 @@
                 tab: "subscribe",
                 backgroundImages: [
                     "/Environments/dionysos_suisse.jpg",
-                    "/Environments/dionysos_grappes.PNG",
-                    "/home_gCAPosI9qrtpP.jpg",
-					"/Environments/darkbugattiblue.png",
-                    "/Environments/Capture5.PNG",
-					"/Environments/17458143_1482974415066944_8248030493854566515_n.jpg"
+                    "/Environments/dionysos_grappes.PNG"
                 ],
                 originbackgroundImages: [
                     "/tech_mx5bGeVoG3pm.jpg",
@@ -184,11 +184,7 @@
                 ],
                 icon: [
                     "/Environments/dionysos_27b.png",
-                    "/Environments/dionysos_25_2.png",
-                    "/Environments/dionysos_2.7b.png",
-					"/Environments/strong2.png",
-					"/Environments/ecologic4.png",
-					"/Environments/recyclable4.png"
+                    "/Environments/dionysos_25_2.png"
                 ],
                 originicon: [
                     "/Logos/Origin.svg",
@@ -201,11 +197,7 @@
                 ],
                 grid: [
                     "div2 blueoverlay",
-                    "div3",
-                    "div4",
-					"div5",
-					"div6",
-					"div7"
+                    "div3"
                 ],
                 origingrid: [
                     "div1 blackoverlay2 invgradientoverlay",
@@ -314,26 +306,6 @@
 				"subtitle": "Le second constat",
 				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>",
 				"title": ""
-			},
-			{
-				"subtitle": "La solution innovante",
-				"summary": "milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production",
-				"title": ""
-			},
-			{
-				"subtitle": "",
-				"summary": "<ul class='text-left text-white'><li><span >Notre cuir de vin a &eacute;t&eacute; longuement test&eacute;</span></li><li><span >M&ecirc;mes caract&eacute;ristiques m&eacute;caniques, esth&eacute;tiques et sensorielles qu'un cuir traditionnel</span></li><li><span >A contrario - ne demande que peu d'entretien</span></li></ul>",
-				"title": ""
-			},
-			{
-				"subtitle": "",
-				"summary": "<ul class='text-left'><li><span >Sans souffrance animale</span></li><li><span >Faible impact environnemental</span></li><li><span >Mati&egrave;re premi&egrave;re renouvelable</span></li></ul>",
-				"title": ""
-			},
-			{
-				"subtitle": "",
-				"summary": "<ul class='text-left text-white'><li><span >Nous r&eacute;cup&eacute;rons vos anciens produits en &eacute;change d'un bon de r&eacute;duction de 10% &agrave; valoir sur un prochain achat</span></li><li><span >Nous recyclerons la mati&egrave;re pour cr&eacute;er de nouveaux produits</span></li></ul>",
-				"title": ""
 			}
 		],
 		"protection": {
@@ -352,19 +324,14 @@
   padding: 1rem!important;
   grid-gap: 1rem;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-areas:
-    "div2 div2 div2 div3 div3 div3"
-    "div4 div4 div4 div4 div4 div4"
-    "div5 div5 div6 div6 div7 div7";
+    "div2 div2 div2 div3 div3 div3";
   @media (max-width: 48em) {
   grid-template-areas:
     "div2 div2 div2 div2 div2 div2"
     "div3 div3 div3 div3 div3 div3"
-    "div4 div4 div4 div4 div4 div4"
-	"div5 div5 div5 div5 div5 div5"
-    "div6 div6 div6 div6 div6 div6"
-    "div7 div7 div7 div7 div7 div7";
+	"div5 div5 div5 div5 div5 div5";
     grid-gap: 0.5rem;
 	padding: 0!important;
   }
@@ -372,7 +339,7 @@
 .card {
   height: 25rem!important;
   @media (min-width: 48em) {
-    height: 25rem!important;
+    height: 40rem!important;
   }
 }
 .div1 { 
@@ -400,5 +367,12 @@
 .div5 { grid-area: div5; }
 .div6 { grid-area: div6; }
 .div7 { grid-area: div7; }
+.blueoverlay::before {
+border-radius: 20px !important; }
 
+.div3 .background { 
+	background: rgb(21,48,56);
+	background: linear-gradient(90deg, rgba(21,48,56,1) 0%, rgba(114,47,48,1) 37%, rgba(114,47,55,1) 100%);
+	border-radius: 20px !important; 
+ }
 </style>

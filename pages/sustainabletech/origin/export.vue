@@ -56,6 +56,8 @@
                   label="Vegan"
                   color="blue darken-3"
                   value="blue darken-3"
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                   hide-details
                 ></v-checkbox>
                 <v-checkbox
@@ -64,6 +66,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="ex4"
@@ -71,6 +75,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
               </v-col>
             </v-row>
@@ -162,7 +168,9 @@
                     hide-details
                     :label="claim.label"
                     :value="claim.value"
-                  ></v-checkbox>
+                    :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
                 </div>
 
               </v-col>
@@ -170,12 +178,14 @@
                 cols="12"
               >
                 <p>Verified Claims</p>
-                <v-radio
+                <v-checkbox
                   v-model="supplier.vegan.is"
                   label="Vegan"
                   color="blue darken-3"
                   hide-details
-                ></v-radio>
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
                 <v-menu
                   v-model="supplier.vegan.menu"
                   :close-on-content-click="false"
@@ -204,12 +214,14 @@
                   label="Certification Method"
                   v-model="supplier.vegan.certification_method"
                 ></v-select>
-                <v-radio
+                <v-checkbox
                   v-model="supplier.vegan.is"
                   label="Vegan"
                   color="blue darken-3"
                   hide-details
-                ></v-radio>
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
                 <v-menu
                   v-model="supplier.vegan.menu"
                   :close-on-content-click="false"
@@ -238,12 +250,14 @@
                   label="Certification Method"
                   v-model="supplier.vegan.certification_method"
                 ></v-select>
-                <v-radio
+                <v-checkbox
                   v-model="supplier.gots.is"
                   label="GOTS"
                   color="blue darken-3"
                   hide-details
-                ></v-radio>
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
                 <v-menu
                   v-model="supplier.gots.menu"
                   :close-on-content-click="false"
@@ -272,12 +286,14 @@
                   label="Certification Method"
                   v-model="supplier.gots.certification_method"
                 ></v-select>
-                <v-radio
+                <v-checkbox
                   v-model="supplier.france.is"
                   label="Made in France"
                   color="blue darken-3"
                   hide-details
-                ></v-radio>
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
                 <v-menu
                   v-model="supplier.france.menu"
                   :close-on-content-click="false"
@@ -306,12 +322,14 @@
                   label="Certification Method"
                   v-model="supplier.france.certification_method"
                 ></v-select>
-                <v-radio
+                <v-checkbox
                   v-model="supplier.audited_working.is"
                   label="Audited working conditions"
                   color="blue darken-3"
                   hide-details
-                ></v-radio>
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
                 <v-menu
                   v-model="supplier.audited_working.menu"
                   :close-on-content-click="false"
@@ -427,6 +445,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="ex4"
@@ -434,6 +454,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="ex4"
@@ -441,6 +463,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="ex4"
@@ -448,6 +472,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="ex4"
@@ -455,6 +481,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="ex4"
@@ -462,6 +490,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
               </v-col>
               <v-col
@@ -474,6 +504,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-menu
                   v-model="menu2"
@@ -508,6 +540,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-menu
                   v-model="menu2"
@@ -542,6 +576,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-menu
                   v-model="menu2"
@@ -576,6 +612,8 @@
                   color="blue darken-3"
                   value="blue darken-3"
                   hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
                 ></v-checkbox>
                 <v-menu
                   v-model="menu2"
@@ -644,7 +682,7 @@
 </template>
 
 <script>
-    import {mdiAlertCircle, mdiCalendar, mdiCheck, mdiRefresh} from '@mdi/js'
+    import {mdiAlertCircle, mdiCalendar, mdiCheck, mdiRefresh, mdiCheckboxBlankOutline, mdiCheckboxMarked} from '@mdi/js'
 
     export default {
         layout: 'app',
@@ -655,6 +693,8 @@
             svgPath2: mdiCalendar,
             svgPath3: mdiCheck,
             svgPath4: mdiRefresh,
+            svgPath5: mdiCheckboxBlankOutline,
+            svgPath6: mdiCheckboxMarked,
             panel: [1, 0, 0],
             category: ['Bag', 'Wallet', 'Belt', 'Shoes'],
             supplierproducttype: ['Grappe Leather', 'Linen'],
