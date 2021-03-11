@@ -6,6 +6,12 @@
 .multilinechip {
   width:500px
 }
+.theme--dark .bg-theme {
+  background-color: #161617 !important;
+}
+.bg-theme {
+  background-color: #ffffff !important;
+}
 v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-drawer--temporary:not(.v-navigation-drawer--close), .v-dialog {
   box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 0%), 0px 0px 0px 0px rgb(0 0 0 / 0%), 0px 0px 0px 0px rgb(0 0 0 / 0%)!important;
 }
@@ -75,7 +81,7 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 }
 
 .theme--dark .border-bottom-2 {
-  border-bottom: rgba(84, 84, 88, 0.65) solid 1px;
+  border-bottom: rgba(84, 84, 88, 0.65) solid 1px!important;
 }
 
 .theme--dark .border-left-2 {
@@ -633,7 +639,7 @@ letter-spacing: .009em;
   padding-bottom: 20px;
   font-size: 40px !important;
   color: white;
-  letter-spacing: -.009em!important;
+  letter-spacing: -0.04em !important;
   font-family: 'teradeli-medium', sans-serif !important;
   line-height: 1 !important;
   transition: all .3s cubic-bezier(.39, .575, .565, 1);
@@ -815,7 +821,7 @@ letter-spacing: .009em;
 
 .gradientoverlay {
   &::after {
-    background: linear-gradient(0.75deg, #000000 0%, transparent 100%);
+    background: linear-gradient(0.90deg, #000000 0%, transparent 100%);
     content: "";
     position: absolute;
     top: 0;
@@ -824,6 +830,19 @@ letter-spacing: .009em;
     bottom: 0;
     z-index: 1;
     opacity: 0.5 !important;
+  }
+}
+.fullgradientoverlay {
+  &::after {
+    background: linear-gradient(0.90deg, #000000 0%, transparent 100%);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 1 !important;
   }
 }
 .invgradientoverlay {
@@ -839,7 +858,14 @@ letter-spacing: .009em;
     opacity: 0.5 !important;
   }
 }
-
+.lbbgradienttext {
+  background: radial-gradient(#3d8ebe, #000);
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
 .v-toolbar__logo {
   width: 140px;
 }
