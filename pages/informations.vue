@@ -43,7 +43,7 @@
 						<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/home_gCAPosI9qrtpP.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/home_gCAPosI9qrtpP.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/home_gCAPosI9qrtpP.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/home_gCAPosI9qrtpP.jpg 1500w'">
 					</div>
 				</div>
-				<div style="margin-top:200px;margin-bottom:100px" class="text-center app-title">La genese de l'idée : deux constats</div>
+				<div style="margin-top:120px;margin-bottom:60px" class="text-center app-title">La genese de l'idée : deux constats</div>
                 <v-container fluid class="grid-container pa-0">
                     <v-card 
                         v-for="(product,p_idx) in products"
@@ -86,16 +86,65 @@
                             </div>
                     </v-card>
                 </v-container>
-				<div style="margin-top:200px;margin-bottom:100px" class="text-center app-title">Nous ne nous y attendions pas... Et pourtant</div>
+				<div style="margin-top:200px;margin-bottom:80px" class="text-center app-title">Nous ne nous y attendions pas... Et pourtant</div>
 				<div class="position-relative" style="height:70vh;background:black">
 					<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 						<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_2.7b.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_2.7b.png 683w'">
 						<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production. C'est plus que la production annuelle de cuir animal (environs 1,8 million) dont 80% sont traités chimiquements.</div>
 					</div>
 				</div>
-				<v-container id="text" fluid class="text-center pa-0 my-10">
-					<div style="color:black;max-width: 500px !important; font-weight: bold;" class="text-uppercase app-title ma-auto py-5">{{$t('title2')}}</div>
-					<img style="max-width:800px" class="lazyload" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
+				<v-container id="text" fluid class="text-center pa-0">
+					<div style="margin-top:200px;margin-bottom:100px" class="text-center text-white app-title">{{$t('title2')}}</div>
+					<img style="max-width:800px" class="lazyload d-none" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
+				</v-container>
+				<v-container class="timeline-container">
+					<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
+						<v-timeline-item
+								color="lightbugattiblue"
+								fill-dot
+								v-for="(item,i) in $t('calendarSection.steps')"
+								:key="'time_'+i"
+								small
+								class="my-10"
+								:class="classid[i]"
+						>
+							<template v-slot:icon>
+								<div class="mediabox">
+                                    <picture>
+										<img :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,r-max'+ images[i] + ' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-600,r-max'+ images[i] + ' 300w'" alt="timeline-icon" class="mediabox-img position-relative">
+									</picture>
+								</div>
+							</template>
+							<div slot="opposite" v-if="i===0">
+								<div class="d-flex align-center">
+									<img src="../assets/images/Arrowleftwhite.svg" class="d-none d-md-block" alt="fanel"
+										width="26px">
+									<span class="time pl-3 mb-0"
+										style="color: #888!important;">{{$t('calendarSection.tag')}}</span>
+								</div>
+							</div>
+							<v-card
+									:color="'#151515'"
+									dark
+									class="pa-4"
+							>
+
+								<div class="time">{{item.tag}}</div>
+								<h4 class="smalltitle">{{item.title}}</h4>
+								<div class="item-details" v-html="item.subtitle">
+								</div>
+							</v-card>
+						</v-timeline-item>
+						<v-timeline-item
+								color="lightbugattiblue"
+								fill-dot
+								small
+						>
+							<template v-slot:icon>
+								<img :src="images[4]" alt="timeline-icon" width="16px">
+							</template>
+						</v-timeline-item>
+					</v-timeline>
 				</v-container>
         </v-tab-item>
 		<v-tab-item>
@@ -210,11 +259,25 @@
                 ],
                 products: this.$t('products'),
 				origins: this.$t('origins'),
+                images: [
+                    "/Materials/Explications/dionysos_step1.jpg",
+                    "/Materials/Explications/dionysos_step2.jpg",
+                    "/Materials/Explications/dionysos_step3.jpg",
+                    "/transparent.png",
+                    "/Materials/Explications/dionysos_step4.jpg",
+                    "/Materials/Explications/dionysos_step5.jpg",
+                ],
+                classid: [
+                    "dot1",
+                    "dot2",
+                    "dot3",
+                    "dot4",
+                    "dot5",
+                    "dot6",
+                ]
             }
         },
-		beforeCreate () {
-			this.$vuetify.theme.dark = true
-		},
+
 		computed: {
 			tabs() {
 					return [
@@ -313,7 +376,38 @@
 			"subtitle": "Mis à jour le 04/01/2021"
 		},
 		"title": "Informations",
-		"title2": "Des vendanges au cuir de vin"
+		"title2": "Des vendanges au cuir de vin",
+		"calendarSection": {
+			"title": "Le calendrier avant le lancement de chaque objet",
+			"subtitle": "Pour suivre le déroulement du projet. Il s’affinera au fil du temps. Inscrivez vous à la Newsletter et suivez nous sur Instagram et Facebook pour en être notifié.",
+			"tag": "Nous en sommes ici",
+			"steps": [{
+				"tag": "Etape 1",
+				"title": "Foulage",
+				"subtitle": "La peau du raisin est percée pour en libérer le jus à l'aide d'une machine appelée le fouloir"
+			}, {
+				"tag": "Etape 2",
+				"title": "Fermantation alcoolique",
+				"subtitle": "Des levures transforment le sucre en alcool.<br>Le tanin dans la peau des grains lui donnent sa couleur rouge"
+			}, {
+				"tag": "Etape 3",
+				"title": "Pressurage",
+				"subtitle": "Le jus fermenté est extrait. Le marc qui reste dans la cuve est pressé donnant un jus plus dense et tannique"
+			}, {
+				"tag": "",
+				"title": "",
+				"subtitle": "<div class='text-right'><div><div>Partie solide</div><div>Le marc</div></div><div><div>Partie liquide</div><div>Le vin</div></div></div>"
+			}, {
+				"tag": "Etape 4",
+				"title": "Recyclage du marc",
+				"subtitle": "Le marc est séché. La bio-huile obtenue à partir des pépins est polymérisée"
+			}, {
+				"tag": "Etape 5",
+				"title": "Fabrication du cuir",
+				"subtitle": "La pâte obtenue est passée dans une presse imprimant le grain de cuir souhaité"
+			}
+		]
+		}
 	}
 }
 </i18n>
@@ -375,4 +469,94 @@ border-radius: 20px !important; }
 	background: linear-gradient(90deg, rgba(21,48,56,1) 0%, rgba(114,47,48,1) 37%, rgba(114,47,55,1) 100%);
 	border-radius: 20px !important; 
  }
+
+     .calender {
+        border-top: solid 1px rgba(255, 255, 255, 0.5);
+        background: #1a1a1a;
+        background: radial-gradient(circle at 50% 45%, #292929 0%, #0a0a0a 100%);
+        color: #fff;
+        padding-bottom: 90px;
+
+        .subtitle {
+            font-size: 13px;
+            padding-left: 20px;
+            max-width: 400px;
+            line-height: 1rem !important;
+        }
+
+    }
+
+    .timeline-container {
+        position: relative;
+        max-width: 1260px;
+        margin: 0 auto;
+        padding-bottom: 30px;
+    }
+
+    .timeline-item {
+        position: relative;
+        margin-bottom: 130px;
+    }
+
+    .timeline-content {
+        border-radius: 15px;
+    }
+
+    .time {
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: #0081a7;
+        font-size: 16px;
+    }
+
+    .smalltitle {
+        margin-top: 0;
+        margin-bottom: 10px;
+        font-size: 18px;
+        color: #fff;
+        font-family: 'teradeli-medium', sans-serif;
+        line-height: 1rem !important;
+        font-weight: 100;
+    }
+
+    .item-details {
+        margin-bottom: 15px;
+        color: #86868b;
+        text-align: left;
+        font-size: 13px;
+        line-height: 1.47059;
+        font-weight: 900;
+        letter-spacing: -.022em;
+        font-family: 'teradeli-light', sans-serif;
+    }
+
+    .v-timeline::before {
+        background: #0081a7 !important;
+    }
+@media (min-width: 48em) {
+	::v-deep .dot1 .v-timeline-item__dot, ::v-deep .dot1 .v-timeline-item__dot, ::v-deep .dot2 .v-timeline-item__dot, ::v-deep .dot3 .v-timeline-item__dot, ::v-deep .dot5 .v-timeline-item__dot, ::v-deep .dot6 .v-timeline-item__dot {
+		height: 152px!important;
+		width: 152px!important;
+	}
+	::v-deep .v-timeline-item__divider {
+		min-width: 152px!important;
+	}
+	::v-deep .v-timeline-item__body {
+		max-width: calc(50% - 75px)!important;
+	}
+	::v-deep .v-timeline-item__body {
+		padding-right: 30px!important;
+		padding-left: 30px!important;
+	}
+}
+::v-deep .dot4 .v-card {
+    background-color: unset!important;
+	&::after {
+		display: none;
+	}
+}
+::v-deep .theme--dark.v-sheet, .theme--dark .appBar {
+    border-color: rgb(21, 21, 21) !important;
+}
+
 </style>
