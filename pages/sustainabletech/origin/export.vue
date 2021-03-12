@@ -7,7 +7,7 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content>
           <div>Please select your product item</div>
-          <!--Display first for selecting a product-->
+          <!--Display first for selecting a product, our partners select a product (list of product fetched from nuxt content)-->
           <v-autocomplete
             v-model="value"
             :items="productsItem.name"
@@ -16,7 +16,7 @@
             label="Product name"
           ></v-autocomplete>
           <!--end-->
-          <!--Display when above product has been selected and result fetched - Display a vuetify loader during fetching and displaying - Then autocomplete other fields (brand, sku, category, description, image and awards) related to the product name selected above-->
+          <!--Display when above product has been selected and result fetched (nuxt content) - Display a vuetify loader during fetching and displaying - Then autocomplete other fields (brand, sku, category, description, image and awards) related to the product name selected above-->
           <v-container>
             <v-row>
               <v-col
