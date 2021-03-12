@@ -148,7 +148,7 @@
                   <v-col
                     cols="12"
                   >
-                    <Geolocation/>
+                     <Geolocation v-model="supplier.address"/>
                   </v-col>
                   <v-col
                     cols="12"
@@ -397,7 +397,7 @@
                   <v-col
                     cols="12"
                   >
-                    <Geolocation/>
+                    <Geolocation v-model="manufacture.address"/>
                   </v-col>
                   <v-col
                     cols="12"
