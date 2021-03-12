@@ -13,6 +13,18 @@
                 sm="4"
                 md="3"
               >
+                <v-autocomplete
+                  v-model="value"
+                  dense
+                  filled
+                  label="Product name"
+                ></v-autocomplete>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="4"
+                md="3"
+              >
                 <v-select
                   :items="sku"
                   label="SKU"
@@ -27,15 +39,6 @@
                   label="Brand"
                   disabled
                   value="Warenghem"
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="4"
-                md="3"
-              >
-                <v-text-field
-                  label="Product name"
                 ></v-text-field>
               </v-col>
               <v-col
@@ -64,7 +67,7 @@
                 <v-checkbox
                   v-model="ex4"
                   label="Vegan"
-s                  color="lightbugattiblue"
+                  color="lightbugattiblue"
                   value="lightbugattiblue"
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
