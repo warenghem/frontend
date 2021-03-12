@@ -31,7 +31,7 @@
                         lat +
                         "," +
                         long +
-                        "&key={AIzaSyAgF1jvoLhIheexNyEHysSrIwDfWn2wLj4}"
+                        "&key=AIzaSyAtiUqcIHFfJNPN7Rz0njbvjlKJavDkVxE"
                     );
                     if (data.error_message) {
                         console.log(data.error_message)
