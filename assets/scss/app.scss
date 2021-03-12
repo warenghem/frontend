@@ -818,6 +818,20 @@ letter-spacing: .009em;
     transition: opacity 0.5s !important;
   }
 }
+.whiteoverlay2 {
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: #ffffff;
+    opacity: 0.2;
+    z-index: 1 !important;
+    transition: opacity 0.5s !important;
+  }
+}
 
 .gradientoverlay {
   &::after {
@@ -845,6 +859,19 @@ letter-spacing: .009em;
     opacity: 1 !important;
   }
 }
+.fullwhitegradientoverlay {
+  &::after {
+    background: linear-gradient(0.90deg, #ffffff 0%, transparent 100%);
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    z-index: 1;
+    opacity: 1 !important;
+  }
+}
 .invgradientoverlay {
   &::after {
     background: linear-gradient(180deg, #000000 0%, transparent 100%);
@@ -860,6 +887,14 @@ letter-spacing: .009em;
 }
 .lbbgradienttext {
   background: radial-gradient(#3d8ebe, #000);
+  background-size: 100% 200%;
+  background-position: 50% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.lbbwhitegradienttext {
+  background: radial-gradient(#3d8ebe, #fff);
   background-size: 100% 200%;
   background-position: 50% 100%;
   -webkit-background-clip: text;

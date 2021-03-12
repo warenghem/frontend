@@ -6,6 +6,17 @@
           <v-card-title>Product whole informations</v-card-title>
         </v-expansion-panel-header>
         <v-expansion-panel-content>
+          <div>Please select your product item</div>
+          <!--Display first for selecting a product-->
+          <v-autocomplete
+            v-model="value"
+            :items="productsItem.name"
+            dense
+            filled
+            label="Product name"
+          ></v-autocomplete>
+          <!--end-->
+          <!--Display when above product has been selected and result fetched - Display a vuetify loader during fetching and displaying - Then autocomplete other fields (brand, sku, category, description, image and awards) related to the product name selected above-->
           <v-container>
             <v-row>
               <v-col
@@ -15,6 +26,7 @@
               >
                 <v-autocomplete
                   v-model="value"
+                  :items="productsItem.name"
                   dense
                   filled
                   label="Product name"
@@ -94,6 +106,7 @@
               </v-col>
             </v-row>
           </v-container>
+          <!--End-->
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
@@ -723,6 +736,14 @@
         layout: 'app',
         // page component definitions
         name: 'export',
+        async asyncData(context) {
+            const {$content, app} = context;
+            const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
+            const productsItem = await $content(`${lang_path}/shop`).fetch();
+            return {
+                productsItem,
+            }
+        },
         data: () => ({
             svgPath1: mdiAlertCircle,
             svgPath2: mdiCalendar,
