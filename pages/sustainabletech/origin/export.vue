@@ -54,8 +54,8 @@
                 <v-checkbox
                   v-model="ex4"
                   label="Vegan"
-                  color="blue darken-3"
-                  value="blue darken-3"
+s                  color="lightbugattiblue"
+                  value="lightbugattiblue"
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
                   hide-details
@@ -63,8 +63,8 @@
                 <v-checkbox
                   v-model="ex4"
                   label="GOTS"
-                  color="blue darken-3"
-                  value="blue darken-3"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -72,8 +72,8 @@
                 <v-checkbox
                   v-model="ex4"
                   label="Made in France"
-                  color="blue darken-3"
-                  value="blue darken-3"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -164,13 +164,13 @@
                 <div v-for="claim in claims_options" :key="claim.value">
                   <v-checkbox
                     v-model="supplier.claims"
-                    color="blue darken-3"
+                    color="lightbugattiblue"
                     hide-details
                     :label="claim.label"
                     :value="claim.value"
                     :on-icon="svgPath6"
                     :off-icon="svgPath5"
-                  ></v-checkbox>
+                ></v-checkbox>
                 </div>
 
               </v-col>
@@ -181,7 +181,43 @@
                 <v-checkbox
                   v-model="supplier.vegan.is"
                   label="Vegan"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
+                  hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
+                <v-menu
+                  v-model="supplier.vegan.menu"
+                  :close-on-content-click="false"
+                  :nudge-right="40"
+                  transition="scale-transition"
+                  offset-y
+                  min-width="290px"
+                >
+                  <template v-slot:activator="{ on, attrs }">
+                    <v-text-field
+                      v-model="supplier.vegan.renewalDate"
+                      label="Picker without buttons"
+                      :prepend-icon="svgPath2"
+                      readonly
+                      v-bind="attrs"
+                      v-on="on"
+                    ></v-text-field>
+                  </template>
+                  <v-date-picker
+                    v-model="supplier.vegan.renewalDate"
+                    @input="supplier.vegan.menu = false"
+                  ></v-date-picker>
+                </v-menu>
+                <v-select
+                  :items="certificationmethod"
+                  label="Certification Method"
+                  v-model="supplier.vegan.certification_method"
+                ></v-select>
+                <v-checkbox
+                  v-model="supplier.vegan.is"
+                  label="Vegan"
+                  color="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -217,7 +253,7 @@
                 <v-checkbox
                   v-model="supplier.gots.is"
                   label="GOTS"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -253,7 +289,7 @@
                 <v-checkbox
                   v-model="supplier.france.is"
                   label="Made in France"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -289,7 +325,7 @@
                 <v-checkbox
                   v-model="supplier.audited_working.is"
                   label="Audited working conditions"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -410,18 +446,60 @@
                 cols="12"
               >
                 <p>Claims</p>
-                <div v-for="claim in claims_options" :key="claim.value">
-                  <v-checkbox
-                    v-model="manufacture.claims"
-                    color="blue darken-3"
-                    hide-details
-                    :label="claim.label"
-                    :value="claim.value"
-                    :on-icon="svgPath6"
-                    :off-icon="svgPath5"
-                  ></v-checkbox>
-                </div>
-
+                <v-checkbox
+                  v-model="ex4"
+                  label="Care for environment"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
+                  hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
+                <v-checkbox
+                  v-model="ex4"
+                  label="Recycle"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
+                  hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
+                <v-checkbox
+                  v-model="ex4"
+                  label="Plastic free"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
+                  hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
+                <v-checkbox
+                  v-model="ex4"
+                  label="Organic"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
+                  hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
+                <v-checkbox
+                  v-model="ex4"
+                  label="Locally sourced"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
+                  hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
+                <v-checkbox
+                  v-model="ex4"
+                  label="Local employer"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
+                  hide-details
+                  :on-icon="svgPath6"
+                  :off-icon="svgPath5"
+                ></v-checkbox>
               </v-col>
               <v-col
                 cols="12"
@@ -430,7 +508,8 @@
                 <v-checkbox
                   v-model="manufacture.vegan.is"
                   label="Vegan"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -466,7 +545,8 @@
                 <v-checkbox
                   v-model="manufacture.gots.is"
                   label="GOTS"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -502,7 +582,8 @@
                 <v-checkbox
                   v-model="manufacture.france.is"
                   label="Made in France"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
@@ -538,7 +619,8 @@
                 <v-checkbox
                   v-model="manufacture.audited_working.is"
                   label="Audited working conditions"
-                  color="blue darken-3"
+                  color="lightbugattiblue"
+                  value="lightbugattiblue"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
