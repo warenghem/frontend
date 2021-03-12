@@ -10,8 +10,18 @@
             <v-row>
               <v-col
                 cols="12"
-                sm="6"
-                md="4"
+                sm="4"
+                md="3"
+              >
+                <v-select
+                  :items="sku"
+                  label="SKU"
+                ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="4"
+                md="3"
               >
                 <v-text-field
                   label="Brand"
@@ -21,8 +31,8 @@
               </v-col>
               <v-col
                 cols="12"
-                sm="6"
-                md="4"
+                sm="4"
+                md="3"
               >
                 <v-text-field
                   label="Product name"
@@ -30,8 +40,8 @@
               </v-col>
               <v-col
                 cols="12"
-                sm="6"
-                md="4"
+                sm="4"
+                md="3"
               >
                 <v-select
                   :items="category"
