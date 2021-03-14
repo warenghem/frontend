@@ -5,42 +5,57 @@
         <v-expansion-panel-header ripple>
           <v-card-title>Product whole informations</v-card-title>
         </v-expansion-panel-header>
-        <v-expansion-panel-content eager>
-          <div>Please select your product item</div>
-          <!--Display first for selecting a product, our partners select a product (list of product fetched from nuxt content)-->
-          <v-autocomplete
-            v-model="value"
-            :items="productsItem.name"
-            dense
-            filled
-            label="Product name"
-          ></v-autocomplete>
-          <!--end-->
-          <!--Display when above product has been selected and result fetched (nuxt content) - Display a vuetify loader during fetching and displaying - Then autocomplete other fields (brand, sku, category, description, image and awards) related to the product name selected above-->
+        <v-expansion-panel-content>
           <v-container>
             <v-row>
+              <v-col
+                cols="12"
+              >
+                <div>Please select your product item</div>
+                <v-autocomplete
+                  v-model="selectedProduct"
+                  :items="productsItem"
+                  dense
+                  filled
+                  label="Product name"
+                  item-text="name"
+                  @change="productSelect"
+                  return-object
+                ></v-autocomplete>
+              </v-col>
+            </v-row>
+          </v-container>
+          <v-container>
+            <v-row v-if="isLoading">
+              <v-col cols="12" class="text-center">
+                <v-progress-linear
+                  indeterminate
+                  color="green"
+                ></v-progress-linear>
+              </v-col>
+            </v-row>
+            <v-row v-if="isResult">
               <v-col
                 cols="12"
                 sm="4"
                 md="3"
               >
-                <v-autocomplete
-                  v-model="value"
-                  :items="productsItem.name"
-                  dense
-                  filled
+                <v-text-field
+                  v-model="product.name"
+                  disabled
                   label="Product name"
-                ></v-autocomplete>
+                ></v-text-field>
               </v-col>
               <v-col
                 cols="12"
                 sm="4"
                 md="3"
               >
-                <v-select
-                  :items="sku"
-                  label="SKU"
-                ></v-select>
+                <v-text-field
+                  v-model="product.sku"
+                  disabled
+                  label="Product sku"
+                ></v-text-field>
               </v-col>
               <v-col
                 cols="12"
@@ -50,7 +65,7 @@
                 <v-text-field
                   label="Brand"
                   disabled
-                  value="Warenghem"
+                  v-model="product.brand"
                 ></v-text-field>
               </v-col>
               <v-col
@@ -59,6 +74,9 @@
                 md="3"
               >
                 <v-select
+                  v-model="product.category"
+                  disabled
+                  multiple
                   :items="category"
                   label="Category"
                 ></v-select>
@@ -67,9 +85,10 @@
                 cols="12"
               >
                 <v-textarea
-                  name="input-7-1"
+                  v-html="product.description"
                   label="Description"
                   hint="Hint text"
+                  disabled
                 ></v-textarea>
               </v-col>
               <v-col
@@ -77,36 +96,38 @@
               >
                 <p>Awards</p>
                 <v-checkbox
-                  v-model="ex4"
+                  v-model="product.awards"
                   label="Vegan"
                   color="lightbugattiblue"
-                  value="lightbugattiblue"
+                  value="Vegan"
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
                   hide-details
+                  disabled
                 ></v-checkbox>
                 <v-checkbox
-                  v-model="ex4"
+                  v-model="product.awards"
                   label="GOTS"
                   color="lightbugattiblue"
-                  value="lightbugattiblue"
+                  value="GOTS"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  disabled
                 ></v-checkbox>
                 <v-checkbox
-                  v-model="ex4"
+                  v-model="product.awards"
                   label="Made in France"
                   color="lightbugattiblue"
-                  value="lightbugattiblue"
+                  value="Made in France"
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  disabled
                 ></v-checkbox>
               </v-col>
             </v-row>
           </v-container>
-          <!--End-->
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
@@ -174,7 +195,7 @@
                   <v-col
                     cols="12"
                   >
-                     <Geolocation v-model="supplier.address"/>
+                    <Geolocation v-model="supplier.address"/>
                   </v-col>
                   <v-col
                     cols="12"
@@ -196,7 +217,7 @@
                     :value="claim.value"
                     :on-icon="svgPath6"
                     :off-icon="svgPath5"
-                ></v-checkbox>
+                  ></v-checkbox>
                 </div>
 
               </v-col>
@@ -240,6 +261,37 @@
                   label="Certification Method"
                   v-model="supplier.vegan.certification_method"
                 ></v-select>
+                <v-file-input
+                  v-model="files"
+                  :prepend-icon="svgPath7"
+                  :append-inner-icon="svgPath7"
+                  color="deep-purple accent-4"
+                  counter
+                  label="File input"
+                  multiple
+                  placeholder="Select your files"
+                  outlined
+                  :show-size="1000"
+                >
+                  <template v-slot:selection="{ index, text }">
+                    <v-chip
+                      v-if="index < 2"
+                      color="deep-purple accent-4"
+                      dark
+                      label
+                      small
+                    >
+                      {{ text }}
+                    </v-chip>
+
+                    <span
+                      v-else-if="index === 2"
+                      class="overline grey--text text--darken-3 mx-2"
+                    >
+                      +{{ files.length - 2 }} File(s)
+                    </span>
+                  </template>
+                </v-file-input>
                 <v-checkbox
                   v-model="supplier.vegan.is"
                   label="Vegan"
@@ -405,7 +457,7 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
           <v-container>
-             <v-row v-for="(manufacture,idx) in manufactures" :key="'manufucture'+idx">
+            <v-row v-for="(manufacture,idx) in manufactures" :key="'manufucture'+idx">
               <v-col cols="12">
                 <h3 class="info--text">Manufacturer {{idx+1}}</h3>
               </v-col>
@@ -472,60 +524,17 @@
                 cols="12"
               >
                 <p>Claims</p>
-                <v-checkbox
-                  v-model="ex4"
-                  label="Care for environment"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                ></v-checkbox>
-                <v-checkbox
-                  v-model="ex4"
-                  label="Recycle"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                ></v-checkbox>
-                <v-checkbox
-                  v-model="ex4"
-                  label="Plastic free"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                ></v-checkbox>
-                <v-checkbox
-                  v-model="ex4"
-                  label="Organic"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                ></v-checkbox>
-                <v-checkbox
-                  v-model="ex4"
-                  label="Locally sourced"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                ></v-checkbox>
-                <v-checkbox
-                  v-model="ex4"
-                  label="Local employer"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                ></v-checkbox>
+                <div v-for="claim in claims_options" :key="claim.value">
+                  <v-checkbox
+                    v-model="manufacture.claims"
+                    color="lightbugattiblue"
+                    hide-details
+                    :label="claim.label"
+                    :value="claim.value"
+                    :on-icon="svgPath6"
+                    :off-icon="svgPath5"
+                  ></v-checkbox>
+                </div>
               </v-col>
               <v-col
                 cols="12"
@@ -711,7 +720,6 @@
         </v-tooltip>
       </v-slide-x-reverse-transition>
       <v-btn
-        rounded="lg"
         large
         class="btn-theme mx-auto"
         @click="submit"
@@ -729,7 +737,8 @@
         mdiCheck,
         mdiRefresh,
         mdiCheckboxBlankOutline,
-        mdiCheckboxMarked
+        mdiCheckboxMarked,
+        mdiPaperclip
     } from '@mdi/js'
 
     export default {
@@ -751,8 +760,9 @@
             svgPath4: mdiRefresh,
             svgPath5: mdiCheckboxBlankOutline,
             svgPath6: mdiCheckboxMarked,
+            svgPath7: mdiPaperclip,
             panel: [1, 0, 0],
-            category: ['Bag', 'Wallet', 'Belt', 'Shoes'],
+            category: ['Bags', 'Wallet', 'Belt', 'Shoes'],
             supplierproducttype: ['Grappe Leather', 'Linen'],
             manufacturerproducttype: ['Shoes', 'Bag', 'Leather Goods'],
             certificationmethod: ['Audited & verified certification', 'Audited from us'],
@@ -766,6 +776,18 @@
             country: null,
             formHasErrors: false,
             menu2: false,
+            selectedProduct: null,
+            product: {
+                id: '',
+                name: '',
+                sku: '',
+                brand: '',
+                category: [],
+                description: '',
+                awards: []
+            },
+            isLoading: false,
+            isResult: false,
             claims_options: [
                 {label: 'Care for environment', value: 1},
                 {label: 'Recycle', value: 2},
@@ -931,7 +953,7 @@
 
                 })
             },
-            addManufacturer(){
+            addManufacturer() {
                 this.manufactures.push({
                     type: null,
                     brand: '',
@@ -968,6 +990,30 @@
                     },
 
                 })
+            },
+            productSelect() {
+                this.isLoading = true;
+                this.isResult = false;
+                this.product.id = this.selectedProduct.id;
+                this.product.sku = this.selectedProduct.sku;
+                this.product.description = this.selectedProduct.description;
+                this.product.name = this.selectedProduct.name;
+                this.product.brand = this.selectedProduct.brand ? this.selectedProduct.brand.name : '';
+                this.product.awards = [];
+                this.product.category = [];
+                this.selectedProduct.award.forEach(award => {
+                        this.product.awards.push(award.name)
+                    }
+                );
+                this.selectedProduct.categories.forEach(cat => {
+                        this.product.category.push(cat.name)
+                    }
+                );
+                setTimeout(() => {
+                    this.isLoading = false;
+                    this.isResult = true;
+                }, 2000)
+
             }
         },
 
