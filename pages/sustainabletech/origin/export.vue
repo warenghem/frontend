@@ -9,7 +9,7 @@
           <v-container>
             <v-row>
               <v-col
-                cols="12"
+                cols="6"
               >
                 <div>Please select your product item</div>
                 <!--Display first for selecting a product, our partners select a product (list of product fetched from nuxt content)-->
@@ -23,6 +23,13 @@
                   @change="productSelect"
                   return-object
                 ></v-autocomplete>
+              </v-col>
+              <v-col
+                cols="6"
+              >
+                <div>Or</div>
+                <!--Display first for selecting a product, our partners select a product (list of product fetched from nuxt content)-->
+                <v-btn @click="addNewProduct" x-large>Add New Product</v-btn>
               </v-col>
             </v-row>
           </v-container>
@@ -45,7 +52,7 @@
               >
                 <v-text-field
                   v-model="product.name"
-                  disabled
+                  :disabled="!productAddMode"
                   label="Product name"
                 ></v-text-field>
               </v-col>
@@ -56,7 +63,7 @@
               >
                 <v-text-field
                   v-model="product.sku"
-                  disabled
+                  :disabled="!productAddMode"
                   label="Product sku"
                 ></v-text-field>
               </v-col>
@@ -67,7 +74,7 @@
               >
                 <v-text-field
                   label="Brand"
-                  disabled
+                  :disabled="!productAddMode"
                   v-model="product.brand"
                 ></v-text-field>
               </v-col>
@@ -78,7 +85,7 @@
               >
                 <v-select
                   v-model="product.category"
-                  disabled
+                  :disabled="!productAddMode"
                   multiple
                   :items="category"
                   label="Category"
@@ -91,7 +98,7 @@
                   v-html="product.description"
                   label="Description"
                   hint="Hint text"
-                  disabled
+                  :disabled="!productAddMode"
                 ></v-textarea>
               </v-col>
               <v-col
@@ -106,7 +113,7 @@
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
                   hide-details
-                  disabled
+                  :disabled="!productAddMode"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="product.awards"
@@ -116,7 +123,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
-                  disabled
+                  :disabled="!productAddMode"
                 ></v-checkbox>
                 <v-checkbox
                   v-model="product.awards"
@@ -126,7 +133,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
-                  disabled
+                  :disabled="!productAddMode"
                 ></v-checkbox>
               </v-col>
             </v-row>
@@ -748,6 +755,7 @@
             formHasErrors: false,
             menu2: false,
             selectedProduct: null,
+            productAddMode:false,
             product: {
                 id: '',
                 name: '',
@@ -963,6 +971,7 @@
                 })
             },
             productSelect() {
+                this.productAddMode=false;
                 this.isLoading = true;
                 this.isResult = false;
                 this.product.id = this.selectedProduct.id;
@@ -985,6 +994,19 @@
                     this.isResult = true;
                 }, 2000)
 
+            },
+            addNewProduct() {
+                this.productAddMode=true;
+                this.product = {
+                    id: '',
+                    name: '',
+                    sku: '',
+                    brand: '',
+                    category: [],
+                    description: '',
+                    awards: []
+                };
+                this.isResult = true;
             }
         },
 
