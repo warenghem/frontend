@@ -31,8 +31,10 @@
           <v-container>
             <v-row v-if="isLoading">
               <v-col cols="12" class="text-center">
-                <v-progress-circular size="40" indeterminate color="primary">
-                </v-progress-circular>
+                <v-progress-linear
+                  indeterminate
+                  color="green"
+                ></v-progress-linear>
               </v-col>
             </v-row>
             <v-row v-if="isResult">
