@@ -14,7 +14,7 @@
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="200px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Origin_black_1_.svg 683w'">
 				<div style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbwhitegradienttext">De la matière première à la livraison... Rien ne lui échappe.</div>
-				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">"Parce que chacun de nos produits à une histoire, nous la racontons grâce à notre application. Cette histoire commence avec l'origine de nos produit, continue avec la transparence tout au long de leur fabrication et se termine chez vous. impact de nos produits. Powered by blockchain and open data, our application gathers and shares key product information and journeys in a way that’s secure, trustworthy and accessible. Vous avez maintenant toutes les raisons d'être certain de votre impact sur l'environnement.</div>
+				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">"Parce que chacun de nos produits à une histoire, nous la racontons grâce à notre application. Cette histoire commence avec l'origine de nos produit, continue avec la transparence tout au long de leur fabrication et se termine chez vous. impact de nos produits. Il vous suffit de donner info sur aplication...Powered by blockchain and open data, our application gathers and shares key product information and journeys in a way that’s secure, trustworthy and accessible. Vous avez maintenant toutes les raisons d'être certain de votre impact sur l'environnement.</div>
 			</div>
 			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullwhitegradientoverlay whiteoverlay2 h-100">
 				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/home_gCAPosI9qrtpP.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/home_gCAPosI9qrtpP.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/home_gCAPosI9qrtpP.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/home_gCAPosI9qrtpP.jpg 1500w'">
@@ -163,12 +163,12 @@
 				"subtitle": "Un contrat sous la forme d'un code informatique intélligent entre nous, fabriquants et fournisseurs qui scellera toutes nos informations. Chaque acteur s'engage légalement sur les données qu'il fournit. Il est distribué et stocké sur une base de données publique et disponible en ligne (la Blockchain Ethereum) et ne peux pas être modifiés. Chaqun de vos produits disposeront d'un QR code unique sur votre étiquette regroupant toutes ces infos"
 			}, {
 				"tag": "Etape 2",
-				"title": "Les fournisseeurs",
-				"subtitle": "Les fournisseurs entrent leurs informations sur notre application. Nom du produit, quantité vendu, date. Notre application les géolocalise automatiquement afin d'avoir une addresse fiable. Ils renseignent leurs certifications et tests qualités ainsi que les documents officiels le prouvant. Tags la marchandisent avec un QR code et l'envoi aux fabriquants"
+				"title": "Les fournisseurs",
+				"subtitle": "Les fournisseurs entrent leurs informations sur notre application (nom du produit, quantité vendue, date, documents officels de certifications et tests qualité...).<br>Notre application les géolocalise automatiquement 'fausse adresse'. <br>Ils scannent les matières grâce à un QR code et l'envoient aux fabriquants"
 			}, {
 				"tag": "Etape 3",
 				"title": "Les fabriquants",
-				"subtitle": "Les fabriquants font de même, recoivent la marchandise, en vérifie l'authenticité et leur qualité. Fabrique les produits finis et y attache une étiquette QR code lisible sur notre application et dévoilant le tout."
+				"subtitle": "Les fabriquants entrent également leurs informations.<br> Après récéption de la marchandise, ils en vérifient l'authenticité ainsi que leur qualité et fabriquent vos produits.<br>Une étiquette QR code est cousue à l'intérieur afin que vous puissiez la scanner et découvrir l'histoire de votre article."
 			}, {
 				"tag": "Etape 4",
 				"title": "Expédition du produit",
