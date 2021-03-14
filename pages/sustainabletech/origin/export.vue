@@ -5,7 +5,7 @@
         <v-expansion-panel-header ripple>
           <v-card-title>Product whole informations</v-card-title>
         </v-expansion-panel-header>
-        <v-expansion-panel-content>
+        <v-expansion-panel-content eager>
           <div>Please select your product item</div>
           <!--Display first for selecting a product, our partners select a product (list of product fetched from nuxt content)-->
           <v-autocomplete
@@ -118,7 +118,7 @@
             </v-icon>
           </template>
         </v-expansion-panel-header>
-        <v-expansion-panel-content>
+        <v-expansion-panel-content eager>
           <v-container>
             <v-row v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
               <v-col cols="12">
@@ -403,7 +403,7 @@
             </v-icon>
           </template>
         </v-expansion-panel-header>
-        <v-expansion-panel-content>
+        <v-expansion-panel-content eager>
           <v-container>
              <v-row v-for="(manufacture,idx) in manufactures" :key="'manufucture'+idx">
               <v-col cols="12">
