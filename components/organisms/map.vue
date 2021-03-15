@@ -280,7 +280,6 @@
   </div>
 </template>
 <script>
-    import L from 'leaflet';
     import { LMap, LTileLayer, LMarker, LIcon } from 'vue2-leaflet';
     import 'leaflet/dist/leaflet.css';
     import { mdiClose } from '@mdi/js';

@@ -14,13 +14,13 @@
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="200px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Origin.svg 683w'">
 				<div style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbgradienttext">De la matière première à la livraison... Rien ne lui échappe.</div>
-				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Par ce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive.<br>Propulsée par la blockchain publique Ethereum, notre application rassemble et partage les informations clés sur nos produits d'une manière sécurisée, fiable et accessible.</div>
+				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive.<br>Propulsée par la blockchain publique Ethereum, notre application rassemble et partage les informations clés sur nos produits d'une manière sécurisée, fiable et accessible.</div>
 			</div>
 			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay whiteoverlay2 h-100">
 				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/home_gCAPosI9qrtpP.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/home_gCAPosI9qrtpP.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/home_gCAPosI9qrtpP.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/home_gCAPosI9qrtpP.jpg 1500w'">
 			</div>
 		</div>
-		<div style="margin-top:200px;margin-bottom:80px;color:white" class="text-center app-title">Elle track et vérifie toute les étapes de la production. Sans exception.</div>
+		<div style="margin-top:200px;margin-bottom:80px;color:white" class="text-center app-title">Elle vérifie toutes les étapes de la production. <br>Sans exception.</div>
 		<v-container class="timeline-container">
 			<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
 				<v-timeline-item
@@ -61,23 +61,19 @@
 				</v-timeline-item>
 			</v-timeline>
 		</v-container>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une application narative</div>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Narrative</div>
 			<div style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Elle vous racontera l'histoire de vos produits. Les .</div>
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Son interface intuitive se compose d'une chronologie des étapes de fabrication et d'une carte détaillant leur localisation. Vous aurez accès à une page dédiée pour chaque fabriquant et fournisseur regroupant son histoire, ses certifications détaillées et son adresse.</div>
 			</div>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une base de donnée publique, partagée et limpide</div>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Translucide</div>
 			<div style="z-index:3;bottom:80px" class="w-100 text-center">
 				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Toutes les données sont stockées sur la blockchain Ethereum, disponible en ligne par tous. Ces informations sont inscrites tout au long de la chaîne de production et distribuées sur un réseau mondial d'ordinateurs. <br>Chaque acteur signe les informations inscrites et s’engage personnellement sur leur fiabilité.</div>
 			</div>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une base de donnée infalsifiable et sécurisée.</div>
-			<div style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Les risques de fraude a posteriori sur les données sont supprimés puisque les données ne peuvent être modifiées. Elle est sécurisé par un réseau mondial d'ordinateur. A ce titre aucun ordinateur ne pourra faire face à ce réseau pour falsifier les données.  la sécurité du système, qui est assuré par le fait que la validation est effectuée par un ensemble d’utilisateurs différents, qui ne se connaissent pas. Cela permet de se prémunir du risque de malveillance ou de détournement, puisque les nœuds surveillent le système et se contrôlent mutuellement</div>
-			</div>
 		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Eternelle</div>
 			<div style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Une fois renseignée dans la blockchain, aucune modification n'est possible. Tout ce qui y est écrit est indestructible et non effaçable.</div>
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Une fois renseignée dans la blockchain aucune modification ni suppression n'est possible, empêchant les risques de fraude a posteriori sur les données. Elle est sécurisée par un réseau mondial d'ordinateur. A ce titre aucun ordinateur ne pourra faire face à ce réseau pour falsifier les données.</div>
 			</div>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une solution radicale. Face à une transparence quasi-nulle encore en 2020</div>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une solution innovante face à une transparence "perfectible" encore en 2021</div>
 		<div class="position-relative" style="height:70vh">
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/16__blue.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/16__blue.png 683w'">
@@ -164,7 +160,7 @@
 			"steps": [{
 				"tag": "Etape 1",
 				"title": "Création d’un coffre fort inviolable",
-				"subtitle": " Il s’agit d’un contrat informatique intelligent développé par W, contenant et vérifiant des infos renseignées par les fab et fournisseurs. Ce coffre fort nous suit tout au long de la fabrication du produit et engage chaque acteur légalement. Ces infos sont stockées sur une base de données partagée, publique et disponible en ligne (BE) et ne peuvent pas être modifiées. Chacun de vos produits dispose d’une étiquette avec un code barre. Il vous suffit de le scanner afin de découvrir l’histoire de votre article"
+				"subtitle": "Il s’agit d’un contrat informatique intelligent développé par W, contenant et vérifiant des infos renseignées par les fab et fournisseurs. Ce coffre fort nous suit tout au long de la fabrication du produit et engage chaque acteur légalement. Ces infos sont stockées sur une base de données partagée, publique et disponible en ligne (BE) et ne peuvent pas être modifiées. Chacun de vos produits dispose d’une étiquette avec un code barre. Il vous suffit de le scanner afin de découvrir l’histoire de votre article"
 			}, {
 				"tag": "Etape 2",
 				"title": "Entrée en piste de nos fournisseurs",
@@ -176,10 +172,10 @@
 			}, {
 				"tag": "Etape 4",
 				"title": "Nous vérifions tout au peigne fin",
-				"subtitle": "Le fabriquant expédie votre produit dans nos entrepôts, puis sera acheminé chez vous. De notre côté, nous auditons toutes les informations déposés."
+				"subtitle": "Le fabriquant expédie votre produit dans nos entrepôts, puis sera acheminé chez vous. De notre côté, nous auditons toutes les informations déposées."
 			}, {
 				"tag": "Etape 5",
-				"title": "Compensation des émissions de CO2",
+				"title": "Nous compensons les émissions de CO2",
 				"subtitle": "Pour compenser l'utilisation de cette technologie, la fabrication et le transport de votre produit, nous plantons des arbres dans un de nos projets de reforestation. <br>Ces arbres disposeront d'un certificat d'authenticité qui sera déposé dans la Blockchain."
 			}, {
 				"tag": "Etape 6",
@@ -188,7 +184,7 @@
 			}, {
 				"tag": "Etape 7",
 				"title": "Nous bouclons la boucle",
-				"subtitle": "Nous récupérons votre ancien produit pour le recycler complètement. <br>Nous scannons son QR code pour récupérer l'identité de son acheteur afin de lui envoyer un bon de réduction valable sur un prochain achat."
+				"subtitle": "Nous récupérons votre ancien produit pour le recycler complètement. <br>Nous scannons son QR code pour obtenir l'identité de son acheteur afin de lui envoyer un bon de réduction valable sur un prochain achat."
 			}
 		]
 		}

@@ -5,18 +5,20 @@
         <v-expansion-panel-header ripple>
           <v-card-title>Product whole informations</v-card-title>
         </v-expansion-panel-header>
-        <v-expansion-panel-content>
-          <v-container>
+        <v-expansion-panel-content eager>
+          <v-container class="pvw">
             <v-row>
               <v-col
-                cols="6"
+                cols="12"
+                sm="6"
               >
-                <div>Please select your product item</div>
+                <div class="text-center pb-3">Please select your product item</div>
                 <v-autocomplete
                   v-model="selectedProduct"
+                  filled
+                  rounded
                   :items="productsItem"
                   dense
-                  filled
                   label="Product name"
                   item-text="name"
                   @change="productSelect"
@@ -24,20 +26,19 @@
                 ></v-autocomplete>
               </v-col>
               <v-col
-                cols="6"
+                cols="12"
+                sm="6"
+                class="text-center"
               >
-                <div>Or</div>
-                <!--Display first for selecting a product, our partners select a product (list of product fetched from nuxt content)-->
-                <v-btn @click="addNewProduct" x-large>Add New Product</v-btn>
+                <div class="pb-3">Or</div>
+                <v-btn rounded color="lightbugattiblue" elevation="0" flat dark @click="addNewProduct" x-large>Add New Product</v-btn>
               </v-col>
             </v-row>
-          </v-container>
-          <v-container>
             <v-row v-if="isLoading">
               <v-col cols="12" class="text-center">
                 <v-progress-linear
                   indeterminate
-                  color="green"
+                  color="lightbugattiblue"
                 ></v-progress-linear>
               </v-col>
             </v-row>
@@ -51,6 +52,8 @@
                   v-model="product.name"
                   :disabled="!productAddMode"
                   label="Product name"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -62,6 +65,8 @@
                   v-model="product.sku"
                   :disabled="!productAddMode"
                   label="Product sku"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -73,6 +78,8 @@
                   label="Brand"
                   :disabled="!productAddMode"
                   v-model="product.brand"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -86,6 +93,8 @@
                   multiple
                   :items="category"
                   label="Category"
+                  filled
+                  rounded
                 ></v-select>
               </v-col>
               <v-col
@@ -96,6 +105,8 @@
                   label="Description"
                   hint="Hint text"
                   :disabled="!productAddMode"
+                  filled
+                  rounded
                 ></v-textarea>
               </v-col>
               <v-col
@@ -147,10 +158,10 @@
           </template>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
-          <v-container>
+          <v-container class="pvw">
             <v-row v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
               <v-col cols="12">
-                <h3 class="info--text">Supplier {{idx+1}}</h3>
+                <h3 class="info--text text-center">Supplier {{idx+1}}</h3>
               </v-col>
               <v-col
                 cols="12"
@@ -161,6 +172,8 @@
                   :items="supplierproducttype"
                   label="Product type"
                   v-model="supplier.type"
+                  filled
+                  rounded
                 ></v-select>
               </v-col>
               <v-col
@@ -171,6 +184,8 @@
                 <v-text-field
                   label="Brand"
                   v-model="supplier.brand"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -181,6 +196,8 @@
                 <v-text-field
                   label="Product name"
                   v-model="supplier.name"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -192,21 +209,24 @@
                   label="Quantity"
                   type="number"
                   v-model="supplier.quantity"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
                 cols="12"
               >
-                <p>Location</p>
                 <v-row>
                   <v-col
                     cols="12"
                   >
+                    <div>Location</div>
                     <Geolocation v-model="supplier.address"/>
                   </v-col>
                   <v-col
                     cols="12"
                   >
+                    <div class="pb-10">Date</div>
                     <Datetime/>
                   </v-col>
                 </v-row>
@@ -214,7 +234,7 @@
               <v-col
                 cols="12"
               >
-                <p>Claims</p>
+                <p class="pt-5">Claims</p>
                 <div v-for="claim in claims_options" :key="claim.value">
                   <v-checkbox
                     v-model="supplier.claims"
@@ -239,6 +259,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="supplier.vegan.menu"
@@ -256,6 +277,8 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -267,6 +290,8 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="supplier.vegan.certification_method"
+                  filled
+                  rounded
                 ></v-select>
                 <v-file-input
                   v-model="myFile"
@@ -274,6 +299,8 @@
                   placeholder="Click to upload file"
                   @change="fileInput"
                   :disabled="processing"
+                  filled
+                  rounded
                 >
                   <template v-slot:append-outer>
                     <v-progress-circular
@@ -291,6 +318,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="supplier.vegan.menu"
@@ -319,6 +347,8 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="supplier.vegan.certification_method"
+                  filled
+                  rounded
                 ></v-select>
                 <v-checkbox
                   v-model="supplier.gots.is"
@@ -327,6 +357,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="supplier.gots.menu"
@@ -344,6 +375,8 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -355,6 +388,8 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="supplier.gots.certification_method"
+                  filled
+                  rounded
                 ></v-select>
                 <v-checkbox
                   v-model="supplier.france.is"
@@ -363,6 +398,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="supplier.france.menu"
@@ -380,6 +416,8 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -391,6 +429,8 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="supplier.france.certification_method"
+                  filled
+                  rounded
                 ></v-select>
                 <v-checkbox
                   v-model="supplier.audited_working.is"
@@ -399,6 +439,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="supplier.audited_working.menu"
@@ -416,6 +457,8 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -427,12 +470,14 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="supplier.audited_working.certification_method"
+                  filled
+                  rounded
                 ></v-select>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-btn class="btn-theme float-right" @click="addSupplier">Add Supplier</v-btn>
+                <v-btn rounded color="lightbugattiblue" elevation="0" flat dark class="d-flex ma-auto" @click="addSupplier">Add Supplier</v-btn>
               </v-col>
             </v-row>
           </v-container>
@@ -448,10 +493,10 @@
           </template>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
-          <v-container>
+          <v-container class="pvw">
             <v-row v-for="(manufacture,idx) in manufactures" :key="'manufucture'+idx">
               <v-col cols="12">
-                <h3 class="info--text">Manufacturer {{idx+1}}</h3>
+                <h3 class="info--text tect-center">Manufacturer {{idx+1}}</h3>
               </v-col>
               <v-col
                 cols="12"
@@ -462,6 +507,8 @@
                   :items="manufacturerproducttype"
                   label="Product type"
                   v-model="manufacture.type"
+                  filled
+                  rounded
                 ></v-select>
               </v-col>
               <v-col
@@ -472,6 +519,8 @@
                 <v-text-field
                   label="Brand"
                   v-model="manufacture.brand"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -482,6 +531,8 @@
                 <v-text-field
                   label="Manufacture first name"
                   v-model="manufacture.name"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -493,6 +544,8 @@
                   label="Quantity"
                   type="number"
                   v-model="manufacture.quantity"
+                  filled
+                  rounded
                 ></v-text-field>
               </v-col>
               <v-col
@@ -525,6 +578,7 @@
                     :value="claim.value"
                     :on-icon="svgPath6"
                     :off-icon="svgPath5"
+                    class="pb-3"
                   ></v-checkbox>
                 </div>
               </v-col>
@@ -557,6 +611,9 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
+                      class="pb-3"
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -568,6 +625,8 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="manufacture.vegan.certification_method"
+                  filled
+                  rounded
                 ></v-select>
                 <v-checkbox
                   v-model="manufacture.gots.is"
@@ -577,6 +636,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="manufacture.gots.menu"
@@ -594,6 +654,8 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -614,6 +676,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="manufacture.france.menu"
@@ -631,6 +694,8 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -642,6 +707,8 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="manufacture.france.certification_method"
+                  filled
+                  rounded
                 ></v-select>
                 <v-checkbox
                   v-model="manufacture.audited_working.is"
@@ -651,6 +718,7 @@
                   hide-details
                   :on-icon="svgPath6"
                   :off-icon="svgPath5"
+                  class="pb-3"
                 ></v-checkbox>
                 <v-menu
                   v-model="manufacture.audited_working.menu"
@@ -668,6 +736,8 @@
                       readonly
                       v-bind="attrs"
                       v-on="on"
+                      filled
+                      rounded
                     ></v-text-field>
                   </template>
                   <v-date-picker
@@ -679,19 +749,21 @@
                   :items="certificationmethod"
                   label="Certification Method"
                   v-model="manufacture.audited_working.certification_method"
+                  filled
+                  rounded
                 ></v-select>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-btn class="btn-theme float-right" @click="addManufacturer">Add Manufacturer</v-btn>
+                <v-btn rounded color="lightbugattiblue" elevation="0" flat dark class="d-flex ma-auto"  @click="addManufacturer">Add Manufacturer</v-btn>
               </v-col>
             </v-row>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
     </v-expansion-panels>
-    <div class="text-center py-3">
+    <div class="text-center py-10">
       <v-slide-x-reverse-transition>
         <v-tooltip
           v-if="formHasErrors"
@@ -704,6 +776,7 @@
               v-bind="attrs"
               @click="resetForm"
               v-on="on"
+              rounded color="lightbugattiblue" elevation="0" flat dark
             >
               <v-icon>{{ svgPath4 }}</v-icon>
             </v-btn>
@@ -713,7 +786,7 @@
       </v-slide-x-reverse-transition>
       <v-btn
         large
-        class="btn-theme mx-auto"
+        rounded color="lightbugattiblue" elevation="0" flat dark class="d-flex ma-auto" 
         @click="submit"
       >
         Submit

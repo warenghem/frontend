@@ -41,6 +41,7 @@
     "vee-validate": "^3.4.5",
     "vue": "^2.6.12",
     "vue-foldable": "^1.0.0",
+    "vue-qrcode-reader": "^2.3.18",
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
     "vue-typer": "^1.2.0",

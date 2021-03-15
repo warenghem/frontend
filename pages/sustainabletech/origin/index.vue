@@ -23,11 +23,16 @@
               <v-card-text>Scan your QR code or NFC tag and track the origin of your product from raw material to finished garment</v-card-text>
               <v-card-text>Unable to scan? Enter the product ID here</v-card-text>
             </div>
+            <client-only placeholder="Loading...">
+              <LazyQrcodereader/>
+            </client-only>
             <v-card-actions>
                   <v-btn
-                      rounded="lg"
+                      rounded
                       large
-                      class="btn-theme mx-auto"
+                      elevation="0"
+                      color="lightbugattiblue"
+                      class="mx-auto"
                       >
                       SCAN
                   </v-btn>

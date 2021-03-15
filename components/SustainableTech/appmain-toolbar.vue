@@ -23,7 +23,7 @@
       </v-list>
     </v-navigation-drawer>
 
-    <v-app-bar flat height="50px" :dark="type">
+    <v-app-bar flat height="42px" :dark="type">
 
       <v-app-bar-nav-icon class="ml-1" @click="sidebar = !sidebar">
         <v-icon>{{ svgPath1 }}</v-icon>
@@ -32,7 +32,7 @@
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo pt-2">
         <nuxt-link to="/" tag="span" style="cursor: pointer" class="brand">
-          <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-140,dpr-2,r-max/Logos/Warenghem_w_vf.svg" width="140">
+          <img src="https://ik.imagekit.io/g1noocuou2/tr:q-65,w-140,dpr-2,r-max/Logos/Warenghem_w_noparis_vf.svg" width="140">
         </nuxt-link>
       </v-toolbar-title>
       <v-spacer></v-spacer>
@@ -52,7 +52,6 @@
 </template>
 
 <script>
-    import link from './../../store/link'
     import { mdiMenu } from '@mdi/js'
     export default {
         name: "appmain-toolbar",

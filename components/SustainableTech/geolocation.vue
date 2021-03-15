@@ -11,10 +11,10 @@
           required
           @change="$emit('input',this.address)"
         ></v-text-field>
-        <v-btn @click="locatorButtonPressed">
+        <v-btn rounded color="lightbugattiblue" elevation="0" flat dark @click="locatorButtonPressed">
           Get address
         </v-btn>
-      </span>
+    </span>
 </template>
 <script>
     export default {
