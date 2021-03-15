@@ -5,11 +5,11 @@ admin_path: "/static/admin"
 webhook_url: 
 sections:
 - type: directory
-  path: content/suppliers
+  path: content/partners/suppliers
   label: Suppliers
   create: all
   match: "**/*"
-  new_doc_ext: ".json"
+  new_doc_ext: json
 - type: directory
   path: content/en-us/blog
   label: Blog - English
