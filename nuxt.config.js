@@ -504,6 +504,9 @@ export default {
     hostname: 'https://www.warenghem.com',
     i18n: true,
     gzip: true,
+    exclude: [
+      /^\/partners/ // path starts with /admin
+    ],
     routes: async () => {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).only(['path']).where({ slug: { $ne: 'type' } }).fetch()
@@ -570,6 +573,9 @@ export default {
     },
   },
   generate: {
+    exclude: [
+      /^\/partners/ // path starts with /admin
+    ],
     async routes () {
       const { $content } = require('@nuxt/content')
       const files = await $content({ deep: true }).where({ slug: { $ne: 'type' } }).only(['path']).fetch()

@@ -1,0 +1,44 @@
+{  
+  "product": {
+    "sku": "WAD48NBLB",
+    "name": "Dionysos Voyageur",
+    "product": "vine leather",
+    "category": "leather",
+    "description": "<p>Le portefeuille Dionysos est l'incarnation de l'élégance décontractée. D’un design compact, il est suffisamment fin pour se glisser dans la poche arrière d’un jean. Nos designers ont imaginé des lignes graphiques: deux faces aux fentes symétriques, dont celles de droite représentant le W iconique de la marque.</p><p>Confectionné en France en Anjou au sein de notre atelier spécialisé en haute maroquinerie. Ses cires tranches colorées bleu Bugatti et ses surpiqures fines et régulières affirment le savoir faire Français.</p><p></p>",
+    "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
+    "date": "2012-04-23",
+    "Awards":[ "Vegan", "GOTS", "Made in France" ]
+  },
+  "suppliers": {
+    "name": "VEGEA",
+    "type": "supplier",
+    "product": "vine leather",
+    "category": "leather",
+    "description": "<p>Le portefeuille Dionysos est l'incarnation de l'élégance décontractée. D’un design compact, il est suffisamment fin pour se glisser dans la poche arrière d’un jean. Nos designers ont imaginé des lignes graphiques: deux faces aux fentes symétriques, dont celles de droite représentant le W iconique de la marque.</p><p>Confectionné en France en Anjou au sein de notre atelier spécialisé en haute maroquinerie. Ses cires tranches colorées bleu Bugatti et ses surpiqures fines et régulières affirment le savoir faire Français.</p><p></p>",
+    "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
+    "date": "2012-04-23",
+    "Claims":[ "Care for environment", "Recycle", "Organic" ],
+    "Verified Claims": [
+      { "name":"Vegan", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" },
+      { "name":"Made in France", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" },
+      { "name":"GOTS", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" },
+      { "name":"Audited Working Conditions", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" }
+      ]
+  },
+  "manufacturers": {
+      "name": "saintgermain",
+      "type": "manufacturer",
+      "product": "vine leather",
+      "category": "leather",
+      "description": "<p>Le portefeuille Dionysos est l'incarnation de l'élégance décontractée. D’un design compact, il est suffisamment fin pour se glisser dans la poche arrière d’un jean. Nos designers ont imaginé des lignes graphiques: deux faces aux fentes symétriques, dont celles de droite représentant le W iconique de la marque.</p><p>Confectionné en France en Anjou au sein de notre atelier spécialisé en haute maroquinerie. Ses cires tranches colorées bleu Bugatti et ses surpiqures fines et régulières affirment le savoir faire Français.</p><p></p>",
+      "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
+      "date": "2012-04-23",
+      "Claims":[ "Care for environment", "Recycle", "Organic" ],
+      "Verified Claims": [
+        { "name":"Vegan", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" },
+        { "name":"Made in France", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" },
+        { "name":"GOTS", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" },
+        { "name":"Audited Working Conditions", "date": "2012-04-23", "Certification Method": "Audited from us", "document":"link to the document" }
+        ]
+    }
+}

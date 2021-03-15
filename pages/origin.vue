@@ -1,5 +1,5 @@
 <template>
-  <div style="background:white">
+  <div style="background:black">
     <div>
 		<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
 			<Backbutton class="border-bottom-2"/>
@@ -13,67 +13,14 @@
 		<div class="position-relative" style="height:90vh">
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="200px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Origin.svg 683w'">
-				<div style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbwhitegradienttext">De la matière première jusqu'à la livraison. Rien ne lui échappe.</div>
-				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Faites du végétal un élément noble et omniprésent dans votre vie. Tel est la mission que nous nous sommes fixés au lancement de ce projet. Le vin est apparu comme la figure absolue de l'élégance à la Francaise. Voici l'histoire de la naissance de Dionysos en chiffres et en lettres.</div>
+				<div style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbgradienttext">De la matière première à la livraison... Rien ne lui échappe.</div>
+				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Par ce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive.<br>Propulsée par la blockchain publique Ethereum, notre application rassemble et partage les informations clés sur nos produits d'une manière sécurisée, fiable et accessible.</div>
 			</div>
-			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullwhitegradientoverlay whiteoverlay2 h-100">
+			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay whiteoverlay2 h-100">
 				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/home_gCAPosI9qrtpP.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/home_gCAPosI9qrtpP.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/home_gCAPosI9qrtpP.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/home_gCAPosI9qrtpP.jpg 1500w'">
 			</div>
 		</div>
-		<div style="margin-top:120px;margin-bottom:60px" class="text-center app-title">La genese de l'idée : deux constats</div>
-		<v-container fluid class="grid-container pa-0">
-			<v-card 
-				v-for="(product,p_idx) in products"
-				:key="p_idx"
-				height= "100%"
-				lazy
-				class="bgcard card rounded-xl"
-				:class="grid[p_idx]"
-			>
-					<div class="h-100 img-fluid theme--light skeletton">
-						<div style="z-index:2" class="background text-center position-absolute d-flex justify-center align-center h-100 w-100">
-							<div class="text pvw">
-								<div>
-									<img width="200px" class="icon lazyload" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ icon[p_idx] +' 512w'">
-								</div>
-								<div
-									class="text-center text-uppercase text-white app-title d-block" style="max-width:500px!important;font-weight: bold;"
-									>
-									{{product.title}}
-								</div>
-								<div style="max-width:600px;margin-top: -20px;" class="text-center page-subtitle" v-html="product.summary"></div>
-							</div>
-						</div>
-						<div class="mediabox">
-							<picture>
-								<source media="screen and (min-width: 64em)"
-									:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
-								>
-								<source media="screen and (min-width: 48em)"
-									:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
-								>
-								<source
-									:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
-								>
-								<img class="lazyload mediabox-img rounded-xl"
-									:data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500'+ backgroundImages[p_idx] +' 2x'" 
-									data-sizes="auto" />
-							</picture>
-						</div>
-					</div>
-			</v-card>
-		</v-container>
-		<div style="margin-top:200px;margin-bottom:80px" class="text-center app-title">Nous ne nous y attendions pas... Et pourtant</div>
-		<div class="position-relative" style="height:70vh;background:black">
-			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
-				<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_2.7b.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_2.7b.png 683w'">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production. C'est plus que la production annuelle de cuir animal (environs 1,8 million) dont 80% sont traités chimiquements.</div>
-			</div>
-		</div>
-		<v-container id="text" fluid class="text-center pa-0">
-			<div style="margin-top:200px;margin-bottom:100px" class="text-center text-white app-title">{{$t('title2')}}</div>
-			<img style="max-width:800px" class="lazyload d-none" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
-		</v-container>
+		<div style="margin-top:200px;margin-bottom:80px;color:white" class="text-center app-title">Elle track et vérifie toute les étapes de la production. Sans exception.</div>
 		<v-container class="timeline-container">
 			<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
 				<v-timeline-item
@@ -112,17 +59,31 @@
 						</div>
 					</v-card>
 				</v-timeline-item>
-				<v-timeline-item
-						color="lightbugattiblue"
-						fill-dot
-						small
-				>
-					<template v-slot:icon>
-						<img :src="images[4]" alt="timeline-icon" width="16px">
-					</template>
-				</v-timeline-item>
 			</v-timeline>
 		</v-container>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une application narative</div>
+			<div style="z-index:3;bottom:80px" class="w-100 text-center">
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Elle vous racontera l'histoire de vos produits. Les .</div>
+			</div>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une base de donnée publique, partagée et limpide</div>
+			<div style="z-index:3;bottom:80px" class="w-100 text-center">
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Toutes les données sont stockées sur la blockchain Ethereum, disponible en ligne par tous. Ces informations sont inscrites tout au long de la chaîne de production et distribuées sur un réseau mondial d'ordinateurs. <br>Chaque acteur signe les informations inscrites et s’engage personnellement sur leur fiabilité.</div>
+			</div>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une base de donnée infalsifiable et sécurisée.</div>
+			<div style="z-index:3;bottom:80px" class="w-100 text-center">
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Les risques de fraude a posteriori sur les données sont supprimés puisque les données ne peuvent être modifiées. Elle est sécurisé par un réseau mondial d'ordinateur. A ce titre aucun ordinateur ne pourra faire face à ce réseau pour falsifier les données.  la sécurité du système, qui est assuré par le fait que la validation est effectuée par un ensemble d’utilisateurs différents, qui ne se connaissent pas. Cela permet de se prémunir du risque de malveillance ou de détournement, puisque les nœuds surveillent le système et se contrôlent mutuellement</div>
+			</div>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Eternelle</div>
+			<div style="z-index:3;bottom:80px" class="w-100 text-center">
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Une fois renseignée dans la blockchain, aucune modification n'est possible. Tout ce qui y est écrit est indestructible et non effaçable.</div>
+			</div>
+		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une solution radicale. Face à une transparence quasi-nulle encore en 2020</div>
+		<div class="position-relative" style="height:70vh">
+			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
+				<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/16__blue.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/16__blue.png 683w'">
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">est le taux de tracabilité moyen des marques de mode en 2020 selon fashionrevolution.org</div>
+			</div>
+		</div>
     </div>
   </div>
 </template>
@@ -184,7 +145,7 @@
 		"products": [
 			{
 				"subtitle": "Le premier constat",
-				"summary": "milliards de litres de vin sont produits chaque année dans le monde",
+				"summary": "le bas score de transparence de tracabilité moyen des marques de mode en 2020 (fashionrevolution.org)",
 				"title": ""
 			},
 			{
@@ -197,36 +158,37 @@
 			"menu": "Nos cuirs Dionysos",
 			"subtitle": "Mis à jour le 04/01/2021"
 		},
-		"title": "Dionysos",
+		"title": "Origin",
 		"title2": "Des vendanges au cuir de vin",
 		"calendarSection": {
-			"title": "Le calendrier avant le lancement de chaque objet",
-			"subtitle": "Pour suivre le déroulement du projet. Il s’affinera au fil du temps. Inscrivez vous à la Newsletter et suivez nous sur Instagram et Facebook pour en être notifié.",
-			"tag": "Nous en sommes ici",
 			"steps": [{
 				"tag": "Etape 1",
-				"title": "Foulage",
-				"subtitle": "La peau du raisin est percée pour en libérer le jus à l'aide d'une machine appelée le fouloir"
+				"title": "Création d’un coffre fort inviolable",
+				"subtitle": " Il s’agit d’un contrat informatique intelligent développé par W, contenant et vérifiant des infos renseignées par les fab et fournisseurs. Ce coffre fort nous suit tout au long de la fabrication du produit et engage chaque acteur légalement. Ces infos sont stockées sur une base de données partagée, publique et disponible en ligne (BE) et ne peuvent pas être modifiées. Chacun de vos produits dispose d’une étiquette avec un code barre. Il vous suffit de le scanner afin de découvrir l’histoire de votre article"
 			}, {
 				"tag": "Etape 2",
-				"title": "Fermantation alcoolique",
-				"subtitle": "Des levures transforment le sucre en alcool.<br>Le tanin dans la peau des grains lui donnent sa couleur rouge"
+				"title": "Entrée en piste de nos fournisseurs",
+				"subtitle": "Les fournisseurs entrent leurs informations sur notre application (nom du produit, quantité vendue, date, documents officels de certifications et tests qualité...).<br>Notre application les géolocalise automatiquement 'fausse adresse'. <br>Ils scannent les matières grâce à un QR code et l'envoient aux fabriquants"
 			}, {
 				"tag": "Etape 3",
-				"title": "Pressurage",
-				"subtitle": "Le jus fermenté est extrait. Le marc qui reste dans la cuve est pressé donnant un jus plus dense et tannique"
-			}, {
-				"tag": "",
-				"title": "",
-				"subtitle": "<div class='text-right'><div><div>Partie solide</div><div>Le marc</div></div><div><div>Partie liquide</div><div>Le vin</div></div></div>"
+				"title": "Nos fabriquants renforcent le terrain",
+				"subtitle": "Les fabriquants entrent également leurs informations.<br> Après réception de la marchandise, ils en vérifient l'authenticité ainsi que leur qualité et fabriquent vos produits.<br>Une étiquette QR code est cousue à l'intérieur afin que vous puissiez la scanner et découvrir l'histoire de votre article."
 			}, {
 				"tag": "Etape 4",
-				"title": "Recyclage du marc",
-				"subtitle": "Le marc est séché. La bio-huile obtenue à partir des pépins est polymérisée"
+				"title": "Nous vérifions tout au peigne fin",
+				"subtitle": "Le fabriquant expédie votre produit dans nos entrepôts, puis sera acheminé chez vous. De notre côté, nous auditons toutes les informations déposés."
 			}, {
 				"tag": "Etape 5",
-				"title": "Fabrication du cuir",
-				"subtitle": "La pâte obtenue est passée dans une presse imprimant le grain de cuir souhaité"
+				"title": "Compensation des émissions de CO2",
+				"subtitle": "Pour compenser l'utilisation de cette technologie, la fabrication et le transport de votre produit, nous plantons des arbres dans un de nos projets de reforestation. <br>Ces arbres disposeront d'un certificat d'authenticité qui sera déposé dans la Blockchain."
+			}, {
+				"tag": "Etape 6",
+				"title": "Vous découvrez l'histoire de votre produit",
+				"subtitle": "A la récéption de votre produit, vous pourrez scanner le QR code sur son étiquette grâce à notre application ORIGIN afin de découvrir son histoire."
+			}, {
+				"tag": "Etape 7",
+				"title": "Nous bouclons la boucle",
+				"subtitle": "Nous récupérons votre ancien produit pour le recycler complètement. <br>Nous scannons son QR code pour récupérer l'identité de son acheteur afin de lui envoyer un bon de réduction valable sur un prochain achat."
 			}
 		]
 		}

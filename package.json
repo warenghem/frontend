@@ -25,6 +25,7 @@
     "@vee-validate/rules": "^4.1.20",
     "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.6.5",
+    "firebase": "^8.3.0",
     "gsap": "^3.5.1",
     "instafeed": "^1.4.0",
     "jsonp": "^0.2.1",
@@ -43,7 +44,8 @@
     "vue-read-progress": "^1.0.4",
     "vue-slick-carousel": "^1.0.6",
     "vue-typer": "^1.2.0",
-    "vue2-leaflet": "^2.6.0"
+    "vue2-leaflet": "^2.6.0",
+    "vuetify-loader": "^1.7.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^3.0.0",
