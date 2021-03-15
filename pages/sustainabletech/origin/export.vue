@@ -12,6 +12,7 @@
                 cols="6"
               >
                 <div>Please select your product item</div>
+                <!--Display first for selecting a product, our partners select a product (list of product fetched from nuxt content)-->
                 <v-autocomplete
                   v-model="selectedProduct"
                   :items="productsItem"
@@ -32,6 +33,8 @@
               </v-col>
             </v-row>
           </v-container>
+          <!--end-->
+          <!--Display when above product has been selected and result fetched (nuxt content) - Display a vuetify loader during fetching and displaying - Then autocomplete other fields (brand, sku, category, description, image and awards) related to the product name selected above-->
           <v-container>
             <v-row v-if="isLoading">
               <v-col cols="12" class="text-center">
@@ -135,6 +138,7 @@
               </v-col>
             </v-row>
           </v-container>
+          <!--End-->
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
@@ -146,7 +150,7 @@
             </v-icon>
           </template>
         </v-expansion-panel-header>
-        <v-expansion-panel-content eager>
+        <v-expansion-panel-content>
           <v-container>
             <v-row v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
               <v-col cols="12">
@@ -268,37 +272,6 @@
                   label="Certification Method"
                   v-model="supplier.vegan.certification_method"
                 ></v-select>
-                <v-file-input
-                  v-model="files"
-                  :prepend-icon="svgPath7"
-                  :append-inner-icon="svgPath7"
-                  color="deep-purple accent-4"
-                  counter
-                  label="File input"
-                  multiple
-                  placeholder="Select your files"
-                  outlined
-                  :show-size="1000"
-                >
-                  <template v-slot:selection="{ index, text }">
-                    <v-chip
-                      v-if="index < 2"
-                      color="deep-purple accent-4"
-                      dark
-                      label
-                      small
-                    >
-                      {{ text }}
-                    </v-chip>
-
-                    <span
-                      v-else-if="index === 2"
-                      class="overline grey--text text--darken-3 mx-2"
-                    >
-                      +{{ files.length - 2 }} File(s)
-                    </span>
-                  </template>
-                </v-file-input>
                 <v-checkbox
                   v-model="supplier.vegan.is"
                   label="Vegan"
@@ -462,7 +435,7 @@
             </v-icon>
           </template>
         </v-expansion-panel-header>
-        <v-expansion-panel-content eager>
+        <v-expansion-panel-content>
           <v-container>
             <v-row v-for="(manufacture,idx) in manufactures" :key="'manufucture'+idx">
               <v-col cols="12">
@@ -744,8 +717,7 @@
         mdiCheck,
         mdiRefresh,
         mdiCheckboxBlankOutline,
-        mdiCheckboxMarked,
-        mdiPaperclip
+        mdiCheckboxMarked
     } from '@mdi/js'
 
     export default {
@@ -767,7 +739,6 @@
             svgPath4: mdiRefresh,
             svgPath5: mdiCheckboxBlankOutline,
             svgPath6: mdiCheckboxMarked,
-            svgPath7: mdiPaperclip,
             panel: [1, 0, 0],
             category: ['Bags', 'Wallet', 'Belt', 'Shoes'],
             supplierproducttype: ['Grappe Leather', 'Linen'],

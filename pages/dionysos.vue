@@ -13,14 +13,14 @@
 		<div class="position-relative" style="height:90vh;background:black">
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="200px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Dionysos.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Dionysos.svg 683w'">
-				<div style="font-size:55px!important" class="pb-10 app-title teradeli-medium lbbgradienttext">Le végétal anobli</div>
-				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Faire du végétal un élément noble et omniprésent dans notre vie, telle est la mission que nous nous sommes fixée au lancement de ce projet. <br>Le vin est apparu comme la figure absolue de l'élégance à la française. <br>Voici l'histoire de la naissance de Dionysos en chiffres et en lettres...</div>
+				<div style="font-size:60px!important" class="app-title teradeli-medium lbbgradienttext">Le végétal anobli.</div>
+				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Faites du végétal un élément noble et omniprésent dans votre vie. Tel est la mission que nous nous sommes fixés au lancement de ce projet. Le vin est apparu comme la figure absolue de l'élégance à la Francaise. Voici l'histoire de la naissance de Dionysos en chiffres et en lettres.</div>
 			</div>
 			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay blackoverlay2 h-100">
 				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/home_gCAPosI9qrtpP.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/home_gCAPosI9qrtpP.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/home_gCAPosI9qrtpP.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/home_gCAPosI9qrtpP.jpg 1500w'">
 			</div>
 		</div>
-		<div style="margin-top:120px;margin-bottom:60px" class="text-center app-title">La génèse de l'idée : deux constats</div>
+		<div style="margin-top:120px;margin-bottom:60px" class="text-center app-title">La genese de l'idée : deux constats</div>
 		<v-container fluid class="grid-container pa-0">
 			<v-card 
 				v-for="(product,p_idx) in products"
@@ -41,7 +41,7 @@
 									>
 									{{product.title}}
 								</div>
-								<div style="max-width:600px;margin-top: -20px;font-size:24px!important" class="text-center app-title teradeli-medium lbbwhitegradienttext" v-html="product.summary"></div>
+								<div style="max-width:600px;margin-top: -20px;" class="text-center page-subtitle" v-html="product.summary"></div>
 							</div>
 						</div>
 						<div class="mediabox">
@@ -67,12 +67,12 @@
 		<div class="position-relative" style="height:70vh;background:black">
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_2.7b.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_2.7b.png 683w'">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">milliards de m2 de cuir de vin pourraient être produits chaque année, rien qu'en valorisant ces «déchets» de production. <br>C'est plus que la production annuelle de cuir animal (environs 1,8 milliards) dont 80% sont traités chimiquement.</div>
+				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production. C'est plus que la production annuelle de cuir animal (environs 1,8 million) dont 80% sont traités chimiquements.</div>
 			</div>
 		</div>
 		<v-container id="text" fluid class="text-center pa-0">
 			<div style="margin-top:200px;margin-bottom:100px" class="text-center text-white app-title">{{$t('title2')}}</div>
-			<img style="max-width:800px" class="lazyload" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
+			<img style="max-width:800px" class="lazyload d-none" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
 		</v-container>
 		<v-container class="timeline-container">
 			<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
@@ -123,18 +123,6 @@
 				</v-timeline-item>
 			</v-timeline>
 		</v-container>
-		<div style="margin-top:120px;margin-bottom:60px" class="text-center app-title">Ecologique, étique</div>
-			<div style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Notre matière ne génère aucune souffrance animale, à un très faible impacte environnemental, et ne contient des matières premières 100% renouvelables</div>
-			</div>
-		<div style="margin-top:120px;margin-bottom:60px" class="text-center app-title">Solide</div>
-			<div style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Notre cuir de vin a longement été testé. Vous pouvez retrouver ces tests dans la page "vos questions". Il possède les mêmes caractéristiques mécaniques, esthétiques et sensorielles qu'un cuir traditionnel. Et a contrario, ne demande que peu d'entretien</div>
-			</div>
-		<div style="margin-top:120px;margin-bottom:60px" class="text-center app-title">Recyclable</div>
-			<div style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Pour boucler la boucle, nous récupérons vos anciens produits en échange d'un bon de réduction de 10% à valoir sur un prochain achat. Nous recyclerons la matière pour créer de nouveaux produits</div>
-			</div>
     </div>
   </div>
 </template>
