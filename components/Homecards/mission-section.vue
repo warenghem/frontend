@@ -2,7 +2,7 @@
     <div>
         <div class="fp-section d-none d-md-table">
             <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
-            <div class="fp-tableCell" style="height: 80vh!important">
+            <div class="fp-tableCell homecard">
                 <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
                     <div class="homepage-item">
                         <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
@@ -53,7 +53,7 @@
                                         </video>
                                     </div>
                                 </div>
-                                <div class="blackoverlay gradientoverlay">
+                                <div class="blackoverlay invgradientoverlay">
                                     <div class="skeletton">
                                             <img
                                             data-sizes="auto"
@@ -75,29 +75,26 @@
                             </div>
                         </div>
                         <div class="homepage-catalogue-links">
-                            <div class=" homepage-catalogue-links-item px-4"
+                            <div class=" homepage-catalogue-links-item pvw"
                                  v-for="(mission,m_idx) in $t('mission.sections')"
                                  @mouseover="fpMouseOver(m_idx+1)"
                                  @mouseout="currentMissionHover=null"
                                  :class="{'opacity-02':currentMissionHover}"
                                  :key="'mission_'+m_idx"
                             >
-                                <div class="pb-3">
-                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="mx-auto" v-html="MagazinePlus" />
-                                </div>
                                 <div class="homepage-catalogue-links-item-title pb-3">
                                     <a>
-                                        <div class="text-left px-3 mb-4">
-                                            <div class="sub-title text-white">
+                                        <div class="text-center px-3 mb-4">
+                                            <div class="page-title text-white">
                                                 {{mission.title}}
                                             </div>
-                                            <div class="sub-title text-gray">
+                                            <div class="page-subtitle text-white pt-2">
                                                 {{mission.subtitle}}
                                             </div>
                                         </div>
                                     </a>
                                 </div>
-                                <div class="homepage-catalogue-links-item-links">
+                                <div class="homepage-catalogue-links-item-links d-none">
                                     <div>
                                         <ul class="text-left mb-4 teradeli-light">
                                             <li class="fp-list-item" v-for="(item,idx) in mission.items"

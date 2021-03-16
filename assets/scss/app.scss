@@ -642,6 +642,7 @@ letter-spacing: .009em;
   letter-spacing: -0.04em !important;
   font-family: 'teradeli-medium', sans-serif !important;
   line-height: 1 !important;
+  font-weight: normal;
   transition: all .3s cubic-bezier(.39, .575, .565, 1);
   @media(max-width: 768px) {
     font-size: 35px !important;

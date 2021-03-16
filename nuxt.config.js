@@ -78,6 +78,7 @@ export default {
     /*'~/plugins/router',*/
     {src: '~/plugins/lazysizes', ssr: false},
     {src: '~/plugins/vee-validate', ssr: false},
+    {src: '~/plugins/aos', ssr: false},
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -551,6 +552,10 @@ export default {
                 /v-dialog*/,
                 /^vue-foldable/,
                 /^slide-left/,
+                /^aos/,
+                /^aos*/,
+                /^fade/,
+                /^flip/,
               ],
               deep: [
                 /page-enter/,
@@ -566,11 +571,11 @@ export default {
                 /^viewer/,
                 /^slide-left/,
               ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/,]
             }
           }
         }
-    },
+    }
   },
   generate: {
     exclude: [

@@ -23,6 +23,7 @@
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/snipcart": "^1.1.0",
     "@vee-validate/rules": "^4.1.20",
+    "aos": "^2.3.4",
     "cookie-universal-nuxt": "^2.1.4",
     "core-js": "^3.6.5",
     "firebase": "^8.3.0",

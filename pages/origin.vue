@@ -13,14 +13,14 @@
 		<div class="position-relative" style="height:90vh">
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="200px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Origin.svg 683w'">
-				<div style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbgradienttext">De la matière première à la livraison... Rien ne lui échappe.</div>
-				<div style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive.<br>Propulsée par la blockchain publique Ethereum, notre application rassemble et partage les informations clés sur nos produits d'une manière sécurisée, fiable et accessible.</div>
+				<div data-aos="fade-up" style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbgradienttext">De la matière première à la livraison... Rien ne lui échappe.</div>
+				<div data-aos="fade-up" data-aos-delay="300" style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive.<br>Nous utilisons la technologie comme une force pour le bien. Notre innovation permet aux citoyens d'en savoir plus sur le parcours et l'impact derrière les choses que nous achetons.<br>Propulsée par la blockchain publique Ethereum, notre application rassemble et partage les informations clés sur nos produits d'une manière sécurisée, fiable et accessible.</div>
 			</div>
-			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay whiteoverlay2 h-100">
-				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/home_gCAPosI9qrtpP.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/home_gCAPosI9qrtpP.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/home_gCAPosI9qrtpP.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/home_gCAPosI9qrtpP.jpg 1500w'">
+			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay blackoverlay2 h-100">
+				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/tech_mx5bGeVoG3pm.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/tech_mx5bGeVoG3pm.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/tech_mx5bGeVoG3pm.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/tech_mx5bGeVoG3pm.jpg 1500w'">
 			</div>
 		</div>
-		<div style="margin-top:200px;margin-bottom:80px;color:white" class="text-center app-title">Elle vérifie toutes les étapes de la production. <br>Sans exception.</div>
+		<div data-aos="fade-up" style="margin-top:200px;margin-bottom:80px;color:white" class="text-center app-title">Elle vérifie toutes les étapes de la production. <br>Sans exception.</div>
 		<v-container class="timeline-container">
 			<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
 				<v-timeline-item
@@ -31,6 +31,7 @@
 						small
 						class="my-10"
 						:class="classid[i]"
+						data-aos="zoom-in"
 				>
 					<template v-slot:icon>
 						<div class="mediabox">
@@ -39,8 +40,8 @@
 							</picture>
 						</div>
 					</template>
-					<div slot="opposite" v-if="i===0">
-						<div class="d-flex align-center">
+					<div data-aos="fade-left" slot="opposite" v-if="i===0">
+						<div data-aos="fade-left" class="d-flex align-center">
 							<img src="../assets/images/Arrowleftwhite.svg" class="d-none d-md-block" alt="fanel"
 								width="26px">
 							<span class="time pl-3 mb-0"
@@ -61,21 +62,21 @@
 				</v-timeline-item>
 			</v-timeline>
 		</v-container>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Narrative</div>
-			<div style="z-index:3;bottom:80px" class="w-100 text-center">
+		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Narrative</div>
+			<div data-aos="fade" style="z-index:3;bottom:80px" class="w-100 text-center">
 				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Son interface intuitive se compose d'une chronologie des étapes de fabrication et d'une carte détaillant leur localisation. Vous aurez accès à une page dédiée pour chaque fabriquant et fournisseur regroupant son histoire, ses certifications détaillées et son adresse.</div>
 			</div>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Translucide</div>
-			<div style="z-index:3;bottom:80px" class="w-100 text-center">
+		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Translucide</div>
+			<div data-aos="fade" style="z-index:3;bottom:80px" class="w-100 text-center">
 				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Toutes les données sont stockées sur la blockchain Ethereum, disponible en ligne par tous. Ces informations sont inscrites tout au long de la chaîne de production et distribuées sur un réseau mondial d'ordinateurs. <br>Chaque acteur signe les informations inscrites et s’engage personnellement sur leur fiabilité.</div>
 			</div>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Eternelle</div>
-			<div style="z-index:3;bottom:80px" class="w-100 text-center">
+		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Eternelle</div>
+			<div data-aos="fade" style="z-index:3;bottom:80px" class="w-100 text-center">
 				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Une fois renseignée dans la blockchain aucune modification ni suppression n'est possible, empêchant les risques de fraude a posteriori sur les données. Elle est sécurisée par un réseau mondial d'ordinateur. A ce titre aucun ordinateur ne pourra faire face à ce réseau pour falsifier les données.</div>
 			</div>
-		<div style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une solution innovante face à une transparence "perfectible" encore en 2021</div>
+		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une solution innovante face à une transparence "perfectible" encore en 2021</div>
 		<div class="position-relative" style="height:70vh">
-			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
+			<div data-aos="fade" style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/16__blue.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/16__blue.png 683w'">
 				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">est le taux de tracabilité moyen des marques de mode en 2020 selon fashionrevolution.org</div>
 			</div>
@@ -87,7 +88,7 @@
 <script>
     import { mdiChevronRight, mdiChevronLeft, mdiChevronDown, mdiPlus } from '@mdi/js'
     export default {
-        name: 'informations',
+        name: 'origin',
         data() {
             return {
 				svgPath1: mdiChevronRight,
@@ -112,9 +113,10 @@
                     "/Materials/Explications/dionysos_step1.jpg",
                     "/Materials/Explications/dionysos_step2.jpg",
                     "/Materials/Explications/dionysos_step3.jpg",
-                    "/transparent.png",
+                    "/Materials/Explications/dionysos_step3.jpg",
                     "/Materials/Explications/dionysos_step4.jpg",
                     "/Materials/Explications/dionysos_step5.jpg",
+					"/Materials/Explications/dionysos_step1.jpg",
                 ],
                 classid: [
                     "dot1",
@@ -314,7 +316,7 @@ border-radius: 20px !important; }
         background: #0081a7 !important;
     }
 @media (min-width: 48em) {
-	::v-deep .dot1 .v-timeline-item__dot, ::v-deep .dot1 .v-timeline-item__dot, ::v-deep .dot2 .v-timeline-item__dot, ::v-deep .dot3 .v-timeline-item__dot, ::v-deep .dot5 .v-timeline-item__dot, ::v-deep .dot6 .v-timeline-item__dot {
+	::v-deep .v-timeline-item__dot{
 		height: 152px!important;
 		width: 152px!important;
 	}
@@ -329,12 +331,7 @@ border-radius: 20px !important; }
 		padding-left: 30px!important;
 	}
 }
-::v-deep .dot4 .v-card {
-    background-color: unset!important;
-	&::after {
-		display: none;
-	}
-}
+
 ::v-deep .theme--dark.v-sheet, .theme--dark .appBar {
     border-color: rgb(21, 21, 21) !important;
 }

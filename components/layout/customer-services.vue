@@ -59,11 +59,11 @@
 {
 	"en": {
     "chat": "Our online chat",
-		"contacthours": "<p> We are at your disposal and we will be happy to answer all your questions. </p> <ul><li> Monday - Saturday: 10:00 am - 08:30 pm (UTC+01:00)</li> <li> Sunday: 10:00 am - 08:30 pm UTC+01:00</li></ul>"
+		"contacthours": "<p> We are at your disposal and we will be happy to answer all your questions. </p> <ul><li> Monday - Saturday: 10:00 am - 07:30 pm (UTC+01:00)</li> <li> Sunday: 10:00 am - 07:30 pm UTC+01:00</li></ul>"
 	},
 	"fr": {
     "chat": "Notre chat en ligne",
-		"contacthours": "<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><ul><li>Lundi – Samedi : 10h00 - 20h30</li><li>Dimanche : 10h00 – 20h30</li></ul>"
+		"contacthours": "<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><ul><li>Lundi – Samedi : 10h00 - 19h30</li><li>Dimanche : 10h00 – 18h00</li></ul>"
 	}
 }
 </i18n>

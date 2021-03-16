@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="videoSection">
+    <div style="height:700px!important" class="videoSection">
       <!--<div style="z-index: 2;top: 50%;transform: translateY(-50%);" class="text-center inner position-absolute d-none">
         <div class="col-12 py-5">
             <div class="logosvg logosvg" v-html="Eco" />
@@ -99,12 +99,12 @@
           </div>
         </div>
       </div>-->
-      <v-row no-gutters class="homepage-slider-content px-md-10 ma-md-10" style="max-width:600px">
+      <v-row no-gutters class="homepage-slider-content px-md-10 ma-md-10">
         <v-col class="topCenter col-12">
-          <div class="bannerLeft px-2 text-left">
+          <div class="bannerLeft px-2 text-center">
             <h4 class="app-title mb-2">{{$t('video.subtitle')}}</h4>
             <!--<h2 class="app-subtitle"> {{$t('video.title')}}{{$t('video.title2')}}</h2>-->
-            <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5">
+            <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5 justify-center d-flex">
               <div>
                 <Reservebutton style="width:260px" class="mx-2 mb-2" />
               </div>
