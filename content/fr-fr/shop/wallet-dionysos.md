@@ -1,7 +1,7 @@
 ---
 id: 3
 sku: WADWTNB
-name: Portefeuille Dionysos
+name: Dionysos Portefeuille
 slogan: Végétal comme ses feuilles.
 description: "<p>Le portefeuille Dionysos est l'incarnation de l'élégance décontractée.
   D’un design compact, il est suffisamment fin pour se glisser dans la poche arrière

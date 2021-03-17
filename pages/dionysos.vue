@@ -4,9 +4,7 @@
 		<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
 			<Backbutton class="border-bottom-2"/>
 			<div class="px-5 border-bottom-2 bg-theme d-none d-md-flex w-100">
-				<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
-					{{$t('title')}}
-				</div>
+				<img width="110px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Dionysos.svg 512w'">
 			</div>
 			<v-spacer></v-spacer>
 		</v-toolbar-bar>
@@ -169,6 +167,9 @@
                 ]
             }
         },
+		mounted() {
+			this.$vuetify.theme.dark = true
+		},
         head() {
             return {
             }

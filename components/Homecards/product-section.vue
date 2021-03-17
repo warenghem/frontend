@@ -110,7 +110,7 @@
 				"desc": "The largest of the bags. Composed of grapes and a French linen lining. Indispensable for weekends, sports, or short stays. This is the centerpiece, which sets the tone for the collection.",
 				"summary": "Vines and flax. Such is his destiny.",
 				"tag": "Available soon - 30 pieces",
-				"title": "Dionysos 48H"
+				"title": "Dionysos Voyageur"
 			},
 			{
 				"desc": "Large and thick, with saddle finish, it fits just as well with a suit as with jeans.",
@@ -139,13 +139,13 @@
 				"desc": "Large et épaisse, aux finitions sellier, elle s’integre aussi bien sur un costume que sur un jean.",
 				"summary": "Elle ne vous laissera pas tomber.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Ceinture Dionysos"
+				"title": "Dionysos Ceinture"
 			},
 			{
 				"desc": "Allié de votre quotidien, il est concu autours de lignes obliques représentant le W emblématique de la marque. Chacune d’entre elles abrite un espace pour vos cartes.",
 				"summary": "Végétal comme ses feuilles.",
 				"tag": "Disponible prochainement - 30 pièces",
-				"title": "Portefeuille Dionysos"
+				"title": "Dionysos Portefeuille"
 			}
 		]
 	}

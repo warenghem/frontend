@@ -887,12 +887,11 @@ letter-spacing: .009em;
   }
 }
 .lbbgradienttext {
-  background: radial-gradient(#3d8ebe, #000);
-  background-size: 100% 200%;
-  background-position: 50% 100%;
+  width: 100%;
+  color: transparent;
+  background-image: linear-gradient(to left, #3d8ebe, #2a6385);
   -webkit-background-clip: text;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
 }
 .lbbwhitegradienttext {
   background: radial-gradient(#3d8ebe, #fff);
@@ -901,6 +900,14 @@ letter-spacing: .009em;
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+.gradienttext {
+  display: inline-block;
+  width: 100%;
+  color: transparent;
+  background-image: linear-gradient(to right, #3d8ebe, #61b6cd);
+  -webkit-background-clip: text;
+  background-clip: text;
 }
 .v-toolbar__logo {
   width: 140px;

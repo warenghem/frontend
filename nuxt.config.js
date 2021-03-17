@@ -506,7 +506,7 @@ export default {
     i18n: true,
     gzip: true,
     exclude: [
-      /^\/partners/ // path starts with /admin
+      '/partners/**'
     ],
     routes: async () => {
       const { $content } = require('@nuxt/content')
@@ -570,8 +570,12 @@ export default {
                 /^vue-foldable/,
                 /^viewer/,
                 /^slide-left/,
+                /^aos/,
+                /^aos*/,
+                /^fade/,
+                /^flip/,
               ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/,]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/,/^aos/,/^aos*/,/^fade/,/^flip/,]
             }
           }
         }
@@ -579,7 +583,7 @@ export default {
   },
   generate: {
     exclude: [
-      /^\/partners/ // path starts with /admin
+      /^\/partners/
     ],
     async routes () {
       const { $content } = require('@nuxt/content')

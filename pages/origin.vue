@@ -4,9 +4,7 @@
 		<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
 			<Backbutton class="border-bottom-2"/>
 			<div class="px-5 border-bottom-2 bg-theme d-none d-md-flex w-100">
-				<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
-					{{$t('title')}}
-				</div>
+				<img width="100px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w'">
 			</div>
 			<v-spacer></v-spacer>
 		</v-toolbar-bar>
@@ -14,7 +12,7 @@
 			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
 				<img width="200px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Origin.svg 683w'">
 				<div data-aos="fade-up" style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbgradienttext">De la matière première à la livraison... Rien ne lui échappe.</div>
-				<div data-aos="fade-up" data-aos-delay="300" style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive.<br>Nous utilisons la technologie comme une force pour le bien. Notre innovation permet aux citoyens d'en savoir plus sur le parcours et l'impact derrière les choses que nous achetons.<br>Propulsée par la blockchain publique Ethereum, notre application rassemble et partage les informations clés sur nos produits d'une manière sécurisée, fiable et accessible.</div>
+				<div data-aos="fade-up" data-aos-delay="300" style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive. Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.<br>Nous utilisons la technologie comme une force pour le bien. </div>
 			</div>
 			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay blackoverlay2 h-100">
 				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/tech_mx5bGeVoG3pm.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/tech_mx5bGeVoG3pm.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/tech_mx5bGeVoG3pm.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/tech_mx5bGeVoG3pm.jpg 1500w'">
