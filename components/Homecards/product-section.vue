@@ -1,6 +1,6 @@
 <template>
         <div class="productSection">
-            <div class="page-title absolute-title d-none">{{$t('productTitle')}}</div>
+            <div class="home-title absolute-title d-none">{{$t('productTitle')}}</div>
                 <div style="height:135.547px" class="text-center d-block py-4 pb-md-8 w-100">
                     <picture>
                         <source media="screen and (min-width: 32em)"
@@ -31,10 +31,9 @@
                                     </div>
                                 </div>
                                 <div class="pvw text-center">
-                                    <h2 class="page-title teradeli-medium px-0 primary--text">{{product.title}}</h2>
-                                    <div class="pt-2 page-subtitle primary--text"> {{product.summary}}</div>
+                                    <h2 class="home-title teradeli-medium px-0 primary--text">{{product.title}}</h2>
+                                    <div class="pt-2 home-subtitle primary--text"> {{product.summary}}</div>
                                     <v-text
-                                        :class="disabled[p_idx]"
                                         style="z-index:2"
                                         class="text-center lightbugattiblue--text"
                                         >
@@ -72,12 +71,10 @@
 </template>
 
 <script>
-    import { mdiChevronRight } from '@mdi/js'
     export default {
         name: "product-section",
         data() {
             return {
-                svgPath1: mdiChevronRight,
                 backgroundImages: [
                     ",ar-6-4/Products/48H_black_blue_side_bottle.png",
                     ",fo-top/Products/belt-blackblue-above2bis.png",
@@ -89,12 +86,6 @@
                     "/shop/belt-dionysos/",
                     "/shop/wallet-dionysos/",
                     /*"",*/
-                ],
-                disabled: [
-                    "",
-                    "",
-                    "",
-                    /*"d-none",*/
                 ],
                 products: this.$t('products'),
             }

@@ -2,7 +2,7 @@
     <section class="calender">
 
         <div class="section_info px-md-4 py-5">
-            <div class="page-title">
+            <div class="home-title">
                 {{$t('calendarSection.title')}}
             </div>
             <div class="subtitle teradeli-light pb-md-5 py-4">

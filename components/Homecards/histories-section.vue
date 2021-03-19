@@ -1,7 +1,7 @@
 <template>
     <section class="team-section invgradientoverlay blackoverlay2 text-center pvw">
-        <!--<h2 class="page-title teradeli-medium text-white px-0">{{$t('title')}}</h2>
-        <div class=" pb-3 py-2 page-subtitle text-white" v-html="$t('subtitle')"></div>
+        <!--<h2 class="home-title teradeli-medium text-white px-0">{{$t('title')}}</h2>
+        <div class=" pb-3 py-2 home-subtitle text-white" v-html="$t('subtitle')"></div>
         <v-text
             @click="$store.state.historiesModal=true"
             style="z-index:2"
@@ -10,8 +10,8 @@
             {{$t('btnDiscover')}}
             <v-icon color="lightbugattiblue"  small>{{ svgPath1 }}</v-icon>
         </v-text>-->
-        <h2 class="page-title teradeli-medium px-0 text-white">{{$t('title')}}</h2>
-        <div class=" pb-3 py-2 page-subtitle text-white" v-html="$t('subtitle')"></div>
+        <h2 class="home-title teradeli-medium px-0 text-white">{{$t('title')}}</h2>
+        <div class=" pb-3 py-2 home-subtitle text-white" v-html="$t('subtitle')"></div>
         <v-text
             @click="$store.state.newsletterModal=true"
             style="z-index:2"

@@ -1,7 +1,7 @@
 <template>
     <section class="team-section invgradientoverlay blackoverlay text-center pvw">
-        <h2 class="page-title teradeli-medium text-white px-0">{{$t('title')}}</h2>
-        <div class=" pb-3 py-2 page-subtitle text-white mb-5" v-html="$t('subtitle')"></div>
+        <h2 class="home-title teradeli-medium text-white px-0">{{$t('title')}}</h2>
+        <div class=" pb-3 py-2 home-subtitle text-white mb-5" v-html="$t('subtitle')"></div>
         <v-btn
             elevation="0"
             rounded

@@ -9,7 +9,7 @@
       flat
       tile
       color="#000000"
-      class="white--text text-center w-100 px-3 px-sm-15"
+      class="white--text footer text-center w-100 px-3 px-sm-15"
     >
       <v-card-title class="px-0 pb-0 d-block d-md-flex">
         <div class="d-block d-md-flex">

@@ -104,7 +104,7 @@
           <div class="bannerLeft px-2 text-center">
             <h4 class="app-title mb-2">{{$t('video.subtitle')}}</h4>
             <!--<h2 class="app-subtitle"> {{$t('video.title')}}{{$t('video.title2')}}</h2>-->
-            <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5 justify-center d-flex">
+            <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5 justify-center d-block d-md-flex">
               <div>
                 <Reservebutton style="width:260px" class="mx-2 mb-2" />
               </div>

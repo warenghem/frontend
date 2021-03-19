@@ -1,7 +1,7 @@
 <template>
     <section class="team-section text-center pvw">
-        <h2 class="page-title teradeli-medium px-0">{{$t('title')}}</h2>
-        <div class=" pb-3 py-2 page-subtitle " v-html="$t('subtitle')"></div>
+        <h2 class="home-title teradeli-medium px-0">{{$t('title')}}</h2>
+        <div class=" pb-3 py-2 home-subtitle " v-html="$t('subtitle')"></div>
         <v-text
             @click="$store.state.newsletterModal=true"
             style="z-index:2"

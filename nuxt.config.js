@@ -552,10 +552,7 @@ export default {
                 /v-dialog*/,
                 /^vue-foldable/,
                 /^slide-left/,
-                /^aos/,
-                /^aos*/,
-                /^fade/,
-                /^flip/,
+                "aos-init", "aos-animate", "data-aos-delay", "data-aos-duration",
               ],
               deep: [
                 /page-enter/,
@@ -570,12 +567,8 @@ export default {
                 /^vue-foldable/,
                 /^viewer/,
                 /^slide-left/,
-                /^aos/,
-                /^aos*/,
-                /^fade/,
-                /^flip/,
               ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/,/^aos/,/^aos*/,/^fade/,/^flip/,]
+              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/]
             }
           }
         }

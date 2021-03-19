@@ -1,180 +1,98 @@
 <template>
     <div>
-        <div class="fp-section d-none d-md-table">
-            <div class="page-title absolute-title d-none">{{$t('mission.title')}}</div>
-            <div class="fp-tableCell homecard">
-                <div class="fp-bg" style="transform: translateX(0px) translateY(0px);">
-                    <div class="homepage-item">
-                        <div class="homepage-catalogue-background" :class="{'active':currentMissionHover}">
-                            <div class="homepage-catalogue-background-big">
-                                <div class="skeletton">
-                                    <img
-                                    data-sizes="auto"
-                                    :srcset="backgroundImage.img"
-                                    :data-lowsrc="backgroundImage.blur_v"
-                                    class="lazyload mediabox-img"
-                                    alt="bg image"/>
-                                </div>
-                            </div>
-                            <div class="homepage-catalogue-background-lines"
-                                 :class="{'opacity-02':currentMissionHover}"
-                            >
-                                <div></div>
-                                <div></div>
-                                <div></div>
-                                <!--<div></div>-->
-                            </div>
-                            <!--<div class="homepage-catalogue-background-divided d-none">
-                                <div v-for="(bgLogo,idx) in $store.state.picture.backgroundlogos" :key="'bg_logo_'+idx">
-                                    <div>
-                                        <img
-                                          data-sizes="auto"
-                                          :data-src="bgLogo.img"
-                                          class="lazyload d-none position-relative"
-                                          style="z-index:10"
-                                      />
-                                        </div>
-                                    </div>
-                            </div>-->
-                            <div class="homepage-catalogue-background-divided2" :class="{'d-none':currentMissionHover}">
-                                <div class="blackoverlay gradientoverlay">
-                                    <div class="skeletton">
-                                            <img
-                                            data-sizes="auto"
-                                            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 2500w"
-                                            class="lazyload mediabox-img lazypreload"
-                                            />
-                                    </div>
-                                </div>
-                                <div class="blackoverlay gradientoverlay">
-                                    <div class="skeletton">
-                                        <video width="720" height="405" autoplay controls loop>
-                                            <source src="https://res.cloudinary.com/dfnpkqf5d/video/upload/f_auto,q_auto:good/v1613767325/pexels-alessandro-giordano-5494638_zbuos5.mp4" type="video/mp4">
-                                        </video>
-                                    </div>
-                                </div>
-                                <div class="blackoverlay invgradientoverlay">
-                                    <div class="skeletton">
-                                            <img
-                                            data-sizes="auto"
-                                            data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 2500w"
-                                            class="lazyload mediabox-img lazypreload"
-                                            />
-                                    </div>
-                                </div>
-                                <!--<div v-for="(bgImage,idx) in $store.state.picture.backgroundImages" :key="'bg_image_'+idx" class="blackoverlay gradientoverlay">
-                                    <div class="skeletton">
-                                            <img
-                                            data-sizes="auto"
-                                            :data-srcset="bgImage.img"
-                                            :data-lowsrc="bgImage.blur_v"
-                                            class="lazyload mediabox-img lazypreload"
-                                            />
-                                    </div>
-                                </div>-->
-                            </div>
+        <v-container fluid style="padding:0!important" class="productgridhome pa-0">
+            <v-card 
+                height= "100%"
+                lazy
+                class="homecard bgcard hand invgradientoverlay blackoverlay"
+            >
+                <NuxtLink :to="'/'+$i18n.locale+'/dionysos'"> 
+                    <div class="h-100 img-fluid theme--light position-relative skeletton">
+                        <div class="pvw text-center">
+                            <h2 class="home-title teradeli-medium px-0 text-white">{{$t('section1.title')}}</h2>
+                            <div class="pt-2 home-subtitle text-white"> {{$t('section1.subtitle')}}</div>
+                            <Discoverbutton class="text-white pt-3 position-relative" style="font-size:16px"/>
                         </div>
-                        <div class="homepage-catalogue-links">
-                            <div class=" homepage-catalogue-links-item pvw"
-                                 v-for="(mission,m_idx) in $t('mission.sections')"
-                                 @mouseover="fpMouseOver(m_idx+1)"
-                                 @mouseout="currentMissionHover=null"
-                                 :class="{'opacity-02':currentMissionHover}"
-                                 :key="'mission_'+m_idx"
-                            >
-                                <div class="homepage-catalogue-links-item-title pb-3">
-                                    <a>
-                                        <div class="text-center px-3 mb-4">
-                                            <div class="page-title text-white">
-                                                {{mission.title}}
-                                            </div>
-                                            <div class="page-subtitle text-white pt-2">
-                                                {{mission.subtitle}}
-                                            </div>
-                                        </div>
-                                    </a>
-                                </div>
-                                <div class="homepage-catalogue-links-item-links d-none">
-                                    <div>
-                                        <ul class="text-left mb-4 teradeli-light">
-                                            <li class="fp-list-item" v-for="(item,idx) in mission.items"
-                                                :key="idx">
-                                                <div class="count">
-                                                    {{(idx+1)>9?(idx+1):'0'+(idx+1)}}
-                                                </div>
-                                                <div class="col">{{item}}
-                                                </div>
-                                            </li>
-                                        </ul>
-                                    </div>
+                        <div>
+                            <img
+                                data-sizes="auto"
+                                :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 2500w'"
+                                class="lazyload mediabox-img"
+                            />
+                        </div>
+                    </div>
+                </NuxtLink>
+            </v-card>
+            <v-card 
+                height= "100%"
+                lazy
+                class="homecard bgcard hand invgradientoverlay blackoverlay"
+            >
+                    <div class="h-100 img-fluid theme--light position-relative skeletton">
+                        <div class="pvw text-center">
+                            <h2 class="home-title teradeli-medium px-0 text-white">{{$t('section2.title')}}</h2>
+                            <div class="pt-2 home-subtitle text-white"> {{$t('section2.subtitle')}}</div>
+                        </div>
+                        <div style="position: absolute;overflow: hidden;top: 0;width: 100%;height: 100%;">
+                            <div class="blackoverlay gradientoverlay h-100 w-100">
+                                <div class="skeletton h-100 w-100">
+                                    <video class="h-100 w-100" style="object-fit:cover" width="720" height="405" webkit-playsinline playsinline autoplay loop muted poster="https://ik.imagekit.io/g1noocuou2/projects.jpg">
+                                        <source src="https://res.cloudinary.com/dfnpkqf5d/video/upload/f_auto,q_auto:good/v1613767325/pexels-alessandro-giordano-5494638_zbuos5.mp4" type="video/mp4">
+                                    </video>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-        </div>
-        <div class="d-md-none mission-accordion finebordert">
-            <v-expansion-panels accordion>
-                <div v-for="(mission,m_idx) in $t('mission.sections').slice().reverse()" :key="'mission_ac'+m_idx" class="w-100">
-                    <v-expansion-panel
-                            style="min-height: 33vw"
-                            class="gradientoverlay blackoverlay backgroundcover"
-                    >
-                        <div class="skeletton">
+            </v-card>
+            <v-card 
+                height= "100%"
+                lazy
+                class="homecard bgcard hand invgradientoverlay blackoverlay"
+            >
+                <NuxtLink :to="'/'+$i18n.locale+'/origin'"> 
+                    <div class="h-100 img-fluid theme--light position-relative skeletton">
+                        <div class="pvw text-center">
+                            <h2 class="home-title teradeli-medium px-0 text-white">{{$t('section3.title')}}</h2>
+                            <div class="pt-2 home-subtitle text-white">{{$t('section3.subtitle')}}</div>
+                            <Discoverbutton class="text-white pt-3 position-relative" style="font-size:16px"/>
+                        </div>
+                        <div>
                             <img
                                 data-sizes="auto"
-                                :data-srcset="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].img"
-                                :data-lowsrc="$store.state.picture.backgroundImages[$store.state.picture.backgroundImages.length-1-m_idx].blur_v"
+                                :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 2500w'"
                                 class="lazyload mediabox-img"
                             />
                         </div>
-                        <v-expansion-panel-header style="min-height:250px" ripple class="flex-column align-start p-0 z-2">
-                            <div class="pa-sm-10 pvw h-100 z-2">
-                                <div style="height:49px" class="pb-3">
-                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="plusIcon" v-html="MagazinePlus" />
-                                    <div style="fill: #ffffff;stroke: #ffffff;width:35px" class="minusIcon" v-html="MagazineMinus" />
-                                </div>
-                                <div class="sub-title text-white">
-                                    {{mission.title}}
-                                </div>
-                                <div class="sub-title text-gray">
-                                    {{mission.subtitle}}
-                                </div>
-                            </div>
-                        </v-expansion-panel-header>
-                        <v-expansion-panel-content :eager="true">
-                            <div>
-                                <ul class="text-left mb-4 teradeli-light z-2">
-                                    <li class="fp-list-item" v-for="(item,idx) in mission.items"
-                                        :key="idx">
-                                        <div class="count">
-                                            {{(idx+1)>9?(idx+1):'0'+(idx+1)}}
-                                        </div>
-                                        <div class="col py-1 pr-0">{{item}}
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </v-expansion-panel-content>
-                    </v-expansion-panel>
-                </div>
-            </v-expansion-panels>
-        </div>
+                    </div>
+                </NuxtLink>
+            </v-card>
+        </v-container>
     </div>
 </template>
 
 <script>
     import MagazinePlus from "~/assets/images/magazine-plus.svg?raw";
     import MagazineMinus from "~/assets/images/magazine-minus.svg?raw";
+import discoverbutton from '../molecules/discoverbutton.vue';
     export default {
+  components: { discoverbutton },
         name: "mission-section",
         data() {
             return {
                 MagazinePlus,MagazineMinus,
                 currentMissionHover: null,
                 backgroundImage: '',
-                backgroundImagesL:''
+                backgroundImagesL:'',
+                link: [
+                    "/origin",
+                    "",
+                    "/dionysos",
+                ],
+                classe: [
+                    "d-block text-white pt-3 position-relative",
+                    "d-none",
+                    "d-block text-white pt-3 position-relative",
+                ],
             }
         },
         methods: {
@@ -243,6 +161,18 @@
                 }
                 ,
                 fr: {
+                    section1: {
+                            title: "Végétalement noble. Nos cuirs de vin DIONYSOS®.",
+                            subtitle: "Solides, performantes, nos matières sont issues de la terre et des vendanges."
+                        },
+                    section2: {
+                            title: "Fabriqué en France. Point.",
+                            subtitle: "Raffinés, locaux, nos objets développent le savoir-faire français."
+                        },
+                    section3: {
+                            title: "Tracabilité totale via notre technologie ORIGIN®.",
+                            subtitle: "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons."
+                        },
                     mission: {
                         title: "La mission: réunifier l’Homme à la nature",
                         sections: [
@@ -293,7 +223,6 @@
                             }]
                     }
                 }
-                ,
             }
         }
     }
@@ -395,17 +324,41 @@
 
 <style scoped lang="scss">
     @import "~/assets/scss/home/mission";
-    video {
-    position: fixed;
+#Container {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+}
+
+#Container video {
+    position: absolute;
+    left: 50%;
     top: 50%;
-    left: 65%;
-    z-index: -100;
+    /* The following will size the video to fit the full container. Not necessary, just nice.*/
     min-width: 100%;
     min-height: 100%;
-    width: auto;
-    height: auto;
-    -webkit-transform: translate(-50%, -50%);
-    -ms-transform: translate(-50%, -50%);
-    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    transform: translate(-50%,-50%);
+    z-index: 0;
+}
+
+#Container div {
+    position: relative;
+    z-index: 1;
+}
+    .productgridhome {
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-rows: 1fr;
+    padding: 1rem!important;
+    grid-gap: 1rem;
+    @media (max-width: 48em) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        grid-gap: 0.5rem;
+    }
     }
 </style>

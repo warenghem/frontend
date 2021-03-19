@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h3 class="page-title teradeli-medium pb-10">
+    <h3 class="home-title teradeli-medium pb-10">
       {{$t('contact')}}
     </h3>
     <p class="text-center mb-3">{{$t('contactsubtitle')}}</p>

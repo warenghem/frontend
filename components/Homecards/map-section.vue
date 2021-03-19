@@ -1,8 +1,8 @@
 <template>
   <div class="treemapwhole position-relative" v-intersect.quiet="{handler: mapIntersect,options: {rootMargin: '50px', threshold: [0, 0.5, 1.0]}}">
     <div class="pvw treemapheader px-10 text-center position-absolute w-100">
-      <h2 class="page-title px-0">{{$t('title')}}</h2>
-      <div class="page-subtitle py-2">{{$t('subtitle')}}</div>
+      <h2 class="home-title px-0">{{$t('title')}}</h2>
+      <div class="home-subtitle py-2">{{$t('subtitle')}}</div>
       <v-text
           @click="$store.state.plantModal=true"
           style="z-index:2"

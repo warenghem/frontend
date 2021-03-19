@@ -57,7 +57,7 @@
 					<div>
 						<template>
 							<v-card class="bgcard">
-								<div class="page-title teradeli-medium pb-10">
+								<div class="home-title teradeli-medium pb-10">
 									{{$t('questions.subtitle')}}
 								</div>
 								<v-expansion-panels focusable inset flat>
@@ -83,7 +83,7 @@
 					<div>
 						<template>
 						<v-card class="bgcard">
-							<div class="page-title teradeli-medium pb-10 bgcard">
+							<div class="home-title teradeli-medium pb-10 bgcard">
 								{{$t('material.subtitle')}}
 							</div>
 							<v-expansion-panels focusable inset flat>
@@ -109,7 +109,7 @@
 					<div>
 						<template>
 						<v-card class="bgcard">
-							<div class="page-title teradeli-medium bgcard">
+							<div class="home-title teradeli-medium bgcard">
 								{{$t('shipping.subtitle')}}
 							</div>
 							<v-expansion-panels focusable inset flat>

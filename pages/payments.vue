@@ -30,7 +30,7 @@
     <v-row class="pa-0 ma-0">
       <v-col cols="12" md="8" class="bgcard pvw">
         <v-card class="bgcard">
-          <div class="page-title teradeli-medium pb-10 bgcard">
+          <div class="home-title teradeli-medium pb-10 bgcard">
             {{$t('payment.subtitle')}}
           </div>
           <Payments/>

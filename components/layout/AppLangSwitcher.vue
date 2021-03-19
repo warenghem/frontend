@@ -20,8 +20,8 @@
         </v-btn>
     </template> 
     <slot name="langSwitcher">
-        <div style="overflow: auto;" class="bg-white">
-            <div style="height: 50px;position: fixed;width: 100%;background: white;z-index: 2;" class="d-flex justify-space-between align-center border-bottom-2">
+        <div style="overflow: auto;" class="bg-white toolbar">
+            <div style="height: 50px;position: fixed;width: 100%;z-index: 2;" class="d-flex justify-space-between align-center border-bottom-2 border-top-2">
                 <div class="text-center sub-title pl-3">Choose your region</div>
                 <v-btn
                     text
@@ -43,7 +43,7 @@
                                 class="flex items-center whitespace-no-wrap"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-pill px-3"
+                                    class="bg-white rounded-pill px-3 buttonblack"
                                     @click="sheet = false"
                                     ripple
                                     style="height:70px"
@@ -75,7 +75,7 @@
                                 class="flex items-center whitespace-no-wrap"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-pill px-3"
+                                    class="bg-white rounded-pill px-3 buttonblack"
                                     @click="sheet = false"
                                     style="height:70px"
                                     ripple

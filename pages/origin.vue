@@ -1,85 +1,80 @@
 <template>
-  <div style="background:black">
-    <div>
-		<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
-			<Backbutton class="border-bottom-2"/>
-			<div class="px-5 border-bottom-2 bg-theme d-none d-md-flex w-100">
-				<img width="100px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w'">
-			</div>
-			<v-spacer></v-spacer>
-		</v-toolbar-bar>
-		<div class="position-relative" style="height:90vh">
-			<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
-				<img width="200px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Origin.svg 683w'">
-				<div data-aos="fade-up" style="max-width:900px;font-size:60px!important" class="app-title ma-auto teradeli-medium lbbgradienttext">De la matière première à la livraison... Rien ne lui échappe.</div>
-				<div data-aos="fade-up" data-aos-delay="300" style="max-width:900px;color:#a1a1a6" class="sub-title teradeli-medium mx-auto">Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive. Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.<br>Nous utilisons la technologie comme une force pour le bien. </div>
-			</div>
-			<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay blackoverlay2 h-100">
-				<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/tech_mx5bGeVoG3pm.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/tech_mx5bGeVoG3pm.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/tech_mx5bGeVoG3pm.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/tech_mx5bGeVoG3pm.jpg 1500w'">
-			</div>
+  <div>
+	<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
+		<Backbutton class="border-bottom-2"/>
+		<div class="px-5 border-bottom-2 bg-theme d-flex w-100">
+			<img width="100px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w'">
 		</div>
-		<div data-aos="fade-up" style="margin-top:200px;margin-bottom:80px;color:white" class="text-center app-title">Elle vérifie toutes les étapes de la production. <br>Sans exception.</div>
-		<v-container class="timeline-container">
-			<v-timeline align-top :dense="$vuetify.breakpoint.smAndDown">
-				<v-timeline-item
-						color="lightbugattiblue"
-						fill-dot
-						v-for="(item,i) in $t('calendarSection.steps')"
-						:key="'time_'+i"
-						small
-						class="my-10"
-						:class="classid[i]"
-						data-aos="zoom-in"
-				>
-					<template v-slot:icon>
-						<div class="mediabox">
-							<picture>
-								<img :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,r-max'+ images[i] + ' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-600,r-max'+ images[i] + ' 300w'" alt="timeline-icon" class="mediabox-img position-relative">
-							</picture>
-						</div>
-					</template>
-					<div data-aos="fade-left" slot="opposite" v-if="i===0">
-						<div data-aos="fade-left" class="d-flex align-center">
-							<img src="../assets/images/Arrowleftwhite.svg" class="d-none d-md-block" alt="fanel"
-								width="26px">
-							<span class="time pl-3 mb-0"
-								style="color: #888!important;">{{$t('calendarSection.tag')}}</span>
-						</div>
+		<v-spacer></v-spacer>
+	</v-toolbar-bar>
+	<div class="mediabox wa-smart-picture square-ratio h-100 d-block d-md-none pb-5">
+		<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/Techsolo3small.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/Techsolo3small.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/Techsolo3small.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/Techsolo3small.png 1500w'">
+	</div>
+	<div class="position-relative first">
+		<div style="z-index:3;bottom:80px" class="firsttext w-100 text-center">
+			<img width="200px" class="icon lazyload pb-3 d-none d-md-block ma-auto" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Origin_black_1_.svg 683w'">
+			<div data-aos="fadeup" style="max-width:900px" class="page-title ma-auto teradeli-medium lbbgradienttext">{{$t('pagetitle')}}</div>
+			<div data-aos="fadeup" data-aos-delay="300" style="max-width:900px;color:#888" class="page-subtitle teradeli-medium mx-auto" v-html="$t('pagesubtitle')"></div>
+		</div>
+		<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio h-100 d-none d-md-block">
+			<img style="object-fit:contain" width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/Techsolo3.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/Techsolo3.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/Techsolo3.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/Techsolo3.png 1500w'">
+		</div>
+	</div>
+	<div class="text-center page-title2 spacing" v-html="$t('title1')"></div>
+	<v-container class="timeline-container bgcard rounded-xl">
+		<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
+			<v-timeline-item
+					fill-dot
+					v-for="(item,i) in $t('calendarSection.steps')"
+					:key="'time_'+i"
+					class="my-10"
+					:class="classid[i]"
+					large
+			>
+				<template v-slot:icon>
+					<div data-aos="zoom-in" class="mediabox dot rounded-circle">
+						<picture>
+							<img :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,r-max'+ images[i] + ' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-600,r-max'+ images[i] + ' 300w'" alt="timeline-icon" class="mediabox-img position-relative">
+						</picture>
 					</div>
-					<v-card
-							:color="'#151515'"
-							dark
-							class="pa-4"
-					>
-
-						<div class="time">{{item.tag}}</div>
-						<h4 class="smalltitle">{{item.title}}</h4>
-						<div class="item-details" v-html="item.subtitle">
-						</div>
-					</v-card>
-				</v-timeline-item>
-			</v-timeline>
-		</v-container>
-		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Narrative</div>
-			<div data-aos="fade" style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Son interface intuitive se compose d'une chronologie des étapes de fabrication et d'une carte détaillant leur localisation. Vous aurez accès à une page dédiée pour chaque fabriquant et fournisseur regroupant son histoire, ses certifications détaillées et son adresse.</div>
-			</div>
-		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Translucide</div>
-			<div data-aos="fade" style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Toutes les données sont stockées sur la blockchain Ethereum, disponible en ligne par tous. Ces informations sont inscrites tout au long de la chaîne de production et distribuées sur un réseau mondial d'ordinateurs. <br>Chaque acteur signe les informations inscrites et s’engage personnellement sur leur fiabilité.</div>
-			</div>
-		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Eternelle</div>
-			<div data-aos="fade" style="z-index:3;bottom:80px" class="w-100 text-center">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">Une fois renseignée dans la blockchain aucune modification ni suppression n'est possible, empêchant les risques de fraude a posteriori sur les données. Elle est sécurisée par un réseau mondial d'ordinateur. A ce titre aucun ordinateur ne pourra faire face à ce réseau pour falsifier les données.</div>
-			</div>
-		<div data-aos="fade-up" style="margin-top:120px;margin-bottom:60px;color:white" class="text-center app-title">Une solution innovante face à une transparence "perfectible" encore en 2021</div>
-		<div class="position-relative" style="height:70vh">
-			<div data-aos="fade" style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
-				<img width="500px" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/16__blue.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/16__blue.png 683w'">
-				<div style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">est le taux de tracabilité moyen des marques de mode en 2020 selon fashionrevolution.org</div>
-			</div>
+				</template>
+				<v-card
+						color="white"
+						class="pa-4 rounded-xl text-left" data-aos="fadeup"
+				>
+					<v-card-subtitle class="pb-3">{{item.tag}}</v-card-subtitle>
+					<h4 class="page-subtitle2 teradeli-medium lbbgradienttext pb-3">{{item.title}}</h4>
+					<div class="item-details" v-html="item.subtitle">
+					</div>
+				</v-card>
+			</v-timeline-item>
+		</v-timeline>
+	</v-container>
+	<div class="text-center page-title2 spacing" v-html="$t('title2')"></div>
+	<v-container fluid class="pa-0 pb-10">
+		<v-row class="ma-0">
+		<v-col 
+			v-for="(origin,o_idx) in origins"
+			:key="o_idx"
+			height= "100%"
+			cols="12" md="4"
+		>
+			<v-row>
+				<v-col cols="12">
+					<img data-aos="fade" data-aos-delay="300" style="max-width:500px" class="icon lazyload w-100 d-flex ma-auto" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ originicon[o_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ originicon[o_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ originicon[o_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ originicon[o_idx] +' 683w'">
+				</v-col>
+				<v-col data-aos="fadeup" data-aos-delay="300" cols="12" style="max-width:600px" class="page-subtitle2 text-center teradeli-medium lbbgradienttext ma-auto pvw" v-html="origin.summary"></v-col>
+			</v-row>
+		</v-col>
+		</v-row>
+	</v-container>
+	<div style="max-width:1000px" class="text-center page-title2 spacing ma-auto" v-html="$t('title3')"></div>
+	<div class="position-relative" style="height:70vh">
+		<div data-aos="fade" style="z-index:3;bottom:80px" class="position-absolute w-100 text-center">
+			<img data-aos="fade" data-aos-delay="300" style="width:500px; max-width:100%;z-index: 2;position: relative;" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/16__blue.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/16__blue.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/16__blue.png 683w'">
+			<div data-aos="fade" data-aos-delay="300" style="font-size:24px!important;max-width: 800px !important" class="app-title teradeli-medium lbbgradienttext ma-auto">est le taux de tracabilité moyen des marques de mode en 2020 selon fashionrevolution.org</div>
 		</div>
-    </div>
+	</div>
   </div>
 </template>
 
@@ -107,14 +102,20 @@
                     "div3"
                 ],
                 products: this.$t('products'),
+				origins: this.$t('origins'),
+				originicon: [
+					"/Environments/Narrative.png",
+					"/Environments/translucid_" + this.$i18n.localeProperties.language + ".png",
+					"/Environments/eternal_" + this.$i18n.localeProperties.language + ".png"
+                ],
                 images: [
-                    "/Materials/Explications/dionysos_step1.jpg",
-                    "/Materials/Explications/dionysos_step2.jpg",
-                    "/Materials/Explications/dionysos_step3.jpg",
-                    "/Materials/Explications/dionysos_step3.jpg",
-                    "/Materials/Explications/dionysos_step4.jpg",
-                    "/Materials/Explications/dionysos_step5.jpg",
-					"/Materials/Explications/dionysos_step1.jpg",
+                    "/Environments/blockchain_lock.jpeg",
+                    "/Environments/supplier.jpeg",
+                    "/Environments/AdobeStock_213093083-scaled.jpeg",
+                    "/Environments/logo.154.jpg",
+                    "/madagascar_river.jpg",
+                    "/Environments/tech_deep.jpeg",
+					"/Environments/recycle.jpeg",
                 ],
                 classid: [
                     "dot1",
@@ -137,34 +138,39 @@
 <i18n>
 {
 	"fr": {
-		"productTitle": "Les objets en création",
+		"pagetitle": "De la matière première à la livraison... Rien ne lui échappe.",
+		"pagesubtitle": "Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive. Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.<br>Nous utilisons la technologie comme une force pour le bien.",
+		"title1": "<div data-aos='fadeup' style='color: #acacac;'>Elle vérifie toutes les étapes de la production.</div><div data-aos='fadeup' data-aos-delay='300'>Sans exception.</div",
+		"title2": "<div style='color: #acacac;' data-aos='fadeup'>Un coffre fort</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
+		"title3": "<div style='color: #acacac;' data-aos='fadeup'>Une solution innovante</div><div data-aos='fadeup' data-aos-delay='300'>Face à une transparence perfectible encore en 2021</div>",
 		"products": [
 			{
-				"subtitle": "Le premier constat",
-				"summary": "le bas score de transparence de tracabilité moyen des marques de mode en 2020 (fashionrevolution.org)",
-				"title": ""
+				"summary": "le bas score de transparence de tracabilité moyen des marques de mode en 2020 (fashionrevolution.org)"
 			},
 			{
-				"subtitle": "Le second constat",
-				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>",
-				"title": ""
+				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>"
 			}
 		],
-		"protection": {
-			"menu": "Nos cuirs Dionysos",
-			"subtitle": "Mis à jour le 04/01/2021"
-		},
-		"title": "Origin",
-		"title2": "Des vendanges au cuir de vin",
+		"origins": [
+			{
+				"summary": "Son interface intuitive se compose d'une chronologie des étapes de fabrication et d'une carte détaillant leur localisation. Vous aurez accès à une page dédiée pour chaque fabriquant et fournisseur regroupant son histoire, ses certifications détaillées et son adresse."
+			},
+			{
+				"summary": "Toutes les données sont stockées sur la blockchain Ethereum, disponible en ligne par tous. Ces informations sont inscrites tout au long de la chaîne de production et distribuées sur un réseau mondial d'ordinateurs. <br>Chaque acteur signe les informations inscrites et s’engage personnellement sur leur fiabilité."
+			},
+			{
+				"summary": "Une fois renseignée dans la blockchain aucune modification ni suppression n'est possible, empêchant les risques de fraude a posteriori sur les données. Elle est sécurisée par un réseau mondial d'ordinateur. A ce titre aucun ordinateur ne pourra faire face à ce réseau pour falsifier les données."
+			}
+		],
 		"calendarSection": {
 			"steps": [{
 				"tag": "Etape 1",
 				"title": "Création d’un coffre fort inviolable",
-				"subtitle": "Il s’agit d’un contrat informatique intelligent développé par W, contenant et vérifiant des infos renseignées par les fab et fournisseurs. Ce coffre fort nous suit tout au long de la fabrication du produit et engage chaque acteur légalement. Ces infos sont stockées sur une base de données partagée, publique et disponible en ligne (BE) et ne peuvent pas être modifiées. Chacun de vos produits dispose d’une étiquette avec un code barre. Il vous suffit de le scanner afin de découvrir l’histoire de votre article"
+				"subtitle": "Il s’agit d’un contrat informatique intelligent développé par Warenghem, contenant et vérifiant des informations renseignées par les fabriquants et fournisseurs. Ce coffre fort nous suit tout au long de la fabrication et engage chaque acteur légalement. Ces informationss sont stockées sur une base de données partagée, publique et disponible en ligne et ne peuvent pas être modifiées. Chacun de vos produits dispose d’une étiquette avec un code barre. Il vous suffit de le scanner afin de découvrir l’histoire de votre article"
 			}, {
 				"tag": "Etape 2",
 				"title": "Entrée en piste de nos fournisseurs",
-				"subtitle": "Les fournisseurs entrent leurs informations sur notre application (nom du produit, quantité vendue, date, documents officels de certifications et tests qualité...).<br>Notre application les géolocalise automatiquement 'fausse adresse'. <br>Ils scannent les matières grâce à un QR code et l'envoient aux fabriquants"
+				"subtitle": "Les fournisseurs entrent leurs informations sur notre application (nom du produit, quantité vendue, date, documents officels de certifications et tests qualité...).<br>Notre application les géolocalise automatiquement afin d'éviter les fausses adresses. <br>Ils scannent les matières grâce à un QR code et l'envoient aux fabriquants"
 			}, {
 				"tag": "Etape 3",
 				"title": "Nos fabriquants renforcent le terrain",
@@ -193,6 +199,16 @@
 </i18n>
 
 <style scoped lang="scss">
+.first {
+  @media (min-width: 960px) {
+    height: 90vh;
+  }
+  .firsttext {
+  @media (min-width: 960px) {
+    position: absolute
+  }
+  }
+}
 .grid-container {
   display: grid;
   padding: 1rem!important;
@@ -201,7 +217,7 @@
   grid-template-rows: 1fr;
   grid-template-areas:
     "div2 div2 div2 div3 div3 div3";
-  @media (max-width: 48em) {
+  @media (max-width: 960px) {
   grid-template-areas:
     "div2 div2 div2 div2 div2 div2"
     "div3 div3 div3 div3 div3 div3"
@@ -212,7 +228,7 @@
 }
 .card {
   height: 25rem!important;
-  @media (min-width: 48em) {
+  @media (min-width: 960px) {
     height: 40rem!important;
   }
 }
@@ -282,13 +298,6 @@ border-radius: 20px !important; }
         border-radius: 15px;
     }
 
-    .time {
-        font-weight: 700;
-        margin-bottom: 5px;
-        color: #0081a7;
-        font-size: 16px;
-    }
-
     .smalltitle {
         margin-top: 0;
         margin-bottom: 10px;
@@ -313,11 +322,20 @@ border-radius: 20px !important; }
     .v-timeline::before {
         background: #0081a7 !important;
     }
-@media (min-width: 48em) {
+	::v-deep .v-timeline-item__inner-dot {
+		border: 2px solid white;
+	}
+@media (min-width: 960px) {
+/* Move the dot css to .dot*/
 	::v-deep .v-timeline-item__dot{
+		height: unset!important;
+		width: unset!important;
+	}
+	.dot {
 		height: 152px!important;
 		width: 152px!important;
 	}
+/* END Move the dot css to .dot*/
 	::v-deep .v-timeline-item__divider {
 		min-width: 152px!important;
 	}
@@ -329,9 +347,41 @@ border-radius: 20px !important; }
 		padding-left: 30px!important;
 	}
 }
-
+/* Move the dot css to .dot*/
+.dot {
+	box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+	border: 2px solid var(--v-lightbugattiblue-base);
+}
+::v-deep .v-timeline-item__dot {
+    box-shadow: none!important;
+}
+::v-deep .v-timeline-item__inner-dot.primary {
+    background-color: unset!important;
+}
+::v-deep .v-timeline-item__inner-dot {
+    border: none!important;
+}
+::v-deep .v-timeline-item__dot {
+    background: none!important;
+}
+/* END Move the dot css to .dot*/
 ::v-deep .theme--dark.v-sheet, .theme--dark .appBar {
     border-color: rgb(21, 21, 21) !important;
 }
-
+::v-deep .v-timeline:before {
+    width: 5px!important;
+    border-radius: 5px!important;
+}
+::v-deep .v-application--is-ltr .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse):before {
+    left: calc(50% - 5px)!important;
+}
+::v-deep .theme--light.v-timeline .v-timeline-item .v-card::before {
+    border-right-color: white!important;
+}
+::v-deep .v-timeline--align-top .v-timeline-item__body > .v-card:before {
+    top: calc(0% + 30px + 2px)!important;
+}
+::v-deep .v-timeline--align-top .v-timeline-item__body > .v-card:after {
+    top: calc(0% + 30px)!important;
+}
 </style>

@@ -122,7 +122,7 @@
                 v-for="(tab,m_idx) in $t('tab.sections3')"
                 :key="'tab_'+m_idx"
               >
-                <div class="page-title teradeli-medium">
+                <div class="home-title teradeli-medium">
                   {{tab.title}}
                 </div>
                 <v-card-text v-html="tab.subtitle">
