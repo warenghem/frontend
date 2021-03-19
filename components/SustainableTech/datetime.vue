@@ -6,6 +6,7 @@
       full-width
       year-icon="mdi-calendar-blank"
       elevation="15"
+      @input="$emit('input',picker)"
     ></v-date-picker>
   </v-row>
 </template>

@@ -31,7 +31,9 @@
                 class="text-center"
               >
                 <div class="pb-3">Or</div>
-                <v-btn rounded color="lightbugattiblue" elevation="0" flat dark @click="addNewProduct" x-large>Add New Product</v-btn>
+                <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="addNewProduct" x-large>Add New
+                  Product
+                </v-btn>
               </v-col>
             </v-row>
             <v-row v-if="isLoading">
@@ -221,13 +223,13 @@
                     cols="12"
                   >
                     <div>Location</div>
-                    <Geolocation v-model="supplier.address"/>
+                    <Geolocation v-model="supplier.location"/>
                   </v-col>
                   <v-col
                     cols="12"
                   >
                     <div class="pb-10">Date</div>
-                    <Datetime/>
+                    <Datetime v-model="supplier.date"/>
                   </v-col>
                 </v-row>
               </v-col>
@@ -311,38 +313,6 @@
                     />
                   </template>
                 </v-file-input>
-                <v-checkbox
-                  v-model="supplier.vegan.is"
-                  label="Vegan"
-                  color="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="supplier.vegan.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="supplier.vegan.renewalDate"
-                      label="Picker without buttons"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="supplier.vegan.renewalDate"
-                    @input="supplier.vegan.menu = false"
-                  ></v-date-picker>
-                </v-menu>
                 <v-select
                   :items="certificationmethod"
                   label="Certification Method"
@@ -477,7 +447,9 @@
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-btn rounded color="lightbugattiblue" elevation="0" flat dark class="d-flex ma-auto" @click="addSupplier">Add Supplier</v-btn>
+                <v-btn rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
+                       @click="addSupplier">Add Supplier
+                </v-btn>
               </v-col>
             </v-row>
           </v-container>
@@ -556,12 +528,12 @@
                   <v-col
                     cols="12"
                   >
-                    <Geolocation v-model="manufacture.address"/>
+                    <Geolocation v-model="manufacture.location"/>
                   </v-col>
                   <v-col
                     cols="12"
                   >
-                    <Datetime/>
+                    <Datetime v-model="manufacture.location"/>
                   </v-col>
                 </v-row>
               </v-col>
@@ -756,7 +728,9 @@
             </v-row>
             <v-row>
               <v-col cols="12">
-                <v-btn rounded color="lightbugattiblue" elevation="0" flat dark class="d-flex ma-auto"  @click="addManufacturer">Add Manufacturer</v-btn>
+                <v-btn rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
+                       @click="addManufacturer">Add Manufacturer
+                </v-btn>
               </v-col>
             </v-row>
           </v-container>
@@ -776,7 +750,7 @@
               v-bind="attrs"
               @click="resetForm"
               v-on="on"
-              rounded color="lightbugattiblue" elevation="0" flat dark
+              rounded color="lightbugattiblue" elevation="0" dark
             >
               <v-icon>{{ svgPath4 }}</v-icon>
             </v-btn>
@@ -786,7 +760,7 @@
       </v-slide-x-reverse-transition>
       <v-btn
         large
-        rounded color="lightbugattiblue" elevation="0" flat dark class="d-flex ma-auto" 
+        rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
         @click="submit"
       >
         Submit
@@ -805,7 +779,8 @@
         mdiCheckboxMarked,
         mdiPaperclip
     } from '@mdi/js'
-    import { FirebaseStorage } from "@/plugins/firebase.js";
+    import {FirebaseStorage} from "@/plugins/firebase.js";
+
     export default {
         layout: 'app',
         // page component definitions
@@ -834,7 +809,7 @@
             countries: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua &amp; Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia &amp; Herzegovina', 'Botswana', 'Brazil', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Chad', 'Chile', 'China', 'Colombia', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire', 'Croatia', 'Cruise Ship', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Estonia', 'Ethiopia', 'Falkland Islands', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Polynesia', 'French West Indies', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Kyrgyz Republic', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania', 'Mauritius', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Pierre &amp; Miquelon', 'Samoa', 'San Marino', 'Satellite', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'St Kitts &amp; Nevis', 'St Lucia', 'St Vincent', 'St. Lucia', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', `Timor L'Este`, 'Togo', 'Tonga', 'Trinidad &amp; Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks &amp; Caicos', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam', 'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'],
             errorMessages: '',
             name: null,
-            address: null,
+            location: null,
             city: null,
             state: null,
             zip: null,
@@ -842,7 +817,7 @@
             formHasErrors: false,
             menu2: false,
             selectedProduct: null,
-            productAddMode:false,
+            productAddMode: false,
             product: {
                 id: '',
                 name: '',
@@ -868,7 +843,7 @@
                     brand: '',
                     name: '',
                     quantity: 0,
-                    address: '',
+                    location: '',
                     date: '',
                     certification_method: '',
                     renewalDate: '',
@@ -877,24 +852,28 @@
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
                     gots: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
                     france: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
                     audited_working: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
 
@@ -906,7 +885,7 @@
                     brand: '',
                     name: '',
                     quantity: 0,
-                    address: '',
+                    location: '',
                     date: '',
                     certification_method: '',
                     renewalDate: '',
@@ -915,24 +894,28 @@
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
                     gots: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
                     france: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
                     audited_working: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
+                        upload_file:'',
                         menu: false
                     },
 
@@ -942,41 +925,11 @@
             processing: false,
             fileURL: null,
         }),
-        methods: {
-          async fileInput(file) {
-            try {
-              if (file && file.name) {
-                this.processing = true;
-
-                const fr = new FileReader();
-                fr.readAsDataURL(file);
-                fr.addEventListener("load", () => {
-                  // this is to load image on the UI
-                  // .. not related to file upload :)
-                  this.fileURL = fr.result;
-                });
-                const imgData = new FormData();
-                imgData.append("image", this.myFile);
-                const filePath = `mypath/${Date.now()}-${file.name}`;
-                const metadata = { contentType: this.myFile.type };
-
-                await FirebaseStorage.ref()
-                  .child(filePath)
-                  .put(this.myFile, metadata);
-                console.log("filePath: ", filePath);
-              }
-            } catch (e) {
-              console.error(e);
-            } finally {
-              this.processing = false;
-            }
-          },
-        },
         computed: {
             form() {
                 return {
                     name: this.name,
-                    address: this.address,
+                    location: this.location,
                     city: this.city,
                     state: this.state,
                     zip: this.zip,
@@ -990,8 +943,36 @@
             },
         },
         methods: {
+            async fileInput(file) {
+                try {
+                    if (file && file.name) {
+                        this.processing = true;
+
+                        const fr = new FileReader();
+                        fr.readAsDataURL(file);
+                        fr.addEventListener("load", () => {
+                            // this is to load image on the UI
+                            // .. not related to file upload :)
+                            this.fileURL = fr.result;
+                        });
+                        const imgData = new FormData();
+                        imgData.append("image", this.myFile);
+                        const filePath = `mypath/${Date.now()}-${file.name}`;
+                        const metadata = {contentType: this.myFile.type};
+
+                        await FirebaseStorage.ref()
+                            .child(filePath)
+                            .put(this.myFile, metadata);
+                        console.log("filePath: ", filePath);
+                    }
+                } catch (e) {
+                    console.error(e);
+                } finally {
+                    this.processing = false;
+                }
+            },
             addressCheck() {
-                this.errorMessages = this.address && !this.name
+                this.errorMessages = this.location && !this.name
                     ? `Hey! I'm required`
                     : ''
 
@@ -1005,14 +986,52 @@
                     this.$refs[f].reset()
                 })
             },
-            submit() {
-                this.formHasErrors = false
+            async submit() {
+                // this.formHasErrors = false
+                //
+                // Object.keys(this.form).forEach(f => {
+                //     if (!this.form[f]) this.formHasErrors = true
+                //     this.$refs[f].validate(true)
+                // })
+                try {
+                    const data = {
+                        "recipients": [{"name": this.product.name}],
+                        "planter_id": 148537,
+                        "species_id": 727,
+                        "quantity": 1,
+                    };
+                    this.$axios.setHeader('Authorization', 'Bearer M5ISDlbYDkO68Idip6u0Ny0yULAigugsTdvcQDMX0ofSwTByv180UjVmuz2cMFXw')
+                    const res = await this.$axios.post('http://youcannevertestenough.tree-nation.com/api/plant',
+                        {
+                            data: data
+                        }
+                    );
+                    const productData = {
+                        "product": {
+                            "sku": this.product.sku,
+                            "name": this.product.name,
+                            "product": this.product.brand,
+                            "category": this.product.category.toString(),
+                            "description": this.product.description,
+                            "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
+                            "date": new Date(),
+                            "Awards": this.product.awards
+                        },
+                        "suppliers": this.suppliers,
+                        "manufacturers":this.manufacturers
+                    };
+                    console.log(res.status)
+                    if(res.status===200){
+                         const product_res = await this.$axios.post('http://15.188.65.163:40080/api/products',
+                        {
+                            data: productData
+                        }
+                    );
+                    }
 
-                Object.keys(this.form).forEach(f => {
-                    if (!this.form[f]) this.formHasErrors = true
-
-                    this.$refs[f].validate(true)
-                })
+                } catch (e) {
+                    console.log(e)
+                }
             },
             addSupplier() {
                 this.suppliers.push({
@@ -1020,7 +1039,7 @@
                     brand: '',
                     name: '',
                     quantity: 0,
-                    address: '',
+                    location: '',
                     date: '',
                     certification_method: '',
                     renewalDate: '',
@@ -1058,7 +1077,7 @@
                     brand: '',
                     name: '',
                     quantity: 0,
-                    address: '',
+                    location: '',
                     date: '',
                     certification_method: '',
                     renewalDate: '',
@@ -1091,7 +1110,7 @@
                 })
             },
             productSelect() {
-                this.productAddMode=false;
+                this.productAddMode = false;
                 this.isLoading = true;
                 this.isResult = false;
                 this.product.id = this.selectedProduct.id;
@@ -1116,7 +1135,7 @@
 
             },
             addNewProduct() {
-                this.productAddMode=true;
+                this.productAddMode = true;
                 this.product = {
                     id: '',
                     name: '',

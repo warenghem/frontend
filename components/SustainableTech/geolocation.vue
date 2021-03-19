@@ -9,9 +9,9 @@
           ref="autocomplete"
           label="Address Line"
           required
-          @change="$emit('input',this.address)"
+          @change="$emit('input',address)"
         ></v-text-field>
-        <v-btn rounded color="lightbugattiblue" elevation="0" flat dark @click="locatorButtonPressed">
+        <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="locatorButtonPressed">
           Get address
         </v-btn>
     </span>
