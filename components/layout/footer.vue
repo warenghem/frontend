@@ -111,6 +111,7 @@
           computed: {
             links() {
                   return [
+                    { title: this.$i18n.t('toolbar.studios'), url: "/studios/" },
                     { title: this.$i18n.t('toolbar.help'), url: "/help/" },
                     { title: this.$i18n.t('toolbar.payments'), url: "/payments/" },
                     { title: this.$i18n.t('toolbar.shipping'), url: "/shipping/" },

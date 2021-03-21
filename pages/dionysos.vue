@@ -224,51 +224,19 @@
 {
 	"en": {
 		"calendarSection": {
-			"steps": [
-				{
-					"subtitle": "The skin of the grape is pierced to release the juice using a machine called the crusher",
-					"tag": "Step 1",
-					"title": "Treading"
-				},
-				{
-					"subtitle": "Yeasts convert sugar into alcohol.<br>The tannin in the skin of the grains gives it its red color",
-					"tag": "2nd step",
-					"title": "Alcoholic fermentation"
-				},
-				{
-					"subtitle": "The fermented juice is extracted. The marc that remains in the tank is pressed giving a more dense and tannic juice.",
-					"tag": "Step 3",
-					"title": "Pressing"
-				},
-				{
-					"subtitle": "<div class='text-right'><div><div>Solid part</div><div>Marc</div></div><div><div>Liquid part</div><div>Wine</div></div></div>",
-					"tag": "",
-					"title": ""
-				},
-				{
-					"subtitle": "The grounds are dried. The bio-oil obtained from the seeds is polymerized",
-					"tag": "Step 4",
-					"title": "Marc recycling"
-				},
-				{
-					"subtitle": "The paste obtained is passed through a press printing the desired grain of leather",
-					"tag": "STEP 5",
-					"title": "Leather manufacturing"
-				}
-			],
 			"subtitle": "To follow the progress of the project. It will refine over time. Subscribe to the Newsletter and follow us on Instagram and Facebook to be notified.",
 			"tag": "We are here",
 			"title": "The schedule before the launch of each object"
 		},
 		"origins": [
 			{
-				"summary": ""
+				"summary": "<p> Our wine leather has been extensively tested </p> <p> Same mechanical, aesthetic and sensory characteristics as traditional leather </p> <p> Conversely - requires little maintenance </p>"
 			},
 			{
 				"summary": "<p>Without animal suffering</p><p >Low environmental impact</p><p >Renewable raw material&egrave;&egrave;re</p>"
 			},
 			{
-				"summary": ""
+				"summary": "<p> We will collect your old products in exchange for a 10% discount voucher. worth on a future purchase </p> <p> We will recycle the material to create new products </p>"
 			}
 		],
 		"pagesubtitle": "Make plants a noble and ubiquitous element in your life. This is the mission that we set ourselves at the launch of this project. Wine has emerged as the absolute figure of French elegance. Here is the story of Dionysus' birth in numbers and letters.",
@@ -285,42 +253,10 @@
 		"title1": "<div data-aos='fadeup'>The genesis of the idea</div><div data-aos='fadeup' data-aos-delay='300'>Two observations</div>",
 		"title2": "<div data-aos='fadeup'>We didn't expect it ...</div><div data-aos='fadeup' data-aos-delay='300'>And yet</div>",
 		"title3": "<div data-aos='fadeup'>Harvests</div><div data-aos='fadeup' data-aos-delay='300'>With wine leather</div>",
-		"title4": "<div data-aos='fadeup'>And the icing on the cake </ div"
+		"title4": "<div data-aos='fadeup'>And the icing on the cake </div>"
 	},
 	"fr": {
 		"calendarSection": {
-			"steps": [
-				{
-					"subtitle": "La peau du raisin est percée pour en libérer le jus à l'aide d'une machine appelée le fouloir",
-					"tag": "Etape 1",
-					"title": "Foulage"
-				},
-				{
-					"subtitle": "Des levures transforment le sucre en alcool.<br>Le tanin dans la peau des grains lui donnent sa couleur rouge",
-					"tag": "Etape 2",
-					"title": "Fermantation alcoolique"
-				},
-				{
-					"subtitle": "Le jus fermenté est extrait. Le marc qui reste dans la cuve est pressé donnant un jus plus dense et tannique",
-					"tag": "Etape 3",
-					"title": "Pressurage"
-				},
-				{
-					"subtitle": "<div class='text-right'><div><div>Partie solide</div><div>Le marc</div></div><div><div>Partie liquide</div><div>Le vin</div></div></div>",
-					"tag": "",
-					"title": ""
-				},
-				{
-					"subtitle": "Le marc est séché. La bio-huile obtenue à partir des pépins est polymérisée",
-					"tag": "Etape 4",
-					"title": "Recyclage du marc"
-				},
-				{
-					"subtitle": "La pâte obtenue est passée dans une presse imprimant le grain de cuir souhaité",
-					"tag": "Etape 5",
-					"title": "Fabrication du cuir"
-				}
-			],
 			"subtitle": "Pour suivre le déroulement du projet. Il s’affinera au fil du temps. Inscrivez vous à la Newsletter et suivez nous sur Instagram et Facebook pour en être notifié.",
 			"tag": "Nous en sommes ici",
 			"title": "Le calendrier avant le lancement de chaque objet"
@@ -350,7 +286,7 @@
 		"title1": "<div data-aos='fadeup'>La genese de l'idée</div><div data-aos='fadeup' data-aos-delay='300'>Deux constats</div>",
 		"title2": "<div data-aos='fadeup'>Nous ne nous y attendions pas...</div><div data-aos='fadeup' data-aos-delay='300'>Et pourtant</div>",
 		"title3": "<div data-aos='fadeup'>Des vendanges</div><div data-aos='fadeup' data-aos-delay='300'>Au cuir de vin</div>",
-		"title4": "<div data-aos='fadeup'>Et la cerise sur le gâteau</div"
+		"title4": "<div data-aos='fadeup'>Et la cerise sur le gâteau</div>"
 	}
 }
 </i18n>
