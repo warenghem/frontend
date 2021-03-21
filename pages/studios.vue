@@ -141,7 +141,7 @@
 				{
 					"subtitle": "",
 					"tag": "June 2020",
-					"title": "In-house creation of a website in the form of a web application without loading time"
+					"title": "In-house creation of a website in the form of a web application"
 				},
 				{
 					"subtitle": "",
@@ -202,7 +202,7 @@
 				{
 					"subtitle": "",
 					"tag": "Juin 2020",
-					"title": "Création maison d'un site internet sous forme d'application web sans temps de chargement"
+					"title": "Création maison d'un site internet sous forme d'application web"
 				},
 				{
 					"subtitle": "",
@@ -212,7 +212,7 @@
 				{
 					"subtitle": "",
 					"tag": "Juillet 2020",
-					"title": "Lancement de nes projets de reforestation à Madagascar et en Inde"
+					"title": "Lancement de nos projets de reforestation à Madagascar et en Inde"
 				},
 				{
 					"subtitle": "",
@@ -227,13 +227,13 @@
 				{
 					"subtitle": "",
 					"tag": "Février 2021",
-					"title": "Selection de notre projet par la région Auvergne-Rhône-Alpes pour le développement de chaussures en France à Romans-sur-Isère (capitale de la chaussure)"
+					"title": "Sélection de notre projet par la région Auvergne-Rhône-Alpes pour le développement de chaussures en France à Romans-sur-Isère (capitale de la chaussure)"
 				}
 			]
 		},
 		"subtitle1": "La genèse",
 		"subtitle3": "Notre histoire. En direct.",
-		"text1": "<div><p><span>Dans l’univers de la mode et du design, il existe un paradoxe frappant : Ils n'ont d'existance que pour leur incarnation de la beauté exterieur. Nous ne portons que peu d'attention à la beauté intérieur d'un objet, la pureté et les milliers de détails qui constitue son histoire et son destin nous échappent. Pourtant, comme chaque Homme, il dégage un certain charisme en fonction de ce qu'il représente, des conditions dans lesquels il a été fabriqué, et des matériaux qui le compose.</span></p><p><span><br>Ceci est historiquement dû à notre vision Anthropocentrique, où la valeur des êtres vivants et des écosystèmes se mesure en fonction de l’intérêt que l’Homme peut en tirer. Pourtant nous sommes une espèce animal parmis d'autres, mais nous disposons de deux super pouvoirs : l'incroyable capacité à élaborer des systèmes complexes, et la possiblité de prendre des décisions suivant notre reflexion et non notre instinct.<br>Nous réalisons aujourd'hui que nous ne sommes pas des éléments détachés et indépendants, notre propre survie dépend de la santé des écosystèmes de la planète. Réapprendre à voir la nature comme un système de collaborations est un changement de mentalité ambitieux mais ô combien salutaire pour l’avenir ...</span></p><p><span><br>Pour répondre à cette problématique, en 2019, Warenghem Studios est né. Notre objectif : développer des objets et vetements parfait sur toutes leurs facettes, exploiter les formidables vertus cachées dans chaque éspèce végétales, et ne pas toucher aux animaux puisque nous avons d'autres alternatives. Cela peut paraître simple dit comme ça ! Mais nous et tous les éléments qui nous entourent sont reliés. Il ne suffit pas d'utiliser du coton bio pour renvendiquer une attitude écologique.<br>Chaque jour, toutes nos équipes oeuvrent pour rendre cette folle ambition plus concrète. Etape par étape, nous développons des innovations radicales et utilisons la technologie lorsqu'elle apporte une réelle plus value. </span></p><p><span><br>L’ADN Warenghem est fortement inspirée par le progressisme des Lumières et la complexité d'Edgar Morin. Focalisé sur un souci excessif du détail et de l'interdépendance des éléments naturels. Le nom Warenghem fait d’ailleurs référence à un homme passioné par l'humain et son rapport à la nature. Ayant passé toute sa vie à chercher et à progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribué à faire progresser le monde à leur niveau pour le rendre meilleur.</span></p></div><br>Nous aussi, nous chercherons...",
+		"text1": "<div><p><span>Dans l’univers de la mode et du design, il existe un paradoxe frappant : ils n'ont d'existence que pour leur incarnation de la beauté extérieure. Nous ne portons que peu d'attention à la beauté intérieur d'un objet, la pureté et les milliers de détails qui constitue son histoire et son destin nous échappent. Pourtant, comme chaque Homme, il dégage un certain charisme en fonction de ce qu'il représente, des conditions dans lesquels il a été fabriqué, et des matériaux qui le compose.</span></p><p><span><br>Ceci est historiquement dû à notre vision Anthropocentrique, où la valeur des êtres vivants et des écosystèmes se mesure en fonction de l’intérêt que l’Homme peut en tirer. Pourtant, nous sommes une espèce animale parmi d'autres, mais nous disposons de deux super pouvoirs : l'incroyable capacité a élaborer des systèmes complexes, et la possibilité de prendre des décisions suivant notre réflexion et non notre instinct.<br>Nous réalisons aujourd'hui que nous ne sommes pas des éléments détachés et indépendants, notre propre survie dépend de la santé des écosystèmes de la planète. Réapprendre à voir la nature comme un système de collaborations est un changement de mentalité ambitieux, mais ô combien salutaire pour l’avenir...</span></p><p><span><br>Pour répondre à cette problématique, en 2019, Warenghem Studios est né. Notre objectif : développer des objets et vêtements parfait sur toutes leurs facettes, exploiter les formidables vertus cachées dans chaque espèce végétale, et ne pas toucher aux animaux puisque nous avons d'autres alternatives. Cela peut paraître simple dit comme ça ! Mais nous et tous les éléments qui nous entourent sont reliés. Il ne suffit pas d'utiliser du coton bio pour revendiquer une attitude écologique.<br>Chaque jour, toutes nos équipes œuvrent pour rendre cette folle ambition plus concrète. Étape par étape, nous développons des innovations radicales et utilisons la technologie lorsqu'elle apporte une réelle plus-value.</span></p><p><span><br>L’ADN Warenghem est fortement inspiré par le progressisme des Lumières et la complexité d'Edgar Morin. Focalisé sur un souci excessif du détail et de l'interdépendance des éléments naturels. Le nom Warenghem fait d’ailleurs référence à un homme passionné par l'humain et son rapport à la nature. Ayant passé toute sa vie à chercher et à progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribué à faire progresser le monde à leur niveau pour le rendre meilleur.</span></p></div><br>Nous aussi, nous chercherons...",
 		"title1": "Un nom, des valeurs, une histoire",
 		"title3": "Découvrez notre parcours, et nos actualités qui s'afficheront en direct."
 	}

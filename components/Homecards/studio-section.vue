@@ -119,7 +119,7 @@
                     }, {
                         key: 3,
                         name: 'Julie maurence',
-                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-100,ar-1-1,w-400,dpr-1/julie.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-100,ar-1-1,w-400,dpr-2/julie.png 2x",
+                        img: "https://ik.imagekit.io/g1noocuou2/tr:q-100,ar-1-1,w-400,dpr-1/julie_2.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-100,ar-1-1,w-400,dpr-2/julie_2.png 2x",
                         socialmedias: [
                             {
                                 name: "linkedin",
