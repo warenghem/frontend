@@ -11,7 +11,6 @@
       <v-card class="bgcard homecard item2">
         <MapSection id="mapTreeSection"/>
       </v-card>
-
       <v-card class="bgcard item3 homecard" @scroll="handleSCroll">
         <HistoriesSection/>
       </v-card>
@@ -22,6 +21,7 @@
         <SocialSection/>
       </v-card>
     </v-container>
+    <ShopIcon class="py-16"/>
   </div>
 </template>
 
