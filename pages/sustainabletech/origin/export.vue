@@ -1018,7 +1018,8 @@
                             "Awards": this.product.awards
                         },
                         "suppliers": this.suppliers,
-                        "manufacturers":this.manufacturers
+                        "manufacturers":this.manufacturers,
+                        "tree": tree
                     };
                     console.log(res.status)
                     if(res.status===200){

@@ -80,7 +80,6 @@
 <i18n>
 {
 	"en": {
-        "question": "A question?",
 		"packageModal": {
 			"modalContent": "<div><p>All Warenghem orders are delivered in <u>ecological packaging.</u></p></div>",
 			"modalTitle": "Eco-friendly packaging"
@@ -88,12 +87,12 @@
 		"paymentInfoModal": {
 			"modalTitle": "100% secure payment "
 		},
+		"question": "A question?",
 		"shippingModal": {
 			"modalTitle": "Shipping and returns"
 		}
 	},
 	"fr": {
-        "question": "Une question?",
 		"packageModal": {
 			"modalContent": "<div><p>Toutes les commandes Warenghem sont livrées dans un <u>emballage écologique.</u></p></div>",
 			"modalTitle": "Emballage écologique"
@@ -101,6 +100,7 @@
 		"paymentInfoModal": {
 			"modalTitle": "Paiement 100% sécurisés"
 		},
+		"question": "Une question?",
 		"shippingModal": {
 			"modalTitle": "Livraison et retours"
 		}

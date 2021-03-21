@@ -71,15 +71,10 @@
 </template>
 
 <script>
-    import MagazinePlus from "~/assets/images/magazine-plus.svg?raw";
-    import MagazineMinus from "~/assets/images/magazine-minus.svg?raw";
-import discoverbutton from '../molecules/discoverbutton.vue';
-    export default {
-  components: { discoverbutton },
+export default {
         name: "mission-section",
         data() {
             return {
-                MagazinePlus,MagazineMinus,
                 currentMissionHover: null,
                 backgroundImage: '',
                 backgroundImagesL:'',

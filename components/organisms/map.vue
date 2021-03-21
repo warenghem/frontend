@@ -425,10 +425,10 @@
 				"title": "Forest"
 			},
 			"section2": {
-				"paraprimary": "<p>The project targets 50,000 trees on the edge of the Similipal National Park to enrich the local virgin forest, in particular for the Bengal tigers.</p>",
 				"paraText2": "<p>The project area is inhabited by a variety of tribal communities (Bhumija, Gondas, Kolha… Approximately 4,093 working days will be created for them.</p><p>The nearest airport is Biju Patnaik , located 200 km from the site. The nearest town is Jamshedpur at 105 km.</p>",
 				"paraTitle1": "The Jungle Book 2.",
 				"paraTitle2": "How about we drop by to help them?",
+				"paraprimary": "<p>The project targets 50,000 trees on the edge of the Similipal National Park to enrich the local virgin forest, in particular for the Bengal tigers.</p>",
 				"subtitle": "Trees for tigers, India",
 				"title": "Project"
 			},
@@ -448,10 +448,10 @@
 				"title": "Forest"
 			},
 			"section2": {
-				"paraprimary": "<p>Eden Reforestation Projects launched this program in 2007 following the critical loss of forests.</p><p>16 million mangroves have been planted. Healthy forests are starting to emerge and all the negative effects of deforestation begin to disappear.</p>",
 				"paraText2": "<p>The Vilamatsa were eager to be part of this reforestation initiative due to the success of a nearby plantation.</p><p>This gives them a decent income so that they can support their families again.</p>",
 				"paraTitle1": "Incredible project. Total success.",
 				"paraTitle2": "An active local community. To remember.",
+				"paraprimary": "<p>Eden Reforestation Projects launched this program in 2007 following the critical loss of forests.</p><p>16 million mangroves have been planted. Healthy forests are starting to emerge and all the negative effects of deforestation begin to disappear.</p>",
 				"subtitle": "Paradis project, Madagascar",
 				"title": "Project"
 			},
@@ -473,10 +473,10 @@
 				"title": "Fôret"
 			},
 			"section2": {
-				"paraprimary": "<p>Le projet vise 50 000 arbres en bordure du parc national de Similipal pour enrichir la fôret vierge locale, en particulier pour les tigres du Bengale.</p>",
 				"paraText2": "<p>La région du projet est habitée par une variété de communautés tribales (Bhumija, Gondas, Kolha… Environ 4 093 jours de travail seront créés pour eux.</p><p>L’aéroport le plus proche est celui de Biju Patnaik, situé de 200 km du site. La ville la plus proche est Jamshedpur à 105 km.</p>",
 				"paraTitle1": "Le livre de la jungle 2.",
 				"paraTitle2": "Et si nous passions les aider ?",
+				"paraprimary": "<p>Le projet vise 50 000 arbres en bordure du parc national de Similipal pour enrichir la fôret vierge locale, en particulier pour les tigres du Bengale.</p>",
 				"subtitle": "Des arbres pour les tigres, Inde",
 				"title": "Projet"
 			},
@@ -496,10 +496,10 @@
 				"title": "Fôret"
 			},
 			"section2": {
-				"paraprimary": "<p>Eden Reforestation Projects a lancé ce programme en 2007 suite à la perte critique de fôrets.</p><p>16 millions de mangroves ont été plantés. Des forêts saines commencent à émerger et tous les effets négatifs de la déforestation commencent à disparaître.</p>",
 				"paraText2": "<p>Les Vilamatsa avaient hâte de faire partie de cette initiative de reboisement en raison du succès d’une plantation à proximité.</p><p>Cela leur donne un revenu décent afin qu’ils puissent à nouveau subvenir aux besoins de leur famille.</p>",
 				"paraTitle1": "Incroyable projet. Réussite totale.",
 				"paraTitle2": "Une communauté locale active. A ne pas oublier.",
+				"paraprimary": "<p>Eden Reforestation Projects a lancé ce programme en 2007 suite à la perte critique de fôrets.</p><p>16 millions de mangroves ont été plantés. Des forêts saines commencent à émerger et tous les effets négatifs de la déforestation commencent à disparaître.</p>",
 				"subtitle": "Projet Paradis, Madagascar",
 				"title": "Projet"
 			},

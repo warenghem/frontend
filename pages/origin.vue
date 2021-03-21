@@ -79,29 +79,11 @@
 </template>
 
 <script>
-    import { mdiChevronRight, mdiChevronLeft, mdiChevronDown, mdiPlus } from '@mdi/js'
     export default {
         name: 'origin',
         data() {
             return {
-				svgPath1: mdiChevronRight,
-				svgPath2: mdiChevronLeft,
-				svgPath3: mdiChevronDown,
-				svgPath4: mdiPlus,
                 tab: "subscribe",
-                backgroundImages: [
-                    "/Environments/dionysos_suisse.jpg",
-                    "/Environments/dionysos_grappes.PNG"
-                ],
-                icon: [
-                    "/Environments/dionysos_27b.png",
-                    "/Environments/dionysos_25_2.png"
-                ],
-                grid: [
-                    "div2 blueoverlay",
-                    "div3"
-                ],
-                products: this.$t('products'),
 				origins: this.$t('origins'),
 				originicon: [
 					"/Environments/Narrative.png",
@@ -137,20 +119,111 @@
 
 <i18n>
 {
-	"fr": {
-		"pagetitle": "De la matière première à la livraison... Rien ne lui échappe.",
-		"pagesubtitle": "Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive. Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.<br>Nous utilisons la technologie comme une force pour le bien.",
-		"title1": "<div data-aos='fadeup' style='color: #acacac;'>Elle vérifie toutes les étapes de la production.</div><div data-aos='fadeup' data-aos-delay='300'>Sans exception.</div",
-		"title2": "<div style='color: #acacac;' data-aos='fadeup'>Un coffre fort</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
-		"title3": "<div style='color: #acacac;' data-aos='fadeup'>Une solution innovante</div><div data-aos='fadeup' data-aos-delay='300'>Face à une transparence perfectible encore en 2021</div>",
-		"products": [
+	"en": {
+		"calendarSection": {
+			"steps": [
+				{
+					"subtitle": "This is a smart IT contract developed by Warenghem, containing and verifying information provided by manufacturers and suppliers. This safe follows us throughout the manufacturing process and legally binds each actor. This information is stored on a shared, public database available online and cannot be modified. Each of your products has a label with a bar code. You just need to scan it to find out the story of your item",
+					"tag": "Step 1",
+					"title": "Creation of an inviolable safe"
+				},
+				{
+					"subtitle": "Suppliers enter their information on our application (product name, quantity sold, date, official certification and quality test documents, etc.).<br>Our application geolocates them automatically in order to avoid false addresses. <br>They scan the materials using a QR code and send it to the manufacturers",
+					"tag": "2nd step",
+					"title": "Entrance of our suppliers"
+				},
+				{
+					"subtitle": "Manufacturers also enter their information.<br> After receiving the goods, they check their authenticity as well as their quality and manufacture your products.<br>A QR code tag is sewn inside so you can scan it and find out the story of your item.",
+					"tag": "Step 3",
+					"title": "Our manufacturers are strengthening the field"
+				},
+				{
+					"subtitle": "The manufacturer ships your product to our warehouses, then it will be shipped to you. For our part, we audit all the information submitted.",
+					"tag": "Step 4",
+					"title": "We check everything with a fine tooth comb"
+				},
+				{
+					"subtitle": "To compensate for using this technology, manufacturing and transporting your product, we are planting trees in one of our reforestation projects. <br>These trees will have a certificate of authenticity which will be deposited in the Blockchain.",
+					"tag": "STEP 5",
+					"title": "We offset CO2 emissions"
+				},
+				{
+					"subtitle": "Upon receipt of your product, you can scan the QR code on its label using our ORIGIN application to discover its history.",
+					"tag": "Step 6",
+					"title": "You discover the story of your product"
+				},
+				{
+					"subtitle": "We collect your old product for full recycling. <br>We scan his QR code to obtain the identity of his buyer in order to send him a discount voucher valid on a future purchase.",
+					"tag": "Step 7",
+					"title": "We come full circle"
+				}
+			]
+		},
+		"origins": [
 			{
-				"summary": "le bas score de transparence de tracabilité moyen des marques de mode en 2020 (fashionrevolution.org)"
+				"summary": "Its intuitive interface consists of a chronology of manufacturing steps and a map detailing their location. You will have access to a dedicated page for each manufacturer and supplier, bringing together their history, detailed certifications and address."
 			},
 			{
-				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>"
+				"summary": "All data is stored on the Ethereum blockchain, which is available online to everyone. This information is recorded throughout the production chain and distributed over a global network of computers. <br>Each actor signs the information entered and makes a personal commitment to its reliability."
+			},
+			{
+				"summary": "Once entered in the blockchain, no modification or deletion is possible, preventing the risk of a posteriori fraud on the data. It is secured by a worldwide network of computers. As such, no computer will be able to face this network to falsify the data."
 			}
 		],
+		"pagesubtitle": "Because each of our products has a story, we have chosen to highlight it with an intuitive application. It lets you learn more about the journey and impact behind each item in a secure, reliable and accessible way.<br>We use technology as a force for good.",
+		"pagetitle": "From raw material to delivery ... Nothing escapes him.",
+		"products": [
+			{
+				"summary": "the low average traceability transparency score of fashion brands in 2020 (fashionrevolution.org)"
+			},
+			{
+				"summary": "<div>of the crops are not found in a bottle (grape marc)</div>"
+			}
+		],
+		"title1": "<div data-aos='fadeup' style='color: #acacac;'>She checks all stages of production.</div><div data-aos='fadeup' data-aos-delay='300'>Without exception. </ Div",
+		"title2": "<div style='color: #acacac;' data-aos='fadeup'>A safe</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
+		"title3": "<div style='color: #acacac;' data-aos='fadeup'>An innovative solution</div><div data-aos='fadeup' data-aos-delay='300'>Faced with improved transparency still in 2021</div>"
+	},
+	"fr": {
+		"calendarSection": {
+			"steps": [
+				{
+					"subtitle": "Il s’agit d’un contrat informatique intelligent développé par Warenghem, contenant et vérifiant des informations renseignées par les fabriquants et fournisseurs. Ce coffre fort nous suit tout au long de la fabrication et engage chaque acteur légalement. Ces informationss sont stockées sur une base de données partagée, publique et disponible en ligne et ne peuvent pas être modifiées. Chacun de vos produits dispose d’une étiquette avec un code barre. Il vous suffit de le scanner afin de découvrir l’histoire de votre article",
+					"tag": "Etape 1",
+					"title": "Création d’un coffre fort inviolable"
+				},
+				{
+					"subtitle": "Les fournisseurs entrent leurs informations sur notre application (nom du produit, quantité vendue, date, documents officels de certifications et tests qualité...).<br>Notre application les géolocalise automatiquement afin d'éviter les fausses adresses. <br>Ils scannent les matières grâce à un QR code et l'envoient aux fabriquants",
+					"tag": "Etape 2",
+					"title": "Entrée en piste de nos fournisseurs"
+				},
+				{
+					"subtitle": "Les fabriquants entrent également leurs informations.<br> Après réception de la marchandise, ils en vérifient l'authenticité ainsi que leur qualité et fabriquent vos produits.<br>Une étiquette QR code est cousue à l'intérieur afin que vous puissiez la scanner et découvrir l'histoire de votre article.",
+					"tag": "Etape 3",
+					"title": "Nos fabriquants renforcent le terrain"
+				},
+				{
+					"subtitle": "Le fabriquant expédie votre produit dans nos entrepôts, puis sera acheminé chez vous. De notre côté, nous auditons toutes les informations déposées.",
+					"tag": "Etape 4",
+					"title": "Nous vérifions tout au peigne fin"
+				},
+				{
+					"subtitle": "Pour compenser l'utilisation de cette technologie, la fabrication et le transport de votre produit, nous plantons des arbres dans un de nos projets de reforestation. <br>Ces arbres disposeront d'un certificat d'authenticité qui sera déposé dans la Blockchain.",
+					"tag": "Etape 5",
+					"title": "Nous compensons les émissions de CO2"
+				},
+				{
+					"subtitle": "A la récéption de votre produit, vous pourrez scanner le QR code sur son étiquette grâce à notre application ORIGIN afin de découvrir son histoire.",
+					"tag": "Etape 6",
+					"title": "Vous découvrez l'histoire de votre produit"
+				},
+				{
+					"subtitle": "Nous récupérons votre ancien produit pour le recycler complètement. <br>Nous scannons son QR code pour obtenir l'identité de son acheteur afin de lui envoyer un bon de réduction valable sur un prochain achat.",
+					"tag": "Etape 7",
+					"title": "Nous bouclons la boucle"
+				}
+			]
+		},
 		"origins": [
 			{
 				"summary": "Son interface intuitive se compose d'une chronologie des étapes de fabrication et d'une carte détaillant leur localisation. Vous aurez accès à une page dédiée pour chaque fabriquant et fournisseur regroupant son histoire, ses certifications détaillées et son adresse."
@@ -162,110 +235,41 @@
 				"summary": "Une fois renseignée dans la blockchain aucune modification ni suppression n'est possible, empêchant les risques de fraude a posteriori sur les données. Elle est sécurisée par un réseau mondial d'ordinateur. A ce titre aucun ordinateur ne pourra faire face à ce réseau pour falsifier les données."
 			}
 		],
-		"calendarSection": {
-			"steps": [{
-				"tag": "Etape 1",
-				"title": "Création d’un coffre fort inviolable",
-				"subtitle": "Il s’agit d’un contrat informatique intelligent développé par Warenghem, contenant et vérifiant des informations renseignées par les fabriquants et fournisseurs. Ce coffre fort nous suit tout au long de la fabrication et engage chaque acteur légalement. Ces informationss sont stockées sur une base de données partagée, publique et disponible en ligne et ne peuvent pas être modifiées. Chacun de vos produits dispose d’une étiquette avec un code barre. Il vous suffit de le scanner afin de découvrir l’histoire de votre article"
-			}, {
-				"tag": "Etape 2",
-				"title": "Entrée en piste de nos fournisseurs",
-				"subtitle": "Les fournisseurs entrent leurs informations sur notre application (nom du produit, quantité vendue, date, documents officels de certifications et tests qualité...).<br>Notre application les géolocalise automatiquement afin d'éviter les fausses adresses. <br>Ils scannent les matières grâce à un QR code et l'envoient aux fabriquants"
-			}, {
-				"tag": "Etape 3",
-				"title": "Nos fabriquants renforcent le terrain",
-				"subtitle": "Les fabriquants entrent également leurs informations.<br> Après réception de la marchandise, ils en vérifient l'authenticité ainsi que leur qualité et fabriquent vos produits.<br>Une étiquette QR code est cousue à l'intérieur afin que vous puissiez la scanner et découvrir l'histoire de votre article."
-			}, {
-				"tag": "Etape 4",
-				"title": "Nous vérifions tout au peigne fin",
-				"subtitle": "Le fabriquant expédie votre produit dans nos entrepôts, puis sera acheminé chez vous. De notre côté, nous auditons toutes les informations déposées."
-			}, {
-				"tag": "Etape 5",
-				"title": "Nous compensons les émissions de CO2",
-				"subtitle": "Pour compenser l'utilisation de cette technologie, la fabrication et le transport de votre produit, nous plantons des arbres dans un de nos projets de reforestation. <br>Ces arbres disposeront d'un certificat d'authenticité qui sera déposé dans la Blockchain."
-			}, {
-				"tag": "Etape 6",
-				"title": "Vous découvrez l'histoire de votre produit",
-				"subtitle": "A la récéption de votre produit, vous pourrez scanner le QR code sur son étiquette grâce à notre application ORIGIN afin de découvrir son histoire."
-			}, {
-				"tag": "Etape 7",
-				"title": "Nous bouclons la boucle",
-				"subtitle": "Nous récupérons votre ancien produit pour le recycler complètement. <br>Nous scannons son QR code pour obtenir l'identité de son acheteur afin de lui envoyer un bon de réduction valable sur un prochain achat."
+		"pagesubtitle": "Parce que chacun de nos produits a une histoire, nous avons choisi de la mettre en valeur avec une application intuitive. Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.<br>Nous utilisons la technologie comme une force pour le bien.",
+		"pagetitle": "De la matière première à la livraison... Rien ne lui échappe.",
+		"products": [
+			{
+				"summary": "le bas score de transparence de tracabilité moyen des marques de mode en 2020 (fashionrevolution.org)"
+			},
+			{
+				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>"
 			}
-		]
-		}
+		],
+		"title1": "<div data-aos='fadeup' style='color: #acacac;'>Elle vérifie toutes les étapes de la production.</div><div data-aos='fadeup' data-aos-delay='300'>Sans exception.</div",
+		"title2": "<div style='color: #acacac;' data-aos='fadeup'>Un coffre fort</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
+		"title3": "<div style='color: #acacac;' data-aos='fadeup'>Une solution innovante</div><div data-aos='fadeup' data-aos-delay='300'>Face à une transparence perfectible encore en 2021</div>"
 	}
 }
 </i18n>
 
 <style scoped lang="scss">
-.first {
-  @media (min-width: 960px) {
-    height: 90vh;
-  }
-  .firsttext {
-  @media (min-width: 960px) {
-    position: absolute
-  }
-  }
-}
-.grid-container {
-  display: grid;
-  padding: 1rem!important;
-  grid-gap: 1rem;
-  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-  grid-template-rows: 1fr;
-  grid-template-areas:
-    "div2 div2 div2 div3 div3 div3";
-  @media (max-width: 960px) {
-  grid-template-areas:
-    "div2 div2 div2 div2 div2 div2"
-    "div3 div3 div3 div3 div3 div3"
-	"div5 div5 div5 div5 div5 div5";
-    grid-gap: 0.5rem;
-	padding: 0!important;
-  }
-}
-.card {
-  height: 25rem!important;
-  @media (min-width: 960px) {
-    height: 40rem!important;
-  }
-}
-.div1 { 
-	grid-area: div1; 
 
-	.icon {
-		padding-bottom: 20px;
+	.first {
+	@media (min-width: 960px) {
+		height: 90vh;
 	}
-}
-.div2, .div4 { 
-	grid-area: div2; 
-	color: white;
-	.text {
-		margin: auto;
+	.firsttext {
+	@media (min-width: 960px) {
+		position: absolute
 	}
-}
-.div5, .div6, .div7 { 
-	.icon {
-		width: 80%;
-		margin-bottom: 20px;
 	}
-}
-.div3 { grid-area: div3; }
-.div4 { grid-area: div4; }
-.div5 { grid-area: div5; }
-.div6 { grid-area: div6; }
-.div7 { grid-area: div7; }
-.blueoverlay::before {
-border-radius: 20px !important; }
-
-.div3 .background { 
-	background: rgb(21,48,56);
-	background: linear-gradient(90deg, rgba(21,48,56,1) 0%, rgba(114,47,48,1) 37%, rgba(114,47,55,1) 100%);
-	border-radius: 20px !important; 
- }
-
+	}
+	.card {
+	height: 25rem!important;
+	@media (min-width: 960px) {
+		height: 40rem!important;
+	}
+	}
      .calender {
         border-top: solid 1px rgba(255, 255, 255, 0.5);
         background: #1a1a1a;
@@ -325,63 +329,64 @@ border-radius: 20px !important; }
 	::v-deep .v-timeline-item__inner-dot {
 		border: 2px solid white;
 	}
-@media (min-width: 960px) {
-/* Move the dot css to .dot*/
-	::v-deep .v-timeline-item__dot{
-		height: unset!important;
-		width: unset!important;
+	@media (min-width: 960px) {
+	/* Move the dot css to .dot*/
+		::v-deep .v-timeline-item__dot{
+			height: unset!important;
+			width: unset!important;
+		}
+		.dot {
+			height: 152px!important;
+			width: 152px!important;
+		}
+	/* END Move the dot css to .dot*/
+		::v-deep .v-timeline-item__divider {
+			min-width: 152px!important;
+		}
+		::v-deep .v-timeline-item__body {
+			max-width: calc(50% - 75px)!important;
+		}
+		::v-deep .v-timeline-item__body {
+			padding-right: 30px!important;
+			padding-left: 30px!important;
+		}
 	}
+	/* Move the dot css to .dot*/
 	.dot {
-		height: 152px!important;
-		width: 152px!important;
+		box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
+		border: 2px solid var(--v-lightbugattiblue-base);
 	}
-/* END Move the dot css to .dot*/
-	::v-deep .v-timeline-item__divider {
-		min-width: 152px!important;
+	::v-deep .v-timeline-item__dot {
+		box-shadow: none!important;
 	}
-	::v-deep .v-timeline-item__body {
-		max-width: calc(50% - 75px)!important;
+	::v-deep .v-timeline-item__inner-dot.primary {
+		background-color: unset!important;
 	}
-	::v-deep .v-timeline-item__body {
-		padding-right: 30px!important;
-		padding-left: 30px!important;
+	::v-deep .v-timeline-item__inner-dot {
+		border: none!important;
 	}
-}
-/* Move the dot css to .dot*/
-.dot {
-	box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
-	border: 2px solid var(--v-lightbugattiblue-base);
-}
-::v-deep .v-timeline-item__dot {
-    box-shadow: none!important;
-}
-::v-deep .v-timeline-item__inner-dot.primary {
-    background-color: unset!important;
-}
-::v-deep .v-timeline-item__inner-dot {
-    border: none!important;
-}
-::v-deep .v-timeline-item__dot {
-    background: none!important;
-}
-/* END Move the dot css to .dot*/
-::v-deep .theme--dark.v-sheet, .theme--dark .appBar {
-    border-color: rgb(21, 21, 21) !important;
-}
-::v-deep .v-timeline:before {
-    width: 5px!important;
-    border-radius: 5px!important;
-}
-::v-deep .v-application--is-ltr .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse):before {
-    left: calc(50% - 5px)!important;
-}
-::v-deep .theme--light.v-timeline .v-timeline-item .v-card::before {
-    border-right-color: white!important;
-}
-::v-deep .v-timeline--align-top .v-timeline-item__body > .v-card:before {
-    top: calc(0% + 30px + 2px)!important;
-}
-::v-deep .v-timeline--align-top .v-timeline-item__body > .v-card:after {
-    top: calc(0% + 30px)!important;
-}
+	::v-deep .v-timeline-item__dot {
+		background: none!important;
+	}
+	/* END Move the dot css to .dot*/
+	::v-deep .theme--dark.v-sheet, .theme--dark .appBar {
+		border-color: rgb(21, 21, 21) !important;
+	}
+	::v-deep .v-timeline:before {
+		width: 5px!important;
+		border-radius: 5px!important;
+	}
+	::v-deep .v-application--is-ltr .v-timeline:not(.v-timeline--dense):not(.v-timeline--reverse):before {
+		left: calc(50% - 5px)!important;
+	}
+	::v-deep .theme--light.v-timeline .v-timeline-item .v-card::before {
+		border-right-color: white!important;
+	}
+	::v-deep .v-timeline--align-top .v-timeline-item__body > .v-card:before {
+		top: calc(0% + 30px + 2px)!important;
+	}
+	::v-deep .v-timeline--align-top .v-timeline-item__body > .v-card:after {
+		top: calc(0% + 30px)!important;
+	}
+
 </style>

@@ -197,7 +197,10 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 		background-position: right -700px top 0;
 	}
 }
-
+.smalltitle {
+  font-size: 17px;
+  line-height: 1.2rem;
+}
 .wa-smart-picture img {
     position: absolute;
     top: 0;
@@ -217,7 +220,7 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
   padding-top: 100%;
 }
 .large-ratio:before {
-  padding-top: 50%;
+  padding-top: 75%;
 }
 .wa-smart-picture:before {
     display: block;
@@ -668,7 +671,7 @@ letter-spacing: .009em;
 .page-title {
   padding-bottom: 20px;
   font-size: 60px !important;
-  letter-spacing: -0.04em !important;
+  letter-spacing: -0.06em !important;
   font-family: 'teradeli-medium', sans-serif !important;
   line-height: 1 !important;
   font-weight: normal;
@@ -695,7 +698,7 @@ letter-spacing: .009em;
 .page-title2 {
   padding-bottom: 20px;
   font-size: 50px !important;
-  letter-spacing: -0.04em !important;
+  letter-spacing: -0.06em !important;
   font-family: 'teradeli-medium', sans-serif !important;
   line-height: 1 !important;
   font-weight: normal;
