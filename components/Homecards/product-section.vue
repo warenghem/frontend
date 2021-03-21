@@ -33,13 +33,7 @@
                                 <div class="pvw text-center">
                                     <h2 class="home-title teradeli-medium px-0 primary--text">{{product.title}}</h2>
                                     <div class="pt-2 home-subtitle primary--text"> {{product.summary}}</div>
-                                    <v-text
-                                        style="z-index:2"
-                                        class="text-center lightbugattiblue--text"
-                                        >
-                                        {{$t('btnDiscover')}}
-                                        <v-icon  color="lightbugattiblue" small>{{ svgPath1 }}</v-icon>
-                                    </v-text>
+                                    <Discoverbutton class="lighbugattiblue--text"/>
                                 </div>
                                 <div style="height: 100%;top: 70px;width: 100%;position: absolute">
                                     <picture>

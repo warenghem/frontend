@@ -44,15 +44,10 @@
 </template>
 
 <script>
-    import { mdiChevronRight, mdiChevronLeft, mdiChevronDown, mdiPlus } from '@mdi/js'
     export default {
         name: 'legale',
         data() {
             return {
-				svgPath1: mdiChevronRight,
-				svgPath2: mdiChevronLeft,
-				svgPath3: mdiChevronDown,
-				svgPath4: mdiPlus,
                 tab: "subscribe"
             }
         },

@@ -1,17 +1,17 @@
 <template>
     <div>
         <v-container fluid style="padding:0!important" class="productgridhome pa-0">
+            <NuxtLink :to="'/'+$i18n.locale+'/dionysos'"> 
             <v-card 
                 height= "100%"
                 lazy
                 class="homecard bgcard hand invgradientoverlay blackoverlay"
             >
-                <NuxtLink :to="'/'+$i18n.locale+'/dionysos'"> 
                     <div class="h-100 img-fluid theme--light position-relative skeletton">
                         <div class="pvw text-center">
                             <h2 class="home-title teradeli-medium px-0 text-white">{{$t('section1.title')}}</h2>
                             <div class="pt-2 home-subtitle text-white"> {{$t('section1.subtitle')}}</div>
-                            <Discoverbutton class="text-white pt-3 position-relative" style="font-size:16px"/>
+                            <Discoverbutton class="text-white theme--dark pt-3 position-relative" style="font-size:16px"/>
                         </div>
                         <div>
                             <img
@@ -21,8 +21,8 @@
                             />
                         </div>
                     </div>
-                </NuxtLink>
             </v-card>
+            </NuxtLink>
             <v-card 
                 height= "100%"
                 lazy
@@ -44,12 +44,12 @@
                         </div>
                     </div>
             </v-card>
+            <NuxtLink :to="'/'+$i18n.locale+'/origin'"> 
             <v-card 
                 height= "100%"
                 lazy
                 class="homecard bgcard hand invgradientoverlay blackoverlay"
             >
-                <NuxtLink :to="'/'+$i18n.locale+'/origin'"> 
                     <div class="h-100 img-fluid theme--light position-relative skeletton">
                         <div class="pvw text-center">
                             <h2 class="home-title teradeli-medium px-0 text-white">{{$t('section3.title')}}</h2>
@@ -64,8 +64,8 @@
                             />
                         </div>
                     </div>
-                </NuxtLink>
             </v-card>
+            </NuxtLink>
         </v-container>
     </div>
 </template>

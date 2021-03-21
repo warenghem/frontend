@@ -44,17 +44,11 @@
 </template>
 
 <script>
-    import { mdiChevronRight, mdiChevronLeft, mdiChevronDown, mdiPlus } from '@mdi/js'
-import shipping from './shipping.vue';
     export default {
   components: { shipping },
         name: 'legale',
         data() {
             return {
-				svgPath1: mdiChevronRight,
-				svgPath2: mdiChevronLeft,
-				svgPath3: mdiChevronDown,
-				svgPath4: mdiPlus,
                 tab: "subscribe"
             }
         },
