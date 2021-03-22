@@ -8,7 +8,7 @@
 			</div>
 		</div>
 		<v-spacer></v-spacer>
-	</v-toolbar-bar> 
+	</v-toolbar-bar>
     <article class="wa-magazine">
       <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
         <picture class="gradientoverlay">
@@ -28,12 +28,11 @@
       </div>
     </article>
 	<div class="pvw">
-		<h2 class="home-title px-0 pb-3">{{$t('title1')}}</h2>
-		<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle1')}}</h3>
+		<h2 class="home-title px-0 pb-10">{{$t('title1')}}</h2>
+		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle1')}}</h3>-->
 		<div style="max-width:1000px" class="text-center ma-auto pb-16" v-html="$t('text1')"></div>
-		<StudioSection class="pb-16"/>
-		<h2 class="home-title px-0 pb-3">{{$t('title3')}}</h2>
-		<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>
+		<h2 class="home-title px-0 pb-10">{{$t('title3')}}</h2>
+		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>-->
 		<v-container class="timeline-container bgcard rounded-xl pt-3">
 			<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
 				<v-timeline-item
@@ -63,6 +62,7 @@
 				</v-timeline-item>
 			</v-timeline>
 		</v-container>
+		<StudioSection class="pt-16"/>
 	</div>
   </div>
 </template>
@@ -197,12 +197,12 @@
 				{
 					"subtitle": "",
 					"tag": "Avril 2020",
-					"title": "Desseins de la première collection : Citadins Sauvages"
+					"title": "Dessins de la première collection : Citadins Sauvages"
 				},
 				{
 					"subtitle": "",
 					"tag": "Juin 2020",
-					"title": "Création maison d'un site internet sous forme d'application web"
+					"title": "Création d'un site internet sous forme d'application web"
 				},
 				{
 					"subtitle": "",
@@ -232,10 +232,10 @@
 			]
 		},
 		"subtitle1": "La genèse",
-		"subtitle3": "Notre histoire. En direct.",
-		"text1": "<div><p><span>Dans l’univers de la mode et du design, il existe un paradoxe frappant : ils n'ont d'existence que pour leur incarnation de la beauté extérieure. Nous ne portons que peu d'attention à la beauté intérieur d'un objet, la pureté et les milliers de détails qui constitue son histoire et son destin nous échappent. Pourtant, comme chaque Homme, il dégage un certain charisme en fonction de ce qu'il représente, des conditions dans lesquels il a été fabriqué, et des matériaux qui le compose.</span></p><p><span><br>Ceci est historiquement dû à notre vision Anthropocentrique, où la valeur des êtres vivants et des écosystèmes se mesure en fonction de l’intérêt que l’Homme peut en tirer. Pourtant, nous sommes une espèce animale parmi d'autres, mais nous disposons de deux super pouvoirs : l'incroyable capacité a élaborer des systèmes complexes, et la possibilité de prendre des décisions suivant notre réflexion et non notre instinct.<br>Nous réalisons aujourd'hui que nous ne sommes pas des éléments détachés et indépendants, notre propre survie dépend de la santé des écosystèmes de la planète. Réapprendre à voir la nature comme un système de collaborations est un changement de mentalité ambitieux, mais ô combien salutaire pour l’avenir...</span></p><p><span><br>Pour répondre à cette problématique, en 2019, Warenghem Studios est né. Notre objectif : développer des objets et vêtements parfait sur toutes leurs facettes, exploiter les formidables vertus cachées dans chaque espèce végétale, et ne pas toucher aux animaux puisque nous avons d'autres alternatives. Cela peut paraître simple dit comme ça ! Mais nous et tous les éléments qui nous entourent sont reliés. Il ne suffit pas d'utiliser du coton bio pour revendiquer une attitude écologique.<br>Chaque jour, toutes nos équipes œuvrent pour rendre cette folle ambition plus concrète. Étape par étape, nous développons des innovations radicales et utilisons la technologie lorsqu'elle apporte une réelle plus-value.</span></p><p><span><br>L’ADN Warenghem est fortement inspiré par le progressisme des Lumières et la complexité d'Edgar Morin. Focalisé sur un souci excessif du détail et de l'interdépendance des éléments naturels. Le nom Warenghem fait d’ailleurs référence à un homme passionné par l'humain et son rapport à la nature. Ayant passé toute sa vie à chercher et à progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribué à faire progresser le monde à leur niveau pour le rendre meilleur.</span></p></div><br>Nous aussi, nous chercherons...",
+		"subtitle3": "Notre histoire",
+		"text1": "<div><p><span>Dans l’univers de la mode et du design, il existe un paradoxe frappant : ils n'ont d'existence que pour leur incarnation de la beauté extérieure. Nous ne portons que peu d'attention à la beauté intérieure d'un objet, la pureté et les milliers de détails qui constitue son histoire et son destin nous échappent. Pourtant, comme chaque Homme, il dégage un certain charisme en fonction de ce qu'il représente, des conditions dans lesquelles il a été fabriqué, et des matériaux qui le compose.</span></p><p><span><br>Ceci est historiquement dû à notre vision Anthropocentrique, où la valeur des êtres vivants et des écosystèmes se mesure en fonction de l’intérêt que l’Homme peut en tirer. Pourtant, nous sommes une espèce animale parmi d'autres, mais nous disposons de deux super pouvoirs : l'incroyable capacité a élaboré des systèmes complexes, et la possibilité de prendre des décisions suivant notre réflexion et non notre instinct.<br>Nous réalisons aujourd'hui que nous ne sommes pas des éléments détachés et indépendants, notre propre survie dépend de la santé des écosystèmes de la planète. Réapprendre à voir la nature comme un système de collaborations est un changement de mentalité ambitieux, mais ô combien salutaire pour l’avenir...</span></p><p><span><br>Pour répondre à cette problématique, en 2019, Warenghem Studios est né. Notre objectif : développer des objets et vêtements parfait sur toutes leurs facettes, exploiter les formidables vertus cachées dans chaque espèce végétale, et ne pas toucher aux animaux puisque nous avons d'autres alternatives. Cela peut paraître simple dit comme ça ! Mais nous et tous les éléments qui nous entourent sont reliés. Il ne suffit pas d'utiliser du coton bio pour revendiquer une attitude écologique.<br>Chaque jour, toutes nos équipes œuvrent pour rendre cette folle ambition plus concrète. Étape par étape, nous développons des innovations radicales et utilisons la technologie lorsqu'elle apporte une réelle plus-value.</span></p><p><span><br>L’ADN Warenghem est fortement inspiré par le progressisme des Lumières et la complexité d'Edgar Morin. Focalisé sur un souci excessif du détail et de l'interdépendance des éléments naturels. Le nom Warenghem fait d’ailleurs référence à un homme passionné par l'humain et son rapport à la nature. Ayant passé toute sa vie à chercher et à progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribué à faire progresser le monde à leur niveau pour le rendre meilleur.</span></p></div><br>Nous aussi, nous chercherons... Mooi kevin bro, j etais a paris je travaillais dans la finance et puis j'en ai eu marre de ce mode de conso et vivre et developper qque chose par rapp a mes valeur, arreter travail pour me lancer dans ce projet et je rappelle les valeurs qui sont fait en france, respect animaux, utiliser la nature qui nous offre toutes ces matiere, cuir raisin lin puis peut etre autre matiere exploiter vegetal, design elegent tendance tout en etant minimaliste. On sait d ou je viens pk idee et ce que j'ai voulu creer. Faire changer les chose et autre regard sur la mode. QQOQCP. histoire debut millieu fin, commence par la naissance de l'idée La nature nous apporte de formidable alternative et nous les uti",
 		"title1": "Un nom, des valeurs, une histoire",
-		"title3": "Découvrez notre parcours, et nos actualités qui s'afficheront en direct."
+		"title3": "Découvrez notre parcours, et nos actualités."
 	}
 }
 </i18n>
