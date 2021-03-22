@@ -852,28 +852,28 @@
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
                     gots: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
                     france: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
                     audited_working: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
 
@@ -894,28 +894,28 @@
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
                     gots: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
                     france: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
                     audited_working: {
                         is: false,
                         renewalDate: '',
                         certification_method: null,
-                        upload_file:'',
+                        upload_file: '',
                         menu: false
                     },
 
@@ -995,44 +995,42 @@
                 // })
                 try {
                     const data = {
-                        "recipients": [{"name": this.product.name}],
+                        "recipients": [{"name": this.product.name, "email": "warenghem3@yahoo.com"}],
                         "planter_id": 148537,
                         "species_id": 727,
                         "quantity": 1,
+                        "language": "fr"
                     };
                     this.$axios.setHeader('Authorization', 'Bearer M5ISDlbYDkO68Idip6u0Ny0yULAigugsTdvcQDMX0ofSwTByv180UjVmuz2cMFXw')
                     const res = await this.$axios.post('http://youcannevertestenough.tree-nation.com/api/plant',
-                        {
-                            data: data
-                        }
+                        data
                     );
-                    const productData = {
-                        "product": {
-                            "sku": this.product.sku,
-                            "name": this.product.name,
-                            "product": this.product.brand,
-                            "category": this.product.category.toString(),
-                            "description": this.product.description,
-                            "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
-                            "date": new Date(),
-                            "Awards": this.product.awards
-                        },
-                        "suppliers": this.suppliers,
-                        "manufacturers":this.manufacturers,
-                        "tree": tree
-                    };
-                    console.log(res.status)
-                    if(res.status===200){
-                         const product_res = await this.$axios.post('http://15.188.65.163:40080/api/products',
-                        {
-                            data: productData
-                        }
-                    );
+                    if (res.data.status === 'ok') {
+                        const productData = {
+                            "product": {
+                                "sku": this.product.sku,
+                                "name": this.product.name,
+                                "product": this.product.brand,
+                                "category": this.product.category.toString(),
+                                "description": this.product.description,
+                                "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
+                                "date": new Date(),
+                                "Awards": this.product.awards
+                            },
+                            "suppliers": this.suppliers,
+                            "manufacturers": this.manufacturers,
+                            "tree": res.data.trees
+                        };
+                        this.$axios.setHeader('Authorization', '')
+                        const product_res = await this.$axios.post('http://15.188.65.163:40080/api/products',
+                            productData);
+                        console.log(product_res)
                     }
 
                 } catch (e) {
                     console.log(e)
                 }
+
             },
             addSupplier() {
                 this.suppliers.push({
