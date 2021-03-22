@@ -1023,7 +1023,13 @@
                         };
                         this.$axios.setHeader('Authorization', '')
                         const product_res = await this.$axios.post('http://15.188.65.163:40080/api/products',
-                            productData);
+                            productData, { useCredentails: true,      mode: 'no-cors',
+      headers: {
+        'Access-Control-Allow-Origin': '*',
+        'Content-Type': 'application/json',
+      },
+      withCredentials: true,
+      credentials: 'same-origin', });
                         console.log(product_res)
                     }
 

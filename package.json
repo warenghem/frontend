@@ -19,6 +19,7 @@
     "@nuxtjs/axios": "^5.12.5",
     "@nuxtjs/component-cache": "^1.1.6",
     "@nuxtjs/gtm": "^2.4.0",
+    "@nuxtjs/proxy": "^2.1.0",
     "@nuxtjs/pwa": "^3.0.2",
     "@nuxtjs/sitemap": "^2.4.0",
     "@nuxtjs/snipcart": "^1.1.0",

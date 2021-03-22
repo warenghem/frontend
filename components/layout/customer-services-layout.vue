@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="text-center">
     <h3 class="home-title teradeli-medium pb-10">
       {{$t('contact')}}
     </h3>

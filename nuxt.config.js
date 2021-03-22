@@ -110,6 +110,7 @@ export default {
     '@nuxtjs/gtm',
     'cookie-universal-nuxt',
     '@nuxtjs/sitemap',
+    '@nuxtjs/proxy'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -445,7 +446,13 @@ export default {
 
       // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
+    proxy: true,
     baseURL: 'https://tree-nation.com/api/',
+    proxyHeaders: false,
+    credentials: false
+  },
+  proxy: {
+    '/api/': { target: 'https://api.example.com/', pathRewrite: {'^/api/': ''}, changeOrigin: true }
   },
 
   // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
