@@ -45,7 +45,6 @@
 
 <script>
     export default {
-  components: { shipping },
         name: 'legale',
         data() {
             return {
