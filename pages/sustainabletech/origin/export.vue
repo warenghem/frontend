@@ -160,8 +160,45 @@
           </template>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
-          <v-container class="pvw">
-            <v-row v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
+          <v-container class="pvw" v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
+            <v-row>
+              <v-col
+                cols="12"
+                sm="6"
+              >
+                <div class="text-center pb-3">Please select your supplier</div>
+                <v-autocomplete
+                  v-model="selectedSupplier"
+                  filled
+                  rounded
+                  :items="partnersItem"
+                  dense
+                  label="Partner name"
+                  item-text="name"
+                  @change="supplierSelect"
+                  return-object
+                ></v-autocomplete>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+                class="text-center"
+              >
+                <div class="pb-3">Or</div>
+                <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="addNewSupplier" x-large>Add New
+                  Supplier
+                </v-btn>
+              </v-col>
+            </v-row>
+            <v-row v-if="isLoading">
+              <v-col cols="12" class="text-center">
+                <v-progress-linear
+                  indeterminate
+                  color="lightbugattiblue"
+                ></v-progress-linear>
+              </v-col>
+            </v-row>
+            <v-row v-if="isResult">
               <v-col cols="12">
                 <h3 class="info--text text-center">Supplier {{idx+1}}</h3>
               </v-col>
@@ -466,7 +503,7 @@
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
           <v-container class="pvw">
-            <v-row v-for="(manufacture,idx) in manufactures" :key="'manufucture'+idx">
+            <v-row v-for="(manufacture,idx) in manufacturers" :key="'manufucture'+idx">
               <v-col cols="12">
                 <h3 class="info--text tect-center">Manufacturer {{idx+1}}</h3>
               </v-col>
@@ -533,7 +570,7 @@
                   <v-col
                     cols="12"
                   >
-                    <Datetime v-model="manufacture.location"/>
+                    <Datetime v-model="manufacture.date"/>
                   </v-col>
                 </v-row>
               </v-col>
@@ -789,8 +826,10 @@
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
             const productsItem = await $content(`${lang_path}/shop`).fetch();
+            const partnersItem = await $content(`${lang_path}/partners/suppliers`).fetch();
             return {
                 productsItem,
+                partnersItem,
             }
         },
         data: () => ({
@@ -817,6 +856,7 @@
             formHasErrors: false,
             menu2: false,
             selectedProduct: null,
+            selectedSupplier: null,
             productAddMode: false,
             product: {
                 id: '',
@@ -879,7 +919,7 @@
 
                 }
             ],
-            manufactures: [
+            manufacturers: [
                 {
                     type: null,
                     brand: '',
@@ -1007,29 +1047,19 @@
                     );
                     if (res.data.status === 'ok') {
                         const productData = {
-                            "product": {
-                                "sku": this.product.sku,
-                                "name": this.product.name,
-                                "product": this.product.brand,
-                                "category": this.product.category.toString(),
-                                "description": this.product.description,
-                                "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
-                                "date": new Date(),
-                                "Awards": this.product.awards
-                            },
-                            "suppliers": this.suppliers,
-                            "manufacturers": this.manufacturers,
-                            "tree": res.data.trees
+                            "name": this.product.sku,
+                            "description": this.product.name,
+                            "latitude": "43.198432",
+                            "longitude": "5.589894",
+                              "custom": {
+                              "suppliers": this.suppliers,
+                              "manufacturers": this.manufacturers,
+                              "tree": res.data.trees
+                            }
                         };
                         this.$axios.setHeader('Authorization', '')
                         const product_res = await this.$axios.post('http://15.188.65.163:40080/api/products',
-                            productData, { useCredentails: true,      mode: 'no-cors',
-      headers: {
-        'Access-Control-Allow-Origin': '*',
-        'Content-Type': 'application/json',
-      },
-      withCredentials: true,
-      credentials: 'same-origin', });
+                            productData);
                         console.log(product_res)
                     }
 
@@ -1077,7 +1107,7 @@
                 })
             },
             addManufacturer() {
-                this.manufactures.push({
+                this.manufacturers.push({
                     type: null,
                     brand: '',
                     name: '',
@@ -1139,6 +1169,18 @@
                 }, 2000)
 
             },
+            supplierSelect() {
+                this.isLoading = true;
+                this.isResult = false;
+                this.suppliers.brand = this.selectedSupplier.brand;
+                this.suppliers.name = this.selectedSupplier.name;
+                this.suppliers.location = this.selectedSupplier.location;
+                setTimeout(() => {
+                    this.isLoading = false;
+                    this.isResult = true;
+                }, 2000)
+
+            },
             addNewProduct() {
                 this.productAddMode = true;
                 this.product = {
@@ -1149,6 +1191,14 @@
                     category: [],
                     description: '',
                     awards: []
+                };
+                this.isResult = true;
+            },
+            addNewSupplier() {
+                this.suppliers = {
+                    brand: '',
+                    name: '',
+                    location: '',
                 };
                 this.isResult = true;
             }
