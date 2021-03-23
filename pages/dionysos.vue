@@ -1,12 +1,12 @@
 <template>
   <div style="background:black" class="pb-10">
-	<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
-		<Backbutton class="border-bottom-2"/>
-		<div class="px-5 border-bottom-2 bg-theme d-flex w-100">
+	<v-toolbar dense dark class="menubar pa-0 w-100">
+		<Backbutton class="border-bottom-2 h-100"/>
+		<div class="px-5 border-bottom-2 bg-theme d-flex w-100 h-100">
 			<img width="110px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Dionysos.svg 512w'">
 		</div>
 		<v-spacer></v-spacer>
-	</v-toolbar-bar>
+	</v-toolbar>
 	<div class="position-relative" style="height:90vh;background:black">
 		<div style="z-index:3;bottom:80px" class="position-absolute w-100 text-center pvw">
 			<img width="200px" class="icon lazyload pb-3 d-none d-md-block ma-auto" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Dionysos.svg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Logos/Dionysos.svg 683w'">

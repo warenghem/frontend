@@ -15,7 +15,7 @@
       </v-row>
       <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
     </v-container>
-    <ShopIcon class="pb-16"/>
+    <ShopIcon class="pb-10"/>
   </div>
 
 </template>

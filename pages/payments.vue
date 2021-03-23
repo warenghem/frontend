@@ -1,14 +1,14 @@
 <template>
   <div class="bgcard h-100">
-	<v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
-		<Backbutton class="border-bottom-2"/>
-		<div class="px-5 d-flex border-bottom-2 bg-white w-100">
+	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
+		<Backbutton class="border-bottom-2 h-100"/>
+		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 			{{$t('title')}}
 			</div>
 		</div>
 		<v-spacer></v-spacer>
-	</v-toolbar-bar>
+	</v-toolbar>
     <article class="wa-magazine">
       <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
         <picture class="gradientoverlay">

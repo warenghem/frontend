@@ -1,9 +1,9 @@
 <template>
   <div class="bgcard">
     <div class="d-none d-md-block">
-      <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
-        <Backbutton class="border-bottom-2"/>
-        <div class="px-5 d-flex border-bottom-2 bg-white">
+	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
+		<Backbutton class="border-bottom-2 h-100"/>
+		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
           <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
             {{$t('title')}}
           </div>
@@ -29,7 +29,7 @@
                 {{ tab.menu }}
               </v-tab>
           </v-tabs>
-      </v-toolbar-bar>
+      </v-toolbar>
 	<article class="wa-magazine">
 		<div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
 		<picture class="gradientoverlay">
@@ -139,14 +139,14 @@
       </v-tabs-items>
     </div>
     <div class="d-block d-md-none">
-      <v-toolbar-bar class="menubar d-flex pa-0 filter-bar bg-white">
+      <v-toolbar dense class="menubar pa-0 w-100 elevation-0 bg-white">
         <Backbutton/>
         <div class="pl-5 d-flex border-bottom-2">
           <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
             {{$t('title')}}
           </div>
         </div>
-      </v-toolbar-bar>
+      </v-toolbar>
       <v-expansion-panels flat class="pvw">
         <v-expansion-panel>
           <v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">

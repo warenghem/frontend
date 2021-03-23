@@ -40,7 +40,6 @@
     import { mdiClose } from '@mdi/js'
     export default {
         name: "info-modal",
-        props: ['closeModal'],
         data() {
             return {
                 svgPath: mdiClose,

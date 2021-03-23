@@ -3,14 +3,14 @@
     <div class="pvw treemapheader px-10 text-center position-absolute w-100">
       <h2 class="home-title px-0">{{$t('title')}}</h2>
       <div class="home-subtitle py-2">{{$t('subtitle')}}</div>
-      <v-text
+      <div
           @click="$store.state.plantModal=true"
           style="z-index:2"
           class="text-center hand position-relative lightbugattiblue--text "
           >
           {{$t('btnTitle')}}
           <v-icon color="lightbugattiblue" small>{{ svgPath1 }}</v-icon>
-      </v-text>
+      </div>
     </div>
     <div class="treemapcontainer">
       <TreeData :treeData="treeData"/>
@@ -34,6 +34,13 @@
                     reforest: 0
                 },*/
             };
+        },
+        props: {
+            treeData: {
+                type: Object,
+                default: () => {
+                }
+            }
         },
         methods: {
             mapIntersect() {

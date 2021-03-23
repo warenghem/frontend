@@ -1,12 +1,12 @@
 <template>
   <div>
-	<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
-		<Backbutton class="border-bottom-2"/>
+	<v-toolbar dense dark class="menubar pa-0 w-100 elevation-0">
+		<Backbutton class="border-bottom-2 h-100"/>
 		<div class="px-5 border-bottom-2 bg-theme d-flex w-100">
 			<img width="100px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w'">
 		</div>
 		<v-spacer></v-spacer>
-	</v-toolbar-bar>
+	</v-toolbar>
 	<div class="mediabox wa-smart-picture square-ratio h-100 d-block d-md-none pb-5">
 		<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/Techsolo3small.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/Techsolo3small.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/Techsolo3small.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/Techsolo3small.png 1500w'">
 	</div>

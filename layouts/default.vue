@@ -5,7 +5,7 @@
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>
-      <v-toolbar-items class="d-none d-md-block" v-for="(link,l_idx) in $store.state.link.links"
+      <v-toolbar-items class="d-none d-lg-block" v-for="(link,l_idx) in $store.state.link.links"
                        :key="'link_btn_l_'+l_idx">
         <v-btn text class="text-uppercase item"
                :class="{'current':$root.currentId===link.elId}"
