@@ -22,8 +22,8 @@
                     </template>
                     <div slot="opposite" v-if="i===0">
                         <div class="d-flex align-center">
-                            <img src="../assets/images/Arrowleftwhite.svg" class="d-none d-md-block" alt="fanel"
-                                 width="26px">
+                            <!--<img src="../assets/images/Arrowleftwhite.svg" class="d-none d-md-block" alt="fanel"
+                                 width="26px">-->
                             <span class="time pl-3 mb-0"
                                   style="color: #888!important;">{{$t('calendarSection.tag')}}</span>
                         </div>
@@ -127,11 +127,11 @@
         data() {
             return {
                 images: [
-                    require('../assets/images/calender-icons/fanel.svg'),
+                    /*require('../assets/images/calender-icons/fanel.svg'),
                     require('../assets/images/calender-icons/bug.svg'),
                     require('../assets/images/calender-icons/user.svg'),
                     require('../assets/images/calender-icons/rocket.svg'),
-                    require('../assets/images/calender-icons/right.svg'),
+                    require('../assets/images/calender-icons/right.svg'),*/
                 ]
             }
         }

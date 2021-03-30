@@ -272,7 +272,7 @@
         </v-col>
       </v-row>-->
     </v-container>
-    <ShopIcon class="py-16"/>
+    <ShopIcon class="py-10"/>
     <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
     <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
                 :product="product" @colorSelect="colorSelect" />

@@ -168,14 +168,14 @@
               >
                 <div class="text-center pb-3">Please select your supplier</div>
                 <v-autocomplete
-                  v-model="selectedSupplier"
+                  v-model="selectedSupplier[idx]"
                   filled
                   rounded
                   :items="partnersItem"
                   dense
                   label="Partner name"
-                  item-text="name"
-                  @change="supplierSelect"
+                  item-text="suppliers.name"
+                  @change="supplierSelect(idx)"
                   return-object
                 ></v-autocomplete>
               </v-col>
@@ -185,20 +185,12 @@
                 class="text-center"
               >
                 <div class="pb-3">Or</div>
-                <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="addNewSupplier" x-large>Add New
+                <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="addNewSupplier(idx)" x-large>Add New
                   Supplier
                 </v-btn>
               </v-col>
             </v-row>
-            <v-row v-if="isLoading">
-              <v-col cols="12" class="text-center">
-                <v-progress-linear
-                  indeterminate
-                  color="lightbugattiblue"
-                ></v-progress-linear>
-              </v-col>
-            </v-row>
-            <v-row v-if="isResult">
+            <v-row>
               <v-col cols="12">
                 <h3 class="info--text text-center">Supplier {{idx+1}}</h3>
               </v-col>
@@ -856,7 +848,6 @@
             formHasErrors: false,
             menu2: false,
             selectedProduct: null,
-            selectedSupplier: null,
             productAddMode: false,
             product: {
                 id: '',
@@ -877,6 +868,7 @@
                 {label: 'Locally sourced', value: 5},
                 {label: 'Local employer', value: 6},
             ],
+            selectedSupplier: [null],
             suppliers: [
                 {
                     type: null,
@@ -884,34 +876,34 @@
                     name: '',
                     quantity: 0,
                     location: '',
-                    date: '',
+                    date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',
                     claims: [],
                     vegan: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
                     },
                     gots: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
                     },
                     france: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
                     },
                     audited_working: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
@@ -926,34 +918,34 @@
                     name: '',
                     quantity: 0,
                     location: '',
-                    date: '',
+                    date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',
                     claims: [],
                     vegan: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
                     },
                     gots: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
                     },
                     france: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
                     },
                     audited_working: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         upload_file: '',
                         menu: false
@@ -1060,7 +1052,6 @@
                         this.$axios.setHeader('Authorization', '')
                         const product_res = await this.$axios.post('http://15.188.65.163:40080/api/products',
                             productData);
-                        console.log(product_res)
                     }
 
                 } catch (e) {
@@ -1069,16 +1060,18 @@
 
             },
             addSupplier() {
+                this.selectedSupplier.push(null);
                 this.suppliers.push({
                     type: null,
+                    selectedSupplier: null,
                     brand: '',
                     name: '',
                     quantity: 0,
                     location: '',
-                    date: '',
+                    date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',
-                    claims: null,
+                    claims: [],
                     vegan: {
                         is: false,
                         renewalDate: '',
@@ -1087,19 +1080,19 @@
                     },
                     gots: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         menu: false
                     },
                     france: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         menu: false
                     },
                     audited_working: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         menu: false
                     },
@@ -1113,25 +1106,25 @@
                     name: '',
                     quantity: 0,
                     location: '',
-                    date: '',
+                    date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',
-                    claims: null,
+                    claims: [],
                     vegan: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         menu: false
                     },
                     gots: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         menu: false
                     },
                     france: {
                         is: false,
-                        renewalDate: '',
+                        renewalDate: new Date().toISOString().substr(0, 10),
                         certification_method: null,
                         menu: false
                     },
@@ -1172,9 +1165,6 @@
             supplierSelect() {
                 this.isLoading = true;
                 this.isResult = false;
-                this.suppliers.brand = this.selectedSupplier.brand;
-                this.suppliers.name = this.selectedSupplier.name;
-                this.suppliers.location = this.selectedSupplier.location;
                 setTimeout(() => {
                     this.isLoading = false;
                     this.isResult = true;
@@ -1195,11 +1185,11 @@
                 this.isResult = true;
             },
             addNewSupplier() {
-                this.suppliers = {
-                    brand: '',
-                    name: '',
-                    location: '',
-                };
+                // this.suppliers = {
+                //     brand: '',
+                //     name: '',
+                //     location: '',
+                // };
                 this.isResult = true;
             }
         },

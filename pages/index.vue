@@ -20,7 +20,7 @@
         <SocialSection/>
       </v-card>
     </v-container>
-    <ShopIcon class="py-16"/>
+    <ShopIcon class="py-10"/>
   </div>
 </template>
 

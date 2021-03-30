@@ -170,7 +170,7 @@
 
 <script>
     import MailchimpSubscribe from './mailchp-subscribe'
-    import {mdiClose, mdiEmail, mdiAccount, mdiAlertCircleOutline, mdiCheckboxMarkedCircle, mdiForum} from '@mdi/js'
+    import {mdiClose, mdiEmail, mdiAccount, mdiEmoticonCryOutline, mdiEmoticonCoolOutline, mdiForum} from '@mdi/js'
     import {ValidationObserver, ValidationProvider} from "vee-validate";
     export default {
         name: "plant-form",
@@ -184,11 +184,12 @@
                 snackbarSuccess: false,
                 snackbarError: false,
                 email: '',
+                name: '',
                 svgPath: mdiClose,
                 svgPath2: mdiEmail,
                 svgPath3: mdiAccount,
-                svgPath4: mdiAlertCircleOutline,
-                svgPath5: mdiCheckboxMarkedCircle,
+                svgPath4: mdiEmoticonCryOutline,
+                svgPath5: mdiEmoticonCoolOutline,
                 svgPath9: mdiForum,
                 isFormValid: false,
 

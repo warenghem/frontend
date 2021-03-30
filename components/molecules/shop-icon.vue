@@ -1,12 +1,12 @@
 <template>
-    <v-row class="ma-0">
-        <v-col class="pa-0 text-center" cols="6" md="4" 
+    <v-row class="ma-0 justify-center">
+        <v-col class="pa-0 text-center py-5" cols="6" md="4" 
             v-for="(item,idx) in $t('items')"
             :key="'item_'+idx"
         >
             <v-btn
                 icon
-                class="pb-3"
+                class="mb-3"
                 :to="items[idx].link" nuxt
             >
                 <v-icon x-large>{{ items[idx].icon }}</v-icon>

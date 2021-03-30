@@ -49,7 +49,7 @@
                         this.getStreetAddressFrom(position.coords.latitude, position.coords.longitude)
                     },
                     error => {
-                        console.log(position.coords.latitude, position.coords.longitude);
+                        console.log('error');
                     }
                 );
             },

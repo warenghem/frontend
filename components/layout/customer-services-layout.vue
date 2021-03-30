@@ -51,9 +51,7 @@
         },
         props: {
             closeModal: {
-                type: Object,
-                default: () => {
-                }
+                type: Function
             }
         }
     }

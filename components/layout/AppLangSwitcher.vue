@@ -122,6 +122,7 @@
 <script>
 import { mdiClose } from '@mdi/js'
 export default {
+    name: 'langswitcher',
     data() {
         return {
             svgPath2: mdiClose,

@@ -13,7 +13,6 @@
         </div>
       </div>
       <client-only>
-        <LazyReadprogressbar/>
       </client-only>
     </v-toolbar-bar>
     <article class="wa-magazine" v-if="post">

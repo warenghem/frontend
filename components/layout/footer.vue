@@ -95,6 +95,7 @@
     import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
     import {mdiInstagram, mdiFacebook, mdiChevronRight} from '@mdi/js'
     export default {
+        name: 'mainfooter',
         data() {
           return {
                   LogoSmNp,

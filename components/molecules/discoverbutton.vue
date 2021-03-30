@@ -1,11 +1,11 @@
 <template>
-    <v-text
+    <div
         style="z-index:2"
         class="text-center"
         >
         {{$t('btnDiscover')}}
         <v-icon small>{{ svgPath1 }}</v-icon>
-    </v-text>
+    </div>
 </template>
 
 <script>

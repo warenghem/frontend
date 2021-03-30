@@ -162,63 +162,64 @@
         </v-card>
       </v-dialog>
     </div>
-    <v-snackbar
-        v-model="snackbarSuccess"
-        timeout="7500"
-        rounded="lg"
-        style="padding-bottom: 0!important;"
-        >
-        <div>
-            <div class="d-flex justify-space-between align-center">
-                <div>{{$t('video.rightSection.alerttitle')}}</div>
-                <div class="d-flex align-center"><small class="pr-2">{{$t('video.rightSection.alerttime')}} </small>
-                    <v-btn icon class="close" @click="snackbarSuccess=false">
-                        <v-icon>{{ svgPath }}</v-icon>
-                    </v-btn>
+        <v-snackbar
+            v-model="snackbarSuccess"
+            timeout="7500"
+            rounded="lg"
+            style="padding-bottom: 0!important;"
+            >
+            <div>
+                <div class="d-flex justify-space-between align-center">
+                    <div>{{$t('video.rightSection.alerttitle')}}</div>
+                    <div class="d-flex align-center">
+                        <small>{{$t('video.rightSection.alerttime')}} </small>
+                        <v-btn icon class="close" @click="snackbarSuccess=false">
+                            <v-icon>{{ svgPath }}</v-icon>
+                        </v-btn>
+                    </div>
                 </div>
-            </div>
-            <v-layout align-center mt-5 mb-2 pr-4>
-                <v-icon color="blue darken-2" class="pr-3" dark large>{{ svgPath5 }}</v-icon>
-                <v-layout column>
-                    <div>{{$t('video.rightSection.success')}}</div>
-                </v-layout> 
-            </v-layout>
-        </div>
-    </v-snackbar>
-    <v-snackbar
-        v-model="snackbarError"
-        timeout="-1"
-        rounded="lg"
-        style="padding-bottom: 0!important;"
-        >
-        <div>
-            <div class="d-flex justify-space-between align-center">
-                <div>{{$t('video.rightSection.alerttitle')}}</div>
-                <div class="d-flex align-center">
-                    <small class="pr-2">{{$t('video.rightSection.alerttime')}} </small>
-                    <v-btn icon class="close" @click="snackbarError=false">
-                        <v-icon>{{ svgPath }}</v-icon>
-                    </v-btn>
-                </div>
-            </div>
-            <v-layout align-center mt-5 mb-2 pr-4>
-                <v-layout column>
-                  <v-icon color="orange darken-2" class="ma-auto pb-5" dark x-large>{{ svgPath4 }}</v-icon>
-                  <div class="pb-3" v-html="$t('video.rightSection.error')"></div>
-                  <a class="text-center w-100" @click="$store.state.newsletterModal = false" onclick="tidioChatApi.open()">
-                    <v-icon x-large color="lightbugattiblue">{{ svgPath9 }}</v-icon>
-                  </a>
+                <v-layout align-center mt-5 mb-2 pr-4>
+                    <v-layout column>
+                        <v-icon color="lightbugattiblue" class="ma-auto pb-5" x-large>{{ svgPath5 }}</v-icon>
+                        <div>{{$t('video.rightSection.success')}}</div>
+                    </v-layout>
                 </v-layout>
-            </v-layout>
-        </div>
-    </v-snackbar>
+            </div>
+        </v-snackbar>
+        <v-snackbar
+            v-model="snackbarError"
+            timeout="-1"
+            rounded="lg"
+            style="padding-bottom: 0!important;"
+            >
+            <div>
+                <div class="d-flex justify-space-between align-center">
+                    <div>{{$t('video.rightSection.alerttitle')}}</div>
+                    <div class="d-flex align-center">
+                        <small>{{$t('video.rightSection.alerttime')}} </small>
+                        <v-btn icon class="close" @click="snackbarError=false">
+                            <v-icon>{{ svgPath }}</v-icon>
+                        </v-btn>
+                    </div>
+                </div>
+                <v-layout align-center mt-5 mb-2 pr-4>
+                    <v-layout column>
+                      <v-icon color="orange darken-2" class="ma-auto pb-5" x-large>{{ svgPath4 }}</v-icon>
+                      <div class="pb-3" v-html="$t('video.rightSection.error')"></div>
+                      <a class="text-center w-100" @click="$store.state.newsletterModal = false" onclick="tidioChatApi.open()">
+                        <v-icon x-large color="lightbugattiblue">{{ svgPath9 }}</v-icon>
+                      </a>
+                    </v-layout>
+                </v-layout>
+            </div>
+        </v-snackbar>
   </div>
 
 </template>
 
 <script>
     import MailchimpSubscribe from './mailchp-subscribe-products'
-    import {mdiClose, mdiEmail, mdiAccount} from '@mdi/js'
+    import {mdiClose, mdiEmail, mdiAccount, mdiForum, mdiEmoticonCoolOutline, mdiEmoticonCryOutline} from '@mdi/js'
     import {ValidationObserver, ValidationProvider} from "vee-validate";
     export default {
         name: "products-form",
@@ -239,6 +240,9 @@
                 items: ['Francais', 'English'],
                 svgPath2: mdiEmail,
                 svgPath3: mdiAccount,
+                svgPath4: mdiEmoticonCryOutline,
+                svgPath5: mdiEmoticonCoolOutline,
+                svgPath9: mdiForum,
                 name: '',
                 checkbox: false,
             }

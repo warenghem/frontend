@@ -1,14 +1,14 @@
 <template>
   <div class="bgcard h-100">
-	<v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
-		<Backbutton class="border-bottom-2"/>
-		<div class="px-5 d-flex border-bottom-2 bg-white w-100">
+	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
+		<Backbutton class="border-bottom-2 h-100"/>
+		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 			{{$t('title')}}
 			</div>
 		</div>
 		<v-spacer></v-spacer>
-	</v-toolbar-bar>
+	</v-toolbar>
     <article class="wa-magazine">
       <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
         <picture class="gradientoverlay">
@@ -29,7 +29,7 @@
     </article>
 	<v-row class="pa-0 ma-0">
 		<v-col cols="12" md="8" class="bgcard pa-0">
-			<v-toolbar-bar class="menubar pa-0 filter-bar d-none d-md-flex">
+			<v-toolbar dense class="menubar d-none d-md-flex pa-0 w-100 elevation-0">
 				<v-tabs
 					v-model="tab"
 					right
@@ -37,7 +37,7 @@
 					show-arrows
 					:prev-icon="svgPath2"
 					:next-icon="svgPath1"
-					class="border-bottom-2 w-100"
+					class="border-bottom-2 w-100 ma-0 border-right-2"
 					>
 					<v-tabs-slider color="#0081a7"></v-tabs-slider>
 					<v-tab 
@@ -50,7 +50,7 @@
 					{{ tab.menu }}
 					</v-tab>
 				</v-tabs>
-			</v-toolbar-bar>
+			</v-toolbar>
 			<div class="d-none d-md-block pvw">	
 				<v-tabs-items v-model="tab">
 					<v-tab-item
@@ -125,7 +125,7 @@
 				</v-tabs-items>
 			</div>
 			<div class="d-block d-md-none pvw">
-				<v-expansion-panels flat class="pvw">
+				<v-expansion-panels focusable inset flat class="pvw">
 					<v-expansion-panel>
 						<v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">
 							<div class="d-block">
@@ -138,7 +138,7 @@
 							</div>
 						</v-expansion-panel-header>
 						<v-expansion-panel-content eager>
-							<v-expansion-panels flat>
+							<v-expansion-panels focusable inset flat>
 								<v-expansion-panel
 									v-for="(tab,m_idx) in $t('tab.sections1')"
 									:key="'tab_'+m_idx"
@@ -147,7 +147,7 @@
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
+										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -165,7 +165,7 @@
 							</div>
 						</v-expansion-panel-header>
 						<v-expansion-panel-content eager>
-							<v-expansion-panels flat>
+							<v-expansion-panels focusable inset flat>
 								<v-expansion-panel
 									v-for="(tab,m_idx) in $t('tab.sections2')"
 									:key="'tab_'+m_idx"
@@ -174,7 +174,7 @@
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
+										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>

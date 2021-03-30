@@ -70,7 +70,7 @@
         data() {
             return {
                 backgroundImages: [
-                    ",ar-6-4/Products/48H_black_blue_side_bottle.png",
+                    ",ar-6-4/Products/48H_cote.png",
                     ",fo-top/Products/belt-blackblue-above2bis.png",
                     "/Products/pf-blackblue-side.png",
                     /*"/vide.png",*/
