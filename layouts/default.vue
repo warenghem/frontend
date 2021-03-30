@@ -1,5 +1,6 @@
 <template>
   <v-app>
+    <div id="blackContent" @click="hideModal"></div>
     <div>
     <v-app-bar style="z-index: 4;" class="menu-bar border-bottom-2 w-100" hide-on-scroll flat height="42px">
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
@@ -137,6 +138,16 @@
       ]
       }
     },
+      methods:{
+           hideModal() {
+              document.querySelector('.indianforest').classList.remove('active');
+              document.querySelector('.mgforest').classList.remove('active');
+              document.getElementById('blackContent').classList.remove('overlay');
+              const el = document.body;
+              el.classList.remove('modal-open');
+              document.documentElement.style.overflowY = 'auto'
+          },
+        }
 /*    mounted() {
         if (this.$i18n.getLocaleCookie()) {
             const lang = this.$store.state.langs.items.find(lan => lan.lang === this.$i18n.getLocaleCookie());

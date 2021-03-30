@@ -1,7 +1,6 @@
 <template>
   <div>
     <!--<sticky-toolbar class="stickyBar"/>-->
-    <div id="blackContent" @click="hideModal"></div>
     <VideoSection id="videoSection"/>
     <MissionSection class="pt-2 pt-md-4 px-0 px-md-4" id="missionSection"/>
     <v-container fluid class="homegrid py-4">
@@ -48,14 +47,6 @@
           }
       },
       methods:{
-           hideModal() {
-              document.querySelector('.indianforest').classList.remove('active');
-              document.querySelector('.mgforest').classList.remove('active');
-              document.getElementById('blackContent').classList.remove('overlay');
-              const el = document.body;
-              el.classList.remove('modal-open');
-              document.documentElement.style.overflowY = 'auto'
-          },
           handleSCroll (event) {
             let header = document.body;
             if (window.scrollY > 100 && header.className.includes('BgTransparent')) {
