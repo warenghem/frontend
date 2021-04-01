@@ -174,7 +174,7 @@
                   :items="partnersItem"
                   dense
                   label="Partner name"
-                  item-text="suppliers.name"
+                  item-text="name"
                   @change="supplierSelect(idx)"
                   return-object
                 ></v-autocomplete>
@@ -818,7 +818,7 @@
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
             const productsItem = await $content(`${lang_path}/shop`).fetch();
-            const partnersItem = await $content(`${lang_path}/partners/suppliers`).fetch();
+            const partnersItem = await $content(`${lang_path}/partners`,  { deep: true }).fetch();
             return {
                 productsItem,
                 partnersItem,

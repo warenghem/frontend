@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="bgcard">
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
 		<Backbutton class="border-bottom-2 h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
@@ -9,7 +9,7 @@
 		</div>
 		<v-spacer></v-spacer>
 	</v-toolbar>
-    <article class="wa-magazine">
+    <article class="wa-magazine d-none">
       <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
         <picture class="gradientoverlay">
           <source media="screen and (min-width: 64em)"
@@ -27,13 +27,45 @@
         </picture>
       </div>
     </article>
-	<div class="pvw">
-		<h2 class="home-title px-0 pb-10">{{$t('title1')}}</h2>
+	<div class="pvw ma-auto">
+		
 		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle1')}}</h3>-->
-		<div style="max-width:1000px" class="text-center ma-auto pb-16" v-html="$t('text1')"></div>
-		<h2 class="home-title px-0 pb-10">{{$t('title3')}}</h2>
+		<v-container class="rounded-xl">
+			<v-row class="ma-auto pa-0 mb-16 bg-white">
+				<v-col cols="12" md="5" class="pa-0">
+					<div class="img-fluid position-relative h-100">
+						<img
+							data-sizes="auto"
+							data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
+							src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Environments/logo.155.jpg" 
+							class="lazyload cover bg-white" 
+						/>
+					</div>
+				</v-col>
+				<v-col cols="12" md="7" class="bg-white pvw rounded-xl">
+					<h2 class="page-title2 text-center px-0 pb-10">{{$t('title1')}}</h2>
+					<v-card style="max-width:1000px" class="text-center ma-auto align-center justify-center" v-html="$t('text1')"></v-card>
+				</v-col>
+			</v-row>
+		</v-container>
+		<v-row class="text-center pb-16 ma-auto" style="max-width: 1400px;">
+			<v-col class="px-5" cols="12" md="4">
+				<div class="page-title3">{{$t('col1title')}}</div>
+				<div class="" v-html="$t('col1')"></div>
+			</v-col>
+			<v-col class="px-5" cols="12" md="4">
+				<div class="page-title3">{{$t('col2title')}}</div>
+				<div class="" v-html="$t('col2')"></div>
+			</v-col>
+			<v-col class="px-5" cols="12" md="4">
+				<div class="page-title3">{{$t('col3title')}}</div>
+				<div class="" v-html="$t('col3')"></div>
+			</v-col>
+		</v-row>
+		<div style="max-width:1000px" class="text-center rounded-xl bg-white pvw ma-auto mb-16" v-html="$t('text2')"></div>
+		<h2 class="page-title2 text-center px-0 pb-10">{{$t('title3')}}</h2>
 		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>-->
-		<v-container class="timeline-container bgcard rounded-xl pt-3">
+		<v-container class="timeline-container rounded-xl pt-3">
 			<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
 				<v-timeline-item
 						fill-dot
@@ -62,7 +94,7 @@
 				</v-timeline-item>
 			</v-timeline>
 		</v-container>
-		<StudioSection class="pt-16"/>
+		<StudioSection class="pt-16 bg-white"/>
 		<CustomerServicesLayout class="pt-16"/>
 	</div>
   </div>
@@ -94,7 +126,6 @@
 					"/Environments/Techsolo.png",
                     "/madagascar_river.jpg",
                     "/Products/bag-blackblue-deepest.png",
-					"/Environments/romans_chaussure.jpeg",
                 ],
                 classid: [
                     "dot1",
@@ -163,17 +194,15 @@
 					"subtitle": "",
 					"tag": "February 2021",
 					"title": "Prototyping of the first products"
-				},
-				{
-					"subtitle": "",
-					"tag": "February 2021",
-					"title": "Selection of our project by the Auvergne-Rhône-Alpes region for the development of shoes in France in Romans-sur-Isère (capital of footwear)"
 				}
 			]
 		},
 		"subtitle1": "The genesis",
 		"subtitle3": "Our history. Live.",
 		"text1": "<div><p><span>In the world of fashion and design, there is a striking paradox: They exist only for their embodiment of outer beauty. We pay little attention to the inner beauty of an object, the purity and the thousands of details that constitute its history and destiny escape us. However, like every man, he gives off a certain charisma depending on what he represents, the conditions in which he was made, and the materials that compose it.</span></p><p><span><br>This is historically due to our Anthropocentric vision, where the value of living things and ecosystems is measured according to the benefit that Man can derive from them. Yet we are an animal species among others, but we have two super powers: the incredible ability to develop complex systems, and the ability to make decisions based on our thinking and not our instinct.<br>We realize today that we are not detached and independent elements, our own survival depends on the health of the planet's ecosystems. Relearning to see nature as a system of collaborations is an ambitious change of mentality but oh so beneficial for the future ...</span></p><p><span><br>To respond to this problem, in 2019 , Warenghem Studios was born. Our goal: to develop objects and clothes that are perfect in all their facets, to exploit the formidable virtues hidden in each plant species, and not to touch animals since we have other alternatives. It may sound simple said like that! But we and all the elements around us are connected. It is not enough to use organic cotton to claim an ecological attitude.<br>Every day, all our teams work to make this crazy ambition more concrete. Step by step, we develop radical innovations and use technology when it brings real added value. </span></p><p><span><br>The Warenghem DNA is strongly inspired by the progressivism of the Enlightenment and the complexity of Edgar Morin. Focused on an excessive attention to detail and the interdependence of natural elements. The name Warenghem also refers to a man passionate about people and their relationship to nature. Having spent his whole life in research and progress, he was one of those Men who, through their intellectual, cultural and scientific commitment, have contributed to making the world progress at their level to make it better.</span></p></div><br>We too will look for ...",
+		"col1": "",
+		"col2": "",
+		"col3": "",
 		"title1": "A name, a story, values",
 		"title3": "Discover our route, and our news which will be displayed live."
 	},
@@ -224,18 +253,20 @@
 					"subtitle": "",
 					"tag": "Février 2021",
 					"title": "Prototypage des premiers produits"
-				},
-				{
-					"subtitle": "",
-					"tag": "Février 2021",
-					"title": "Sélection de notre projet par la région Auvergne-Rhône-Alpes pour le développement de chaussures en France à Romans-sur-Isère (capitale de la chaussure)"
 				}
 			]
 		},
 		"subtitle1": "La genèse",
 		"subtitle3": "Notre histoire",
-		"text1": "<div><p><span>Dans l’univers de la mode et du design, il existe un paradoxe frappant : nous ne portons que peu d'attention sur la beauté intérieure d'un objet, la pureté et les milliers de détails qui constitue son histoire et son destin nous échappent. Pourtant, comme chaque Homme, il dégage un certain charisme en fonction de ce qu'il représente, des conditions dans lesquels il a été fabriqué, et des matériaux naturels qui le compose.</span></p><p><span><br>Pour répondre à cette problématique, Warenghem Studios est né en 2019. Notre objectif : exploiter les formidables et myterieuses vertus cachées dans chaque espèce végétale ; développer des objets et vêtements fabriqués en France au design minimaliste et travaillé ; et ne pas utiliser de matières animales puisque nous avons d'autres alternatives. Focalisé sur un souci excessif du détail et de l'interdépendance des éléments naturels.</span></p><p><span><br>Nous réalisons aujourd'hui que nous ne sommes pas des éléments détachés, notre survie dépend de la santé des écosystèmes de la planète avec qui nous devons agir en collaboration. Nous sommes une espèce animale parmi d'autres, mais nous disposons de deux pouvoirs : l'incroyable capacité à élaborer des systèmes complexes, et la possibilité de prendre des décisions suivant notre réflexion et non notre instinct.<br>Chaque jour, toutes nos équipes œuvrent pour rendre cette folle ambition plus concrète. Étape par étape, nous développons des innovations et utilisons la technologie lorsqu'elle apporte une réelle plus-value. Notre application ORIGIN vous permet par exemple de découvrir la beauté intérieure de votre article.</span></p><p><span><br>Le nom Warenghem fait d’ailleurs référence à un homme passionné par l'humain et son rapport à la nature. Ayant passé toute sa vie à chercher et à progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribué à faire progresser le monde à leur niveau pour le rendre meilleur.</span></p></div>",
-		"title1": "Un nom, une histoire, des valeurs",
+		"col1": "Chiner les formidables et myst&eacute;rieuses vertus cach&eacute;es dans chaque esp&egrave;ce v&eacute;g&eacute;tale et min&eacute;rale afin de cr&eacute;er des objets du quotidien et ne pas utiliser de mati&egrave;res animales puisque nous avons d'autres alternatives",
+		"col1title": "A la source",
+		"col2": "Fabriquer des objets en France au design minimaliste et travaill&eacute;",
+		"col2title": "Made in France",
+		"col3": "Utiliser la technologie lorsqu'elle apporte une r&eacute;elle plus-value environnementale et &eacute;thique. Notre application ORIGIN vous permet par exemple de d&eacute;couvrir la beaut&eacute; int&eacute;rieure de votre article",
+		"col3title": "2.0",
+		"text1": "<p>Dans l&rsquo;univers de la mode et du design, il existe un paradoxe frappant : nous ne portons que peu d'attention sur la beaut&eacute; int&eacute;rieure d'un objet, la puret&eacute; et les milliers de d&eacute;tails qui constitue son histoire. Pourtant, comme chaque Homme, il d&eacute;gage un certain charisme en fonction de ce qu'il repr&eacute;sente, des mat&eacute;riaux naturels qui le compose et des conditions dans lesquelles il a &eacute;t&eacute; fabriqu&eacute;. La beaut&eacute; n'est pas qu'esth&eacute;tique.</p><p>En parall&egrave;le, nous r&eacute;alisons aujourd'hui que nous ne sommes pas des &eacute;l&eacute;ments d&eacute;tach&eacute;s, notre survie d&eacute;pend de la sant&eacute; des &eacute;cosyst&egrave;mes de la plan&egrave;te avec qui nous devons agir en collaboration.</p><p>Nous sommes une esp&egrave;ce animale parmi d'autres, mais nous disposons de deux pouvoirs : l'incroyable capacit&eacute; &agrave; &eacute;laborer des syst&egrave;mes complexes et la possibilit&eacute; de prendre des d&eacute;cisions suivant notre r&eacute;flexion et non notre instinct.</p><p>Warenghem Studios est n&eacute; en 2019 pour d&eacute;velopper&nbsp;ces pouvoirs afin de r&eacute;aliser 3 objectifs :</p>",
+		"text2": "Chaque jour nos &eacute;quipes &oelig;uvrent pour rendre cette folle ambition plus concr&egrave;te. &Eacute;tape par &eacute;tape, nous d&eacute;veloppons nos innovations, focalis&eacute;s sur un souci excessif du d&eacute;tail et de l'interd&eacute;pendance des &eacute;l&eacute;ments naturels.</p><p><br/>Le nom Warenghem fait d&rsquo;ailleurs r&eacute;f&eacute;rence &agrave; un homme passionn&eacute; par l'humain et son rapport &agrave; la nature. Ayant pass&eacute; toute sa vie &agrave; chercher et &agrave; progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribu&eacute; &agrave; faire progresser le monde &agrave; leur niveau pour le rendre meilleur.",
+		"title1": "Une histoire végétale et minérale",
 		"title3": "Découvrez notre parcours, et nos actualités."
 	}
 }

@@ -709,6 +709,20 @@ letter-spacing: .009em;
     margin: 0 auto;
   }
 }
+.page-title3 {
+  padding-bottom: 20px;
+  font-size: 35px !important;
+  letter-spacing: -0.06em !important;
+  font-family: 'teradeli-medium', sans-serif !important;
+  line-height: 1 !important;
+  font-weight: normal;
+  transition: all .3s cubic-bezier(.39, .575, .565, 1);
+  @media(max-width: 768px) {
+    font-size: 20px !important;
+    text-align: left !important;
+    margin: 0 auto;
+  }
+}
 
 .page-subtitle2 {
   font-size: 24px;

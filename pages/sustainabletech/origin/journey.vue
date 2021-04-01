@@ -4,12 +4,12 @@
       <v-row align="center" justify="center" class="py-5" style="max-width: 900px;">
         <v-col cols="4">
           <div class="img-fluid gradientoverlay position-relative">
-          <img
-              data-sizes="auto"
-              data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 1500w" 
-              src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/AdobeStock_50352719.jpeg" 
-              class="gradientoverlay rounded-xl lazyload cover bg-white catalogue-item-background elevation-3" 
-          />
+            <img
+                data-sizes="auto"
+                data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 1500w" 
+                src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/AdobeStock_50352719.jpeg" 
+                class="gradientoverlay rounded-xl lazyload cover bg-white catalogue-item-background elevation-3" 
+            />
           </div>
         </v-col>
         <v-col cols="8">
@@ -21,7 +21,6 @@
           <div class=""><span>BATCH ID : </span><span>preSS18KN1001</span></div>
           <div class=""><span>QUANTITY : </span><span>1</span></div>
           <div class=""><span>PRODUCED : </span><span>8 days ago</span></div>
-          <div class=""><span>BATCH ID : </span><span>preSS18KN1001</span></div>
         </v-col>
       </v-row>
     </v-container>
@@ -128,6 +127,16 @@
                     </div>
                   </v-card>
                 </v-col>
+                <v-col cols="12" sm="6">
+                  <v-card rounded="xl">
+                    <div class="teradeli-medium text-center py-3 pt-8">
+                      KM
+                    </div>
+                    <div class="text-center py-3 pb-8">
+                      This product has made xxx km
+                    </div>
+                  </v-card>
+                </v-col>
               </v-row>
           </v-container>
         </v-tab-item>
@@ -180,7 +189,18 @@
   export default {
     layout: 'app',
     // page component definitions
-    name: 'leaflet-map',
+    name: 'journey',
+    async asyncData(context) {
+        const {$content, params, app} = context;
+        const slug = params.slug;
+        const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
+        const productItem = await $content(`${lang_path}/shop`, slug).fetch();
+        const productsItem = await $content(`${lang_path}/shop`).fetch();
+        return {
+            productsItem,
+            productItem,
+        }
+    },
     data() {
         return {
             zoom: 3,
