@@ -511,6 +511,15 @@
                 content: this.product.tags ? this.product.tags.toString() : "",
               },
               {
+                property: "product:category",
+                content: this.product.categories[0].name
+              },
+              {
+                hid: "og:id",
+                property: "og:id",
+                content: this.product.sku,
+              },
+              {
                 hid: "og:price",
                 property: "og:price",
                 content: this.product.price,
