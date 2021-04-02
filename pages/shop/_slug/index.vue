@@ -522,7 +522,7 @@
               {
                 hid: "og:price",
                 property: "og:price",
-                content: this.product.price,
+                content: this.product.price +' '+ this.$i18n.localeProperties.currency,
               },
               {
                 hid: "og:availability",
