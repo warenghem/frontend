@@ -446,8 +446,12 @@
             meta() {
               const metaData = {
                 type: "shop",
+                id: this.product.sku,
                 title: this.product.name,
                 description: this.product.description,
+                price: this.product.price,
+                availability: this.product.offers.availability,
+                link: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
                 url: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
                 mainImage: 'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1200,ar-1.91-1,dpr-2/Products/'+ this.product.image[0].src
               };
@@ -509,9 +513,6 @@
                 property: "product:tag",
                 content: this.product.tags ? this.product.tags.toString() : "",
               },
-              { name: "twitter:label1", content: "Written by" },
-              { name: "twitter:data1", content: "Bob Ross" },
-              { name: "twitter:label2", content: "Filed under" },
               {
                 name: "twitter:data2",
                 content: this.product.tags ? this.product.tags.toString() : "",
