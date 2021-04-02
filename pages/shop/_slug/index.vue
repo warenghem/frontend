@@ -449,9 +449,6 @@
                 id: this.product.sku,
                 title: this.product.name,
                 description: this.product.description,
-                price: this.product.price,
-                availability: this.product.offers.availability,
-                link: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
                 url: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
                 mainImage: 'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1200,ar-1.91-1,dpr-2/Products/'+ this.product.image[0].src
               };
@@ -512,6 +509,21 @@
               {
                 property: "product:tag",
                 content: this.product.tags ? this.product.tags.toString() : "",
+              },
+              {
+                hid: "og:price",
+                property: "og:price",
+                content: this.product.price,
+              },
+              {
+                hid: "og:availability",
+                property: "og:availability",
+                content: this.product.offers.availability,
+              },
+              {
+                hid: "og:link",
+                property: "og:link",
+                content: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
               },
               {
                 name: "twitter:data2",
