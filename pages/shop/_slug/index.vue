@@ -512,6 +512,10 @@
               },
               {
                 property: "product:category",
+                content: this.product.categories[0].google
+              },
+              {
+                property: "product:product_type",
                 content: this.product.categories[0].name
               },
               {
