@@ -11,7 +11,9 @@
                         <div class="pvw text-center">
                             <h2 class="home-title teradeli-medium px-0 text-white">{{$t('section1.title')}}</h2>
                             <div class="pt-2 home-subtitle text-white"> {{$t('section1.subtitle')}}</div>
-                            <Discoverbutton class="text-white theme--dark pt-3 position-relative" style="font-size:16px"/>
+                            <v-theme-provider dark>
+                                <Discoverbutton class="text-white pt-3 position-relative" style="font-size:16px"/>
+                            </v-theme-provider>
                         </div>
                         <div>
                             <img
@@ -54,7 +56,9 @@
                         <div class="pvw text-center">
                             <h2 class="home-title teradeli-medium px-0 text-white">{{$t('section3.title')}}</h2>
                             <div class="pt-2 home-subtitle text-white">{{$t('section3.subtitle')}}</div>
-                            <Discoverbutton class="text-white theme--dark pt-3 position-relative" style="font-size:16px"/>
+                            <v-theme-provider dark>
+                                <Discoverbutton class="text-white theme--dark pt-3 position-relative" style="font-size:16px"/>
+                            </v-theme-provider>
                         </div>
                         <div>
                             <img

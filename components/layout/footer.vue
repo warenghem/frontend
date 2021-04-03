@@ -1,94 +1,92 @@
 <template>
-  <v-footer
-    app
-    dark
-    padless
-    absolute
-  >
-    <v-card
-      flat
-      tile
-      color="#000000"
-      class="white--text footer text-center w-100 px-3 px-sm-15"
+  <v-theme-provider dark>
+    <v-footer
+      app
+      padless
+      absolute
     >
-      <v-card-title class="px-0 pb-0 d-block d-md-flex">
-        <div class="d-block d-md-flex">
-          <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
-          <!--<v-breadcrumbs class="justify-center" style="margin-bottom:5px" dark :items="crumbs">
-            <template v-slot:item="{ item }">
-              <v-breadcrumbs-item
-                nuxt
-                ripple
-                :disabled="item.disabled"
-              >
-                <a :href="item.to" class="text-white">
-                  {{ item.title }}
-                </a>
-              </v-breadcrumbs-item>
-            </template>
-            <template v-slot:divider>
-              <v-icon small>{{ svgPath3 }}</v-icon>
-            </template>
-          </v-breadcrumbs>-->
-        </div>
-        <v-spacer></v-spacer>
-
-          <v-btn
-            class="mx-3"
-            dark
-            icon
-            target="_blank"
-            href="https://www.instagram.com/warenghem.studios/"
-          >
-            <v-icon color="white" class="d-block" size="24px">{{ svgPath }}</v-icon>
-          </v-btn>
-          <v-btn
-            class="mx-3"
-            dark
-            icon
-            target="_blank"
-            href="https://www.facebook.com/warenghem.studios/"
-          >
-            <v-icon color="white" class="d-block" size="24px">{{ svgPath2 }}</v-icon>
-          </v-btn>
-      </v-card-title>
-      <v-row
-        justify="center"
-        no-gutters
-        class="mb-2"
+      <v-card
+        flat
+        tile
+        color="#000000"
+        class="text-center w-100 px-3 px-sm-15"
       >
-        <v-btn
-          color="#666666"
-          text
-          rounded
-          @click="$store.state.newsletterModal=true"
-          style="letter-spacing:inherit!important;text-transform: inherit;"
-          class="font-weight-bold"
-        >
-          Newsletter
-        </v-btn>
-        <v-btn
-          dark
-          v-for="(link,p_idx) in links"
-          :key="p_idx"
-          color="#666666"
-          text
-          rounded
-          :to="link.url" nuxt
-          style="letter-spacing:inherit!important;text-transform: inherit;"
-          class="font-weight-bold"
-        >
-          {{$t(link.title)}}
-        </v-btn>
-      </v-row>
+        <v-card-title class="px-0 pb-0 d-block d-md-flex">
+          <div class="d-block d-md-flex">
+            <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
+            <!--<v-breadcrumbs class="justify-center" style="margin-bottom:5px" dark :items="crumbs">
+              <template v-slot:item="{ item }">
+                <v-breadcrumbs-item
+                  nuxt
+                  ripple
+                  :disabled="item.disabled"
+                >
+                  <a :href="item.to" class="text-white">
+                    {{ item.title }}
+                  </a>
+                </v-breadcrumbs-item>
+              </template>
+              <template v-slot:divider>
+                <v-icon small>{{ svgPath3 }}</v-icon>
+              </template>
+            </v-breadcrumbs>-->
+          </div>
+          <v-spacer></v-spacer>
 
-      <v-divider></v-divider>
+            <v-btn
+              class="mx-3"
+              icon
+              target="_blank"
+              href="https://www.instagram.com/warenghem.studios/"
+            >
+              <v-icon class="d-block" size="24px">{{ svgPath }}</v-icon>
+            </v-btn>
+            <v-btn
+              class="mx-3"
+              icon
+              target="_blank"
+              href="https://www.facebook.com/warenghem.studios/"
+            >
+              <v-icon class="d-block" size="24px">{{ svgPath2 }}</v-icon>
+            </v-btn>
+        </v-card-title>
+        <v-row
+          justify="center"
+          no-gutters
+          class="mb-2"
+        >
+          <v-btn
+            color="#666666"
+            text
+            rounded
+            @click="$store.state.newsletterModal=true"
+            style="letter-spacing:inherit!important;text-transform: inherit;"
+            class="font-weight-bold"
+          >
+            Newsletter
+          </v-btn>
+          <v-btn
+            v-for="(link,p_idx) in links"
+            :key="p_idx"
+            color="#666666"
+            text
+            rounded
+            :to="link.url" nuxt
+            style="letter-spacing:inherit!important;text-transform: inherit;"
+            class="font-weight-bold"
+          >
+            {{$t(link.title)}}
+          </v-btn>
+        </v-row>
 
-      <v-card-text color="#666666">
-        © {{ new Date().getFullYear() }} — Warenghem
-      </v-card-text>
-    </v-card>
-  </v-footer>
+        <v-divider></v-divider>
+
+        <v-card-text color="#666666">
+          © {{ new Date().getFullYear() }} — Warenghem
+        </v-card-text>
+      </v-card>
+    </v-footer>
+  </v-theme-provider>
 </template>
 
 <script>
