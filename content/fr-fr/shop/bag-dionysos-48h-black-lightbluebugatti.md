@@ -61,6 +61,7 @@ offers:
   pieces: 30 pièces prochainement
 categories:
 - name: Bags
+  google: 3032
   slug: bags
   depth: 2
 tags:
