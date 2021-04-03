@@ -48,7 +48,7 @@ award:
 offers:
   priceCurrency: EUR
   price: 129
-  availability: true
+  availability: in stock
   pieces : 30 pieces soon
 categories:
 - name: ''

@@ -57,7 +57,7 @@ award:
 offers:
   priceCurrency: EUR
   price: 395
-  availability: true
+  availability: in stock
   pieces: 30 pièces prochainement
 categories:
 - name: Bags

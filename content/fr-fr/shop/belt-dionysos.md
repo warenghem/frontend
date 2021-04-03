@@ -57,7 +57,7 @@ award:
 offers:
   priceCurrency: EUR
   price: 99
-  availability: true
+  availability: in stock
   pieces: 30 pièces prochainement
 categories:
 - name: accessories
