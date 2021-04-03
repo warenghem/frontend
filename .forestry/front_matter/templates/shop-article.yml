@@ -156,8 +156,20 @@ fields:
       max: 
       step: 
     label: Price
-  - type: boolean
-    name: availability
+  - name: availability
+    type: select
+    default: ''
+    config:
+      required: false
+      options:
+      - in stock
+      - out of stock
+      - preorder
+      source:
+        type: simple
+        section: 
+        file: 
+        path: 
     label: Stock
 - type: field_group_list
   name: categories
