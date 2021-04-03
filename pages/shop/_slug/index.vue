@@ -445,7 +445,7 @@
             },*/
             meta() {
               const metaData = {
-                type: "shop",
+                type: "product",
                 id: this.product.sku,
                 title: this.product.name,
                 description: this.product.description,
@@ -515,23 +515,23 @@
                 content: this.product.categories[0].name
               },
               {
-                hid: "og:id",
-                property: "og:id",
+                property: "product:id",
                 content: this.product.sku,
               },
               {
-                hid: "og:price",
-                property: "og:price",
-                content: this.product.price +' '+ this.$i18n.localeProperties.currency,
+                property: "product:price:amount",
+                content: this.product.price,
               },
               {
-                hid: "og:availability",
-                property: "og:availability",
+                property: "product:price:currency",
+                content: this.$i18n.localeProperties.currency,
+              },
+              {
+                property: "product:availability",
                 content: this.product.offers.availability,
               },
               {
-                hid: "og:link",
-                property: "og:link",
+                property: "product:link",
                 content: `${this.$config.baseUrl}/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
               },
               {
