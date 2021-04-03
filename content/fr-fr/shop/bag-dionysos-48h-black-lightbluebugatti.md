@@ -61,7 +61,7 @@ offers:
   pieces: 30 pièces prochainement
 categories:
 - name: Bags
-  google: Apparel & Accessories > Handbags, Wallets & Cases > Handbags [Vêtements et accessoires > Sacs à main, portefeuilles et étuis > Sacs à main]
+  google: 3032
   slug: bags
   depth: 2
 tags:
