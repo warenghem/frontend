@@ -519,7 +519,7 @@
                 content: this.product.categories[0].name
               },
               {
-                property: "product:id",
+                property: "product:retailer_item_id",
                 content: this.product.sku,
               },
               {
