@@ -511,7 +511,7 @@
                 content: this.product.tags ? this.product.tags.toString() : "",
               },
               {
-                property: "product:category",
+                property: "product:google_product_category",
                 content: this.product.categories[0].google
               },
               {
