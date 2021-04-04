@@ -46,6 +46,9 @@
               }
           }
       },
+      middleware (ctx) {
+        ctx.$gtm.push({ event: 'ssr' })
+      },
       methods:{
           handleSCroll (event) {
             let header = document.body;
