@@ -23,7 +23,7 @@
                         lazy
                         class="homecard bgcard hand"
                     >
-                        <NuxtLink :to="'/'+$i18n.locale+link[p_idx]"> 
+                        <NuxtLink @click="onClick" :to="'/'+$i18n.locale+link[p_idx]"> 
                             <div class="h-100 img-fluid theme--light position-relative skeletton">
                                 <div class="position-absolute h-100 w-100 px-3">
                                     <div class="boxcenterabsolute teradeli-medium secondary--text visualtocome">
@@ -84,6 +84,18 @@
                 products: this.$t('products'),
             }
         },
+        methods: {
+            onClick() {
+                this.$gtm.push({ 
+                    event: "productClick", // Event type [default = 'interaction'] (Optional)
+                    eventCategory: "Ecommerce",
+                    eventAction: "Clic",
+                    eventLabel: product.title,
+                    value: 5000,
+                    noninteraction: false, // Optional
+                })
+            },
+        }
     }
 </script>
 <i18n>
