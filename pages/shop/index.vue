@@ -62,14 +62,14 @@
                         category: this.product.category.name,
                         position: 1
                     },
-                    [{
+                    {
                         name: this.product.name,       
                         id: this.product.id,
                         price: this.product.price,
                         brand: this.product.brand,
                         category: this.product.category.name,
                         position: 2
-                    },
+                    }]
                 }
             })
         },
