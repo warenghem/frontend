@@ -87,12 +87,10 @@
         methods: {
             onClick() {
                 this.$gtm.push({ 
-                    event: "productClick", // Event type [default = 'interaction'] (Optional)
+                    event: "productClick",
                     eventCategory: "Ecommerce",
                     eventAction: "Clic",
                     eventLabel: product.title,
-                    value: 5000,
-                    noninteraction: false, // Optional
                 })
             },
         }
