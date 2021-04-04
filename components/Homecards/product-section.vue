@@ -90,7 +90,15 @@
                     event: "productClick",
                     eventCategory: "Ecommerce",
                     eventAction: "Clic",
-                    eventLabel: product.title,
+                    eventLabel: this.product.title,
+                    ecommerce: {
+                        click: {
+                            actionField: {list: productList}, // Optionnel
+                            products: [{
+                                name: this.product.title,
+                            }]
+                        }
+                    },
                 })
             },
         }
