@@ -45,6 +45,34 @@
                 }
             }
         },
+        middleware (ctx) {
+            ctx.$gtm.push({ 
+                event: impressions, 
+                eventCategory: Ecommerce, 
+                eventAction: Impression,
+                eventLabel: this.$nuxt.$route.fullPath,
+                ecommerce: 
+                    {
+                        impressions: 
+                    [{
+                        name: this.product.name,       
+                        id: this.product.id,
+                        price: this.product.price,
+                        brand: this.product.brand,
+                        category: this.product.category.name,
+                        position: 1
+                    },
+                    [{
+                        name: this.product.name,       
+                        id: this.product.id,
+                        price: this.product.price,
+                        brand: this.product.brand,
+                        category: this.product.category.name,
+                        position: 2
+                    },
+                }
+            })
+        },
         computed: {
             filteredProducts() {
                 if (this.filterChecked.material || this.filterChecked.color) {
