@@ -20,6 +20,7 @@ export default {
       ...meta,
       { charset: "utf-8" },
       { name: "HandheldFriendly", content: "True" },
+      { name: "facebook-domain-verification", content: "ju7pro0rt5acnqnb8tczp496rc3y7f" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { property: "og:site_name", content: "Warenghem Studios" },
       {

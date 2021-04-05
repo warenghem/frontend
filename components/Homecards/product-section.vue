@@ -84,7 +84,7 @@
                 products: this.$t('products'),
             }
         },
-        methods: {
+        /*methods: {
             onClick() {
                 this.$gtm.push({ 
                     event: "productClick",
@@ -101,7 +101,7 @@
                     },
                 })
             },
-        }
+        }*/
     }
 </script>
 <i18n>
