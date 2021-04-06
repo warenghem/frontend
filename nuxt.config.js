@@ -563,7 +563,9 @@ export default {
       test: '1'
     }
   },
-
+  router: {
+    trailingSlash: true,
+  },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
     extend (config, { isDev, isClient, loaders: { vue } }) {
