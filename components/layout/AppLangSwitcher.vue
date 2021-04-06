@@ -101,8 +101,8 @@
                     </v-container>
                     <v-container class="d-none">
                         <nuxt-link
-                            :to="switchLocalePath('fr-fr')"
-                        >
+                            :to="$nuxt.$route.path"
+                            >
                         </nuxt-link>
                     </v-container>
                     <div class="pa-5 pt-0">
