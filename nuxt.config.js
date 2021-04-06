@@ -203,6 +203,7 @@ export default {
         currency: 'USD',
         currencySign: '$',
         img: '/flags/united-states-of-america.svg',
+        isCatchallLocale: true
       },
       {
         code: 'fr-ca',
