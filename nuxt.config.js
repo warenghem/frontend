@@ -140,8 +140,8 @@ export default {
     vueI18nLoader: true,
     langDir: 'locales/',
     defaultLocale: 'fr-fr',
-    /*detectBrowserLanguage: false,
-    skipSettingLocaleOnNavigate: true, issue, see next release
+    detectBrowserLanguage: false,
+    /*skipSettingLocaleOnNavigate: true, issue, see next release
     detectBrowserLanguage: {
       useCookie: true,
       alwaysRedirect: true,

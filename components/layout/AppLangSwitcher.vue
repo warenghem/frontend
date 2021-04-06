@@ -1,5 +1,5 @@
 <template>
-  <v-bottom-sheet scrollable v-model="sheet">
+  <v-bottom-sheet eager scrollable v-model="sheet">
     <template v-slot:activator="{ on, attrs }">
         <v-btn
             text
