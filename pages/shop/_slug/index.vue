@@ -543,13 +543,13 @@
                 content: this.product.tags ? this.product.tags.toString() : "",
               },
             ],
-            link: [
+            /*link: [
               {
                 hid: "canonical",
                 rel: "canonical",
                 href: `https://www.warenghem.com/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
               },
-            ],
+            ],*/
           };
         }
     }
