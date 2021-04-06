@@ -99,6 +99,12 @@
                             </nuxt-link>
                         </div>
                     </v-container>
+                    <v-container class="d-none">
+                        <nuxt-link
+                            :to="switchLocalePath('fr-fr')"
+                        >
+                        </nuxt-link>
+                    </v-container>
                     <div class="pa-5 pt-0">
                         <span class="titlesmall teradeli-medium primary--text">Other Regions : </span>
                         <span v-for="locale in otheravailableLocales" :key="locale.code">

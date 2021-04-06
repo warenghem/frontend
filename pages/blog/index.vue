@@ -20,7 +20,7 @@
         <v-btn
             elevation="0"
             rounded
-            :to="firstpost.path" nuxt
+            :to="firstpost.path+'/'" nuxt
             class="btn-theme my-3"
             >
             {{ firstpost.cta }}
@@ -59,7 +59,7 @@
             lazy
             style="background-color:unset!important"
         >
-          <nuxt-link :to="post.path" class="font-bold text-xl mb-2">
+          <nuxt-link :to="post.path+'/'" class="font-bold text-xl mb-2">
             <div class="gradientoverlay img-fluid theme--light wa-smart-picture square-ratio position-relative skeletton">
                 <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
                 <v-spacer></v-spacer>

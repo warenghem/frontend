@@ -18,7 +18,7 @@
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo pt-1">
-        <nuxt-link :to="'/'+$i18n.locale" tag="span" style="cursor: pointer" class="brand">
+        <nuxt-link :to="'/'+$i18n.locale+'/'" tag="span" style="cursor: pointer" class="brand">
           <div class="svglogo logo" width="140" v-html="Logo" />
         </nuxt-link>
       </v-toolbar-title>

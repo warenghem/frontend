@@ -9,7 +9,7 @@
             <v-icon>{{ svgPath1 }}</v-icon>
         </v-btn>
 
-        <v-btn to='/sustainabletech/origin/journey' nuxt>
+        <v-btn to='/sustainabletech/origin/journey/' nuxt>
             <span>Trace</span>
             <v-icon>{{ svgPath2 }}</v-icon>
         </v-btn>
