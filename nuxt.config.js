@@ -35,11 +35,11 @@ export default {
       { name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/logo-meta.png" },
     ],
     link: [
-      {
+      /*{
         hid: "canonical",
         rel: "canonical",
         href: process.env.BASE_URL,
-      },
+      },*/
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
       {rel: "preconnect", href: "https://ik.imagekit.io", crossorigin: true},
       {rel: "preconnect", href: "https://app.snipcart.com", crossorigin: true},
@@ -158,6 +158,7 @@ export default {
         currency: 'EUR',
         currencySign: '€',
         img: '/flags/france.svg',
+        isCatchallLocale: true
       },
       {
         code: 'en-gb',
