@@ -183,17 +183,6 @@ export default {
         img: '/flags/switzerland.svg',
       },
       {
-        code: 'en-ie',
-        iso: 'en-IE',
-        name: 'Other European Union Regions (English)',
-        language: 'English',
-        region: 'Europe',
-        file: 'en-us.json',
-        currency: 'EUR',
-        currencySign: '€',
-        img: '/flags/european-union.svg',
-      },
-      {
         code: 'en-us',
         iso: 'en-US',
         name: 'United States',
@@ -204,6 +193,17 @@ export default {
         currencySign: '$',
         img: '/flags/united-states-of-america.svg',
         isCatchallLocale: true
+      },
+      {
+        code: 'en-ie',
+        iso: 'en-IE',
+        name: 'Other European Union Regions (English)',
+        language: 'English',
+        region: 'Europe',
+        file: 'en-us.json',
+        currency: 'EUR',
+        currencySign: '€',
+        img: '/flags/european-union.svg',
       },
       {
         code: 'fr-ca',
@@ -509,6 +509,7 @@ export default {
     hostname: 'https://www.warenghem.com',
     i18n: true,
     gzip: true,
+    trailingSlash: true,
     exclude: [
       '/partners/**'
     ],
@@ -520,15 +521,15 @@ export default {
       return files.map((file) => ({
         url: file.path.split('/')[1] === 'en' ? file.slug : file.path,
         links: [
-          { lang: 'en', url: `en/${file.slug}` },
-          { lang: 'en-ca', url: `en-ca/${file.slug}` },
-          { lang: 'en-gb', url: `en-ca/${file.slug}` },
-          { lang: 'en-ie', url: `en-ie/${file.slug}` },
-          { lang: 'en-us', url: `en-us/${file.slug}` },
-          { lang: 'fr-ca', url: `fr-ca/${file.slug}` },
-          { lang: 'fr-ch', url: `fr-ch/${file.slug}` },
-          { lang: 'fr-fr', url: `fr-fr/${file.slug}` },
-          { lang: 'x-default', url: file.slug }
+          { lang: 'en', url: `en/${file.slug}/` },
+          { lang: 'en-ca', url: `en-ca/${file.slug}/` },
+          { lang: 'en-gb', url: `en-ca/${file.slug}/` },
+          { lang: 'en-ie', url: `en-ie/${file.slug}/` },
+          { lang: 'en-us', url: `en-us/${file.slug}/` },
+          { lang: 'fr-ca', url: `fr-ca/${file.slug}/` },
+          { lang: 'fr-ch', url: `fr-ch/${file.slug}/` },
+          { lang: 'fr-fr', url: `fr-fr/${file.slug}/` },
+          { lang: 'x-default', url: `${file.slug}/` }
         ]
       }))
     },
@@ -617,8 +618,10 @@ export default {
     exclude: [
       /^\/partners/
     ],
-    routes() {
-      return getRoutes();
+    async routes () {
+      const { $content } = require('@nuxt/content')
+      const files = await $content({ deep: true }).where({ slug: { $ne: 'type' } }).only(['path']).fetch()
+      return files.map(file => file.path === '/index' ? '/' : file.path)
     },
   },
 }
