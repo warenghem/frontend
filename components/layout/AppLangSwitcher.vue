@@ -100,9 +100,9 @@
                         </div>
                     </v-container>
                     <!--SEO : Add to display a back link to hreflang of fr-fr path in other locales, could be deleted if prefix exept default in Nuxti18n but currently not possible duue to the redirection issue-->
-                    <v-container class="d-none">
+                    <v-container >
                         <a
-                            :href="'https://www.warenghem.com/fr-fr' + switchLocalePath('fr-fr')"
+                            :href="'/fr-fr' + switchLocalePath('fr-fr')"
                             >
                         </a>
                     </v-container>
