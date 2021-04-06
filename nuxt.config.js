@@ -1,4 +1,5 @@
 import getSiteMeta from "./utils/getSiteMeta";
+import getRoutes from "./utils/getRoutes";
 const meta = getSiteMeta();
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
@@ -20,7 +21,6 @@ export default {
       ...meta,
       { charset: "utf-8" },
       { name: "HandheldFriendly", content: "True" },
-      { name: "facebook-domain-verification", content: "ju7pro0rt5acnqnb8tczp496rc3y7f" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { property: "og:site_name", content: "Warenghem Studios" },
       {
@@ -140,7 +140,8 @@ export default {
     vueI18nLoader: true,
     langDir: 'locales/',
     defaultLocale: 'fr-fr',
-    /*skipSettingLocaleOnNavigate: true, issue, see next release
+    /*detectBrowserLanguage: false,
+    skipSettingLocaleOnNavigate: true, issue, see next release
     detectBrowserLanguage: {
       useCookie: true,
       alwaysRedirect: true,
@@ -511,9 +512,39 @@ export default {
     ],
     routes: async () => {
       const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).only(['path']).where({ slug: { $ne: 'type' } }).fetch()
-      return files.map(file => file.path === '/index' ? '/' : file.path)
+      const files = await $content({ deep: true }).where({ slug: { $ne: 'type' } }).only(['path', 'slug']).fetch()
+      /*return files.map(file => file.path === '/index' ? '/' : file.path)*/
+
+      return files.map((file) => ({
+        url: file.path.split('/')[1] === 'en' ? file.slug : file.path,
+        links: [
+          { lang: 'en', url: `en/${file.slug}` },
+          { lang: 'en-ca', url: `en-ca/${file.slug}` },
+          { lang: 'en-gb', url: `en-ca/${file.slug}` },
+          { lang: 'en-ie', url: `en-ie/${file.slug}` },
+          { lang: 'en-us', url: `en-us/${file.slug}` },
+          { lang: 'fr-ca', url: `fr-ca/${file.slug}` },
+          { lang: 'fr-ch', url: `fr-ch/${file.slug}` },
+          { lang: 'fr-fr', url: `fr-fr/${file.slug}` },
+          { lang: 'x-default', url: file.slug }
+        ]
+      }))
     },
+    filter({ routes }) {
+      return routes.map((route) => {
+        if (!route.name) return route
+        const page = route.name.split('__')[0]
+        return {
+          url: route.url,
+          links: route.links.concat([
+            {
+              lang: 'x-default',
+              url: page === 'index' ? '/' : page
+            }
+          ])
+        }
+      })
+    }
   },
 
   googleAnalytics: {
@@ -523,7 +554,7 @@ export default {
   gtm: {
     id: 'GTM-NXPG4SV',
     scriptDefer: true,
-    pageTracking: true,
+    pageTracking: false,
     respectDoNotTrack: false,
     variables: {
       test: '1'
@@ -584,10 +615,8 @@ export default {
     exclude: [
       /^\/partners/
     ],
-    async routes () {
-      const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).where({ slug: { $ne: 'type' } }).only(['path']).fetch()
-      return files.map(file => file.path === '/index' ? '/' : file.path)
+    routes() {
+      return getRoutes();
     },
   },
 }
