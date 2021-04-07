@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-container fluid style="padding:0!important" class="productgridhome pa-0">
-            <NuxtLink :to="'/'+$i18n.locale+'/dionysos/'"> 
+            <NuxtLink :to="localePath('dionysos')"> 
             <v-card 
                 height= "100%"
                 lazy
@@ -46,7 +46,7 @@
                         </div>
                     </div>
             </v-card>
-            <NuxtLink :to="'/'+$i18n.locale+'/origin/'"> 
+            <NuxtLink :to="localePath('origin')"> 
             <v-card 
                 height= "100%"
                 lazy
@@ -82,11 +82,6 @@ export default {
                 currentMissionHover: null,
                 backgroundImage: '',
                 backgroundImagesL:'',
-                link: [
-                    "/origin",
-                    "",
-                    "/dionysos",
-                ],
                 classe: [
                     "d-block text-white pt-3 position-relative",
                     "d-none",

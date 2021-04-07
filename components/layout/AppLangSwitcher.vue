@@ -99,14 +99,6 @@
                             </nuxt-link>
                         </div>
                     </v-container>
-                    <!--SEO : Add to display a back link to hreflang of fr-fr path in other locales, could be deleted if prefix exept default in Nuxti18n but currently not possible duue to the redirection issue-->
-                    <v-container >
-                        <a
-                            :href="'/fr-fr' + switchLocalePath('fr-fr')"
-                            >
-                        </a>
-                    </v-container>
-                    <!--SEO : Add to display a back link to hreflang of fr-fr path in other locales, could be deleted if prefix exept default in Nuxti18n but currently not possible duue to the redirection issue-->
                     <div class="pa-5 pt-0">
                         <span class="titlesmall teradeli-medium primary--text">Other Regions : </span>
                         <span v-for="locale in otheravailableLocales" :key="locale.code">

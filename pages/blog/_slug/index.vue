@@ -80,7 +80,7 @@
               type: "blog",
               title: this.post.title,
               description: this.post.description,
-              url: `${this.$config.baseUrl}/${this.$i18n.locale}/blog/${this.$route.params.slug}`,
+              url: 'https://www.warenghem.com' + this.localePath('blog') + this.$route.params.slug,
               mainImage: this.post.image,
             };
             return getSiteMeta(metaData);
@@ -115,7 +115,7 @@
               {
                 hid: "canonical",
                 rel: "canonical",
-                href: `https://www.warenghem.com/${this.$i18n.locale}/blog/${this.$route.params.slug}`,
+                href: 'https://www.warenghem.com' + this.localePath('blog') + this.$route.params.slug,
               },
             ],
           };

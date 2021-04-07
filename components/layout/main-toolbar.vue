@@ -7,7 +7,7 @@
                        :key="'link_btn_l_'+l_idx">
         <v-btn text class="text-uppercase item"
                :class="{'current':$root.currentId===link.elId}"
-               :to="'/'+$i18n.locale+link.elId" nuxt
+               :to="localePath('/')+link.elId" nuxt
                v-if="link.position==='left'"
         >
           {{$t(link.name)}}
@@ -15,9 +15,9 @@
       </v-toolbar-items>
       <v-spacer></v-spacer>
       <v-toolbar-title class="centerabsolute v-toolbar__logo pt-1">
-        <nuxt-link :to="'/'+$i18n.locale +'/'" tag="span" style="cursor: pointer" class="brand">
+        <NuxtLink :to="localePath('/')" tag="span" style="cursor: pointer" class="brand">
           <div class="svglogo logo" width="140" v-html="Logo" />
-        </nuxt-link>
+        </NuxtLink>
       </v-toolbar-title>
       <v-spacer></v-spacer>
       <v-toolbar-items>

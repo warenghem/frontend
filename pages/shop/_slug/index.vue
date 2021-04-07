@@ -449,7 +449,7 @@
                 id: this.product.sku,
                 title: this.product.name,
                 description: this.product.description,
-                url: `https://www.warenghem.com/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
+                url: 'https://www.warenghem.com' + this.localePath('shop') + this.$route.params.slug,
                 mainImage: 'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1200,ar-1.91-1,dpr-2/Products/'+ this.product.image[0].src
               };
               return getSiteMeta(metaData);
@@ -536,7 +536,7 @@
               },
               {
                 property: "product:link",
-                content: `https://www.warenghem.com/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
+                content: 'https://www.warenghem.com' + this.localePath('shop') + this.$route.params.slug,
               },
               {
                 name: "twitter:data2",
@@ -547,7 +547,7 @@
               {
                 hid: "canonical",
                 rel: "canonical",
-                href: `https://www.warenghem.com/${this.$i18n.locale}/shop/${this.$route.params.slug}`,
+                href: 'https://www.warenghem.com' + this.localePath('shop') + this.$route.params.slug,
               },
             ],*/
           };

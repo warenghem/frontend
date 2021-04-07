@@ -25,9 +25,9 @@
               <v-icon>{{ svgPath }}</v-icon>
             </v-app-bar-nav-icon>-->
             <v-toolbar-title class="d-md-block px-4 d-none">
-                <nuxt-link :to="'/'+$i18n.locale+'/'" tag="span" style="cursor: pointer" class="brand">
+                <NuxtLink :to="localePath('/')" tag="span" style="cursor: pointer" class="brand">
                   <div style="fill: #19110b;stroke: #19110b;width:35px" v-html="LogoSmSm" />
-                </nuxt-link>
+                </NuxtLink>
             </v-toolbar-title>
             <v-spacer></v-spacer>
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>

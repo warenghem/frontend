@@ -133,7 +133,7 @@ export default {
   },
 
   i18n: {
-    strategy: 'prefix_and_default',
+    strategy: 'prefix_except_default',
     baseUrl: 'https://www.warenghem.com',
     seo: false,
     lazy: true,
@@ -148,18 +148,6 @@ export default {
       onlyOnRoot: true,
     },*/
     locales: [
-      {
-        code: 'fr-fr',
-        iso: 'fr-FR',
-        name: 'France',
-        language: 'Francais',
-        region: 'Europe',
-        file: 'fr-fr.json',
-        currency: 'EUR',
-        currencySign: '€',
-        img: '/flags/france.svg',
-        isCatchallLocale: true
-      },
       {
         code: 'en-gb',
         iso: 'en-GB',
@@ -237,6 +225,18 @@ export default {
         currency: 'USD',
         currencySign: '$',
         img: '/flags/monde.svg',
+      },
+      {
+        code: 'fr-fr',
+        iso: 'fr-FR',
+        name: 'France',
+        language: 'Francais',
+        region: 'Europe',
+        file: 'fr-fr.json',
+        currency: 'EUR',
+        currencySign: '€',
+        img: '/flags/france.svg',
+        isCatchallLocale: true
       },
     ],
     vueI18n: {

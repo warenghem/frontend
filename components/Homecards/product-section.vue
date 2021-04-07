@@ -23,7 +23,7 @@
                         lazy
                         class="homecard bgcard hand"
                     >
-                        <NuxtLink @click="onClick" :to="'/'+$i18n.locale+link[p_idx]"> 
+                        <NuxtLink @click="onClick" :to="localePath('/')+link[p_idx]"> 
                             <div class="h-100 img-fluid theme--light position-relative skeletton">
                                 <div class="position-absolute h-100 w-100 px-3">
                                     <div class="boxcenterabsolute teradeli-medium secondary--text visualtocome">
@@ -76,9 +76,9 @@
                     /*"/vide.png",*/
                 ],
                 link: [
-                    "/shop/bag-dionysos-48h-black-lightbluebugatti/",
-                    "/shop/belt-dionysos/",
-                    "/shop/wallet-dionysos/",
+                    "shop/bag-dionysos-48h-black-lightbluebugatti/",
+                    "shop/belt-dionysos/",
+                    "shop/wallet-dionysos/",
                     /*"",*/
                 ],
                 products: this.$t('products'),
