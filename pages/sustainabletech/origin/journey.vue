@@ -190,6 +190,13 @@
     layout: 'app',
     // page component definitions
     name: 'journey',
+    head () {
+      return {
+        meta: [
+          { hid: 'robots', name: 'robots', content: 'noindex' }
+        ]
+      }
+    },
     async asyncData(context) {
         const {$content, params, app} = context;
         const slug = params.slug;

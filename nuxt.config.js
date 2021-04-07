@@ -104,7 +104,7 @@ export default {
         maxAge: 1000 * 60 * 60
       }
     ],
-    // https://go.nuxtjs.dev/pwa
+    '@nuxtjs/robots',
     '@nuxtjs/pwa',
     'nuxt-i18n',
     '@nuxt/content',
@@ -114,8 +114,11 @@ export default {
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
-  content: {},
-
+  robots: {
+    UserAgent: '*',
+    Disallow: ['/admin', '/partners', '/filter', '/sustainabletech'],
+    Sitemap: '/sitemapindex.xml'
+  },
   pwa: {
     meta: {
       mobileAppIOS: 'false',
@@ -447,12 +450,10 @@ export default {
     }
   },
 
-      // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {
     baseURL: 'https://tree-nation.com/api/',
   },
 
-  // Vuetify module configuration (https://go.nuxtjs.dev/config-vuetify)
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
@@ -528,7 +529,7 @@ export default {
           { lang: 'en-us', url: `en-us/${file.slug}/` },
           { lang: 'fr-ca', url: `fr-ca/${file.slug}/` },
           { lang: 'fr-ch', url: `fr-ch/${file.slug}/` },
-          { lang: 'fr-fr', url: `fr-fr/${file.slug}/` },
+          /*{ lang: 'fr-fr', url: `fr-fr/${file.slug}/` },*/
           { lang: 'x-default', url: `${file.slug}/` }
         ]
       }))

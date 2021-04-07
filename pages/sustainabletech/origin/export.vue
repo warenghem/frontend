@@ -814,6 +814,13 @@
         layout: 'app',
         // page component definitions
         name: 'export',
+        head () {
+          return {
+            meta: [
+              { hid: 'robots', name: 'robots', content: 'noindex' }
+            ]
+          }
+        },
         async asyncData(context) {
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
