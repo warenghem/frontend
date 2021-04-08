@@ -68,7 +68,7 @@
                 if (currency) {
                     this.productItem.price = currency.price;
                 } else {
-                    this.productItem.price = this.productItem.offers.price;
+                    this.productItem.price = 'Houston, we have a problem'/*this.productItem.offers.price*/;
                 }
 
                 return this.productItem;

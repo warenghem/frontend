@@ -13,8 +13,8 @@
 			<div data-aos="fadeup" class="page-title teradeli-medium lbbgradienttext">{{$t('pagetitle')}}</div>
 			<div data-aos="fadeup" data-aos-delay="300" style="max-width:900px;color:#a1a1a6" class="page-subtitle teradeli-medium mx-auto">{{$t('pagesubtitle')}}</div>
 		</div>
-		<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay blackoverlay2 h-100">
-			<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/home_gCAPosI9qrtpP.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/home_gCAPosI9qrtpP.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/home_gCAPosI9qrtpP.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/home_gCAPosI9qrtpP.jpg 1500w'">
+		<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay  h-100">
+			<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos.png 1500w'">
 		</div>
 	</div>
 	<div class="text-center text-white page-title2 spacing" v-html="$t('title1')"></div>

@@ -14,8 +14,8 @@ const state = () => ({
       blur_v:"https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/roche_AT2d0GTl7n9w.png"
     },*/
     {
-      img:"https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/home_gCAPosI9qrtpP.jpg 2500w",
-      blur_v:"https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/home_gCAPosI9qrtpP.jpg"
+      img:"https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/Environments/dionysos.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/Environments/dionysos.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Environments/dionysos.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Environments/dionysos.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Environments/dionysos.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/Environments/dionysos.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/Environments/dionysos.png 2500w",
+      blur_v:"https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-100,fo-bottom/Environments/dionysos.png"
     },
   ],
   backgroundlogos: [
