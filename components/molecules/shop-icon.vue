@@ -26,15 +26,15 @@
             return {
                 items: [
                     {
-                        link: "/shipping/",
+                        link: this.localePath('/shipping/'),
                         icon: mdiTruckDelivery
                     },
                     {
-                        link: "/payments/",
+                        link: this.localePath('/payments/'),
                         icon: mdiCreditCard
                     },
                     {
-                        link: "/shipping/",
+                        link: this.localePath('/shipping/'),
                         icon: mdiPackageVariantClosed
                     }
                 ]

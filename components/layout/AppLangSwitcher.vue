@@ -14,7 +14,7 @@
                 class="rounded-lg"
             />
             <span class="px-0 px-sm-2"></span>
-            <div class="d-none d-sm-block" style="font-size:1.1rem;margin-bottom:1px">
+            <div class="d-none d-sm-block" style="margin-bottom: -1px;">
                 {{$i18n.localeProperties.currencySign}}
             </div>
         </v-btn>

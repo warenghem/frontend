@@ -99,7 +99,19 @@ export default {
         i18n: {
             messages: {
                 en: {
-                    mission: {
+                    section1: {
+                            title: "Dionysos® wine leather. Vegetally noble.",
+                            subtitle: "Efficient, natural, solid, our materials come from the soil and the harvest.",
+                        },
+                    section2: {
+                            title: "Made in France. Point.",
+                            subtitle: "Refined, artisanal, local, our objects develop French industry and know-how.",
+                        },
+                    section3: {
+                            title: "Total traceability via our Blockchain technology",
+                            subtitle: "Powerful, CO2 neutral, our technologies support the regeneration of nature.",
+                        },
+                   /* mission: {
                         title: "The mission: to reunite man with nature",
                         sections: [{
                             title: "Total traceability via our Blockchain technology",
@@ -127,7 +139,7 @@ export default {
                                         "studied to confuse the object in the landscape.",
                                     ]
                             }
-                            ,*/ {
+                            , {
                                 title: "Made in France. Point.",
                                 subtitle:
                                     "Refined, artisanal, local, our objects develop French industry and know-how.",
@@ -151,7 +163,7 @@ export default {
                                         "Without animal matter. Without suffering.",
                                     ]
                             }]
-                    }
+                    }*/
                 }
                 ,
                 fr: {
@@ -167,7 +179,7 @@ export default {
                             title: "Tracabilité totale via notre technologie ORIGIN®.",
                             subtitle: "Suivez l'origine de vos produits de la matière première jusqu'à leurs livraisons."
                         },
-                    mission: {
+                    /*mission: {
                         title: "La mission: réunifier l’Homme à la nature",
                         sections: [
                             {
@@ -192,7 +204,7 @@ export default {
                                         "Centrés sur relation entre l’Homme et l’objet. Le design est construit pour la fonctionnalité et le quotidien."
                                     ]
                             }
-                            ,*/ {
+                            , {
                                 title: " Fabriqué en France. Point.",
                                 subtitle:
                                     "Raffinés, locaux, nos objets développent le savoir-faire français.",
@@ -215,7 +227,7 @@ export default {
                                         "Sans matière animale. Sans souffrance.",
                                     ]
                             }]
-                    }
+                    }*/
                 }
             }
         }

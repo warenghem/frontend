@@ -110,12 +110,12 @@
           computed: {
             links() {
                   return [
-                    { title: this.$i18n.t('toolbar.studios'), url: "/studios/" },
-                    { title: this.$i18n.t('toolbar.help'), url: "/help/" },
-                    { title: this.$i18n.t('toolbar.payments'), url: "/payments/" },
-                    { title: this.$i18n.t('toolbar.shipping'), url: "/shipping/" },
-                    { title: this.$i18n.t('toolbar.partnership'), url: "/partnership/" },
-                    { title: this.$i18n.t('toolbar.protection'), url: "/legal/" },
+                    { title: this.$i18n.t('toolbar.studios'), url: this.localePath('/studios/') },
+                    { title: this.$i18n.t('toolbar.help'), url: this.localePath('/help/') }, 
+                    { title: this.$i18n.t('toolbar.payments'), url: this.localePath('/payments/') },
+                    { title: this.$i18n.t('toolbar.shipping'), url: this.localePath('/shipping/') },
+                    { title: this.$i18n.t('toolbar.partnership'), url: this.localePath('/partnership/') },
+                    { title: this.$i18n.t('toolbar.protection'), url: this.localePath('/legal/') },
                   ];
                 }
           }

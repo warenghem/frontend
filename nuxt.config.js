@@ -117,7 +117,7 @@ export default {
   robots: {
     UserAgent: '*',
     Disallow: ['/admin', '/partners', '/filter', '/sustainabletech'],
-    Sitemap: '/sitemapindex.xml'
+    Sitemap: 'https://www.warenghem.com/sitemapindex.xml'
   },
   pwa: {
     meta: {
@@ -435,7 +435,9 @@ export default {
         document.priceEuro = document.offers ? parseFloat(document.offers.price) : null;
         let currency = [];
         if (document.priceEuro) {
-          axios.get("https://api.exchangeratesapi.io/latest?base=EUR").then(res => {
+          /*250 per month axios.get("http://api.exchangeratesapi.io/v1/latest?access_key=64ac053a7427164393210fab8ef82178&base=EUR").then(res => {*/
+          /*1000 per month axios.get("http://data.fixer.io/api/latest?access_key=c92c63715229ad0c6cbc84a09a4fcd66&base=EUR").then(res => {*/
+          /*unlimited per month*/ axios.get("https://api.exchangerate.host/latest?base=EUR").then(res => {
             Object.entries(res.data.rates).forEach(([key, value]) => {
               if (['EUR', 'CAD', 'USD', 'GBP','CHF'].includes(key)) {
                 currency.push({name: key, price: (value * document.priceEuro+document.priceEuro*0.01).toFixed(0)})
@@ -512,11 +514,12 @@ export default {
     gzip: true,
     trailingSlash: true,
     exclude: [
-      '/partners/**'
+      '^.*partners.*$',
+      '^.*filter.*$',
     ],
     routes: async () => {
       const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).where({ slug: { $ne: 'type' } }).only(['path', 'slug']).fetch()
+      const files = await $content({ deep: true }).where({ dir: { $regex: /^((?!partners|filter).)*$/ } }).only(['path', 'slug']).fetch()
       /*return files.map(file => file.path === '/index' ? '/' : file.path)*/
 
       return files.map((file) => ({
@@ -619,12 +622,8 @@ export default {
   },
   generate: {
     exclude: [
-      /^\/partners/
-    ],
-    async routes () {
-      const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).where({ slug: { $ne: 'type' } }).only(['path']).fetch()
-      return files.map(file => file.path === '/index' ? '/' : file.path)
-    },
+      /^.*partners.*$/,
+      /^.*filter.*$/,
+    ]
   },
 }

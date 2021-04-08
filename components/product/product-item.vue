@@ -2,7 +2,7 @@
   <div>
     <VueSlickCarousel class="bgcard hand" v-bind="settingsSingle" v-if="product.image">
       <div
-        class="pa-2 img-wrapper"
+        class="img-wrapper"
         v-for="(img,i_dx) in product.image"
         :key="'image_'+i_dx"
 
