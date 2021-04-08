@@ -438,9 +438,11 @@ export default {
           /*1000 per month axios.get("http://data.fixer.io/api/latest?access_key=c92c63715229ad0c6cbc84a09a4fcd66&base=EUR").then(res => {*/
           /*unlimited per month*/ axios.get("https://api.exchangerate.host/latest?base=EUR").then(res => {
             Object.entries(res.data.rates).forEach(([key, value]) => {
-              if (['EUR', 'CAD', 'USD', 'GBP','CHF'].includes(key)) {
+              if(key !== 'EUR'){
                 currency.push({name: key, price: (value * document.priceEuro+document.priceEuro*0.01).toFixed(0)})
-              }
+                } else {
+                currency.push({name: key, price: document.priceEuro.toFixed(0)})
+                }
             });
             document.currency = currency;
           }).catch(() => {
