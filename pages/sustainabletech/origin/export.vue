@@ -824,8 +824,8 @@
         async asyncData(context) {
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
-            const productsItem = await $content(`${lang_path}/shop`).fetch();
-            const partnersItem = await $content(`${lang_path}/partners`,  { deep: true }).fetch();
+            const productsItem = await $content(`router/${lang_path}/shop`).fetch();
+            const partnersItem = await $content(`api/${lang_path}/partners`,  { deep: true }).fetch();
             return {
                 productsItem,
                 partnersItem,

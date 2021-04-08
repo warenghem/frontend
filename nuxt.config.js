@@ -1,5 +1,4 @@
 import getSiteMeta from "./utils/getSiteMeta";
-import getRoutes from "./utils/getRoutes";
 const meta = getSiteMeta();
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
@@ -514,12 +513,12 @@ export default {
     gzip: true,
     trailingSlash: true,
     exclude: [
-      '^.*partners.*$',
+      '^.*api.*$',
       '^.*filter.*$',
     ],
     routes: async () => {
       const { $content } = require('@nuxt/content')
-      const files = await $content({ deep: true }).where({ dir: { $regex: /^((?!partners|filter).)*$/ } }).only(['path', 'slug']).fetch()
+      const files = await $content({ router, deep: true }).only(['path', 'slug']).fetch()
       /*return files.map(file => file.path === '/index' ? '/' : file.path)*/
 
       return files.map((file) => ({
@@ -622,7 +621,7 @@ export default {
   },
   generate: {
     exclude: [
-      /^.*partners.*$/,
+      /^.*api.*$/,
       /^.*filter.*$/,
     ]
   },

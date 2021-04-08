@@ -7,7 +7,7 @@
                ref="filter"
     >
     </FilterBar>
-    <v-container class="px-lg-7" fluid>
+    <v-container class="pa-lg-7" fluid>
       <v-row>
         <v-col cols="12" lg="4" md="6" v-for="(product,idx) in filteredProducts" :key="'product_'+idx">
           <ProductItem :productItem="product"></ProductItem>
@@ -26,8 +26,8 @@
         async asyncData(context) {
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
-            const productsItem = await $content(`${lang_path}/shop`).fetch();
-            const filter = await $content(`${lang_path}/filter`, 'type').fetch();
+            const productsItem = await $content(`router/${lang_path}/shop`).fetch();
+            const filter = await $content(`/filter`, 'type').fetch();
             return {
                 productsItem,
                 filter: {

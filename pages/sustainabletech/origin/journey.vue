@@ -201,8 +201,8 @@
         const {$content, params, app} = context;
         const slug = params.slug;
         const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
-        const productItem = await $content(`${lang_path}/shop`, slug).fetch();
-        const productsItem = await $content(`${lang_path}/shop`).fetch();
+        const productItem = await $content(`router/${lang_path}/shop`, slug).fetch();
+        const productsItem = await $content(`router/${lang_path}/shop`).fetch();
         return {
             productsItem,
             productItem,
