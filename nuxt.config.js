@@ -518,7 +518,7 @@ export default {
     ],
     routes: async () => {
       const { $content } = require('@nuxt/content')
-      const files = await $content({ router, deep: true }).only(['path', 'slug']).fetch()
+      const files = await $content(`router`,  { deep: true }).only(['path', 'slug']).fetch()
       /*return files.map(file => file.path === '/index' ? '/' : file.path)*/
 
       return files.map((file) => ({
