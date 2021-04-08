@@ -222,6 +222,9 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .large-ratio:before {
   padding-top: 75%;
 }
+.small-ratio:before {
+  padding-top: 40%;
+}
 .wa-smart-picture:before {
     display: block;
     content: "";

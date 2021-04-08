@@ -22,7 +22,7 @@
                         </v-btn>
                     </div>
                     <div style="transform: translateY(50px);">
-                        <div class="wa-smart-picture large-ratio skeletton">
+                        <div class="wa-smart-picture small-ratio skeletton">
                             <img
                             data-sizes="auto"
                             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/madagascar_river.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/madagascar_river.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/madagascar_river.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/madagascar_river.jpg 2500w"

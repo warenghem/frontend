@@ -1,7 +1,7 @@
 <template>
   <div>
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="border-bottom-2 h-100"/>
+		<Backbutton class="h-100"/>
 		<div class="px-5 border-bottom-2 bg-theme d-flex w-100 h-100">
 			<img width="100px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w'">
 		</div>

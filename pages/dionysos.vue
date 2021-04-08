@@ -13,7 +13,7 @@
 			<div data-aos="fadeup" class="page-title teradeli-medium lbbgradienttext">{{$t('pagetitle')}}</div>
 			<div data-aos="fadeup" data-aos-delay="300" style="max-width:900px;color:#a1a1a6" class="page-subtitle teradeli-medium mx-auto">{{$t('pagesubtitle')}}</div>
 		</div>
-		<div class="mediabox wa-smart-picture wa-panoramic-picture square-ratio fullgradientoverlay  h-100">
+		<div class="mediabox wa-smart-picture square-ratio wa-panoramic-picture fullgradientoverlay  h-100">
 			<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos.png 1500w'">
 		</div>
 	</div>
@@ -29,14 +29,14 @@
 			data-aos="fadeup" data-aos-delay="300"
 		>
 				<div class="h-100 img-fluid theme--light skeletton w-100 d-flex justify-center align-center">
-					<div style="z-index:2" class="background text-center position-absolute d-flex justify-center align-center h-100 w-100">
+					<div :style="grid2[p_idx]" style="z-index:2" class="background text-center position-absolute d-flex justify-center align-center h-100 w-100">
 						<img width="200" class="icon lazyload" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ icon[p_idx] +' 512w'">
 					</div>
 					<div
 						style="z-index:2;max-width:600px;margin-top: 250px!important" 
 						class="text-center position-absolute d-flex justify-center align-center h-100 w-100 text pvw d-block ma-auto page-subtitle2 teradeli-medium text-white"
 						v-html="product.summary"
-						>
+					>
 					</div>
 					<div class="mediabox">
 						<picture>
@@ -166,7 +166,7 @@
                 tab: "subscribe",
                 backgroundImages: [
                     "/Environments/dionysos_suisse.jpg",
-                    "/Environments/wine_spot.jpeg"
+                    "/Environments/wine.jpeg"
                 ],
                 icon: [
                     "/Environments/dionysos_27b.png",
@@ -180,6 +180,10 @@
                 grid: [
                     "div2 blueoverlay",
                     "div3 "
+                ],
+                grid2: [
+                    "div2 blueoverlay",
+                    "background: radial-gradient(circle, rgba(2,0,36,0) 0%, rgba(9,9,121,0) 50%, rgba(0,0,0,1) 100%);"
                 ],
                 products: this.$t('products'),
 				origins: this.$t('origins'),
