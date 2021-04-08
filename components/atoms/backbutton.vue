@@ -1,7 +1,7 @@
 <template>
   <div class="d-flex align-center title bg-theme border-right-2">
     <div class="d-flex align-center">
-      <v-btn ripple class="elevation-0 rounded-0 d-inline-flex justify-center align-center backbutton cursor-pointer" @click="$router.go(-1)">
+      <v-btn ripple class="elevation-0 rounded-0 d-inline-flex justify-center align-center backbutton cursor-pointer border-bottom-2" @click="$router.go(-1)">
         <v-icon class="m-2">{{ svgPath }}</v-icon>
       </v-btn>
     </div>

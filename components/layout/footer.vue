@@ -13,7 +13,9 @@
       >
         <v-card-title class="px-0 pb-0 d-block d-md-flex">
           <div class="d-block d-md-flex">
-            <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
+            <NuxtLink :to="localePath('/')">
+              <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
+            </NuxtLink>
             <!--<v-breadcrumbs class="justify-center" style="margin-bottom:5px" dark :items="crumbs">
               <template v-slot:item="{ item }">
                 <v-breadcrumbs-item
@@ -105,7 +107,7 @@
                       {name: "instagram", icon: "'svgPath'", url: "https://www.instagram.com/warenghem.studios/"},
                       {name: "facebook", icon: "'svgPath2'", url: "https://www.facebook.com/warenghem.studios/"},
                   ],
-              };
+              }; 
         },
           computed: {
             links() {

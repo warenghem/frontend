@@ -12,7 +12,7 @@
         >
           <v-row class="ma-0">
             <div style="z-index:1" class="position-absolute">
-              <Backbutton class="border-bottom-2"/>
+              <Backbutton/>
             </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
               <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :key="selectedColor">

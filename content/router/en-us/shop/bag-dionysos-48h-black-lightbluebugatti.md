@@ -73,7 +73,7 @@ image:
   material: 1
   name: 48H_face
   alt: vegan bag man black grape made in france
-  availability: true
+  availability: in stock
 - src: 48H_cote.png
   color: 1
   material: 2
