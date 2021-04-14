@@ -919,7 +919,14 @@ letter-spacing: .009em;
     transition: opacity 0.5s !important;
   }
 }
-
+.roundedoverlay {
+  &::before {
+    border-radius: 20px !important;
+  }
+  &::after {
+    border-radius: 20px !important;
+  }
+}
 .gradientoverlay {
   &::after {
     background: linear-gradient(0.90deg, #000000 0%, transparent 100%);

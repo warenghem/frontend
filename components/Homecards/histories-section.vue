@@ -18,7 +18,9 @@
             class="text-center hand position-relative text-white"
             >
             {{$t('btnDiscover')}}
-            <v-icon color="white" small>{{ svgPath1 }}</v-icon>
+            <v-theme-provider dark>
+                <v-icon small>{{ svgPath1 }}</v-icon>
+            </v-theme-provider>
         </div>
         <picture>
             <source media="screen and (min-width: 64em)"

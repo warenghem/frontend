@@ -5,7 +5,7 @@
         <v-row no-gutters class="pa-0 pt-3">
             <v-col cols="12" lg="3" md="4" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <v-card align=center class="item-inner pa-sm-5 pa-0 pb-10">
-                    <div class="profile-holder mb-0 pa-0 skeletton wa-smart-picture rounded-xl large-ratio elevation-14">
+                    <div class="profile-holder mb-0 pa-0 skeletton wa-smart-picture rounded-xl large-ratio">
                     <v-card-actions style="z-index:2;bottom:0;right:0" class="position-absolute">
                         <v-spacer></v-spacer>
                         <v-btn
@@ -13,7 +13,7 @@
                             dark
                             target="_blank"
                             class="mr-2 pt-3 d-none"
-                             v-for="(socialmedia,idx) in profile.socialmedias" :key="'socialmedia'+idx"
+                            v-for="(socialmedia,idx) in profile.socialmedias" :key="'socialmedia'+idx"
                             :href="socialmedia.link"
                         >
                             <v-icon medium>{{ socialmedia.icon }}</v-icon>
@@ -140,7 +140,7 @@
                             }
                         ]
                     },
-                    {
+                    /*{
                         key: 5,
                         name: 'Karine Palazon',
                         img: "",
@@ -168,7 +168,7 @@
                                 icon: mdiLinkedin
                             }
                         ]
-                    }
+                    }*/
                 ]
             }
         },
@@ -211,7 +211,7 @@
                                 'the most ecological plant materials and sustainable technologies that could help us' +
                                 " to accompany."
                         },
-                        {
+                        /*{
                             key: 5,
                             role: "Head of Operations / Quality Control",
                             biography: ""
@@ -220,20 +220,18 @@
                             key: 6,
                             role: "Head of Scenography & photography",
                             biography: ""
-                        }
+                        }*/
                     ],
                 },
                 fr: {
-                    title2: "Warenghem Studios",
+                    title2: "Humains. Complémentaires.",
                     subtitle2:"Des hommes et des femmes",
                     text2:"Nos bureaux sont situés à Paris et dans le Var, nos usines sont situées un peu partout en France. <div>Si vous avez un talent particulier, ou des compétences qui pourraient nous aider. Et vous êtes : <br><br>- conscient(e) des conséquences sociales et environnementales de la mode et du design, <br>- attaché(e) au sens culturel, social et écologique d’une consommation plus locale,<br>- attaché(e) aux savoir-faire, aux imaginaires et aux personnes qui se cachent derrière les produits,<br>- polyvalent(e), passionné(e), décidé(e) à participer à une belle aventure responsable et engagée, dans un environnement inclusif et bienveillant.<br><br>N'hésitez pas à nous contacter afin que nous en discutions ensemble.<br><br></div>",
                     profiles: [
                         {
                             key: 1,
                             role: 'Fondateur & Directeur Artistique',
-                            biography: 'Convaincu par un monde ou la nature serait omniprésente autour de nous, j’ai décidé ' +
-                                'd’utiliser mes connaissances acquises dans le monde de l’entreprise pour des causes qui nous ' +
-                                'tiennent à cœur. Créons ensemble des objets français écologiquement parfaits et intuitifs.'
+                            biography: 'J’ai financé des champs d’éoliennes et des panneaux solaires, et été conseil auprès de fonds d’investissement pour des aquisitions d’entreprises. Convaincu par un monde ou la nature serait omniprésente autour de nous, j’ai décidé d’exploiter ces compétences à un projet commun de développement écologique.'
                         },
                         {
                             key: 2,
@@ -246,17 +244,17 @@
                         {
                             key: 3,
                             role: 'Designer',
-                            biography: "Ancienne étudiante à Esmod Paris, j'ai commencé ma carrière en tant que styliste au sein de diverses maisons, et dans un second temps en lancant ma marque de maroquinerie. Aujourd’hui, j’évolue à travers différents univers qui mêlent design et photographie. J’adore porter un regard global sur une création, et lui trouver une identité forte qui la distinguera des autres.",
+                            biography: "Ancienne étudiante à Esmod Paris, j'ai commencé en tant que styliste au sein de diverses maisons, et dans un second temps en lancant ma marque de maroquinerie. Aujourd’hui, j’évolue à travers différents univers qui mêlent design et photographie. J’adore porter un regard global sur une création, et lui trouver une identité forte qui la distinguera des autres.",
                         },
                         {
                             key: 4,
                             role: "Recherche & Developpement / Matières & Technologies",
-                            biography: 'Après quelques années à travailler comme ingénieur spatial chez Airbus, j’ai repris un ' +
+                            biography: 'Après plusieurs années à travailler comme ingénieur spatial, j’ai repris un ' +
                                 'Master Gestion de l’écosystème et de la biodiversité à l’Université de Montréal. Je recherche ' +
                                 'les matières végétales les plus écologiques et les technologies durables qui pourraient nous' +
                                 ' accompagner.'
                         },
-                        {
+                        /*{
                             key: 5,
                             role: "Responsable des opérations / Contrôle qualité",
                             biography: "Après plus de 13 ans à travailler en tant qu’ingénieur qualité, j’ai développé des compétences en organisation, gestion et audits de projet. Aujourd’hui je coordonne la stratégie de l’entreprise, je contrôle la qualité des process et des produits de nos fournisseurs & fabricants."
@@ -265,7 +263,7 @@
                             key: 6,
                             role: "Responsable scénographie & photographie",
                             biography: ""
-                        }
+                        }*/
                     ],
                 }
             }

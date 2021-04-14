@@ -22,6 +22,7 @@
                         height= "100%"
                         lazy
                         class="homecard bgcard hand"
+                        :class="classe[p_idx]"
                     >
                         <NuxtLink @click="onClick" :to="localePath('/')+link[p_idx]"> 
                             <div class="h-100 img-fluid theme--light position-relative skeletton">
@@ -35,7 +36,7 @@
                                     <div class="pt-2 home-subtitle primary--text"> {{product.summary}}</div>
                                     <Discoverbutton class="lighbugattiblue--text"/>
                                 </div>
-                                <div style="height: 100%;top: 70px;width: 100%;position: absolute">
+                                <div class="picture" style="height: 100%;top: 70px;width: 100%;position: absolute">
                                     <picture>
                                         <source media="screen and (min-width: 64em)"
                                             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ backgroundImages[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ backgroundImages[p_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ backgroundImages[p_idx] +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ backgroundImages[p_idx] +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ backgroundImages[p_idx] +' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500'+ backgroundImages[p_idx] +' 1500w,'" 
@@ -57,9 +58,6 @@
                             </div>
                         </NuxtLink>
                     </v-card>
-                    <v-card class="bgcard homecard item2">
-                        <ProjectsSection/>
-                    </v-card>
                 </v-container>
         </div>
 </template>
@@ -79,6 +77,12 @@
                     "shop/bag-dionysos-48h-black-lightbluebugatti/",
                     "shop/belt-dionysos/",
                     "shop/wallet-dionysos/",
+                    /*"",*/
+                ],
+                classe: [
+                    "div1",
+                    "div2",
+                    "div3",
                     /*"",*/
                 ],
                 products: this.$t('products'),
@@ -180,11 +184,25 @@
         margin-top: unset!important;
     }
 }
+.div1 { 
+    grid-area: div1; 
+    .picture { 
+        max-width: 800px; 
+        margin: auto; 
+        left: 0; 
+        right: 0; 
+    }
+}
+.div2 { grid-area: div2; }
+.div3 { grid-area: div3; }
 .productgridhome {
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-auto-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+        "div1 div1"
+        "div2 div3";
   padding: 1rem!important;
   grid-gap: 1rem;
   @media (max-width: 48em) {
