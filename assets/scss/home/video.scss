@@ -29,9 +29,6 @@
     }
       .topCenter {
         margin-top: 125px!important;
-        @media(max-width: 425px) {
-            margin-top: 65px!important;
-          }
         .logosvg {
           @media(max-width: 425px) {
           display: none;

@@ -63,7 +63,6 @@
             rounded
             @click="$store.state.newsletterModal=true"
             style="letter-spacing:inherit!important;text-transform: inherit;"
-            class="font-weight-bold"
           >
             Newsletter
           </v-btn>
@@ -75,7 +74,6 @@
             rounded
             :to="link.url" nuxt
             style="letter-spacing:inherit!important;text-transform: inherit;"
-            class="font-weight-bold"
           >
             {{$t(link.title)}}
           </v-btn>
