@@ -2,6 +2,7 @@
     <v-btn
         elevation="0"
         rounded
+        dark
         block tile
         class="btn-theme"
         >

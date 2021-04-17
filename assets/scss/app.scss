@@ -459,10 +459,9 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
   opacity: 0 !important;
 }
 
-//.v-btn__content {
-//  font-size: 26px;
-//  font-family: teradeli-light;
-//}
+.btn-theme.theme--dark .v-btn__content {
+  font-family: teradeli-light;
+}
 
 #Eden_ProjetContainer {
   transform: translateX(-265px);

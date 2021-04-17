@@ -47,15 +47,13 @@
 				</v-col>
 			</v-row>
 		</div>
-		<div style="max-width:1000px" class="text-center pvw ma-auto mb-16">
-			<div class="page-title3">{{$t('text1-2title')}}</div>
-			<div>
-				<div v-html="$t('text1-2')"></div>
-			</div>
-			<v-row fluid>
-				<v-col cols="12" md="3">
+		<div class="text-center pvw ma-auto mb-16">
+			<div class="page-title3 pb-10">{{$t('text1-2title')}}</div>
+			<div class="pb-10" v-html="$t('text1-2')"></div>
+			<v-row class="ma-auto" style="max-width:1050px" justify="center" align="center" fluid>
+				<v-col cols="12" md="4">
 					<v-row fluid>
-						<v-col cols="6">
+						<v-col class="pa-1" cols="6" md="12">
 							<img
 								data-sizes="auto"
 								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
@@ -63,23 +61,7 @@
 								class="lazyload cover bg-white" 
 							/>
 						</v-col>
-						<v-col cols="6" md="3">
-							<img
-								data-sizes="auto"
-								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
-								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Environments/logo.155.jpg" 
-								class="lazyload cover bg-white" 
-							/>
-						</v-col>
-						<v-col cols="6">
-							<img
-								data-sizes="auto"
-								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
-								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Environments/logo.155.jpg" 
-								class="lazyload cover bg-white" 
-							/>
-						</v-col>
-						<v-col cols="6">
+						<v-col class="pa-1" cols="6" md="12">
 							<img
 								data-sizes="auto"
 								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
@@ -89,12 +71,13 @@
 						</v-col>
 					</v-row>
 				</v-col>
-				<v-col cols="12" md="7">
+				<v-col class="pvw py-0" cols="12" md="8">
 					<div v-html="$t('text1-3')"></div>
 					<div v-html="$t('text1-4')"></div>
 				</v-col>
 			</v-row>
 		</div>
+		<div class="page-title3 text-center pb-10">{{$t('text1-3title')}}</div>
 		<v-row class="text-center pb-16 ma-auto" style="max-width: 1400px;">
 			<v-col data-aos="fadeup" class="px-5 rounded-xl" cols="12" md="4">
 				<div class="position-relative rounded-xl blackoverlay2 gradientoverlay roundedoverlay">
@@ -174,7 +157,7 @@
 				</v-timeline-item>
 			</v-timeline>
 		</v-container>
-		<StudioSection class="pt-16 bg-white"/>
+		<StudioSection class="pt-16 "/>
 		<CustomerServicesLayout class="pt-16"/>
 	</div>
   </div>
@@ -348,11 +331,12 @@
 		"col2title": "Made in France",
 		"col3": "Utiliser la technologie lorsqu'elle apporte une r&eacute;elle plus-value environnementale et &eacute;thique. Notre application ORIGIN, neutre en CO2, vous permet par exemple de d&eacute;couvrir l'histoire et la beaut&eacute; int&eacute;rieure de votre article",
 		"col3title": "2.0",
-		"text1": "<p>Si vous êtes arrivé ici, c'est sans doute que vous voulez savoir qui nous sommes, ce que nous faisons, et pourquoi.</p><p>Faisons court pour commencer.</p><p class='teradeli-medium'>Tels des apothicaires du XXIe siècle, notre mission est d'utiliser les éléments minéraux et végétaux qui nous entourent pour concevoir en France des objets du quotidien aussi bien performants qu'écologiques.</p><p>Concrètement, nous étudions les propriétés techniques, esthétiques et écologiques de chaque matière, nous en cherchons et en créons de nouvelles avec un unique but en tête : une parfaite symbiose avec notre environnement et une transparence totale.</p>",
+		"text1": "<p>Si vous êtes arrivé ici, c'est sans doute que vous voulez savoir qui nous sommes, ce que nous faisons, et pourquoi.</p><p>Faisons court pour commencer.</p><p class='teradeli-medium'>Tels des apothicaires du XXIe siècle, notre mission est d'utiliser les éléments minéraux et végétaux qui nous entourent pour concevoir en France des objets du quotidien aussi bien performants qu'écologiques.</p><p>Concrètement, nous étudions les propriétés techniques, esthétiques et écologiques de chaque matière, nous en cherchons et en créons de nouvelles, nous nous appuyons sur des technologies lorsqu'il y a une réelle plus-value, avec un unique but en tête : une parfaite symbiose avec notre environnement et une transparence totale.</p>",
 		"text1-2": "<p>Nous étions financiers, ingénieurs, ou designers, des activités intéressantes, mais dénouées de valeurs morales et de sens dans de grands groupes industriels. Nous en sommes arrivés à la même conclusion : <span class=''>pourquoi ne pas utiliser toute nos énergies et nos compétences complémentaires pour un projet de développement écologique francais.</span></p>",
 		"text1-3": "<p>Nous sommes passionnés par l'art, la mode et le design. Et nous avons réalisé un paradoxe frappant : <span class='teradeli-medium'>nous ne portons que peu d'attention sur la beaut&eacute; int&eacute;rieure d'un objet, sa puret&eacute; et les milliers de d&eacute;tails qui constitue son histoire</span>. Pourtant, il d&eacute;gage un certain charisme en fonction de ce qu'il repr&eacute;sente, des mat&eacute;riaux naturels qui le compose et des conditions dans lesquelles il a &eacute;t&eacute; fabriqu&eacute;. La beaut&eacute; n'est pas qu'esth&eacute;tique.</p>",
 		"text1-4": "<p>En parall&egrave;le, nous r&eacute;alisons aujourd'hui que nous ne sommes pas des &eacute;l&eacute;ments d&eacute;tach&eacute;s, <span class='teradeli-medium'>notre survie d&eacute;pend de la sant&eacute; des &eacute;cosyst&egrave;mes de la plan&egrave;te avec qui nous devons agir en collaboration.</span></p><p>Nous sommes une esp&egrave;ce animale parmi d'autres, mais nous disposons de deux pouvoirs : l'incroyable capacit&eacute; &agrave; &eacute;laborer des syst&egrave;mes complexes et la possibilit&eacute; de prendre des d&eacute;cisions suivant notre r&eacute;flexion et non notre instinct.</p><p>Warenghem Studios est n&eacute; en 2019 pour d&eacute;velopper&nbsp;ces pouvoirs afin de r&eacute;aliser 3 objectifs :</p>",
 		"text1-2title": "Comment et pourquoi nous en sommes arrivés là?",
+		"text1-3title": "Notre mission. Si vous l'acceptez.",
 		"text2": "<p>Chaque jour nos &eacute;quipes &oelig;uvrent pour rendre cette folle ambition plus concr&egrave;te. &Eacute;tape par &eacute;tape, nous d&eacute;veloppons nos innovations, focalis&eacute;s sur un souci excessif du d&eacute;tail et de l'interd&eacute;pendance des &eacute;l&eacute;ments naturels.</p><p class='ma-0'>Le nom Warenghem fait d&rsquo;ailleurs r&eacute;f&eacute;rence &agrave; un homme passionn&eacute; par l'humain et son rapport &agrave; la nature. Ayant pass&eacute; toute sa vie &agrave; chercher et &agrave; progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribu&eacute; &agrave; faire progresser le monde &agrave; leur niveau pour le rendre meilleur.</p>",
 		"title1": "Une histoire végétale et minérale",
 		"title3": "Un parcours. Une histoire"

@@ -207,6 +207,10 @@
   grid-gap: 1rem;
   @media (max-width: 48em) {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    grid-template-areas:
+        "div1 div1"
+        "div2 div2"
+        "div3 div3";
     grid-gap: 0.5rem;
   }
 }

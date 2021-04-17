@@ -2,6 +2,7 @@
     <v-btn
         elevation="0"
         rounded
+        dark
         
         @click="$store.state.productModal=true"
         class="btn-theme"
