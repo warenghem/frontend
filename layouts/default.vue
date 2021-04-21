@@ -50,7 +50,7 @@
             {{$t(link.name)}} 
           </v-list-item-content>
         </v-list-item>
-        <div class="teradeli-medium text-center mt-5">
+        <div class="teradeli-medium text-center mt-5 mb-3 greytext">
           {{$t('toolbar.innovationlinktitle')}}
         </div>
         <v-list-item
@@ -61,7 +61,7 @@
           class="text-uppercase"
         >
           <v-list-item-content>
-            {{link.name}} 
+            <div class="svglogo text-center" :class="link.class" v-html="require(`~/assets/images/`+link.name+`.svg?raw`)" />
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -102,6 +102,14 @@
   }
 }
 </i18n>
+<style scoped>
+  .svgicon1 {
+    max-width: 120px;
+  }
+  .svgicon2 {
+    max-width: 80px;
+  }
+</style>
 <script>
   import { mdiMenu } from '@mdi/js'
   import Logo from "~/assets/images/Warenghem-w-noparis-vf.svg?raw"

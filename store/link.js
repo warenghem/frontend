@@ -13,8 +13,8 @@ const state = () => ({
         {name: 'toolbar.protection', url: 'legal/', position: 'left'},
     ],
     innovationlinks: [
-        {name: 'Dionysos', url: 'dionysos/', position: 'left'},
-        {name: 'Origin', url: 'origin/', position: 'left'},
+        {name: 'Dionysos', url: 'dionysos/', class: 'svgicon1'},
+        {name: 'Origin', url: 'origin/', class: 'svgicon2'},
     ],
     sociallinks: [
         {name: 'instagram', icon: mdiInstagram, url: "https://www.instagram.com/warenghem.studios/"},
