@@ -41,3 +41,7 @@ a, .v-application a {
   -o-object-fit: cover;
   object-fit: cover;
 }
+
+.greytext {
+  color: #767676!important
+}

@@ -216,7 +216,7 @@
 				"error": "Your email appears to be invalid or already registered. Contact us:",
 				"label1": "FIRST NAME",
 				"label2": "E-MAIL",
-				"subtitle": "Twice a month, discover our history and that of the incredible objects that bring nature and humans together. <br>Unsubscribe in one click",
+				"subtitle": "Once a month, discover our history and that of the incredible objects that bring nature and humans together. <br>Unsubscribe in one click",
 				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
 				"tag": "Creation <br> of 3D objects",
 				"title": "Project progress"
@@ -231,7 +231,7 @@
 				"error": "Votre email semble invalide ou déjà enregistré. Contactez nous en cliquant ici:",
 				"label1": "PRENOM ",
 				"label2": "EMAIL",
-				"subtitle": "Deux fois par mois, découvrez notre histoire et celle des incroyables objets qui rapprochent la nature et l'humain.<br>Désinscription en un clic",
+				"subtitle": "Une fois par mois, découvrez notre histoire et celle des incroyables objets qui rapprochent la nature et l'humain.<br>Désinscription en un clic",
 				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"

@@ -5,7 +5,7 @@
             <v-card 
                 height= "100%"
                 lazy
-                class="homecard bgcard hand invgradientoverlay blackoverlay"
+                class="homecard bgcard hand invgradientoverlay"
             >
                     <div class="h-100 img-fluid theme--light position-relative skeletton">
                         <div class="pvw text-center">
@@ -28,7 +28,7 @@
             <v-card 
                 height= "100%"
                 lazy
-                class="homecard bgcard hand invgradientoverlay blackoverlay"
+                class="homecard bgcard hand invgradientoverlay"
             >
                     <div class="h-100 img-fluid theme--light position-relative skeletton">
                         <div class="pvw text-center">
@@ -50,7 +50,7 @@
             <v-card 
                 height= "100%"
                 lazy
-                class="homecard bgcard hand invgradientoverlay blackoverlay"
+                class="homecard bgcard hand invgradientoverlay"
             >
                     <div class="h-100 img-fluid theme--light position-relative skeletton">
                         <div class="pvw text-center">
@@ -63,7 +63,7 @@
                         <div>
                             <img
                                 data-sizes="auto"
-                                :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 2500w'"
+                                :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-custom,cm-extract/Environments/tech_abstractstone.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-custom,cm-extract/Environments/tech_abstractstone.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-custom,cm-extract/Environments/tech_abstractstone.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-custom,cm-extract/Environments/tech_abstractstone.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-custom,cm-extract/Environments/tech_abstractstone.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-custom,cm-extract/Environments/tech_abstractstone.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-custom,cm-extract/Environments/tech_abstractstone.png 2500w'"
                                 class="lazyload mediabox-img"
                             />
                         </div>
@@ -104,7 +104,7 @@ export default {
                             subtitle: "Efficient, natural, solid, our materials come from the soil and the harvest.",
                         },
                     section2: {
-                            title: "Made in France. Point.",
+                            title: "Made in France. Saddler finishing.",
                             subtitle: "Refined, artisanal, local, our objects develop French industry and know-how.",
                         },
                     section3: {
@@ -172,7 +172,7 @@ export default {
                             subtitle: "Solides, performantes, nos matières sont issues de la terre et des vendanges."
                         },
                     section2: {
-                            title: "Fabriqué en France. Point.",
+                            title: "Fabriqué en France. Finitions sellier.",
                             subtitle: "Raffinés, locaux, nos objets développent le savoir-faire français."
                         },
                     section3: {

@@ -227,7 +227,7 @@
 				"tag": "Creation <br> of 3D objects",
 				"title": "Project progress"
 			},
-			"subtitle": "Wine vetal leather shoes and leather goods",
+			"subtitle": "Say hello to vegetal wine leather",
 			"tag1": "Ecological / Vegan",
 			"tag2": "Made in France",
 			"tag3": "Sustainable technology",
@@ -253,7 +253,7 @@
 				"tag": "Création <br> d’objets en 3D",
 				"title": "Avancement du projet"
 			},
-			"subtitle": "Maroquinerie en cuir végétal de vin. Au masculin.",
+			"subtitle": "Dites bonjour au cuir végétal de vin",
 			"tag1": "Ecologique / Vegan",
 			"tag2": "Made in France",
 			"tag3": "Technologie durable",

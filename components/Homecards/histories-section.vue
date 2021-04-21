@@ -62,8 +62,8 @@
 	},
 	"fr": {
 		"btnDiscover": "Je m'abonne",
-		"subtitle": "Découvrez notre histoire et les incroyables objets qui rapprochent la nature et l'humain<br/>Une à deux fois par mois - Désinscription en un clic",
-		"title": "Sauvagement beau"
+		"subtitle": "Une à deux fois par mois, découvrez notre histoire et les incroyables objets qui rapprochent la nature et l'humain<br/>",
+		"title": "Rejoignez la révolution"
 	}
 }
 </i18n>

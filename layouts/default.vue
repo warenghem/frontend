@@ -9,8 +9,8 @@
       <v-toolbar-items class="d-none d-lg-block" v-for="(link,l_idx) in $store.state.link.links"
                        :key="'link_btn_l_'+l_idx">
         <v-btn text class="text-uppercase item"
-               :class="{'current':$root.currentId===link.elId}"
-               :to="localePath('/')+link.elId" nuxt
+               :class="{'current':$root.currentId===link.url}"
+               :to="localePath('/')+link.url" nuxt
                v-if="link.position==='left'"
         >
           {{$t(link.name)}}
@@ -42,15 +42,41 @@
         <v-list-item
           v-for="(link,l_idx) in $store.state.link.links"
           :class="{'current':$root.currentId===link.elId}"
-          :to="localePath('/')+link.elId"
+          :to="localePath('/')+link.url"
           :key="'link_'+l_idx" nuxt
           class="text-uppercase"
         >
           <v-list-item-content>
-            {{$t(link.name)}}
+            {{$t(link.name)}} 
+          </v-list-item-content>
+        </v-list-item>
+        <div class="teradeli-medium text-center mt-5">
+          {{$t('toolbar.innovationlinktitle')}}
+        </div>
+        <v-list-item
+          v-for="(link,l_idx) in $store.state.link.innovationlinks"
+          :class="{'current':$root.currentId===link.elId}"
+          :to="localePath('/')+link.url"
+          :key="'link_'+l_idx" nuxt
+          class="text-uppercase"
+        >
+          <v-list-item-content>
+            {{link.name}} 
           </v-list-item-content>
         </v-list-item>
       </v-list>
+      <div class="position-absolute text-center w-100 pa-5" style="bottom:0">
+        <v-btn
+          v-for="(link,l_idx) in $store.state.link.sociallinks"
+          class="mx-3"
+          icon
+          :key="'link_'+l_idx"
+          target="_blank"
+          :href="link.url"
+        >
+          <v-icon class="d-block" size="24px">{{ link.icon }}</v-icon>
+        </v-btn>
+      </div>
     </v-navigation-drawer>
     <v-main>
       <v-container fluid class="pa-0">
@@ -67,12 +93,12 @@
 <i18n>
 {
   "fr": {
-    "title:": "Warenghem - Chaussures et maroquinerie en cuir végétal de vin, Made in France",
-    "description": "Warenghem fabrique de la maroquinerie et des chaussures vegan Made in France en cuir végétal de vin pour homme : Sacs de voyage, Sacs de ville, Sacs à dos, Portefeuille, Ceintures"
+    "title": "Warenghem - Chaussures et maroquinerie en cuir végétal de vin, Made in France",
+    "description": "Warenghem fabrique de la maroquinerie et des chaussures vegan Made in France en cuir végétal de vin pour homme et femme : Sacs de voyage, Sacs de ville, Sacs à dos, Portefeuille, Ceintures"
   },
   "en": {
     "title": "Warenghem - Shoes and bags made from wine leather, Made in France",
-    "description": "Hola mondial!"
+    "description": "Warenghem manufactures vegan leather goods and shoes Made in France in vegetable wine leather for men and women: Travel bags, City bags, Backpacks, Wallets, Belts"
   }
 }
 </i18n>
