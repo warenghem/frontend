@@ -1,5 +1,5 @@
 <template>
-    <section class="team-section pt-0">
+    <section class="team-section">
         <h2 class="home-title px-0 pb-5">{{$t('title2')}}</h2>
         <!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle2')}}</h3>-->
         <v-row no-gutters class="pa-0 pt-3">
@@ -140,7 +140,7 @@
                             }
                         ]
                     },
-                    /*{
+                    {
                         key: 5,
                         name: 'Karine Palazon',
                         img: "",
@@ -152,7 +152,7 @@
                             }
                         ]
                     },
-                    {
+                    /*{
                         key: 6,
                         name: 'Vincent Kreis',
                         img: "",
@@ -211,12 +211,12 @@
                                 'the most ecological plant materials and sustainable technologies that could help us' +
                                 " to accompany."
                         },
-                        /*{
+                        {
                             key: 5,
                             role: "Head of Operations / Quality Control",
                             biography: ""
                         },
-                        {
+                        /*{
                             key: 6,
                             role: "Head of Scenography & photography",
                             biography: ""
@@ -254,12 +254,12 @@
                                 'les matières végétales les plus écologiques et les technologies durables qui pourraient nous' +
                                 ' accompagner.'
                         },
-                        /*{
+                        {
                             key: 5,
                             role: "Responsable des opérations / Contrôle qualité",
                             biography: "Après plus de 13 ans à travailler en tant qu’ingénieur qualité, j’ai développé des compétences en organisation, gestion et audits de projet. Aujourd’hui je coordonne la stratégie de l’entreprise, je contrôle la qualité des process et des produits de nos fournisseurs & fabricants."
                         },
-                        {
+                        /*{
                             key: 6,
                             role: "Responsable scénographie & photographie",
                             biography: ""

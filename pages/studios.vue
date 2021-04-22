@@ -1,7 +1,7 @@
 <template>
-  <div class="bgcard">
+  <div class="">
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="border-bottom-2 h-100"/>
+		<Backbutton class="h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 				Warenghem Studios
@@ -9,46 +9,30 @@
 		</div>
 		<v-spacer></v-spacer>
 	</v-toolbar>
-    <article class="wa-magazine d-none">
-      <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
-        <picture class="gradientoverlay">
-          <source media="screen and (min-width: 64em)"
-            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
-          >
-          <source media="screen and (min-width: 48em)"
-            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
-          >
-          <source
-            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-640,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-768,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1024,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1366,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1600,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1920,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-2500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
-          >
-          <img class="lazyload mediabox-img" 
-            :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-auto,c-maintain_ratio/Environments/logo.155.jpg 2x'" 
-            data-sizes="auto" />
-        </picture>
+    <article class="wa-magazine position-relative">
+		<h2 style="bottom:0" class="text-white page-title2 w-100 text-center pvw position-absolute z-2">{{$t('title1')}}</h2>
+		<div class="wa-smart-picture wa-panoramic-picture large-ratio skeletton">
+			<picture class="">
+			<source media="screen and (min-width: 64em)"
+				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+			>
+			<source media="screen and (min-width: 48em)"
+				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+			>
+			<source
+				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+			>
+			<img class="lazyload mediabox-img" 
+				:data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,c-maintain_ratio/Environments/logo.155.jpg 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,c-maintain_ratio/Environments/logo.155.jpg 2x'" 
+				data-sizes="auto" />
+			</picture>
       </div>
     </article>
-	<div class="pvw ma-auto">
+	<div class="ma-auto">
 		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle1')}}</h3>-->
-		<div class="rounded-xl">
-			<v-row class="ma-auto pa-0 mb-16 bg-white">
-				<v-col cols="12" md="5" class="pa-0">
-					<div class="img-fluid position-relative h-100">
-						<img
-							data-sizes="auto"
-							data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
-							src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Environments/logo.155.jpg" 
-							class="lazyload cover bg-white" 
-						/>
-					</div>
-				</v-col>
-				<v-col cols="12" md="7" class="bg-white pvw rounded-xl">
-					<h2 class="page-title2 text-center px-0 pb-10">{{$t('title1')}}</h2>
-					<v-card style="max-width:1000px" class="text-center ma-auto align-center justify-center" v-html="$t('text1')"></v-card>
-				</v-col>
-			</v-row>
-		</div>
-		<div class="text-center pvw ma-auto mb-16">
-			<div class="page-title3 pb-10">{{$t('text1-2title')}}</div>
+		<v-card style="max-width:1000px" class="pvw text-center ma-auto align-center justify-center" v-html="$t('text1')"></v-card>
+		<div class="text-center ma-auto mb-16 bgcard pvw">
+			<div class="page-title3 text-center pb-10">{{$t('text1-2title')}}</div>
 			<div class="pb-10" v-html="$t('text1-2')"></div>
 			<v-row class="ma-auto" style="max-width:1050px" justify="center" align="center" fluid>
 				<v-col cols="12" md="4">
@@ -56,16 +40,17 @@
 						<v-col class="pa-1" cols="6" md="12">
 							<img
 								data-sizes="auto"
-								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
-								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Environments/logo.155.jpg" 
+								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 1500w" 
+								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/WA_spray_abstract_blueplus.png" 
 								class="lazyload cover bg-white" 
 							/>
 						</v-col>
 						<v-col class="pa-1" cols="6" md="12">
+
 							<img
 								data-sizes="auto"
-								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/Environments/logo.155.jpg 1500w" 
-								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/Environments/logo.155.jpg" 
+								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 1500w" 
+								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/48_designorganic2.159.jpg" 
 								class="lazyload cover bg-white" 
 							/>
 						</v-col>
@@ -78,87 +63,89 @@
 			</v-row>
 		</div>
 		<div class="page-title3 text-center pb-10">{{$t('text1-3title')}}</div>
-		<v-row class="text-center pb-16 ma-auto" style="max-width: 1400px;">
+		<v-row class="text-center ma-auto" style="max-width: 1400px;">
 			<v-col data-aos="fadeup" class="px-5 rounded-xl" cols="12" md="4">
-				<div class="position-relative rounded-xl blackoverlay2 gradientoverlay roundedoverlay">
+				<div class="position-relative rounded-xl invgradientoverlay roundedoverlay">
 					<div class="z-2 text-white pvw text-center">
-						<div class="page-title3">{{$t('col1title')}}</div>
+						<div class="text-center page-title3">{{$t('col1title')}}</div>
 						<div class="" v-html="$t('col1')"></div>
 					</div>
 					<div>
 						<img
 							data-sizes="auto"
-							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/Environments/dionysos_2.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/Environments/dionysos_2.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Environments/dionysos_2.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Environments/dionysos_2.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Environments/dionysos_2.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/Environments/dionysos_2.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/Environments/dionysos_2.png 2500w'"
+							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 2500w'"
 							class="lazyload mediabox-img rounded-xl"
 						/>
 					</div>
 				</div>
 			</v-col>
 			<v-col data-aos="fadeup" data-aos-delay="300" class="px-5 rounded-xl" cols="12" md="4">
-				<div class="position-relative rounded-xl blackoverlay2 gradientoverlay roundedoverlay">
+				<div class="position-relative rounded-xl invgradientoverlay roundedoverlay">
 					<div class="z-2 text-white pvw text-center">
-						<div class="page-title3">{{$t('col2title')}}</div>
+						<div class="text-center page-title3">{{$t('col2title')}}</div>
 						<div class="" v-html="$t('col2')"></div>
 					</div>
-					<div>
+					<div class="rounded-xl">
 						<img
 							data-sizes="auto"
-							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/projects.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/projects.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/projects.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/projects.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/projects.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/projects.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/projects.jpg 2500w'"
+							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/projects.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/projects.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/projects.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/projects.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/projects.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/projects.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/projects.jpg 2500w'"
 							class="lazyload mediabox-img rounded-xl"
 						/>
 					</div>
 				</div>
 			</v-col>
 			<v-col data-aos="fadeup" data-aos-delay="600" class="px-5" cols="12" md="4">
-				<div class="position-relative rounded-xl blackoverlay2 gradientoverlay roundedoverlay">
+				<div class="position-relative rounded-xl invgradientoverlay roundedoverlay">
 					<div class="z-2 text-white pvw text-center">
-						<div class="page-title3">{{$t('col3title')}}</div>
+						<div class="text-center page-title3">{{$t('col3title')}}</div>
 						<div class="" v-html="$t('col3')"></div>
 					</div>
 					<div class="rounded-xl">
 						<img
 							data-sizes="auto"
-							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/tech_mx5bGeVoG3pm.jpg 2500w'"
+							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 2500w'"
 							class="lazyload mediabox-img rounded-xl "
 						/>
 					</div>
 				</div>
 			</v-col>
 		</v-row>
-		<div style="max-width:1000px" class="text-center rounded-xl bg-white pvw ma-auto mb-16" v-html="$t('text2')"></div>
-		<h2 class="page-title3 text-center px-0 pb-10">{{$t('title3')}}</h2>
-		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>-->
-		<v-container class="timeline-container rounded-xl pt-3">
-			<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
-				<v-timeline-item
-						fill-dot
-						v-for="(item,i) in $t('calendarSection.steps')"
-						:key="'time_'+i"
-						class="my-10"
-						:class="classid[i]"
-						large
-				>
-					<template v-slot:icon>
-						<div data-aos="zoom-in" class="mediabox dot rounded-circle">
-							<picture>
-								<img :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,r-max'+ images[i] + ' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-600,r-max'+ images[i] + ' 300w'" alt="timeline-icon" class="mediabox-img bg-white rounded-circle position-relative">
-							</picture>
-						</div>
-					</template>
-					<v-card
-							color="white"
-							class="pa-4 rounded-xl text-left" data-aos="fadeup"
+		<div style="max-width:1000px" class="text-center pvw ma-auto" v-html="$t('text2')"></div>
+		<div class="bgcard pvw">
+			<h2 class="page-title3 text-center px-0 pb-10">{{$t('title3')}}</h2>
+			<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>-->
+			<v-container class="timeline-container rounded-xl pt-3">
+				<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
+					<v-timeline-item
+							fill-dot
+							v-for="(item,i) in $t('calendarSection.steps')"
+							:key="'time_'+i"
+							class="my-10"
+							:class="classid[i]"
+							large
 					>
-						<v-card-subtitle class="pb-3">{{item.tag}}</v-card-subtitle>
-						<h4 class="page-subtitle2 teradeli-medium lbbgradienttext pb-3">{{item.title}}</h4>
-						<div class="item-details" v-html="item.subtitle">
-						</div>
-					</v-card>
-				</v-timeline-item>
-			</v-timeline>
-		</v-container>
-		<StudioSection class="pt-16 "/>
-		<CustomerServicesLayout class="pt-16"/>
+						<template v-slot:icon>
+							<div data-aos="zoom-in" class="mediabox dot rounded-circle">
+								<picture>
+									<img :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,r-max'+ images[i] + ' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-600,r-max'+ images[i] + ' 300w'" alt="timeline-icon" class="mediabox-img bg-white rounded-circle position-relative">
+								</picture>
+							</div>
+						</template>
+						<v-card
+								color="white"
+								class="pa-4 rounded-xl text-left" data-aos="fadeup"
+						>
+							<v-card-subtitle class="pb-3">{{item.tag}}</v-card-subtitle>
+							<h4 class="page-subtitle2 teradeli-medium lbbgradienttext pb-3">{{item.title}}</h4>
+							<div class="item-details" v-html="item.subtitle">
+							</div>
+						</v-card>
+					</v-timeline-item>
+				</v-timeline>
+			</v-container>
+		</div>
+		<StudioSection class="pvw"/>
+		<CustomerServicesLayout class="pvw"/>
 	</div>
   </div>
 </template>
@@ -270,8 +257,8 @@
 		"col3": "Use technology when it brings real environmental and ethical added value. Our ORIGIN application allows you, for example, to discover the interior beauty of your article",
 		"col3title": "2.0",
 		"text2": "Every day our teams work to make this crazy ambition more concrete. & Step by step, we develop our innovations, focused on an excessive concern for detail and the interdependence of natural elements. </p> <p> <br/> The name Warenghem also refers to a man passionate about man and his relating to nature.Having spent his entire life seeking and progressing, he was one of those Men who, through their intellectual, cultural and scientific commitment, have contributed to making the world progress at their level to make it better. ",
-		"title1": "A name, a story, values",
-		"title3": "Discover our route, and our news which will be displayed live."
+		"title1": "A vegetal and mineral project",
+		"title3": "Our project, step by step"
 	},
 	"fr": {
 		"calendarSection": {
@@ -338,8 +325,8 @@
 		"text1-2title": "Comment et pourquoi nous en sommes arrivés là?",
 		"text1-3title": "Notre mission. Si vous l'acceptez.",
 		"text2": "<p>Chaque jour nos &eacute;quipes &oelig;uvrent pour rendre cette folle ambition plus concr&egrave;te. &Eacute;tape par &eacute;tape, nous d&eacute;veloppons nos innovations, focalis&eacute;s sur un souci excessif du d&eacute;tail et de l'interd&eacute;pendance des &eacute;l&eacute;ments naturels.</p><p class='ma-0'>Le nom Warenghem fait d&rsquo;ailleurs r&eacute;f&eacute;rence &agrave; un homme passionn&eacute; par l'humain et son rapport &agrave; la nature. Ayant pass&eacute; toute sa vie &agrave; chercher et &agrave; progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribu&eacute; &agrave; faire progresser le monde &agrave; leur niveau pour le rendre meilleur.</p>",
-		"title1": "Une histoire végétale et minérale",
-		"title3": "Un parcours. Une histoire"
+		"title1": "Un projet végétal et minéral",
+		"title3": "Notre parcours étape par étape"
 	}
 }
 </i18n>

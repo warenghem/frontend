@@ -34,16 +34,18 @@
             </v-breadcrumbs>-->
           </div>
           <v-spacer></v-spacer>
-          <v-btn
-            v-for="(link,l_idx) in $store.state.link.sociallinks"
-            class="mx-3"
-            icon
-            :key="'link_'+l_idx"
-            target="_blank"
-            :href="link.url"
-          >
-            <v-icon class="d-block" size="24px">{{ link.icon }}</v-icon>
-          </v-btn>
+           <div class="d-block d-md-flex">
+            <v-btn
+              v-for="(link,l_idx) in $store.state.link.sociallinks"
+              class="mx-3 pb-5"
+              icon
+              :key="'link_'+l_idx"
+              target="_blank"
+              :href="link.url"
+            >
+              <v-icon class="d-block" size="24px">{{ link.icon }}</v-icon>
+            </v-btn>
+           </div>
         </v-card-title>
         <v-row
           justify="center"

@@ -2,52 +2,54 @@
   <div class="bgcard">
     <div class="d-none d-md-block">
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="border-bottom-2 h-100"/>
+		<Backbutton class="h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
           <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
             {{$t('title')}}
           </div>
         </div>
         <v-spacer></v-spacer>
-        <v-tabs
-            v-model="tab"
-            right
+    </v-toolbar>
+    <article class="wa-magazine position-relative">
+		<div class="wa-smart-picture wa-panoramic-picture large-ratio skeletton">
+			<picture class="">
+			<source media="screen and (min-width: 64em)"
+				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+			>
+			<source media="screen and (min-width: 48em)"
+				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+			>
+			<source
+				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+			>
+			<img class="lazyload mediabox-img" 
+				:data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,c-maintain_ratio/Environments/logo.155.jpg 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,c-maintain_ratio/Environments/logo.155.jpg 2x'" 
+				data-sizes="auto" />
+			</picture>
+      </div>
+    </article>
+	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
+		<v-tabs
+			v-model="tab"
+			right
 			center-active
 			show-arrows
 			:prev-icon="svgPath2"
 			:next-icon="svgPath1"
-            class="border-bottom-2"
-          >
-              <v-tabs-slider color="#0081a7"></v-tabs-slider>
-              <v-tab 
-                  v-for="(tab,t_idx) in tabs"
-                  :key="t_idx"
-                  :href="tab.href"
-                  class="border-left-2"
-				  :id="tab.id"
-              >
-                {{ tab.menu }}
-              </v-tab>
-          </v-tabs>
-      </v-toolbar>
-	<article class="wa-magazine">
-		<div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
-			<picture class="">
-				<source media="screen and (min-width: 64em)"
-				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 2500w,'" 
-				>
-				<source media="screen and (min-width: 48em)"
-				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 2500w,'" 
-				>
-				<source
-				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-640,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-768,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1024,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1366,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1600,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-1920,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-3-5,w-2500,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 2500w,'" 
-				>
-				<img class="lazyload mediabox-img" 
-				:data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_blue2.png 2x'" 
-				data-sizes="auto" />
-			</picture>
-		</div>
-	</article>
+			class="border-bottom-2"
+			>
+			<v-tabs-slider color="#0081a7"></v-tabs-slider>
+			<v-tab 
+				v-for="(tab,t_idx) in tabs"
+				:key="t_idx"
+				:href="tab.href"
+				class="border-left-2"
+				:id="tab.id"
+			>
+			{{ tab.menu }}
+			</v-tab>
+		</v-tabs>
+	</v-toolbar>
       <v-tabs-items v-model="tab">
         <v-tab-item
           :key="1" value="protection"
@@ -56,9 +58,6 @@
             <template>
               <v-card class="bgcard">
                 <v-tabs vertical class="pb-10">
-                  <div class="page-subtitle teradeli-medium pl-3 py-10">
-                    {{$t('protection.subtitle')}}
-                  </div>
                   <v-tab 
                     v-for="(tab,m_idx) in $t('tab.sections1')"
                     :key="'tab_'+m_idx"
@@ -139,14 +138,32 @@
       </v-tabs-items>
     </div>
     <div class="d-block d-md-none">
-      <v-toolbar dense class="menubar pa-0 w-100 elevation-0 bg-white">
-        <Backbutton/>
-        <div class="pl-5 d-flex border-bottom-2">
-          <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
-            {{$t('title')}}
-          </div>
-        </div>
-      </v-toolbar>
+		<v-toolbar dense class="menubar pa-0 w-100 elevation-0 bg-white">
+			<Backbutton/>
+			<div class="pl-5 d-flex border-bottom-2 h-100 w-100">
+			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
+				{{$t('title')}}
+			</div>
+			</div>
+		</v-toolbar>
+		<article class="wa-magazine position-relative">
+			<div class="wa-smart-picture wa-panoramic-picture large-ratio skeletton">
+				<picture class="">
+				<source media="screen and (min-width: 64em)"
+					:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+				>
+				<source media="screen and (min-width: 48em)"
+					:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-4-3,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+				>
+				<source
+					:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-5-5,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
+				>
+				<img class="lazyload mediabox-img" 
+					:data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,c-maintain_ratio/Environments/logo.155.jpg 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,c-maintain_ratio/Environments/logo.155.jpg 2x'" 
+					data-sizes="auto" />
+				</picture>
+			</div>
+		</article>
       <v-expansion-panels flat class="pvw">
         <v-expansion-panel>
           <v-expansion-panel-header ripple class="border-bottom-2" :expand-icon="svgPath3">
