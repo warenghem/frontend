@@ -21,13 +21,13 @@
 		</div>
 	</div>
 	<div class="text-center page-title2 spacing" v-html="$t('title1')"></div>
-	<v-container class="timeline-container bgcard rounded-xl">
+	<v-container class="timeline-container bgcard rounded-xl pvw px-0">
 		<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
 			<v-timeline-item
 					fill-dot
 					v-for="(item,i) in $t('calendarSection.steps')"
 					:key="'time_'+i"
-					class="my-10"
+					class="my-md-10"
 					:class="classid[i]"
 					large
 			>
@@ -355,6 +355,14 @@
 	.dot {
 		box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 		border: 2px solid var(--v-lightbugattiblue-base);
+	}
+	::v-deep .v-timeline-item__dot{
+		height: unset!important;
+		width: unset!important;
+	}
+	.dot {
+		height: 62px!important;
+		width: 62px!important;
 	}
 	::v-deep .v-timeline-item__dot {
 		box-shadow: none!important;

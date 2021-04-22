@@ -38,21 +38,24 @@
 				<v-col cols="12" md="4">
 					<v-row fluid>
 						<v-col class="pa-1" cols="6" md="12">
-							<img
-								data-sizes="auto"
-								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 1500w" 
-								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/WA_spray_abstract_blueplus.png" 
-								class="lazyload cover bg-white" 
-							/>
+							<v-card class="position-relative rounded-xl">
+								<img
+									data-sizes="auto"
+									data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 1500w" 
+									src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/WA_spray_abstract_blueplus.png" 
+									class="lazyload cover bg-white" 
+								/>
+							</v-card>
 						</v-col>
 						<v-col class="pa-1" cols="6" md="12">
-
-							<img
-								data-sizes="auto"
-								data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 1500w" 
-								src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/48_designorganic2.159.jpg" 
-								class="lazyload cover bg-white" 
-							/>
+							<v-card class="position-relative rounded-xl">
+								<img
+									data-sizes="auto"
+									data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-middle,c-maintain_ratio,ar-4-3/Environments/48_designorganic2.159.jpg 1500w" 
+									src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/48_designorganic2.159.jpg" 
+									class="lazyload cover bg-white" 
+								/>
+							</v-card>
 						</v-col>
 					</v-row>
 				</v-col>
@@ -64,8 +67,8 @@
 		</div>
 		<div class="page-title3 text-center pb-10">{{$t('text1-3title')}}</div>
 		<v-row class="text-center ma-auto" style="max-width: 1400px;">
-			<v-col data-aos="fadeup" class="px-5 rounded-xl" cols="12" md="4">
-				<div class="position-relative rounded-xl invgradientoverlay roundedoverlay">
+			<v-col data-aos="fadeup" class="px-5 rounded-xl h-100" cols="12" md="4">
+				<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
 					<div class="z-2 text-white pvw text-center">
 						<div class="text-center page-title3">{{$t('col1title')}}</div>
 						<div class="" v-html="$t('col1')"></div>
@@ -77,10 +80,10 @@
 							class="lazyload mediabox-img rounded-xl"
 						/>
 					</div>
-				</div>
+				</v-card>
 			</v-col>
-			<v-col data-aos="fadeup" data-aos-delay="300" class="px-5 rounded-xl" cols="12" md="4">
-				<div class="position-relative rounded-xl invgradientoverlay roundedoverlay">
+			<v-col data-aos="fadeup" data-aos-delay="300" class="px-5 h-100 rounded-xl" cols="12" md="4">
+				<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
 					<div class="z-2 text-white pvw text-center">
 						<div class="text-center page-title3">{{$t('col2title')}}</div>
 						<div class="" v-html="$t('col2')"></div>
@@ -92,10 +95,10 @@
 							class="lazyload mediabox-img rounded-xl"
 						/>
 					</div>
-				</div>
+				</v-card>
 			</v-col>
-			<v-col data-aos="fadeup" data-aos-delay="600" class="px-5" cols="12" md="4">
-				<div class="position-relative rounded-xl invgradientoverlay roundedoverlay">
+			<v-col data-aos="fadeup" data-aos-delay="600" class="px-5 h-100" cols="12" md="4">
+				<v-card class="position-relative rounded-xl invgradientoverlay roundedoverlay">
 					<div class="z-2 text-white pvw text-center">
 						<div class="text-center page-title3">{{$t('col3title')}}</div>
 						<div class="" v-html="$t('col3')"></div>
@@ -107,20 +110,20 @@
 							class="lazyload mediabox-img rounded-xl "
 						/>
 					</div>
-				</div>
+				</v-card>
 			</v-col>
 		</v-row>
 		<div style="max-width:1000px" class="text-center pvw ma-auto" v-html="$t('text2')"></div>
-		<div class="bgcard pvw">
+		<div class="bgcard pvw px-0">
 			<h2 class="page-title3 text-center px-0 pb-10">{{$t('title3')}}</h2>
 			<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>-->
-			<v-container class="timeline-container rounded-xl pt-3">
+			<v-container class="timeline-container rounded-xl pa-0 pr-3">
 				<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
 					<v-timeline-item
 							fill-dot
 							v-for="(item,i) in $t('calendarSection.steps')"
 							:key="'time_'+i"
-							class="my-10"
+							class="my-md-10"
 							:class="classid[i]"
 							large
 					>
@@ -457,6 +460,14 @@ border-radius: 20px !important; }
     }
 	::v-deep .v-timeline-item__inner-dot {
 		border: 2px solid white;
+	}
+	::v-deep .v-timeline-item__dot{
+		height: unset!important;
+		width: unset!important;
+	}
+	.dot {
+		height: 62px!important;
+		width: 62px!important;
 	}
 @media (min-width: 960px) {
 /* Move the dot css to .dot*/
