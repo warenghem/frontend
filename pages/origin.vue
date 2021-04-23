@@ -110,8 +110,23 @@
             }
         },
         head() {
-            return {
-            }
+          return {
+			title: this.$t('title'),
+            meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: this.$t('description')
+				}
+            ],
+            /*link: [
+              {
+                hid: "canonical",
+                rel: "canonical",
+                href: 'https://www.warenghem.com' + this.localePath('shop') + this.$route.params.slug,
+              },
+            ],*/
+          };
         }
     }
 
@@ -120,6 +135,8 @@
 <i18n>
 {
 	"en": {
+		"title": "Origin : Our application of traceability",
+		"description": "It lets you learn more about the journey and impact behind each item in a secure, reliable and accessible way.",
 		"calendarSection": {
 			"steps": [
 				{
@@ -185,6 +202,8 @@
 		"title3": "<div style='color: #acacac;' data-aos='fadeup'>An innovative solution</div><div data-aos='fadeup' data-aos-delay='300'>Faced with improved transparency still in 2021</div>"
 	},
 	"fr": {
+		"title": "Origin : Notre application de tracabilité totale",
+		"description": "Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.",
 		"calendarSection": {
 			"steps": [
 				{
@@ -329,6 +348,14 @@
 	::v-deep .v-timeline-item__inner-dot {
 		border: 2px solid white;
 	}
+	::v-deep .v-timeline-item__dot{
+		height: unset!important;
+		width: unset!important;
+	}
+	.dot {
+		height: 62px!important;
+		width: 62px!important;
+	}
 	@media (min-width: 960px) {
 	/* Move the dot css to .dot*/
 		::v-deep .v-timeline-item__dot{
@@ -355,14 +382,6 @@
 	.dot {
 		box-shadow: 0px 2px 1px -1px rgb(0 0 0 / 20%), 0px 1px 1px 0px rgb(0 0 0 / 14%), 0px 1px 3px 0px rgb(0 0 0 / 12%);
 		border: 2px solid var(--v-lightbugattiblue-base);
-	}
-	::v-deep .v-timeline-item__dot{
-		height: unset!important;
-		width: unset!important;
-	}
-	.dot {
-		height: 62px!important;
-		width: 62px!important;
 	}
 	::v-deep .v-timeline-item__dot {
 		box-shadow: none!important;

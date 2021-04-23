@@ -93,12 +93,12 @@
 <i18n>
 {
   "fr": {
-    "title": "Warenghem - Chaussures et maroquinerie en cuir végétal de vin, Made in France",
-    "description": "Warenghem fabrique de la maroquinerie et des chaussures vegan Made in France en cuir végétal de vin pour homme et femme : Sacs de voyage, Sacs de ville, Sacs à dos, Portefeuille, Ceintures"
+    "title": "Warenghem - Sacs et maroquinerie en cuir végétal de vin, Made in France",
+    "description": "Warenghem fabrique de la maroquinerie vegan Made in France en cuir végétal de vin pour homme et femme : Sacs de voyage, Sacs de ville, Sacs à dos, Portefeuilles, Ceintures"
   },
   "en": {
-    "title": "Warenghem - Shoes and bags made from wine leather, Made in France",
-    "description": "Warenghem manufactures vegan leather goods and shoes Made in France in vegetable wine leather for men and women: Travel bags, City bags, Backpacks, Wallets, Belts"
+    "title": "Warenghem - Bags and leather goods made from wine leather, Made in France",
+    "description": "Warenghem manufactures vegan bags and leather goods Made in France in vegetable wine leather for men and women: Travel bags, City bags, Backpacks, Wallets, Belts"
   }
 }
 </i18n>

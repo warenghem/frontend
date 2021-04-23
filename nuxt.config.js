@@ -14,7 +14,7 @@ export default {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000',
   },
   head: {
-    titleTemplate: '%s' + ' | Warenghem App',
+    titleTemplate: '%s' + ' | Warenghem',
     title: 'Somewhere...',
     meta: [
       ...meta,
@@ -124,7 +124,7 @@ export default {
       theme_color: '#153038',
       appleStatusBarStyle: 'black',
       author: 'Kevin Brosseau',
-      description: 'Warenghem App',
+      description: 'Warenghem',
       lang: 'fr-fr',
       ogHost: 'www.warenghem.com',
       ogSiteName: 'Warenghem Studios',

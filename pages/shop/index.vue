@@ -100,8 +100,8 @@
             updateFilter(data) {
                 this.filterChecked = data
             }
-        }
+        },
 
     }
-
 </script>
+

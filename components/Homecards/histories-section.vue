@@ -58,12 +58,12 @@
 	"en": {
 		"btnDiscover": "I subscribe",
 		"subtitle": "Discover our history and the incredible objects that bring nature and humans together<br/>1 or 2 posts per month - Unsubscribe in one click",
-		"title": "Wildly beautiful"
+		"title": "Join the vegetable and mineral revolution"
 	},
 	"fr": {
 		"btnDiscover": "Je m'abonne",
 		"subtitle": "Une à deux fois par mois, découvrez notre histoire et les incroyables objets qui rapprochent la nature et l'humain<br/>",
-		"title": "Rejoignez la révolution"
+		"title": "Rejoignez la révolution végétale et minérale"
 	}
 }
 </i18n>
