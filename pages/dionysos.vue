@@ -220,6 +220,36 @@
               }
           }
       },
+        head() {
+          return {
+			bodyAttrs: {
+				class: 'theme--dark'
+			},
+			title: this.$t('title'),
+            meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: this.$t('description')
+				},
+				{
+				hid: "og:title",
+				property: "og:title",
+				content: this.$t('title'),
+				},
+				{
+				hid: "og:description",
+				property: "og:description",
+				content: this.$t('description')
+				},
+				{
+				hid: "og:url",
+				property: "og:url",
+				content: 'https://www.warenghem.com' + this.$nuxt.$route.path,
+				},
+            ]
+          }
+        }
     }
 
 </script>
@@ -227,6 +257,8 @@
 <i18n>
 {
 	"en": {
+		"title":"Our vegan Dionysos wine leathers",
+		"description":"Discover our latest innovation: our solid, vegan, perfect grain leathers. Wine appeared to us as the absolute figure of French elegance.",
 		"calendarSection": {
 			"subtitle": "To follow the progress of the project. It will refine over time. Subscribe to the Newsletter and follow us on Instagram and Facebook to be notified.",
 			"tag": "We are here",
@@ -260,6 +292,8 @@
 		"title4": "<div data-aos='fadeup'>And the icing on the cake </div>"
 	},
 	"fr": {
+		"title":"Dionysos : Nos cuirs végétaux de vin",
+		"description":"Découvrez notre dernière innovation : nos cuirs solides, vegan, au grain parfait. Le vin nous est apparu comme la figure absolue de l'élégance à la Francaise.",
 		"calendarSection": {
 			"subtitle": "Pour suivre le déroulement du projet. Il s’affinera au fil du temps. Inscrivez vous à la Newsletter et suivez nous sur Instagram et Facebook pour en être notifié.",
 			"tag": "Nous en sommes ici",

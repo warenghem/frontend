@@ -30,10 +30,10 @@
     </article>
 	<div class="ma-auto">
 		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle1')}}</h3>-->
-		<v-card style="max-width:1000px" class="pvw text-center ma-auto align-center justify-center" v-html="$t('text1')"></v-card>
+		<v-card style="max-width:1050px" class="pvw text-center ma-auto align-center justify-center" v-html="$t('text1')"></v-card>
 		<div class="text-center ma-auto mb-16 bgcard pvw">
 			<div class="page-title3 text-center pb-10">{{$t('text1-2title')}}</div>
-			<div class="pb-10" v-html="$t('text1-2')"></div>
+			<div style="max-width:1050px" class="pb-10 ma-auto" v-html="$t('text1-2')"></div>
 			<v-row class="ma-auto" style="max-width:1050px" justify="center" align="center" fluid>
 				<v-col cols="12" md="4">
 					<v-row fluid>
@@ -65,7 +65,7 @@
 				</v-col>
 			</v-row>
 		</div>
-		<div class="page-title3 text-center pb-10">{{$t('text1-3title')}}</div>
+		<div class="page-title3 text-center pb-10 d-none">{{$t('text1-3title')}}</div>
 		<v-row class="text-center ma-auto" style="max-width: 1400px;">
 			<v-col data-aos="fadeup" class="px-5 rounded-xl h-100" cols="12" md="4">
 				<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
@@ -191,16 +191,41 @@
             }
         },
         head() {
-            return {
-            }
-        }
+          return {
+			title: this.$t('title'),
+            meta: [
+				{
+					hid: 'description',
+					name: 'description',
+					content: this.$t('description')
+				},
+				{
+				hid: "og:title",
+				property: "og:title",
+				content: this.$t('title'),
+				},
+				{
+				hid: "og:description",
+				property: "og:description",
+				content: this.$t('description')
+				},
+				{
+				hid: "og:url",
+				property: "og:url",
+				content: 'https://www.warenghem.com' + this.$nuxt.$route.path,
+				},
+            ],
+		}
     }
+}
 
 </script>
 
 <i18n>
 {
 	"en": {
+		"title":"",
+		"description":"",
 		"calendarSection": {
 			"steps": [
 				{
@@ -264,6 +289,8 @@
 		"title3": "Our project, step by step"
 	},
 	"fr": {
+		"title":"",
+		"description":"",
 		"calendarSection": {
 			"steps": [
 				{
@@ -321,8 +348,8 @@
 		"col2title": "Made in France",
 		"col3": "Utiliser la technologie lorsqu'elle apporte une r&eacute;elle plus-value environnementale et &eacute;thique. Notre application ORIGIN, neutre en CO2, vous permet par exemple de d&eacute;couvrir l'histoire et la beaut&eacute; int&eacute;rieure de votre article",
 		"col3title": "2.0",
-		"text1": "<p>Si vous êtes arrivé ici, c'est sans doute que vous voulez savoir qui nous sommes, ce que nous faisons, et pourquoi.</p><p>Faisons court pour commencer.</p><p class='teradeli-medium'>Tels des apothicaires du XXIe siècle, notre mission est d'utiliser les éléments minéraux et végétaux qui nous entourent pour concevoir en France des objets du quotidien aussi bien performants qu'écologiques.</p><p>Concrètement, nous étudions les propriétés techniques, esthétiques et écologiques de chaque matière, nous en cherchons et en créons de nouvelles, nous nous appuyons sur des technologies lorsqu'il y a une réelle plus-value, avec un unique but en tête : une parfaite symbiose avec notre environnement et une transparence totale.</p>",
-		"text1-2": "<p>Nous étions financiers, ingénieurs, ou designers, des activités intéressantes, mais dénouées de valeurs morales et de sens dans de grands groupes industriels. Nous en sommes arrivés à la même conclusion : <span class=''>pourquoi ne pas utiliser toute nos énergies et nos compétences complémentaires pour un projet de développement écologique francais.</span></p>",
+		"text1": "<p>Si vous êtes arrivés ici, c'est sans doute que vous voulez savoir qui nous sommes, ce que nous faisons, et pourquoi.</p><p>Faisons court pour commencer.</p><p class='teradeli-medium'>Tels des apothicaires du XXIe siècle, notre mission est d'utiliser les éléments minéraux et végétaux qui nous entourent pour concevoir en France des objets du quotidien aussi bien performants qu'écologiques.</p><p>Concrètement, nous étudions les propriétés techniques, esthétiques et écologiques de chaque matière, nous en cherchons et en créons de nouvelles, nous nous appuyons sur des technologies lorsqu'il y a une réelle plus-value, avec un unique but en tête : une parfaite symbiose avec notre environnement et une transparence totale.</p>",
+		"text1-2": "<p>Nous étions financiers, ingénieurs, ou designers, des activités intéressantes, mais dénouées de valeurs morales et de sens dans de grands groupes industriels. Nous en sommes arrivés à la même conclusion : <span class=''>pourquoi ne pas utiliser toutes nos énergies et nos compétences complémentaires pour un projet de développement écologique francais.</span></p>",
 		"text1-3": "<p>Nous sommes passionnés par l'art, la mode et le design. Et nous avons réalisé un paradoxe frappant : <span class='teradeli-medium'>nous ne portons que peu d'attention sur la beaut&eacute; int&eacute;rieure d'un objet, sa puret&eacute; et les milliers de d&eacute;tails qui constitue son histoire</span>. Pourtant, il d&eacute;gage un certain charisme en fonction de ce qu'il repr&eacute;sente, des mat&eacute;riaux naturels qui le compose et des conditions dans lesquelles il a &eacute;t&eacute; fabriqu&eacute;. La beaut&eacute; n'est pas qu'esth&eacute;tique.</p>",
 		"text1-4": "<p>En parall&egrave;le, nous r&eacute;alisons aujourd'hui que nous ne sommes pas des &eacute;l&eacute;ments d&eacute;tach&eacute;s, <span class='teradeli-medium'>notre survie d&eacute;pend de la sant&eacute; des &eacute;cosyst&egrave;mes de la plan&egrave;te avec qui nous devons agir en collaboration.</span></p><p>Nous sommes une esp&egrave;ce animale parmi d'autres, mais nous disposons de deux pouvoirs : l'incroyable capacit&eacute; &agrave; &eacute;laborer des syst&egrave;mes complexes et la possibilit&eacute; de prendre des d&eacute;cisions suivant notre r&eacute;flexion et non notre instinct.</p><p>Warenghem Studios est n&eacute; en 2019 pour d&eacute;velopper&nbsp;ces pouvoirs afin de r&eacute;aliser 3 objectifs :</p>",
 		"text1-2title": "Comment et pourquoi nous en sommes arrivés là?",
@@ -331,6 +358,7 @@
 		"title1": "Un projet végétal et minéral",
 		"title3": "Notre parcours étape par étape"
 	}
+	
 }
 </i18n>
 

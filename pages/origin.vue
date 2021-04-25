@@ -117,7 +117,22 @@
 					hid: 'description',
 					name: 'description',
 					content: this.$t('description')
-				}
+				},
+				{
+				hid: "og:title",
+				property: "og:title",
+				content: this.$t('title'),
+				},
+				{
+				hid: "og:description",
+				property: "og:description",
+				content: this.$t('description')
+				},
+				{
+				hid: "og:url",
+				property: "og:url",
+				content: 'https://www.warenghem.com' + this.$nuxt.$route.path,
+				},
             ],
             /*link: [
               {
