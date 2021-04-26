@@ -60,16 +60,16 @@
 <i18n>
 {
 	"en": {
-		"contact": "Contact us",
-		"contactsubtitle": "Personalized advice? A specific question? Any advice for us?",
 		"chat": "Our online chat",
-		"contacthours": "<p> We are at your disposal and we will be happy to answer all your questions. </p> <p><div> Monday - Saturday: 10:00 am - 07:30 pm (UTC+01:00)</div> <div> Sunday: 10:00 am - 07:30 pm UTC+01:00</div></p>"
+		"contact": "Contact us",
+		"contacthours": "<p> We are at your disposal and we will be happy to answer all your questions. </p> <p><div> Monday - Saturday: 10:00 am - 07:30 pm (UTC+01:00)</div> <div> Sunday: 10:00 am - 07:30 pm UTC+01:00</div></p>",
+		"contactsubtitle": "Personalized advice? A specific question? Any advice for us?"
 	},
 	"fr": {
-		"contact": "Contactez nous",
-		"contactsubtitle": "Des conseils personnalisés? Une question particulière? Des conseils à nous donner?",
 		"chat": "Notre chat en ligne",
-		"contacthours": "<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><p><div>Lundi – Samedi : 10h00 - 19h30</div><div>Dimanche : 10h00 – 18h00</div></p>"
+		"contact": "Contactez nous",
+		"contacthours": "<p >Nous sommes à votre écoute et nous nous ferons un plaisir de répondre à toutes vos questions.</p><p><div>Lundi – Samedi : 10h00 - 19h30</div><div>Dimanche : 10h00 – 18h00</div></p>",
+		"contactsubtitle": "Des conseils personnalisés? Une question particulière? Des conseils à nous donner?"
 	}
 }
 </i18n>

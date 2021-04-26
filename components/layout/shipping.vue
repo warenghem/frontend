@@ -180,6 +180,22 @@
 					{
 						"text": "Si les produits n'ont été ni utilisés ni lavés, nous les remettons tout simplement en stock. Dans le cas contraire, les produits qui ne peuvent être remis à la vente sont reconditionnés par nos équipes logistiques et/ou recyclés.",
 						"title": "Que deviennent les produits qui vous sont retournés ?"
+					},
+					{
+						"text": "",
+						"title": ""
+					},
+					{
+						"text": "",
+						"title": ""
+					},
+					{
+						"text": "",
+						"title": ""
+					},
+					{
+						"text": "",
+						"title": ""
 					}
 				],
 				"shippingtitle": "Livraison et retour"

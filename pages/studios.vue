@@ -41,8 +41,8 @@
 							<v-card class="position-relative rounded-xl">
 								<img
 									data-sizes="auto"
-									data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-middle,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_blueplus.png 1500w" 
-									src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/WA_spray_abstract_blueplus.png" 
+									data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-custom,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_greybig.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-custom,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_greybig.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-custom,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_greybig.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-custom,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_greybig.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-custom,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_greybig.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-custom,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_greybig.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-custom,c-maintain_ratio,ar-4-3/Environments/WA_spray_abstract_greybig.png 1500w" 
+									src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-middle,ar-4-3/Environments/WA_spray_abstract_greybig.png" 
 									class="lazyload cover bg-white" 
 								/>
 							</v-card>
@@ -224,8 +224,6 @@
 <i18n>
 {
 	"en": {
-		"title":"",
-		"description":"",
 		"calendarSection": {
 			"steps": [
 				{
@@ -246,22 +244,22 @@
 				{
 					"subtitle": "",
 					"tag": "April 2020",
-					"title": "Designs from the first collection: Citadins Sauvages"
+					"title": "Drawings from the first collection: Citadins Sauvages"
 				},
 				{
 					"subtitle": "",
 					"tag": "June 2020",
-					"title": "In-house creation of a website in the form of a web application"
+					"title": "Creation of a website in the form of a web application"
 				},
 				{
 					"subtitle": "",
 					"tag": "July 2020",
-					"title": "Creation of the Dionysos brand"
+					"title": "Creation of the Dionysos vegetable leather brand"
 				},
 				{
 					"subtitle": "",
 					"tag": "July 2020",
-					"title": "Launch of reforestation projects in Madagascar and India"
+					"title": "Launch of our reforestation projects in Madagascar and India"
 				},
 				{
 					"subtitle": "",
@@ -275,22 +273,27 @@
 				}
 			]
 		},
-		"subtitle1": "The genesis",
-		"subtitle3": "Our history. Live.",
-		"text1": "<div><p><span>In the world of fashion and design, there is a striking paradox: They exist only for their embodiment of outer beauty. We pay little attention to the inner beauty of an object, the purity and the thousands of details that constitute its history and destiny escape us. However, like every man, he gives off a certain charisma depending on what he represents, the conditions in which he was made, and the materials that compose it.</span></p><p><span><br>This is historically due to our Anthropocentric vision, where the value of living things and ecosystems is measured according to the benefit that Man can derive from them. Yet we are an animal species among others, but we have two super powers: the incredible ability to develop complex systems, and the ability to make decisions based on our thinking and not our instinct.<br>We realize today that we are not detached and independent elements, our own survival depends on the health of the planet's ecosystems. Relearning to see nature as a system of collaborations is an ambitious change of mentality but oh so beneficial for the future ...</span></p><p><span><br>To respond to this problem, in 2019 , Warenghem Studios was born. Our goal: to develop objects and clothes that are perfect in all their facets, to exploit the formidable virtues hidden in each plant species, and not to touch animals since we have other alternatives. It may sound simple said like that! But we and all the elements around us are connected. It is not enough to use organic cotton to claim an ecological attitude.<br>Every day, all our teams work to make this crazy ambition more concrete. Step by step, we develop radical innovations and use technology when it brings real added value. </span></p><p><span><br>The Warenghem DNA is strongly inspired by the progressivism of the Enlightenment and the complexity of Edgar Morin. Focused on an excessive attention to detail and the interdependence of natural elements. The name Warenghem also refers to a man passionate about people and their relationship to nature. Having spent his whole life in research and progress, he was one of those Men who, through their intellectual, cultural and scientific commitment, have contributed to making the world progress at their level to make it better.</span></p></div><br>We too will look for ...",
-		"col1": "Search for the formidable and mysterious virtues hidden in each species of plant and mineral in order to create everyday objects and not to use animal materials since we have other alternatives ",
-		"col1title": "At the source",
-		"col2": "Make objects in France with a minimalist and worked design",
+		"col1": "Search for the formidable and mysterious virtues hidden in each plant and mineral species in order to create everyday objects and not to use animal materials since we have other alternatives",
+		"col1title": "To the source",
+		"col2": "<p>Develop a real French project from A to Z, relocate our jobs and our skills. Make objects with a minimalist and worked design, escaping any ephemeral fashion, inspired by the architects and designers of the world.",
 		"col2title": "Made in France",
-		"col3": "Use technology when it brings real environmental and ethical added value. Our ORIGIN application allows you, for example, to discover the interior beauty of your article",
+		"col3": "Use technology when it brings real environmental and ethical added value. Our ORIGIN application, CO2 neutral, allows you for example to discover the history and the inner beauty of your article",
 		"col3title": "2.0",
-		"text2": "Every day our teams work to make this crazy ambition more concrete. & Step by step, we develop our innovations, focused on an excessive concern for detail and the interdependence of natural elements. </p> <p> <br/> The name Warenghem also refers to a man passionate about man and his relating to nature.Having spent his entire life seeking and progressing, he was one of those Men who, through their intellectual, cultural and scientific commitment, have contributed to making the world progress at their level to make it better. ",
-		"title1": "A vegetal and mineral project",
-		"title3": "Our project, step by step"
+		"description": "",
+		"subtitle1": "The genesis",
+		"subtitle3": "OUR HISTORY",
+		"text1": "<p>If you've made it here, you probably want to know who we are, what we do, and why.</p><p>Let's keep it short to start.</p><p class='teradeli-medium'>Like 21st century apothecaries, our mission is to use the mineral and plant elements that surround us to design everyday objects in France that are both efficient and ecological.</p><p>Concretely, we study the technical, aesthetic and ecological properties of each material, we research and create new ones, we rely on technologies when there is real added value, with a unique goal in mind: a perfect symbiosis with our environment and total transparency.</p>",
+		"text1-2": "<p>We were financiers, engineers, or designers, interesting activities, but unraveled of moral values and meaning in large industrial groups. We came to the same conclusion: <span class=''>why not use all our energies and our complementary skills for a French ecological development project.</span></p>",
+		"text1-2title": "How and why did we get there?",
+		"text1-3": "<p>We are passionate about art, fashion and design. And we realized a striking paradox: <span class='teradeli-medium'>we pay little attention to an object's inner beauty, its purity, and the thousands of details that make up its history. </span>However, it exudes a certain charisma depending on what it represents, the natural materials that compose it and the conditions in which it was made. Beauty is not only aesthetic.</p>",
+		"text1-3title": "Our mission. If you accept it.",
+		"text1-4": "<p>In parallel, we realize today that we are not detached elements, our survival depends on the health of the ecosystems of the planet with which we must act in collaboration.</span></p><p>We are one animal species among many, but we have two powers: the incredible ability to develop complex systems and the ability to make decisions based on our thinking and not our instinct.</p><p><span class='teradeli-medium'>Warenghem Studios was born in 2019 to develop these powers in order to achieve 3 objectives:</span></p>",
+		"text2": "<p>Every day our teams work to make this crazy ambition more concrete. Step by step, we develop our innovations, focused on an excessive attention to detail and the interdependence of natural elements.</p><p class='ma-0'>The name Warenghem also refers to a man passionate about people and their relationship to nature. Having spent his whole life in research and progress, he was one of those Men who, through their intellectual, cultural and scientific commitment, have contributed to making the world progress at their level to make it better.</p>",
+		"title": "",
+		"title1": "A plant and mineral project",
+		"title3": "Our step-by-step journey"
 	},
 	"fr": {
-		"title":"",
-		"description":"",
 		"calendarSection": {
 			"steps": [
 				{
@@ -340,25 +343,26 @@
 				}
 			]
 		},
-		"subtitle1": "La genèse",
-		"subtitle3": "Notre histoire",
 		"col1": "Chiner les formidables et myst&eacute;rieuses vertus cach&eacute;es dans chaque esp&egrave;ce v&eacute;g&eacute;tale et min&eacute;rale afin de cr&eacute;er des objets du quotidien et ne pas utiliser de mati&egrave;res animales puisque nous avons d'autres alternatives",
 		"col1title": "A la source",
 		"col2": "<p>Développer un véritable projet français de A à Z, relocaliser nos emplois et nos compétences. Fabriquer des objets au design minimaliste et travaill&eacute, échappant à toute mode éphémère, inspirés par les architectes et designers du monde.",
 		"col2title": "Made in France",
 		"col3": "Utiliser la technologie lorsqu'elle apporte une r&eacute;elle plus-value environnementale et &eacute;thique. Notre application ORIGIN, neutre en CO2, vous permet par exemple de d&eacute;couvrir l'histoire et la beaut&eacute; int&eacute;rieure de votre article",
 		"col3title": "2.0",
+		"description": "",
+		"subtitle1": "La genèse",
+		"subtitle3": "Notre histoire",
 		"text1": "<p>Si vous êtes arrivés ici, c'est sans doute que vous voulez savoir qui nous sommes, ce que nous faisons, et pourquoi.</p><p>Faisons court pour commencer.</p><p class='teradeli-medium'>Tels des apothicaires du XXIe siècle, notre mission est d'utiliser les éléments minéraux et végétaux qui nous entourent pour concevoir en France des objets du quotidien aussi bien performants qu'écologiques.</p><p>Concrètement, nous étudions les propriétés techniques, esthétiques et écologiques de chaque matière, nous en cherchons et en créons de nouvelles, nous nous appuyons sur des technologies lorsqu'il y a une réelle plus-value, avec un unique but en tête : une parfaite symbiose avec notre environnement et une transparence totale.</p>",
 		"text1-2": "<p>Nous étions financiers, ingénieurs, ou designers, des activités intéressantes, mais dénouées de valeurs morales et de sens dans de grands groupes industriels. Nous en sommes arrivés à la même conclusion : <span class=''>pourquoi ne pas utiliser toutes nos énergies et nos compétences complémentaires pour un projet de développement écologique francais.</span></p>",
-		"text1-3": "<p>Nous sommes passionnés par l'art, la mode et le design. Et nous avons réalisé un paradoxe frappant : <span class='teradeli-medium'>nous ne portons que peu d'attention sur la beaut&eacute; int&eacute;rieure d'un objet, sa puret&eacute; et les milliers de d&eacute;tails qui constitue son histoire</span>. Pourtant, il d&eacute;gage un certain charisme en fonction de ce qu'il repr&eacute;sente, des mat&eacute;riaux naturels qui le compose et des conditions dans lesquelles il a &eacute;t&eacute; fabriqu&eacute;. La beaut&eacute; n'est pas qu'esth&eacute;tique.</p>",
-		"text1-4": "<p>En parall&egrave;le, nous r&eacute;alisons aujourd'hui que nous ne sommes pas des &eacute;l&eacute;ments d&eacute;tach&eacute;s, <span class='teradeli-medium'>notre survie d&eacute;pend de la sant&eacute; des &eacute;cosyst&egrave;mes de la plan&egrave;te avec qui nous devons agir en collaboration.</span></p><p>Nous sommes une esp&egrave;ce animale parmi d'autres, mais nous disposons de deux pouvoirs : l'incroyable capacit&eacute; &agrave; &eacute;laborer des syst&egrave;mes complexes et la possibilit&eacute; de prendre des d&eacute;cisions suivant notre r&eacute;flexion et non notre instinct.</p><p>Warenghem Studios est n&eacute; en 2019 pour d&eacute;velopper&nbsp;ces pouvoirs afin de r&eacute;aliser 3 objectifs :</p>",
 		"text1-2title": "Comment et pourquoi nous en sommes arrivés là?",
+		"text1-3": "<p>Nous sommes passionnés par l'art, la mode et le design. Et nous avons réalisé un paradoxe frappant : <span class='teradeli-medium'>nous ne portons que peu d'attention sur la beaut&eacute; int&eacute;rieure d'un objet, sa puret&eacute; et les milliers de d&eacute;tails qui constitue son histoire</span>. Pourtant, il d&eacute;gage un certain charisme en fonction de ce qu'il repr&eacute;sente, des mat&eacute;riaux naturels qui le compose et des conditions dans lesquelles il a &eacute;t&eacute; fabriqu&eacute;. La beaut&eacute; n'est pas qu'esth&eacute;tique.</p>",
 		"text1-3title": "Notre mission. Si vous l'acceptez.",
+		"text1-4": "<p>En parall&egrave;le, nous r&eacute;alisons aujourd'hui que nous ne sommes pas des &eacute;l&eacute;ments d&eacute;tach&eacute;s, <span class='teradeli-medium'>notre survie d&eacute;pend de la sant&eacute; des &eacute;cosyst&egrave;mes de la plan&egrave;te avec qui nous devons agir en collaboration.</span></p><p>Nous sommes une esp&egrave;ce animale parmi d'autres, mais nous disposons de deux pouvoirs : l'incroyable capacit&eacute; &agrave; &eacute;laborer des syst&egrave;mes complexes et la possibilit&eacute; de prendre des d&eacute;cisions suivant notre r&eacute;flexion et non notre instinct.</p><p><span class='teradeli-medium'>Warenghem Studios est n&eacute; en 2019 pour d&eacute;velopper&nbsp;ces pouvoirs afin de r&eacute;aliser 3 objectifs :</span></p>",
 		"text2": "<p>Chaque jour nos &eacute;quipes &oelig;uvrent pour rendre cette folle ambition plus concr&egrave;te. &Eacute;tape par &eacute;tape, nous d&eacute;veloppons nos innovations, focalis&eacute;s sur un souci excessif du d&eacute;tail et de l'interd&eacute;pendance des &eacute;l&eacute;ments naturels.</p><p class='ma-0'>Le nom Warenghem fait d&rsquo;ailleurs r&eacute;f&eacute;rence &agrave; un homme passionn&eacute; par l'humain et son rapport &agrave; la nature. Ayant pass&eacute; toute sa vie &agrave; chercher et &agrave; progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribu&eacute; &agrave; faire progresser le monde &agrave; leur niveau pour le rendre meilleur.</p>",
+		"title": "",
 		"title1": "Un projet végétal et minéral",
 		"title3": "Notre parcours étape par étape"
 	}
-	
 }
 </i18n>
 

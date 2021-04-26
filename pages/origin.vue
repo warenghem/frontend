@@ -150,8 +150,6 @@
 <i18n>
 {
 	"en": {
-		"title": "Origin : Our application of traceability",
-		"description": "It lets you learn more about the journey and impact behind each item in a secure, reliable and accessible way.",
 		"calendarSection": {
 			"steps": [
 				{
@@ -191,6 +189,7 @@
 				}
 			]
 		},
+		"description": "It lets you learn more about the journey and impact behind each item in a secure, reliable and accessible way.",
 		"origins": [
 			{
 				"summary": "Its intuitive interface consists of a chronology of manufacturing steps and a map detailing their location. You will have access to a dedicated page for each manufacturer and supplier, bringing together their history, detailed certifications and address."
@@ -212,13 +211,12 @@
 				"summary": "<div>of the crops are not found in a bottle (grape marc)</div>"
 			}
 		],
+		"title": "Origin : Our application of traceability",
 		"title1": "<div data-aos='fadeup' style='color: #acacac;'>She checks all stages of production.</div><div data-aos='fadeup' data-aos-delay='300'>Without exception. </ Div",
 		"title2": "<div style='color: #acacac;' data-aos='fadeup'>A safe</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
 		"title3": "<div style='color: #acacac;' data-aos='fadeup'>An innovative solution</div><div data-aos='fadeup' data-aos-delay='300'>Faced with improved transparency still in 2021</div>"
 	},
 	"fr": {
-		"title": "Origin : Notre application de tracabilité totale",
-		"description": "Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.",
 		"calendarSection": {
 			"steps": [
 				{
@@ -258,6 +256,7 @@
 				}
 			]
 		},
+		"description": "Elle vous permet d'en savoir plus sur le parcours et l'impact derrière chaque article d'une manière sécurisée, fiable et accessible.",
 		"origins": [
 			{
 				"summary": "Son interface intuitive se compose d'une chronologie des étapes de fabrication et d'une carte détaillant leur localisation. Vous aurez accès à une page dédiée pour chaque fabriquant et fournisseur regroupant son histoire, ses certifications détaillées et son adresse."
@@ -279,6 +278,7 @@
 				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>"
 			}
 		],
+		"title": "Origin : Notre application de tracabilité totale",
 		"title1": "<div data-aos='fadeup' style='color: #acacac;'>Elle vérifie toutes les étapes de la production.</div><div data-aos='fadeup' data-aos-delay='300'>Sans exception.</div",
 		"title2": "<div style='color: #acacac;' data-aos='fadeup'>Un coffre fort</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
 		"title3": "<div style='color: #acacac;' data-aos='fadeup'>Une solution innovante</div><div data-aos='fadeup' data-aos-delay='300'>Face à une transparence perfectible encore en 2021</div>"

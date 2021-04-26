@@ -47,30 +47,30 @@
 <i18n>
 {
 	"en": {
-			"items": [
-				{
-                    "title": "Free delivery"
-                },
-                {
-                    "title": "Secure payment"
-                },
-                {
-                    "title": "Return within 14 days"
-				}
-			]
+		"items": [
+			{
+				"title": "Free delivery"
+			},
+			{
+				"title": "Secure payment"
+			},
+			{
+				"title": "Return within 14 days"
+			}
+		]
 	},
 	"fr": {
-			"items": [
-				{
-					"title": "Livraison gratuite"
-				},
-				{
-					"title": "Paiement sécurisé"
-				},
-				{
-					"title": "Retour sous 14 jours"
-				}
-            ]
+		"items": [
+			{
+				"title": "Livraison gratuite"
+			},
+			{
+				"title": "Paiement sécurisé"
+			},
+			{
+				"title": "Retour sous 14 jours"
+			}
+		]
 	}
 }
 </i18n>

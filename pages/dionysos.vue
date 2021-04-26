@@ -257,13 +257,12 @@
 <i18n>
 {
 	"en": {
-		"title":"Our vegan Dionysos wine leathers",
-		"description":"Discover our latest innovation: our solid, vegan, perfect grain leathers. Wine appeared to us as the absolute figure of French elegance.",
 		"calendarSection": {
 			"subtitle": "To follow the progress of the project. It will refine over time. Subscribe to the Newsletter and follow us on Instagram and Facebook to be notified.",
 			"tag": "We are here",
 			"title": "The schedule before the launch of each object"
 		},
+		"description": "Discover our latest innovation: our solid, vegan, perfect grain leathers. Wine appeared to us as the absolute figure of French elegance.",
 		"origins": [
 			{
 				"summary": "<p> Our wine leather has been extensively tested </p> <p> Same mechanical, aesthetic and sensory characteristics as traditional leather </p> <p> Conversely - requires little maintenance </p>"
@@ -286,19 +285,19 @@
 			}
 		],
 		"subtitle2": "billion m2 of wine leather that could be produced each year, just by recovering this production “waste”. This is more than the annual production of animal leather (around 1.8 million), 80% of which is chemically treated.",
+		"title": "Our vegan Dionysos wine leathers",
 		"title1": "<div data-aos='fadeup'>The genesis of the idea</div><div data-aos='fadeup' data-aos-delay='300'>Two observations</div>",
 		"title2": "<div data-aos='fadeup'>We didn't expect it ...</div><div data-aos='fadeup' data-aos-delay='300'>And yet</div>",
 		"title3": "<div data-aos='fadeup'>Harvests</div><div data-aos='fadeup' data-aos-delay='300'>With wine leather</div>",
 		"title4": "<div data-aos='fadeup'>And the icing on the cake </div>"
 	},
 	"fr": {
-		"title":"Dionysos : Nos cuirs végétaux de vin",
-		"description":"Découvrez notre dernière innovation : nos cuirs solides, vegan, au grain parfait. Le vin nous est apparu comme la figure absolue de l'élégance à la Francaise.",
 		"calendarSection": {
 			"subtitle": "Pour suivre le déroulement du projet. Il s’affinera au fil du temps. Inscrivez vous à la Newsletter et suivez nous sur Instagram et Facebook pour en être notifié.",
 			"tag": "Nous en sommes ici",
 			"title": "Le calendrier avant le lancement de chaque objet"
 		},
+		"description": "Découvrez notre dernière innovation : nos cuirs solides, vegan, au grain parfait. Le vin nous est apparu comme la figure absolue de l'élégance à la Francaise.",
 		"origins": [
 			{
 				"summary": "<p>Notre cuir de vin a &eacute;t&eacute; longuement test&eacute;</p><p >M&ecirc;mes caract&eacute;ristiques m&eacute;caniques, esth&eacute;tiques et sensorielles qu'un cuir traditionnel</p><p >A contrario - ne demande que peu d'entretien</p>"
@@ -321,6 +320,7 @@
 			}
 		],
 		"subtitle2": "milliards de m2 de cuir de vin que l'on pourrait produire chaque année, rien qu'en valorisant ces «déchets» de production. C'est plus que la production annuelle de cuir animal (environ 1,8 million) dont 80% sont traités chimiquements.",
+		"title": "Dionysos : Nos cuirs végétaux de vin",
 		"title1": "<div data-aos='fadeup'>La genese de l'idée</div><div data-aos='fadeup' data-aos-delay='300'>Deux constats</div>",
 		"title2": "<div data-aos='fadeup'>Nous ne nous y attendions pas...</div><div data-aos='fadeup' data-aos-delay='300'>Et pourtant</div>",
 		"title3": "<div data-aos='fadeup'>Des vendanges</div><div data-aos='fadeup' data-aos-delay='300'>Au cuir de vin</div>",

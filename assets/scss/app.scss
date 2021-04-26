@@ -55,7 +55,9 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .v-btn--active .v-icon:before, .v-btn--active span.v-btn__content {
   color: #0081a7 !important;
 }
-
+.border-2 {
+  border: #eae8e4 solid 1px;
+}
 .border-top-2 {
   border-top: #eae8e4 solid 1px;
 }
@@ -1063,7 +1065,7 @@ letter-spacing: .009em;
   /*backdrop-filter: saturate(180%) blur(20px);
   background-color: rgba(255, 255, 255, 0.62)!important;*/
   transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  background-color: rgba(255, 255, 255, 1)!important;
+  background-color: rgba(255, 255, 255, 0.9)!important;
 
   .brand {
     filter: brightness(1) invert(0);
