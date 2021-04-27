@@ -1,4 +1,5 @@
 import getSiteMeta from "./utils/getSiteMeta";
+
 const meta = getSiteMeta();
 import colors from 'vuetify/es5/util/colors'
 import axios from 'axios'
@@ -18,20 +19,20 @@ export default {
     title: 'Somewhere...',
     meta: [
       ...meta,
-      { charset: "utf-8" },
-      { name: "HandheldFriendly", content: "True" },
-      { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { property: "og:site_name", content: "Warenghem Studios" },
+      {charset: "utf-8"},
+      {name: "HandheldFriendly", content: "True"},
+      {name: "viewport", content: "width=device-width, initial-scale=1"},
+      {property: "og:site_name", content: "Warenghem Studios"},
       {
         hid: "description",
         name: "description",
         content:
           "À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com'",
       },
-      { property: "og:image:width", content: "740" },
-      { property: "og:image:height", content: "300" },
-      { name: "twitter:site", content: "@warenghemparis" },
-      { name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/logo-meta.png" },
+      {property: "og:image:width", content: "740"},
+      {property: "og:image:height", content: "300"},
+      {name: "twitter:site", content: "@warenghemparis"},
+      {name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/logo-meta.png"},
     ],
     link: [
       /*{
@@ -250,59 +251,59 @@ export default {
       numberFormats: {
         'fr-fr': {
           currency: {
-             style: 'currency',
-              currency: 'EUR',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'EUR',
+            minimumFractionDigits: 0
+          }
         },
         'en-gb': {
           currency: {
-             style: 'currency',
-              currency: 'GBP',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'GBP',
+            minimumFractionDigits: 0
+          }
         },
         'fr-ch': {
           currency: {
-             style: 'currency',
-              currency: 'CHF',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'CHF',
+            minimumFractionDigits: 0
+          }
         },
         'en-ie': {
           currency: {
-             style: 'currency',
-              currency: 'EUR',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'EUR',
+            minimumFractionDigits: 0
+          }
         },
         'en-us': {
           currency: {
-             style: 'currency',
-              currency: 'USD',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0
+          }
         },
         'fr-ca': {
           currency: {
-             style: 'currency',
-              currency: 'CAD',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'CAD',
+            minimumFractionDigits: 0
+          }
         },
         'en-ca': {
           currency: {
-             style: 'currency',
-              currency: 'CAD',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'CAD',
+            minimumFractionDigits: 0
+          }
         },
         'en': {
           currency: {
-             style: 'currency',
-              currency: 'USD',
-              minimumFractionDigits: 0
-             }
+            style: 'currency',
+            currency: 'USD',
+            minimumFractionDigits: 0
+          }
         }
       },
       dateTimeFormats: {
@@ -434,19 +435,26 @@ export default {
       if (document.extension === '.md') {
         document.priceEuro = document.offers ? parseFloat(document.offers.price) : null;
         let currency = [];
-        let snipCurrency={};
+        let snipCurrency = {};
         if (document.priceEuro) {
           /*250 per month axios.get("http://api.exchangeratesapi.io/v1/latest?access_key=64ac053a7427164393210fab8ef82178&base=EUR").then(res => {*/
           /*1000 per month axios.get("http://data.fixer.io/api/latest?access_key=c92c63715229ad0c6cbc84a09a4fcd66&base=EUR").then(res => {*/
-          /*unlimited per month*/ axios.get("https://api.exchangerate.host/latest?base=EUR").then(res => {
+          /*unlimited per month*/
+          axios.get("https://api.exchangerate.host/latest?base=EUR").then(res => {
             Object.entries(res.data.rates).forEach(([key, value]) => {
-              if(key !== 'EUR'){
-                currency.push({"name": key, "price": (value * document.priceEuro+document.priceEuro*0.01).toFixed(0)})
-                snipCurrency[key]=parseInt((value * document.priceEuro+document.priceEuro*0.01).toFixed(0))
+              if (['EUR', 'CAD', 'USD', 'GBP', 'CHF'].includes(key)) {
+                if (key !== 'EUR') {
+                  currency.push({
+                    "name": key,
+                    "price": (value * document.priceEuro + document.priceEuro * 0.01).toFixed(0)
+                  })
+                  snipCurrency[key] = parseInt((value * document.priceEuro + document.priceEuro * 0.01).toFixed(0))
                 } else {
-                currency.push({"name": key, "price": document.priceEuro.toFixed(0)})
-                snipCurrency[key]=parseInt(document.priceEuro.toFixed(0))
+                  currency.push({"name": key, "price": document.priceEuro.toFixed(0)})
+                  snipCurrency[key] = parseInt(document.priceEuro.toFixed(0))
                 }
+              }
+
             });
             document.currency = currency;
             document.snipCurrency = snipCurrency;
@@ -479,7 +487,7 @@ export default {
             darken3: '#161617'
           },
           primary: '#ffffff',
-          secondary:'#767676',
+          secondary: '#767676',
           terciary: '#666666',
           accent: colors.grey.darken3,
           info: colors.teal.lighten1,
@@ -528,26 +536,26 @@ export default {
       '^.*filter.*$',
     ],
     routes: async () => {
-      const { $content } = require('@nuxt/content')
-      const files = await $content(`router`,  { deep: true }).only(['path', 'slug']).fetch()
+      const {$content} = require('@nuxt/content')
+      const files = await $content(`router`, {deep: true}).only(['path', 'slug']).fetch()
       /*return files.map(file => file.path === '/index' ? '/' : file.path)*/
 
       return files.map((file) => ({
         url: file.path.split('/')[1] === 'en' ? file.slug : file.path,
         links: [
-          { lang: 'en', url: `en/${file.slug}/` },
-          { lang: 'en-ca', url: `en-ca/${file.slug}/` },
-          { lang: 'en-gb', url: `en-ca/${file.slug}/` },
-          { lang: 'en-ie', url: `en-ie/${file.slug}/` },
-          { lang: 'en-us', url: `en-us/${file.slug}/` },
-          { lang: 'fr-ca', url: `fr-ca/${file.slug}/` },
-          { lang: 'fr-ch', url: `fr-ch/${file.slug}/` },
+          {lang: 'en', url: `en/${file.slug}/`},
+          {lang: 'en-ca', url: `en-ca/${file.slug}/`},
+          {lang: 'en-gb', url: `en-ca/${file.slug}/`},
+          {lang: 'en-ie', url: `en-ie/${file.slug}/`},
+          {lang: 'en-us', url: `en-us/${file.slug}/`},
+          {lang: 'fr-ca', url: `fr-ca/${file.slug}/`},
+          {lang: 'fr-ch', url: `fr-ch/${file.slug}/`},
           /*{ lang: 'fr-fr', url: `fr-fr/${file.slug}/` },*/
-          { lang: 'x-default', url: `${file.slug}/` }
+          {lang: 'x-default', url: `${file.slug}/`}
         ]
       }))
     },
-    filter({ routes }) {
+    filter({routes}) {
       return routes.map((route) => {
         if (!route.name) return route
         const page = route.name.split('__')[0]
@@ -582,7 +590,7 @@ export default {
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    extend (config, { isDev, isClient, loaders: { vue } }) {
+    extend(config, {isDev, isClient, loaders: {vue}}) {
       if (isClient) {
         vue.transformAssetUrls.img = ['data-src', 'src'];
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
@@ -590,44 +598,44 @@ export default {
     },
     postcss: {
       plugins: {
-          "@fullhuman/postcss-purgecss": {
-            content: [
-              'components/**/*.vue',
-              'layouts/**/*.vue',
-              'pages/**/*.vue',
-              'plugins/**/*.js',
-              'node_modules/vuetify/src/**/*.ts',
+        "@fullhuman/postcss-purgecss": {
+          content: [
+            'components/**/*.vue',
+            'layouts/**/*.vue',
+            'pages/**/*.vue',
+            'plugins/**/*.js',
+            'node_modules/vuetify/src/**/*.ts',
+          ],
+          styleExtensions: ['.css'],
+          safelist: {
+            standard: [
+              "body",
+              "html",
+              "nuxt-progress",
+              /col-*/,
+              /v-dialog*/,
+              /^vue-foldable/,
+              /^slide-left/,
+              "aos-init", "aos-animate", "data-aos-delay", "data-aos-duration",
             ],
-            styleExtensions: ['.css'],
-            safelist: {
-              standard: [
-                "body",
-                "html",
-                "nuxt-progress",
-                /col-*/,
-                /v-dialog*/,
-                /^vue-foldable/,
-                /^slide-left/,
-                "aos-init", "aos-animate", "data-aos-delay", "data-aos-duration",
-              ],
-              deep: [
-                /page-enter/,
-                /page-leave/,
-                /.*-transition/,
-                /dialog-transition/,
-                /tab-transition/,
-                /tab-reversetransition/,
-                /slide-fade/,
-                /bottom-sheet-transition/,
-                /dialog-bottom-transition/,
-                /^vue-foldable/,
-                /^viewer/,
-                /^slide-left/,
-              ],
-              greedy: [/leaflet/,/^lazy/,/^ls/,/^mediabox/,/^slick/,/^viewer/,/^vue-foldable/,/^slide-left/]
-            }
+            deep: [
+              /page-enter/,
+              /page-leave/,
+              /.*-transition/,
+              /dialog-transition/,
+              /tab-transition/,
+              /tab-reversetransition/,
+              /slide-fade/,
+              /bottom-sheet-transition/,
+              /dialog-bottom-transition/,
+              /^vue-foldable/,
+              /^viewer/,
+              /^slide-left/,
+            ],
+            greedy: [/leaflet/, /^lazy/, /^ls/, /^mediabox/, /^slick/, /^viewer/, /^vue-foldable/, /^slide-left/]
           }
         }
+      }
     }
   },
   generate: {
