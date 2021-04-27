@@ -41,6 +41,7 @@
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
                                 class="flex items-center whitespace-no-wrap"
+                                @click.native="$snipcart.setLanguage(locale.code)"
                                 >
                                 <v-card 
                                     class="bg-white rounded-pill px-3 buttonblack"
@@ -73,6 +74,7 @@
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
                                 class="flex items-center whitespace-no-wrap"
+                                @click.native="$snipcart.setLanguage(locale.code)"
                                 >
                                 <v-card 
                                     class="bg-white rounded-pill px-3 buttonblack"
@@ -101,10 +103,10 @@
                     </v-container>
                     <div class="pa-5 pt-0">
                         <span class="titlesmall teradeli-medium primary--text">Other Regions : </span>
-                        <span v-for="locale in otheravailableLocales" :key="locale.code">
+                        <span @click="sheet = false" v-for="locale in otheravailableLocales" :key="locale.code">
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
-                                @click="sheet = false"
+                                @click.native="$snipcart.setLanguage(locale.code);"
                                 >
                                 {{ locale.name }}
                                 <span class="pr-2"></span>

@@ -26,6 +26,14 @@
       <v-toolbar-items>
         <v-btn
           text
+          class="text-uppercase item"
+        >
+          <Cartbutton/>
+        </v-btn>
+      </v-toolbar-items>
+      <v-toolbar-items>
+        <v-btn
+          text
           class="px-0"
         >
           <AppLangSwitcher/>

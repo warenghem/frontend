@@ -91,6 +91,6 @@
 .treemapheader {
     z-index: 2;
     background: rgb(246,245,243);
-    background: linear-gradient(180deg, rgba(246,245,243,1) 0%, rgba(246,245,243,0.923406862745098) 50%, rgba(246,245,243,0.7693452380952381) 78%, rgba(246,245,243,0) 100%);
+    background: linear-gradient(180deg, rgba(234, 234, 236,1) 0%, rgba(234, 234, 236,0.923406862745098) 50%, rgba(234, 234, 236,0.7693452380952381) 78%, rgba(234, 234, 236,0) 100%);
 }
 </style>

@@ -6,6 +6,9 @@
 .multilinechip {
   width:500px
 }
+.theme--light.v-list-item, .theme--light.v-btn, .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-application {
+  color: #313131!important;
+}
 .theme--dark .bg-theme {
   background-color: #161617 !important;
 }

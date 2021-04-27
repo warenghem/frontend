@@ -17,10 +17,10 @@
         <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
           <picture class="">
             <source
-            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 2500w,'" 
+            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 2500w,'" 
             >
             <img class="lazyload mediabox-img" 
-            :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 2x'" 
+            :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 2x'" 
             data-sizes="auto" />
           </picture>
         </div>

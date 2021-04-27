@@ -90,6 +90,7 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/svg',
     '@nuxtjs/google-analytics',
+    '@nuxtjs/snipcart'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
@@ -487,11 +488,11 @@ export default {
         light: {
           background: colors.white,
           bgcard: {
-            base: '#f6f5f3',
+            base: '#eaeaec',
             lighten3: '#ffb700',
             darken3: '#161617'
           },
-          primary: '#19110b',
+          primary: '#313131',
           secondary: '#424242',
           terciary: '#ffb700',
           accent: colors.grey.darken3,
@@ -507,6 +508,9 @@ export default {
       }
     },
     css: true,
+  },
+  snipcart: {
+    key: "N2VkOWYwOTgtNDYxMC00YWFmLWFjYzEtMDllZmY0YzdmZmUyNjM3Mzk5NDI5MzA2MTE0MDg2",
   },
   sitemap: {
     path: '/sitemapindex.xml',

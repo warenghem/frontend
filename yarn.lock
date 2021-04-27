@@ -1675,10 +1675,10 @@
     minimatch "^3.0.4"
     sitemap "^4.1.1"
 
-"@nuxtjs/snipcart@^1.1.0":
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/@nuxtjs/snipcart/-/snipcart-1.1.0.tgz#34e9f2fa7efaf57ff52d09561dd5562640705b4d"
-  integrity sha512-uhpwjd3V1IGB6WPJpLYV63hY3YwP2BzpAC9aTpFx2Bs0Uk5O9NgfsUlecQD9y3NLV9+iSH+0Oxmfl6TYcrbMFA==
+"@nuxtjs/snipcart@^1.2.2":
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/@nuxtjs/snipcart/-/snipcart-1.2.2.tgz#b3edb12f52fe86c1c9dca2a0716ba0674e462dbb"
+  integrity sha512-wtNkU8F/Mu1NI3l776oE5G1QCnWECp4gmjUNoGOFt88pfByDbtzSLuj17BpHjRRl/W3O49LQnMW9qsIFvfE5uQ==
 
 "@nuxtjs/svg@^0.1.12":
   version "0.1.12"

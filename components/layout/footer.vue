@@ -1,5 +1,5 @@
 <template>
-  <v-theme-provider dark>
+  <v-theme-provider light>
     <v-footer
       app
       padless
@@ -8,13 +8,13 @@
       <v-card
         flat
         tile
-        color="#000000"
+        color="bgcard"
         class="text-center w-100 px-3 px-sm-15"
       >
         <v-card-title class="px-0 pb-0 d-block d-md-flex">
           <div class="d-block d-md-flex">
             <NuxtLink :to="localePath('/')">
-              <div style="fill: #ffffff;stroke: #ffffff;width:140px" class="py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
+              <div style="width:140px" class="svglogo py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
             </NuxtLink>
             <!--<v-breadcrumbs class="justify-center" style="margin-bottom:5px" dark :items="crumbs">
               <template v-slot:item="{ item }">
@@ -83,7 +83,7 @@
 </template>
 
 <script>
-    import LogoSmNp from "~/assets/images/Logo-w-noparis-vf.svg?raw";
+    import LogoSmNp from "~/assets/images/Warenghem-w-noparis-vf.svg?raw";
     import {mdiChevronRight} from '@mdi/js'
     export default {
         name: 'mainfooter',
