@@ -21,7 +21,7 @@
                   :key="'image_'+i_dx"
                   style="outline: none;"
                 >
-                  
+
                   <div class="wa-smart-picture square-ratio skeletton wa-product-image">
                     <div class="position-absolute px-3 realisation">{{$t('3drender')}}</div>
                     <img
@@ -160,7 +160,7 @@
                     </svg>
                     <span class="baidu-view-more-text">{{ collapsed ? $t('product.readMore') : $t('product.readLess') }}</span>
                   </div>
-                </template>        
+                </template>
               </foldable>
             </div>
           </div>
@@ -377,7 +377,6 @@
                                 "focusOnSelect": true,
                                 "slidesToShow": 2,
                                 "slidesToScroll": 2,
-                                "centerMode": true
                             }
                         },
                         {
@@ -387,7 +386,6 @@
                                 "focusOnSelect": true,
                                 "slidesToShow": 1,
                                 "slidesToScroll": 1,
-                                "centerMode": true,
                             }
                         }
                     ]

@@ -434,6 +434,7 @@ export default {
       if (document.extension === '.md') {
         document.priceEuro = document.offers ? parseFloat(document.offers.price) : null;
         let currency = [];
+        let snipCurrency={};
         if (document.priceEuro) {
           /*250 per month axios.get("http://api.exchangeratesapi.io/v1/latest?access_key=64ac053a7427164393210fab8ef82178&base=EUR").then(res => {*/
           /*1000 per month axios.get("http://data.fixer.io/api/latest?access_key=c92c63715229ad0c6cbc84a09a4fcd66&base=EUR").then(res => {*/
@@ -441,8 +442,10 @@ export default {
             Object.entries(res.data.rates).forEach(([key, value]) => {
               if(key !== 'EUR'){
                 currency.push({"name": key, "price": (value * document.priceEuro+document.priceEuro*0.01).toFixed(0)})
+                snipCurrency[key]=(value * document.priceEuro+document.priceEuro*0.01).toFixed(0)
                 } else {
                 currency.push({"name": key, "price": document.priceEuro.toFixed(0)})
+                snipCurrency[key]=document.priceEuro.toFixed(0)
                 }
             });
             document.currency = currency;
