@@ -3,7 +3,7 @@
         elevation="0"
         rounded
         dark
-        class="btn-theme snipcart-add-item d-none"
+        class="btn-theme snipcart-add-item"
         style="max-width:100%;word-break: break-word;outline: 0;display: inline-block;white-space: normal;"
         :data-item-id="product.sku"
         :data-item-price="product.currency[0]"
