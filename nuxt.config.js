@@ -442,15 +442,17 @@ export default {
             Object.entries(res.data.rates).forEach(([key, value]) => {
               if(key !== 'EUR'){
                 currency.push({"name": key, "price": (value * document.priceEuro+document.priceEuro*0.01).toFixed(0)})
-                snipCurrency[key]=(value * document.priceEuro+document.priceEuro*0.01).toFixed(0)
+                snipCurrency[key]=parseInt((value * document.priceEuro+document.priceEuro*0.01).toFixed(0))
                 } else {
                 currency.push({"name": key, "price": document.priceEuro.toFixed(0)})
-                snipCurrency[key]=document.priceEuro.toFixed(0)
+                snipCurrency[key]=parseInt(document.priceEuro.toFixed(0))
                 }
             });
             document.currency = currency;
+            document.snipCurrency = snipCurrency;
           }).catch(() => {
-            document.currency = currency
+            document.currency = currency;
+            document.snipCurrency = {}
           });
         }
       }
