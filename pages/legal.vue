@@ -292,6 +292,29 @@
 		},
         head() {
             return {
+				title: this.$t('title'),
+				meta: [
+					{
+						hid: 'description',
+						name: 'description',
+						content: this.$t('description')
+					},
+					{
+					hid: "og:title",
+					property: "og:title",
+					content: this.$t('title'),
+					},
+					{
+					hid: "og:description",
+					property: "og:description",
+					content: this.$t('description')
+					},
+					{
+					hid: "og:url",
+					property: "og:url",
+					content: 'https://www.warenghem.com' + this.$nuxt.$route.path,
+					},
+				]
             }
         }
     }
@@ -301,6 +324,8 @@
 <i18n>
 {
 	"en": {
+		"title":"Legal – Warenghem Help Center",
+		"description":"Terms and conditions – Warenghem Help Center",
 		"conditions": {
 			"menu": "Terms and conditions",
 			"subtitle": "Version 1.0"
@@ -458,6 +483,8 @@
 		"title": "Legal Notice"
 	},
 	"fr": {
+		"title":"Mentions Légales – Warenghem Centre d'aide",
+		"description":"Mentions Légales, CGV, protection des données – Warenghem Centre d'aide",
 		"conditions": {
 			"menu": "Conditions générales de ventes",
 			"subtitle": "Version 1.0"

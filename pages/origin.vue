@@ -211,7 +211,7 @@
 				"summary": "<div>of the crops are not found in a bottle (grape marc)</div>"
 			}
 		],
-		"title": "Origin : Our application of traceability",
+		"title": "Origin : Our application of absolute traceability",
 		"title1": "<div data-aos='fadeup' style='color: #acacac;'>She checks all stages of production.</div><div data-aos='fadeup' data-aos-delay='300'>Without exception. </ Div",
 		"title2": "<div style='color: #acacac;' data-aos='fadeup'>A safe</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
 		"title3": "<div style='color: #acacac;' data-aos='fadeup'>An innovative solution</div><div data-aos='fadeup' data-aos-delay='300'>Faced with improved transparency still in 2021</div>"
@@ -278,7 +278,7 @@
 				"summary": "<div>des récoltes ne se retrouvent pas dans une bouteille (marc de raisin)</div>"
 			}
 		],
-		"title": "Origin : Notre application de tracabilité totale",
+		"title": "Origin : Notre application de tracabilité absolue",
 		"title1": "<div data-aos='fadeup' style='color: #acacac;'>Elle vérifie toutes les étapes de la production.</div><div data-aos='fadeup' data-aos-delay='300'>Sans exception.</div",
 		"title2": "<div style='color: #acacac;' data-aos='fadeup'>Un coffre fort</div><div data-aos='fadeup' data-aos-delay='300'>Inviolable</div>",
 		"title3": "<div style='color: #acacac;' data-aos='fadeup'>Une solution innovante</div><div data-aos='fadeup' data-aos-delay='300'>Face à une transparence perfectible encore en 2021</div>"

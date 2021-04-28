@@ -251,8 +251,31 @@
 		},
         head() {
             return {
+				title: this.$t('title'),
+				meta: [ 
+					{
+						hid: 'description',
+						name: 'description',
+						content: this.$t('description')
+					},
+					{
+					hid: "og:title",
+					property: "og:title",
+					content: this.$t('title'),
+					},
+					{
+					hid: "og:description",
+					property: "og:description",
+					content: this.$t('description')
+					},
+					{
+					hid: "og:url",
+					property: "og:url",
+					content: 'https://www.warenghem.com' + this.$nuxt.$route.path,
+					},
+				]
             }
-        }
+        }			
     }
 
 </script>
@@ -260,6 +283,8 @@
 <i18n>
 {
 	"en": {
+		"title":"Q&A – Warenghem Help Center",
+		"description":"Questions & Answers – Warenghem Help Center",
 		"material": {
 			"menu": "Materials and maintenance",
 			"subtitle": "Discover our natural materials and preserve the beauty of your item"
@@ -342,6 +367,8 @@
 		"title": "Your questions"
 	},
 	"fr": {
+		"title":"FAQ – Warenghem Centre d'aide",
+		"description":"Questions & Réponses – Warenghem Centre d'aide",
 		"material": {
 			"menu": "Matières et entretien",
 			"subtitle": "Découvrez nos matières naturelles et préserver la beauté de votre article"

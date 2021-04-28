@@ -224,6 +224,8 @@
 <i18n>
 {
 	"en": {
+		"title":"Welcome to the plant and mineral era - Warenghem Studios",
+		"description":"Search for the formidable and mysterious virtues hidden in each plant and mineral species, products made in France, and cutting-edge technologies - Warenghem Help Center",
 		"calendarSection": {
 			"steps": [
 				{
@@ -294,6 +296,8 @@
 		"title3": "Our step-by-step journey"
 	},
 	"fr": {
+		"title":"Bienvenue dans l'ère végétale et minérale – Warenghem Studios",
+		"description":"Chiner les formidables et mystérieuses vertus cachées dans chaque espèce végétale et minérale, des produits made in france, et des technologies de pointe – Warenghem Centre d'aide",
 		"calendarSection": {
 			"steps": [
 				{
@@ -344,11 +348,11 @@
 			]
 		},
 		"col1": "Chiner les formidables et myst&eacute;rieuses vertus cach&eacute;es dans chaque esp&egrave;ce v&eacute;g&eacute;tale et min&eacute;rale afin de cr&eacute;er des objets du quotidien et ne pas utiliser de mati&egrave;res animales puisque nous avons d'autres alternatives",
-		"col1title": "A la source",
+		"col1title": "Végétal et minéral",
 		"col2": "<p>Développer un véritable projet français de A à Z, relocaliser nos emplois et nos compétences. Fabriquer des objets au design minimaliste et travaill&eacute, échappant à toute mode éphémère, inspirés par les architectes et designers du monde.",
 		"col2title": "Made in France",
 		"col3": "Utiliser la technologie lorsqu'elle apporte une r&eacute;elle plus-value environnementale et &eacute;thique. Notre application ORIGIN, neutre en CO2, vous permet par exemple de d&eacute;couvrir l'histoire et la beaut&eacute; int&eacute;rieure de votre article",
-		"col3title": "2.0",
+		"col3title": "Technologies de pointe",
 		"description": "",
 		"subtitle1": "La genèse",
 		"subtitle3": "Notre histoire",
@@ -360,7 +364,7 @@
 		"text1-4": "<p>En parall&egrave;le, nous r&eacute;alisons aujourd'hui que nous ne sommes pas des &eacute;l&eacute;ments d&eacute;tach&eacute;s, <span class='teradeli-medium'>notre survie d&eacute;pend de la sant&eacute; des &eacute;cosyst&egrave;mes de la plan&egrave;te avec qui nous devons agir en collaboration.</span></p><p>Nous sommes une esp&egrave;ce animale parmi d'autres, mais nous disposons de deux pouvoirs : l'incroyable capacit&eacute; &agrave; &eacute;laborer des syst&egrave;mes complexes et la possibilit&eacute; de prendre des d&eacute;cisions suivant notre r&eacute;flexion et non notre instinct.</p><p><span class='teradeli-medium'>Warenghem Studios est n&eacute; en 2019 pour d&eacute;velopper&nbsp;ces pouvoirs afin de r&eacute;aliser 3 objectifs :</span></p>",
 		"text2": "<p>Chaque jour nos &eacute;quipes &oelig;uvrent pour rendre cette folle ambition plus concr&egrave;te. &Eacute;tape par &eacute;tape, nous d&eacute;veloppons nos innovations, focalis&eacute;s sur un souci excessif du d&eacute;tail et de l'interd&eacute;pendance des &eacute;l&eacute;ments naturels.</p><p class='ma-0'>Le nom Warenghem fait d&rsquo;ailleurs r&eacute;f&eacute;rence &agrave; un homme passionn&eacute; par l'humain et son rapport &agrave; la nature. Ayant pass&eacute; toute sa vie &agrave; chercher et &agrave; progresser, il faisait partie de ces Hommes qui, par leur engagement intellectuel, culturel et scientifique, ont contribu&eacute; &agrave; faire progresser le monde &agrave; leur niveau pour le rendre meilleur.</p>",
 		"title": "",
-		"title1": "Un projet végétal et minéral",
+		"title1": "Bienvenue dans l'ère végétale et minérale",
 		"title3": "Notre parcours étape par étape"
 	}
 }

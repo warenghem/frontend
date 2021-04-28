@@ -58,6 +58,29 @@
 		},
         head() {
             return {
+				title: this.$t('title'),
+				meta: [ 
+					{
+						hid: 'description',
+						name: 'description',
+						content: this.$t('description')
+					},
+					{
+					hid: "og:title",
+					property: "og:title",
+					content: this.$t('title'),
+					},
+					{
+					hid: "og:description",
+					property: "og:description",
+					content: this.$t('description')
+					},
+					{
+					hid: "og:url",
+					property: "og:url",
+					content: 'https://www.warenghem.com' + this.$nuxt.$route.path,
+					},
+				]
             }
         }
     }
@@ -67,12 +90,16 @@
 <i18n>
 {
 	"en": {
+		"title":"Secure payments – Warenghem Help Center",
+		"description":"Our 100% secure payment methods – Warenghem Help Center",
 		"payment": {
 			"subtitle": "Our 100% secure payment methods"
 		},
 		"title": "Secure payments"
 	},
 	"fr": {
+		"title":"Paiements sécurisés – Warenghem Centre d'aide",
+		"description":"Nos moyens de paiement 100% sécurisés – Warenghem Centre d'aide",
 		"payment": {
 			"subtitle": "Nos moyens de paiement 100% sécurisés"
 		},

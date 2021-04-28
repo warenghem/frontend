@@ -257,6 +257,7 @@
 <i18n>
 {
 	"en": {
+		"description":"Delivery and returns – Warenghem Help Center",
 		"calendarSection": {
 			"subtitle": "To follow the progress of the project. It will refine over time. Subscribe to the Newsletter and follow us on Instagram and Facebook to be notified.",
 			"tag": "We are here",

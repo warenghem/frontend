@@ -246,7 +246,6 @@
 
         };
     },
-
     methods: {
         zoomUpdate(zoom) {
             this.currentZoom = zoom;

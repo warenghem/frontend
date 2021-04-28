@@ -105,6 +105,29 @@
 		},
         head() {
             return {
+				title: this.$t('title'),
+				meta: [ 
+					{
+						hid: 'description',
+						name: 'description',
+						content: this.$t('description')
+					},
+					{
+					hid: "og:title",
+					property: "og:title",
+					content: this.$t('title'),
+					},
+					{
+					hid: "og:description",
+					property: "og:description",
+					content: this.$t('description')
+					},
+					{
+					hid: "og:url",
+					property: "og:url",
+					content: 'https://www.warenghem.com' + this.$nuxt.$route.path,
+					},
+				]
             }
         }
     }
@@ -114,6 +137,8 @@
 <i18n>
 {
 	"en": {
+		"title":"Partnership – Warenghem Help Center",
+		"description":"Partnership, Press, Reseller – Warenghem Help Center",
 		"shipping": {
 			"subtitle": "Partnership, Press, Reseller"
 		},
@@ -137,6 +162,8 @@
 		"title": "Partnership, Press"
 	},
 	"fr": {
+		"title":"Partenariats – Warenghem Centre d'aide",
+		"description":"Partenariat, Presse, Revendeur – Warenghem Centre d'aide",
 		"shipping": {
 			"subtitle": "Partenariat, Presse, Revendeur"
 		},
