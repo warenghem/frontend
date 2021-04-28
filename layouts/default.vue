@@ -146,6 +146,12 @@
         }
       }
     },
+    mounted () {
+      const currency = context;
+      document.addEventListener('snipcart.ready', function () {
+        window.Snipcart.events.on(window.Snipcart.api.session.setCurrency(this.$i18n.localeProperties.currency))
+      })
+    },
     head () {
       const i18nHead = this.$nuxtI18nHead({ addSeoAttributes: true })
       return {
