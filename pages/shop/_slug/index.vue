@@ -106,7 +106,7 @@
             </div>
           </div>
           <Reservebutton class="w-100" />
-          <Buybutton :product="product" class="w-100" />
+          <Buybutton :product="product" class="w-100 d-none" />
           <p class="text-center">{{$t('nopayment')}}</p>
           <div class="mt-5" v-html="product.description">
           </div>

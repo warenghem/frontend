@@ -26,7 +26,7 @@
       <v-toolbar-items>
         <v-btn
           text
-          class="text-uppercase item"
+          class="text-uppercase item d-none"
         >
           <Cartbutton/>
         </v-btn>
