@@ -66,53 +66,47 @@
 			</v-row>
 		</div>
 		<div class="page-title3 text-center pb-10 d-none">{{$t('text1-3title')}}</div>
-		<v-row class="text-center ma-auto" style="max-width: 1400px;">
-			<v-col data-aos="fadeup" class="px-5 rounded-xl h-100" cols="12" md="4">
-				<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
-					<div class="z-2 text-white pvw text-center">
-						<div class="text-center page-title3">{{$t('col1title')}}</div>
-						<div class="" v-html="$t('col1')"></div>
-					</div>
-					<div>
-						<img
-							data-sizes="auto"
-							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 2500w'"
-							class="lazyload mediabox-img rounded-xl"
-						/>
-					</div>
-				</v-card>
-			</v-col>
-			<v-col data-aos="fadeup" data-aos-delay="300" class="px-5 h-100 rounded-xl" cols="12" md="4">
-				<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
-					<div class="z-2 text-white pvw text-center">
-						<div class="text-center page-title3">{{$t('col2title')}}</div>
-						<div class="" v-html="$t('col2')"></div>
-					</div>
-					<div class="rounded-xl">
-						<img
-							data-sizes="auto"
-							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/projects.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/projects.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/projects.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/projects.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/projects.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/projects.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/projects.jpg 2500w'"
-							class="lazyload mediabox-img rounded-xl"
-						/>
-					</div>
-				</v-card>
-			</v-col>
-			<v-col data-aos="fadeup" data-aos-delay="600" class="px-5 h-100" cols="12" md="4">
-				<v-card class="position-relative rounded-xl invgradientoverlay roundedoverlay">
-					<div class="z-2 text-white pvw text-center">
-						<div class="text-center page-title3">{{$t('col3title')}}</div>
-						<div class="" v-html="$t('col3')"></div>
-					</div>
-					<div class="rounded-xl">
-						<img
-							data-sizes="auto"
-							:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 2500w'"
-							class="lazyload mediabox-img rounded-xl "
-						/>
-					</div>
-				</v-card>
-			</v-col>
-		</v-row>
+		<v-container style="max-width:1400px" fluid class="threegrid py-4">
+			<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay bgcard item1">
+				<div class="z-2 text-white pvw text-center">
+					<div class="text-center page-title3">{{$t('col1title')}}</div>
+					<div class="" v-html="$t('col1')"></div>
+				</div>
+				<div>
+					<img
+						data-sizes="auto"
+						:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/Environments/dionysos_2.png 2500w'"
+						class="lazyload mediabox-img rounded-xl"
+					/>
+				</div>
+			</v-card>
+			<v-card class="bgcard item2 position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
+				<div class="z-2 text-white pvw text-center">
+					<div class="text-center page-title3">{{$t('col2title')}}</div>
+					<div class="" v-html="$t('col2')"></div>
+				</div>
+				<div class="rounded-xl">
+					<img
+						data-sizes="auto"
+						:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/projects.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/projects.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/projects.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/projects.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/projects.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/projects.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/projects.jpg 2500w'"
+						class="lazyload mediabox-img rounded-xl"
+					/>
+				</div>
+			</v-card>
+			<v-card class="bgcard item3 position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
+				<div class="z-2 text-white pvw text-center">
+					<div class="text-center page-title3">{{$t('col3title')}}</div>
+					<div class="" v-html="$t('col3')"></div>
+				</div>
+				<div class="rounded-xl">
+					<img
+						data-sizes="auto"
+						:srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-middle,c-maintain_ratio/Environments/tech_abstractstone.png 2500w'"
+						class="lazyload mediabox-img rounded-xl "
+					/>
+				</div>
+			</v-card>
+		</v-container>
 		<div style="max-width:1000px" class="text-center pvw ma-auto" v-html="$t('text2')"></div>
 		<div class="bgcard pvw px-0">
 			<h2 class="page-title3 text-center px-0 pb-10">{{$t('title3')}}</h2>

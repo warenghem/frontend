@@ -14,7 +14,7 @@
         <v-card-title class="px-0 pb-0 d-block d-md-flex">
           <div class="d-block d-md-flex">
             <NuxtLink :to="localePath('/')">
-              <div style="width:140px" class="svglogo py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
+              <div style="width:150px" class="svglogo py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
             </NuxtLink>
             <!--<v-breadcrumbs class="justify-center" style="margin-bottom:5px" dark :items="crumbs">
               <template v-slot:item="{ item }">

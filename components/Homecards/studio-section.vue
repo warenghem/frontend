@@ -5,26 +5,26 @@
         <v-row no-gutters class="pa-0 pt-3">
             <v-col cols="12" lg="3" md="4" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <v-card align=center class="item-inner pa-sm-5 pa-0 pb-10">
-                    <div class="profile-holder mb-0 pa-0 skeletton wa-smart-picture rounded-xl large-ratio">
-                    <v-card-actions style="z-index:2;bottom:0;right:0" class="position-absolute">
-                        <v-spacer></v-spacer>
-                        <v-btn
-                            icon
-                            dark
-                            target="_blank"
-                            class="mr-2 pt-3 d-none"
-                            v-for="(socialmedia,idx) in profile.socialmedias" :key="'socialmedia'+idx"
-                            :href="socialmedia.link"
-                        >
-                            <v-icon medium>{{ socialmedia.icon }}</v-icon>
-                        </v-btn>
-                    </v-card-actions>
+                    <!--<div class="profile-holder mb-0 pa-0 skeletton wa-smart-picture rounded-xl large-ratio">
+                        <v-card-actions style="z-index:2;bottom:0;right:0" class="position-absolute">
+                            <v-spacer></v-spacer>
+                            <v-btn
+                                icon
+                                dark
+                                target="_blank"
+                                class="mr-2 pt-3 d-none"
+                                v-for="(socialmedia,idx) in profile.socialmedias" :key="'socialmedia'+idx"
+                                :href="socialmedia.link"
+                            >
+                                <v-icon medium>{{ socialmedia.icon }}</v-icon>
+                            </v-btn>
+                        </v-card-actions>
                         <img
                             :data-srcset="profile.img" 
                             :data-lowsrc="profile.imglqip" 
                             class="lazyload profil mediabox-img" 
                         />
-                    </div>
+                    </div>-->
                     <div class="text-left pt-2">
                         <div class="smalltitle teradeli-medium primary--text pt-3">{{profile.name}}</div>
                         <div class="smalltitle teradeli-medium lightbugattiblue--text pt-2">
@@ -34,7 +34,7 @@
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}
                         </div>
                         <div style="margin-left:-7px">
-                        <v-btn
+                        <!--<v-btn
                             icon
                             target="_blank"
                             class="mr-2 pt-3"
@@ -42,7 +42,7 @@
                             :href="socialmedia.link"
                         >
                             <v-icon medium>{{ socialmedia.icon }}</v-icon>
-                        </v-btn>
+                        </v-btn>-->
                         </div>
                     </div>
                     <!--<v-expand-transition>
@@ -106,7 +106,7 @@
                         ]
                     },
                     {
-                        key: 2,
+                        key: 4,
                         name: 'Alexandre marty',
                         img: "https://ik.imagekit.io/g1noocuou2/tr:q-100,w-400,dpr-1/alexandre_1_.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-100,w-400,dpr-2/alexandre_1_.png 2x",
                         socialmedias: [
@@ -117,7 +117,7 @@
                             }
                         ]
                     }, {
-                        key: 3,
+                        key: 5,
                         name: 'Julie maurence',
                         img: "https://ik.imagekit.io/g1noocuou2/tr:q-100,ar-1-1,w-400,dpr-1,fo-custom/Julie_M2_1_.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-100,ar-1-1,w-400,dpr-2,fo-custom/Julie_M2_1_.png 2x",
                         socialmedias: [
@@ -129,7 +129,7 @@
                         ]
                     },
                     {
-                        key: 4,
+                        key: 2,
                         name: 'Quentin Brosseau',
                         img: "https://ik.imagekit.io/g1noocuou2/tr:q-100,w-400,dpr-1/quentin_jvUVQy_Hk0VvA.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-100,w-400,dpr-2/quentin_jvUVQy_Hk0VvA.png 2x",
                         socialmedias: [
@@ -141,7 +141,7 @@
                         ]
                     },
                     {
-                        key: 5,
+                        key: 3,
                         name: 'Karine Palazon',
                         img: "",
                         socialmedias: [
@@ -188,22 +188,6 @@
                         },
                         {
                             key: 2,
-                            role: 'Designer',
-                            biography: "After studying style and model making at Esmod Paris, I learned my skills in the creative " +
-                                "studio of the Maison Courrèges. I create products that are both functional and aesthetic," +
-                                " combining architectural references, graphic design, and fashion, convinced that these" +
-                                " different types are complementary.",
-                        },
-                        {
-                            key: 3,
-                            role: 'Designer',
-                            biography: "Former student at Esmod Paris, I started my career as a stylist in various houses, " +
-                                "and then by launching my leather goods brand. Today, I work through different worlds that " +
-                                "combine design and photography. I love taking a global look at a creation, and finding a " +
-                                "strong identity for it that will set it apart from others.",
-                        },
-                        {
-                            key: 4,
                             role: "Research & Development / Materials & Technologies",
                             biography:
                                 "After a few years working as a space engineer at Airbus, I took over a" +
@@ -212,9 +196,25 @@
                                 " to accompany."
                         },
                         {
-                            key: 5,
+                            key: 3,
                             role: "Head of Operations / Quality Control",
                             biography: ""
+                        },
+                        {
+                            key: 4,
+                            role: 'Designer',
+                            biography: "After studying style and model making at Esmod Paris, I learned my skills in the creative " +
+                                "studio of the Maison Courrèges. I create products that are both functional and aesthetic," +
+                                " combining architectural references, graphic design, and fashion, convinced that these" +
+                                " different types are complementary.",
+                        },
+                        {
+                            key: 5,
+                            role: 'Designer',
+                            biography: "Former student at Esmod Paris, I started my career as a stylist in various houses, " +
+                                "and then by launching my leather goods brand. Today, I work through different worlds that " +
+                                "combine design and photography. I love taking a global look at a creation, and finding a " +
+                                "strong identity for it that will set it apart from others.",
                         },
                         /*{
                             key: 6,
@@ -235,19 +235,6 @@
                         },
                         {
                             key: 2,
-                            role: 'Designer',
-                            biography: 'Après avoir étudié le style et le modélisme à Esmod Paris, j’ai fait mes armes au sein du ' +
-                                'studio créatif de la maison Courrèges. Je créé des produits à la fois fonctionnels et' +
-                                ' esthétiques, mêlant références architecturales, design graphique, et mode, convaincu que ces ' +
-                                'différentes typologies sont complémentaires.',
-                        },
-                        {
-                            key: 3,
-                            role: 'Designer',
-                            biography: "Ancienne étudiante à Esmod Paris, j'ai commencé en tant que styliste au sein de diverses maisons, et dans un second temps en lancant ma marque de maroquinerie. Aujourd’hui, j’évolue à travers différents univers qui mêlent design et photographie. J’adore porter un regard global sur une création, et lui trouver une identité forte qui la distinguera des autres.",
-                        },
-                        {
-                            key: 4,
                             role: "Recherche & Developpement / Matières & Technologies",
                             biography: 'Après plusieurs années à travailler comme ingénieur spatial, j’ai repris un ' +
                                 'Master Gestion de l’écosystème et de la biodiversité à l’Université de Montréal. Je recherche ' +
@@ -255,9 +242,22 @@
                                 ' accompagner.'
                         },
                         {
-                            key: 5,
+                            key: 3,
                             role: "Responsable des opérations / Contrôle qualité",
                             biography: "Après plus de 13 ans à travailler en tant qu’ingénieur qualité, j’ai développé des compétences en organisation, gestion et audits de projet. Aujourd’hui je coordonne la stratégie de l’entreprise, je contrôle la qualité des process et des produits de nos fournisseurs & fabricants."
+                        },
+                        {
+                            key: 4,
+                            role: 'Designer',
+                            biography: 'Après avoir étudié le style et le modélisme à Esmod Paris, j’ai fait mes armes au sein du ' +
+                                'studio créatif de la maison Courrèges. Je créé des produits à la fois fonctionnels et' +
+                                ' esthétiques, mêlant références architecturales, design graphique, et mode, convaincu que ces ' +
+                                'différentes typologies sont complémentaires.',
+                        },
+                        {
+                            key: 5,
+                            role: 'Designer',
+                            biography: "Ancienne étudiante à Esmod Paris, j'ai commencé en tant que styliste au sein de diverses maisons, et dans un second temps en lancant ma marque de maroquinerie. Aujourd’hui, j’évolue à travers différents univers qui mêlent design et photographie. J’adore porter un regard global sur une création, et lui trouver une identité forte qui la distinguera des autres.",
                         },
                         /*{
                             key: 6,

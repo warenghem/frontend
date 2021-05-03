@@ -2,18 +2,17 @@
   <div>
     <!--<sticky-toolbar class="stickyBar"/>-->
     <VideoSection id="videoSection"/>
+        <ProductSection class="pt-2 pt-md-4 px-0 px-md-4" id="productSection"/>
     <MissionSection class="pt-2 pt-md-4 px-0 px-md-4" id="missionSection"/>
     <v-container fluid class="homegrid py-4">
-      <v-card class="item1">
-        <ProductSection id="productSection"/>
-      </v-card>
+
       <v-card class="bgcard homecard item2">
         <MapSection id="mapTreeSection"/>
       </v-card>
       <v-card class="bgcard item3 homecard" @scroll="handleSCroll">
         <HistoriesSection/>
       </v-card>
-      <v-card dark color="darkbugattiblue" class="item4">
+      <!--<v-card dark color="darkbugattiblue" class="item4">
         <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
           <picture class="">
             <source
@@ -27,7 +26,7 @@
       </v-card>
       <v-card dark class="item5" min-height="250">
         <SocialSection/>
-      </v-card>
+      </v-card>-->
     </v-container>
     <ShopIcon class="py-10"/>
   </div>

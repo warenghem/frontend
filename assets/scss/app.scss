@@ -1020,7 +1020,7 @@ letter-spacing: .009em;
   background-clip: text;
 }
 .v-toolbar__logo {
-  width: 140px;
+  width: 150px;
 }
 
 .z-2 {
@@ -1124,6 +1124,21 @@ letter-spacing: .009em;
   margin: 0 auto;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 1fr;
+  padding: 1rem!important;
+  grid-gap: 1rem;
+  @media (max-width: 64em) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  @media (max-width: 48em) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-gap: 0.5rem;
+  }
+}
+.threegrid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
   grid-auto-rows: 1fr;
   padding: 1rem!important;
   grid-gap: 1rem;
