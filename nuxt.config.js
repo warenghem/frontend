@@ -460,7 +460,7 @@ export default {
             document.snipCurrency = snipCurrency;
           }).catch(() => {
             document.currency = currency;
-            document.snipCurrency = {}
+            document.snipCurrency = {} 
           });
         }
       }
