@@ -1,4 +1,5 @@
 <template>
+  <div>
     <v-btn
         elevation="0"
         rounded
@@ -13,22 +14,28 @@
         :data-item-name="product.name"
         v-bind="customFields"
     >
-        {{$t('product.cartBtn')}}
+      {{$t('product.cartBtn')}}
     </v-btn>
+  </div>
+
 </template>
 
 <script>
-export default {
-  data(){
-    return {
-    }
-  },
-    props: {
-        product: {
-            type: Object,
-            default: () => {
+    export default {
+        data() {
+            return { prPrice:''}
+        },
+        props: {
+            product: {
+                type: Object,
+                default: () => {
+                }
             }
+        },
+        mounted() {
+                if (this.product.snipCurrency) {
+                    this.prPrice=JSON.stringify(this.product.snipCurrency).replaceAll(/"/g, "&quot;")
+                }
         }
-    },
-}
+    }
 </script>
