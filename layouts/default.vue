@@ -2,7 +2,7 @@
   <v-app >
     <div id="blackContent" @click="hideModal"></div>
     <div>
-    <v-app-bar style="z-index: 4;" class="menu-bar border-bottom-2 w-100" hide-on-scroll flat height="42px">
+    <v-app-bar style="z-index: 4;" class="menu-bar border-bottom-2 w-100" dense hide-on-scroll flat>
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>
@@ -148,7 +148,7 @@
     },
     mounted () {
       document.addEventListener('snipcart.ready', function () {
-              window.Snipcart.events.on(window.Snipcart.api.session.setCurrency(this.$i18n.localeProperties.currency.toLowerCase()))
+        window.Snipcart.events.on(window.Snipcart.api.session.setCurrency("eur"))
       })
     },
     head () {
