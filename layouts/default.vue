@@ -1,5 +1,5 @@
 <template>
-  <v-app>
+  <v-app >
     <div id="blackContent" @click="hideModal"></div>
     <div>
     <v-app-bar style="z-index: 4;" class="menu-bar border-bottom-2 w-100" hide-on-scroll flat height="42px">
@@ -55,7 +55,7 @@
           class="text-uppercase"
         >
           <v-list-item-content>
-            {{$t(link.name)}} 
+            {{$t(link.name)}}
           </v-list-item-content>
         </v-list-item>
         <div class="teradeli-medium text-center mt-5 mb-3 greytext">
@@ -148,7 +148,7 @@
     },
     mounted () {
       document.addEventListener('snipcart.ready', function () {
-        window.Snipcart.events.on(window.Snipcart.api.session.setCurrency(this.$i18n.localeProperties.currency))
+              window.Snipcart.events.on(window.Snipcart.api.session.setCurrency(this.$i18n.localeProperties.currency.toLowerCase()))
       })
     },
     head () {
@@ -161,7 +161,7 @@
         },
         title: this.$t('title'),
         script: [
-          {       
+          {
             src:"//code.tidio.co/ogztu1mmmiluq02pe5ixizermbxx9irg.js",
             defer: true
             }

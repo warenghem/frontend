@@ -448,10 +448,10 @@ export default {
                     "name": key,
                     "price": (value * document.priceEuro + document.priceEuro * 0.01).toFixed(0)
                   })
-                  snipCurrency[key] = parseInt((value * document.priceEuro + document.priceEuro * 0.01).toFixed(0))
+                  snipCurrency[key.toLowerCase()] = parseInt((value * document.priceEuro + document.priceEuro * 0.01).toFixed(0))
                 } else {
                   currency.push({"name": key, "price": document.priceEuro.toFixed(0)})
-                  snipCurrency[key] = parseInt(document.priceEuro.toFixed(0))
+                  snipCurrency[key.toLowerCase()] = parseInt(document.priceEuro.toFixed(0))
                 }
               }
 

@@ -72,7 +72,7 @@
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/specie-mango.jpg 512w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/specie-mango.jpg 683w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/specie-mango.jpg 800w,
-                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/specie-mango.jpg 960w," 
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/specie-mango.jpg 960w,"
                       src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/specie-mango.jpg"
                     class="lazyload"
                     width="100%"
@@ -116,9 +116,9 @@
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/river.png 512w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/river.png 683w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/river.png 800w,
-                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/river.png 960w," 
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/river.png 960w,"
                       src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/river.png"
-                    class="lazyload" 
+                    class="lazyload"
                     width="100%"
                 />
               </div>
@@ -145,9 +145,9 @@
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,ar-3-5,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 768w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1024w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1366w,
-                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1600w," 
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.56.41.png 1600w,"
                       src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1100,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.56.41.png"
-                    class="lazyload" 
+                    class="lazyload"
                     width="100%"
                 />
               </a>
@@ -193,9 +193,9 @@
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/mango.jpg 512w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/mango.jpg 683w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/mango.jpg 800w,
-                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/mango.jpg 960w," 
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/mango.jpg 960w,"
                       src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/mango.jpg"
-                    class="lazyload" 
+                    class="lazyload"
                     width="100%"
                 />
               </div>
@@ -237,9 +237,9 @@
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/tiger.jpg 512w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/tiger.jpg 683w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/tiger.jpg 800w,
-                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/tiger.jpg 960w," 
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/tiger.jpg 960w,"
                       src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-600,fo-bottom/tiger.jpg"
-                    class="lazyload" 
+                    class="lazyload"
                     width="100%"
                 />
               </div>
@@ -266,9 +266,9 @@
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 768w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1024w,
                       https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1366w,
-                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1600w," 
+                      https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/Capture_d_e_cran_2020-11-20_a__18.57.19.png 1600w,"
                       src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-1100,fo-bottom/Capture_d_e_cran_2020-11-20_a__18.57.19.png"
-                    class="lazyload" 
+                    class="lazyload"
                     width="100%"
                 />
               </a>
