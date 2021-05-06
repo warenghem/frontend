@@ -46,19 +46,3 @@ a, .v-application a {
   color: #767676!important
 }
 
-body::-webkit-scrollbar {
-  width: 12px; /* width of the entire scrollbar */
-  position: absolute;
-}
-
-body::-webkit-scrollbar-track {
-  background: transparent; /* color of the tracking area */
-  position: absolute;
-}
-
-body::-webkit-scrollbar-thumb {
-  background-color: #424242; /* color of the scroll thumb */
-  border-radius: 20px; /* roundness of the scroll thumb */
-  border: 3px solid #424242; /* creates padding around scroll thumb */
-  position: absolute;
-}

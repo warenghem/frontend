@@ -2,7 +2,7 @@
   <v-app >
     <div id="blackContent" @click="hideModal"></div>
     <div>
-    <v-app-bar ref="appBar" style="z-index: 4;" class="menu-bar border-bottom-2" dense app hide-on-scroll scroll-off-screen flat>
+    <v-app-bar ref="appBar" style="z-index: 4;" class="menu-bar border-bottom-2" :scroll-threshold="50" dense app hide-on-scroll scroll-off-screen flat>
       <v-app-bar-nav-icon @click="sidebar = !sidebar" class="ml-2">
           <v-icon>{{ svgPath }}</v-icon>
       </v-app-bar-nav-icon>

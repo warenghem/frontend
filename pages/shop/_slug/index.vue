@@ -596,7 +596,7 @@ button.slick-arrow.slick-next {
 }
 .vue-foldable .vue-foldable-mask.collapsed {
     opacity: 1;
-    background: linear-gradient(to bottom, rgba(55,55,55,0), #fff);
+    background: linear-gradient(180deg,rgba(255,255,255,0),#fff);
 }
 .vue-foldable .vue-foldable-mask:not(.collapsed) {
     opacity: 0;
