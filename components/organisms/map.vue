@@ -1,8 +1,7 @@
 <template>
   <div class="h-100">
-    <div class="h-100 pa-0">
+    <div style="height: 500px; width: 100%" class="pa-0">
       <l-map
-        style="width: 100%"
         class="treemap h-100"
         :zoom="zoom"
         :center="center"
@@ -524,6 +523,10 @@
 }
   .treemap {
     z-index: 1;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
     }
 
   .slideArea {
