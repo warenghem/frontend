@@ -1162,6 +1162,7 @@ letter-spacing: .009em;
     grid-template-columns: repeat(1, minmax(0, 1fr));
     grid-template-rows: auto auto;
     padding:0!important;
+    grid-gap: 0.5rem;
   }
   @media (min-width: 960px) {
     .item1 {

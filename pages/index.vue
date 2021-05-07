@@ -3,7 +3,7 @@
     <!--<sticky-toolbar class="stickyBar"/>-->
     <VideoSection id="videoSection"/>
     <ProductSection class="pt-2 pt-md-4 px-0 px-md-4" id="productSection"/>
-    <MissionSection class="pt-2 pt-md-4 px-0 px-md-4" id="missionSection"/>
+    <MissionSection class="py-2 pt-md-4 px-0 px-md-4" id="missionSection"/>
     <v-container fluid class="homegrid pb-0">
       <v-card class="bgcard homecard item2">
         <MapSection id="mapTreeSection"/>
