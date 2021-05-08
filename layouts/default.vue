@@ -147,8 +147,9 @@
       }
     },
     mounted () {
+      const bootcurrency = this.$i18n.localeProperties.currency.toLowerCase()
       document.addEventListener('snipcart.ready', function () {
-        window.Snipcart.events.on(window.Snipcart.api.session.setCurrency("eur"))
+        window.Snipcart.events.on(window.Snipcart.api.session.setCurrency(bootcurrency))
       })
     },
     head () {
