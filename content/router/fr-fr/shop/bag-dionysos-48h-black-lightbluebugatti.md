@@ -56,7 +56,7 @@ award:
   image: PETA.png
 offers:
   priceCurrency: EUR
-  price: 395
+  price: 495
   availability: in stock
   pieces: 30 pièces prochainement
 categories:
