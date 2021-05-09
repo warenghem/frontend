@@ -32,7 +32,7 @@ care: '<p><strong>Notre cuir de vin Dionysos® est produit grâce à un procéd�
 dimensions:
   length: 54
   height: 29
-  width: 20
+  width: 25
   unit: cm
 manufacturer: ''
 colors:

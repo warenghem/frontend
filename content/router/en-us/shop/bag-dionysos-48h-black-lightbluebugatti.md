@@ -32,7 +32,7 @@ care: '<p><strong>Our Dionysos® wine leather is produced using an innovative pr
 dimensions:
   length: 21
   height: 11
-  width: 8
+  width: 10
   unit: inches
 manufacturer: ''
 colors:

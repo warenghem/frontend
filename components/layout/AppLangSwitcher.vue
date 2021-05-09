@@ -41,7 +41,7 @@
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
                                 class="flex items-center whitespace-no-wrap"
-                                @click.native="$snipcart.setLanguage(locale.code); switchCurrency"
+                                @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.code)"
                                 >
                                 <v-card 
                                     class="bg-white rounded-pill px-3 buttonblack"
@@ -74,7 +74,7 @@
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
                                 class="flex items-center whitespace-no-wrap"
-                                @click.native="$snipcart.setLanguage(locale.code); switchCurrency"
+                                @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.code)"
                                 >
                                 <v-card 
                                     class="bg-white rounded-pill px-3 buttonblack"
@@ -152,10 +152,10 @@ export default {
     },
   },
   methods: {
-    switchCurrency () {
-        window.Snipcart.api.session.setCurrency(this.locale.code)
+            switchCurrencyFunc (code) {
+            window.Snipcart.api.session.setCurrency(code)
+        }
     }
-  }
 }
 </script>
 <style scoped lang="scss">
