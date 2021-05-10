@@ -1,6 +1,6 @@
 <template>
   <div class="">
-    <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
+    <v-toolbar class="menubar d-flex pa-0 filter-bar">
       <Backbutton/>
       <div class="pl-5 d-flex border-left-2">
         <div class="d-inline-flex flex-column justify-center">
@@ -14,7 +14,7 @@
       </div>
       <client-only>
       </client-only>
-    </v-toolbar-bar>
+    </v-toolbar>
     <article class="wa-magazine" v-if="post">
       <div class="mb-5 wa-smart-picture wa-panoramic-picture square-ratio skeletton">
         <picture class="gradientoverlay blackoverlay">

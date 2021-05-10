@@ -5,7 +5,7 @@
                     v-model="$store.state.plantModal"
                     persistent
                     transition="dialog-bottom-transition"
-                    content-class="bg-white bottom-dialog rounded-b-0 rounded-t-lg w-100"
+                    content-class="bg-white small-bottom-dialog bottom-dialog rounded-b-0 rounded-t-lg w-100"
                     style="transform-origin: center center;max-width: 600px;margin: 0;!important"
             >
                 <v-card style="max-width:inherit">

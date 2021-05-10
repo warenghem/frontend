@@ -3,7 +3,7 @@
     v-model="isModal"
     transition="dialog-bottom-transition"
     @click:outside="closeModal"
-    content-class="bg-white bottom-dialog"
+    content-class="bg-white small-bottom-dialog bottom-dialog"
     style='z-index:300001;'
     scrollable
   >

@@ -127,7 +127,6 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .teradeli-medium {
   font-family: 'teradeli-medium', sans-serif !important;
 }
-
 .body-xl {
   font-size: 1.2rem;
   letter-spacing: .05rem;
@@ -601,7 +600,6 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
     flex-wrap: wrap;
     height: unset !important;
   }
-  height: 50px !important;
 }
 .custom-list {
   .v-list-item--active {
@@ -1331,16 +1329,18 @@ label.v-label.theme--light.error--text {
     overflow: auto;
   }
 }
-.bottom-dialog {
+.small-bottom-dialog {
   height: 95%;
   max-height: 100%!important;
-  margin: 0!important;
-  align-self: flex-end;
-  max-width: 100%!important;
   @media(min-width:48em) {
       height: 90%;
       max-width: 700px!important;
     }
+  }
+.bottom-dialog {
+  margin: 0!important;
+  align-self: flex-end;
+  max-width: 100%!important;
   }
   .realisation {
     bottom: 0;

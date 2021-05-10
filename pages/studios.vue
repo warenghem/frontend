@@ -1,6 +1,6 @@
 <template>
   <div class="">
-	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
+	<v-toolbar  class="menubar pa-0 w-100 elevation-0">
 		<Backbutton class="h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">

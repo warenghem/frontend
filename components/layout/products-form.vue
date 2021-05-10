@@ -4,7 +4,7 @@
       <v-dialog
         v-model="$store.state.productModal"
         transition="dialog-bottom-transition"
-        content-class="bg-white bottom-dialog rounded-b-0 rounded-t-lg"
+        content-class="bg-white small-bottom-dialog bottom-dialog rounded-b-0 rounded-t-lg"
         persistent
       >
         <v-card style="max-width:inherit">

@@ -26,25 +26,11 @@
       <v-toolbar-items>
         <v-btn
           text
-          class="text-uppercase item"
+          class="text-uppercase item d-none"
         >
           <Cartbutton/>
         </v-btn>
-        <v-btn
-          @click="$store.state.langModal=true"
-          text
-          class="px-0 nohover item priceHide"
-        >
-            <img :src="$i18n.localeProperties.img"
-                width="24"
-                alt="lang flag"
-                class="rounded-lg"
-            />
-            <span class="px-0 px-sm-2"></span>
-            <div class="d-none d-sm-block" style="margin-bottom: -1px;">
-                {{$i18n.localeProperties.currencySign}}
-            </div>
-        </v-btn>
+        <AppLangSwitcher/>
       </v-toolbar-items>
     </v-app-bar>
     <v-navigation-drawer v-model="sidebar" temporary app  v-bind:width="304">

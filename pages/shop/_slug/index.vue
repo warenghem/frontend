@@ -316,7 +316,6 @@
                 'Authorization': `Basic ${secret}`,
                 'Accept': 'application/json'
                 }})
-              console.log(stockstatus);
             return {
                 productsItem,
                 productItem,

@@ -1,4 +1,21 @@
 <template>
+<div>
+    <v-btn
+        @click="$store.state.langModal=true"
+        text
+
+        class="px-0 nohover item priceHide h-100 w-100 rounded-0"
+    >
+        <img :src="$i18n.localeProperties.img"
+            width="24"
+            alt="lang flag"
+            class="rounded-lg"
+        />
+        <span class="px-0 px-sm-1"></span>
+        <div class="d-none d-sm-block" style="margin-bottom: -1px;">
+            {{$i18n.localeProperties.currencySign}}
+        </div>
+    </v-btn>
     <v-dialog
             v-model="$store.state.langModal"
             persistent
@@ -7,7 +24,7 @@
             style="transform-origin: center center;margin: 0;!important"
     >
         <div style="overflow: auto;" class="bg-white toolbar">
-            <div style="height: 50px;position: fixed;width: 100%;z-index: 2;" class="d-flex justify-space-between align-center border-bottom-2 border-top-2">
+            <div style="height: 50px;position: fixed;width: 100%;z-index: 2;" class="d-flex justify-space-between align-center border-bottom-2">
                 <div class="text-center sub-title pl-3">Choose your region</div>
                 <v-btn
                     text
@@ -31,7 +48,7 @@
                                 >
                                 <v-card 
                                     class="bg-white rounded-pill px-3 buttonblack"
-                                    @click="sheet = false"
+                                    @click="$store.state.langModal = false"
                                     ripple
                                     style="height:70px"
                                 >
@@ -104,6 +121,7 @@
             </v-card-text>
         </div> 
     </v-dialog>
+</div>
 </template>
 
 <script>
