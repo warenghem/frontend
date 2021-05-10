@@ -304,14 +304,21 @@
     export default {
         name: 'post',
         async asyncData(context) {
-            const {$content, params, app} = context;
+            const {$content, params, app, $axios} = context;
             const slug = params.slug;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
             const productItem = await $content(`router/${lang_path}/shop`, slug).fetch();
             const productsItem = await $content(`router/${lang_path}/shop`).fetch();
+            const secret = "ST_YzkxMzZiZWYtZDc2NC00NDk3LTgwOTMtZjExNWM5YjU4NDQ5NjM3NDAyNzAwMzYyMDQxNTAy"
+            const stockstatus = await $axios.$get('https://app.snipcart.com/api/products/'+ productItem.sku, { 
+              headers: {
+                'Authorization': `Basic ${secret.toString('base64')}`,
+                'Accept': 'application/json'
+                }})
             return {
                 productsItem,
                 productItem,
+                stockstatus
             }
         },
         data() {
@@ -463,9 +470,6 @@
         created() {
             this.$store.dispatch('product/setRecentProducts', this.product.id);
         },*/
-        mounted() {
-            this.colorSelect()
-        },
         methods: {
             openModal(modalName) {
                 this.currentModal = modalName;

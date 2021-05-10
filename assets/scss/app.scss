@@ -281,7 +281,8 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
   font-size: .875rem;
   text-transform: uppercase;
   letter-spacing: 1.8px;
-  background-color: #0081a7 !important;
+  /*background: #0081a7 !important;*/
+  background: linear-gradient(90deg,#0081a7,#6aaacf);
   word-break: break-word;
 }
 

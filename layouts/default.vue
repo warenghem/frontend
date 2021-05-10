@@ -8,7 +8,7 @@
       </v-app-bar-nav-icon>
       <v-toolbar-items class="d-none d-lg-block" v-for="(link,l_idx) in $store.state.link.links"
                        :key="'link_btn_l_'+l_idx">
-        <v-btn text class="text-uppercase item teradeli-medium"
+        <v-btn text class="text-uppercase item"
                :class="{'current':$root.currentId===link.url}"
                :to="localePath('/')+link.url" nuxt
                v-if="link.position==='left'"
@@ -26,7 +26,7 @@
       <v-toolbar-items>
         <v-btn
           text
-          class="text-uppercase item d-none"
+          class="text-uppercase item"
         >
           <Cartbutton/>
         </v-btn>

@@ -41,7 +41,7 @@
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
                                 class="flex items-center whitespace-no-wrap"
-                                @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.code)"
+                                @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.currency)"
                                 >
                                 <v-card 
                                     class="bg-white rounded-pill px-3 buttonblack"
@@ -74,7 +74,7 @@
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
                                 class="flex items-center whitespace-no-wrap"
-                                @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.code)"
+                                @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.currency)"
                                 >
                                 <v-card 
                                     class="bg-white rounded-pill px-3 buttonblack"
@@ -106,7 +106,7 @@
                         <span @click="sheet = false" v-for="locale in otheravailableLocales" :key="locale.code">
                             <nuxt-link
                                 :to="switchLocalePath(locale.code)"
-                                @click.native="$snipcart.setLanguage(locale.code); switchCurrency"
+                                @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.currency)"
                                 >
                                 {{ locale.name }}
                                 <span class="pr-2"></span>
@@ -136,24 +136,24 @@ export default {
       return this.$i18n.locales.filter(function (locale) {
         return locale.region == 'Europe'
         })
-    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link*/
+    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link */
     },
     americasavailableLocales () {
       return this.$i18n.locales.filter(function (locale) {
         return locale.region == 'Americas'
         })
-    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link*/
+    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link */
     },
     otheravailableLocales () {
       return this.$i18n.locales.filter(function (locale) {
         return locale.region == 'Other'
         })
-    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link*/
+    /* for not displaying current lang : .filter(i => i.code !== this.$i18n.locale) + v-if="$i18n.locale !== locale.code" in nuxt link */
     },
   },
   methods: {
-            switchCurrencyFunc (code) {
-            window.Snipcart.api.session.setCurrency(code)
+    switchCurrencyFunc (currency) {
+        window.Snipcart.api.session.setCurrency(currency)
         }
     }
 }
