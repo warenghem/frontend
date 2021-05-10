@@ -1,32 +1,18 @@
 <template>
-  <v-bottom-sheet eager scrollable v-model="sheet">
-    <template v-slot:activator="{ on, attrs }">
-        <v-btn
-            text
-            v-bind="attrs"
-            v-on="on"
-            :ripple="false"
-            class="nohover item priceHide"
-        >
-            <img :src="$i18n.localeProperties.img"
-                width="24"
-                alt="lang flag"
-                class="rounded-lg"
-            />
-            <span class="px-0 px-sm-2"></span>
-            <div class="d-none d-sm-block" style="margin-bottom: -1px;">
-                {{$i18n.localeProperties.currencySign}}
-            </div>
-        </v-btn>
-    </template> 
-    <slot name="langSwitcher">
+    <v-dialog
+            v-model="$store.state.langModal"
+            persistent
+            transition="dialog-bottom-transition"
+            content-class="bg-white bottom-dialog rounded-b-0 rounded-t-lg w-100"
+            style="transform-origin: center center;margin: 0;!important"
+    >
         <div style="overflow: auto;" class="bg-white toolbar">
             <div style="height: 50px;position: fixed;width: 100%;z-index: 2;" class="d-flex justify-space-between align-center border-bottom-2 border-top-2">
                 <div class="text-center sub-title pl-3">Choose your region</div>
                 <v-btn
                     text
                     color="black"
-                    @click="sheet = false"
+                    @click="$store.state.langModal = false"
                     style="font-size: 26px"
                     class="px-0 h-100 border-left-2 rounded-0"
                 >
@@ -117,8 +103,7 @@
                 </v-row>
             </v-card-text>
         </div> 
-    </slot>
-  </v-bottom-sheet>
+    </v-dialog>
 </template>
 
 <script>
@@ -128,7 +113,6 @@ export default {
     data() {
         return {
             svgPath2: mdiClose,
-            sheet:false,
             }
     },
   computed: {

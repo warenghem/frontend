@@ -97,8 +97,8 @@
           <div class="d-flex justify-space-between align-center my-5 mx-3">
             <h3 class="teradeli-book">{{ $n(product.price, 'currency') }}</h3>
             <div class="smalltext d-none">
-              <v-icon style="bottom: 1px;display:none" x-small :class="{'available':product.offers.availability !== 'out of stock'}">{{ svgPath4 }}</v-icon>
-              {{product.offers.availability !== 'out of stock'?$t('product.stock'):$t('product.notInStock')}}
+              <v-icon style="bottom: 1px" x-small :class="{'available':stockstatus.stock !== '0'}">{{ svgPath4 }}</v-icon>
+              {{product.offers.availability !== '0'?$t('product.stock'):$t('product.notInStock')}}
             </div>
             <div class="smalltext">
               <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
@@ -106,7 +106,7 @@
             </div>
           </div>
           <Reservebutton class="w-100" />
-          <Buybutton :product="product" class="w-100 my-2" />
+          <Buybutton :product="product" class="w-100 my-2 d-none" />
           <p class="text-center">{{$t('nopayment')}}</p>
           <div class="mt-5" v-html="product.description">
           </div>
@@ -309,12 +309,14 @@
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
             const productItem = await $content(`router/${lang_path}/shop`, slug).fetch();
             const productsItem = await $content(`router/${lang_path}/shop`).fetch();
-            const secret = "ST_YzkxMzZiZWYtZDc2NC00NDk3LTgwOTMtZjExNWM5YjU4NDQ5NjM3NDAyNzAwMzYyMDQxNTAy"
-            const stockstatus = await $axios.$get('https://app.snipcart.com/api/products/'+ productItem.sku, { 
+            let data = 'ST_YzkxMzZiZWYtZDc2NC00NDk3LTgwOTMtZjExNWM5YjU4NDQ5NjM3NDAyNzAwMzYyMDQxNTAy';
+            let secret = Buffer.from(data).toString('base64');
+            const stockstatus = await $axios.$get('https://app.snipcart.com/api/products/'+productItem.sku, { 
               headers: {
-                'Authorization': `Basic ${secret.toString('base64')}`,
+                'Authorization': `Basic ${secret}`,
                 'Accept': 'application/json'
                 }})
+              console.log(stockstatus);
             return {
                 productsItem,
                 productItem,

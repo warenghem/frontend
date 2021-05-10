@@ -9,6 +9,7 @@ export const state = () => ({
   tree_count: 0,
   co2_compensated: 0,
   reforest: 0,
+  langModal: false,
   plantModal: false,
   newsletterModal: false,
   productModal: false,
