@@ -21,6 +21,6 @@
 	<path stroke-width="3" stroke-miterlimit="10" d="M141.3,77.8l-6.9,12.9h-11l36.5-67.4l34.5,67.4h-10.9l-6.6-12.9H141.3z M159.4,44l-13.6,25.3h26.8L159.4,44z"
 		/>
 	<g>
-		<path stroke-width="10" stroke-miterlimit="10" d="M63.7,81.5L35.3,25.9h3.9l24.3,47.2l21.8-41.9l21.5,41.9l24.5-47.2h3.9l-28.4,55.6L85.3,39L63.7,81.5z"/>
+		<path fill="none" stroke-width="10" stroke-miterlimit="10" d="M63.7,81.5L35.3,25.9h3.9l24.3,47.2l21.8-41.9l21.5,41.9l24.5-47.2h3.9l-28.4,55.6L85.3,39L63.7,81.5z"/>
 	</g>
 </svg>

@@ -182,20 +182,20 @@
 						"title": "Que deviennent les produits qui vous sont retournés ?"
 					},
 					{
-						"text": "",
-						"title": ""
+						"text": "<p> Le sujet est sérieux et divise nos clients. Vous devez déjà savoir que nos emballages ont été conçus pour être recyclables (voir compostables) et à faible consommation de. La plupart d'entre vous aiment les cartons. Et certains, vous y compris , trouve l'emballage trop lourd. Nous travaillons activement sur ce sujet. Nous réfléchissons notamment à la possibilité de choisir de faire emballer ou non un produit, avec un emballage consigné. </p> ",						
+						"title": "Que faire si je ne souhaite pas recevoir de boîtes lors de la commande?"
 					},
 					{
-						"text": "",
-						"title": ""
+						"text": "Vos produits sont expédiés le lendemain de votre commande (hors week-end et jours fériés). Vous recevrez donc dans les 48 heures suivant votre commande un e-mail de confirmation d'expédition contenant un lien de suivi de livraison. ne recevez pas cet e-mail de confirmation sous 72 heures, nous vous invitons à nous contacter au <a href=\"mailto:hello@warenghem.com\"> hello@warenghem.com </a> ou sur les réseaux sociaux. <p> Nous traversons la France et le monde à venir à vous grâce à trois modes de livraison: Colissimo, Mondial Relay et DHL. <br> Pour savoir où se trouve votre commande, rien de plus simple, il vous suffit de cliquer sur le lien ci-dessous correspondant au mode de livraison choisi et de saisir la commande numéro de suivi (indiqué sur votre mail d'expédition) pour savoir où se trouve la livraison. <br> <br> Colissimo (rubrique suivre mon colis): & nbsp; <a href = 'http://www.colissimo.fr/particuliers/ home.jsp'> http://www.colissimo.fr/particuliers/home.jsp </a> <br> M ondial Relay: & nbsp; <a href ='http://www.mondialrelay.fr/suivi-de-colis/'> http://www.mondialrelay.fr/suivi-de-colis/ </a> <br> DHL: & nbsp; <a href='https://www.dhl.fr/exp-fr/dhl_express/suivi_expedition.html'> https://www.dhl.fr/exp-fr/dhl_express/suivi_expedition.html </a> </p> ",
+						"title": "Où est ma commande?"
 					},
 					{
-						"text": "",
-						"title": ""
+						"text": "<div> <p> Ça arrive! </p> envoyez-nous un petit e-mail à <a href=\"mailto:hello@warenghem.com\">hello@warenghem.com </a> ou sur les réseaux sociaux. Nous annulerons votre commande si elle n'a pas déjà été expédiée. <p> Pour une erreur de taille ou de produit, vous pouvez demander un retour, gratuitement (pour la France et la majeure partie de l'Union européenne) une fois qu'il a été reçu, de votre compte client </p> </div> ",
+						"title": "J'ai fait une mauvaise adresse, modèle, taille lors de la commande, que dois-je faire?"
 					},
 					{
-						"text": "",
-						"title": ""
+						"text": "<div class = 'd-block'> Avez-vous obtenu la mauvaise taille ou avez-vous simplement changé d'avis? Pas de problème, envoyez-nous un e-mail rapide à <a href=\"mailto:hello@warenghem.com\"> hello@warenghem.com </a> ou sur les réseaux sociaux. Nous annulerons votre commande si elle n'a pas déjà été expédiée. Si elle est déjà chez le facteur, vous aurez 14 jours pour nous la renvoyer gratuitement . </div> ",
+						"title": "Comment puis-je annuler ma commande?"
 					}
 				],
 				"shippingtitle": "Livraison et retour"

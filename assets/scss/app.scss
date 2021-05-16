@@ -598,7 +598,6 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .filter-bar {
   .v-toolbar__content {
     flex-wrap: wrap;
-    height: unset !important;
   }
 }
 .custom-list {
@@ -1340,7 +1339,6 @@ label.v-label.theme--light.error--text {
 .bottom-dialog {
   margin: 0!important;
   align-self: flex-end;
-  max-width: 100%!important;
   }
   .realisation {
     bottom: 0;

@@ -6,14 +6,14 @@
         >
             <v-btn
                 icon
-                class="mb-3"
+                class="mb-2"
                 :to="items[idx].link" nuxt
             >
                 <v-icon x-large>{{ items[idx].icon }}</v-icon>
             </v-btn>
-            <div>{{item.title}}</div>
+            <div class=" teradeli-medium">{{item.title}}</div>
             <NuxtLink :to="items[idx].link">
-                <Discoverbutton class="lightbugattiblue--text"/>
+                <Discoverbutton class="teradeli-medium lightbugattiblue--text"/>
             </NuxtLink>
         </v-col>
     </v-row>

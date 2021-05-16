@@ -54,6 +54,7 @@
         >
           <v-btn
             text
+            class="teradeli-medium"
             rounded
             @click="$store.state.newsletterModal=true"
             style="letter-spacing:inherit!important;text-transform: inherit;color:#767676!important"
