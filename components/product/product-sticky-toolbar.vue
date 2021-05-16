@@ -22,7 +22,7 @@
             {{product.price}} {{$i18n.localeProperties.currencySign}}</h3>
         </div>
         <div class="mr-3">
-          <Reservebutton class="w-100" />
+          <MainButton :text="'btnWaitforit'" @click.native="$store.state.productModal=true" style="width:260px" class="w-100" />
         </div>
       </div>
     </v-app-bar>

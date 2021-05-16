@@ -105,7 +105,7 @@
               {{product.offers.pieces}}
             </div>
           </div>
-          <Reservebutton class="w-100" />
+          <MainButton :text="'btnWaitforit'" :large="true" @click.native="$store.state.productModal=true" style="width:260px" class="w-100" />
           <Buybutton :product="product" class="w-100 my-2 d-none" />
           <p class="text-center">{{$t('nopayment')}}</p>
           <div class="mt-5" v-html="product.description">

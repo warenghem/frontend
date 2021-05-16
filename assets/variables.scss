@@ -17,6 +17,17 @@ $font-size-root: 1rem;
 $line-height-root: 1.8rem;
 $card-elevation: 0 !default;
 $card-border-radius: 0 !default;
+	
+$btn-sizes: (
+  'default': 33,
+  'x-large': 45
+);
+$btn-font-sizes: (
+
+  'default': .775rem,
+  'large': .775rem,
+  'x-large': .775rem
+);
 
 @import '~vuetify/src/styles/styles.sass';
 
