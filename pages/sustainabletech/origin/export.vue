@@ -243,7 +243,7 @@
                   filled
                   rounded
                 ></v-text-field>
-              </v-col>
+              </v-col> 
               <v-col
                 cols="12"
               >
@@ -848,6 +848,8 @@
             errorMessages: '',
             name: null,
             location: null,
+            latitude: null,
+            longitude: null,
             city: null,
             state: null,
             zip: null,
@@ -882,7 +884,11 @@
                     brand: '',
                     name: '',
                     quantity: 0,
-                    location: '',
+                    location: {
+                        address: '',
+                        latitude: '',
+                        longitude: ''
+                    },
                     date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',
@@ -924,7 +930,11 @@
                     brand: '',
                     name: '',
                     quantity: 0,
-                    location: '',
+                    location: {
+                        address: '',
+                        latitude: '',
+                        longitude: ''
+                    },
                     date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',
@@ -1034,7 +1044,7 @@
                 // })
                 try {
                     const data = {
-                        "recipients": [{"name": this.product.name, "email": "warenghem3@yahoo.com"}],
+                        "recipients": [{"name": this.product.name, "email": "test@test.com"}],
                         "planter_id": 148537,
                         "species_id": 727,
                         "quantity": 1,
@@ -1048,15 +1058,15 @@
                         const productData = {
                             "name": this.product.sku,
                             "description": this.product.name,
-                            "latitude": "43.198432",
-                            "longitude": "5.589894",
+                            "latitude": "0",
+                            "longitude": "0",
                               "custom": {
                               "suppliers": this.suppliers,
                               "manufacturers": this.manufacturers,
                               "tree": res.data.trees
                             }
                         };
-                        this.$axios.setHeader('Authorization', '')
+                        this.$axios.setHeader('Content-Type', 'application/json')
                         const product_res = await this.$axios.post('http://15.188.65.163:40080/api/products',
                             productData);
                     }
@@ -1075,6 +1085,8 @@
                     name: '',
                     quantity: 0,
                     location: '',
+                    latitude: '',
+                    longitude: '',
                     date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',
@@ -1113,6 +1125,8 @@
                     name: '',
                     quantity: 0,
                     location: '',
+                    latitude: '',
+                    longitude: '',
                     date: new Date().toISOString().substr(0, 10),
                     certification_method: '',
                     renewalDate: '',

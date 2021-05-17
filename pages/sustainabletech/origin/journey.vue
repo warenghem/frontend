@@ -1,5 +1,7 @@
 <template dark>
   <div class="py-5 mb-10">
+    {{ productid }}
+    {{ $router.path }}
     <v-container>
       <v-row align="center" justify="center" class="py-5" style="max-width: 900px;">
         <v-col cols="4">
@@ -58,7 +60,7 @@
                     <div class="text-center py-3 pb-8">
                       This product's supply chain includes 2 locations
                     </div>
-                    <client-only>
+                    <!--<client-only>
                     <l-map
                       style="width: 100%"
                       class="treemap pt-5"
@@ -94,7 +96,7 @@
                         </l-icon>
                       </l-marker>
                     </l-map>
-                    </client-only>
+                    </client-only>-->
                   </v-card>
                 </v-col>
                 <v-col cols="12" sm="6">
@@ -186,7 +188,7 @@
 </template>
 
 <script>
-  import { LMap, LTileLayer, LMarker, LIcon } from 'vue2-leaflet';
+  /*import { LMap, LTileLayer, LMarker, LIcon } from 'vue2-leaflet';
   import 'leaflet/dist/leaflet.css';
   import L from 'leaflet';
   delete L.Icon.Default.prototype._getIconUrl;
@@ -195,7 +197,7 @@
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
     iconUrl: require('leaflet/dist/images/marker-icon.png'),
     shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
-  });
+  });*/
   export default {
     layout: 'app',
     // page component definitions
