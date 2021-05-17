@@ -63,6 +63,7 @@
           </v-btn>
           <v-btn
             v-for="(link,l_idx) in $store.state.link.footerlinks"
+            class="font-weight-bold"
             text
             rounded
             :key="'link_'+l_idx"

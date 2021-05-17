@@ -11,6 +11,20 @@
           required
           @change="$emit('input',address)"
         ></v-text-field>
+        <v-text-field
+          type="text"
+          placeholder="Latitude"
+          v-model="latitude"
+          required
+          @change="$emit('input',latitude)"
+        ></v-text-field>
+        <v-text-field
+          type="text"
+          placeholder="Longitude"
+          v-model="longitude"
+          required
+          @change="$emit('input',longitude)"
+        ></v-text-field>
         <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="locatorButtonPressed">
           Get address
         </v-btn>
@@ -20,7 +34,9 @@
     export default {
         data() {
             return {
-                address: ''
+                address: '',
+                latitude: '',
+                longitude: ''
             }
         },
         methods: {
@@ -37,6 +53,8 @@
                         console.log(data.error_message)
                     } else {
                         this.address = data.results[0].formatted_address;
+                        this.latitude = lat;
+                        this.longitude = long;
                     }
                 } catch (error) {
                     console.log(error.message);

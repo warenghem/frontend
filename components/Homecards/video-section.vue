@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div style="height:700px!important" class="videoSection">
+    <div style="height:100vh!important" class="videoSection">
       <!--<div style="z-index: 2;top: 50%;transform: translateY(-50%);" class="text-center inner position-absolute d-none">
         <div class="col-12 py-5">
             <div class="logosvg logosvg" v-html="Eco" />
@@ -105,12 +105,8 @@
             <h4 class="app-title mb-2">{{$t('video.subtitle')}}</h4>
             <!--<h2 class="app-subtitle"> {{$t('video.title')}}{{$t('video.title2')}}</h2>-->
             <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5 justify-center d-block d-md-flex">
-              <div>
-                <Reservebutton style="width:260px" class="mx-2 mb-2" />
-              </div>
-              <div>
-                <Treebutton style="width:260px" class="mx-2 mb-2" />
-              </div>
+                <TrspButton :text="'btnWaitforit'" @click.native="$store.state.productModal=true" style="width:260px" class="mx-2 mb-2" />
+                <TrspButton :text="'btnTitle'" @click.native="$store.state.plantModal=true" style="width:260px" class="mx-2 mb-2" />
           </div>
           </div>
         </v-col>

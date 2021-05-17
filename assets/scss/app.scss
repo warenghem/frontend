@@ -6,6 +6,9 @@
 .multilinechip {
   width:500px
 }
+.v-btn__content {
+  line-height: 0.8rem!important;
+}
 .theme--light.v-list-item, .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-application {
   color: #313131!important;
 }
@@ -274,15 +277,13 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
   height:100%;
 }
 .btn-theme {
-  color: #fff!important;
-  border: none;
   outline: 0;
-  font-size: .875rem;
   text-transform: uppercase;
-  letter-spacing: 1.8px;
-  /*background: #0081a7 !important;*/
-  background: linear-gradient(90deg,#0081a7,#6aaacf);
   word-break: break-word;
+  font-weight: bold!important;
+}
+.gradientbluebackground {
+  background: linear-gradient(90deg,#0081a7,#6aaacf);
 }
 
 .btn-transparent {

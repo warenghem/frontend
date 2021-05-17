@@ -1,5 +1,7 @@
 <template dark>
   <div class="py-5 mb-10">
+    {{ productid }}
+    {{ $router.path }}
     <v-container>
       <v-row align="center" justify="center" class="py-5" style="max-width: 900px;">
         <v-col cols="4">
