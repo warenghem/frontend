@@ -14,6 +14,7 @@
     <div v-else style="background-color: lightblue">
     {{ this.productId }} {{this.productDescription.error}}
     </div>
+    
   </div>
 </template>
 
