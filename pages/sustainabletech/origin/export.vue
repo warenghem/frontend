@@ -152,7 +152,7 @@
       </v-expansion-panel>
       <v-expansion-panel>
         <v-expansion-panel-header ripple>
-          <v-card-title>Suppliers</v-card-title>
+          <v-card-title>Providers</v-card-title>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
           <v-container class="pvw" v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
@@ -161,16 +161,16 @@
                 cols="12"
                 sm="6"
               >
-                <div class="text-center pb-3">Please select your supplier</div>
+                <div class="text-center pb-3">Please select your provider</div>
                 <v-autocomplete
-                  v-model="selectedSupplier[idx]"
+                  v-model="selectedProvider[idx]"
                   filled
                   rounded
-                  :items="partnersItem"
+                  :items="providersItem"
                   dense
-                  label="Partner name"
+                  label="Provider name"
                   item-text="name"
-                  @change="supplierSelect(idx)"
+                  @change="providerSelect(idx)"
                   return-object
                 ></v-autocomplete>
               </v-col>
@@ -180,14 +180,14 @@
                 class="text-center"
               >
                 <div class="pb-3">Or</div>
-                <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="addNewSupplier(idx)" x-large>Add New
-                  Supplier
+                <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="addNewProvider(idx)" x-large>Add New
+                  Provider
                 </v-btn>
               </v-col>
             </v-row>
             <v-row>
               <v-col cols="12">
-                <h3 class="info--text text-center">Supplier {{idx+1}}</h3>
+                <h3 class="info--text text-center">Providers {{idx+1}}</h3>
               </v-col>
               <v-col
                 cols="12"
@@ -195,9 +195,22 @@
                 md="4"
               >
                 <v-select
-                  :items="supplierproducttype"
-                  label="Product type"
+                  :items="provider_type"
+                  label="Provider type"
                   v-model="supplier.type"
+                  filled
+                  rounded
+                ></v-select>
+              </v-col>
+              <v-col
+                cols="12"
+                sm="6"
+                md="4"
+              >
+                <v-select
+                  :items="product_type"
+                  label="Product type"
+                  v-model="supplier.product"
                   filled
                   rounded
                 ></v-select>
@@ -267,7 +280,7 @@
                     color="lightbugattiblue"
                     hide-details
                     :label="claim.label"
-                    :value="claim.value"
+                    :value="claim.label"
                     :on-icon="svgPath6"
                     :off-icon="svgPath5"
                   ></v-checkbox>
@@ -278,195 +291,69 @@
                 cols="12"
               >
                 <p>Verified Claims</p>
-                <v-checkbox
-                  v-model="supplier.verifiedclaims.vegan.is"
-                  label="Vegan"
-                  color="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="supplier.verifiedclaims.vegan.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="supplier.verifiedclaims.vegan.renewalDate"
-                      label="Picker without buttons"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
+                <div v-for="verifiedclaim in verifiedclaims_options" :key="verifiedclaim.value">
+                  <v-checkbox
+                    v-model="supplier.verifiedclaims[verifiedclaim.name].is"
+                    :label="verifiedclaim.label"
+                    color="lightbugattiblue"
+                    hide-details
+                    :on-icon="svgPath6"
+                    :off-icon="svgPath5"
+                    class="pb-3"
+                  ></v-checkbox>
+                  <div v-if="supplier.verifiedclaims[verifiedclaim.name].is">
+                    <v-menu
+                      v-model="supplier.verifiedclaims[verifiedclaim.name].menu"
+                      :close-on-content-click="false"
+                      :nudge-right="40"
+                      transition="scale-transition"
+                      offset-y
+                      min-width="290px"
+                    >
+                      <template v-slot:activator="{ on, attrs }">
+                        <v-text-field
+                          v-model="supplier.verifiedclaims[verifiedclaim.name].renewalDate"
+                          label="Picker without buttons"
+                          :prepend-icon="svgPath2"
+                          readonly
+                          v-bind="attrs"
+                          v-on="on"
+                          filled
+                          rounded
+                        ></v-text-field>
+                      </template>
+                      <v-date-picker
+                        v-model="supplier.verifiedclaims[verifiedclaim.name].renewalDate"
+                        @input="supplier.verifiedclaims[verifiedclaim.name].menu = false"
+                      ></v-date-picker>
+                    </v-menu>
+                    <v-select
+                      :items="certificationmethod"
+                      label="Certification Method"
+                      v-model="supplier.verifiedclaims[verifiedclaim.name].certification_method"
                       filled
                       rounded
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="supplier.verifiedclaims.vegan.renewalDate"
-                    @input="supplier.verifiedclaims.vegan.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="supplier.verifiedclaims.vegan.certification_method"
-                  filled
-                  rounded
-                ></v-select>
-                <v-file-input
-                  v-model="myFile"
-                  outlined
-                  placeholder="Click to upload file"
-                  @change="fileInput"
-                  :disabled="processing"
-                  filled
-                  rounded
-                >
-                  <template v-slot:append-outer>
-                    <v-progress-circular
-                      v-if="processing"
-                      color="grey"
-                      indeterminate
-                      small
-                    />
-                  </template>
-                </v-file-input>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="supplier.verifiedclaims.vegan.certification_method"
-                  filled
-                  rounded
-                ></v-select>
-                <v-checkbox
-                  v-model="supplier.verifiedclaims.gots.is"
-                  label="GOTS"
-                  color="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="supplier.verifiedclaims.gots.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="supplier.verifiedclaims.gots.renewalDate"
-                      label="Renewal Date"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
+                    ></v-select>
+                    <v-file-input
+                      v-model="myFile"
+                      outlined
+                      placeholder="Click to upload file"
+                      @change="fileInput"
+                      :disabled="processing"
                       filled
                       rounded
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="supplier.verifiedclaims.gots.renewalDate"
-                    @input="supplier.verifiedclaims.gots.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="supplier.verifiedclaims.gots.certification_method"
-                  filled
-                  rounded
-                ></v-select>
-                <v-checkbox
-                  v-model="supplier.verifiedclaims.france.is"
-                  label="Made in France"
-                  color="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="supplier.verifiedclaims.france.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="supplier.verifiedclaims.france.renewalDate"
-                      label="Renewal Date"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                      filled
-                      rounded
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="supplier.verifiedclaims.france.renewalDate"
-                    @input="supplier.verifiedclaims.france.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="supplier.verifiedclaims.france.certification_method"
-                  filled
-                  rounded
-                ></v-select>
-                <v-checkbox
-                  v-model="supplier.verifiedclaims.audited_working.is"
-                  label="Audited working conditions"
-                  color="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="supplier.verifiedclaims.audited_working.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="supplier.verifiedclaims.audited_working.renewalDate"
-                      label="Renewal Date"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                      filled
-                      rounded
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="supplier.verifiedclaims.audited_working.renewalDate"
-                    @input="supplier.verifiedclaims.audited_working.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="supplier.verifiedclaims.audited_working.certification_method"
-                  filled
-                  rounded
-                ></v-select>
+                    >
+                      <template v-slot:append-outer>
+                        <v-progress-circular
+                          v-if="processing"
+                          color="grey"
+                          indeterminate
+                          small
+                        />
+                      </template>
+                    </v-file-input>
+                  </div>
+                </div>
               </v-col>
             </v-row>
             <v-row>
@@ -477,33 +364,84 @@
               </v-col>
             </v-row>
           </v-container>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
+      <v-expansion-panel>
+        <v-expansion-panel-header ripple>
+          <v-card-title>Transits</v-card-title>
+        </v-expansion-panel-header>
+        <v-expansion-panel-content eager>
           <v-container
+            class="pvw"
             v-for="(transit,idx) in transits" :key="'supply2'+idx"
           >
               <v-row>
+                  <v-col cols="12">
+                    <h3 class="info--text text-center">Transit {{idx+1}}</h3>
+                  </v-col>
+                  <v-col
+                    cols="12"
+                    md="6"
+                  >
+                    <v-select
+                      :items="providersItem"
+                      label="From"
+                      v-model="transit.from"
+                      filled
+                      rounded
+                    ></v-select>
+                  </v-col>
+                  <v-col
+                    cols="12"
+                    md="6"
+                  >
+                    <v-select
+                      :items="providersItem"
+                      label="To"
+                      v-model="transit.to"
+                      filled
+                      rounded
+                    ></v-select>
+                  </v-col>
+                  <v-col
+                    cols="12"
+                  >
+                    <div class="pb-10">Date</div>
+                    <Datetime v-model="transit.date"/>
+                  </v-col>
+                  <v-col
+                    cols="12"
+                    md="6"
+                    class="pt-10"
+                  >
+                    <v-select
+                      :items="transit_type"
+                      label="Method"
+                      v-model="transit.type"
+                      filled
+                      rounded
+                    ></v-select>
+                  </v-col>
+                  <v-col
+                    cols="12"
+                    md="6"
+                  >
+                    <v-select
+                      :items="transit_type"
+                      label="Product type"
+                      v-model="transit.goods"
+                      multiple
+                      filled
+                      rounded
+                    ></v-select>
+                  </v-col>
+              </v-row>
+              <v-row>
                 <v-col cols="12">
-                  <p class="pt-5">Transit {{idx+1}}</p>
-                  <v-select
-                    :items="transit_type"
-                    label="Product type"
-                    v-model="transit.type"
-                    filled
-                    rounded
-                  ></v-select>
-                  <div class="pb-10">Date</div>
-                  <Datetime v-model="transit.date"/>
-                  <div class="pb-10">Method</div>
-                  <v-select
-                    :items="transit_method"
-                    label="Product type"
-                    v-model="transit.method"
-                    filled
-                    rounded
-                  ></v-select>
+                  <v-btn rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
+                        @click="addTransit">Add Transit
+                  </v-btn>
                 </v-col>
-                <v-btn rounded color="lightbugattiblue" elevation="0" small dark class="d-flex ma-auto"
-                       @click="addTransit">Add Transit
-                </v-btn>
               </v-row>
           </v-container>
         </v-expansion-panel-content>
@@ -568,10 +506,10 @@
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
             const productsItem = await $content(`router/${lang_path}/shop`).fetch();
-            const partnersItem = await $content(`api/${lang_path}/partners`,  { deep: true }).fetch();
+            const providersItem = await $content(`api/${lang_path}/partners`,  { deep: true }).fetch();
             return {
                 productsItem,
-                partnersItem,
+                providersItem,
             }
         },
         data: () => ({
@@ -584,9 +522,9 @@
             svgPath7: mdiPaperclip,
             panel: [1, 0, 0],
             category: ['Bags', 'Wallet', 'Belt', 'Shoes'],
-            transit_type: ['Finished product', 'Materials', 'Metal & accessories', 'Raw material'],
-            transit_method: ['Plane', 'Train', 'Road', 'Walk'],
-            supplierproducttype: ['Grappe Leather', 'Linen'],
+            provider_type: ['Finished product', 'Materials', 'Metal & accessories', 'Raw material'],
+            transit_type: ['Plane', 'Train', 'Road', 'Walk'],
+            product_type: ['Grappe Leather', 'Linen'],
             manufacturerproducttype: ['Shoes', 'Bag', 'Leather Goods'],
             certificationmethod: ['Audited & verified certification', 'Audited from us'],
             countries: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua &amp; Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia &amp; Herzegovina', 'Botswana', 'Brazil', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Chad', 'Chile', 'China', 'Colombia', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire', 'Croatia', 'Cruise Ship', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Estonia', 'Ethiopia', 'Falkland Islands', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Polynesia', 'French West Indies', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Kyrgyz Republic', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania', 'Mauritius', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Pierre &amp; Miquelon', 'Samoa', 'San Marino', 'Satellite', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'St Kitts &amp; Nevis', 'St Lucia', 'St Vincent', 'St. Lucia', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', `Timor L'Este`, 'Togo', 'Tonga', 'Trinidad &amp; Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks &amp; Caicos', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam', 'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'],
@@ -622,10 +560,17 @@
                 {label: 'Locally sourced', value: 5},
                 {label: 'Local employer', value: 6},
             ],
-            selectedSupplier: [null],
+            verifiedclaims_options: [
+                {name: 'vegan', label: 'Vegan'},
+                {name: 'gots', label: 'GOTS'},
+                {name: 'france', label: 'Made in France'},
+                {name: 'audited_working', label: 'Audited working conditions'},
+            ],
+            selectedProvider: [null],
             suppliers: [
                 {
                     type: null,
+                    product: null,
                     brand: '',
                     name: '',
                     quantity: 0,
@@ -668,13 +613,13 @@
                     }
                 }
             ],
-            transit: [
+            transits: [
               { 
                 from: null, 
                 to: null, 
                 date: new Date().toISOString().substr(0, 10),
                 type: null, 
-                goods: [ "string", "thread" ]
+                goods: []
               },
             ],
             myFile: null,
@@ -768,8 +713,10 @@
                             "latitude": "0",
                             "longitude": "0",
                               "custom": {
-                              "suppliers": this.suppliers,
-                              "tree": res.data.trees
+                                "version": "1",
+                                "providers": this.suppliers,
+                                "transits": this.transits,
+                                "tree": res.data.trees
                             }
                         };
                         this.$axios.setHeader('Content-Type', 'application/json')
@@ -783,10 +730,11 @@
 
             },
             addSupplier() {
-                this.selectedSupplier.push(null);
+                this.selectedProvider.push(null);
                 this.suppliers.push({
                     type: null,
-                    selectedSupplier: null,
+                    product: null,
+                    selectedProvider: null,
                     brand: '',
                     name: '',
                     quantity: 0,
@@ -845,7 +793,7 @@
                   to: null, 
                   date: new Date().toISOString().substr(0, 10),
                   type: null, 
-                  goods: [ "string", "thread" ]
+                  goods: []
                 })
             },
             productSelect() {
@@ -873,7 +821,7 @@
                 }, 2000)
 
             },
-            supplierSelect() {
+            providerSelect() {
                 this.isLoading = true;
                 this.isResult = false;
                 setTimeout(() => {
@@ -895,7 +843,7 @@
                 };
                 this.isResult = true;
             },
-            addNewSupplier() {
+            addNewProvider() {
                 // this.suppliers = {
                 //     brand: '',
                 //     name: '',
