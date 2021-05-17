@@ -153,11 +153,6 @@
       <v-expansion-panel>
         <v-expansion-panel-header ripple>
           <v-card-title>Suppliers</v-card-title>
-          <template v-slot:actions>
-            <v-icon color="error">
-              {{ svgPath1 }}
-            </v-icon>
-          </template>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
           <v-container class="pvw" v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
@@ -284,7 +279,7 @@
               >
                 <p>Verified Claims</p>
                 <v-checkbox
-                  v-model="supplier.vegan.is"
+                  v-model="supplier.verifiedclaims.vegan.is"
                   label="Vegan"
                   color="lightbugattiblue"
                   hide-details
@@ -293,7 +288,7 @@
                   class="pb-3"
                 ></v-checkbox>
                 <v-menu
-                  v-model="supplier.vegan.menu"
+                  v-model="supplier.verifiedclaims.vegan.menu"
                   :close-on-content-click="false"
                   :nudge-right="40"
                   transition="scale-transition"
@@ -302,7 +297,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-text-field
-                      v-model="supplier.vegan.renewalDate"
+                      v-model="supplier.verifiedclaims.vegan.renewalDate"
                       label="Picker without buttons"
                       :prepend-icon="svgPath2"
                       readonly
@@ -313,14 +308,14 @@
                     ></v-text-field>
                   </template>
                   <v-date-picker
-                    v-model="supplier.vegan.renewalDate"
-                    @input="supplier.vegan.menu = false"
+                    v-model="supplier.verifiedclaims.vegan.renewalDate"
+                    @input="supplier.verifiedclaims.vegan.menu = false"
                   ></v-date-picker>
                 </v-menu>
                 <v-select
                   :items="certificationmethod"
                   label="Certification Method"
-                  v-model="supplier.vegan.certification_method"
+                  v-model="supplier.verifiedclaims.vegan.certification_method"
                   filled
                   rounded
                 ></v-select>
@@ -345,12 +340,12 @@
                 <v-select
                   :items="certificationmethod"
                   label="Certification Method"
-                  v-model="supplier.vegan.certification_method"
+                  v-model="supplier.verifiedclaims.vegan.certification_method"
                   filled
                   rounded
                 ></v-select>
                 <v-checkbox
-                  v-model="supplier.gots.is"
+                  v-model="supplier.verifiedclaims.gots.is"
                   label="GOTS"
                   color="lightbugattiblue"
                   hide-details
@@ -359,7 +354,7 @@
                   class="pb-3"
                 ></v-checkbox>
                 <v-menu
-                  v-model="supplier.gots.menu"
+                  v-model="supplier.verifiedclaims.gots.menu"
                   :close-on-content-click="false"
                   :nudge-right="40"
                   transition="scale-transition"
@@ -368,7 +363,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-text-field
-                      v-model="supplier.gots.renewalDate"
+                      v-model="supplier.verifiedclaims.gots.renewalDate"
                       label="Renewal Date"
                       :prepend-icon="svgPath2"
                       readonly
@@ -379,19 +374,19 @@
                     ></v-text-field>
                   </template>
                   <v-date-picker
-                    v-model="supplier.gots.renewalDate"
-                    @input="supplier.gots.menu = false"
+                    v-model="supplier.verifiedclaims.gots.renewalDate"
+                    @input="supplier.verifiedclaims.gots.menu = false"
                   ></v-date-picker>
                 </v-menu>
                 <v-select
                   :items="certificationmethod"
                   label="Certification Method"
-                  v-model="supplier.gots.certification_method"
+                  v-model="supplier.verifiedclaims.gots.certification_method"
                   filled
                   rounded
                 ></v-select>
                 <v-checkbox
-                  v-model="supplier.france.is"
+                  v-model="supplier.verifiedclaims.france.is"
                   label="Made in France"
                   color="lightbugattiblue"
                   hide-details
@@ -400,7 +395,7 @@
                   class="pb-3"
                 ></v-checkbox>
                 <v-menu
-                  v-model="supplier.france.menu"
+                  v-model="supplier.verifiedclaims.france.menu"
                   :close-on-content-click="false"
                   :nudge-right="40"
                   transition="scale-transition"
@@ -409,7 +404,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-text-field
-                      v-model="supplier.france.renewalDate"
+                      v-model="supplier.verifiedclaims.france.renewalDate"
                       label="Renewal Date"
                       :prepend-icon="svgPath2"
                       readonly
@@ -420,19 +415,19 @@
                     ></v-text-field>
                   </template>
                   <v-date-picker
-                    v-model="supplier.france.renewalDate"
-                    @input="supplier.france.menu = false"
+                    v-model="supplier.verifiedclaims.france.renewalDate"
+                    @input="supplier.verifiedclaims.france.menu = false"
                   ></v-date-picker>
                 </v-menu>
                 <v-select
                   :items="certificationmethod"
                   label="Certification Method"
-                  v-model="supplier.france.certification_method"
+                  v-model="supplier.verifiedclaims.france.certification_method"
                   filled
                   rounded
                 ></v-select>
                 <v-checkbox
-                  v-model="supplier.audited_working.is"
+                  v-model="supplier.verifiedclaims.audited_working.is"
                   label="Audited working conditions"
                   color="lightbugattiblue"
                   hide-details
@@ -441,7 +436,7 @@
                   class="pb-3"
                 ></v-checkbox>
                 <v-menu
-                  v-model="supplier.audited_working.menu"
+                  v-model="supplier.verifiedclaims.audited_working.menu"
                   :close-on-content-click="false"
                   :nudge-right="40"
                   transition="scale-transition"
@@ -450,7 +445,7 @@
                 >
                   <template v-slot:activator="{ on, attrs }">
                     <v-text-field
-                      v-model="supplier.audited_working.renewalDate"
+                      v-model="supplier.verifiedclaims.audited_working.renewalDate"
                       label="Renewal Date"
                       :prepend-icon="svgPath2"
                       readonly
@@ -461,14 +456,14 @@
                     ></v-text-field>
                   </template>
                   <v-date-picker
-                    v-model="supplier.audited_working.renewalDate"
-                    @input="supplier.audited_working.menu = false"
+                    v-model="supplier.verifiedclaims.audited_working.renewalDate"
+                    @input="supplier.verifiedclaims.audited_working.menu = false"
                   ></v-date-picker>
                 </v-menu>
                 <v-select
                   :items="certificationmethod"
                   label="Certification Method"
-                  v-model="supplier.audited_working.certification_method"
+                  v-model="supplier.verifiedclaims.audited_working.certification_method"
                   filled
                   rounded
                 ></v-select>
@@ -482,286 +477,34 @@
               </v-col>
             </v-row>
           </v-container>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
-      <v-expansion-panel>
-        <v-expansion-panel-header ripple>
-          <v-card-title>Manufacturers</v-card-title>
-          <template v-slot:actions>
-            <v-icon color="teal">
-              {{ svgPath2 }}
-            </v-icon>
-          </template>
-        </v-expansion-panel-header>
-        <v-expansion-panel-content eager>
-          <v-container class="pvw">
-            <v-row v-for="(manufacture,idx) in manufacturers" :key="'manufucture'+idx">
-              <v-col cols="12">
-                <h3 class="info--text tect-center">Manufacturer {{idx+1}}</h3>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-select
-                  :items="manufacturerproducttype"
-                  label="Product type"
-                  v-model="manufacture.type"
-                  filled
-                  rounded
-                ></v-select>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Brand"
-                  v-model="manufacture.brand"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Manufacture first name"
-                  v-model="manufacture.name"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Quantity"
-                  type="number"
-                  v-model="manufacture.quantity"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-              >
-                <p>Location</p>
-                <v-row>
-                  <v-col
-                    cols="12"
-                  >
-                    <Geolocation v-model="manufacture.location"/>
-                  </v-col>
-                  <v-col
-                    cols="12"
-                  >
-                    <Datetime v-model="manufacture.date"/>
-                  </v-col>
-                </v-row>
-              </v-col>
-              <v-col
-                cols="12"
-              >
-                <p>Claims</p>
-                <div v-for="claim in claims_options" :key="claim.value">
-                  <v-checkbox
-                    v-model="manufacture.claims"
-                    color="lightbugattiblue"
-                    hide-details
-                    :label="claim.label"
-                    :value="claim.value"
-                    :on-icon="svgPath6"
-                    :off-icon="svgPath5"
-                    class="pb-3"
-                  ></v-checkbox>
-                </div>
-              </v-col>
-              <v-col
-                cols="12"
-              >
-                <p>Verified Claims</p>
-                <v-checkbox
-                  v-model="manufacture.vegan.is"
-                  label="Vegan"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                ></v-checkbox>
-                <v-menu
-                  v-model="manufacture.vegan.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="manufacture.vegan.renewalDate"
-                      label="Picker without buttons"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                      filled
-                      rounded
-                      class="pb-3"
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="manufacture.vegan.renewalDate"
-                    @input="manufacture.vegan.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="manufacture.vegan.certification_method"
-                  filled
-                  rounded
-                ></v-select>
-                <v-checkbox
-                  v-model="manufacture.gots.is"
-                  label="GOTS"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="manufacture.gots.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="manufacture.gots.renewalDate"
-                      label="Renewal Date"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                      filled
-                      rounded
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="manufacture.gots.renewalDate"
-                    @input="manufacture.gots.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="manufacture.gots.certification_method"
-                ></v-select>
-                <v-checkbox
-                  v-model="manufacture.france.is"
-                  label="Made in France"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="manufacture.france.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="manufacture.france.renewalDate"
-                      label="Renewal Date"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                      filled
-                      rounded
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="manufacture.france.renewalDate"
-                    @input="manufacture.france.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="manufacture.france.certification_method"
-                  filled
-                  rounded
-                ></v-select>
-                <v-checkbox
-                  v-model="manufacture.audited_working.is"
-                  label="Audited working conditions"
-                  color="lightbugattiblue"
-                  value="lightbugattiblue"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  class="pb-3"
-                ></v-checkbox>
-                <v-menu
-                  v-model="manufacture.audited_working.menu"
-                  :close-on-content-click="false"
-                  :nudge-right="40"
-                  transition="scale-transition"
-                  offset-y
-                  min-width="290px"
-                >
-                  <template v-slot:activator="{ on, attrs }">
-                    <v-text-field
-                      v-model="manufacture.audited_working.renewalDate"
-                      label="Renewal Date"
-                      :prepend-icon="svgPath2"
-                      readonly
-                      v-bind="attrs"
-                      v-on="on"
-                      filled
-                      rounded
-                    ></v-text-field>
-                  </template>
-                  <v-date-picker
-                    v-model="manufacture.audited_working.renewalDate"
-                    @input="manufacture.audited_working.menu = false"
-                  ></v-date-picker>
-                </v-menu>
-                <v-select
-                  :items="certificationmethod"
-                  label="Certification Method"
-                  v-model="manufacture.audited_working.certification_method"
-                  filled
-                  rounded
-                ></v-select>
-              </v-col>
-            </v-row>
-            <v-row>
-              <v-col cols="12">
-                <v-btn rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
-                       @click="addManufacturer">Add Manufacturer
+          <v-container
+            v-for="(transit,idx) in transits" :key="'supply2'+idx"
+          >
+              <v-row>
+                <v-col cols="12">
+                  <p class="pt-5">Transit {{idx+1}}</p>
+                  <v-select
+                    :items="transit_type"
+                    label="Product type"
+                    v-model="transit.type"
+                    filled
+                    rounded
+                  ></v-select>
+                  <div class="pb-10">Date</div>
+                  <Datetime v-model="transit.date"/>
+                  <div class="pb-10">Method</div>
+                  <v-select
+                    :items="transit_method"
+                    label="Product type"
+                    v-model="transit.method"
+                    filled
+                    rounded
+                  ></v-select>
+                </v-col>
+                <v-btn rounded color="lightbugattiblue" elevation="0" small dark class="d-flex ma-auto"
+                       @click="addTransit">Add Transit
                 </v-btn>
-              </v-col>
-            </v-row>
+              </v-row>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -841,6 +584,8 @@
             svgPath7: mdiPaperclip,
             panel: [1, 0, 0],
             category: ['Bags', 'Wallet', 'Belt', 'Shoes'],
+            transit_type: ['Finished product', 'Materials', 'Metal & accessories', 'Raw material'],
+            transit_method: ['Plane', 'Train', 'Road', 'Walk'],
             supplierproducttype: ['Grappe Leather', 'Linen'],
             manufacturerproducttype: ['Shoes', 'Bag', 'Leather Goods'],
             certificationmethod: ['Audited & verified certification', 'Audited from us'],
@@ -890,85 +635,47 @@
                         longitude: ''
                     },
                     date: new Date().toISOString().substr(0, 10),
-                    certification_method: '',
-                    renewalDate: '',
                     claims: [],
-                    vegan: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-                    gots: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-                    france: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-                    audited_working: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-
+                    verifiedclaims: {
+                      vegan: {
+                          is: false,
+                          renewalDate: new Date().toISOString().substr(0, 10),
+                          certification_method: null,
+                          upload_file: '',
+                          menu: false
+                      },
+                      gots: {
+                          is: false,
+                          renewalDate: new Date().toISOString().substr(0, 10),
+                          certification_method: null,
+                          upload_file: '',
+                          menu: false
+                      },
+                      france: {
+                          is: false,
+                          renewalDate: new Date().toISOString().substr(0, 10),
+                          certification_method: null,
+                          upload_file: '',
+                          menu: false
+                      },
+                      audited_working: {
+                          is: false,
+                          renewalDate: new Date().toISOString().substr(0, 10),
+                          certification_method: null,
+                          upload_file: '',
+                          menu: false
+                      },
+                    }
                 }
             ],
-            manufacturers: [
-                {
-                    type: null,
-                    brand: '',
-                    name: '',
-                    quantity: 0,
-                    location: {
-                        address: '',
-                        latitude: '',
-                        longitude: ''
-                    },
-                    date: new Date().toISOString().substr(0, 10),
-                    certification_method: '',
-                    renewalDate: '',
-                    claims: [],
-                    vegan: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-                    gots: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-                    france: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-                    audited_working: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        upload_file: '',
-                        menu: false
-                    },
-
-                }
+            transit: [
+              { 
+                from: null, 
+                to: null, 
+                date: new Date().toISOString().substr(0, 10),
+                type: null, 
+                goods: [ "string", "thread" ]
+              },
             ],
             myFile: null,
             processing: false,
@@ -1062,7 +769,6 @@
                             "longitude": "0",
                               "custom": {
                               "suppliers": this.suppliers,
-                              "manufacturers": this.manufacturers,
                               "tree": res.data.trees
                             }
                         };
@@ -1091,71 +797,55 @@
                     certification_method: '',
                     renewalDate: '',
                     claims: [],
-                    vegan: {
-                        is: false,
-                        renewalDate: '',
-                        certification_method: null,
-                        menu: false
+                    verifiedclaims: {
+                      vegan: {
+                          is: false,
+                          renewalDate: '',
+                          certification_method: null,
+                          menu: false
+                      },
+                      gots: {
+                          is: false,
+                          renewalDate: new Date().toISOString().substr(0, 10),
+                          certification_method: null,
+                          menu: false
+                      },
+                      france: {
+                          is: false,
+                          renewalDate: new Date().toISOString().substr(0, 10),
+                          certification_method: null,
+                          menu: false
+                      },
+                      audited_working: {
+                          is: false,
+                          renewalDate: new Date().toISOString().substr(0, 10),
+                          certification_method: null,
+                          menu: false
+                      }
                     },
-                    gots: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        menu: false
+                    input: {
+                        receipts: [
+                            {   type : null,
+                                date: new Date().toISOString().substr(0, 10),
+                                method: null
+                            },
+                        ],
+                        shipments: [
+                            {   type : null,
+                                date: new Date().toISOString().substr(0, 10),
+                                method: null
+                            },
+                        ]
                     },
-                    france: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        menu: false
-                    },
-                    audited_working: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        menu: false
-                    },
-
                 })
             },
-            addManufacturer() {
-                this.manufacturers.push({
-                    type: null,
-                    brand: '',
-                    name: '',
-                    quantity: 0,
-                    location: '',
-                    latitude: '',
-                    longitude: '',
-                    date: new Date().toISOString().substr(0, 10),
-                    certification_method: '',
-                    renewalDate: '',
-                    claims: [],
-                    vegan: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        menu: false
-                    },
-                    gots: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        menu: false
-                    },
-                    france: {
-                        is: false,
-                        renewalDate: new Date().toISOString().substr(0, 10),
-                        certification_method: null,
-                        menu: false
-                    },
-                    audited_working: {
-                        is: false,
-                        renewalDate: '',
-                        certification_method: null,
-                        menu: false
-                    },
-
+            addTransit() {
+                this.transits.push({
+                  from: null, 
+                  to: null, 
+                  date: new Date().toISOString().substr(0, 10),
+                  type: null, 
+                  goods: [ "string", "thread" ]
                 })
             },
             productSelect() {
@@ -1214,9 +904,5 @@
                 this.isResult = true;
             }
         },
-
     }
 </script>
-
-<style lang="scss" scoped>
-</style>
