@@ -39,8 +39,8 @@
       }
     },
     methods: {
-      onDecode (result) {
-        this.result = result
+      onDecode (url) {
+        window.location.href = url
       },
 
       async onInit (promise) {
