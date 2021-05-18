@@ -1,34 +1,47 @@
 <template>
   <!-- Tutorial : https://medium.com/js-dojo/vue-js-google-maps-api-getting-user-location-f22ad96115ef -->
-  <span
-  >
-        <v-text-field
-          type="text"
-          placeholder="Enter your address"
-          v-model="address"
-          ref="autocomplete"
-          label="Address Line"
-          required
-          @change="$emit('input',address)"
-        ></v-text-field>
-        <v-text-field
-          type="text"
-          placeholder="Latitude"
-          v-model="latitude"
-          required
-          @change="$emit('input',latitude)"
-        ></v-text-field>
-        <v-text-field
-          type="text"
-          placeholder="Longitude"
-          v-model="longitude"
-          required
-          @change="$emit('input',longitude)"
-        ></v-text-field>
-        <v-btn rounded color="lightbugattiblue" elevation="0" dark @click="locatorButtonPressed">
-          Get address
-        </v-btn>
-    </span>
+    <v-row align="center" justify="center">
+        <v-col
+            cols="12"
+            class="text-center"
+        >
+            <v-btn class="ma-5" rounded color="lightbugattiblue" elevation="0" dark @click="locatorButtonPressed">
+            Geolocate your address
+            </v-btn>
+            <v-btn class="ma-5" rounded color="lightbugattiblue" elevation="0" dark @click="addAdress = true">
+            Add an other address
+            </v-btn>
+        </v-col>
+        <v-col
+            cols="12"
+        >
+            <v-text-field
+            type="text"
+            placeholder="Enter your address"
+            v-model="address"
+            ref="autocomplete"
+            label="Address Line"
+            required
+            @change="$emit('input',address)"
+            ></v-text-field>
+            <v-text-field
+            type="text"
+            placeholder="Latitude"
+            v-model="latitude"
+            required
+            disabled
+            @change="$emit('input',latitude)"
+            ></v-text-field>
+            <v-text-field
+            type="text"
+            placeholder="Longitude"
+            v-model="longitude"
+            required
+            disabled
+            @change="$emit('input',longitude)"
+            ></v-text-field>
+        </v-col>
+    </v-row>
 </template>
 <script>
     export default {
@@ -36,7 +49,8 @@
             return {
                 address: '',
                 latitude: '',
-                longitude: ''
+                longitude: '',
+                addAdress: false
             }
         },
         methods: {

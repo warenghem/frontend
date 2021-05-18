@@ -47,8 +47,7 @@
             <v-row v-if="isResult">
               <v-col
                 cols="12"
-                sm="4"
-                md="3"
+                md="4"
               >
                 <v-text-field
                   v-model="product.name"
@@ -60,8 +59,7 @@
               </v-col>
               <v-col
                 cols="12"
-                sm="4"
-                md="3"
+                md="4"
               >
                 <v-text-field
                   v-model="product.sku"
@@ -73,8 +71,7 @@
               </v-col>
               <v-col
                 cols="12"
-                sm="4"
-                md="3"
+                md="4"
               >
                 <v-text-field
                   label="Brand"
@@ -83,21 +80,6 @@
                   filled
                   rounded
                 ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="4"
-                md="3"
-              >
-                <v-select
-                  v-model="product.category"
-                  :disabled="!productAddMode"
-                  multiple
-                  :items="category"
-                  label="Category"
-                  filled
-                  rounded
-                ></v-select>
               </v-col>
               <v-col
                 cols="12"
@@ -111,41 +93,7 @@
                   rounded
                 ></v-textarea>
               </v-col>
-              <v-col
-                cols="12"
-              >
-                <p>Awards</p>
-                <v-checkbox
-                  v-model="product.awards"
-                  label="Vegan"
-                  color="lightbugattiblue"
-                  value="Vegan"
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  hide-details
-                  :disabled="!productAddMode"
-                ></v-checkbox>
-                <v-checkbox
-                  v-model="product.awards"
-                  label="GOTS"
-                  color="lightbugattiblue"
-                  value="GOTS"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  :disabled="!productAddMode"
-                ></v-checkbox>
-                <v-checkbox
-                  v-model="product.awards"
-                  label="Made in France"
-                  color="lightbugattiblue"
-                  value="Made in France"
-                  hide-details
-                  :on-icon="svgPath6"
-                  :off-icon="svgPath5"
-                  :disabled="!productAddMode"
-                ></v-checkbox>
-              </v-col>
+              <Awards v-model="product.awards"/>
             </v-row>
           </v-container>
         </v-expansion-panel-content>
@@ -195,7 +143,8 @@
                 md="4"
               >
                 <v-select
-                  :items="provider_type"
+                  :items="providersItem"
+                  item-text="type"
                   label="Provider type"
                   v-model="supplier.type"
                   filled
@@ -208,7 +157,8 @@
                 md="4"
               >
                 <v-select
-                  :items="product_type"
+                  :items="providersItem"
+                  item-text="product"
                   label="Product type"
                   v-model="supplier.product"
                   filled
@@ -258,108 +208,26 @@
                 <v-row>
                   <v-col
                     cols="12"
+                    md="6"
                   >
-                    <div>Location</div>
+                    <div class="pb-5">Location</div>
                     <Geolocation v-model="supplier.location"/>
                   </v-col>
                   <v-col
                     cols="12"
+                     md="6"
                   >
                     <div class="pb-10">Date</div>
                     <Datetime v-model="supplier.date"/>
                   </v-col>
                 </v-row>
               </v-col>
-              <v-col
-                cols="12"
-              >
-                <p class="pt-5">Claims</p>
-                <div v-for="claim in claims_options" :key="claim.value">
-                  <v-checkbox
-                    v-model="supplier.claims"
-                    color="lightbugattiblue"
-                    hide-details
-                    :label="claim.label"
-                    :value="claim.label"
-                    :on-icon="svgPath6"
-                    :off-icon="svgPath5"
-                  ></v-checkbox>
-                </div>
-
-              </v-col>
-              <v-col
-                cols="12"
-              >
-                <p>Verified Claims</p>
-                <div v-for="verifiedclaim in verifiedclaims_options" :key="verifiedclaim.value">
-                  <v-checkbox
-                    v-model="supplier.verifiedclaims[verifiedclaim.name].is"
-                    :label="verifiedclaim.label"
-                    color="lightbugattiblue"
-                    hide-details
-                    :on-icon="svgPath6"
-                    :off-icon="svgPath5"
-                    class="pb-3"
-                  ></v-checkbox>
-                  <div v-if="supplier.verifiedclaims[verifiedclaim.name].is">
-                    <v-menu
-                      v-model="supplier.verifiedclaims[verifiedclaim.name].menu"
-                      :close-on-content-click="false"
-                      :nudge-right="40"
-                      transition="scale-transition"
-                      offset-y
-                      min-width="290px"
-                    >
-                      <template v-slot:activator="{ on, attrs }">
-                        <v-text-field
-                          v-model="supplier.verifiedclaims[verifiedclaim.name].renewalDate"
-                          label="Picker without buttons"
-                          :prepend-icon="svgPath2"
-                          readonly
-                          v-bind="attrs"
-                          v-on="on"
-                          filled
-                          rounded
-                        ></v-text-field>
-                      </template>
-                      <v-date-picker
-                        v-model="supplier.verifiedclaims[verifiedclaim.name].renewalDate"
-                        @input="supplier.verifiedclaims[verifiedclaim.name].menu = false"
-                      ></v-date-picker>
-                    </v-menu>
-                    <v-select
-                      :items="certificationmethod"
-                      label="Certification Method"
-                      v-model="supplier.verifiedclaims[verifiedclaim.name].certification_method"
-                      filled
-                      rounded
-                    ></v-select>
-                    <v-file-input
-                      v-model="myFile"
-                      outlined
-                      placeholder="Click to upload file"
-                      @change="fileInput"
-                      :disabled="processing"
-                      filled
-                      rounded
-                    >
-                      <template v-slot:append-outer>
-                        <v-progress-circular
-                          v-if="processing"
-                          color="grey"
-                          indeterminate
-                          small
-                        />
-                      </template>
-                    </v-file-input>
-                  </div>
-                </div>
-              </v-col>
+              <Awards v-model="supplier.awards"/>
             </v-row>
             <v-row>
               <v-col cols="12">
                 <v-btn rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
-                       @click="addSupplier">Add Supplier
+                       @click="addSupplier">Add Provider
                 </v-btn>
               </v-col>
             </v-row>
@@ -385,6 +253,7 @@
                   >
                     <v-select
                       :items="providersItem"
+                      item-text="name"
                       label="From"
                       v-model="transit.from"
                       filled
@@ -397,6 +266,7 @@
                   >
                     <v-select
                       :items="providersItem"
+                      item-text="name"
                       label="To"
                       v-model="transit.to"
                       filled
@@ -425,6 +295,7 @@
                   <v-col
                     cols="12"
                     md="6"
+                    class="pt-10"
                   >
                     <v-select
                       :items="transit_type"
@@ -506,7 +377,7 @@
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
             const productsItem = await $content(`router/${lang_path}/shop`).fetch();
-            const providersItem = await $content(`api/${lang_path}/partners`,  { deep: true }).fetch();
+            const providersItem = await $content(`api/${lang_path}/providers`).fetch();
             return {
                 productsItem,
                 providersItem,
@@ -521,11 +392,7 @@
             svgPath6: mdiCheckboxMarked,
             svgPath7: mdiPaperclip,
             panel: [1, 0, 0],
-            category: ['Bags', 'Wallet', 'Belt', 'Shoes'],
-            provider_type: ['Finished product', 'Materials', 'Metal & accessories', 'Raw material'],
             transit_type: ['Plane', 'Train', 'Road', 'Walk'],
-            product_type: ['Grappe Leather', 'Linen'],
-            manufacturerproducttype: ['Shoes', 'Bag', 'Leather Goods'],
             certificationmethod: ['Audited & verified certification', 'Audited from us'],
             countries: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua &amp; Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia &amp; Herzegovina', 'Botswana', 'Brazil', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Chad', 'Chile', 'China', 'Colombia', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire', 'Croatia', 'Cruise Ship', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Estonia', 'Ethiopia', 'Falkland Islands', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Polynesia', 'French West Indies', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Kyrgyz Republic', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania', 'Mauritius', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Pierre &amp; Miquelon', 'Samoa', 'San Marino', 'Satellite', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'St Kitts &amp; Nevis', 'St Lucia', 'St Vincent', 'St. Lucia', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', `Timor L'Este`, 'Togo', 'Tonga', 'Trinidad &amp; Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks &amp; Caicos', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam', 'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'],
             errorMessages: '',
@@ -548,24 +415,10 @@
                 brand: '',
                 category: [],
                 description: '',
-                awards: []
+                awards: {}
             },
             isLoading: false,
             isResult: false,
-            claims_options: [
-                {label: 'Care for environment', value: 1},
-                {label: 'Recycle', value: 2},
-                {label: 'Plastic free', value: 3},
-                {label: 'Organic', value: 4},
-                {label: 'Locally sourced', value: 5},
-                {label: 'Local employer', value: 6},
-            ],
-            verifiedclaims_options: [
-                {name: 'vegan', label: 'Vegan'},
-                {name: 'gots', label: 'GOTS'},
-                {name: 'france', label: 'Made in France'},
-                {name: 'audited_working', label: 'Audited working conditions'},
-            ],
             selectedProvider: [null],
             suppliers: [
                 {
@@ -580,37 +433,7 @@
                         longitude: ''
                     },
                     date: new Date().toISOString().substr(0, 10),
-                    claims: [],
-                    verifiedclaims: {
-                      vegan: {
-                          is: false,
-                          renewalDate: new Date().toISOString().substr(0, 10),
-                          certification_method: null,
-                          upload_file: '',
-                          menu: false
-                      },
-                      gots: {
-                          is: false,
-                          renewalDate: new Date().toISOString().substr(0, 10),
-                          certification_method: null,
-                          upload_file: '',
-                          menu: false
-                      },
-                      france: {
-                          is: false,
-                          renewalDate: new Date().toISOString().substr(0, 10),
-                          certification_method: null,
-                          upload_file: '',
-                          menu: false
-                      },
-                      audited_working: {
-                          is: false,
-                          renewalDate: new Date().toISOString().substr(0, 10),
-                          certification_method: null,
-                          upload_file: '',
-                          menu: false
-                      },
-                    }
+                    awards: {}
                 }
             ],
             transits: [
@@ -770,21 +593,7 @@
                           certification_method: null,
                           menu: false
                       }
-                    },
-                    input: {
-                        receipts: [
-                            {   type : null,
-                                date: new Date().toISOString().substr(0, 10),
-                                method: null
-                            },
-                        ],
-                        shipments: [
-                            {   type : null,
-                                date: new Date().toISOString().substr(0, 10),
-                                method: null
-                            },
-                        ]
-                    },
+                    }
                 })
             },
             addTransit() {
