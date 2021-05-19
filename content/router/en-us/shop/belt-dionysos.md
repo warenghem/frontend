@@ -113,8 +113,7 @@ default_attributes:
   option: "41"
 isRelatedTo: ''
 isSimilarTo: shoes
-brand:
-  name: Warenghem
+brand: Warenghem
 related_articles:
 - first: []
   second: []

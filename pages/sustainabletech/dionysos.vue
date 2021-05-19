@@ -213,13 +213,6 @@
 		/*mounted() {
 			this.$vuetify.theme.dark = true
 		},*/
-		head() {
-          return {
-              bodyAttrs: {
-                  class: 'theme--dark'
-              }
-          }
-      },
         head() {
           return {
 			bodyAttrs: {

@@ -1,9 +1,31 @@
 <template dark>
-  <div class="py-5 mb-10">
+  <div>
     <div v-if="this.productDescription.custom">
-      <h1>{{ this.productDescription.description }}</h1>
+      <v-container>
+        <v-row align="center" justify="center" class="py-5" style="max-width: 900px;">
+          <v-col cols="4">
+            <div class="img-fluid gradientoverlay position-relative">
+              <img
+                  data-sizes="auto"
+                  data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 1500w"
+                  src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/AdobeStock_50352719.jpeg"
+                  class="gradientoverlay rounded-xl lazyload cover bg-white catalogue-item-background elevation-3"
+              />
+            </div>
+          </v-col>
+          <v-col cols="8">
+            <div class="sub-title">{{ productItem.brand }}</div>
+            <div class="sub-title">{{ productItem.name }}</div>
+            <div class="page-details pl-0" v-html="productItem.description"></div>
+          </v-col>
+          <v-col cols="12">
+            <div class=""><span>BATCH ID : </span><span>{{ productId }}</span></div>
+            <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ this.productDescription.custom.providers[0].quantity }}</span></div>
+            <div class=""><span>PRODUCED : </span><span>8 days ago</span></div>
+          </v-col>
+        </v-row>
+      </v-container>
       <div>
-      Product Index: {{ this.productIndex }} / {{ this.productDescription.custom.manufacturers[0].quantity }}<br/>
       Suppliers count: {{ (this.productDescription.custom.suppliers || []).length }}
       {{ this.actors.filter(x => x.location).map(x => x.location) }}<br/>
       </div>
@@ -11,10 +33,10 @@
         {{actor.date}} - <span class="green--text">{{actor.name}}</span> - <span class="blue--text">{{actor.brand}}</span>
       </div>
     </div>
-    <div v-else style="background-color: lightblue">
-    {{ this.productId }} {{this.productDescription.error}}
-    </div>
-    
+    <v-row align="center" justify="center" class="py-5 mb-10" v-else style="height: 100vh">
+      {{ this.productId }} {{this.productDescription.error}}
+    </v-row>
+    <appbottombar/>
   </div>
 </template>
 
@@ -30,28 +52,23 @@
         ]
       }
     },
-    async asyncData({ params }) {
+    async asyncData(context) {
+      const {$content, params, app} = context;
+
       const productId = params.productid
       const productIndex = params.productindex
-
       const productDescription = await fetch(
         'http://15.188.65.163:40080/api/products/'+productId
-      ).then((res) => res.json())      
+      ).then((res) => res.json())  
 
-      return { productId, productIndex, productDescription }
-    },    
-    /*
-    async asyncData(context) {
-        const {$content, params, app} = context;
-        const slug = params.slug;
-        const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
-        const productItem = await $content(`router/${lang_path}/shop`, slug).fetch();
-        const productsItem = await $content(`router/${lang_path}/shop`).fetch();
-        return {
-            productsItem,
-            productItem,
-        }
-    },*/
+      const api = productDescription.name
+
+      const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
+      const productItem = await $content(`router/${lang_path}/shop/`+api).fetch();
+
+      return { productId, productIndex, productDescription, productItem }
+
+    },
 
     computed: {
        actors() {

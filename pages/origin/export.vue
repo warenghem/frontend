@@ -16,14 +16,36 @@
                 <v-autocomplete
                   v-model="selectedProduct"
                   filled
-                  rounded
                   :items="productsItem"
-                  dense
-                  label="Product name"
                   item-text="name"
+                  item-value="name"
+                  label="Product name"
                   @change="productSelect"
+                  chip
                   return-object
-                ></v-autocomplete>
+                >
+                  <template v-slot:selection="data">
+                    <v-chip
+                      v-bind="data.attrs"
+                      :input-value="data.selected"
+                      @click="data.select"
+                      @click:close="remove(data.item)"
+                    >
+                      <v-avatar left>
+                        <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-20,ar-1-1/Products/'+ data.item.image[0].src">
+                      </v-avatar>
+                      {{ data.item.name }}
+                    </v-chip>
+                  </template>
+                  <template v-slot:item="data">
+                      <v-list-item-avatar>
+                        <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1/Products/'+ data.item.image[0].src">
+                      </v-list-item-avatar>
+                      <v-list-item-content>
+                        <v-list-item-title v-html="data.item.name"></v-list-item-title>
+                      </v-list-item-content>
+                  </template>
+                </v-autocomplete>
               </v-col>
               <v-col
                 cols="12"
@@ -36,65 +58,81 @@
                 </v-btn>
               </v-col>
             </v-row>
-            <v-row v-if="isLoading">
-              <v-col cols="12" class="text-center">
-                <v-progress-linear
-                  indeterminate
-                  color="lightbugattiblue"
-                ></v-progress-linear>
-              </v-col>
-            </v-row>
-            <v-row v-if="isResult">
-              <v-col
-                cols="12"
-                md="4"
-              >
-                <v-text-field
-                  v-model="product.name"
-                  :disabled="!productAddMode"
-                  label="Product name"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                md="4"
-              >
-                <v-text-field
-                  v-model="product.sku"
-                  :disabled="!productAddMode"
-                  label="Product sku"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                md="4"
-              >
-                <v-text-field
-                  label="Brand"
-                  :disabled="!productAddMode"
-                  v-model="product.brand"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-              >
-                <v-textarea
-                  v-html="product.description"
-                  label="Description"
-                  hint="Hint text"
-                  :disabled="!productAddMode"
-                  filled
-                  rounded
-                ></v-textarea>
-              </v-col>
-              <Awards v-model="product.awards"/>
-            </v-row>
+            <v-expand-transition>
+              <v-row v-if="isLoading">
+                <v-col cols="12" class="text-center">
+                  <v-progress-linear
+                    indeterminate
+                    color="lightbugattiblue"
+                  ></v-progress-linear>
+                </v-col>
+              </v-row>
+            </v-expand-transition>
+            <v-expand-transition>
+              <v-row v-if="isResult">
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    v-model="product.name"
+                    :disabled="!productAddMode"
+                    label="Product name"
+                    filled
+                    rounded
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    v-model="product.api"
+                    :disabled="!productAddMode"
+                    label="Product api"
+                    filled
+                    rounded
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    v-model="product.sku"
+                    :disabled="!productAddMode"
+                    label="Product sku"
+                    filled
+                    rounded
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  md="4"
+                >
+                  <v-text-field
+                    label="Brand"
+                    :disabled="!productAddMode"
+                    v-model="product.brand"
+                    filled
+                    rounded
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                >
+                  <v-textarea
+                    v-html="product.description"
+                    label="Description"
+                    hint="Hint text"
+                    :disabled="!productAddMode"
+                    filled
+                    rounded
+                  ></v-textarea>
+                </v-col>
+                <Awards v-model="product.awards"/>
+              </v-row>
+            </v-expand-transition>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -113,12 +151,11 @@
                 <v-autocomplete
                   v-model="selectedProvider[idx]"
                   filled
-                  rounded
                   :items="providersItem"
-                  dense
                   label="Provider name"
                   item-text="name"
                   @change="providerSelect(idx)"
+                  v-on:change="changeItem"
                   return-object
                 ></v-autocomplete>
               </v-col>
@@ -133,104 +170,125 @@
                 </v-btn>
               </v-col>
             </v-row>
-            <v-row>
-              <v-col cols="12">
-                <h3 class="info--text text-center">Providers {{idx+1}}</h3>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-select
-                  :items="providersItem"
-                  item-text="type"
-                  label="Provider type"
-                  v-model="supplier.type"
-                  filled
-                  rounded
-                ></v-select>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-select
-                  :items="providersItem"
-                  item-text="product"
-                  label="Product type"
-                  v-model="supplier.product"
-                  filled
-                  rounded
-                ></v-select>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Brand"
-                  v-model="supplier.brand"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Product name"
-                  v-model="supplier.name"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col>
-              <v-col
-                cols="12"
-                sm="6"
-                md="4"
-              >
-                <v-text-field
-                  label="Quantity"
-                  type="number"
-                  v-model="supplier.quantity"
-                  filled
-                  rounded
-                ></v-text-field>
-              </v-col> 
-              <v-col
-                cols="12"
-              >
-                <v-row>
-                  <v-col
-                    cols="12"
-                    md="6"
-                  >
-                    <div class="pb-5">Location</div>
-                    <Geolocation v-model="supplier.location"/>
-                  </v-col>
-                  <v-col
-                    cols="12"
-                     md="6"
-                  >
-                    <div class="pb-10">Date</div>
-                    <Datetime v-model="supplier.date"/>
-                  </v-col>
-                </v-row>
-              </v-col>
-              <Awards v-model="supplier.awards"/>
-            </v-row>
-            <v-row>
-              <v-col cols="12">
-                <v-btn rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
-                       @click="addSupplier">Add Provider
-                </v-btn>
-              </v-col>
-            </v-row>
+            <v-expand-transition>
+              <v-row v-if="providerAddMode">
+                <v-col cols="12">
+                  <h3 class="info--text text-center">Providers {{idx+1}}</h3>
+                </v-col>
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-select
+                    :items="providersItem"
+                    item-text="type"
+                    label="Provider type"
+                    v-model="supplier.type"
+                    filled
+                    rounded
+                  ></v-select>
+                </v-col>
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-select
+                    :items="providersItem"
+                    item-text="product"
+                    label="Product type"
+                    v-model="supplier.product"
+                    filled
+                    rounded
+                  ></v-select>
+                </v-col>
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-text-field
+                    label="Brand"
+                    :items="productsItem.brand"
+                    v-model="supplier.brand"
+                    filled
+                    rounded
+                  ></v-text-field>
+                </v-col>
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-autocomplete
+                    v-model="supplier.name"
+                    filled
+                    rounded
+                    :items="providerType"
+                    dense
+                    label="Product name"
+                    :item-text="providerTypeName"
+                    v-on:change="changeItem"
+                  ></v-autocomplete>
+                </v-col>
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-text-field
+                    label="Quantity"
+                    type="number"
+                    v-model="supplier.quantity"
+                    filled
+                    rounded
+                  ></v-text-field>
+                </v-col> 
+                <v-col
+                  cols="12"
+                  sm="6"
+                  md="4"
+                >
+                  <v-select
+                    :items="unit_type"
+                    item-text="unit"
+                    label="Product unit"
+                    v-model="supplier.unit"
+                    filled
+                    rounded
+                  ></v-select>
+                </v-col> 
+                <v-col
+                  cols="12"
+                >
+                  <v-row>
+                    <v-col
+                      cols="12"
+                      md="6"
+                    >
+                      <div class="pb-5">Location</div>
+                      <Geolocation v-model="supplier.location"/>
+                    </v-col>
+                    <v-col
+                      cols="12"
+                      md="6"
+                    >
+                      <div class="pb-10">Date</div>
+                      <Datetime v-model="supplier.date"/>
+                    </v-col>
+                  </v-row>
+                </v-col>
+                <Awards v-model="supplier.awards"/>
+              </v-row>
+              <v-row  v-if="providerAddMode">
+                <v-col cols="12">
+                  <v-btn rounded color="lightbugattiblue" elevation="0" dark class="d-flex ma-auto"
+                        @click="addSupplier">Add Provider
+                  </v-btn>
+                </v-col>
+              </v-row>
+            </v-expand-transition>
           </v-container>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -358,7 +416,8 @@
         mdiRefresh,
         mdiCheckboxBlankOutline,
         mdiCheckboxMarked,
-        mdiPaperclip
+        mdiPaperclip,
+        mdiClose
     } from '@mdi/js'
     import {FirebaseStorage} from "@/plugins/firebase.js";
 
@@ -391,8 +450,10 @@
             svgPath5: mdiCheckboxBlankOutline,
             svgPath6: mdiCheckboxMarked,
             svgPath7: mdiPaperclip,
+            svgPath8: mdiClose,
             panel: [1, 0, 0],
             transit_type: ['Plane', 'Train', 'Road', 'Walk'],
+            unit_type: ['unity', 'linear meter'],
             certificationmethod: ['Audited & verified certification', 'Audited from us'],
             countries: ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Anguilla', 'Antigua &amp; Barbuda', 'Argentina', 'Armenia', 'Aruba', 'Australia', 'Austria', 'Azerbaijan', 'Bahamas', 'Bahrain', 'Bangladesh', 'Barbados', 'Belarus', 'Belgium', 'Belize', 'Benin', 'Bermuda', 'Bhutan', 'Bolivia', 'Bosnia &amp; Herzegovina', 'Botswana', 'Brazil', 'British Virgin Islands', 'Brunei', 'Bulgaria', 'Burkina Faso', 'Burundi', 'Cambodia', 'Cameroon', 'Cape Verde', 'Cayman Islands', 'Chad', 'Chile', 'China', 'Colombia', 'Congo', 'Cook Islands', 'Costa Rica', 'Cote D Ivoire', 'Croatia', 'Cruise Ship', 'Cuba', 'Cyprus', 'Czech Republic', 'Denmark', 'Djibouti', 'Dominica', 'Dominican Republic', 'Ecuador', 'Egypt', 'El Salvador', 'Equatorial Guinea', 'Estonia', 'Ethiopia', 'Falkland Islands', 'Faroe Islands', 'Fiji', 'Finland', 'France', 'French Polynesia', 'French West Indies', 'Gabon', 'Gambia', 'Georgia', 'Germany', 'Ghana', 'Gibraltar', 'Greece', 'Greenland', 'Grenada', 'Guam', 'Guatemala', 'Guernsey', 'Guinea', 'Guinea Bissau', 'Guyana', 'Haiti', 'Honduras', 'Hong Kong', 'Hungary', 'Iceland', 'India', 'Indonesia', 'Iran', 'Iraq', 'Ireland', 'Isle of Man', 'Israel', 'Italy', 'Jamaica', 'Japan', 'Jersey', 'Jordan', 'Kazakhstan', 'Kenya', 'Kuwait', 'Kyrgyz Republic', 'Laos', 'Latvia', 'Lebanon', 'Lesotho', 'Liberia', 'Libya', 'Liechtenstein', 'Lithuania', 'Luxembourg', 'Macau', 'Macedonia', 'Madagascar', 'Malawi', 'Malaysia', 'Maldives', 'Mali', 'Malta', 'Mauritania', 'Mauritius', 'Mexico', 'Moldova', 'Monaco', 'Mongolia', 'Montenegro', 'Montserrat', 'Morocco', 'Mozambique', 'Namibia', 'Nepal', 'Netherlands', 'Netherlands Antilles', 'New Caledonia', 'New Zealand', 'Nicaragua', 'Niger', 'Nigeria', 'Norway', 'Oman', 'Pakistan', 'Palestine', 'Panama', 'Papua New Guinea', 'Paraguay', 'Peru', 'Philippines', 'Poland', 'Portugal', 'Puerto Rico', 'Qatar', 'Reunion', 'Romania', 'Russia', 'Rwanda', 'Saint Pierre &amp; Miquelon', 'Samoa', 'San Marino', 'Satellite', 'Saudi Arabia', 'Senegal', 'Serbia', 'Seychelles', 'Sierra Leone', 'Singapore', 'Slovakia', 'Slovenia', 'South Africa', 'South Korea', 'Spain', 'Sri Lanka', 'St Kitts &amp; Nevis', 'St Lucia', 'St Vincent', 'St. Lucia', 'Sudan', 'Suriname', 'Swaziland', 'Sweden', 'Switzerland', 'Syria', 'Taiwan', 'Tajikistan', 'Tanzania', 'Thailand', `Timor L'Este`, 'Togo', 'Tonga', 'Trinidad &amp; Tobago', 'Tunisia', 'Turkey', 'Turkmenistan', 'Turks &amp; Caicos', 'Uganda', 'Ukraine', 'United Arab Emirates', 'United Kingdom', 'United States', 'Uruguay', 'Uzbekistan', 'Venezuela', 'Vietnam', 'Virgin Islands (US)', 'Yemen', 'Zambia', 'Zimbabwe'],
             errorMessages: '',
@@ -409,8 +470,8 @@
             selectedProduct: null,
             productAddMode: false,
             product: {
-                id: '',
                 name: '',
+                api: '',
                 sku: '',
                 brand: '',
                 category: [],
@@ -427,6 +488,7 @@
                     brand: '',
                     name: '',
                     quantity: 0,
+                    unit: '',
                     location: {
                         address: '',
                         latitude: '',
@@ -510,6 +572,17 @@
                     this.$refs[f].reset()
                 })
             },
+            changeItem(selected) {
+              this.providerAddMode = true;
+              var type = selected.type;
+              if (type.includes("Finished product")) {
+                  this.providerType = this.productsItem;
+                  this.providerTypeName = "name"
+              } else {
+                  this.providerType = this.providersItem;
+                  this.providerTypeName = "product"
+              }
+            },
             async submit() {
                 // this.formHasErrors = false
                 //
@@ -531,7 +604,7 @@
                     );
                     if (res.data.status === 'ok') {
                         const productData = {
-                            "name": this.product.sku,
+                            "name": this.product.api,
                             "description": this.product.name,
                             "latitude": "0",
                             "longitude": "0",
@@ -561,6 +634,7 @@
                     brand: '',
                     name: '',
                     quantity: 0,
+                    unit: '',
                     location: '',
                     latitude: '',
                     longitude: '',
@@ -609,11 +683,11 @@
                 this.productAddMode = false;
                 this.isLoading = true;
                 this.isResult = false;
-                this.product.id = this.selectedProduct.id;
                 this.product.sku = this.selectedProduct.sku;
+                this.product.api = this.selectedProduct.slug;
                 this.product.description = this.selectedProduct.description;
                 this.product.name = this.selectedProduct.name;
-                this.product.brand = this.selectedProduct.brand ? this.selectedProduct.brand.name : '';
+                this.product.brand = this.selectedProduct.brand;
                 this.product.awards = [];
                 this.product.category = [];
                 this.selectedProduct.award.forEach(award => {
@@ -653,6 +727,7 @@
                 this.isResult = true;
             },
             addNewProvider() {
+                this.providerAddMode = true;
                 // this.suppliers = {
                 //     brand: '',
                 //     name: '',

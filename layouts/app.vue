@@ -1,9 +1,12 @@
 <template>
-  <v-app dark>
+  <v-app >
     <div>
-        <appmain-toolbar/>
-        <nuxt/>
-        <appbottombar/>
+        <appmain-toolbar />
+        <v-main>
+          <v-container fluid class="pa-0">
+          <nuxt/>
+          </v-container>
+        </v-main>
     </div>
   </v-app>
 </template>

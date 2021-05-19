@@ -104,8 +104,7 @@ default_attributes:
   option: "41"
 isRelatedTo: ''
 isSimilarTo: shoes
-brand:
-  name: Warenghem
+brand: Warenghem
 related_articles:
 - first: content/fr-fr/shop/bag-dionysos-48h.md
   second: content/en-us/shop/belt-dionysos.md

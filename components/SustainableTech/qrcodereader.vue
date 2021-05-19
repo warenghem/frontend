@@ -1,7 +1,7 @@
 <template>
   <div>
     <p class="decode-result">Last result: <b>{{ result }}</b></p>
-    <qrcode-stream :camera="camera" v-if="noStreamApiSupport" :track="lightbuggatiblue" :torch="torchActive" @decode="onDecode" @init="onInit">
+    <qrcode-stream :camera="camera" v-if="!noStreamApiSupport" :track="lightbuggatiblue" :torch="torchActive" @decode="onDecode" @init="onInit">
       <div class="loading-indicator" v-if="loading">
         <v-skeleton-loader
           class="mx-auto"
@@ -10,23 +10,29 @@
         ></v-skeleton-loader>
       </div>
       <div v-if="validationSuccess" class="validation-success">
-        This is a URL
+        Yes! Animation
       </div>
 
       <div v-if="validationFailure" class="validation-failure">
-        This is NOT a URL!
+        This is not our QR code product!
       </div>
 
       <div v-if="validationPending" class="validation-pending">
-        Long validation in progress...
+        Long animation validation in progress...
       </div>
       <button @click="torchActive = !torchActive" :disabled="torchNotSupported">
         <img :src="icon" alt="toggle torch">
       </button>
     </qrcode-stream>
-    <qrcode-drop-zone @decode="onDecode" @init="logErrors">
-      <qrcode-stream @decode="onDecode" @init="onInit" />
-    </qrcode-drop-zone>
+      <p v-if="error !== null" class="drop-error">
+        {{ error }}
+      </p>
+
+      <qrcode-drop-zone v-if="noStreamApiSupport" @detect="onDetect" @dragover="onDragOver" @init="logErrors">
+        <div class="drop-area" :class="{ 'dragover': dragover }">
+          DROP SOME IMAGES HERE
+        </div>
+      </qrcode-drop-zone>
   </div>
 </template>
 
@@ -104,33 +110,61 @@
       resetValidationState () {
         this.isValid = undefined
       },
-      async onDecode (content) {
-        this.result = content
+        async onDecode (url) {
+        this.result = url
         this.turnCameraOff()
 
         // pretend it's taking really long
         await this.timeout(3000)
-        this.isValid = content.startsWith('https://www.warenghem.com')
+        this.isValid = url.startsWith('https://www.warenghem.com')
 
         // some more delay, so users have time to read the message
         await this.timeout(2000)
-        window.location.href = url
+        if (this.isValid) {
+            this.$router.push(url.replace("https://www.warenghem.com", ""));
+          } else {
+            this.turnCameraOn()
+            this.isValid  = null
+          }
+        },
 
-        this.turnCameraOn()
-      },
-      turnCameraOn () {
+        turnCameraOn () {
         this.camera = 'auto'
-      },
+        },
 
-      turnCameraOff () {
+        turnCameraOff () {
         this.camera = 'off'
-      },
+        },
 
-      timeout (ms) {
+        timeout (ms) {
         return new Promise(resolve => {
-          window.setTimeout(resolve, ms)
+            window.setTimeout(resolve, ms)
         })
-      }
+        },
+        async onDetect (promise) {
+          try {
+            const { content } = await promise
+
+            this.result = content
+            this.error = null
+          } catch (error) {
+            if (error.name === 'DropImageFetchError') {
+              this.error = 'Sorry, you can\'t load cross-origin images :/'
+            } else if (error.name === 'DropImageDecodeError') {
+              this.error = 'Ok, that\'s not an image. That can\'t be decoded.'
+            } else {
+              this.error = 'Ups, what kind of error is this?! ' + error.message
+            }
+          }
+        },
+
+        logErrors (promise) {
+          promise.catch(console.error)
+        },
+
+        onDragOver (isDraggingOver) {
+          this.dragover = isDraggingOver
+        }
     },
 
     lightbuggatiblue (location, ctx) {
@@ -189,5 +223,23 @@ button {
 }
 .validation-failure {
   color: red;
+}
+.drop-area {
+  height: 300px;
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  padding: 10px;
+
+  background-color: rgba(0,0,0,.5);
+}
+
+.dragover {
+  background-color: rgba(0,0,0,.8);
+}
+
+.drop-error {
+  color: red;
+  font-weight: bold;
 }
 </style>
