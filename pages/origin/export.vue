@@ -1,9 +1,11 @@
-<template dark>
-  <div class="py-5 px-3 px-md-5 mb-10">
-    <v-expansion-panels v-model="panel" focusable popout>
+<template>
+  <v-container class="py-5 px-3 px-md-5 mb-10">
+    <div style="width: 30vw;max-width: 200px;min-width: 150px;" class="svglogo ma-auto my-10 py-10" v-html="require(`~/assets/images/Origin.svg?raw`)" />
+    <div class="text-center teradeli-medium home-title pb-10">Lock your stories in the chain</div>
+    <v-expansion-panels  focusable inset flat v-model="panel" popout>
       <v-expansion-panel>
-        <v-expansion-panel-header ripple>
-          <v-card-title>Product whole informations</v-card-title>
+        <v-expansion-panel-header class="border-bottom-2" ripple>
+          <v-card-title class="justify-center">Product whole informations</v-card-title>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
           <v-container class="pvw">
@@ -31,14 +33,14 @@
                       @click="data.select"
                       @click:close="remove(data.item)"
                     >
-                      <v-avatar left>
+                      <v-avatar color="white" left>
                         <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-20,ar-1-1/Products/'+ data.item.image[0].src">
                       </v-avatar>
                       {{ data.item.name }}
                     </v-chip>
                   </template>
                   <template v-slot:item="data">
-                      <v-list-item-avatar>
+                      <v-list-item-avatar color="white">
                         <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1/Products/'+ data.item.image[0].src">
                       </v-list-item-avatar>
                       <v-list-item-content>
@@ -137,8 +139,8 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
-        <v-expansion-panel-header ripple>
-          <v-card-title>Providers</v-card-title>
+        <v-expansion-panel-header class="border-bottom-2" ripple>
+          <v-card-title class="justify-center">Providers</v-card-title>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
           <v-container class="pvw" v-for="(supplier,idx) in suppliers" :key="'supply'+idx">
@@ -293,8 +295,8 @@
         </v-expansion-panel-content>
       </v-expansion-panel>
       <v-expansion-panel>
-        <v-expansion-panel-header ripple>
-          <v-card-title>Transits</v-card-title>
+        <v-expansion-panel-header class="border-bottom-2" ripple>
+          <v-card-title class="justify-center">Transits</v-card-title>
         </v-expansion-panel-header>
         <v-expansion-panel-content eager>
           <v-container
@@ -405,7 +407,14 @@
         Submit
       </v-btn>
     </div>
-  </div>
+    <v-row justify="center" align="center" class="ma-auto">
+      <v-col cols="12" class="text-center pt-5 pb-0">Powered by</v-col>
+      <div style="width: 30vw;max-width: 180px;min-width: 150px;" class="svglogo pa-5" v-html="require(`~/assets/images/WA-mif-vf.svg?raw`)">
+      </div>
+      <div style="width: 30vw;max-width: 200px;min-width: 150px;" class="svglogo pa-5" v-html="require(`~/assets/images/ethereum.svg?raw`)">
+      </div>
+    </v-row>
+  </v-container>
 </template>
 
 <script>
