@@ -21,14 +21,103 @@
           <v-col cols="12">
             <div class=""><span>BATCH ID : </span><span>{{ productId }}</span></div>
             <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ this.productDescription.custom.providers[0].quantity }}</span></div>
-            <div class=""><span>PRODUCED : </span><span>8 days ago</span></div>
+            <div class=""><span>PRODUCED : </span><span>{{ produced }}</span></div>
           </v-col>
         </v-row>
+        <v-row>
+          <v-container>
+              <v-row>
+                <v-col cols="12">
+                  <v-card rounded="xl">
+                    <div class="teradeli-medium text-center py-3 pt-8">
+                      LOCATIONS
+                    </div>
+                    <div class="text-center py-3 pb-8">
+                      This product's supply chain includes {{ this.productDescription.custom.providers.filter(x => x.location).map(x => x.location).length +1 }} locations
+                    </div>
+                    <!--<client-only>
+                    <l-map
+                      style="width: 100%"
+                      class="treemap pt-5"
+                      :zoom="zoom"
+                      :center="center"
+                      :options="{zoomControl: false,attributionControl: false,scrollWheelZoom: false,tap: false,boxZoom: false, doubleClickZoom: false, touchZoom: false, dragging: false, draggable: false}"
+                    >
+                      <l-tile-layer
+                        :url="url"
+                      />
+                      <l-marker :lat-lng="[marker.latitude, marker.longitude]"
+                                @click="innerClick(marker.modal)"
+                                v-for="(marker,m_idx) in markers"
+                                :key="'map_'+m_idx">
+                        <l-icon
+                          :icon-size="[50, 50]"
+                          :icon-url="marker.image"
+                          className="mapClass hand"
+                                      icon-class="e"
+
+                        >
+                          <div style="transform: translateY(-20px);" class="card">
+                            <div class="card-header name hand">
+                              {{marker.text}}
+                              <div style="font-size: 16px" class="subtitlesmall">En savoir plus</div>
+                            </div>
+                            <div>
+                              <div class="blob white rounded-circle" style="width:45px; height:45px">
+                                <img :src="marker.image" alt="" width="45" height="45">
+                              </div>
+                            </div>
+                          </div>
+                        </l-icon>
+                      </l-marker>
+                    </l-map>
+                    </client-only>-->
+                  </v-card>
+                </v-col>
+                <v-col cols="12" sm="6">
+                  <v-card rounded="xl">
+                    <div class="teradeli-medium text-center py-3 pt-8">
+                      PROVIDERS
+                    </div>
+                    <div class="text-center py-3 pb-8">
+                      This product's supply chain includes {{ (this.productDescription.custom.providers || []).length }} providers
+                    </div>
+                  </v-card>
+                </v-col>
+                <v-col cols="12" sm="6">
+                  <v-card rounded="xl">
+                    <div class="teradeli-medium text-center py-3 pt-8">
+                      MATERIALS
+                    </div>
+                    <div class="text-center py-3 pb-8">
+                      This product's supply chain includes {{ this.productDescription.custom.providers.filter(y => y.type.includes('Material')).length }} materials
+                    </div>
+                  </v-card>
+                </v-col>
+                <v-col cols="12" sm="6">
+                  <v-card rounded="xl">
+                    <div class="teradeli-medium text-center py-3 pt-8">
+                      CERTIFICATES
+                    </div>
+                    <div class="text-center py-3 pb-8">
+                      This product's supply chain includes {{ certificate }} certificates
+                    </div>
+                  </v-card>
+                </v-col>
+                <v-col cols="12" sm="6">
+                  <v-card rounded="xl">
+                    <div class="teradeli-medium text-center py-3 pt-8">
+                      KM
+                    </div>
+                    <div class="text-center py-3 pb-8">
+                      This product has made xxx km
+                    </div>
+                  </v-card>
+                </v-col>
+              </v-row>
+          </v-container>
+        </v-row>
       </v-container>
-      <div>
-      Suppliers count: {{ (this.productDescription.custom.suppliers || []).length }}
-      {{ this.actors.filter(x => x.location).map(x => x.location) }}<br/>
-      </div>
       <div v-for="(actor, index) in actors.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1)" :key="index">
         {{actor.date}} - <span class="green--text">{{actor.name}}</span> - <span class="blue--text">{{actor.brand}}</span>
       </div>
@@ -74,6 +163,10 @@
        actors() {
          return Object.values(this.productDescription.custom).filter(x => Array.isArray(x)).reduce((a,x) => a.concat(...x), []);
        },
+       produced() {
+              var produced = this.productDescription.custom.providers.filter(y => y.type.includes('Finished product'))
+              return produced
+           },
     },
 
     data() {

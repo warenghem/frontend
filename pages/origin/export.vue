@@ -132,7 +132,6 @@
                     rounded
                   ></v-textarea>
                 </v-col>
-                <Awards v-model="product.awards"/>
               </v-row>
             </v-expand-transition>
           </v-container>
@@ -485,7 +484,39 @@
                 brand: '',
                 category: [],
                 description: '',
-                awards: {}
+                awards: {
+                    claims: [],
+                    verifiedclaims: {
+                        vegan: {
+                            is: false,
+                            renewalDate: new Date().toISOString().substr(0, 10),
+                            certification_method: null,
+                            upload_file: '',
+                            menu: false
+                        },
+                        gots: {
+                            is: false,
+                            renewalDate: new Date().toISOString().substr(0, 10),
+                            certification_method: null,
+                            upload_file: '',
+                            menu: false
+                        },
+                        france: {
+                            is: false,
+                            renewalDate: new Date().toISOString().substr(0, 10),
+                            certification_method: null,
+                            upload_file: '',
+                            menu: false
+                        },
+                        audited_working: {
+                            is: false,
+                            renewalDate: new Date().toISOString().substr(0, 10),
+                            certification_method: null,
+                            upload_file: '',
+                            menu: false
+                        },
+                    }
+                }
             },
             isLoading: false,
             isResult: false,
@@ -504,7 +535,39 @@
                         longitude: ''
                     },
                     date: new Date().toISOString().substr(0, 10),
-                    awards: {}
+                    awards: {
+                        claims: [],
+                        verifiedclaims: {
+                            vegan: {
+                                is: false,
+                                renewalDate: new Date().toISOString().substr(0, 10),
+                                certification_method: null,
+                                upload_file: '',
+                                menu: false
+                            },
+                            gots: {
+                                is: false,
+                                renewalDate: new Date().toISOString().substr(0, 10),
+                                certification_method: null,
+                                upload_file: '',
+                                menu: false
+                            },
+                            france: {
+                                is: false,
+                                renewalDate: new Date().toISOString().substr(0, 10),
+                                certification_method: null,
+                                upload_file: '',
+                                menu: false
+                            },
+                            audited_working: {
+                                is: false,
+                                renewalDate: new Date().toISOString().substr(0, 10),
+                                certification_method: null,
+                                upload_file: '',
+                                menu: false
+                            },
+                        }
+                    }
                 }
             ],
             transits: [
@@ -634,7 +697,7 @@
                 }
 
             },
-            addSupplier() {
+            /*addSupplier() {
                 this.selectedProvider.push(null);
                 this.suppliers.push({
                     type: null,
@@ -678,7 +741,7 @@
                       }
                     }
                 })
-            },
+            }*/
             addTransit() {
                 this.transits.push({
                   from: null, 
@@ -735,7 +798,7 @@
                 };
                 this.isResult = true;
             },
-            addNewProvider() {
+            /*addNewProvider() {
                 this.providerAddMode = true;
                 // this.suppliers = {
                 //     brand: '',
@@ -743,7 +806,7 @@
                 //     location: '',
                 // };
                 this.isResult = true;
-            }
+            }*/
         },
     }
 </script>

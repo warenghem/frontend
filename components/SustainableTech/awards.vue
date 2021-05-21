@@ -33,7 +33,7 @@
         ></v-checkbox>
         <div v-if="verifiedclaims[verifiedclaim.name].is">
           <v-menu
-            v-model="verifiedclaims[verifiedclaim.name].menu"
+            verifiedclaims[verifiedclaim.name].isverifiedclaims[verifiedclaim.name].is
             :close-on-content-click="false"
             :nudge-right="40"
             transition="scale-transition"
@@ -93,6 +93,22 @@
       mdiCheckboxMarked,
   } from '@mdi/js'
   export default {
+    props: {
+        claims: {
+            type: Array,
+        },
+        verifiedclaims: {
+            type: Array,
+        }
+    },
+    watch: {
+        claims() {
+            this.$emit('input', this.value);
+        },
+        verifiedclaims() {
+            this.$emit('input', this.value);
+        },
+    },
     data () {
       return {
         svgPath5: mdiCheckboxBlankOutline,
@@ -143,6 +159,6 @@
           },
       }
       }
-    },
+    }
   }
 </script>
