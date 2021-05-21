@@ -1,31 +1,5 @@
 <template dark>
   <div class="py-5 mb-10">
-    {{ productid }}
-    {{ $router.path }}
-    <v-container>
-      <v-row align="center" justify="center" class="py-5" style="max-width: 900px;">
-        <v-col cols="4">
-          <div class="img-fluid gradientoverlay position-relative">
-            <img
-                data-sizes="auto"
-                data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-300,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500,fo-bottom,c-maintain_ratio/AdobeStock_50352719.jpeg 1500w"
-                src="https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-300,fo-bottom/AdobeStock_50352719.jpeg"
-                class="gradientoverlay rounded-xl lazyload cover bg-white catalogue-item-background elevation-3"
-            />
-          </div>
-        </v-col>
-        <v-col cols="8">
-          <div class="sub-title">Warenghem</div>
-          <div class="sub-title text-gray">Ceinture WAC01</div>
-          <div class="page-details pl-0">It is a product description. Made from... Why...</div>
-        </v-col>
-        <v-col cols="12">
-          <div class=""><span>BATCH ID : </span><span>preSS18KN1001</span></div>
-          <div class=""><span>QUANTITY : </span><span>1</span></div>
-          <div class=""><span>PRODUCED : </span><span>8 days ago</span></div>
-        </v-col>
-      </v-row>
-    </v-container>
       <v-tabs
         v-model="tab"
         centered
