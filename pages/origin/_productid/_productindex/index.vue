@@ -36,7 +36,7 @@
                     </div>
                     <div class="position-relative">
                       <client-only placeholder="Loading...">
-                        <LazyNewmap :markers="productDescription.custom.providers" />
+                        <LazyNewmap :providersItem="providersItem" :markers="productDescription.custom.providers" />
                       </client-only>
                     </div>
                   </v-card>
@@ -91,6 +91,7 @@
                   >
                       <v-card
                           class="pa-4 rounded-xl"
+                          @click="openModal(actor.id)"
                       >
                           <div class="time">{{actor.date}}</div>
                           <div class="time"><span>{{actor.brand}}</span> <span>{{actor.product}}</span></div>
@@ -102,9 +103,10 @@
               </v-timeline>
           </v-container>
         </v-row>
+        <SideModalMap :is-modal="currentModal" v-on:closeModal="currentModal=false" :provider="provider" :current="currentModal"/>
       </v-container>
     </div>
-    <appbottombar/>
+    <Appbottombar/>
   </div>
 </template>
 
@@ -120,6 +122,11 @@
         ]
       }
     },
+    data() {
+        return {
+            currentModal: false,
+        };
+    },
     async asyncData(context) {
       const {$content, params, app} = context;
 
@@ -133,9 +140,9 @@
 
       const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
       const productItem = await $content(`router/${lang_path}/shop/`+api).fetch();
-      const partnersItem = await $content(`api/${lang_path}/providers`).fetch();
+      const providersItem = await $content(`api/${lang_path}/providers`).fetch();
 
-      return { productId, productIndex, productDescription, productItem, partnersItem }
+      return { productId, productIndex, productDescription, productItem, providersItem }
 
     },
 
@@ -151,7 +158,11 @@
          return Object.values(this.productDescription.custom).filter(x => Array.isArray(x)).reduce((a,x) => a.concat(...x), []);
        },
     },
-    methods: {      
+    methods: {  
+        openModal(modalName) {
+            this.currentModal = true
+            this.provider = this.providersItem.find(y => y.slug.includes(modalName))
+        },
     }
   }
 </script>

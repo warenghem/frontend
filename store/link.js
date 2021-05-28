@@ -14,7 +14,7 @@ const state = () => ({
     ],
     innovationlinks: [
         {name: 'Dionysos', url: 'dionysos/', class: 'svgicon1'},
-        {name: 'Origin', url: 'origin/', class: 'svgicon2'},
+        {name: 'Origin', url: 'sustainabletech/origin/', class: 'svgicon2'},
     ],
     sociallinks: [
         {name: 'instagram', icon: mdiInstagram, url: "https://www.instagram.com/warenghem.studios/"},

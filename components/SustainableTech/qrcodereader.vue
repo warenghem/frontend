@@ -1,38 +1,16 @@
 <template>
   <div>
-    <p class="decode-result">Last result: <b>{{ result }}</b></p>
-    <qrcode-stream :camera="camera" v-if="!noStreamApiSupport" :track="lightbuggatiblue" :torch="torchActive" @decode="onDecode" @init="onInit">
-      <div class="loading-indicator" v-if="loading">
-        <v-skeleton-loader
-          class="mx-auto"
-          max-width="300"
-          type="image"
-        ></v-skeleton-loader>
-      </div>
-      <div v-if="validationSuccess" class="validation-success">
-        Yes! Animation
-      </div>
-
-      <div v-if="validationFailure" class="validation-failure">
-        This is not our QR code product!
-      </div>
-
-      <div v-if="validationPending" class="validation-pending">
-        Long animation validation in progress...
-      </div>
-      <button @click="torchActive = !torchActive" :disabled="torchNotSupported">
-        <img :src="icon" alt="toggle torch">
-      </button>
-    </qrcode-stream>
-      <p v-if="error !== null" class="drop-error">
-        {{ error }}
-      </p>
-
-      <qrcode-drop-zone v-if="noStreamApiSupport" @detect="onDetect" @dragover="onDragOver" @init="logErrors">
-        <div class="drop-area" :class="{ 'dragover': dragover }">
-          DROP SOME IMAGES HERE
+    <qrcode-capture v-if="noStreamApiSupport" :track="lightbuggatiblue" :torch="torchActive" @init="onInit" @decode="onDecode">
+        <div class="loading-indicator" v-if="loading">
+          Loading...
         </div>
-      </qrcode-drop-zone>
+        <button @click="torchActive = !torchActive" :disabled="torchNotSupported">
+          <img :src="icon" alt="toggle torch">
+        </button>
+    </qrcode-capture>
+    <qrcode-drop-zone @decode="onDecode" @init="logErrors">
+      <qrcode-stream @decode="onDecode" @init="onInit" />
+    </qrcode-drop-zone>
   </div>
 </template>
 
@@ -46,27 +24,13 @@
     data () {
       return {
         loading: false,
-        isValid: undefined,
-        camera: 'auto',
-        result: null,
+        result: '',
         error: '',
         torchActive: false,
         torchNotSupported: false
       }
     },
     computed: {
-      validationPending () {
-        return this.isValid === undefined
-          && this.camera === 'off'
-      },
-
-      validationSuccess () {
-        return this.isValid === true
-      },
-
-      validationFailure () {
-        return this.isValid === false
-      },
       icon() {
         if (this.torchActive)
           return '/flash-off.svg'
@@ -75,6 +39,10 @@
       }
     },
     methods: {
+      onDecode (result) {
+        this.result = result
+      },
+
       async onInit (promise) {
         this.loading = true
         try {
@@ -104,67 +72,8 @@
           }
         } finally {
         this.loading = false
-        this.resetValidationState
       }
-      },
-      resetValidationState () {
-        this.isValid = undefined
-      },
-        async onDecode (url) {
-        this.result = url
-        this.turnCameraOff()
-
-        // pretend it's taking really long
-        await this.timeout(3000)
-        this.isValid = url.startsWith('https://www.warenghem.com')
-
-        // some more delay, so users have time to read the message
-        await this.timeout(2000)
-        if (this.isValid) {
-            this.$router.push(url.replace("https://www.warenghem.com", ""));
-          } else {
-            this.turnCameraOn()
-            this.isValid  = null
-          }
-        },
-
-        turnCameraOn () {
-        this.camera = 'auto'
-        },
-
-        turnCameraOff () {
-        this.camera = 'off'
-        },
-
-        timeout (ms) {
-        return new Promise(resolve => {
-            window.setTimeout(resolve, ms)
-        })
-        },
-        async onDetect (promise) {
-          try {
-            const { content } = await promise
-
-            this.result = content
-            this.error = null
-          } catch (error) {
-            if (error.name === 'DropImageFetchError') {
-              this.error = 'Sorry, you can\'t load cross-origin images :/'
-            } else if (error.name === 'DropImageDecodeError') {
-              this.error = 'Ok, that\'s not an image. That can\'t be decoded.'
-            } else {
-              this.error = 'Ups, what kind of error is this?! ' + error.message
-            }
-          }
-        },
-
-        logErrors (promise) {
-          promise.catch(console.error)
-        },
-
-        onDragOver (isDraggingOver) {
-          this.dragover = isDraggingOver
-        }
+      }
     },
 
     lightbuggatiblue (location, ctx) {
@@ -198,47 +107,6 @@ button {
   top: 10px;
 }
 .error {
-  color: red;
-  font-weight: bold;
-}
-.validation-success,
-.validation-failure,
-.validation-pending {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-
-  background-color: rgba(255, 255, 255, .8);
-  text-align: center;
-  font-weight: bold;
-  font-size: 1.4rem;
-  padding: 10px;
-
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-}
-.validation-success {
-  color: green;
-}
-.validation-failure {
-  color: red;
-}
-.drop-area {
-  height: 300px;
-  color: #fff;
-  text-align: center;
-  font-weight: bold;
-  padding: 10px;
-
-  background-color: rgba(0,0,0,.5);
-}
-
-.dragover {
-  background-color: rgba(0,0,0,.8);
-}
-
-.drop-error {
   color: red;
   font-weight: bold;
 }

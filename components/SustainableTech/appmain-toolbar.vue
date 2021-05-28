@@ -28,7 +28,7 @@
           v-for="(link,l_idx) in $store.state.link.innovationlinks"
           :class="{'current':$root.currentId===link.elId}"
           :to="localePath('/')+link.url"
-          :key="'link_'+l_idx" nuxt
+          :key="'link2_'+l_idx" nuxt
           class="text-uppercase"
         >
           <v-list-item-content>
@@ -41,7 +41,7 @@
           v-for="(link,l_idx) in $store.state.link.sociallinks"
           class="mx-3"
           icon
-          :key="'link_'+l_idx"
+          :key="'link3_'+l_idx"
           target="_blank"
           :href="link.url"
         >

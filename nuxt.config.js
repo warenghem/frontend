@@ -112,6 +112,7 @@ export default {
     '@nuxtjs/gtm',
     'cookie-universal-nuxt',
     '@nuxtjs/sitemap',
+    '@nuxt/http'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)

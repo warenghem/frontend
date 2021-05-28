@@ -1,0 +1,17 @@
+{  
+  "name": "VEGEA",
+  "type": "Material",
+  "product": "Grappe Leather",
+  "category": "leather",
+  "description": "<p>Le portefeuille Dionysos est l'incarnation de l'élégance décontractée. D’un design compact, il est suffisamment fin pour se glisser dans la poche arrière d’un jean. Nos designers ont imaginé des lignes graphiques: deux faces aux fentes symétriques, dont celles de droite représentant le W iconique de la marque.</p><p>Confectionné en France en Anjou au sein de notre atelier spécialisé en haute maroquinerie. Ses cires tranches colorées bleu Bugatti et ses surpiqures fines et régulières affirment le savoir faire Français.</p><p></p>",
+  "location": "Via gaudenzio fantioli 15/16, Milano, 20138 Italy",
+  "date": "2012-04-23",
+  "claims":[ "Care for environment", "Recycle", "Organic" ],
+  "verified_claims": [
+    { "name":"Vegan", "date": "2012-04-23", "certification_method": "Audited from us", "document":"link to the document" },
+    { "name":"Made in France", "date": "2012-04-23", "certification_method": "Audited from us", "document":"link to the document" },
+    { "name":"GOTS", "date": "2012-04-23", "certification_method": "Audited from us", "document":"link to the document" },
+    { "name":"Audited Working Conditions", "date": "2012-04-23", "certification_method": "Audited from us", "document":"link to the document" }
+    ],
+    "shipment": "drive"
+} 
