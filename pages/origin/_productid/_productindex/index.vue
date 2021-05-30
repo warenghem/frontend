@@ -20,7 +20,7 @@
           <v-col cols="12">
             <div class=""><span>BATCH ID : </span><span>{{ productId }}</span></div>
             <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ manufacturer.quantity }}</span></div>
-            <div class=""><span>PRODUCED : </span><span>{{ $d(new Date(manufacturer.date), 'short') }}</span></div>
+            <div class=""><span>PRODUCED : </span><span>{{ formatDistance(new Date(manufacturer.date), new Date(), {locale, addSuffix: true}) }}</span></div>
           </v-col>
         </v-row>
         <v-row>
@@ -67,7 +67,7 @@
                       CERTIFICATES
                     </div>
                     <div class="text-center py-3 pb-8">
-                      This product's supply chain includes {{ certificate }} certificates
+                      This product's supply chain includes {{ certificateCount }} certificates
                     </div>
                   </v-card>
                 </v-col>
@@ -83,27 +83,39 @@
                 </v-col>
               </v-row>
           </v-container>
-          <v-container class="timeline-container">
-              <v-timeline align-top>
+          <v-container style="max-width:600px" class="timeline-container mx-auto">
+              <v-timeline dense clipped>
+                <div v-for="(actor, index) in productDescription.custom.transits.filter(x => x.departure).sort((a, b) => a.departure > b.departure ? 1:-1)" :key="index">
                   <v-timeline-item
                       fill-dot
-                      v-for="(actor, index) in productDescription.custom.providers.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1)" :key="index"
+                      large
+                      color="lightbugattiblue"
                   >
                       <v-card
-                          class="pa-4 rounded-xl"
-                          @click="openModal(actor.id)"
+                          class="rounded-xl"
+                          @click="openModal(actor.from)"
                       >
-                          <div class="time">{{actor.date}}</div>
-                          <div class="time"><span>{{actor.brand}}</span> <span>{{actor.product}}</span></div>
-                          <h4 class="smalltitle">{{actor.name}}</h4>
-                          <div class="item-details" v-html="actor.description">
-                          </div>
+                          <v-card-subtitle class="pb-0">{{ formatDistance(new Date(actor.departure), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
+                          <v-card-title class="pt-0">{{actor.from}}</v-card-title>
+                          <!--<div class="time"><span>{{productDescription.custom.providersactor.brand}}</span> <span>{{actor.product}}</span></div>-->
                       </v-card>
                   </v-timeline-item>
+                  <v-timeline-item
+                      small
+                      color="lightbugattiblue"
+                  >
+                      <div class="time">Envoyé {{  format(new Date(actor.departure), 'PPPPp', {locale}) }} via {{actor.carrier}}</div>
+                      <div class="time">Tracking number : {{actor.tracking}}</div>
+                      <div class="time">CO2 : {{actor.co2}}</div>
+                      <div class="time">Km : {{(actor.lenght/1000).toFixed(1)}}</div>
+                      <div class="time">Time : {{(actor.duration/3600).toFixed(1)}}</div>
+                      <div class="time">Recu {{  format(new Date(actor.arrival), 'PPPPp', {locale}) }} par {{actor.to}}</div>
+                  </v-timeline-item>
+                </div>
               </v-timeline>
           </v-container>
-        </v-row>
         <SideModalMap :is-modal="currentModal" v-on:closeModal="currentModal=false" :provider="provider" :current="currentModal"/>
+        </v-row>
       </v-container>
     </div>
     <Appbottombar/>
@@ -111,6 +123,13 @@
 </template>
 
 <script>
+
+  import { format, formatDistance } from 'date-fns'
+  import { enUS, fr } from 'date-fns/locale'
+
+  // by providing a default string of 'PP' or any of its variants for `formatStr`
+  // it will format dates in whichever way is appropriate to the locale
+
 
   export default {
     layout: 'app',
@@ -125,6 +144,7 @@
     data() {
         return {
             currentModal: false,
+            format, formatDistance
         };
     },
     async asyncData(context) {
@@ -155,14 +175,26 @@
               return manufacturer
         },
        certificate() {
-         return Object.values(this.productDescription.custom).filter(x => Array.isArray(x)).reduce((a,x) => a.concat(...x), []);
+         return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedclaims).map(x => x.awards.verifiedclaims);
        },
+       certificateCount() {
+         return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedclaims).map(x => x.awards.verifiedclaims).reduce((a,x) => a + Object.keys(x).length, 0);
+       },
+        locale() {
+          let locale;
+          if (this.$i18n.localeProperties.iso == 'fr-FR') {
+            locale = fr;
+          } else {
+            locale = enUS;
+          }
+          return locale;
+        }
     },
-    methods: {  
+    methods: {
         openModal(modalName) {
             this.currentModal = true
             this.provider = this.providersItem.find(y => y.slug.includes(modalName))
-        },
+        }
     }
   }
 </script>

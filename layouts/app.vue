@@ -1,5 +1,5 @@
 <template>
-  <v-app >
+  <v-app>
     <div>
         <appmain-toolbar />
         <v-main>
@@ -16,6 +16,12 @@ export default {
   transition: {
     name: 'slide-fade',
     mode: 'out-in'
-  }
+  },
+  /*beforeCreate: {
+      setDark() {
+        this.$vuetify.theme.dark = true;
+      }
+    },*/
 }
+
 </script>

@@ -271,13 +271,6 @@
                       <div class="pb-5">Location</div>
                       <Geolocation v-model="supplier.location"/>
                     </v-col>
-                    <v-col
-                      cols="12"
-                      md="6"
-                    >
-                      <div class="pb-10">Date</div>
-                      <Datetime v-model="supplier.date"/>
-                    </v-col>
                   </v-row>
                 </v-col>
                 <Awards v-model="supplier.awards"/>
@@ -335,8 +328,13 @@
                   <v-col
                     cols="12"
                   >
-                    <div class="pb-10">Date</div>
-                    <Datetime v-model="transit.date"/>
+                  <v-text-field
+                    label="Tracking number"
+                    type="number"
+                    v-model="transit.tracking"
+                    filled
+                    rounded
+                  ></v-text-field>
                   </v-col>
                   <v-col
                     cols="12"

@@ -1,0 +1,221 @@
+{
+  "name": "bag-dionysos-48h-black-lightbluebugatti",
+  "description": "Dionysos Voyageur",
+  "latitude": "0",
+  "longitude": "0",
+  "custom": {
+    "version": "1",
+    "providers": [
+      {
+        "type": "Finished product",
+        "name": "Saint Germain",
+        "id": "saintgermain",
+        "location": {
+          "address": "Route de Saint-Augustin, 49170 Saint-Germain-des-Prés France",
+          "latitude": "47.4595",
+          "longitude": "-0.7948"
+        },
+        "awards": {
+          "claims": [
+            "test",
+            "test2"
+          ],
+          "verifiedClaims": [
+            {
+              "name": "france",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            },
+            {
+              "name": "working",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "Material",
+        "name": "VEGEA",
+        "id": "vegea",
+        "location": {
+          "address": "Via Giuseppe Verdi 12 Bergamo​, Bergamo, 24121 Italy",
+          "latitude": "45.698572",
+          "longitude": "9.6719618"
+        },
+        "awards": {
+          "claims": [
+            "test",
+            "test2"
+          ],
+          "verifiedClaims": [
+            {
+              "name": "vegan",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            },
+            {
+              "name": "gots",
+              "renewalDate": "2021-05-18",
+              "certification_method": null
+            },
+            {
+              "name": "working",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "Brand",
+        "name": "Warenghem",
+        "id": "warenghem",
+        "location": {
+          "address": "231 rue Saint Honore​, 75001 Paris, France",
+          "latitude": "48.866336575991156",
+          "longitude": "2.3291357118206304"
+        },
+        "awards": {
+          "claims": [
+            "test",
+            "test2"
+          ],
+          "verifiedClaims": [
+            {
+              "name": "vegan",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            },
+            {
+              "name": "france",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            }
+          ]
+        }
+      }
+    ],
+    "products": [
+      {
+        "type": "Finished product",
+        "category": "bag",
+        "product": "Dionysos Voyageur",
+        "brand": "Warenghem",
+        "provider": "saintgermain",
+        "id": "bag-dionysos-48h-black-lightbluebugatti",
+        "awards": {
+          "claims": [
+            "test",
+            "test2"
+          ],
+          "verifiedClaims": [
+            {
+              "name": "vegan",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            },
+            {
+              "name": "gots",
+              "renewalDate": "2021-05-18",
+              "certification_method": null
+            },
+            {
+              "name": "france",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            },
+            {
+              "name": "working",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            }
+          ]
+        }
+      },
+      {
+        "type": "Material",
+        "category": "Grappe Leather",
+        "product": "Black",
+        "brand": "Dionysos",
+        "provider": "vegea",
+        "id": "dionysos",
+        "awards": {
+          "claims": [
+            "test",
+            "test2"
+          ],
+          "verifiedClaims": [
+            {
+              "name": "vegan",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            },
+            {
+              "name": "gots",
+              "renewalDate": "2021-05-18",
+              "certification_method": null
+            },
+            {
+              "name": "france",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            },
+            {
+              "name": "working",
+              "renewalDate": "2021-05-18",
+              "certificationMethod": null
+            }
+          ]
+        }
+      }
+    ],
+    "transits": [
+      {
+        "from": "vegea",
+        "to": "saintgermain",
+        "carrier": "ups",
+        "tracking": "1Z96R2X76896122454",
+        "type": "diesel",
+        "departure": "2021-03-11T15:47:52+02:00",
+        "arrival": "2021-03-15T10:31:48+02:00",
+        "lenght": "1361699",
+        "duration": "62261",
+        "consomption": "74.91",
+        "co2": "197.76",
+        "goods": [
+          "Train"
+        ],
+        "quantity": "70",
+        "units": "lM"
+      },
+      {
+        "from": "saintgermain",
+        "to": "warenghem",
+        "carrier": "ups",
+        "tracking": "1Z96R2X76896122454",
+        "type": "diesel",
+        "departure": "2021-05-28T16:58:52+02:00",
+        "arrival": "2021-05-29T03:57:48+02:00",
+        "lenght": "999655",
+        "duration": "48710",
+        "consomption": "55",
+        "co2": "145.2",
+        "goods": [
+          "bag-dionysos-48h-black-lightbluebugatti"
+        ],
+        "quantity": "200",
+        "units": "units"
+      }
+    ],
+    "tree": [
+      {
+        "id": 726129,
+        "internal_id": null,
+        "token": "60a40a55385b4",
+        "collect_url": "http://youcannevertestenough.tree-nation.com/collect/60a40a55385b4",
+        "certificate_url": "http://youcannevertestenough.tree-nation.com/certificate/60a40a55385b4"
+      }
+    ]
+  }
+}

@@ -12,10 +12,11 @@
         <l-tile-layer
           :url="url"
         />
-        <!--<l-geo-json
-                v-for="(data,i ) in polylines.routes" :key="i"
-                :geojson="decode(data.sections.polyline)"
-                />-->
+        <l-geo-json
+                class="h-100"
+                v-if="polylines && polylines.routes"
+                :geojson="decode(polylines.routes[0].sections[0].polyline)"
+                />
         <l-marker v-for="(marker, index) in markers" :key="index"
                   :lat-lng="[marker.location.latitude, marker.location.longitude]"
                   @click="openModal(marker.id)"
@@ -28,22 +29,18 @@
             <div class="card">
               <div class="card-header name hand">
                {{marker.name}}
-               <div style="font-size: 16px" class="subtitlesmall d-none">En savoir plus</div>
               </div>
-              <div>
-                <div class="blob white rounded-circle" style="width:35px; height:35px">
-                  <img  alt="" width="35" height="35">
-                </div>
+              <div class="blob white rounded-circle" style="width:35px; height:35px">
+                <img  alt="" width="35" height="35">
               </div>
             </div>
           </l-icon>
         </l-marker>
       </l-map>
     </div>
-    <div style="color:black">{{polylines.routes}}</div>
-    <div
-        v-for="(polyline,i ) in polylines" :key="i"
-    >{{polyline}}</div>
+    <!--<div style="color:black" v-if="polylines && polylines.routes">{{polylines.routes[0].sections[0].polyline}}</div>
+    v-for="route in polylines.routes" :key="..."
+    v-for="section in route.sections" :key="..."-->
     <SideModalMap :is-modal="currentModal" v-on:closeModal="currentModal=false" :provider="provider" :current="currentModal"/>
   </div>
 </template>
@@ -130,8 +127,8 @@
                 this.currentCenter = center;
             },
             openModal(modalName) {
-                this.currentModal = true
                 this.provider = this.providersItem.find(y => y.slug.includes(modalName))
+                this.currentModal = true
             },
             decode(str){
               let lines = H.decode(str);
@@ -148,9 +145,9 @@
 </script>
 
 <style lang="scss" scoped>
-.leaflet-container {
-    font-family: "teradeli-book";
-}
+  .leaflet-container {
+      font-family: "teradeli-book";
+  }
   .treemap {
     z-index: 1;
     position: absolute;
