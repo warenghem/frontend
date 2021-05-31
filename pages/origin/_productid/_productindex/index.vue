@@ -20,7 +20,9 @@
           <v-col cols="12">
             <div class=""><span>BATCH ID : </span><span>{{ productId }}</span></div>
             <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ manufacturer.quantity }}</span></div>
-            <div class=""><span>PRODUCED : </span><span>{{ formatDistance(new Date(manufacturer.date), new Date(), {locale, addSuffix: true}) }}</span></div>
+            <div class=""><span>KM : </span><span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1)}}</span></div>
+            <div class=""><span>CO2 : </span><span>{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0) }}</span></div>
+            <!--<div class=""><span>PRODUCED : </span><span>{{ formatDistance(new Date(manufacturer.date), new Date(), {locale, addSuffix: true}) }}</span></div>-->
           </v-col>
         </v-row>
         <v-row>
@@ -36,7 +38,7 @@
                     </div>
                     <div class="position-relative">
                       <client-only placeholder="Loading...">
-                        <LazyNewmap :providersItem="providersItem" :markers="productDescription.custom.providers" />
+                        <LazyNewmap :polylines="polylines.routes[0].sections[0].polyline" v-if="polylines && polylines.routes" :providersItem="providersItem" :markers="productDescription.custom.providers" />
                       </client-only>
                     </div>
                   </v-card>
@@ -67,7 +69,7 @@
                       CERTIFICATES
                     </div>
                     <div class="text-center py-3 pb-8">
-                      This product's supply chain includes {{ certificateCount }} certificates
+                      This product's supply chain includes {{ certificate.length }} certificates
                     </div>
                   </v-card>
                 </v-col>
@@ -77,7 +79,7 @@
                       KM
                     </div>
                     <div class="text-center py-3 pb-8">
-                      This product has made xxx km
+                      This product has made <span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1) }}</span> km
                     </div>
                   </v-card>
                 </v-col>
@@ -85,7 +87,7 @@
           </v-container>
           <v-container style="max-width:600px" class="timeline-container mx-auto">
               <v-timeline dense clipped>
-                <div v-for="(actor, index) in productDescription.custom.transits.filter(x => x.departure).sort((a, b) => a.departure > b.departure ? 1:-1)" :key="index">
+                <div v-for="(actor, index) in orderedTransits" :key="index">
                   <v-timeline-item
                       fill-dot
                       large
@@ -97,6 +99,7 @@
                       >
                           <v-card-subtitle class="pb-0">{{ formatDistance(new Date(actor.departure), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
                           <v-card-title class="pt-0">{{actor.from}}</v-card-title>
+                          <v-card-subtitle v-for="(product, index) in actor.goods" :key="index" class="time">{{product.quantity}} {{product.units}} de {{product.name}}</v-card-subtitle>
                           <!--<div class="time"><span>{{productDescription.custom.providersactor.brand}}</span> <span>{{actor.product}}</span></div>-->
                       </v-card>
                   </v-timeline-item>
@@ -108,7 +111,7 @@
                       <div class="time">Tracking number : {{actor.tracking}}</div>
                       <div class="time">CO2 : {{actor.co2}}</div>
                       <div class="time">Km : {{(actor.lenght/1000).toFixed(1)}}</div>
-                      <div class="time">Time : {{(actor.duration/3600).toFixed(1)}}</div>
+                      <div class="time">Time : {{(actor.duration/3600).toFixed(1)}} hours</div>
                       <div class="time">Recu {{  format(new Date(actor.arrival), 'PPPPp', {locale}) }} par {{actor.to}}</div>
                   </v-timeline-item>
                 </div>
@@ -144,7 +147,8 @@
     data() {
         return {
             currentModal: false,
-            format, formatDistance
+            format, formatDistance,
+            polylines: [],
         };
     },
     async asyncData(context) {
@@ -165,24 +169,40 @@
       return { productId, productIndex, productDescription, productItem, providersItem }
 
     },
+    async fetch() {
+      this.polylines = await fetch('https://router.hereapi.com/v8/routes?transportMode=car&apiKey=sJxvIvQjWZuvxGBtUHZ7b1cjjmuB5IhIj5Dd47MLEMM&origin=45.698572,9.6719618&destination=47.4595,-0.7948&return=polyline').then(res =>
+        res.json()
+      )
+    },
+    /*async fetch() {
+      let first = this.productDescription.custom.transits.filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
+      let last = this.productDescription.custom.transits.filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
+      let loc = this.productDescription.custom.transits.filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
 
+      this.polylines = await fetch('https://router.hereapi.com/v8/routes?transportMode=car&apiKey=sJxvIvQjWZuvxGBtUHZ7b1cjjmuB5IhIj5Dd47MLEMM&origin='+first+'&destination='+last+'&via='+loc+'&return=polyline').then(res =>
+        res.json()
+      )
+    },*/
     computed: {
-       actors() {
+       /*actors() {
          return Object.values(this.productDescription.custom).filter(x => Array.isArray(x)).reduce((a,x) => a.concat(...x), []);
-       },
+       },*/
        manufacturer() {
               var manufacturer = this.productDescription.custom.providers.find(y => y.type.includes('Finished product'))
               return manufacturer
         },
        certificate() {
-         return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedclaims).map(x => x.awards.verifiedclaims);
+         return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
        },
-       certificateCount() {
-         return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedclaims).map(x => x.awards.verifiedclaims).reduce((a,x) => a + Object.keys(x).length, 0);
+       totalTransits() {
+         return Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0);
+       },
+       orderedTransits() {
+         return this.productDescription.custom.transits.filter(x => x.departure).sort((a, b) => a.departure > b.departure ? 1:-1)
        },
         locale() {
           let locale;
-          if (this.$i18n.localeProperties.iso == 'fr-FR') {
+          if (this.$i18n.localeProperties.iso == 'fr-FR' || 'fr-CA' || 'fr-CH') {
             locale = fr;
           } else {
             locale = enUS;

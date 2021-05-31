@@ -4,7 +4,7 @@
         <appmain-toolbar />
         <v-main>
           <v-container fluid class="pa-0">
-          <nuxt/>
+          <nuxt keep-alive/>
           </v-container>
         </v-main>
     </div>

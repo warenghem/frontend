@@ -5,7 +5,7 @@
         class="treemap h-100"
         ref="map"
         @ready="onReady"
-        :zoom="zoom"
+        :maxZoom="zoom"
         :center="center"
         :options="{zoomControl: false,attributionControl: false,scrollWheelZoom: false,tap: false,boxZoom: false, doubleClickZoom: false, touchZoom: false, dragging: false, draggable: false}"
       >
@@ -14,33 +14,30 @@
         />
         <l-geo-json
                 class="h-100"
-                v-if="polylines && polylines.routes"
-                :geojson="decode(polylines.routes[0].sections[0].polyline)"
+                :options-style="styleFunction"
+                :geojson="decode(polylines)"
                 />
         <l-marker v-for="(marker, index) in markers" :key="index"
                   :lat-lng="[marker.location.latitude, marker.location.longitude]"
                   @click="openModal(marker.id)"
                   >
           <l-icon
-            :icon-size="[50, 50]"
+            :icon-size="[35, 35]"
             className="mapClass hand"
             icon-class="e"
           >
-            <div class="card">
-              <div class="card-header name hand">
-               {{marker.name}}
-              </div>
+            <div class="card position-absolute">
               <div class="blob white rounded-circle" style="width:35px; height:35px">
                 <img  alt="" width="35" height="35">
+              </div>
+              <div class="card-header name hand">
+               {{marker.name}}
               </div>
             </div>
           </l-icon>
         </l-marker>
       </l-map>
     </div>
-    <!--<div style="color:black" v-if="polylines && polylines.routes">{{polylines.routes[0].sections[0].polyline}}</div>
-    v-for="route in polylines.routes" :key="..."
-    v-for="section in route.sections" :key="..."-->
     <SideModalMap :is-modal="currentModal" v-on:closeModal="currentModal=false" :provider="provider" :current="currentModal"/>
   </div>
 </template>
@@ -77,39 +74,38 @@
                 type: Array,
                 default: () => {
                 }
+            },
+            polylines: {
+                type: String,
+                default: null
             }
-        },
-        async fetch() {
-          this.polylines = await fetch('https://router.hereapi.com/v8/routes?transportMode=car&apiKey=sJxvIvQjWZuvxGBtUHZ7b1cjjmuB5IhIj5Dd47MLEMM&origin=45.698572,9.6719618&destination=47.4595,-0.7948&return=polyline').then(res =>
-            res.json()
-          )
         },
         data() {
             return {
-                datas: [],
                 svgPath: mdiClose,
-                zoom: 2,
-                center: [30, 66],
+                maxZoom: 0,
                 url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
                 showParagraph: false,
                 showMap: true,
                 markers: [],
                 currentModal: false,
-                polylines: [],
-                datas: [],
+                geojson: null
             };
         },
-        /*computed: {
-          manufacturer() {
-                  var manufacturer = this.polylines.routes.find(y => y.id.includes('d562b6ff-f834-4cf7-8c2a-5bbf09575a5c'))
-                  return manufacturer
-            },
-        },*/
+        computed:  {
+          styleFunction() {
+              return {
+                weight: 2,
+                color: this.$vuetify.theme.themes.light.lightbugattiblue,
+                opacity: 1,
+              }
+            }
+        },
         methods: {
             onReady() {
               if (this.markers.length) {
                 this.$nextTick(() => {
-                  this.$refs.map.mapObject.fitBounds(this.markers.map(m => { return [m.location.latitude, m.location.longitude] }))
+                  this.$refs.map.mapObject.fitBounds(this.markers.map(m => { return [m.location.latitude, m.location.longitude] }), {padding: [40, 40]})
                 })
               }
             },
