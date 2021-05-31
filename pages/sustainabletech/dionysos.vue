@@ -1,6 +1,6 @@
 <template>
-  <div style="background:black" class="pb-10">
-	<v-toolbar dense dark class="menubar pa-0 w-100">
+  <div class="pb-10">
+	<v-toolbar dense class="menubar pa-0 w-100">
 		<Backbutton class="border-bottom-2 h-100"/>
 		<div class="px-5 border-bottom-2 bg-theme d-flex w-100 h-100">
 			<img width="110px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Dionysos.svg 512w'">
@@ -210,14 +210,8 @@
                 ],
             }
         },
-		/*mounted() {
-			this.$vuetify.theme.dark = true
-		},*/
         head() {
           return {
-			bodyAttrs: {
-				class: 'theme--dark'
-			},
 			title: this.$t('title'),
             meta: [
 				{
@@ -242,7 +236,10 @@
 				},
             ]
           }
-        }
+        },
+		beforeCreate () {
+			this.$vuetify.theme.dark = true;
+		},
     }
 
 </script>

@@ -1,15 +1,15 @@
 ---
-id: 4
+id: bag-dionysos-48h-black-lightbluebugatti
 sku: WAD48NBLB
 name: Dionysos Voyageur
 slogan: Des vignes et du lin. Tel est son destin.
-description: "<p>Son architecture avant-gardiste regroupant deux pièces a été conçue
+description: "Son architecture avant-gardiste regroupant deux pièces a été conçue
   par nos designers afin qu'il soit léger, souple et toujours prêt pour vous accompagner
   dans vos déplacements. Les experts du bagage logeront facilement une semaine de
-  vêtements dans son intérieur généreux, aux dimensions de bagage cabine. </p><p>L'intégralité
+  vêtements dans son intérieur généreux, aux dimensions de bagage cabine. L'intégralité
   de la confection est réalisée en France dans notre atelier en Anjou spécialisé en
   haute maroquinerie. Les tranches du cuir sont cirées à la main dans un coloris bleu
-  Bugatti (clair ou foncé).</p>"
+  Bugatti (clair ou foncé)."
 details:
 - Doublure en lin francais Bio
 - Pièces métalliques couleur argentée

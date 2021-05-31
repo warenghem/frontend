@@ -17,11 +17,9 @@ export default {
     name: 'slide-fade',
     mode: 'out-in'
   },
-  /*beforeCreate: {
-      setDark() {
+  beforeCreate () {
         this.$vuetify.theme.dark = true;
-      }
-    },*/
+    },
 }
 
 </script>

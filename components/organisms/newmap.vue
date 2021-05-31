@@ -14,25 +14,26 @@
         />
         <l-geo-json
                 class="h-100"
+                v-for="(transit, index) in transits.polylines" :key="index"
                 :options-style="styleFunction"
-                :geojson="decode(polylines)"
+                :geojson="decode(transit.polyline)"
                 />
         <l-marker v-for="(marker, index) in markers" :key="index"
                   :lat-lng="[marker.location.latitude, marker.location.longitude]"
                   @click="openModal(marker.id)"
                   >
           <l-icon
-            :icon-size="[35, 35]"
+            :icon-size="[45, 45]"
             className="mapClass hand"
             icon-class="e"
           >
             <div class="card position-absolute">
-              <div class="blob white rounded-circle" style="width:35px; height:35px">
-                <img  alt="" width="35" height="35">
-              </div>
-              <div class="card-header name hand">
+              <v-avatar size="45" class="blob rounded-max">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ temporaryDescription(marker.id).image" alt="" width="35" height="35">
+              </v-avatar>
+              <!--<div class="card-header name hand">
                {{marker.name}}
-              </div>
+              </div>-->
             </div>
           </l-icon>
         </l-marker>
@@ -75,9 +76,10 @@
                 default: () => {
                 }
             },
-            polylines: {
-                type: String,
-                default: null
+            transits: {
+                type: Array,
+                default: () => {
+                }
             }
         },
         data() {
@@ -125,6 +127,10 @@
             openModal(modalName) {
                 this.provider = this.providersItem.find(y => y.slug.includes(modalName))
                 this.currentModal = true
+            },
+            temporaryDescription(id) {
+                let p = (this.providersItem || []).find(x => x.id == id);
+                return p || {};
             },
             decode(str){
               let lines = H.decode(str);
@@ -205,8 +211,7 @@
   .blobs-container {
     display: flex;
   }
-  .blob.white {
-    background: white;
+  .blob {
     box-shadow: 0 0 0 0 rgba(0, 129, 167,0.8);
     animation: pulse-white 2s infinite;
   }

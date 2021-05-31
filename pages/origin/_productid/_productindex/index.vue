@@ -19,10 +19,11 @@
           </v-col>
           <v-col cols="12">
             <div class=""><span>BATCH ID : </span><span>{{ productId }}</span></div>
-            <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ manufacturer.quantity }}</span></div>
+            <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).quantity }}</span></div>
             <div class=""><span>KM : </span><span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1)}}</span></div>
             <div class=""><span>CO2 : </span><span>{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0) }}</span></div>
-            <!--<div class=""><span>PRODUCED : </span><span>{{ formatDistance(new Date(manufacturer.date), new Date(), {locale, addSuffix: true}) }}</span></div>-->
+            <!--<div class=""><span>Pas propre, voir une fonction qui cherche goods.name="slug" PRODUCED : </span><span>{{ this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).departure }}</span></div>-->
+            <div class=""><span>PRODUCED : </span><span>{{ formatDistance(new Date(this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).departure), new Date(), {locale, addSuffix: true}) }}</span></div>
           </v-col>
         </v-row>
         <v-row>
@@ -38,7 +39,7 @@
                     </div>
                     <div class="position-relative">
                       <client-only placeholder="Loading...">
-                        <LazyNewmap :polylines="polylines.routes[0].sections[0].polyline" v-if="polylines && polylines.routes" :providersItem="providersItem" :markers="productDescription.custom.providers" />
+                        <LazyNewmap :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.providers" />
                       </client-only>
                     </div>
                   </v-card>
@@ -85,7 +86,7 @@
                 </v-col>
               </v-row>
           </v-container>
-          <v-container style="max-width:600px" class="timeline-container mx-auto">
+          <v-container style="max-width:600px" class="pl-0 timeline-container mx-auto">
               <v-timeline dense clipped>
                 <div v-for="(actor, index) in orderedTransits" :key="index">
                   <v-timeline-item
@@ -94,25 +95,54 @@
                       color="lightbugattiblue"
                   >
                       <v-card
-                          class="rounded-xl"
+                          class="rounded-xl pa-3"
                           @click="openModal(actor.from)"
                       >
-                          <v-card-subtitle class="pb-0">{{ formatDistance(new Date(actor.departure), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
-                          <v-card-title class="pt-0">{{actor.from}}</v-card-title>
-                          <v-card-subtitle v-for="(product, index) in actor.goods" :key="index" class="time">{{product.quantity}} {{product.units}} de {{product.name}}</v-card-subtitle>
-                          <!--<div class="time"><span>{{productDescription.custom.providersactor.brand}}</span> <span>{{actor.product}}</span></div>-->
+                        <v-card-subtitle class="pa-0 pb-3">{{ formatDistance(new Date(actor.departure), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
+                        <v-row class="pb-3" align="center" v-for="(product, index) in actor.goods" :key="index">
+                          <v-col
+                            cols="4"
+                          >
+                            <div class="rounded-lg wa-smart-picture square-ratio skeletton wa-product-image">
+                              <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getProductDescription(product.name).image">
+                            </div>
+                          </v-col>
+                          <v-col
+                            cols="8"
+                          > 
+                            <div class="time text-uppercase">{{getProductDescription(product.name).type}}</div>
+                            <div class="time">{{getProductDescription(product.name).name}}</div>
+                            <v-card-subtitle class="time pa-0">{{product.quantity}} {{product.units}}</v-card-subtitle>
+                          </v-col>
+                        </v-row>
+                        <div>REGISTERED BY</div>
+                        <v-row align="center" class="ma-0 pb-3">
+                            <v-avatar class="mr-3" left>
+                              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getProviderDescription(actor.from).image">
+                            </v-avatar>
+                            <div class="pt-0">{{getProviderDescription(actor.from).name}}</div>
+                            <!--<div class="time"><span>{{productDescription.custom.providersactor.brand}}</span> <span>{{actor.product}}</span></div>-->
+                        </v-row>
+                        <v-row
+                          align="center"
+                          class="ma-0"
+                        >
+                          <v-icon small class="mr-3">
+                            {{flagIcon}}
+                          </v-icon>
+                          <v-card-subtitle class="pa-0">{{ getProviderDescription(actor.from).location.address }}</v-card-subtitle>
+                        </v-row>
                       </v-card>
                   </v-timeline-item>
                   <v-timeline-item
                       small
                       color="lightbugattiblue"
                   >
-                      <div class="time">Envoyé {{  format(new Date(actor.departure), 'PPPPp', {locale}) }} via {{actor.carrier}}</div>
-                      <div class="time">Tracking number : {{actor.tracking}}</div>
-                      <div class="time">CO2 : {{actor.co2}}</div>
-                      <div class="time">Km : {{(actor.lenght/1000).toFixed(1)}}</div>
-                      <div class="time">Time : {{(actor.duration/3600).toFixed(1)}} hours</div>
-                      <div class="time">Recu {{  format(new Date(actor.arrival), 'PPPPp', {locale}) }} par {{actor.to}}</div>
+                      <div >Envoyé {{  format(new Date(actor.departure), 'PPPPp', {locale}) }} via {{actor.carrier}}</div>
+                      <div >Tracking number : {{actor.tracking}}</div>
+                      <div >CO2 : {{actor.co2}}</div>
+                      <div >Km : {{(actor.lenght/1000).toFixed(1)}}</div>
+                      <div >Recu {{  format(new Date(actor.arrival), 'PPPPp', {locale}) }} par {{getProviderDescription(actor.to).name}}</div>
                   </v-timeline-item>
                 </div>
               </v-timeline>
@@ -127,12 +157,12 @@
 
 <script>
 
+  import { mdiFlagVariant } from '@mdi/js';
   import { format, formatDistance } from 'date-fns'
   import { enUS, fr } from 'date-fns/locale'
 
   // by providing a default string of 'PP' or any of its variants for `formatStr`
   // it will format dates in whichever way is appropriate to the locale
-
 
   export default {
     layout: 'app',
@@ -149,6 +179,7 @@
             currentModal: false,
             format, formatDistance,
             polylines: [],
+            flagIcon: mdiFlagVariant
         };
     },
     async asyncData(context) {
@@ -165,21 +196,14 @@
       const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
       const productItem = await $content(`router/${lang_path}/shop/`+api).fetch();
       const providersItem = await $content(`api/${lang_path}/providers`).fetch();
+      const productsItem = await $content(`api/${lang_path}/products`).fetch();
+      const transitsItem = await $content(`api/transits/`+api).fetch();
 
-      return { productId, productIndex, productDescription, productItem, providersItem }
+      return { productId, productIndex, productDescription, productItem, providersItem, transitsItem, productsItem }
 
-    },
-    async fetch() {
-      this.polylines = await fetch('https://router.hereapi.com/v8/routes?transportMode=car&apiKey=sJxvIvQjWZuvxGBtUHZ7b1cjjmuB5IhIj5Dd47MLEMM&origin=45.698572,9.6719618&destination=47.4595,-0.7948&return=polyline').then(res =>
-        res.json()
-      )
     },
     /*async fetch() {
-      let first = this.productDescription.custom.transits.filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
-      let last = this.productDescription.custom.transits.filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
-      let loc = this.productDescription.custom.transits.filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
-
-      this.polylines = await fetch('https://router.hereapi.com/v8/routes?transportMode=car&apiKey=sJxvIvQjWZuvxGBtUHZ7b1cjjmuB5IhIj5Dd47MLEMM&origin='+first+'&destination='+last+'&via='+loc+'&return=polyline').then(res =>
+      this.polylines = await fetch('https://router.hereapi.com/v8/routes?transportMode=car&apiKey=sJxvIvQjWZuvxGBtUHZ7b1cjjmuB5IhIj5Dd47MLEMM&origin=45.698572,9.6719618&destination=47.4595,-0.7948&return=polyline').then(res =>
         res.json()
       )
     },*/
@@ -194,15 +218,13 @@
        certificate() {
          return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
        },
-       totalTransits() {
-         return Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0);
-       },
        orderedTransits() {
          return this.productDescription.custom.transits.filter(x => x.departure).sort((a, b) => a.departure > b.departure ? 1:-1)
        },
         locale() {
           let locale;
-          if (this.$i18n.localeProperties.iso == 'fr-FR' || 'fr-CA' || 'fr-CH') {
+          let lang = this.$i18n.localeProperties.iso.split('-', 1)[0];
+          if (lang == 'fr') {
             locale = fr;
           } else {
             locale = enUS;
@@ -211,6 +233,14 @@
         }
     },
     methods: {
+        getProviderDescription(id) {
+            let p = (this.providersItem || []).find(x => x.id == id);
+            return p || {};
+        },
+        getProductDescription(id) {
+            let p = (this.productsItem || []).find(x => x.id == id);
+            return p || {};
+        },
         openModal(modalName) {
             this.currentModal = true
             this.provider = this.providersItem.find(y => y.slug.includes(modalName))

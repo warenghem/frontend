@@ -1,7 +1,7 @@
 <template>
     <div>
         <v-container fluid style="padding:0!important" class="productgridhome pa-0">
-            <NuxtLink :to="localePath('dionysos')"> 
+            <NuxtLink :to="localePath('sustainabletech/dionysos')"> 
             <v-card 
                 height= "100%"
                 lazy
