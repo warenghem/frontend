@@ -19,7 +19,7 @@
           </v-col>
           <v-col cols="12">
             <div class=""><span>BATCH ID : </span><span>{{ productId }}</span></div>
-            <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).quantity }}</span></div>
+            <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ (this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).goods).find(y => y.name.includes(productItem.slug)).quantity }}</span></div>
             <div class=""><span>KM : </span><span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1)}}</span></div>
             <div class=""><span>CO2 : </span><span>{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0) }}</span></div>
             <!--<div class=""><span>Pas propre, voir une fonction qui cherche goods.name="slug" PRODUCED : </span><span>{{ this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).departure }}</span></div>-->
@@ -39,7 +39,7 @@
                     </div>
                     <div class="position-relative">
                       <client-only placeholder="Loading...">
-                        <LazyNewmap :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.providers" />
+                        <LazyNewmap :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.transits" />
                       </client-only>
                     </div>
                   </v-card>
@@ -101,26 +101,28 @@
                         <v-card-subtitle class="pa-0 pb-3">{{ formatDistance(new Date(actor.departure), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
                         <v-row class="pb-3" align="center" v-for="(product, index) in actor.goods" :key="index">
                           <v-col
-                            cols="4"
+                            cols="3"
                           >
                             <div class="rounded-lg wa-smart-picture square-ratio skeletton wa-product-image">
                               <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getProductDescription(product.name).image">
                             </div>
                           </v-col>
                           <v-col
-                            cols="8"
+                            cols="9"
                           > 
                             <div class="time text-uppercase">{{getProductDescription(product.name).type}}</div>
                             <div class="time">{{getProductDescription(product.name).name}}</div>
                             <v-card-subtitle class="time pa-0">{{product.quantity}} {{product.units}}</v-card-subtitle>
                           </v-col>
                         </v-row>
-                        <div>REGISTERED BY</div>
                         <v-row align="center" class="ma-0 pb-3">
                             <v-avatar class="mr-3" left>
                               <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getProviderDescription(actor.from).image">
                             </v-avatar>
-                            <div class="pt-0">{{getProviderDescription(actor.from).name}}</div>
+                            <div>
+                              <div>REGISTERED BY</div>
+                              <div class="pt-0">{{getProviderDescription(actor.from).name}}</div>
+                            </div>
                             <!--<div class="time"><span>{{productDescription.custom.providersactor.brand}}</span> <span>{{actor.product}}</span></div>-->
                         </v-row>
                         <v-row
@@ -236,7 +238,7 @@
         getProviderDescription(id) {
             let p = (this.providersItem || []).find(x => x.id == id);
             return p || {};
-        },
+        }, 
         getProductDescription(id) {
             let p = (this.productsItem || []).find(x => x.id == id);
             return p || {};
