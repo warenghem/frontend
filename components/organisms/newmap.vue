@@ -19,8 +19,8 @@
                 :geojson="decode(transit.polyline)"
                 />
         <l-marker v-for="(marker, index) in markers" :key="index"
-                  :lat-lng="[marker.location.latitude, marker.location.longitude]"
-                  @click="openModal(marker.id)"
+                  :lat-lng="[getProviderDescriptionLoop(marker.from).location.latitude, getProviderDescriptionLoop(marker.from).location.longitude]"
+                  @click="openModal(marker.from)"
                   >
           <l-icon
             :icon-size="[45, 45]"
@@ -132,6 +132,10 @@
                 let p = (this.providersItem || []).find(x => x.id == id);
                 return p || {};
             },
+            getProviderDescriptionLoop(id) {
+                let p = (this.providersItem || []).find(x => x.id == id);
+                return p || {};
+            }, 
             decode(str){
               let lines = H.decode(str);
               return {
