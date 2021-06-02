@@ -1,5 +1,8 @@
 <template dark>
   <div>
+    {{ products }}
+    {{ getProductDescriptionLoop(products) }}
+    
     <div v-if="this.productDescription.custom">
       <v-container>
         <v-row align="center" justify="center" class="py-5" style="max-width: 900px;">
@@ -35,11 +38,11 @@
                       LOCATIONS
                     </div>
                     <div class="text-center py-3 pb-8">
-                      This product's supply chain includes {{ this.productDescription.custom.providers.filter(x => x.location).map(x => x.location).length }} locations
+                      This product's supply chain includes {{ (providers || []).length }} locations
                     </div>
                     <div class="position-relative">
                       <client-only placeholder="Loading...">
-                        <LazyNewmap :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.transits" />
+                        <!--<LazyNewmap :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.transits" />-->
                       </client-only>
                     </div>
                   </v-card>
@@ -50,7 +53,7 @@
                       PROVIDERS
                     </div>
                     <div class="text-center py-3 pb-8">
-                      This product's supply chain includes {{ (this.productDescription.custom.providers || []).length }} providers
+                      This product's supply chain includes {{ (providers || []).length -1 }} providers
                     </div>
                   </v-card>
                 </v-col>
@@ -217,8 +220,14 @@
               var manufacturer = this.productDescription.custom.providers.find(y => y.type.includes('Finished product'))
               return manufacturer
         },
+       products() {
+         return Object.values(this.productDescription.custom.transits || []).filter(x => x.goods).map(x => x.goods).reduce(function(a, b) {return a.concat(b)}).filter(x => x.name).map(x => x.name)
+       },
        certificate() {
          return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
+       },
+       providers() {
+         return Object.values(this.productDescription.custom.transits || []).map(({ from, to }) => [from, to]).reduce(function(a, b) {return a.concat(b)}).filter((el, index, a) => index === a.indexOf(el)) /*filter speeder than reduce)*/
        },
        orderedTransits() {
          return this.productDescription.custom.transits.filter(x => x.departure).sort((a, b) => a.departure > b.departure ? 1:-1)
@@ -241,6 +250,10 @@
         }, 
         getProductDescription(id) {
             let p = (this.productsItem || []).find(x => x.id == id);
+            return p || {};
+        },
+        getProductDescriptionLoop(id) {
+            let p = (this.productsItem || []).filter(x => x.id == id);
             return p || {};
         },
         openModal(modalName) {
