@@ -19,7 +19,7 @@
                 :geojson="decode(transit.polyline)"
                 />
         <l-marker v-for="(marker, index) in markers" :key="index"
-                  :lat-lng="[getProviderDescriptionLoop(marker.from).location.latitude, getProviderDescriptionLoop(marker.from).location.longitude]"
+                  :lat-lng="[getProviderDescription(marker.from).location.latitude, getProviderDescription(marker.from).location.longitude]"
                   @click="openModal(marker.from)"
                   >
           <l-icon
@@ -29,7 +29,26 @@
           >
             <div class="card position-absolute">
               <v-avatar size="45" class="blob rounded-max">
-                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ temporaryDescription(marker.id).image" alt="" width="35" height="35">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(marker.from).image" alt="" width="35" height="35">
+              </v-avatar>
+              <!--<div class="card-header name hand">
+               {{marker.name}}
+              </div>-->
+            </div>
+          </l-icon>
+        </l-marker>
+        <l-marker 
+                  :lat-lng="[getProviderDescription(lastMarker.to).location.latitude, getProviderDescription(lastMarker.to).location.longitude]"
+                  @click="openModal(lastMarker.to)"
+                  >
+          <l-icon
+            :icon-size="[45, 45]"
+            className="mapClass hand"
+            icon-class="e"
+          >
+            <div class="card position-absolute">
+              <v-avatar size="45" class="blob rounded-max">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(lastMarker.to).image" alt="" width="35" height="35">
               </v-avatar>
               <!--<div class="card-header name hand">
                {{marker.name}}
@@ -101,13 +120,19 @@
                 color: this.$vuetify.theme.themes.light.lightbugattiblue,
                 opacity: 1,
               }
-            }
+            },
+          lastMarker() {
+           return this.markers[this.markers.length - 1]
+          }
         },
         methods: {
             onReady() {
               if (this.markers.length) {
+                let loc = this.markers.map(m => { return [m.lattitudeDeparture, m.longitudeDeparture] })
+                let lastLoc = [this.lastMarker.lattitudeArrival, this.lastMarker.longitudeArrival]
+                let mergeLoc = loc.concat([lastLoc]) 
                 this.$nextTick(() => {
-                  this.$refs.map.mapObject.fitBounds(this.markers.map(m => { return [m.location.latitude, m.location.longitude] }), {padding: [40, 40]})
+                  this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [40, 40]})
                 })
               }
             },
@@ -128,11 +153,7 @@
                 this.provider = this.providersItem.find(y => y.slug.includes(modalName))
                 this.currentModal = true
             },
-            temporaryDescription(id) {
-                let p = (this.providersItem || []).find(x => x.id == id);
-                return p || {};
-            },
-            getProviderDescriptionLoop(id) {
+            getProviderDescription(id) {
                 let p = (this.providersItem || []).find(x => x.id == id);
                 return p || {};
             }, 

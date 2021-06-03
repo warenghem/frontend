@@ -1,8 +1,5 @@
 <template dark>
   <div>
-    {{ products }}
-    {{ getProductDescriptionLoop(products) }}
-    
     <div v-if="this.productDescription.custom">
       <v-container>
         <v-row align="center" justify="center" class="py-5" style="max-width: 900px;">
@@ -22,8 +19,8 @@
           </v-col>
           <v-col cols="12">
             <div class=""><span>BATCH ID : </span><span>{{ productId }}</span></div>
-            <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ (this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).goods).find(y => y.name.includes(productItem.slug)).quantity }}</span></div>
-            <div class=""><span>KM : </span><span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1)}}</span></div>
+            <div class=""><span>LIMITED NUMBER : </span><span>{{ this.productIndex }} / {{ (this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).goods).find(y => y.id.includes(productItem.slug)).quantity }}</span></div>
+            <div class=""><span>KM : </span><span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</span></div>
             <div class=""><span>CO2 : </span><span>{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0) }}</span></div>
             <!--<div class=""><span>Pas propre, voir une fonction qui cherche goods.name="slug" PRODUCED : </span><span>{{ this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).departure }}</span></div>-->
             <div class=""><span>PRODUCED : </span><span>{{ formatDistance(new Date(this.productDescription.custom.transits.find(y => y.to.includes('warenghem')).departure), new Date(), {locale, addSuffix: true}) }}</span></div>
@@ -42,7 +39,7 @@
                     </div>
                     <div class="position-relative">
                       <client-only placeholder="Loading...">
-                        <!--<LazyNewmap :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.transits" />-->
+                        <LazyNewmap :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.transits" />
                       </client-only>
                     </div>
                   </v-card>
@@ -63,7 +60,7 @@
                       MATERIALS
                     </div>
                     <div class="text-center py-3 pb-8">
-                      This product's supply chain includes {{ this.productDescription.custom.providers.filter(y => y.type.includes('Material')).length }} materials
+                      This product's supply chain includes {{ products.filter(y => y.type.includes('Material')).length }} materials
                     </div>
                   </v-card>
                 </v-col>
@@ -83,7 +80,7 @@
                       KM
                     </div>
                     <div class="text-center py-3 pb-8">
-                      This product has made <span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1) }}</span> km
+                      This product has made <span>{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.lenght).map(x => x.lenght).reduce((a, b)=> a + b,0)/1000).toFixed(1).replace(/\B(?=(\d{3})+(?!\d))/g, " ") }}</span> km
                     </div>
                   </v-card>
                 </v-col>
@@ -107,14 +104,14 @@
                             cols="3"
                           >
                             <div class="rounded-lg wa-smart-picture square-ratio skeletton wa-product-image">
-                              <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getProductDescription(product.name).image">
+                              <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getProductDescription(product.id).image">
                             </div>
                           </v-col>
                           <v-col
                             cols="9"
                           > 
-                            <div class="time text-uppercase">{{getProductDescription(product.name).type}}</div>
-                            <div class="time">{{getProductDescription(product.name).name}}</div>
+                            <div class="time text-uppercase">{{getProductDescription(product.id).type}}</div>
+                            <div class="time">{{getProductDescription(product.id).name}}</div>
                             <v-card-subtitle class="time pa-0">{{product.quantity}} {{product.units}}</v-card-subtitle>
                           </v-col>
                         </v-row>
@@ -215,19 +212,18 @@
     computed: {
        /*actors() {
          return Object.values(this.productDescription.custom).filter(x => Array.isArray(x)).reduce((a,x) => a.concat(...x), []);
-       },*/
-       manufacturer() {
-              var manufacturer = this.productDescription.custom.providers.find(y => y.type.includes('Finished product'))
-              return manufacturer
-        },
-       products() {
-         return Object.values(this.productDescription.custom.transits || []).filter(x => x.goods).map(x => x.goods).reduce(function(a, b) {return a.concat(b)}).filter(x => x.name).map(x => x.name)
-       },
-       certificate() {
-         return Object.values(this.productDescription.custom.providers || []).filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
        },
        providers() {
-         return Object.values(this.productDescription.custom.transits || []).map(({ from, to }) => [from, to]).reduce(function(a, b) {return a.concat(b)}).filter((el, index, a) => index === a.indexOf(el)) /*filter speeder than reduce)*/
+         return Object.values(this.productDescription.custom.transits || []).map(({ from, to }) => [from, to]).reduce(function(a, b) {return a.concat(b)}).filter((el, index, a) => index === a.indexOf(el)).map(x => getProviderDescription(x)) /*filter speeder than reduce)
+       },*/
+       providers() {
+         return Object.values(this.productDescription.custom.transits || []).reduce((a,x) => a.concat([ this.getProviderDescription(x.from),  this.getProviderDescription(x.to)]), []).filter((el, index, a) => index === a.indexOf(el)) /*filter speeder than reduce)*/
+       },
+       products() {
+         return Object.values(this.productDescription.custom.transits || []).filter(x => x.goods).map(x => x.goods).reduce(function(a, b) {return a.concat(b)}).filter(x => x.id).map(x => x.id).map(x => this.getProductDescription(x))
+       },
+       certificate() {
+         return Object.values(this.productDescription.custom.providers.concat(this.productDescription.custom.products) || []).filter(x => x.awards && x.awards.verifiedClaims).map(x => x.awards.verifiedClaims).reduce(function(a, b) {return a.concat(b)})
        },
        orderedTransits() {
          return this.productDescription.custom.transits.filter(x => x.departure).sort((a, b) => a.departure > b.departure ? 1:-1)
@@ -250,10 +246,6 @@
         }, 
         getProductDescription(id) {
             let p = (this.productsItem || []).find(x => x.id == id);
-            return p || {};
-        },
-        getProductDescriptionLoop(id) {
-            let p = (this.productsItem || []).filter(x => x.id == id);
             return p || {};
         },
         openModal(modalName) {
