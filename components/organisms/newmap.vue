@@ -1,6 +1,10 @@
 <template>
   <div class="h-100">
-    <div style="height: 500px; width: 100%" class="pa-0">
+    <div class="mx-auto pa-3 position-absolute text-center" style="z-index:2; left:0; right:0" >
+      <v-btn color="black" rounded="xl" v-if="trees===false" @click="treeFocus(), trees=true">Focus on tree</v-btn>
+      <v-btn color="black" rounded="xl" v-if="trees===true" @click="actorsFocus(), trees=false">Focus on actors</v-btn>
+    </div>
+    <div class="pa-0 w-100 h-100">
       <l-map
         class="treemap h-100"
         ref="map"
@@ -19,8 +23,8 @@
                 :geojson="decode(transit.polyline)"
                 />
         <l-marker v-for="(marker, index) in markers" :key="index"
-                  :lat-lng="[getProviderDescription(marker.from).location.latitude, getProviderDescription(marker.from).location.longitude]"
-                  @click="openModal(marker.from)"
+                  :lat-lng="[marker.from.location.latitude, marker.from.location.longitude]"
+                  @click="openModal(marker.from.id)"
                   >
           <l-icon
             :icon-size="[45, 45]"
@@ -29,17 +33,15 @@
           >
             <div class="card position-absolute">
               <v-avatar size="45" class="blob rounded-max">
-                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(marker.from).image" alt="" width="35" height="35">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(marker.from.id).image" alt="" width="35" height="35">
               </v-avatar>
-              <!--<div class="card-header name hand">
-               {{marker.name}}
-              </div>-->
+
             </div>
           </l-icon>
         </l-marker>
         <l-marker 
-                  :lat-lng="[getProviderDescription(lastMarker.to).location.latitude, getProviderDescription(lastMarker.to).location.longitude]"
-                  @click="openModal(lastMarker.to)"
+                  :lat-lng="[lastMarker.to.location.latitude, lastMarker.to.location.longitude]"
+                  @click="openModal(lastMarker.to.id)"
                   >
           <l-icon
             :icon-size="[45, 45]"
@@ -48,11 +50,33 @@
           >
             <div class="card position-absolute">
               <v-avatar size="45" class="blob rounded-max">
-                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(lastMarker.to).image" alt="" width="35" height="35">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(lastMarker.to.id).image" alt="" width="35" height="35">
               </v-avatar>
-              <!--<div class="card-header name hand">
-               {{marker.name}}
-              </div>-->
+            </div>
+          </l-icon>
+        </l-marker>
+        <l-marker 
+                  :lat-lng="[treesItem.location.latitude, treesItem.location.longitude]"
+                  @click="openModal(treesItem.id)"
+                  name="trees"
+                  >
+          <l-icon
+            :icon-size="[45, 45]"
+            className="mapClass hand"
+            icon-class="e"
+          >
+            <div class="card position-absolute">
+              <v-badge
+                bordered
+                color="lightbugattiblue"
+                :content="treeDescription.quantity"
+                offset-x="15"
+                offset-y="15"
+              >
+                <v-avatar size="45" class="blob rounded-max">
+                  <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ treesItem.image" alt="" width="35" height="35">
+                </v-avatar>
+              </v-badge>
             </div>
           </l-icon>
         </l-marker>
@@ -99,6 +123,16 @@
                 type: Array,
                 default: () => {
                 }
+            },
+            treesItem: {
+                type: Array,
+                default: () => {
+                }
+            },
+            treeDescription: {
+                type: Array,
+                default: () => {
+                }
             }
         },
         data() {
@@ -110,7 +144,8 @@
                 showMap: true,
                 markers: [],
                 currentModal: false,
-                geojson: null
+                geojson: null,
+                trees: false,
             };
         },
         computed:  {
@@ -128,13 +163,23 @@
         methods: {
             onReady() {
               if (this.markers.length) {
-                let loc = this.markers.map(m => { return [m.lattitudeDeparture, m.longitudeDeparture] })
-                let lastLoc = [this.lastMarker.lattitudeArrival, this.lastMarker.longitudeArrival]
+                let loc = this.markers.map(m => { return [m.from.location.latitude, m.from.location.longitude] })
+                let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
                 let mergeLoc = loc.concat([lastLoc]) 
                 this.$nextTick(() => {
                   this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [40, 40]})
                 })
               }
+            },
+            treeFocus() {
+                let loc = [[this.treesItem.location.latitude, this.treesItem.location.longitude]]
+                this.$refs.map.mapObject.flyToBounds(loc, {padding: [40, 40], maxZoom: 4})
+            },
+            actorsFocus() {
+                let loc = this.markers.map(m => { return [m.from.location.latitude, m.from.location.longitude] })
+                let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
+                let mergeLoc = loc.concat([lastLoc]) 
+                this.$refs.map.mapObject.flyToBounds(mergeLoc, {padding: [40, 40]})
             },
             DarkMode() {
               if ($vuetify.theme.dark) {

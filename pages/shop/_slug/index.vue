@@ -365,7 +365,7 @@
                     "dots": false,
                     "row": 1,
                     "infinite": false,
-                    "arrow": false,
+                    "arrows": false,
                     "slidesToShow": 3,
                     "slidesToScroll": 3,
                     "responsive": [

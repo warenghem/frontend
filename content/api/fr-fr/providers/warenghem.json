@@ -8,6 +8,8 @@
   "image": "providers/logo_pierre.png",
   "location": {
     "address": "231 rue Saint Honore​, 75001 Paris, France",
+    "city": "Paris",
+    "country": "France",
     "latitude": "48.866336575991156",
     "longitude": "2.3291357118206304"
   }

@@ -1,0 +1,27 @@
+{  
+  "name": "Mangrove",
+  "average_natural_life_span": 25,
+  "category": "Arbre",
+  "co2Offset": 1,
+  "co2OffsetPeriod": "0,20",
+  "family": "Rhizophoraceae",
+  "foliageType": { "id": "4", "name": "Evergreen" },
+  "height": "2,10",
+  "id": 727,
+  "image": "trees/mangrove.png",
+  "lifeTimeCO2": 20,
+  "scientificName": "Rhizophora mucronata",
+  "originType": { "id": "1", "name": "Native" },
+  "particularities": "Rhizophora mucronata est un arbre de taille petite à moyenne, avec une forte dominance apicale et des racines aériennes distinctives. On le trouve dans la région indo-pacifique. Son habitat naturel est les estuaires et les côtes. Rhizophora mucronata a plusieurs avantages, il protège le littoral des inondations et des tempêtes, il évite l'érosion côtière et ses propriétés médicinales ont été utilisées pour traiter un certain nombre de maladies.",
+  "planterLikes": "Avant le début du projet, les forêts de mangrove trouvées dans cette zone étaient gravement touchées par la déforestation et la dégradation des forêts dues à la production de charbon de bois et à la collecte de bois pour la cuisine, la construction et d'autres fins.",
+  "projectId": 163,
+  "projectDescription": "En réponse à la perte à grande échelle des mangroves et des forêts d'altitude à Madagascar, Eden Reforestation Projects a lancé le Madagascar Reforestation Project. Le programme a débuté en 2007 et depuis sa création, Eden a planté avec succès plus de 407 millions de mangroves et d'arbres à feuilles caduques secs dans le nord-ouest de Madagascar.",
+  "projectImage": "https://treenation-uploads.s3.eu-central-1.amazonaws.com/project-5fd218a64c2d7.jpg",
+  "location": { 
+    "country": "Madagascar", 
+    "latitude": "-16.272417", 
+    "longitude": "44.445938" 
+  },
+  "projectName": "Eden Projects",
+  "url": "https://tree-nation.com/projects/eden-reforestation-madagascar"
+} 

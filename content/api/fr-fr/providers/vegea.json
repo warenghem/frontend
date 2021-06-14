@@ -8,6 +8,8 @@
   "image": "providers/dionysos_2.png",
   "location": {
     "address": "Via Giuseppe Verdi 12 Bergamo​, Bergamo, 24121 Italy",
+    "city": "Bergamo",
+    "country":"Italy",
     "latitude": "45.698572",
     "longitude": "9.6719618"
   }

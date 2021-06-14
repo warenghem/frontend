@@ -10,7 +10,17 @@
 /*Start timeline*/
 
 /*End timeline*/
-
+.leaflet-container {
+  background: unset!important;
+}
+.text-break {
+  overflow-wrap: break-word;
+}
+.text-hide {
+    white-space: nowrap;
+    overflow: hidden!important;
+    text-overflow: ellipsis!important;
+  }
 .v-btn__content {
   line-height: 0.8rem!important;
 }
@@ -1157,7 +1167,9 @@ letter-spacing: .009em;
     grid-gap: 0.5rem;
   }
 }
-
+.ma-1r {
+  margin: 1rem
+}
 .homegrid {
   display: grid;
   grid-gap: 1rem;

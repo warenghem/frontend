@@ -8,6 +8,8 @@
   "image": "providers/saintgermain.jpg",
   "location": {
     "address": "Route de Saint-Augustin, 49170 Saint-Germain-des-Prés France",
+    "city": "Saint-Germain-des-Près",
+    "country": "France",
     "latitude": "47.4595",
     "longitude": "-0.7948"
   }
