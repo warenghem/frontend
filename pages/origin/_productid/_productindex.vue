@@ -5,9 +5,9 @@
         <v-row class="position-fixed h-100">
           <v-col style="overflow:auto" class="pa-0 h-100" cols="12" md="12">
             <v-card
-            rounded="xl"
-            class="ma-1r"
-            @click="openModal(ProductItem.slug)"
+              rounded="xl"
+              class="ma-1r"
+              @click="openModal(productItem.slug)"
             >
               <div class="d-flex flex-no-wrap justify-space-between align-center">
                 <v-avatar
@@ -40,6 +40,10 @@
             </v-card>
             <v-card height="50vh" rounded="xl" class="overflow-hidden position-relative mb-0 ma-1r">
               <div class="position-relative h-100">
+                <div class="mx-auto pa-3 pt-0 position-absolute text-center" style="z-index:2; left:0; right:0" >
+                  <v-btn class="mt-n3 buttonCard" elevation="0" rounded v-if="trees===false" @click="treeFocus(), trees=true">Focus on tree</v-btn>
+                  <v-btn class="mt-n3 buttonCard" elevation="0" v-if="trees===true" @click="actorsFocus(), trees=false">Focus on actors</v-btn>
+                </div>
                 <client-only>
                   <LazyNewmap :treesItem="treesItem" :treeDescription="productDescription.custom.trees" :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.transits" />
                   <v-skeleton-loader
@@ -51,7 +55,7 @@
               <v-row justify="center" class="treeMapHeader pb-5 pt-10 text-center position-absolute w-100 ma-0">
                 <div class="px-3 "><div class="text-h5 yellow--text">{{ (providers || []).length }}</div><div class="text-caption">locations</div></div>
                 <div class="px-3"><div class="text-h5 yellow--text">{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.length).map(x => x.length).reduce((a, b)=> a + b,0)/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</div><div class="text-caption">km parcourus</div></div>
-                <div class="px-3 "><div class="text-h5 yellow--text">{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0).toFixed(0) }}</div><div class="text-caption">kg de CO2 consommés</div></div>
+                <div class="px-3 "><div class="text-h5 yellow--text">{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0).toFixed(0) }}</div><div class="text-caption">kg de CO2</div></div>
               </v-row>
             </v-card>
           </v-col>
@@ -66,9 +70,9 @@
 <script>
 
   import getDescription from "~/mixins/getDescription";
+  import locale from "~/mixins/localesI18n";
   import { mdiTree, mdiChevronRight, mdiShieldCheck, mdiShieldLock, mdiSwapHorizontal, mdiArrowRight, mdiFlagVariant } from '@mdi/js';
   import { format, formatDistance } from 'date-fns'
-  import locale from "~/mixins/localesI18n";
 
   export default {
     layout: 'app',
@@ -176,9 +180,6 @@
     bottom: 0;
     background: #1E1E1E;
     background: linear-gradient(180deg,#1E1E1E,rgba(30,30,30,0) 0%, rgba(30,30,30,.7693452381) 50%,rgba(30,30,30,.9234068627) 78%);
-}
-.buttonCard {
-  border: 3px solid black;
 }
 .twogrid {
   margin: 0 auto;

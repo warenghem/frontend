@@ -1,9 +1,5 @@
 <template>
   <div class="h-100">
-    <div class="mx-auto pa-3 position-absolute text-center" style="z-index:2; left:0; right:0" >
-      <v-btn color="black" rounded="xl" v-if="trees===false" @click="treeFocus(), trees=true">Focus on tree</v-btn>
-      <v-btn color="black" rounded="xl" v-if="trees===true" @click="actorsFocus(), trees=false">Focus on actors</v-btn>
-    </div>
     <div class="pa-0 w-100 h-100">
       <l-map
         class="treemap h-100"
@@ -11,6 +7,7 @@
         @ready="onReady"
         :maxZoom="zoom"
         :center="center"
+        zoomSnap="0.1"
         :options="{zoomControl: false,attributionControl: false,scrollWheelZoom: false,tap: false,boxZoom: false, doubleClickZoom: false, touchZoom: false, dragging: false, draggable: false}"
       >
         <l-tile-layer
@@ -120,17 +117,17 @@
                 }
             },
             transits: {
-                type: Array,
+                type: Object,
                 default: () => {
                 }
             },
             treesItem: {
-                type: Array,
+                type: Object,
                 default: () => {
                 }
             },
             treeDescription: {
-                type: Array,
+                type: Object,
                 default: () => {
                 }
             }
@@ -167,7 +164,7 @@
                 let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
                 let mergeLoc = loc.concat([lastLoc]) 
                 this.$nextTick(() => {
-                  this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [40, 40]})
+                  this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [0, 50]})
                 })
               }
             },
@@ -179,7 +176,7 @@
                 let loc = this.markers.map(m => { return [m.from.location.latitude, m.from.location.longitude] })
                 let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
                 let mergeLoc = loc.concat([lastLoc]) 
-                this.$refs.map.mapObject.flyToBounds(mergeLoc, {padding: [40, 40]})
+                this.$refs.map.mapObject.flyToBounds(mergeLoc, {padding: [0, 50]})
             },
             DarkMode() {
               if ($vuetify.theme.dark) {

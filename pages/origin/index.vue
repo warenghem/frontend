@@ -86,7 +86,7 @@
                       elevation="0"
                       color="lightbugattiblue"
                       class="mx-auto"
-                      @click="$router.push('/origin/'+id+'/'+number+'/')"
+                      @click="$router.push('/origin/'+id+'/'+number+'/main/')"
                       >
                       SCAN
                   </v-btn>

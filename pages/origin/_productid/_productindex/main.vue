@@ -93,15 +93,13 @@
 <script>
 
   import getDescription from "~/mixins/getDescription";
+  import locale from "~/mixins/localesI18n";
+  import { format, formatDistance } from 'date-fns'
+
   import VueSlickCarousel from 'vue-slick-carousel'
   import 'vue-slick-carousel/dist/vue-slick-carousel.css'
   import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
   import { mdiTree, mdiChevronRight, mdiShieldCheck, mdiShieldLock, mdiSwapHorizontal, mdiArrowRight, mdiFlagVariant } from '@mdi/js';
-  import { format, formatDistance } from 'date-fns'
-  import locale from "~/mixins/localesI18n";
-
-  // by providing a default string of 'PP' or any of its variants for `formatStr`
-  // it will format dates in whichever way is appropriate to the locale
 
   export default {
     layout: 'app',

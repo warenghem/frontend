@@ -2,20 +2,19 @@
     <v-bottom-navigation
         app
         grow
-        fixed
         class="border-top-2"
     >
-        <v-btn :to="localePath('/origin/'+productId+'/'+productIndex+'/'+'main/')" nuxt>
+        <v-btn :to="localePath('/origin/'+productId+'/'+productIndex+'/main/')" nuxt>
             <span>Your bag</span>
             <v-icon>{{ svgPath1 }}</v-icon>
         </v-btn>
 
-        <v-btn :to="localePath('/origin/'+productId+'/'+productIndex+'/'+'trip/')" nuxt>
+        <v-btn :to="localePath('/origin/'+productId+'/'+productIndex+'/trip/')" nuxt>
             <span>Bag's trip</span>
             <v-icon>{{ svgPath2 }}</v-icon>
         </v-btn>
 
-        <v-btn :to="localePath('/origin/'+productId+'/'+productIndex+'/'+'carbon/')" nuxt>
+        <v-btn :to="localePath('/origin/'+productId+'/'+productIndex+'/carbon/')" nuxt>
             <span>CO2 compensation</span>
             <v-icon>{{ svgPath2 }}</v-icon>
         </v-btn>
@@ -35,13 +34,10 @@
         props: {
             productId: {
                 type: String,
-                default: () => {
-                }
             },
             productIndex: {
                 type: String,
-                default: () => {
-                }
+                default: ''
             }
         },
     }
