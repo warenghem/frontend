@@ -1,7 +1,10 @@
 <template dark>
-  <v-container style="max-width:600px" class="pl-0 timeline-container mx-auto">
-      <OriginTimeline :treesItem="$attrs.treesItem" :productsItem="$attrs.productsItem" :certificatesItem="$attrs.certificatesItem" :providersItem="$attrs.providersItem" :originTimelines="orderedTransactions"/>
-  </v-container>
+<div>
+  <OriginSwiper  :key="index" :originTimeline="originTimeline" :treesItem="$attrs.treesItem" :productsItem="$attrs.productsItem" :certificatesItem="$attrs.certificatesItem" :providersItem="$attrs.providersItem" :originTimelines="orderedTransactions" />
+  <!--<v-container class="pl-0 timeline-container mx-auto">
+      <OriginTimeline style="max-width:600px" :treesItem="$attrs.treesItem" :productsItem="$attrs.productsItem" :certificatesItem="$attrs.certificatesItem" :providersItem="$attrs.providersItem" :originTimelines="orderedTransactions"/>
+  </v-container>-->
+</div>
 </template>
 
 <script>
@@ -16,12 +19,18 @@
         ]
       }
     },
-    props: {
-        orderedTransactions: {
-            type: Array,
-            default: () => {
-            }
-        }
+    data () {
+      return {
+
+      }
+    },
+    computed: {
+       orderedTransactions() {
+         let transactions = this.$attrs.productDescription.custom.transits.concat(this.$attrs.productDescription.custom.products)
+         let transactions2 = transactions.concat(this.$attrs.productDescription.custom.trees)
+         let orderedTransactions = transactions2.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1) /*A regler, normalement date ou from.date et non date*/
+         return orderedTransactions
+       },
     },
   }
 </script>

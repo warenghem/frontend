@@ -38,10 +38,6 @@
         }
       }
     },
-  transition: {
-    name: 'slide-fade',
-    mode: 'out-in'
-  },
   beforeCreate () {
         this.$vuetify.theme.dark = true;
     },

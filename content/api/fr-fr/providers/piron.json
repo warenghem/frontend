@@ -1,0 +1,17 @@
+{  
+  "name": "Piron Production",
+  "id": "piron",
+  "type": "Materials",
+  "product": "linen",
+  "category": "leather",
+  "description": "Xavier Piron Production, expert en tissage, fabrication made in france et négoce de tissus, tissus à usage décoratif ou technique, 150 ans de savoir faire.",
+  "image": "providers/piron.jpg",
+  "location": {
+    "address": "58 rue de Steenvoorde",
+    "city": "Godewaersvelde",
+    "code": "59270",
+    "country": "France",
+    "latitude": "50.793280",
+    "longitude": "2.642360"
+  }
+} 

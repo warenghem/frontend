@@ -59,7 +59,6 @@
     import getSiteMeta from '@/utils/getSiteMeta';
     export default {
         name: 'post',
-        transition: 'home',
         async asyncData(context) {
             const {$content, params, app} = context;
             const slug = params.slug;
@@ -124,7 +123,6 @@
 /*
     export default {
         name: 'post',
-        transition: 'home',
         middleware ({ app, params, redirect }) {
           if (params.pathMatch === 'index') {
             redirect(app.localePath('/'))

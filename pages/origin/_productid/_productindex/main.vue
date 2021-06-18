@@ -1,92 +1,68 @@
 <template dark>
   <div>
-            <div class="twogrid">
-                <v-card rounded="xl">
-                  <div class="teradeli-medium text-center py-3 pt-8">
-                    PROVIDERS
-                  </div>
-                  <div class="text-center py-3 pb-5">
-                    {{ (providers.filter(y => !y.type.includes('Brand')) || []).length }} providers were involved in creating this products
-                  </div>
-                  <div class="text-center py-3 pb-8">
-                    <v-avatar size="90" class="mx-3" left  v-for="(provider, index) in providers.filter(y => !y.type.includes('Brand'))" :key="index">
-                      <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ provider.image">
-                    </v-avatar>
-                  </div>
-                </v-card>
-                <v-card rounded="xl">
-                  <div class="teradeli-medium text-center py-3 pt-8">
-                    MATERIALS
-                  </div>
-                  <div class="text-center py-3 pb-5">
-                    This product's supply chain includes {{ products.filter(y => y.type.includes('Material')).length }} materials
-                  </div>
-            <VueSlickCarousel v-bind="settings">
-                  <div class="text-center py-3 pb-8">
-                    <v-avatar size="90" class="mx-3" left  v-for="(product, index) in products.filter(y => y.type.includes('Material'))" :key="index">
-                      <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ product.image">
-                    </v-avatar>
-                  </div>
-            </VueSlickCarousel>
-
-                </v-card>
-            </div>
-            <div class="teradeli-medium text-center py-3 pt-8">
-              CERTIFICATES
-            </div>
-            <div class="text-center py-3 pb-8">
-              This product's supply chain includes {{ certificates.length }} certificates
-            </div>
-            <VueSlickCarousel class="ma-1r" v-bind="settings">
-              <v-card
-              rounded="xl"
-              v-for="(certificate, index) in certificates" :key="index"
-              class="mb-5"
-              >
-                <div class="d-flex flex-column justify-center align-center text-center">
-                  <v-avatar
-                    class="ma-3 img-fluid position-relative"
-                    size="100"
-                  >
-                    <img
-                        data-sizes="auto"
-                        :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-640/API/'+ getDescription(certificate.id, certificatesItem).image +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-380,fo-bottom,c-maintain_ratio/API/'+ getDescription(certificate.id, certificatesItem).image +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-512,fo-bottom,c-maintain_ratio/API/'+ getDescription(certificate.id, certificatesItem).image +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-683,fo-bottom,c-maintain_ratio/API/'+ getDescription(certificate.id, certificatesItem).image +' 683w'"
-                        class="lazyload cover bg-white catalogue-item-background"
-                    />
-                  </v-avatar>
-                  <div class="w-100">
-                    <v-card-subtitle class="text-hide py-0">{{getDescription(certificate.id, certificatesItem).name}}</v-card-subtitle>
-                  </div>
-                  <div class="d-flex align-center">
-                    <v-icon small right >
-                      {{check}}
-                    </v-icon>
-                    <v-card-subtitle class="font-italic text-hide ml-1 pa-0">Verified</v-card-subtitle>
-                  </div>
-                  <v-btn class="buttonCard mb-n3" fab x-small>
-                    <v-icon>{{mdiChevronRight}}</v-icon>
-                  </v-btn>
-                </div>
-              </v-card>
-            </VueSlickCarousel>
-    <div>Plante : {{ treesItem.name }}</div>
-    <v-avatar
-      class="ma-3 img-fluid position-relative"
-      size="100"
-      tile
-    >
-      <img
-          data-sizes="auto"
-          :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-640/API/'+ treesItem.image +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-380,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-512,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-683,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-800,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 800w'"
-          class="lazyload cover bg-white catalogue-item-background rounded-xl"
-      />
-    </v-avatar>
-    <div>CO2 par plante : {{ treesItem.lifeTimeCO2 }} kg</div>
-    <div>Number planted : {{ productDescription.custom.trees.quantity }}</div>
-    <div>Total CO2 : {{ productDescription.custom.trees.quantity * treesItem.lifeTimeCO2 }} kg</div>
-    <div>Energy of this transaction 1 kWh = 0,45 kg CO2 (average in Europe)</div>
-    <div>kWh of this transaction = 50 kWh (average for Ethereum)</div>
-    <div>CO2 : {{ 50 * 0.45 }} kg</div>
+    <div class="">
+        <!--<v-card rounded="xl">
+          <div class="teradeli-medium text-center py-3 pt-8">
+            PROVIDERS
+          </div>
+          <div class="text-center py-3 pb-5">
+            {{ (providers.filter(y => !y.type.includes('Brand')) || []).length }} providers were involved in creating this products
+          </div>
+          <div class="text-center py-3 pb-8">
+            <v-avatar size="90" class="mx-3" left  v-for="(provider, index) in providers.filter(y => !y.type.includes('Brand'))" :key="index">
+              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ provider.image">
+            </v-avatar>
+          </div>
+        </v-card>
+        <v-card rounded="xl">
+          <div class="teradeli-medium text-center py-3 pt-8">
+            MATERIALS
+          </div>
+          <div class="text-center py-3 pb-5">
+            This product's supply chain includes {{ products.filter(y => y.type.includes('Material')).length }} materials
+          </div>
+          <div class="text-center py-3 pb-8">
+            <v-avatar size="90" class="mx-3" left  v-for="(product, index) in products.filter(y => y.type.includes('Material'))" :key="index">
+              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ product.image">
+            </v-avatar>
+          </div>
+        </v-card>-->
+        <div v-for="(slider, index) in sliders" :key="index">
+          <div class="text-center py-3 pb-5">
+            {{ slider.data.length }} {{ slider.title }} were involved in creating this products
+          </div>
+          <SmallSlider :cards="slider.data"/>
+        </div>
+        <div >
+          <div>Plante : {{ treesItem.name }}</div>
+          <v-avatar
+            class="ma-3 img-fluid position-relative"
+            size="100"
+            tile
+          >
+            <img
+                data-sizes="auto"
+                :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-640/API/'+ treesItem.image +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-380,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-512,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-683,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-800,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 800w'"
+                class="lazyload cover bg-white catalogue-item-background rounded-xl"
+            />
+          </v-avatar>
+          <div>CO2 par plante : {{ treesItem.lifeTimeCO2 }} kg</div>
+          <div>Number planted : {{ productDescription.custom.trees.quantity }}</div>
+          <div>Total CO2 : {{ productDescription.custom.trees.quantity * treesItem.lifeTimeCO2 }} kg</div>
+          <div>Energy of this transaction 1 kWh = 0,45 kg CO2 (average in Europe)</div>
+          <div>kWh of this transaction = 50 kWh (average for Ethereum)</div>
+          <div>CO2 : {{ 50 * 0.45 }} kg</div>
+        </div>
+    </div>
+    <!--<div class="teradeli-medium text-center py-3 pt-8">
+      CERTIFICATES
+    </div>
+    <div class="text-center py-3 pb-8">
+      This product's supply chain includes {{ certificates.length }} certificates
+    </div>
+    <VueSlickCarousel class="ma-1r" v-bind="settings">
+      <SmallVerticalCard v-for="(certificate, index) in certificates" :key="index" :image="getDescription(certificate.id, certificatesItem).image" :name="getDescription(certificate.id, certificatesItem).name" />
+    </VueSlickCarousel>-->
   </div>
 </template>
 
@@ -96,14 +72,9 @@
   import locale from "~/mixins/localesI18n";
   import { format, formatDistance } from 'date-fns'
 
-  import VueSlickCarousel from 'vue-slick-carousel'
-  import 'vue-slick-carousel/dist/vue-slick-carousel.css'
-  import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-  import { mdiTree, mdiChevronRight, mdiShieldCheck, mdiShieldLock, mdiSwapHorizontal, mdiArrowRight, mdiFlagVariant } from '@mdi/js';
-
   export default {
     layout: 'app',
-    name: 'journey',
+    name: 'main',
     head () {
       return {
         meta: [
@@ -116,50 +87,45 @@
             currentModal: false,
             format, formatDistance,
             polylines: [],
-            flagIcon: mdiFlagVariant,
-            arrowRightIcon: mdiArrowRight,
-            mdiChevronRight: mdiChevronRight,
-            transfert : mdiSwapHorizontal,
-            lock : mdiShieldLock,
-            check : mdiShieldCheck,
-            tree : mdiTree,
-            settings: {
-              "centerMode": true,
-              "focusOnSelect": true,
-              "infinite": false,
-              "slidesToShow": 3,
-              "slidesToScroll": 3,
-              "arrows": false,
-              "dots": false,
-              "swipeToSlide": true,
-              "touchMove": true,
-              "responsive": [
-                  {
-                      "breakpoint": 768,
-                      "settings": {
-                          "centerMode": true,
-                          "focusOnSelect": true,
-                          "slidesToShow": 2,
-                          "slidesToScroll": 2,
-                      }
-                  },
-                  {
-                      "breakpoint": 480,
-                      "settings": {
-                          "centerMode": true,
-                          "focusOnSelect": true,
-                          "slidesToShow": 1,
-                          "slidesToScroll": 1,
-                      }
-                  }
-              ]
-            },
+            sliders: [
+                {
+                    title: 'Providers',
+                    data: this.suppliersDetails
+                },
+                {
+                    title: 'Materials',
+                    data: this.materialsDetails
+                },
+                {
+                    title: 'Certificates',
+                    data: this.certificatesDetails
+                }
+            ],
         };
     },
-    mixins: [getDescription, locale],
-    components: {
-        VueSlickCarousel
+    props: {
+        suppliersDetails: {
+            type: Array,
+            default: () => {
+            }
+        },
+        materialsDetails: {
+            type: Array,
+            default: () => {
+            }
+        },
+        products: {
+            type: Array,
+            default: () => {
+            }
+        },
+        certificatesDetails: {
+            type: Array,
+            default: () => {
+            }
+        }
     },
+    mixins: [getDescription, locale],
     async asyncData(context) {
       const {$content, params, app} = context;
 
@@ -183,75 +149,10 @@
       return { productId, productIndex, certificatesItem, productDescription, treesItem, productItem, providersItem, transitsItem, productsItem }
 
     },
-    /*async fetch() {
-      this.polylines = await fetch('https://router.hereapi.com/v8/routes?transportMode=car&apiKey=sJxvIvQjWZuvxGBtUHZ7b1cjjmuB5IhIj5Dd47MLEMM&origin=45.698572,9.6719618&destination=47.4595,-0.7948&return=polyline').then(res =>
-        res.json()
-      )
-    },*/
-    computed: {
-       /*actors() {
-         return Object.values(this.productDescription.custom).filter(x => Array.isArray(x)).reduce((a,x) => a.concat(...x), []);
-       },
-       providers() {
-         return Object.values(this.productDescription.custom.transits || []).map(({ from, to }) => [from, to]).reduce(function(a, b) {return a.concat(b)}).filter((el, index, a) => index === a.indexOf(el)).map(x => getProviderDescription(x)) /*filter speeder than reduce)
-       },*/
-       providers() {
-         return Object.values(this.productDescription.custom.transits || []).reduce((a,x) => a.concat([ this.getProviderDescription(x.from.id),  this.getProviderDescription(x.to.id)]), []).filter((el, index, a) => index === a.indexOf(el)) /*filter speeder than reduce)*/
-       },
-       products() {
-         return Object.values(this.productDescription.custom.transits || []).filter(x => x.goods).map(x => x.goods).reduce(function(a, b) {return a.concat(b)}).filter(x => x.id).map(x => x.id).map(x => this.getProductDescription(x))
-       },
-       certificates() {
-         return Object.values(this.productDescription.custom.providers.concat(this.productDescription.custom.products) || []).filter(x => x.certificates).map(x => x.certificates).reduce(function(a, b) {return a.concat(b)})
-       },
-       orderedTransactions() {
-         let transactions = this.productDescription.custom.transits.concat(this.productDescription.custom.products)
-         let transactions2 = transactions.concat(this.productDescription.custom.trees)
-         let orderedTransactions = transactions2.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1) /*A regler, normalement date ou from.date et non date*/
-         return orderedTransactions
-       },
-       orderedTransactions2() {
-         let transactions = Object.values(this.productDescription.custom).reduce(((r, c) => Object.assign(r, c)), {})
-         return transactions
-       },
-        locale() {
-          let locale;
-          let lang = this.$i18n.localeProperties.iso.split('-', 1)[0];
-          if (lang == 'fr') {
-            locale = fr;
-          } else {
-            locale = enUS;
-          }
-          return locale;
-        }
-    },
     methods: {
-        getProviderDescription(id) {
-            let p = (this.providersItem || []).find(x => x.id == id);
-            return p || {};
-        }, 
-        getProductDescription(id) {
-            let p = (this.productsItem || []).find(x => x.id == id);
-            return p || {};
-        },
-        getCertificateDescription(id) {
-            let p = (this.certificatesItem || []).find(x => x.id == id);
-            return p || {};
-        },
         openModal(modalName) {
             this.currentModal = true
             this.provider = this.providersItem.find(y => y.slug.includes(modalName))
-        },
-        transactionIcon(type) {
-            if (type === 'transit') {
-              return this.transfert
-            } 
-           if (type === 'product') {
-              return this.lock
-            }
-           if (type === 'tree') {
-              return this.tree
-            }
         }
     }
   }

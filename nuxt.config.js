@@ -48,14 +48,14 @@ export default {
       {rel: "preconnect", href: "www.google-analytics.com", crossorigin: true},
     ]
   },
-  /*pageTransition: {
+  pageTransition: {
     transition(to, from) {
       if (!from) {
-        return 'slide-left'
+        return "slide-left"
       }
-      return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
+      return +to.params.id < +from.params.id ? "slide-right" : "slide-left"
     },
-  },*/
+  },
   render: {
     /*asyncScripts: true,
     bundleRenderer: {

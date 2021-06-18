@@ -1,9 +1,10 @@
-import Vue from 'vue'
-import groupBy from 'lodash.groupby'
 
 import link from './link'
-import picture from './picture'
 import product from './product'
+import modals from './modals'
+export const modules = {
+  link, product, modals
+};
 
 export const state = () => ({
   tree_count: 0,
@@ -36,8 +37,4 @@ export const actions = {
   async nuxtServerInit({dispatch,commit}) {
     await dispatch('getForestDetail');
   },
-};
-
-export const modules = {
-  link, picture, product
 };

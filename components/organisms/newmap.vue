@@ -1,5 +1,9 @@
 <template>
   <div class="h-100">
+                <div class="mx-auto pa-3 pt-0 position-absolute text-center" style="z-index:2; left:0; right:0" >
+                  <v-btn class="mt-n3 buttonCard" elevation="0" rounded v-if="trees===false" @click="treeFocus(), trees=true">Focus on tree</v-btn>
+                  <v-btn class="mt-n3 buttonCard" elevation="0" v-if="trees===true" @click="actorsFocus(), trees=false">Focus on actors</v-btn>
+                </div>
     <div class="pa-0 w-100 h-100">
       <l-map
         class="treemap h-100"
@@ -21,7 +25,7 @@
                 />
         <l-marker v-for="(marker, index) in markers" :key="index"
                   :lat-lng="[marker.from.location.latitude, marker.from.location.longitude]"
-                  @click="openModal(marker.from.id)"
+                  @click="openMainModal(marker.from.id)"
                   >
           <l-icon
             :icon-size="[45, 45]"
@@ -38,7 +42,7 @@
         </l-marker>
         <l-marker 
                   :lat-lng="[lastMarker.to.location.latitude, lastMarker.to.location.longitude]"
-                  @click="openModal(lastMarker.to.id)"
+                  @click="openMainModal(lastMarker.to.id)"
                   >
           <l-icon
             :icon-size="[45, 45]"
@@ -54,7 +58,7 @@
         </l-marker>
         <l-marker 
                   :lat-lng="[treesItem.location.latitude, treesItem.location.longitude]"
-                  @click="openModal(treesItem.id)"
+                  @click="openMainModal(treesItem.id)"
                   name="trees"
                   >
           <l-icon
@@ -79,7 +83,6 @@
         </l-marker>
       </l-map>
     </div>
-    <SideModalMap :is-modal="currentModal" v-on:closeModal="currentModal=false" :provider="provider" :current="currentModal"/>
   </div>
 </template>
 <script>
@@ -136,7 +139,9 @@
             return {
                 svgPath: mdiClose,
                 maxZoom: 0,
+                /*url: 'https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}',*/
                 url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
+                /*url: 'https://2.base.maps.ls.hereapi.com/maptile/2.1/maptile/newest/reduced.night/{z}/{x}/{y}/512/png8?apiKey=kTJNv0hR0_ZCrZilVZB6iVHa1FtOo2F9t7OIsytl4kc&ppi=320',*/
                 showParagraph: false,
                 showMap: true,
                 markers: [],
@@ -164,7 +169,7 @@
                 let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
                 let mergeLoc = loc.concat([lastLoc]) 
                 this.$nextTick(() => {
-                  this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [0, 50]})
+                  this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [50, 50]})
                 })
               }
             },
@@ -190,10 +195,6 @@
             },
             centerUpdate(center) {
                 this.currentCenter = center;
-            },
-            openModal(modalName) {
-                this.provider = this.providersItem.find(y => y.slug.includes(modalName))
-                this.currentModal = true
             },
             getProviderDescription(id) {
                 let p = (this.providersItem || []).find(x => x.id == id);

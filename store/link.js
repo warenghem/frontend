@@ -13,7 +13,7 @@ const state = () => ({
         {name: 'toolbar.protection', url: 'legal/', position: 'left'},
     ],
     innovationlinks: [
-        {name: 'Dionysos', url: 'dionysos/', class: 'svgicon1'},
+        {name: 'Dionysos', url: 'sustainabletech/dionysos/', class: 'svgicon1'},
         {name: 'Origin', url: 'sustainabletech/origin/', class: 'svgicon2'},
     ],
     sociallinks: [

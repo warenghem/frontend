@@ -1,8 +1,8 @@
 <template>
   <v-dialog
-    v-model="isModal"
+    v-model="$store.state.modals.mainModal"
     max-width="500px"
-    @click:outside="closeModal"
+    @click:outside="$store.state.modals.mainModal = false"
     content-class="border-left-2 custom-side-modal rounded-0"
     style='z-index:300002;'
     transition="slide-fade"
@@ -16,7 +16,7 @@
                 color="black"
                 style="font-size: 26px"
                 class="px-0 h-100 border-left-2 rounded-0"
-                @click="closeModal"
+                @click="$store.state.modals.mainModal = false"
           >
               <v-icon>{{ svgPath }}</v-icon>
           </v-btn>

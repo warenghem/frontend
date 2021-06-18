@@ -122,7 +122,6 @@
 <script>
   export default {
     name: 'blog',
-    transition: 'home',
     async asyncData(context) {
       const { $content, params, app } = context;
       const firstpost = await $content(`router/${app.i18n.locale}/blog`, params.slug).limit(1).only(['title', 'description', 'media', 'path', 'cta', 'updatedAt', 'author,']).sortBy('createdAt', 'asc').fetch();

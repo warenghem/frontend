@@ -1,0 +1,41 @@
+{  
+  "name": "Dionysos",
+  "id": "dionysos-100",
+  "type": "Material",
+  "product": "Grappe Leather",
+  "category": "leather",
+  "description": "Faites du végétal un élément noble et omniprésent dans votre vie. Tel est la mission que nous nous sommes fixés au lancement de ce projet. Le vin est apparu comme la figure absolue de l'élégance à la Francaise, ainsi notre cuir végétal de vin Dionysos est une matière constituée de la partie solide du raisin extrait lors de la vinification.",
+  "image": "products/dionysos.png",
+  "process": [ 
+    {
+      "title": "Foulage",
+      "text": "La peau du raisin est percée pour en libérer le jus à l'aide d'une machine appelée le fouloir",
+      "image": "products/process/dionysos_step1.jpg"
+    },
+    {
+      "title": "Fermentation alcoolique",
+      "text": "Des levures transforment le sucre en alcool. Le tanin dans la peau des grains lui donnent sa couleur rouge",
+      "image": "products/process/dionysos_step2.jpg"
+    },
+    {
+      "title": "Pressurage",
+      "text": "Le jus fermenté est extrait. Le marc qui reste dans la cuve est pressé donnant un jus plus dense et tannique",
+      "image": "products/process/dionysos_step3.jpg"
+    },
+    {
+      "title": "Recyclage du marc",
+      "text": "Le jus part en vinification, le marc est séché. La bio-huile obtenue à partir des pépins est polymérisée",
+      "image": "products/process/dionysos_step4.jpg"
+    },
+    {
+      "title": "Fabrication du cuir",
+      "text": "La pâte obtenue est passée dans une presse imprimant le grain de cuir souhaité",
+      "image": "products/process/dionysos_step4.jpg"
+    },
+    {
+      "title": "Fabrication Francaise de maroquinerie",
+      "text": "Le cuir de vin est travaillé par des ateliers francais dans la plus grande tradition maroquinière",
+      "image": "products/process/dionysos_bg.png"
+    }
+  ]
+} 

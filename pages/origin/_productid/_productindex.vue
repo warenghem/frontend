@@ -53,7 +53,7 @@
                 </client-only>
               </div>
               <v-row justify="center" class="treeMapHeader pb-5 pt-10 text-center position-absolute w-100 ma-0">
-                <div class="px-3 "><div class="text-h5 yellow--text">{{ (providers || []).length }}</div><div class="text-caption">locations</div></div>
+                <div class="px-3 "><div class="text-h5 yellow--text">{{ (providersDetails || []).length }}</div><div class="text-caption">locations</div></div>
                 <div class="px-3"><div class="text-h5 yellow--text">{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.length).map(x => x.length).reduce((a, b)=> a + b,0)/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</div><div class="text-caption">km parcourus</div></div>
                 <div class="px-3 "><div class="text-h5 yellow--text">{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0).toFixed(0) }}</div><div class="text-caption">kg de CO2</div></div>
               </v-row>
@@ -62,8 +62,11 @@
         </v-row>
       </v-container>
     </div>
+			<button @click="open('named-10000')">Open Named Modal</button>
+		<NamedModal :id="10000"></NamedModal>
+    <SideModalMap v-if="$store.state.modals.mainModal" :is-modal="currentModal" v-on:closeModal="currentModal=false" :provider="provider" :current="currentModal"/>
     <Appbottombar :productId="productId" :productIndex="productIndex"/>
-    <NuxtChild :orderedTransactions="orderedTransactions" v-bind="$data" />
+    <NuxtChild :certificatesDetails="certificatesDetails" :materialsDetails="materialsDetails" :suppliersDetails="suppliersDetails" :products="products" :certificates="certificates" v-bind="$data" />
   </div>
 </template>
 
@@ -134,27 +137,34 @@
        providers() {
          return Object.values(this.productDescription.custom.transits || []).map(({ from, to }) => [from, to]).reduce(function(a, b) {return a.concat(b)}).filter((el, index, a) => index === a.indexOf(el)).map(x => getProviderDescription(x)) /*filter speeder than reduce)
        },*/
-       providers() {
+       providersDetails() {
          return Object.values(this.productDescription.custom.transits || []).reduce((a,x) => a.concat([ this.getDescription(x.from.id, this.providersItem),  this.getDescription(x.to.id, this.providersItem)]), []).filter((el, index, a) => index === a.indexOf(el)) /*filter speeder than reduce)*/
        },
+       suppliersDetails() {
+         return this.providersDetails.filter(y => !y.type.includes('Brand')) || []
+       },
        products() {
-         return Object.values(this.productDescription.custom.transits || []).filter(x => x.goods).map(x => x.goods).reduce(function(a, b) {return a.concat(b)}).filter(x => x.id).map(x => x.id).map(x => this.getDescription(x, this.productsItem))
+         return Object.values(this.productDescription.custom.transits || []).map(x => x.goods).reduce(function(a, b) {return a.concat(b)}).filter(x => x.id).map(x => x.id)
+       },
+       materialsDetails() {
+         return this.products.map(x => this.getDescription(x, this.productsItem)).filter(y => !y.type.includes('Finished product')) || []
        },
        certificates() {
          return Object.values(this.productDescription.custom.providers.concat(this.productDescription.custom.products) || []).filter(x => x.certificates).map(x => x.certificates).reduce(function(a, b) {return a.concat(b)})
        },
-       orderedTransactions() {
-         let transactions = this.productDescription.custom.transits.concat(this.productDescription.custom.products)
-         let transactions2 = transactions.concat(this.productDescription.custom.trees)
-         let orderedTransactions = transactions2.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1) /*A regler, normalement date ou from.date et non date*/
-         return orderedTransactions
+       certificatesDetails() {
+         return this.certificates.map(x => this.getDescription(x.id, this.certificatesItem))
        },
     },
+                                                /*Est ce que je retourne que des id pour faire des getDescription ?*/
     methods: {
         openModal(modalName) {
             this.currentModal = true
             this.provider = this.providersItem.find(y => y.slug.includes(modalName))
-        }
+        },
+			open(name) {
+				this.$store.dispatch("modals/open", name)
+			}
     }
   }
 </script>

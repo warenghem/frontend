@@ -1,0 +1,17 @@
+{  
+  "name": "RIRI",
+  "id": "riri",
+  "type": "Metal & accessories",
+  "product": "ZIP",
+  "category": "leather",
+  "description": "RIRI",
+  "image": "providers/riri_4.png",
+  "location": {
+    "address": "Via al Gas, 3",
+    "city": "Mendrisio",
+    "code": "6850",
+    "country": "Switzerland",
+    "latitude": "45.870860",
+    "longitude": "8.978770"
+  }
+} 
