@@ -21,27 +21,25 @@
     data () {
       return {
         settings: {
-          "centerMode": true,
           "focusOnSelect": true,
-          "infinite": false,
-          "slidesToShow": 3,
+          "slidesToShow": 3.2,
           "slidesToScroll": 3,
+          "infinite": false,
           "arrows": false,
           "dots": false,
           "swipeToSlide": true,
-          "touchMove": true,
           "responsive": [
               {
                   "breakpoint": 768,
                   "settings": {
-                      "slidesToShow": 2,
+                      "slidesToShow": 2.2,
                       "slidesToScroll": 2,
                   }
               },
               {
                   "breakpoint": 480,
                   "settings": {
-                      "slidesToShow": 1,
+                      "slidesToShow": 1.1,
                       "slidesToScroll": 1,
                   }
               }

@@ -1,21 +1,17 @@
 <template>
     <div>
-        <VueSlickCarousel ref="c1" :asNavFor="$refs.c2" @afterChange="mapFocus" class="ma-1r" v-bind="settings">
-            <template #customPaging="page">
-                <div class="custom-dot bg-white w-100 h-100">
-                    
-                </div>
-            </template>
+        <VueSlickCarousel ref="slides" @afterChange="mapFocus" class="ma-1r" v-bind="settings">
             <v-card
                 class="rounded-xl pa-3"
                 @click="openModal(originTimeline.id)"
                 v-for="(originTimeline, index) in originTimelines" :key="index"
             >
+            <div>{{currentSlide }}</div>
             <template v-if="originTimeline.type === 'transit'">
                 <v-card-subtitle class="pa-0 pb-3">{{ formatDistance(new Date(originTimeline.date), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
                 <v-row class="pb-3 ma-0" align="center" v-for="(product, index) in originTimeline.goods" :key="index">
                     <div class="time pr-3">{{getDescription(product.id, productsItem).name}}</div>
-                    <v-card-subtitle class="time pa-0">{{product.quantity}} {{$t('origin.units.'+product.units)}}</v-card-subtitle>
+                    <v-card-subtitle class="time pa-0">{{product.quantity}} {{$tc('origin.units.'+product.units,product.quantity)}}</v-card-subtitle>
                 </v-row>
                 <v-row align="center" class="ma-0 py-3">
                     <v-col class="pa-0 text-capitalize-first" cols="12">{{$t('transfered')}} {{getDescription(originTimeline.to.id, providersItem).name}} {{$t('on')}} {{ format(new Date(originTimeline.from.date), 'PPPPp', {locale}) }}</v-col>
@@ -38,8 +34,8 @@
                 <div class="text-capitalize-first"><span class="teradeli-medium yellow--text text-h6">{{(originTimeline.length/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</span><span class="text-caption"> {{$tc('map.counts.km', originTimeline.length/1000)}}</span></div>
                 <div class="text-capitalize-first">{{$t('received')}} {{$t('on')}} {{  format(new Date(originTimeline.to.date), 'PPPPp', {locale}) }}</div>
                 <v-row
-                align="center"
-                class="ma-0"
+                    align="center"
+                    class="ma-0"
                 >
                 <v-icon small class="mr-3">
                     {{flagIcon}}
@@ -60,7 +56,7 @@
                 <v-col
                     cols="9"
                 > 
-                    <div class="time text-uppercase">{{getDescription(originTimeline.id, productsItem).type}}</div>
+                    <div class="time text-uppercase">{{$t('origin.products.'+getDescription(originTimeline.id, productsItem).type)}}</div>
                     <div class="time">{{getDescription(originTimeline.id, productsItem).name}}</div>
                     <v-row align="center" class="ma-0 pb-3">
                         <v-chip v-for="(certificate, index) in originTimeline.certificates" :key="index" class="mr-3" left>
@@ -131,19 +127,6 @@
             </template>
             </v-card>
         </VueSlickCarousel>
-        <!--<VueSlickCarousel
-            ref="c2"
-            :asNavFor="$refs.c1"
-             v-bind="settingsNav"
-        >
-    <v-avatar
-      color="indigo"
-      size="36"
-       v-for="(originTimeline, index) in originTimelines" :key="index"
-    >
-      <span class="white--text text-h5">36</span>
-    </v-avatar>
-        </VueSlickCarousel>-->
     </div>
 </template>
 <script>
@@ -167,61 +150,30 @@
             check : mdiShieldCheck,
             tree : mdiTree,
             settings: {
-              "centerMode": true,
-              "focusOnSelect": true,
-              "infinite": false,
-              "slidesToShow": 3,
-              "slidesToScroll": 1,
-              "arrows": false,
-              "dots": false,
-              "swipeToSlide": true,
-              "touchMove": true,
-              "centerPadding": '25px',
-              "responsive": [
-                  {
-                      "breakpoint": 768,
-                      "settings": {
-                          "slidesToShow": 2,
-                          "slidesToScroll": 1,
-                      }
-                  },
-                  {
-                      "breakpoint": 480,
-                      "settings": {
-                          "slidesToShow": 1,
-                          "slidesToScroll": 1,
-                      }
-                  }
-              ]
-            },
-            settingsNav: {
-              "centerMode": true,
-              "focusOnSelect": true,
-              "infinite": false,
-              "slidesToShow": 3,
-              "slidesToScroll": 1,
-              "arrows": false,
-              "dots": false,
-              "swipeToSlide": true,
-              "touchMove": true,
-              "centerPadding": '25px',
-              "responsive": [
-                  {
-                      "breakpoint": 768,
-                      "settings": {
-                          "slidesToShow": 3,
-                          "slidesToScroll": 1,
-                      }
-                  },
-                  {
-                      "breakpoint": 480,
-                      "settings": {
-                          "slidesToShow": 3,
-                          "slidesToScroll": 1,
-                      }
-                  }
-              ]
-            },
+                "focusOnSelect": true,
+                "slidesToShow": 3.2,
+                "slidesToScroll": 3,
+                "infinite": false,
+                "arrows": false,
+                "dots": false,
+                "swipeToSlide": true,
+                "responsive": [
+                    {
+                        "breakpoint": 768,
+                        "settings": {
+                            "slidesToShow": 2.2,
+                            "slidesToScroll": 1,
+                        }
+                    },
+                    {
+                        "breakpoint": 480,
+                        "settings": {
+                            "slidesToShow": 1.1,
+                            "slidesToScroll": 1,
+                        }
+                    }
+                ]
+            }
           }
     },
     components: {

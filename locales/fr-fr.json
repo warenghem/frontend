@@ -72,7 +72,11 @@
     "verified": "vérifié",
     "units": {
       "units": "unité | unités",
-      "mL": "mètre linéaire | mètres linéaires"
+      "lM": "mètre | mètres"
+    },
+    "products": {
+      "material": "matière",
+      "metalAccessories": "métal & accessoires"
     }
   }
 }

@@ -28,8 +28,9 @@
           </div>
         </v-card>-->
         <div v-for="(slider, index) in sliders" :key="index">
-          <div class="text-center pt-3">
-            <span class="text-h5 yellow--text pr-3">{{ slider.data.length }}</span><span>{{ slider.title }}</span>
+          <div class="d-flex align-center pt-3 pl-5">
+            <div class="text-h5 yellow--text pr-2">{{ slider.data.length }}</div>
+            <div class="text-capitalize-first mt-1">{{ slider.title }} {{ slider.text }}</div>
           </div>
           <SmallSlider :icon="$attrs.mdiChevronRight" :check="$attrs.check" :cards="slider.data"/>
         </div>
@@ -68,15 +69,18 @@
             polylines: [],
             sliders: [
                 {
-                    title: this.$tc('provider', this.suppliersDetails.length),
+                    title: this.$tc('provider.name', this.suppliersDetails.length),
+                    text: this.$tc('provider.text', this.suppliersDetails.length),
                     data: this.suppliersDetails
                 },
                 {
-                    title: this.$tc('material', this.materialsDetails.length),
+                    title: this.$tc('material.name', this.materialsDetails.length),
+                    text: this.$tc('material.text', this.suppliersDetails.length),
                     data: this.materialsDetails
                 },
                 {
-                    title: this.$tc('certificate', this.certificatesDetails.length),
+                    title: this.$tc('certificate.name', this.certificatesDetails.length),
+                    text: this.$tc('certificate.text', this.suppliersDetails.length),
                     data: this.certificatesDetails
                 }
             ],
@@ -177,14 +181,36 @@
 <i18n>
 {
 	"en": {
-		"provider":"provider | providers",
-    "material":"material | materials",
-    "certificate":"certificate | certificates"
+		"provider": {
+      "name":"supplier | suppliers",
+      "text": "participated in the realization of this product | participated in the production of this product"
+    },
+    "material": {
+      "name":"material | materials",
+      "text": "has been used | were used"
+    },
+    "certificate": {
+      "name":"certificate | certificates",
+      "text": "was obtained | were obtained"
+    }
 	},
 	"fr": {
-		"provider":"fabriquant | fabriquants",
-    "material":"matière | matières",
-    "certificate":"certificat | certificats"
+		"provider": {
+      "name":"fournisseur | fournisseurs",
+      "text": "a participé à la réalisation de ce produit | ont participés à la réalisation de ce produit"
+    },
+    "material": {
+      "name":"matière | matières",
+      "text": "a été utilisée | ont été utilisées"
+    },
+    "certificate": {
+      "name":"certificat | certificats",
+      "text": "a été obtenu et vérifié par notre équipe | ont été obtenus et vérifiés par notre équipe"
+    },
+    "tree": {
+      "name":"projet de reforestation | projets de reforestation",
+      "text": "a été lancé | ont été lancés"
+    }
 	}
 }
 </i18n>

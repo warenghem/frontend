@@ -1,5 +1,6 @@
 <template dark>
   <div>
+    {{trees}}
     <div v-if="this.productDescription.custom">
       <v-container fluid>
         <v-row class="position-fixed h-100">
@@ -34,7 +35,7 @@
         </v-row>
       </v-container>
     </div>
-			<button @click="open('named-10000')">Open Named Modal</button>
+		<!--<button @click="open('named-10000')">Open Named Modal</button>-->
 		<NamedModal :id="10000"></NamedModal>
     <SideModalMap v-if="$store.state.modals.mainModal" :is-modal="currentModal" v-on:closeModal="currentModal=false" :provider="provider" :current="currentModal"/>
     <Appbottombar :productId="productId" :productIndex="productIndex"/>
@@ -158,7 +159,10 @@
           let loc = this.productDescription.custom.transits.map(m => { return [m.from.location.latitude, m.from.location.longitude] })
           let lastLoc = [this.lastTransit.to.location.latitude, this.lastTransit.to.location.longitude]
           return loc.concat([lastLoc]) 
-      }
+      },
+       trees() {
+         return Object.values(this.productDescription.custom.trees || [])
+       }
     },
                                                 /*Est ce que je retourne que des id pour faire des getDescription ?*/
     methods: {
