@@ -5,7 +5,7 @@
   "product": "Bag & leather goods",
   "category": "leather",
   "description": "Les ateliers Saint Germain",
-  "image": "providers/saintgermain.jpg",
+  "image": "API/providers/saintgermain.jpg",
   "location": {
     "address": "Route de Saint-Augustin, 49170 Saint-Germain-des-Prés France",
     "city": "Saint-Germain-des-Près",

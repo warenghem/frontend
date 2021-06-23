@@ -1,9 +1,16 @@
 <template>
-<div>
-  <VueSlickCarousel class="ma-1r" v-bind="settings">
-    <SmallVerticalCard v-for="(card, index) in cards" :key="index" :image="card.image" :name="card.name" />
-  </VueSlickCarousel>
-</div>
+  <div>
+    <VueSlickCarousel class="ma-1r" v-bind="settings">
+      <SmallVerticalCard v-for="(card, index) in cards" :icon="icon" :key="index" :image="card.image" :name="card.name">
+        <div class="d-flex align-center">
+          <v-icon small right class="mr-1">
+            {{check}}
+          </v-icon>
+          <v-card-subtitle class="font-italic text-hide pa-0">{{$t('origin.verified')}}</v-card-subtitle>
+        </div>
+      </SmallVerticalCard>
+    </VueSlickCarousel>
+  </div>
 </template>
 <script>
   import VueSlickCarousel from 'vue-slick-carousel'
@@ -39,20 +46,25 @@
                   }
               }
           ]
-        },
+        }
       }
     },
     props: {
         cards: {
             type: Array,
-            default: () => {
-            },
+            default: () => []
+        },
+        icon: {
+            type: String,
+            default: ''
+        },
+        check: {
+            type: String,
+            default: ''
         }
     },
     components: {
         VueSlickCarousel
-    },
+    }
   }
 </script>
-<style scoped lang="scss">
-</style>

@@ -1,9 +1,5 @@
 <template>
   <div class="h-100">
-                <div class="mx-auto pa-3 pt-0 position-absolute text-center" style="z-index:2; left:0; right:0" >
-                  <v-btn class="mt-n3 buttonCard" elevation="0" rounded v-if="trees===false" @click="treeFocus(), trees=true">Focus on tree</v-btn>
-                  <v-btn class="mt-n3 buttonCard" elevation="0" v-if="trees===true" @click="actorsFocus(), trees=false">Focus on actors</v-btn>
-                </div>
     <div class="pa-0 w-100 h-100">
       <l-map
         class="treemap h-100"
@@ -34,7 +30,7 @@
           >
             <div class="card position-absolute">
               <v-avatar size="45" class="blob rounded-max">
-                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(marker.from.id).image" alt="" width="35" height="35">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/'+ getDescription(marker.from.id, providersItem).image" alt="" width="35" height="35">
               </v-avatar>
 
             </div>
@@ -51,7 +47,7 @@
           >
             <div class="card position-absolute">
               <v-avatar size="45" class="blob rounded-max">
-                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ getProviderDescription(lastMarker.to.id).image" alt="" width="35" height="35">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/'+ getDescription(lastMarker.to.id, providersItem).image" alt="" width="35" height="35">
               </v-avatar>
             </div>
           </l-icon>
@@ -75,7 +71,7 @@
                 offset-y="15"
               >
                 <v-avatar size="45" class="blob rounded-max">
-                  <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/API/'+ treesItem.image" alt="" width="35" height="35">
+                  <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/'+ treesItem.image" alt="" width="35" height="35">
                 </v-avatar>
               </v-badge>
             </div>
@@ -86,6 +82,7 @@
   </div>
 </template>
 <script>
+    import getDescription from "~/mixins/getDescription";
     import { LMap, LTileLayer, LMarker, LIcon, LGeoJson } from 'vue2-leaflet';
     import 'leaflet/dist/leaflet.css';
     import { mdiClose } from '@mdi/js';
@@ -111,13 +108,15 @@
         props: {
             markers: {
                 type: Array,
-                default: () => {
-                }
+                default: () => []
+            },
+            lastMarker: {
+                type: Array,
+                default: () => []
             },
             providersItem: {
                 type: Array,
-                default: () => {
-                }
+                default: () => []
             },
             transits: {
                 type: Object,
@@ -135,6 +134,7 @@
                 }
             }
         },
+        mixins: [getDescription],
         data() {
             return {
                 svgPath: mdiClose,
@@ -150,6 +150,10 @@
                 trees: false,
             };
         },
+        mounted() {
+          // Instead of calling the method we emit an event
+          this.$emit('click', this.value);
+        },
         computed:  {
           styleFunction() {
               return {
@@ -157,10 +161,7 @@
                 color: this.$vuetify.theme.themes.light.lightbugattiblue,
                 opacity: 1,
               }
-            },
-          lastMarker() {
-           return this.markers[this.markers.length - 1]
-          }
+            }
         },
         methods: {
             onReady() {
@@ -172,16 +173,6 @@
                   this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [50, 50]})
                 })
               }
-            },
-            treeFocus() {
-                let loc = [[this.treesItem.location.latitude, this.treesItem.location.longitude]]
-                this.$refs.map.mapObject.flyToBounds(loc, {padding: [40, 40], maxZoom: 4})
-            },
-            actorsFocus() {
-                let loc = this.markers.map(m => { return [m.from.location.latitude, m.from.location.longitude] })
-                let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
-                let mergeLoc = loc.concat([lastLoc]) 
-                this.$refs.map.mapObject.flyToBounds(mergeLoc, {padding: [0, 50]})
             },
             DarkMode() {
               if ($vuetify.theme.dark) {
@@ -196,10 +187,6 @@
             centerUpdate(center) {
                 this.currentCenter = center;
             },
-            getProviderDescription(id) {
-                let p = (this.providersItem || []).find(x => x.id == id);
-                return p || {};
-            }, 
             decode(str){
               let lines = H.decode(str);
               return {
@@ -209,8 +196,11 @@
                       "coordinates": lines.polyline
                   }
               };
+            },
+            focus(x, y) {
+                this.$refs.map.mapObject.flyToBounds(x, y)
             }
-        },
+        }
     }
 </script>
 

@@ -68,37 +68,37 @@ tags:
 - dionysos
 - bag
 image:
-- src: 48H_face.png
+- src: Products/48H_face.png
   color: 2
   material: 1
   name: 48H_face
   alt: vegan bag man black grape made in france
   availability: in stock
-- src: 48H_cote.png
+- src: Products/48H_cote.png
   color: 1
   material: 2
   name: 48H_cote.png
   alt: vegan bag man black grape made in france
   availability: false
-- src: bag-blackblue-deepest.png
+- src: Products/bag-blackblue-deepest.png
   color: 2
   material: 1
   name: bag-blackblue-deepest
   alt: vegan bag man black grape made in france
   availability: true
-- src: bag-blackblue-above.png
+- src: Products/bag-blackblue-above.png
   color: 2
   material: 1
   name: bag-blackblue-above
   alt: vegan bag man black grape made in france
   availability: true
-- src: bag-blackblue-below.png
+- src: Products/bag-blackblue-below.png
   color: 1
   material: 2
   name: bag-blackblue-side
   alt: vegan bag man black grape made in france
   availability: false
-- src: bag-blackblue-back.png
+- src: Products/bag-blackblue-back.png
   color: 1
   material: 2
   name: bag-blackblue-back

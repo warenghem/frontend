@@ -69,34 +69,34 @@ tags:
 - belt
 - pewter
 image:
-- src: belt-blackblue-above.png
+- src: Products/belt-blackblue-above.png
   color: 1
   name: belt-blackblue-above
   alt: ceinture vegan homme raisin made in france
   availability: false
-- src: belt-blackblue-1.png
+- src: Products/belt-blackblue-1.png
   color: 2
   material: 1
   name: belt-blackblue-1
   alt: ceinture vegan homme raisin made in france
   availability: true
-- src: belt-blackblue-above2.png
+- src: Products/belt-blackblue-above2.png
   color: 1
   material: 2
   name: belt-blackblue-above2
   alt: ceinture vegan homme raisin made in france
   availability: false
-- src: belt-blackblue-below.png
+- src: Products/belt-blackblue-below.png
   color: 
   name: belt-blackblue-below
   alt: ceinture vegan homme noir raisin made in france
   availability: false
-- src: belt-blackblue-2.png
+- src: Products/belt-blackblue-2.png
   color: 2
   name: belt-blackblue-2
   alt: ceinture vegan homme noir raisin made in france
   availability: false
-- src: belt-blackblue-side.png
+- src: Products/belt-blackblue-side.png
   color: 2
   name: belt-blackblue-side
   alt: ceinture vegan noir homme raisin made in france

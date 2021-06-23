@@ -26,9 +26,8 @@
     },
     computed: {
        orderedTransactions() {
-         let transactions = this.$attrs.productDescription.custom.transits.concat(this.$attrs.productDescription.custom.products)
-         let transactions2 = transactions.concat(this.$attrs.productDescription.custom.trees)
-         let orderedTransactions = transactions2.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1) /*A regler, normalement date ou from.date et non date*/
+         let transactions = this.$attrs.productDescription.custom.transits.concat(this.$attrs.productDescription.custom.products, this.$attrs.productDescription.custom.trees)
+         let orderedTransactions = transactions.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1) /*A regler, normalement date ou from.date et non date*/
          return orderedTransactions
        },
     },

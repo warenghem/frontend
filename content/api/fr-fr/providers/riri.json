@@ -5,7 +5,7 @@
   "product": "ZIP",
   "category": "leather",
   "description": "RIRI",
-  "image": "providers/riri_4.png",
+  "image": "API/providers/riri_4.png",
   "location": {
     "address": "Via al Gas, 3",
     "city": "Mendrisio",

@@ -60,5 +60,15 @@
     "home": {
       "title": "La home"
     }
+  },
+  "map": {
+    "counts": {
+      "location": "location | locations",
+      "km": "km parcouru | km parcourus",
+      "co2": "kg de CO2"
+    }
+  },
+  "origin": {
+    "verified": "vérifié"
   }
 }

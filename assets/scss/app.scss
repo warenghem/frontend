@@ -18,6 +18,9 @@
 .text-break {
   overflow-wrap: break-word;
 }
+.text-capitalize-first::first-letter {
+  text-transform: capitalize;
+}
 .text-hide {
     white-space: nowrap;
     overflow: hidden!important;

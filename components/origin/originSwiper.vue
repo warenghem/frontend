@@ -2,9 +2,9 @@
     <div>
         <VueSlickCarousel ref="c1" :asNavFor="$refs.c2" @afterChange="mapFocus" class="ma-1r" v-bind="settings">
             <template #customPaging="page">
-            <div class="custom-dot bg-white w-100 h-100">
-                
-            </div>
+                <div class="custom-dot bg-white w-100 h-100">
+                    
+                </div>
             </template>
             <v-card
                 class="rounded-xl pa-3"
@@ -18,21 +18,20 @@
                     <v-card-subtitle class="time pa-0">{{product.quantity}} {{product.units}}</v-card-subtitle>
                 </v-row>
                 <v-row align="center" class="ma-0 py-3">
-                    <v-col class="pa-0" cols="12">TRANSFERRED TO {{getDescription(originTimeline.to.id, providersItem).name}}</v-col>
+                    <v-col class="pa-0 text-capitalize-first" cols="12">{{$t('transfered')}} {{getDescription(originTimeline.to.id, providersItem).name}} {{$t('on')}} {{ format(new Date(originTimeline.from.date), 'PPPPp', {locale}) }} via {{originTimeline.carrier}}</v-col>
                     <v-avatar left>
-                    <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getDescription(originTimeline.from.id, providersItem).image">
+                    <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.from.id, providersItem).image">
                     </v-avatar>
                     <v-icon class="mx-3">{{arrowRightIcon}}</v-icon>
                     <v-avatar left>
-                    <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getDescription(originTimeline.to.id, providersItem).image">
+                    <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.to.id, providersItem).image">
                     </v-avatar>
                     <!--<div class="time"><span>{{productDescription.custom.providersoriginTimeline.brand}}</span> <span>{{originTimeline.product}}</span></div>-->
                 </v-row>
-                <div >Envoyé {{ format(new Date(originTimeline.from.date), 'PPPPp', {locale}) }} via {{originTimeline.carrier}}</div>
-                <div >Tracking number : <a class="text-white" :href="'https://www.ship24.com/tracking?p='+originTimeline.tracking" target="_blank">{{originTimeline.tracking}}</a></div>
-                <div >CO2 : {{originTimeline.co2}}</div>
-                <div >Km : {{(originTimeline.length/1000).toFixed(1)}}</div>
-                <div >Recu {{  format(new Date(originTimeline.to.date), 'PPPPp', {locale}) }} par {{getDescription(originTimeline.to.id, providersItem).name}}</div>
+                <div class="text-capitalize-first">{{$t('tracking')}} : <a class="text-white" :href="'https://www.ship24.com/tracking?p='+originTimeline.tracking" target="_blank">{{originTimeline.tracking}}</a></div>
+                <div class="text-capitalize-first">CO2 : {{originTimeline.co2}}</div>
+                <div class="text-capitalize-first">Km : {{(originTimeline.length/1000).toFixed(1)}}</div>
+                <div class="text-capitalize-first">{{$t('received')}} {{$t('on')}} {{  format(new Date(originTimeline.to.date), 'PPPPp', {locale}) }} par {{getDescription(originTimeline.to.id, providersItem).name}}</div>
                 <v-row
                 align="center"
                 class="ma-0"
@@ -50,7 +49,7 @@
                     cols="3"
                 >
                     <div class="rounded-lg wa-smart-picture square-ratio skeletton wa-product-image">
-                    <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getDescription(originTimeline.id, productsItem).image">
+                    <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.id, productsItem).image">
                     </div>
                 </v-col>
                 <v-col
@@ -70,19 +69,19 @@
                 </v-row>
                 <v-row align="center" class="ma-0 pb-3">
                     <v-avatar class="mr-3" left>
-                    <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getDescription(originTimeline.registered, providersItem).image">
+                    <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.registered, providersItem).image">
                     </v-avatar>
                     <div>
-                    <div>Made by</div>
-                    <div class="pt-0">{{getDescription(originTimeline.registered, providersItem).name}}</div>
+                        <div class="text-uppercase">{{$t('madeby')}}</div>
+                        <div class="pt-0">{{getDescription(originTimeline.registered, providersItem).name}}</div>
                     </div>
                     <!--<div class="time"><span>{{productDescription.custom.providersoriginTimeline.brand}}</span> <span>{{originTimeline.product}}</span></div>-->
                 </v-row>
                 <div v-if="originTimeline.rawMaterials.length > 0">
-                <div>Made with</div>
+                <div class="text-uppercase">{{$t('madewith')}}</div>
                 <v-row v-for="(rawMaterial, index) in originTimeline.rawMaterials" :key="index" align="center" class="ma-0 pb-3">
                     <v-avatar class="mr-3" left>
-                        <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ getDescription(rawMaterial.id, productsItem).image">
+                        <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(rawMaterial.id, productsItem).image">
                     </v-avatar>
                     <div class="pt-0">{{getDescription(rawMaterial.id, productsItem).name}}</div>
                 </v-row>
@@ -104,7 +103,7 @@
                     cols="3"
                 >
                     <div class="rounded-lg wa-smart-picture square-ratio skeletton wa-product-image">
-                    <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ treesItem.image">
+                    <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ treesItem.image">
                     </div>
                 </v-col>
                 <v-col
@@ -112,7 +111,7 @@
                 > 
                     <div class="time text-uppercase">{{treesItem.name}}</div>
                     <div class="time">{{treesItem.family}}</div>
-                    <div class="time">Quantity : {{originTimeline.quantity}}</div>
+                    <div class="time text-capitalize-first">{{$t('quantity')}} : {{originTimeline.quantity}}</div>
                 </v-col>
                 </v-row>
                 <v-row
@@ -127,7 +126,7 @@
             </template>
             </v-card>
         </VueSlickCarousel>
-        <VueSlickCarousel
+        <!--<VueSlickCarousel
             ref="c2"
             :asNavFor="$refs.c1"
              v-bind="settingsNav"
@@ -139,7 +138,7 @@
     >
       <span class="white--text text-h5">36</span>
     </v-avatar>
-        </VueSlickCarousel>
+        </VueSlickCarousel>-->
     </div>
 </template>
 <script>
@@ -169,7 +168,7 @@
               "slidesToShow": 3,
               "slidesToScroll": 1,
               "arrows": false,
-              "dots": true,
+              "dots": false,
               "swipeToSlide": true,
               "touchMove": true,
               "centerPadding": '25px',
@@ -273,14 +272,25 @@
     }
   }
 </script>
-<style scoped lang="scss">
-   ::v-deep ul.slick-dots li.slick-active {
-        height: 40px;
-        transition: all .1s ease;
-    }
-   ::v-deep ul.slick-dots li {
-        transition: all .1s ease;
-        width: 1px;
-        margin: 0 3px;
-    }
-</style>
+<i18n>
+{
+	"en": {
+	    "transfered":"transfered to",
+        "on":"on",
+        "tracking":"tracking number",
+        "received":"received",
+        "madeby":"made by",
+        "madewith":"made with",
+        "quantity":"quantity"
+	},
+	"fr": {
+		"transfered":"transféré à",
+        "on":"le",
+        "tracking":"numéro de suivi",
+        "received":"reçu",
+        "madeby":"fabriqué par",
+        "madewith":"fabriqué avec",
+        "quantity":"quantité"
+	}
+}
+</i18n>

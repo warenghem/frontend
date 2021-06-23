@@ -10,7 +10,7 @@
           </div>
           <div class="text-center py-3 pb-8">
             <v-avatar size="90" class="mx-3" left  v-for="(provider, index) in providers.filter(y => !y.type.includes('Brand'))" :key="index">
-              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ provider.image">
+              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ provider.image">
             </v-avatar>
           </div>
         </v-card>
@@ -23,35 +23,15 @@
           </div>
           <div class="text-center py-3 pb-8">
             <v-avatar size="90" class="mx-3" left  v-for="(product, index) in products.filter(y => y.type.includes('Material'))" :key="index">
-              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/API/'+ product.image">
+              <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ product.image">
             </v-avatar>
           </div>
         </v-card>-->
         <div v-for="(slider, index) in sliders" :key="index">
-          <div class="text-center py-3 pb-5">
-            {{ slider.data.length }} {{ slider.title }} were involved in creating this products
+          <div class="text-center pt-3">
+            <span class="text-h5 yellow--text pr-3">{{ slider.data.length }}</span><span>{{ slider.title }}</span>
           </div>
-          <SmallSlider :cards="slider.data"/>
-        </div>
-        <div >
-          <div>Plante : {{ treesItem.name }}</div>
-          <v-avatar
-            class="ma-3 img-fluid position-relative"
-            size="100"
-            tile
-          >
-            <img
-                data-sizes="auto"
-                :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-640/API/'+ treesItem.image +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-380,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-512,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-683,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-800,fo-bottom,c-maintain_ratio/API/'+ treesItem.image +' 800w'"
-                class="lazyload cover bg-white catalogue-item-background rounded-xl"
-            />
-          </v-avatar>
-          <div>CO2 par plante : {{ treesItem.lifeTimeCO2 }} kg</div>
-          <div>Number planted : {{ productDescription.custom.trees.quantity }}</div>
-          <div>Total CO2 : {{ productDescription.custom.trees.quantity * treesItem.lifeTimeCO2 }} kg</div>
-          <div>Energy of this transaction 1 kWh = 0,45 kg CO2 (average in Europe)</div>
-          <div>kWh of this transaction = 50 kWh (average for Ethereum)</div>
-          <div>CO2 : {{ 50 * 0.45 }} kg</div>
+          <SmallSlider :icon="$attrs.mdiChevronRight" :check="$attrs.check" :cards="slider.data"/>
         </div>
     </div>
     <!--<div class="teradeli-medium text-center py-3 pt-8">
@@ -67,7 +47,6 @@
 </template>
 
 <script>
-
   import getDescription from "~/mixins/getDescription";
   import locale from "~/mixins/localesI18n";
   import { format, formatDistance } from 'date-fns'
@@ -89,15 +68,15 @@
             polylines: [],
             sliders: [
                 {
-                    title: 'Providers',
+                    title: this.$tc('provider', this.suppliersDetails.length),
                     data: this.suppliersDetails
                 },
                 {
-                    title: 'Materials',
+                    title: this.$tc('material', this.materialsDetails.length),
                     data: this.materialsDetails
                 },
                 {
-                    title: 'Certificates',
+                    title: this.$tc('certificate', this.certificatesDetails.length),
                     data: this.certificatesDetails
                 }
             ],
@@ -106,23 +85,19 @@
     props: {
         suppliersDetails: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         },
         materialsDetails: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         },
         products: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         },
         certificatesDetails: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         }
     },
     mixins: [getDescription, locale],
@@ -198,3 +173,18 @@
   }
 }
 </style>
+
+<i18n>
+{
+	"en": {
+		"provider":"provider | providers",
+    "material":"material | materials",
+    "certificate":"certificate | certificates"
+	},
+	"fr": {
+		"provider":"fabriquant | fabriquants",
+    "material":"matière | matières",
+    "certificate":"certificat | certificats"
+	}
+}
+</i18n>

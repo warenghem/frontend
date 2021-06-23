@@ -4,60 +4,32 @@
       <v-container fluid>
         <v-row class="position-fixed h-100">
           <v-col style="overflow:auto" class="pa-0 h-100" cols="12" md="12">
-            <v-card
-              rounded="xl"
-              class="ma-1r"
-              @click="openModal(productItem.slug)"
-            >
-              <div class="d-flex flex-no-wrap justify-space-between align-center">
-                <v-avatar
-                  class="ma-3 img-fluid position-relative"
-                  size="100"
-                  tile
-                >
-                  <img
-                      data-sizes="auto"
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-640/Products/'+ productItem.image[0].src+' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-380,fo-bottom,c-maintain_ratio/Products/'+ productItem.image[0].src+' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-512,fo-bottom,c-maintain_ratio/Products/'+ productItem.image[0].src+' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-683,fo-bottom,c-maintain_ratio/Products/'+ productItem.image[0].src+' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-800,fo-bottom,c-maintain_ratio/Products/'+ productItem.image[0].src+' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-960,fo-bottom,c-maintain_ratio/Products/'+ productItem.image[0].src+' 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,ar-1-1,w-1500,fo-bottom,c-maintain_ratio/Products/'+ productItem.image[0].src+' 1500w'"
-                      class="lazyload cover bg-white catalogue-item-background rounded-xl"
-                  />
-                </v-avatar>
-                <div class="w-100">
-                  <v-card-title
-                    class="text-h5 pt-0"
-                    v-text="productItem.name"
-                  ></v-card-title>
-                  <v-card-subtitle class="text-hide py-0">Limited : {{ productIndex }} / {{ (this.productDescription.custom.transits.find(y => y.to.id.includes('warenghem')).goods).find(y => y.id.includes(productItem.slug)).quantity }}</v-card-subtitle>
-                  <v-card-subtitle class="text-hide py-0">Fabriqué {{ formatDistance(new Date(this.productDescription.custom.transits.find(y => y.to.id.includes('warenghem')).to.date), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
-                  <!--<div class=""><span>Pas propre, voir une fonction qui cherche goods.name="slug" PRODUCED : </span><span>{{ this.productDescription.custom.transits.find(y => y.to.id.includes('warenghem')).departure }}</span></div>-->
-                  <!--<div class="sub-title">{{ productItem.brand }}</div>
-                  <div class="page-details pl-0" v-html="productItem.description"></div>
-                  <div class="text-hide"><span>BATCH ID : </span><span>{{ productId }}</span></div>-->
+            <SmallHorizontalCard :icon="mdiChevronRight" :title="productItem.name" :image="productItem.image[0].src" @clicked="openModal(productItem.slug)" >
+              <template v-slot:content>
+                <v-card-subtitle class="text-capitalize-first text-hide py-0">{{ $t('limited') }} : {{ productIndex }} / {{ (productDescription.custom.transits.find(y => y.to.id.includes('warenghem')).goods).find(y => y.id.includes(productItem.slug)).quantity }}</v-card-subtitle>
+                <v-card-subtitle class="text-capitalize-first text-hide py-0">{{ $t('manufactured') }} {{ formatDistance(new Date(productDescription.custom.transits.find(y => y.to.id.includes('warenghem')).to.date), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
+                <!--<div class=""><span>Pas propre, voir une fonction qui cherche goods.name="slug" PRODUCED : </span><span>{{ this.productDescription.custom.transits.find(y => y.to.id.includes('warenghem')).departure }}</span></div>-->
+                <!--<div class="sub-title">{{ productItem.brand }}</div>
+                <div class="page-details pl-0" v-html="productItem.description"></div>
+                <div class="text-hide"><span>BATCH ID : </span><span>{{ productId }}</span></div>-->
+              </template>
+            </SmallHorizontalCard>
+            <div class="rounded-xl position-relative text-center">
+              <v-card height="50vh" rounded="xl" style="overflow:hidden" class="position-relative mb-0 ma-1r">
+                <div class="position-relative h-100">
+                  <client-only>
+                    <LazyNewmap ref="originMap" :treesItem="treesItem" :treeDescription="productDescription.custom.trees" :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :lastMarker="lastTransit" :markers="productDescription.custom.transits" />
+                    <v-skeleton-loader
+                      v-bind="attrs"
+                      type="card-avatar, article, actions"
+                    ></v-skeleton-loader>
+                  </client-only>
                 </div>
-                <v-btn class="mr-n3 buttonCard" fab x-small>
-                  <v-icon>{{mdiChevronRight}}</v-icon>
-                </v-btn>
-              </div>
-            </v-card>
-            <v-card height="50vh" rounded="xl" class="overflow-hidden position-relative mb-0 ma-1r">
-              <div class="position-relative h-100">
-                <div class="mx-auto pa-3 pt-0 position-absolute text-center" style="z-index:2; left:0; right:0" >
-                  <v-btn class="mt-n3 buttonCard" elevation="0" rounded v-if="trees===false" @click="treeFocus(), trees=true">Focus on tree</v-btn>
-                  <v-btn class="mt-n3 buttonCard" elevation="0" v-if="trees===true" @click="actorsFocus(), trees=false">Focus on actors</v-btn>
-                </div>
-                <client-only>
-                  <LazyNewmap :treesItem="treesItem" :treeDescription="productDescription.custom.trees" :transits="transitsItem" v-if="transitsItem" :providersItem="providersItem" :markers="productDescription.custom.transits" />
-                  <v-skeleton-loader
-                    v-bind="attrs"
-                    type="card-avatar, article, actions"
-                  ></v-skeleton-loader>
-                </client-only>
-              </div>
-              <v-row justify="center" class="treeMapHeader pb-5 pt-10 text-center position-absolute w-100 ma-0">
-                <div class="px-3 "><div class="text-h5 yellow--text">{{ (providersDetails || []).length }}</div><div class="text-caption">locations</div></div>
-                <div class="px-3"><div class="text-h5 yellow--text">{{ (Object.values(this.productDescription.custom.transits || []).filter(x => x.length).map(x => x.length).reduce((a, b)=> a + b,0)/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</div><div class="text-caption">km parcourus</div></div>
-                <div class="px-3 "><div class="text-h5 yellow--text">{{ Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0).toFixed(0) }}</div><div class="text-caption">kg de CO2</div></div>
-              </v-row>
-            </v-card>
+                <MapCount :counts="counts" />
+              </v-card>
+              <v-btn class="mx-auto text-center buttonCard text-uppercase" style="z-index:2; margin-top: -35px;" elevation="0" rounded v-if="trees===false" @click="$refs.originMap.focus(treesFocus, {padding: [40, 40], maxZoom: 4}), trees=true">{{$t('focusTrees')}}</v-btn>
+              <v-btn class="mx-auto pt-0 text-center buttonCard text-uppercase" style="z-index:2; margin-top: -35px;" elevation="0" rounded v-if="trees===true" @click="$refs.originMap.focus(actorsFocus, {padding: [0, 50]}), trees=false">{{$t('focusActors')}}</v-btn>
+            </div>
           </v-col>
         </v-row>
       </v-container>
@@ -71,7 +43,6 @@
 </template>
 
 <script>
-
   import getDescription from "~/mixins/getDescription";
   import locale from "~/mixins/localesI18n";
   import { mdiTree, mdiChevronRight, mdiShieldCheck, mdiShieldLock, mdiSwapHorizontal, mdiArrowRight, mdiFlagVariant } from '@mdi/js';
@@ -99,6 +70,7 @@
             lock : mdiShieldLock,
             check : mdiShieldCheck,
             tree : mdiTree,
+            trees: false
         };
     },
     mixins: [getDescription, locale],
@@ -155,13 +127,44 @@
        certificatesDetails() {
          return this.certificates.map(x => this.getDescription(x.id, this.certificatesItem))
        },
+       counts() {
+         let location = (this.providersDetails || []).length
+         let km = (Object.values(this.productDescription.custom.transits || []).filter(x => x.length).map(x => x.length).reduce((a, b)=> a + b,0)/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+         let co2 = Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0).toFixed(0)
+         return [
+              {
+                number: location,
+                text: this.$tc('map.counts.location', location)
+              },
+              {
+                number: km,
+                text: this.$tc('map.counts.km', km)
+              },
+              {
+                number: co2,
+                text: this.$tc('map.counts.co2', co2)
+              }
+            ]
+       },
+      lastTransit() {
+        let last  = this.productDescription.custom.transits.filter(x => x.date).sort((a, b) => a.date > b.date ? 1:-1)
+        return last[last.length - 1]
+      },
+      treesFocus() {
+          return [[this.treesItem.location.latitude, this.treesItem.location.longitude]]
+      },
+      actorsFocus() {
+          let loc = this.productDescription.custom.transits.map(m => { return [m.from.location.latitude, m.from.location.longitude] })
+          let lastLoc = [this.lastTransit.to.location.latitude, this.lastTransit.to.location.longitude]
+          return loc.concat([lastLoc]) 
+      }
     },
                                                 /*Est ce que je retourne que des id pour faire des getDescription ?*/
     methods: {
-        openModal(modalName) {
-            this.currentModal = true
-            this.provider = this.providersItem.find(y => y.slug.includes(modalName))
-        },
+      openModal(modalName) {
+          this.currentModal = true
+          this.provider = this.providersItem.find(y => y.slug.includes(modalName))
+      },
 			open(name) {
 				this.$store.dispatch("modals/open", name)
 			}
@@ -206,3 +209,20 @@
   }
 }
 </style>
+
+<i18n>
+{
+	"en": {
+		"limited":"number",
+    "manufactured":"manufactured",
+    "focusTrees":"focus on trees",
+    "focusActors":"focus on actors"
+	},
+	"fr": {
+		"limited":"numéro",
+    "manufactured":"fabriqué",
+    "focusTrees":"voir les arbres",
+    "focusActors":"voir les acteurs"
+	}
+}
+</i18n>

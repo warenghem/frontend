@@ -8,7 +8,7 @@
   "foliageType": { "id": "4", "name": "Evergreen" },
   "height": "2,10",
   "id": 727,
-  "image": "trees/mangrove.png",
+  "image": "API/trees/mangrove.png",
   "lifeTimeCO2": 20,
   "scientificName": "Rhizophora mucronata",
   "originType": { "id": "1", "name": "Native" },

@@ -59,33 +59,33 @@ tags:
 - leathergoods
 - wallet
 image:
-- src: pf-blackblue-side.png
+- src: Products/pf-blackblue-side.png
   color: 1
   name: pf-blackblue-side
   alt: vegan wallet men grape black made in france
   availability: false
-- src: pf-blackblue-side2.png
+- src: Products/pf-blackblue-side2.png
   color: 
   name: pf-blackblue-side2
   alt: vegan wallet men grape black made in france
   availability: false
-- src: pf-blackblue-above2.png
+- src: Products/pf-blackblue-above2.png
   name: pf-blackblue-above2.png
   alt: vegan wallet men grape black made in france
   color: 
   availability: false
-- src: pf-blackblue-back.png
+- src: Products/pf-blackblue-back.png
   name: pf-blackblue-back
   alt: vegan wallet men grape black made in france
   color: 
   availability: false
-- src: pf-blackblue-below.png
+- src: Products/pf-blackblue-below.png
   color: 2
   material: 1
   name: pf-blackblue-below
   alt: vegan wallet men grape black made in france
   availability: true
-- src: pf-blackblue-above.png
+- src: Products/pf-blackblue-above.png
   color: 1
   material: 2
   name: pf-blackblue-above
