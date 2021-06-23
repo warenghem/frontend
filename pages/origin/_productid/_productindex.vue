@@ -27,8 +27,8 @@
                 </div>
                 <MapCount :counts="counts" />
               </v-card>
-              <v-btn class="mx-auto text-center buttonCard text-uppercase" style="z-index:2; margin-top: -35px;" elevation="0" rounded v-if="trees===false" @click="$refs.originMap.focus(treesFocus, {padding: [40, 40], maxZoom: 4}), trees=true">{{$t('focusTrees')}}</v-btn>
-              <v-btn class="mx-auto pt-0 text-center buttonCard text-uppercase" style="z-index:2; margin-top: -35px;" elevation="0" rounded v-if="trees===true" @click="$refs.originMap.focus(actorsFocus, {padding: [0, 50]}), trees=false">{{$t('focusActors')}}</v-btn>
+              <v-btn class="mx-auto text-center buttonCard text-uppercase" style="z-index:2; margin-top: -35px;" elevation="0" rounded v-if="trees===false" @click="$refs.originMap.focus(treesFocus, {paddingBottomRight: [0, 90],paddingTopLeft: [0, 10], maxZoom: 4}), trees=true">{{$t('focusTrees')}}</v-btn>
+              <v-btn class="mx-auto pt-0 text-center buttonCard text-uppercase" style="z-index:2; margin-top: -35px;" elevation="0" rounded v-if="trees===true" @click="$refs.originMap.focus(actorsFocus, {paddingBottomRight: [0, 90],paddingTopLeft: [0, 10]}), trees=false">{{$t('focusActors')}}</v-btn>
             </div>
           </v-col>
         </v-row>
@@ -90,11 +90,12 @@
       const productItem = await $content(`router/${lang_path}/shop/`+api).fetch();
       const providersItem = await $content(`api/${lang_path}/providers`).fetch();
       const productsItem = await $content(`api/${lang_path}/products`).fetch();
+      const carriersItem = await $content(`api/${lang_path}/carriers`).fetch();
       const transitsItem = await $content(`api/transits/`+api).fetch();
       const certificatesItem = await $content(`api/${lang_path}/certificates`).fetch();
       const treesItem = await $content(`api/${lang_path}/trees/`+tree).fetch();
 
-      return { productId, productIndex, certificatesItem, productDescription, treesItem, productItem, providersItem, transitsItem, productsItem }
+      return { productId, carriersItem, productIndex, certificatesItem, productDescription, treesItem, productItem, providersItem, transitsItem, productsItem }
 
     },
     /*async fetch() {

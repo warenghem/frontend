@@ -170,7 +170,7 @@
                 let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
                 let mergeLoc = loc.concat([lastLoc]) 
                 this.$nextTick(() => {
-                  this.$refs.map.mapObject.fitBounds(mergeLoc, {padding: [50, 50]})
+                  this.$refs.map.mapObject.fitBounds(mergeLoc, {paddingBottomRight: [0, 90],paddingTopLeft: [0, 10]})
                 })
               }
             },

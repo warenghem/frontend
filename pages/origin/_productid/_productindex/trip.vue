@@ -1,6 +1,6 @@
 <template dark>
 <div>
-  <OriginSwiper  :key="index" :originTimeline="originTimeline" :treesItem="$attrs.treesItem" :productsItem="$attrs.productsItem" :certificatesItem="$attrs.certificatesItem" :providersItem="$attrs.providersItem" :originTimelines="orderedTransactions" />
+  <OriginSwiper  :key="index" :originTimeline="originTimeline" :treesItem="$attrs.treesItem" :carriersItem="$attrs.carriersItem" :productsItem="$attrs.productsItem" :certificatesItem="$attrs.certificatesItem" :providersItem="$attrs.providersItem" :originTimelines="orderedTransactions" />
   <!--<v-container class="pl-0 timeline-container mx-auto">
       <OriginTimeline style="max-width:600px" :treesItem="$attrs.treesItem" :productsItem="$attrs.productsItem" :certificatesItem="$attrs.certificatesItem" :providersItem="$attrs.providersItem" :originTimelines="orderedTransactions"/>
   </v-container>-->

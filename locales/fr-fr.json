@@ -69,6 +69,10 @@
     }
   },
   "origin": {
-    "verified": "vérifié"
+    "verified": "vérifié",
+    "units": {
+      "units": "unité | unités",
+      "mL": "mètre linéaire | mètres linéaires"
+    }
   }
 }

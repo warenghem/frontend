@@ -14,11 +14,11 @@
             <template v-if="originTimeline.type === 'transit'">
                 <v-card-subtitle class="pa-0 pb-3">{{ formatDistance(new Date(originTimeline.date), new Date(), {locale, addSuffix: true}) }}</v-card-subtitle>
                 <v-row class="pb-3 ma-0" align="center" v-for="(product, index) in originTimeline.goods" :key="index">
-                    <div class="time">{{getDescription(product.id, productsItem).name}}</div>
-                    <v-card-subtitle class="time pa-0">{{product.quantity}} {{product.units}}</v-card-subtitle>
+                    <div class="time pr-3">{{getDescription(product.id, productsItem).name}}</div>
+                    <v-card-subtitle class="time pa-0">{{product.quantity}} {{$t('origin.units.'+product.units)}}</v-card-subtitle>
                 </v-row>
                 <v-row align="center" class="ma-0 py-3">
-                    <v-col class="pa-0 text-capitalize-first" cols="12">{{$t('transfered')}} {{getDescription(originTimeline.to.id, providersItem).name}} {{$t('on')}} {{ format(new Date(originTimeline.from.date), 'PPPPp', {locale}) }} via {{originTimeline.carrier}}</v-col>
+                    <v-col class="pa-0 text-capitalize-first" cols="12">{{$t('transfered')}} {{getDescription(originTimeline.to.id, providersItem).name}} {{$t('on')}} {{ format(new Date(originTimeline.from.date), 'PPPPp', {locale}) }}</v-col>
                     <v-avatar left>
                     <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.from.id, providersItem).image">
                     </v-avatar>
@@ -28,10 +28,15 @@
                     </v-avatar>
                     <!--<div class="time"><span>{{productDescription.custom.providersoriginTimeline.brand}}</span> <span>{{originTimeline.product}}</span></div>-->
                 </v-row>
-                <div class="text-capitalize-first">{{$t('tracking')}} : <a class="text-white" :href="'https://www.ship24.com/tracking?p='+originTimeline.tracking" target="_blank">{{originTimeline.tracking}}</a></div>
-                <div class="text-capitalize-first">CO2 : {{originTimeline.co2}}</div>
-                <div class="text-capitalize-first">Km : {{(originTimeline.length/1000).toFixed(1)}}</div>
-                <div class="text-capitalize-first">{{$t('received')}} {{$t('on')}} {{  format(new Date(originTimeline.to.date), 'PPPPp', {locale}) }} par {{getDescription(originTimeline.to.id, providersItem).name}}</div>
+                <v-row align="center" class="ma-0 pb-3">
+                    <v-avatar class="mr-3" size="30" left>
+                    <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.carrier, carriersItem).image">
+                    </v-avatar>
+                    <v-card-subtitle class="pa-0">{{$t('tracking')}} : <a class="text-white" :href="'https://www.ship24.com/tracking?p='+originTimeline.tracking" target="_blank">{{originTimeline.tracking}}</a></v-card-subtitle>
+                </v-row>
+                <div class="text-capitalize-first"><span class="teradeli-medium yellow--text text-h6">{{originTimeline.co2.toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</span><span class="text-caption"> {{$t('map.counts.co2')}}</span></div>
+                <div class="text-capitalize-first"><span class="teradeli-medium yellow--text text-h6">{{(originTimeline.length/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")}}</span><span class="text-caption"> {{$tc('map.counts.km', originTimeline.length/1000)}}</span></div>
+                <div class="text-capitalize-first">{{$t('received')}} {{$t('on')}} {{  format(new Date(originTimeline.to.date), 'PPPPp', {locale}) }}</div>
                 <v-row
                 align="center"
                 class="ma-0"
@@ -226,28 +231,27 @@
     props: {
         originTimelines: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         },
         providersItem: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
+        },
+        carriersItem: {
+            type: Array,
+            default: () => []
         },
         productsItem: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         },
         certificatesItem: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         },
         treesItem: {
             type: Array,
-            default: () => {
-            }
+            default: () => []
         },
     },
     methods: {
