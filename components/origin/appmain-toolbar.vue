@@ -71,7 +71,7 @@
           text
           class="px-0"
         >
-          <AppLangSwitcher/>
+          <LayoutAppLangSwitcher/>
         </v-btn>
       </v-toolbar-items>
     </v-app-bar>

@@ -2,6 +2,7 @@
   <v-card
     rounded="xl"
     class="ma-1r"
+    :color="cardColor"
     @click="clicked"
   >
     <div class="d-flex flex-no-wrap justify-space-between align-center">
@@ -16,14 +17,14 @@
             class="lazyload cover bg-white catalogue-item-background rounded-lg"
         />
       </v-avatar>
-      <div class="w-100">
+      <div class="w-100 cardText">
         <v-card-title
           class="text-h5 pt-0"
           v-text="title"
         ></v-card-title>
         <slot name="content"></slot>
       </div>
-      <v-btn class="mr-n3 buttonCard" fab x-small>
+      <v-btn :color="buttonColor" :style="{ borderColor: borderColor }" class="btnCard mr-n3" elevation="0" fab x-small>
         <v-icon>{{icon}}</v-icon>
       </v-btn>
     </div>
@@ -47,7 +48,19 @@
         title: {
             type: String,
             default: ''
-        }
+        },
+        cardColor: {
+            type: String,
+            default: ''
+        },
+        buttonColor: {
+            type: String,
+            default: ''
+        },
+        borderColor: {
+            type: String,
+            default: ''
+        },
     },
   }
 </script>

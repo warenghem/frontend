@@ -21,15 +21,15 @@
           </v-btn>
       </div>
       <div style="transform: translateY(50px);">
-        <Payments class="pvw bgcard" v-if="current === 'paymentInfoModal'"/>
-        <Shipping class="pvw bgcard" v-if="current === 'shippingModal'"/>
+        <LayoutPayments class="pvw" v-if="current === 'paymentInfoModal'"/>
+        <LayoutShipping class="pvw" v-if="current === 'shippingModal'"/>
         <div v-if="current === 'packageModal'">
-            <div class="pvw bgcard">
+            <div class="pvw">
                 <div v-html="currentModal.modalContent" class="modalContent"></div>
             </div>
         </div>
         <div class="pvw">
-            <CustomerServicesLayout :closeModal="closeModal"/>
+            <LayoutCustomerServicesLayout :closeModal="closeModal"/>
         </div>
       </div>
     </v-card>

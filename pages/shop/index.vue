@@ -1,21 +1,20 @@
 <template>
   <div>
-    <FilterBar class="stickyFilterBar" :products="filteredProducts.length"
-               :colors="filter.colors"
-               :materials="filter.materials"
-               @updateFilter="updateFilter"
-               ref="filter"
+    <ProductFilterBar 
+        class="stickyFilterBar" 
+        :products="filteredProducts.length"
+        ref="filter"
     >
-    </FilterBar>
+    </ProductFilterBar>
     <v-container class="pa-lg-7" fluid>
       <v-row>
         <v-col cols="12" lg="4" md="6" v-for="(product,idx) in filteredProducts" :key="'product_'+idx">
           <ProductItem :productItem="product"></ProductItem>
         </v-col>
       </v-row>
-      <div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>
+      <!--<div v-intersect="infiniteScrolling" style="height: 100px;width: 100%"></div>-->
     </v-container>
-    <ShopIcon class="pb-10"/>
+    <OrganismsShopIcon class="pb-10"/>
   </div>
 </template>
 
@@ -26,7 +25,7 @@
         async asyncData(context) {
             const {$content, app} = context;
             const lang_path = app.i18n.locale.split('-')[0] === 'en' ? 'en-us' : 'fr-fr';
-            const productsItem = await $content(`router/${lang_path}/shop`).fetch();
+            const productsItem = await $content(`router/${lang_path}/shop`).only(['name','image','currency','slug','colors']).fetch();
             const filter = await $content(`/filter`, 'type').fetch();
             return {
                 productsItem,
@@ -35,12 +34,6 @@
                     materials: filter.materials
                 }
             }
-        },
-        transition(to, from) {
-            if (!from) {
-                return "slide-left"
-            }
-            return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left'
         },
         data() {
             return {
@@ -98,16 +91,7 @@
                 }
 
             }
-        },
-        methods: {
-            infiniteScrolling() {
-                this.productCount = this.productCount + 10;
-            },
-            updateFilter(data) {
-                this.filterChecked = data
-            }
-        },
-
+        }
     }
 </script>
 

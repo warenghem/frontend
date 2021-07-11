@@ -1,8 +1,10 @@
 <template>
     <v-card
-    rounded="xl"
-    class="mb-5"
-    @click="clicked"
+      rounded="xl"
+      class="mb-5"
+      @click="clicked"
+      :color="cardColor"
+      :ripple="ripple"
     >
       <div class="d-flex flex-column justify-center align-center text-center">
         <v-avatar
@@ -19,7 +21,7 @@
           <v-card-subtitle class="text-hide py-0">{{name}}</v-card-subtitle>
         </div>
         <slot></slot>
-        <v-btn class="buttonCard mb-n3" fab x-small>
+        <v-btn :color="buttonColor" :style="{ borderColor: borderColor }" elevation="0" class="btnCard mb-n3" fab x-small>
           <v-icon>{{icon}}</v-icon>
         </v-btn>
       </div>
@@ -43,7 +45,23 @@
         name: {
             type: Array,
             default: () => []
-        }
+        },
+        cardColor: {
+            type: String,
+            default: ''
+        },
+        buttonColor: {
+            type: String,
+            default: ''
+        },
+        borderColor: {
+            type: String,
+            default: ''
+        },
+        ripple: {
+            type: Boolean,
+            default: 'false'
+        },
     },
   }
 </script>

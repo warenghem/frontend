@@ -60,8 +60,7 @@ offers:
   availability: in stock
   pieces: 30 pièces prochainement
 categories:
-- name: accessories
-  slug: leathergoods
+- id: accessories
   depth: 1
 tags:
 - dionysos

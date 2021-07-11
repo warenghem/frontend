@@ -1,7 +1,7 @@
 <template>
   <div class="">
 	<v-toolbar  class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="h-100"/>
+		<AtomsBtnBack class="h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 				Warenghem Studios
@@ -10,8 +10,8 @@
 		<v-spacer></v-spacer>
 	</v-toolbar>
     <article class="wa-magazine position-relative">
-		<h2 style="bottom:0" class="text-white page-title2 w-100 text-center pvw position-absolute z-2">{{$t('title1')}}</h2>
-		<div class="wa-smart-picture wa-panoramic-picture large-ratio skeletton">
+		<h2 style="bottom:0" class="white--text page-title2 w-100 text-center pvw position-absolute z-2">{{$t('title1')}}</h2>
+		<div class="wa-smart-picture wa-panoramic-picture large-ratio">
 			<picture class="gradientoverlay">
 			<source media="screen and (min-width: 64em)"
 				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
@@ -31,7 +31,7 @@
 	<div class="ma-auto">
 		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle1')}}</h3>-->
 		<v-card style="max-width:1050px" class="pvw text-center ma-auto align-center justify-center" v-html="$t('text1')"></v-card>
-		<div class="text-center ma-auto mb-16 bgcard pvw">
+		<div class="text-center ma-auto mb-16 pvw">
 			<div class="page-title3 text-center pb-10">{{$t('text1-2title')}}</div>
 			<div style="max-width:1050px" class="pb-10 ma-auto" v-html="$t('text1-2')"></div>
 			<v-row class="ma-auto" style="max-width:1050px" justify="center" align="center" fluid>
@@ -67,8 +67,8 @@
 		</div>
 		<div class="page-title3 text-center pb-10 d-none">{{$t('text1-3title')}}</div>
 		<v-container style="max-width:1400px" fluid class="threegrid py-4">
-			<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay bgcard item1">
-				<div class="z-2 text-white pvw text-center">
+			<v-card class="position-relative rounded-xl h-100 invgradientoverlay roundedoverlay item1">
+				<div class="z-2 white--text pvw text-center">
 					<div class="text-center page-title3">{{$t('col1title')}}</div>
 					<div class="" v-html="$t('col1')"></div>
 				</div>
@@ -80,8 +80,8 @@
 					/>
 				</div>
 			</v-card>
-			<v-card class="bgcard item2 position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
-				<div class="z-2 text-white pvw text-center">
+			<v-card class=" item2 position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
+				<div class="z-2 white--text pvw text-center">
 					<div class="text-center page-title3">{{$t('col2title')}}</div>
 					<div class="" v-html="$t('col2')"></div>
 				</div>
@@ -93,8 +93,8 @@
 					/>
 				</div>
 			</v-card>
-			<v-card class="bgcard item3 position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
-				<div class="z-2 text-white pvw text-center">
+			<v-card class=" item3 position-relative rounded-xl h-100 invgradientoverlay roundedoverlay">
+				<div class="z-2 white--text pvw text-center">
 					<div class="text-center page-title3">{{$t('col3title')}}</div>
 					<div class="" v-html="$t('col3')"></div>
 				</div>
@@ -108,7 +108,7 @@
 			</v-card>
 		</v-container>
 		<div style="max-width:1000px" class="text-center pvw ma-auto" v-html="$t('text2')"></div>
-		<div class="bgcard pvw px-0">
+		<div class=" pvw px-0">
 			<h2 class="page-title3 text-center px-0 pb-10">{{$t('title3')}}</h2>
 			<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>-->
 			<v-container class="timeline-container rounded-xl pa-0 pr-3">
@@ -141,8 +141,8 @@
 				</v-timeline>
 			</v-container>
 		</div>
-		<StudioSection class="pvw"/>
-		<CustomerServicesLayout class="pvw"/>
+		<HomecardsStudioSection class="pvw"/>
+		<LayoutCustomerServicesLayout class="pvw"/>
 	</div>
   </div>
 </template>
@@ -156,12 +156,6 @@
                 grid: [
                     "div2 blueoverlay",
                     "div3"
-                ],
-				origins: this.$t('origins'),
-				originicon: [
-					"/Environments/Narrative.png",
-					"/Environments/translucid_" + this.$i18n.localeProperties.language + ".png",
-					"/Environments/eternal_" + this.$i18n.localeProperties.language + ".png"
                 ],
                 images: [
                     "/Environments/idea.webp",
@@ -275,7 +269,6 @@
 		"col2title": "Made in France",
 		"col3": "Use technology when it brings real environmental and ethical added value. Our ORIGIN application, CO2 neutral, allows you for example to discover the history and the inner beauty of your article",
 		"col3title": "2.0",
-		"description": "",
 		"subtitle1": "The genesis",
 		"subtitle3": "OUR HISTORY",
 		"text1": "<p>If you've made it here, you probably want to know who we are, what we do, and why.</p><p>Let's keep it short to start.</p><p class='teradeli-medium'>Like 21st century apothecaries, our mission is to use the mineral and plant elements that surround us to design everyday objects in France that are both efficient and ecological.</p><p>Concretely, we study the technical, aesthetic and ecological properties of each material, we research and create new ones, we rely on technologies when there is real added value, with a unique goal in mind: a perfect symbiosis with our environment and total transparency.</p>",
@@ -347,7 +340,6 @@
 		"col2title": "Made in France",
 		"col3": "Utiliser la technologie lorsqu'elle apporte une r&eacute;elle plus-value environnementale et &eacute;thique. Notre application ORIGIN, neutre en CO2, vous permet par exemple de d&eacute;couvrir l'histoire et la beaut&eacute; int&eacute;rieure de votre article",
 		"col3title": "Technologies de pointe",
-		"description": "",
 		"subtitle1": "La genèse",
 		"subtitle3": "Notre histoire",
 		"text1": "<p>Si vous êtes arrivés ici, c'est sans doute que vous voulez savoir qui nous sommes, ce que nous faisons, et pourquoi.</p><p>Faisons court pour commencer.</p><p class='teradeli-medium'>Tels des apothicaires du XXIe siècle, notre mission est d'utiliser les éléments minéraux et végétaux qui nous entourent pour concevoir en France des objets du quotidien aussi bien performants qu'écologiques.</p><p>Concrètement, nous étudions les propriétés techniques, esthétiques et écologiques de chaque matière, nous en cherchons et en créons de nouvelles, nous nous appuyons sur des technologies lorsqu'il y a une réelle plus-value, avec un unique but en tête : une parfaite symbiose avec notre environnement et une transparence totale.</p>",

@@ -33,7 +33,6 @@
             <v-spacer style="flex-grow: 1.8!important;" class="d-none d-md-block"></v-spacer>
             <v-spacer class="d-md-none"></v-spacer>
             <v-toolbar-items class="toolbarcta py-1 mr-3 align-items-center" style="height:44px!important">
-                <treebutton/>
             </v-toolbar-items>
         </v-app-bar>
     </section>

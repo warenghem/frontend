@@ -20,8 +20,8 @@
   },
   "product": {
     "cartBtn": "Place in Cart",
-    "stock": "In stock",
-    "notInStock": "Not In stock",
+    "product":"product | products",
+    "stock": "sold out | in stock",
     "findStore": "Find In Store",
     "continueBtn": "Continue Shopping",
     "viewCart": "View My Cart",
@@ -53,12 +53,46 @@
   "btnWaitforit": "Reserve your item",
   "btnNewsletter": "Follow us",
   "btnDiscover": "Discover",
+  "btnSubscribe": "I subscribe",
   "nopayment": "No payment required",
   "3drender": "3D realization, our prototypes are in progress",
   "newsletterdisclaimer": "None of your data will be disclosed or resold. Your data is processed by Warenghem for our reforestation projects, your product preferences, and our news.",
   "router": {
     "home": {
       "title": "i am home"
+    }
+  },
+  "map": {
+    "counts": {
+      "location": "location | locations",
+      "km": "km traveled | km traveled",
+      "co2": "kg of CO2"
+    }
+  },
+  "origin": {
+    "verified": "verified",
+    "limited":"number",
+    "manufactured":"manufactured",
+    "focusTrees":"voir les arbres",
+    "focusActors":"see the trees",
+    "units": {
+      "units": "unit | units",
+      "lM": "meter | meters"
+    },
+    "products": {
+      "material": "material",
+      "metalAccessories": "metal & accessories",
+      "finishedProduct": "finished product"
+    },
+    "footerLinks": {
+      "general": "Your",
+      "trip": "his journey",
+      "co2": "reforestation"
+    }
+  },
+  "productCategory": {
+    "depth2": {
+      "bag": "bag"
     }
   }
 }

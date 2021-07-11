@@ -28,7 +28,7 @@
                     <!--<div class="time"><span>{{productDescription.custom.providersoriginTimeline.brand}}</span> <span>{{originTimeline.product}}</span></div>-->
                 </v-row>
                 <div >{{$t('sent')}} {{ format(new Date(originTimeline.from.date), 'PPPPp', {locale}) }} via {{originTimeline.carrier}}</div>
-                <div >{{$t('tracking')}} : <a class="text-white" :href="'https://www.ship24.com/tracking?p='+originTimeline.tracking" target="_blank">{{originTimeline.tracking}}</a></div>
+                <div >{{$t('tracking')}} : <a class="white--text" :href="'https://www.ship24.com/tracking?p='+originTimeline.tracking" target="_blank">{{originTimeline.tracking}}</a></div>
                 <v-row align="center" class="ma-0 pb-3">
                     <v-avatar class="mr-3" left>
                     <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.carrier, carriersItem).image">
@@ -58,7 +58,7 @@
                 <v-col
                     cols="3"
                 >
-                    <div class="rounded-lg wa-smart-picture square-ratio skeletton wa-product-image">
+                    <div class="rounded-lg wa-smart-picture square-ratio wa-product-image">
                     <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ getDescription(originTimeline.id, productsItem).image">
                     </div>
                 </v-col>
@@ -112,7 +112,7 @@
                 <v-col
                     cols="3"
                 >
-                    <div class="rounded-lg wa-smart-picture square-ratio skeletton wa-product-image">
+                    <div class="rounded-lg wa-smart-picture square-ratio wa-product-image">
                     <img class="lazyload bg-white mediabox-img" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,ar-1-1/'+ treesItem.image">
                     </div>
                 </v-col>
@@ -167,28 +167,23 @@
         props: {
             originTimelines: {
                 type: Array,
-                default: () => {
-                }
+                default: () => []
             },
             providersItem: {
                 type: Array,
-                default: () => {
-                }
+                default: () => []
             },
             productsItem: {
                 type: Array,
-                default: () => {
-                }
+                default: () => []
             },
             certificatesItem: {
                 type: Array,
-                default: () => {
-                }
+                default: () => []
             },
             treesItem: {
                 type: Array,
-                default: () => {
-                }
+                default: () => []
             },
         },
         methods: {
@@ -202,10 +197,6 @@
             if (type === 'tree') {
                 return this.tree
                 }
-            },
-            openModal(modalName) {
-                this.currentModal = true
-                this.provider = this.providersItem.find(y => y.slug.includes(modalName))
             }
         }
     }

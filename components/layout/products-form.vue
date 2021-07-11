@@ -21,7 +21,7 @@
             </v-btn>
           </div>
           <div style="transform: translateY(50px);">
-            <div class="wa-smart-picture small-ratio skeletton">
+            <div class="wa-smart-picture small-ratio">
                 <img
                 data-sizes="auto"
                 data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/projects.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/projects.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/projects.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/projects.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/projects.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/projects.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/projects.jpg 2500w"
@@ -98,7 +98,7 @@
                                       @input="setBag($event.target.checked)"
                                       id="mce-BAG-0">
                                 <label for="mce-BAG-0" class="rounded-xl">
-                                  <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
+                                  <div class="wa-smart-picture square-ratio wa-product-image rounded-xl">
                                     <img class="mediabox-img"
                                         src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/48H_cote.png"/>
                                   </div>
@@ -111,7 +111,7 @@
                                       @input="setBelt($event.target.checked)"
                                       id="mce-BELT-0">
                                 <label for="mce-BELT-0" class="rounded-xl">
-                                  <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
+                                  <div class="wa-smart-picture square-ratio wa-product-image rounded-xl">
                                     <img class="mediabox-img"
                                         src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/belt-blackblue-above2.png"/>
                                   </div>
@@ -124,7 +124,7 @@
                                       @input="setWallet($event.target.checked)"
                                       id="mce-WALLET-0">
                                 <label for="mce-WALLET-0" class="rounded-xl">
-                                  <div class="wa-smart-picture square-ratio skeletton wa-product-image bgcard rounded-xl">
+                                  <div class="wa-smart-picture square-ratio wa-product-image rounded-xl">
                                     <img class="mediabox-img"
                                         src="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-400,dpr-2,ar-1-1/Products/pf-blackblue-below.png"/>
                                   </div>

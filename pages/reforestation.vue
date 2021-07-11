@@ -1,7 +1,7 @@
 <template>
   <div>
 	<v-toolbar-bar class="menubar d-flex pa-0 filter-bar w-100">
-		<Backbutton class="border-bottom-2"/>
+		<AtomsBtnBack class="border-bottom-2"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 				Reforestation
@@ -10,7 +10,7 @@
 		<v-spacer></v-spacer>
 	</v-toolbar-bar>
     <article class="wa-magazine">
-      <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
+      <div class="wa-smart-picture wa-panoramic-picture square-ratio">
         <picture class="gradientoverlay">
           <source media="screen and (min-width: 64em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-auto,c-maintain_ratio/madagascar_river.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-auto,c-maintain_ratio/madagascar_river.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-auto,c-maintain_ratio/madagascar_river.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-auto,c-maintain_ratio/madagascar_river.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-auto,c-maintain_ratio/madagascar_river.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-auto,c-maintain_ratio/madagascar_river.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-auto,c-maintain_ratio/madagascar_river.jpg 2500w,'" 
@@ -33,13 +33,13 @@
 		<div style="max-width:1000px" class="text-center ma-auto pb-16" v-html="$t('text1')"></div>
 		<h2 class="home-title px-0 pb-10">{{$t('title3')}}</h2>
 		<!--<h3 class="text-center home-subtitle px-0 pb-10">{{$t('subtitle3')}}</h3>-->
-		<TreeData :treeData="treeData"/>
+		<MoleculesTreeData :treeData="treeData"/>
 		<div style="height:600px!important" class="treemapcontainer">
 			<client-only>
-				<LazyMap class="rounded-xl"/>
+				<LazyOrganismsMap class="rounded-xl"/>
 			</client-only>
 		</div>
-		<CustomerServicesLayout class="pt-16"/>
+		<LayoutCustomerServicesLayout class="pt-16"/>
 	</div>
   </div>
 </template>

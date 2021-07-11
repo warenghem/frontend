@@ -1,6 +1,6 @@
 <template>
     <v-toolbar-bar class="menubar d-flex pa-0 filter-bar">
-      <Backbutton/>
+      <AtomsBtnBack/>
       <div class="pl-5 d-flex border-left-2">
         <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
           {{$t('title')}}

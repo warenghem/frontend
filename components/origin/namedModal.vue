@@ -16,11 +16,11 @@
 </template>
 
 <script>
-	import Modal from "./Modal"
+	import Modal from "~/components/origin/modal"
 
 	export default {
 		name: "NamedModal",
-		components: { Modal, NamedModal: () => import("./NamedModal") },
+		components: { Modal, NamedModal: () => import("~/components/origin/namedModal") },
 		props: { id: { type: Number, required: true } },
 		data: () => ({
 			// Randomly generated child ID

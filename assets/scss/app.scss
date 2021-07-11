@@ -1,3 +1,4 @@
+
 /*Vuetify issue on Github*/
 .v-item-group.v-bottom-navigation .v-btn.v-size--default {
   height: inherit;
@@ -6,9 +7,19 @@
 .multilinechip {
   width:500px
 }
-.buttonCard {
+.v-skeleton-loader__image {
+  height: 100%!important;
+}
+.btnCard {
   border: 3px solid black;
 }
+/*Because \vuetify\src\components\VBtn\VBtn.sass is configured to be : background-color: map-get($material, 'app-bar')*/
+/*.theme--light .v-btn {
+  background: rgba(#F2F2F7, 1)!important
+}
+.theme--dark .v-btn {
+  background: rgba(#1D1D1D, 1)!important
+}/*
 /*Start timeline*/
 
 /*End timeline*/
@@ -32,20 +43,8 @@
 .theme--light.v-list-item, .theme--light.v-list-item:not(.v-list-item--active):not(.v-list-item--disabled), .theme--light.v-application {
   color: #313131!important;
 }
-.theme--dark .bg-theme {
-  background-color: #161617 !important;
-}
-.bg-theme {
-  background-color: #ffffff !important;
-}
 v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-drawer--temporary:not(.v-navigation-drawer--close), .v-dialog {
   box-shadow: 0px 0px 0px 0px rgb(0 0 0 / 0%), 0px 0px 0px 0px rgb(0 0 0 / 0%), 0px 0px 0px 0px rgb(0 0 0 / 0%)!important;
-}
-.v-chip {
-  height: auto!important;
-  white-space: inherit!important;
-  min-height: 32px;
-  padding: 6px 12px!important;
 }
 .v-tabs-bar {
   height: 100%!important;
@@ -56,26 +55,20 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .v-toolbar__content {
   padding: 0!important;
 }
-.v-bottom-navigation.theme--dark, .theme--dark.v-car, .theme--dark.v-toolbar,.theme--dark.v-navigation-drawer, .theme--dark.v-tabs > .v-tabs-bar {
-  background-color: #161617!important;
-}
-.theme--dark.v-tabs-items {
-  background-color: black!important;
-}
 .theme--dark.v-sheet, .theme--dark .appBar {
   border-color: rgba(84, 84, 88, 0.65)!important;
 }
-.theme--dark .svglogo {
+.theme--dark .logo {
   fill: white!important;
   stroke:white!important;
 }
-.svglogo {
+.logo {
   fill: rgba(0, 0, 0, 0.87);
   stroke:rgba(0, 0, 0, 0.87);
 }
-.svglogogrey {
-  fill: rgba(0, 0, 0, 0.54);
-  stroke:rgba(0, 0, 0, 0.54);
+.logoGrey {
+  fill: var(--v-systemGray6-base);
+  stroke:var(--v-systemGray6-base);
 }
 .v-progress-circular__info {
   color: #fff;
@@ -96,7 +89,7 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .border-bottom-2 {
   border-bottom: #eae8e4 solid 1px!important;
 }
-@media(min-width:64em) {
+@media #{map-get($display-breakpoints, 'md-and-up')} {
 .border-bottom-md-2 {
   border-bottom: #eae8e4 solid 1px!important;
 }}
@@ -210,23 +203,6 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .ls-blur-up-img.ls-inview.ls-original-loaded {
   opacity: 0;
   filter: blur(5px);
-}
-// THE LOADING EFFECT
-/* .skeletton .lazyload, .skeletton .lazyloaded {
-  background-color: #e2e5e7;
-	// The shine that's going to move across the skeleton:
-	background-image:	linear-gradient(0.25turn, transparent, #fff, transparent);
-	background-size: 700px 100%; // width of the shine
-	background-repeat: no-repeat; // No need to repeat the shine effect
-	background-position: left -700px top 0; // Place shine on the left side, with offset on the left based on the width of the shine - see background-size
-	animation: shine 1s infinite; // increase animation time to see effect in 'slow-mo'
-} */
-
-@keyframes shine {
-	to {
-		// Move shine from left to right, with offset on the right based on the width of the shine - see background-size
-		background-position: right -700px top 0;
-	}
 }
 .smalltitle {
   font-size: 17px;
@@ -407,10 +383,10 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 }
 .pvw {
   padding: 6vw 2vw!important;
-  @media(min-width: 48em) {
+  @media #{map-get($display-breakpoints, 'sm-and-up')} {
       padding: 3.125vw!important;
   }
-  @media(min-width: 64em) {
+  @media #{map-get($display-breakpoints, 'md-and-up')} {
       padding: 3vw!important;
   }
   @media(min-width: 90em) {
@@ -558,7 +534,7 @@ v-navigation-drawer--is-mobile:not(.v-navigation-drawer--close), .v-navigation-d
 .position-relative {
   position: relative !important;
 }
-@media (min-width: 48em) {
+@media #{map-get($display-breakpoints, 'sm-and-up')} {
   .position-sm-relative {
     position: relative !important;
   }
@@ -663,7 +639,7 @@ z-index: 1;
 line-height: 1.8rem;
 position: relative;
 letter-spacing: .009em;
-  @media(min-width:48em) {
+@media #{map-get($display-breakpoints, 'sm-and-up')} {
   font-size: 24px;
   }
 }
@@ -769,12 +745,12 @@ letter-spacing: .009em;
 .spacing {
 	margin-top:60px;
 	margin-bottom:30px;
-		@media	(min-width: 48em) {
+  @media #{map-get($display-breakpoints, 'sm-and-up')} {
 			margin-top:120px;
 			margin-bottom:60px
 		}
 }
-.text-white {
+.white--text {
   color: white!important;
 }
 
@@ -1061,36 +1037,13 @@ letter-spacing: .009em;
     background-color: transparent !important;
   }
 }
-/*.theme--dark .menu-bar {
-    backdrop-filter: saturate(180%) blur(20px);
-    background-color: rgba(29,29,31,0.72)!important;
-}*/
-.theme--dark .menu-bar {
-  background-color: #161617!important
-}
-/*A supprimer une fois le theme dark implementé */
 
-.theme--dark .v-application--wrap {
-  background: black;
-}
-.theme--dark .toolbar, .theme--dark .v-application .bgcard, .theme--dark .v-navigation-drawer {
-  background-color: #161617 !important;
-}
-.theme--dark .buttonblack {
-  background-color: #202021 !important;
-}
-.theme--dark .v-btn, .theme--dark .toolbar, .theme--dark .v-list-item__content, .theme--dark .v-card {
-  color: white!important;
-}
-.theme--dark .titlesmall {
-  color: white!important;
-}
-/*A supprimer une fois le theme dark implementé */
-.menu-bar {
-  /*backdrop-filter: saturate(180%) blur(20px);
-  background-color: rgba(255, 255, 255, 0.62)!important;*/
+.menu-bar, .v-bottom-navigation {
+  backdrop-filter: saturate(180%) blur(20px);
   transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  background-color: rgba(255, 255, 255, 0.9)!important;
+  .v-btn {
+    background: none!important;
+  }
 
   .brand {
     filter: brightness(1) invert(0);
@@ -1113,14 +1066,12 @@ letter-spacing: .009em;
     }*/
     .brand {
       filter: brightness(0) invert(1);
-    }
-    .item {
-      color: white;
-    }
-    .logo {
       fill: white;
       stroke: white;
       transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+    }
+    .item {
+      color: white;
     }
     .v-icon {
       color: white!important;
@@ -1128,17 +1079,12 @@ letter-spacing: .009em;
     }
   }
 }
-/*.BgTransparent .theme--dark .menu-bar {
-  @media(min-width: 961px) {
-    border-bottom: solid 1px #c0c0c080!important;
-  }
-}*/
 .toolbartabs {
   width: calc(100% - 66px)!important;
 }
 .homecard {
   height: 25rem!important;
-  @media (min-width: 48em) {
+  @media #{map-get($display-breakpoints, 'sm-and-up')} {
     height: 33rem!important;
   }
 }
@@ -1149,10 +1095,10 @@ letter-spacing: .009em;
   grid-auto-rows: 1fr;
   padding: 1rem!important;
   grid-gap: 1rem;
-  @media (max-width: 64em) {
+  @media #{map-get($display-breakpoints, 'md-and-down')} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  @media (max-width: 48em) {
+  @media #{map-get($display-breakpoints, 'xs-only')} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 0.5rem;
   }
@@ -1164,12 +1110,23 @@ letter-spacing: .009em;
   grid-auto-rows: 1fr;
   padding: 1rem!important;
   grid-gap: 1rem;
-  @media (max-width: 64em) {
+  @media #{map-get($display-breakpoints, 'md-and-down')} {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
-  @media (max-width: 48em) {
+  @media #{map-get($display-breakpoints, 'xs-only')} {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     grid-gap: 0.5rem;
+  }
+}
+.twogrid {
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-auto-rows: 1fr;
+  padding: 1rem!important;
+  grid-gap: 1rem;
+  @media #{map-get($display-breakpoints, 'xs-only')} {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
   }
 }
 .ma-1r {
@@ -1354,7 +1311,7 @@ label.v-label.theme--light.error--text {
 .slide-right-leave-to {
   opacity: 0;
 }
-/*
+
 .page-enter-active {
   transition: all .1s ease;
 }
@@ -1362,10 +1319,10 @@ label.v-label.theme--light.error--text {
   transition: all .1s cubic-bezier(1.0, 0.5, 0.8, 1.0);
 }
 .page-enter, .page-leave-to
- .slide-fade-leave-active below version 2.1.8  {
+ .slide-fade-leave-active {
   transform: translateX(100px);
   opacity: 0;
-}*/
+}
 
 .slide-fade-enter-active {
   transition: all 0.1s ease;
@@ -1390,6 +1347,7 @@ label.v-label.theme--light.error--text {
     opacity: 1;
   }
 }
+
 /* purgecss end ignore */
 .wa-product-image {
   object-fit: contain;
@@ -1406,7 +1364,7 @@ label.v-label.theme--light.error--text {
   font-size: 0.875rem;
   line-height: 1.2rem;
 }
-@media(max-width:64em) {
+@media #{map-get($display-breakpoints, 'sm-and-down')} {
   .mobilescrollable {
     overflow: auto;
   }
@@ -1414,7 +1372,7 @@ label.v-label.theme--light.error--text {
 .small-bottom-dialog {
   height: 95%;
   max-height: 100%!important;
-  @media(min-width:48em) {
+  @media #{map-get($display-breakpoints, 'sm-and-up')} {
       height: 90%;
       max-width: 700px!important;
     }

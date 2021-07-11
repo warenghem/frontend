@@ -7,7 +7,7 @@
     class="position-relative"
     >
     <div class="position-absolute w-100 h-100">
-      <div style="z-index: 2;max-width:600px" class="position-relative d-flex mx-auto h-100 justify-center align-center flex-column text-white text-center">
+      <div style="z-index: 2;max-width:600px" class="position-relative d-flex mx-auto h-100 justify-center align-center flex-column white--text text-center">
         <div class="page-title py-3">
         {{ firstpost.title }}
         </div>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <article class="wa-magazine">
-      <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
+      <div class="wa-smart-picture wa-panoramic-picture square-ratio">
         <picture class="gradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/'+ firstpost.media +' 2500w,'" 
@@ -60,7 +60,7 @@
             style="background-color:unset!important"
         >
           <nuxt-link :to="post.path+'/'" class="font-bold text-xl mb-2">
-            <div class="gradientoverlay img-fluid theme--light wa-smart-picture square-ratio position-relative skeletton">
+            <div class="gradientoverlay img-fluid theme--light wa-smart-picture square-ratio position-relative">
                 <v-card-actions class="position-absolute w-100 d-none" style="bottom:0;z-index:5">
                 <v-spacer></v-spacer>
 
@@ -83,7 +83,7 @@
                         :alt="post.title" 
                         class="lazyload bg-white catalogue-item-background mediabox-img" 
                     />
-                <v-card-text class="teradeli-light mt-5 position-absolute pa-3 text-white" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
+                <v-card-text class="teradeli-light mt-5 position-absolute pa-3 white--text" style="line-height: normal;bottom:0;font-size:13px;z-index:5">
                   {{ post.tags }}
                 </v-card-text>
             </div>

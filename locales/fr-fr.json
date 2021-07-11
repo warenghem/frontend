@@ -20,8 +20,8 @@
   },
   "product": {
     "cartBtn": "Placer dans le panier",
-    "stock": "En stock",
-    "notInStock": "Not En stock",
+    "product":"produit | produits",
+    "stock": "rupture de stock | en stock",
     "findStore": "Find In Store",
     "continueBtn": "Continuer vos achats",
     "viewCart": "Afficher mon panier",
@@ -53,6 +53,7 @@
   "btnWaitforit": "Reserver votre article",
   "btnNewsletter": "Suivez nous",
   "btnDiscover": "Découvrir",
+  "btnSubscribe": "Je m'abonne",
   "nopayment": "Aucun paiement requis",
   "3drender": "réalisation 3D, nos prototypes sont en cours",
   "newsletterdisclaimer": "Aucune de vos données ne seront divulgées ou revendues. Vos données sont traitées par Warenghem pour nos projets de reforestation, vos préférences produit, et nos actualités.",
@@ -70,13 +71,28 @@
   },
   "origin": {
     "verified": "vérifié",
+    "limited":"numéro",
+    "manufactured":"fabriqué",
+    "focusTrees":"voir les arbres",
+    "focusActors":"voir les acteurs",
     "units": {
       "units": "unité | unités",
       "lM": "mètre | mètres"
     },
     "products": {
       "material": "matière",
-      "metalAccessories": "métal & accessoires"
+      "metalAccessories": "métal & accessoires",
+      "finishedProduct": "produit fini"
+    },
+    "footerLinks": {
+      "general": "Votre",
+      "trip": "son voyage",
+      "co2": "reforestation"
+    }
+  },
+  "productCategory": {
+    "depth2": {
+      "bag": "sac"
     }
   }
 }

@@ -30,14 +30,7 @@
         </div>
       </div>-->
       <div class="homepage-slider-background" ref="backgroundImg">
-        <div class="homepage-slider-background-item active activeNew skeletton mediabox">
-        <!--<ik-image
-            path="/AllMountain.jpeg"
-            :lqip="{active:true, quality: 40, blur: 5}"
-            :transformation="[{quality: 65, width:1500, height:800, dpr:2, focus: 'bottom'}]"
-            loading="lazy"
-            class="cover"
-          />-->
+        <div class="homepage-slider-background-item active activeNew mediabox">
         <picture class="invgradientoverlay ">
           <source media="screen and (min-width: 64em)"
             data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/AllMountain.jpeg 640w,
@@ -75,7 +68,6 @@
             data-sizes="auto" />
         </picture>
         </div>
-
       </div>
       <!--<div class="scrollicon d-none d-lg-block">
         <div class="mouse">
@@ -105,8 +97,8 @@
             <h4 class="app-title mb-2">{{$t('video.subtitle')}}</h4>
             <!--<h2 class="app-subtitle"> {{$t('video.title')}}{{$t('video.title2')}}</h2>-->
             <div style="bottom:0; left:0; right:0" class="text-center position-sm-relative position-absolute pb-5 px-5 justify-center d-block d-md-flex">
-                <TrspButton :text="'btnWaitforit'" @click.native="$store.state.productModal=true" style="width:260px" class="mx-2 mb-2" />
-                <TrspButton :text="'btnTitle'" @click.native="$store.state.plantModal=true" style="width:260px" class="mx-2 mb-2" />
+                <MoleculesBtnTrsp :hovering="outlined" :text="$t('btnWaitforit')" @click.native="$store.state.productModal=true" style="width:260px" class="mx-2 mb-2" />
+                <MoleculesBtnTrsp :text="$t('btnTitle')" @click.native="$store.state.plantModal=true" style="width:260px" class="mx-2 mb-2" />
           </div>
           </div>
         </v-col>
@@ -121,85 +113,16 @@
 </template>
 
 <script>
-    import Eco from "~/assets/images/ecological.svg?raw";
+    /*import Eco from "~/assets/images/ecological.svg?raw";
     import France from "~/assets/images/france.svg?raw";
-    import Tech from "~/assets/images/tech.svg?raw";
+    import Tech from "~/assets/images/tech.svg?raw";*/
     export default {
         name: "video-section",
         data() {
             return {
-                Eco,France,Tech,
-                dialog: false,
-                snackbarSuccess: false,
-                snackbarError: false,
-                email: '',
-                /*interval: {},
-                progressValue: 0,
-                maxProgress: 30,
-                treeData: {
-                    treeCount: 0,
-                    co2: 0,
-                    reforest: 0
-                },*/
+                /*Eco,France,Tech,*/
             }
-        },
-        /*beforeDestroy() {
-            clearInterval(this.interval)
-        },
-        mounted() {
-            this.treeData.treeCount = this.$store.state.tree_count;
-            this.treeData.co2 = parseFloat(this.$store.state.co2_compensated);
-            this.treeData.reforest = parseFloat(this.$store.state.reforest)
-            this.interval = window.setInterval(function () {
-                if (this.progressValue < this.maxProgress) {
-                    this.progressValue = this.progressValue < this.maxProgress ? this.progressValue + 1 : this.maxProgress;
-                }
-            }.bind(this), 50);*/
-            // changeBackground();
-            //
-            // function changeBackground() {
-            //     var activeIndex = parseInt(document.querySelector(".homepage-slider-background-item.active").getAttribute('data-idx'));
-            //     var previousIndex = 0;
-            //     var nextIndex = 0;
-            //     if (activeIndex === 1) {
-            //         previousIndex = 2;
-            //     } else {
-            //         previousIndex = activeIndex - 1;
-            //     }
-            //     if (activeIndex === 2) {
-            //         nextIndex = 1;
-            //     } else {
-            //         nextIndex = activeIndex + 1;
-            //     }
-            //     document.querySelector(".homepage-slider-background-item[data-idx='" + previousIndex + "']").classList.remove("activeNew");
-            //
-            //     // Set Next Direction
-            //     var direction = document.querySelector(".homepage-slider-background-item[data-idx='" + activeIndex + "']").getAttribute("data-direction");
-            //     switch (direction) {
-            //         case "right":
-            //             document.querySelector(".homepage-slider-background-item[data-idx='" + nextIndex + "']").setAttribute("data-direction", "bottom");
-            //             break;
-            //         case "bottom":
-            //             document.querySelector(".homepage-slider-background-item[data-idx='" + nextIndex + "']").setAttribute("data-direction", "left");
-            //             break;
-            //         case "left":
-            //             document.querySelector(".homepage-slider-background-item[data-idx='" + nextIndex + "']").setAttribute("data-direction", "top");
-            //             break;
-            //         case "top":
-            //             document.querySelector(".homepage-slider-background-item[data-idx='" + nextIndex + "']").setAttribute("data-direction", "right");
-            //             break;
-            //     }
-            //     setTimeout(function () {
-            //         document.querySelector(".homepage-slider-background-item[data-idx='" + nextIndex + "']").classList.add('active', 'activeNew');
-            //         document.querySelector(".homepage-slider-background-item[data-idx='" + activeIndex + "']").classList.remove("activeNew");
-            //         setTimeout(function () {
-            //             document.querySelector(".homepage-slider-background-item[data-idx='" + activeIndex + "']").classList.remove("active");
-            //             document.querySelector(".homepage-slider-background-item[data-idx='" + activeIndex + "']").setAttribute("data-direction", "");
-            //             changeBackground();
-            //         }, 5000);
-            //     }, 100);
-            // }
-        // },
+        }
     }
 </script>
 
@@ -211,17 +134,6 @@
 				"term1": "planted trees",
 				"term2": "tonnes of CO2 offset",
 				"term3": "reforested hectares"
-			},
-			"rightSection": {
-				"alerttime": "Now",
-				"alerttitle": "Warenghem says",
-				"error": "seems invalid or already registered.",
-				"label1": "First Name",
-				"label2": "e-mail",
-				"subtitle": "Our objects are being created. In the meantime, let's reforest the planet. Enter your email address to plant a tree and stay informed about the progress of the project.",
-				"success": "Thank you! To avoid SPAM, we have sent you a confirmation email before starting the planting ... See you soon!",
-				"tag": "Creation <br> of 3D objects",
-				"title": "Project progress"
 			},
 			"subtitle": "Say hello to Dionysos, the vegetal wine leather",
 			"tag1": "Ecological / Vegan",
@@ -237,17 +149,6 @@
 				"term1": "arbres plantés",
 				"term2": "tonnes CO2 compensées",
 				"term3": "hectares reforestés"
-			},
-			"rightSection": {
-				"alerttime": "maintenant",
-				"alerttitle": "Warenghem dit",
-				"error": "semble invalide ou déjà enregistré.",
-				"label1": "PRENOM ",
-				"label2": "EMAIL",
-				"subtitle": "Nous objets sont en cours de production. En attendant, participez à nos projets de reforestation ou réservez votre article (aucun paiement n'est requis)",
-				"success": "Merci! Pour éviter le SPAM, nous vous avons envoyé un email de confirmation avant de commencer la plantation... A tout de suite!",
-				"tag": "Création <br> d’objets en 3D",
-				"title": "Avancement du projet"
 			},
 			"subtitle": "Dites bonjour à Dionysos, le cuir végétal de vin",
 			"tag1": "Ecologique / Vegan",

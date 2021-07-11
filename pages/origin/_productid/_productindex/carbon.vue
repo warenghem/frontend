@@ -1,7 +1,7 @@
-<template dark>
+<template>
   <div>
     <div v-if="$attrs.productDescription.custom">
-        <div >
+        <div  id="carbon">
           <div>Plante : {{ $attrs.treesItem.name }}</div>
           <v-avatar
             class="ma-3 img-fluid position-relative"
@@ -26,7 +26,6 @@
 </template>
 
 <script>
-
   export default {
     layout: 'app',
     name: 'carbon',
@@ -37,9 +36,15 @@
         ]
       }
     },
-    data() {
-        return {
-        };
+    props: {
+        treesFocus: {
+            type: Array,
+            default: () => []
+        }
     },
+    mounted(){
+        this.$emit('focus-on-markers', this.treesFocus, true, 4)
+        this.$emit('resize-markers')
+    }
   }
 </script>

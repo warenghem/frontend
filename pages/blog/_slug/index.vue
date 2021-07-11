@@ -16,7 +16,7 @@
       </client-only>
     </v-toolbar>
     <article class="wa-magazine" v-if="post">
-      <div class="mb-5 wa-smart-picture wa-panoramic-picture square-ratio skeletton">
+      <div class="mb-5 wa-smart-picture wa-panoramic-picture square-ratio">
         <picture class="gradientoverlay blackoverlay">
           <source media="screen and (min-width: 64em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-bottom,c-maintain_ratio/'+ post.media +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-bottom,c-maintain_ratio/'+ post.media +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-bottom,c-maintain_ratio/'+ post.media +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-bottom,c-maintain_ratio/'+ post.media +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-bottom,c-maintain_ratio/'+ post.media +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-bottom,c-maintain_ratio/'+ post.media +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-bottom,c-maintain_ratio/'+ post.media +' 2500w,'" 

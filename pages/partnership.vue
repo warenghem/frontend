@@ -1,7 +1,7 @@
 <template>
-  <div class="bgcard h-100">
+  <div class=" h-100">
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="h-100"/>
+		<AtomsBtnBack class="h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 			{{$t('title')}}
@@ -10,8 +10,8 @@
 		<v-spacer></v-spacer>
 	</v-toolbar>
     <article class="wa-magazine position-relative">
-		<h2 style="bottom:0" class="text-white page-title2 w-100 text-center pvw position-absolute z-2">{{$t('shipping.subtitle')}}</h2>
-		<div class="wa-smart-picture wa-panoramic-picture large-ratio skeletton">
+		<h2 style="bottom:0" class="white--text page-title2 w-100 text-center pvw position-absolute z-2">{{$t('shipping.subtitle')}}</h2>
+		<div class="wa-smart-picture wa-panoramic-picture large-ratio">
 			<picture class="gradientoverlay">
 			<source media="screen and (min-width: 64em)"
 				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 2500w,'" 
@@ -29,11 +29,11 @@
       </div>
     </article>
 	<v-row class="pa-0 ma-0">
-		<v-col cols="12" md="8" class="bgcard pvw">
+		<v-col cols="12" md="8" class=" pvw">
 			<div >	
 				<div>
 					<template>
-					<v-card class="bgcard">
+					<v-card class="">
 						<v-expansion-panels focusable inset flat>
 							<v-expansion-panel
 								v-for="(tab,m_idx) in $t('tab.sections3')"
@@ -53,7 +53,7 @@
 			</div>
 		</v-col>
 		<v-col col="12" md="4" class="pvw bg-white">
-			<CustomerServicesLayout/>
+			<LayoutCustomerServicesLayout/>
 		</v-col>
 	</v-row>
   </div>

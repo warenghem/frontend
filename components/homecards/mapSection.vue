@@ -13,9 +13,9 @@
       </div>
     </div>
     <div class="treemapcontainer">
-      <TreeData :treeData="treeData"/>
+      <MoleculesTreeData :treeData="treeData"/>
       <client-only placeholder="Loading...">
-        <LazyMap v-if="mapshow"/>
+        <LazyOrganismsMap v-if="mapshow"/>
       </client-only>
     </div>
   </div>
@@ -51,6 +51,27 @@
             },
 
         },
+        computed: {
+          counts() {
+            let location = (this.providersDetails || []).length
+            let km = (Object.values(this.productDescription.custom.transits || []).filter(x => x.length).map(x => x.length).reduce((a, b)=> a + b,0)/1000).toFixed(0).replace(/\B(?=(\d{3})+(?!\d))/g, " ")
+            let co2 = Object.values(this.productDescription.custom.transits || []).filter(x => x.co2).map(x => x.co2).reduce((a, b)=> a + b,0).toFixed(0)
+            return [
+                  {
+                    number: location,
+                    text: this.$tc('map.counts.location', location)
+                  },
+                  {
+                    number: km,
+                    text: this.$tc('map.counts.km', km)
+                  },
+                  {
+                    number: co2,
+                    text: this.$tc('map.counts.co2', co2)
+                  }
+                ]
+          },
+        }
     }
 </script>
 <i18n>
@@ -84,7 +105,7 @@
     margin: 15px;
     border-radius: 5px;
     padding: 15px;
-    @media(min-width:48em) {
+    @media #{map-get($display-breakpoints, 'sm-and-up')} {
       max-width: 400px;
     }
 }

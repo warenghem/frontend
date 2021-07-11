@@ -1,7 +1,7 @@
 <template>
-  <div class="bgcard h-100">
+  <div class="h-100">
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="border-bottom-2 h-100"/>
+		<AtomsBtnBack class="border-bottom-2 h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 			{{$t('title')}}
@@ -10,7 +10,7 @@
 		<v-spacer></v-spacer>
 	</v-toolbar>
     <article class="wa-magazine">
-      <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
+      <div class="wa-smart-picture wa-panoramic-picture square-ratio">
         <picture class="gradientoverlay">
           <source media="screen and (min-width: 64em)"
             :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,fo-auto,c-maintain_ratio/Environments/WA_spray_abstract_grey.png 2500w,'" 
@@ -28,7 +28,7 @@
       </div>
     </article>
 	<v-row class="pa-0 ma-0">
-		<v-col cols="12" md="8" class="bgcard pa-0">
+		<v-col cols="12" md="8" class=" pa-0">
 			<v-toolbar dense class="menubar d-none d-md-flex pa-0 w-100 elevation-0">
 				<v-tabs
 					v-model="tab"
@@ -58,7 +58,7 @@
 					>
 					<div>
 						<template>
-							<v-card class="bgcard">
+							<v-card class="">
 								<div class="home-title teradeli-medium pb-10">
 									{{$t('questions.subtitle')}}
 								</div>
@@ -84,8 +84,8 @@
 					>
 					<div>
 						<template>
-						<v-card class="bgcard">
-							<div class="home-title teradeli-medium pb-10 bgcard">
+						<v-card class="">
+							<div class="home-title teradeli-medium pb-10">
 								{{$t('material.subtitle')}}
 							</div>
 							<v-expansion-panels focusable inset flat>
@@ -110,13 +110,13 @@
 					>
 					<div>
 						<template>
-						<v-card class="bgcard">
-							<div class="home-title teradeli-medium bgcard pb-5">
+						<v-card class="">
+							<div class="home-title teradeli-medium pb-5">
 								{{$t('shipping.subtitle')}}
 							</div>
 							<v-expansion-panels focusable inset flat>
-								<Shipping class="pt-5"/>
-								<Payments class="pt-5"/>
+								<LayoutShipping class="pt-5"/>
+								<LayoutPayments class="pt-5"/>
 							</v-expansion-panels>
 						</v-card>
 						</template>
@@ -147,7 +147,7 @@
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
+										<div class=" pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -174,7 +174,7 @@
 									{{tab.title}}
 									</v-expansion-panel-header>
 									<v-expansion-panel-content eager>
-										<div class="bgcard pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
+										<div class=" pa-3" style="font-size:0.9375rem" v-html="tab.text"></div>
 									</v-expansion-panel-content>
 								</v-expansion-panel>
 							</v-expansion-panels>
@@ -192,15 +192,15 @@
 							</div>
 						</v-expansion-panel-header>
 						<v-expansion-panel-content eager>
-							<Shipping class="pt-5"/>
-							<Payments class="pt-5"/>
+							<LayoutShipping class="pt-5"/>
+							<LayoutPayments class="pt-5"/>
 						</v-expansion-panel-content>
 					</v-expansion-panel>
 				</v-expansion-panels>
 			</div>
 		</v-col>
 		<v-col col="12" md="4" class="pvw bg-white">
-			<CustomerServicesLayout/>
+			<LayoutCustomerServicesLayout/>
 		</v-col>
 	</v-row>
   </div>

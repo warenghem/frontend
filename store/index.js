@@ -2,8 +2,9 @@
 import link from './link'
 import product from './product'
 import modals from './modals'
+import transitions from './transitions'
 export const modules = {
-  link, product, modals
+  link, product, modals, transitions
 };
 
 export const state = () => ({
@@ -25,16 +26,15 @@ export const mutations = {
 };
 
 export const actions = {
-  async getForestDetail({$axios, commit}) {
-
+  async getForestDetail({commit}) {
     try {
-      const res = await this.$axios.$get("/forests/145764");
+      const res = await this.$axios.$get("https://tree-nation.com/api/forests/145764");
       commit("SET_FOREST_DETAILS", res);
     } catch (e) {
       commit("SET_FOREST_DETAILS", {tree_count: 0, co2_compensated: 0});
     }
   },
-  async nuxtServerInit({dispatch,commit}) {
+  async nuxtServerInit({dispatch}) {
     await dispatch('getForestDetail');
   },
 };

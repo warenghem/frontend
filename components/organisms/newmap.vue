@@ -4,24 +4,26 @@
       <l-map
         class="treemap h-100"
         ref="map"
-        @ready="onReady"
+        @ready="fit(markersLocation(startMarkers), {paddingBottomRight: [0, 90],paddingTopLeft: [0, 10]})"
         :maxZoom="zoom"
         :center="center"
         zoomSnap="0.1"
         :options="{zoomControl: false,attributionControl: false,scrollWheelZoom: false,tap: false,boxZoom: false, doubleClickZoom: false, touchZoom: false, dragging: false, draggable: false}"
       >
         <l-tile-layer
-          :url="url"
+          :url="mapStyle"
         />
-        <l-geo-json
-                class="h-100"
-                v-for="(transit, index) in transits.polylines" :key="index"
-                :options-style="styleFunction"
-                :geojson="decode(transit.polyline)"
-                />
+        <div v-if="polylines">
+          <l-geo-json
+                  class="h-100"
+                  v-for="(polyline, index) in polylines" :key="index"
+                  :options-style="styleFunction"
+                  :geojson="decode(polyline.polyline)"
+                  />
+        </div>
         <l-marker v-for="(marker, index) in markers" :key="index"
-                  :lat-lng="[marker.from.location.latitude, marker.from.location.longitude]"
-                  @click="openMainModal(marker.from.id)"
+                  :lat-lng="[marker.location.latitude,marker.location.longitude]"
+                  @click="openMainModal(marker.id)"
                   >
           <l-icon
             :icon-size="[45, 45]"
@@ -30,50 +32,9 @@
           >
             <div class="card position-absolute">
               <v-avatar size="45" class="blob rounded-max">
-                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/'+ getDescription(marker.from.id, providersItem).image" alt="" width="35" height="35">
+                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/'+ marker.image" alt="" width="35" height="35">
               </v-avatar>
 
-            </div>
-          </l-icon>
-        </l-marker>
-        <l-marker 
-                  :lat-lng="[lastMarker.to.location.latitude, lastMarker.to.location.longitude]"
-                  @click="openMainModal(lastMarker.to.id)"
-                  >
-          <l-icon
-            :icon-size="[45, 45]"
-            className="mapClass hand"
-            icon-class="e"
-          >
-            <div class="card position-absolute">
-              <v-avatar size="45" class="blob rounded-max">
-                <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/'+ getDescription(lastMarker.to.id, providersItem).image" alt="" width="35" height="35">
-              </v-avatar>
-            </div>
-          </l-icon>
-        </l-marker>
-        <l-marker 
-                  :lat-lng="[treesItem.location.latitude, treesItem.location.longitude]"
-                  @click="openMainModal(treesItem.id)"
-                  name="trees"
-                  >
-          <l-icon
-            :icon-size="[45, 45]"
-            className="mapClass hand"
-            icon-class="e"
-          >
-            <div class="card position-absolute">
-              <v-badge
-                bordered
-                color="lightbugattiblue"
-                :content="treeDescription.quantity"
-                offset-x="15"
-                offset-y="15"
-              >
-                <v-avatar size="45" class="blob rounded-max">
-                  <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,dpr-2/'+ treesItem.image" alt="" width="35" height="35">
-                </v-avatar>
-              </v-badge>
             </div>
           </l-icon>
         </l-marker>
@@ -106,32 +67,22 @@
               LGeoJson
         },
         props: {
+            startMarkers: {
+                type: Array,
+                default: () => []
+            },
             markers: {
                 type: Array,
                 default: () => []
             },
-            lastMarker: {
+            markersLocation: {
+                type: Function,
+                default: () => {
+                }
+            },
+            polylines: {
                 type: Array,
                 default: () => []
-            },
-            providersItem: {
-                type: Array,
-                default: () => []
-            },
-            transits: {
-                type: Object,
-                default: () => {
-                }
-            },
-            treesItem: {
-                type: Object,
-                default: () => {
-                }
-            },
-            treeDescription: {
-                type: Object,
-                default: () => {
-                }
             }
         },
         mixins: [getDescription],
@@ -140,14 +91,12 @@
                 svgPath: mdiClose,
                 maxZoom: 0,
                 /*url: 'https://wxs.ign.fr/choisirgeoportail/geoportail/wmts?REQUEST=GetTile&SERVICE=WMTS&VERSION=1.0.0&STYLE=normal&TILEMATRIXSET=PM&FORMAT=image/jpeg&LAYER=ORTHOIMAGERY.ORTHOPHOTOS&TILEMATRIX={z}&TILEROW={y}&TILECOL={x}',*/
-                url: 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png',
                 /*url: 'https://2.base.maps.ls.hereapi.com/maptile/2.1/maptile/newest/reduced.night/{z}/{x}/{y}/512/png8?apiKey=kTJNv0hR0_ZCrZilVZB6iVHa1FtOo2F9t7OIsytl4kc&ppi=320',*/
                 showParagraph: false,
                 showMap: true,
                 markers: [],
                 currentModal: false,
                 geojson: null,
-                trees: false,
             };
         },
         mounted() {
@@ -161,26 +110,16 @@
                 color: this.$vuetify.theme.themes.light.lightbugattiblue,
                 opacity: 1,
               }
+            },
+            mapStyle() {
+              if (this.$vuetify.theme.dark) {
+                  return 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
+              } else {
+                  return 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png';
+              }
             }
         },
         methods: {
-            onReady() {
-              if (this.markers.length) {
-                let loc = this.markers.map(m => { return [m.from.location.latitude, m.from.location.longitude] })
-                let lastLoc = [this.lastMarker.to.location.latitude, this.lastMarker.to.location.longitude]
-                let mergeLoc = loc.concat([lastLoc]) 
-                this.$nextTick(() => {
-                  this.$refs.map.mapObject.fitBounds(mergeLoc, {paddingBottomRight: [0, 90],paddingTopLeft: [0, 10]})
-                })
-              }
-            },
-            DarkMode() {
-              if ($vuetify.theme.dark) {
-                  this.mapstyle = 'https://tiles.stadiamaps.com/tiles/alidade_smooth_dark/{z}/{x}/{y}{r}.png';
-              } else {
-                  this.mapstyle = 'https://tiles.stadiamaps.com/tiles/alidade_smooth/{z}/{x}/{y}{r}.png';
-              }
-            },
             zoomUpdate(zoom) {
                 this.currentZoom = zoom;
             },
@@ -197,8 +136,14 @@
                   }
               };
             },
-            focus(x, y) {
-                this.$refs.map.mapObject.flyToBounds(x, y)
+            focus(x, options) {
+                this.$refs.map.mapObject.flyToBounds(x, options)
+            },
+            fit(x, options) {
+                    this.$refs.map.mapObject.fitBounds(x, options)
+            },
+            resize() {
+                    this.$refs.map.mapObject.invalidateSize(true)
             }
         }
     }
@@ -248,7 +193,7 @@
         width: 69vw !important;
       }
     }
-    @media only screen and (max-width: 48em) {
+    @media #{map-get($display-breakpoints, 'xs-only')} {
       width: 100vw !important;
       right: -100vw;
       .card-header {

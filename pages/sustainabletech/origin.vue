@@ -1,8 +1,8 @@
 <template>
   <div>
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="h-100"/>
-		<div class="px-5 border-bottom-2 bg-theme d-flex w-100 h-100">
+		<AtomsBtnBack class="h-100"/>
+		<div class="px-5 border-bottom-2 d-flex w-100 h-100">
 			<img width="100px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Origin_black_1_.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Origin_black_1_.svg 512w'">
 		</div>
 		<v-spacer></v-spacer>
@@ -21,7 +21,7 @@
 		</div>
 	</div>
 	<div class="text-center page-title2 spacing" v-html="$t('title1')"></div>
-	<v-container class="timeline-container bgcard rounded-xl pvw px-0">
+	<v-container class="timeline-container rounded-xl pvw px-0">
 		<v-timeline class="pt-0" align-top :dense="$vuetify.breakpoint.smAndDown">
 			<v-timeline-item
 					fill-dot

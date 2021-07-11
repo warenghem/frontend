@@ -3,7 +3,7 @@
         style="z-index:2"
         class="text-center"
         >
-        {{$t('btnDiscover')}}
+            {{ text }}
         <v-icon small>{{ svgPath1 }}</v-icon>
     </div>
 </template>
@@ -11,11 +11,17 @@
 <script>
     import { mdiChevronRight } from '@mdi/js'
     export default {
-        name: "discover-button",
+        name: "text-button",
         data() {
             return {
                 svgPath1: mdiChevronRight,
             }
         },
+        props: {
+            text: {
+                type: String,
+                default: ''
+            }
+        }
     }
 </script>

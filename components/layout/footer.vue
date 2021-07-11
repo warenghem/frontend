@@ -8,14 +8,11 @@
       <v-card
         flat
         tile
-        color="bgcard"
-        class="text-center w-100 px-3 px-sm-15"
+        class="text-center w-100 pt-5 px-3 px-sm-15"
       >
         <v-card-title class="px-0 pb-0 d-block d-md-flex">
-          <div class="d-block d-md-flex">
-            <NuxtLink :to="localePath('/')">
-              <div style="width:150px" class="svglogogrey py-5 ma-auto ma-sm-0" v-html="LogoSmNp"/>
-            </NuxtLink>
+          <div class="d-block d-md-flex svglogogrey">
+            <AtomsLogoMain class="logoGrey" />
             <!--<v-breadcrumbs class="justify-center" style="margin-bottom:5px" dark :items="crumbs">
               <template v-slot:item="{ item }">
                 <v-breadcrumbs-item
@@ -23,7 +20,7 @@
                   ripple
                   :disabled="item.disabled"
                 >
-                  <a :href="item.to" class="text-white">
+                  <a :href="item.to" class="white--text">
                     {{ item.title }}
                   </a>
                 </v-breadcrumbs-item>
@@ -35,16 +32,7 @@
           </div>
           <v-spacer></v-spacer>
            <div class="d-block d-md-flex">
-            <v-btn
-              v-for="(link,l_idx) in $store.state.link.sociallinks"
-              class="mx-3 mb-5"
-              icon
-              :key="'link_'+l_idx"
-              target="_blank"
-              :href="link.url"
-            >
-              <v-icon class="d-block" size="24px">{{ link.icon }}</v-icon>
-            </v-btn>
+            <MoleculesBtnSocials />
            </div>
         </v-card-title>
         <v-row
@@ -73,9 +61,8 @@
             {{$t(link.name)}} 
           </v-btn>
         </v-row>
-        <References/>
+        <LayoutReferences/>
         <v-divider></v-divider>
-
         <v-card-text class="greytext">
           © {{ new Date().getFullYear() }} — Warenghem
         </v-card-text>
@@ -83,18 +70,3 @@
     </v-footer>
   </v-theme-provider>
 </template>
-
-<script>
-    import LogoSmNp from "~/assets/images/Warenghem-w-noparis-vf.svg?raw";
-    import {mdiChevronRight} from '@mdi/js'
-    export default {
-        name: 'mainfooter',
-        data() {
-          return {
-                  LogoSmNp,
-                  svgPath3: mdiChevronRight,
-                  items: [],
-              }; 
-        }
-      }
-</script>

@@ -60,8 +60,8 @@ offers:
   availability: true
   pieces: 30 pièces prochainement
 categories:
-- name: Bags
-  slug: bags
+- name: bag
+  slug: bag
   depth: 2
 tags:
 - 48H

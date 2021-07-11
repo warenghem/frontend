@@ -1,8 +1,8 @@
 <template>
-  <div class="bgcard">
+  <div class="">
     <div class="d-none d-md-block">
 	<v-toolbar dense class="menubar pa-0 w-100 elevation-0">
-		<Backbutton class="h-100"/>
+		<AtomsBtnBack class="h-100"/>
 		<div class="px-5 d-flex border-bottom-2 bg-white w-100 h-100">
           <div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
             {{$t('title')}}
@@ -11,7 +11,7 @@
         <v-spacer></v-spacer>
     </v-toolbar>
     <article class="wa-magazine position-relative">
-		<div class="wa-smart-picture wa-panoramic-picture large-ratio skeletton">
+		<div class="wa-smart-picture wa-panoramic-picture large-ratio">
 			<picture class="">
 			<source media="screen and (min-width: 64em)"
 				:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
@@ -56,7 +56,7 @@
         >
           <div>
             <template>
-              <v-card class="bgcard">
+              <v-card class="">
                 <v-tabs vertical class="pb-10">
                   <v-tab 
                     v-for="(tab,m_idx) in $t('tab.sections1')"
@@ -70,7 +70,7 @@
                     v-for="(tab,m_idx) in $t('tab.sections1')"
                     :key="'tab_'+m_idx"
                   >
-                    <v-card color="bgcard" class="pvw" flat>
+                    <v-card class="pvw" flat>
                       <v-card-text v-html="tab.text">
                       </v-card-text>
                     </v-card>
@@ -85,7 +85,7 @@
         >
           <div>
             <template>
-              <v-card class="bgcard">
+              <v-card class="">
                 <v-tabs vertical class="pb-10">
                   <div class="page-subtitle teradeli-medium pl-3 py-10">
                     {{$t('conditions.subtitle')}}
@@ -102,7 +102,7 @@
                     v-for="(tab,m_idx) in $t('tab.sections2')"
                     :key="'tab_'+m_idx"
                   >
-                    <v-card color="bgcard" class="pvw" flat>
+                    <v-card class="pvw" flat>
                       <v-card-text v-html="tab.text">
                       </v-card-text>
                     </v-card>
@@ -117,7 +117,7 @@
         >
           <div>
             <template>
-              <v-card flat class="bgcard pvw"
+              <v-card flat class=" pvw"
                 v-for="(tab,m_idx) in $t('tab.sections3')"
                 :key="'tab_'+m_idx"
               >
@@ -139,7 +139,7 @@
     </div>
     <div class="d-block d-md-none">
 		<v-toolbar dense class="menubar pa-0 w-100 elevation-0 bg-white">
-			<Backbutton/>
+			<AtomsBtnBack/>
 			<div class="pl-5 d-flex border-bottom-2 h-100 w-100">
 			<div class="teradeli-medium appbartitle text-uppercase d-inline-flex flex-column justify-center one-line">
 				{{$t('title')}}
@@ -147,7 +147,7 @@
 			</div>
 		</v-toolbar>
 		<article class="wa-magazine position-relative">
-			<div class="wa-smart-picture wa-panoramic-picture large-ratio skeletton">
+			<div class="wa-smart-picture wa-panoramic-picture large-ratio">
 				<picture class="">
 				<source media="screen and (min-width: 64em)"
 					:data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,c-maintain_ratio/Environments/logo.155.jpg 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,c-maintain_ratio/Environments/logo.155.jpg 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,c-maintain_ratio/Environments/logo.155.jpg 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,c-maintain_ratio/Environments/logo.155.jpg 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,c-maintain_ratio/Environments/logo.155.jpg 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,c-maintain_ratio/Environments/logo.155.jpg 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,c-maintain_ratio/Environments/logo.155.jpg 2500w,'" 
@@ -186,7 +186,7 @@
                   {{tab.title}}
                 </v-expansion-panel-header>
                 <v-expansion-panel-content eager>
-					<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
+					<div class=" pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -213,7 +213,7 @@
                   {{tab.title}}
                 </v-expansion-panel-header>
                 <v-expansion-panel-content eager>
-					<div class="bgcard pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
+					<div class=" pa-3 ma-1" style="font-size:0.9375rem" v-html="tab.text"></div>
                 </v-expansion-panel-content>
               </v-expansion-panel>
             </v-expansion-panels>
@@ -231,7 +231,7 @@
 			</div>
           </v-expansion-panel-header>
           <v-expansion-panel-content eager>
-            <v-card flat class="bgcard pvw"
+            <v-card flat class=" pvw"
               v-for="(tab,m_idx) in $t('tab.sections3')"
               :key="'tab_'+m_idx"
             >

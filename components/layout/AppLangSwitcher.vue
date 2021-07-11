@@ -37,7 +37,7 @@
                 </v-btn>
             </div>
             <v-card-text style="margin-top:50px" class="pa-0 h-100">
-                <v-row class="ma-0 bgcard">
+                <v-row class="ma-0">
                     <div class="titlesmall teradeli-medium primary--text pa-5 pb-0">Europe</div>
                     <v-container fluid class="productgridhome">
                         <div v-for="locale in europeavailableLocales" :key="locale.code">
@@ -47,7 +47,7 @@
                                 @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.currency)"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-pill px-3 buttonblack"
+                                    class="bg-white rounded-pill px-3"
                                     @click="$store.state.langModal = false"
                                     ripple
                                     style="height:70px"
@@ -80,7 +80,7 @@
                                 @click.native="$snipcart.setLanguage(locale.code); switchCurrencyFunc(locale.currency)"
                                 >
                                 <v-card 
-                                    class="bg-white rounded-pill px-3 buttonblack"
+                                    class="bg-white rounded-pill px-3"
                                     @click="sheet = false"
                                     style="height:70px"
                                     ripple
@@ -168,7 +168,7 @@ export default {
     grid-auto-rows: 1fr;
     padding: 1rem!important;
     grid-gap: 1rem;
-        @media (max-width: 48em) {
+        @media #{map-get($display-breakpoints, 'xs-only')} {
             grid-template-columns: repeat(1, minmax(0, 1fr));
             grid-gap: 0.5rem;
         }

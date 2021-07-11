@@ -1,33 +1,26 @@
 <template>
   <div>
-    <!--<sticky-toolbar class="stickyBar"/>-->
-    <VideoSection id="videoSection"/>
-    <ProductSection class="pt-2 pt-md-4 px-0 px-md-4" id="productSection"/>
-    <MissionSection class="py-2 pt-md-4 px-0 px-md-4" id="missionSection"/>
-    <v-container fluid class="homegrid pb-0">
-      <v-card class="bgcard homecard item2">
-        <MapSection id="mapTreeSection"/>
+    <HomecardsVideoSection id="videoSection"/>
+    <HomecardsProductSection class="pt-2 pt-md-4 px-0 px-sm-4" id="productSection"/>
+    <HomecardsMissionSection class="pb-0 py-2 py-sm-4 px-0 px-sm-4" id="missionSection"/>
+    <v-container fluid class="homegrid py-0">
+      <v-card class=" homecard item2">
+        <HomecardsMapSection id="mapTreeSection"/>
       </v-card>
-      <v-card class="bgcard item3 homecard" @scroll="handleSCroll">
-        <HistoriesSection/>
-      </v-card>
-      <!--<v-card dark color="darkbugattiblue" class="item4">
-        <div class="wa-smart-picture wa-panoramic-picture square-ratio skeletton">
-          <picture class="">
-            <source
-            :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 2500w,'" 
-            >
-            <img class="lazyload mediabox-img" 
-            :data-src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 1x,https://ik.imagekit.io/g1noocuou2/tr:q-70,dpr-2,w-1500,ar-5-3,c-maintain_ratio/Environments/WA_spray_abstract_graye_.png 2x'" 
-            data-sizes="auto" />
-          </picture>
-        </div>
-      </v-card>
-      <v-card dark class="item5" min-height="250">
-        <SocialSection/>
-      </v-card>-->
+      <v-theme-provider dark>
+        <OrganismsCardMain 
+          :type="'bgImage'"
+          :btnText="$t('btnSubscribe')"
+          :subtitle="$t('subtitle')"
+          :title="$t('title')"
+          :textColor="'white--text'"
+          :btnColor="'white--text'"
+          @click-native="$store.state.newsletterModal=true"
+          :image="'/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/X-Architecture-Shilda-Visual_Atelier_8-Architecture-2.jpg'" 
+          />
+      </v-theme-provider>
     </v-container>
-    <ShopIcon class="py-10"/>
+    <OrganismsShopIcon class="py-10"/>
   </div>
 </template>
 
@@ -35,17 +28,6 @@
 
   export default {
       name: 'default',
-      /*transition(to, from) {
-        if (!from) {
-          return 'slide-left'  don't work
-        }
-        return +to.query.page < +from.query.page ? 'slide-right' : 'slide-left' slide-right don't work
-      },
-      transition: {
-        beforeEnter() {
-          this.$i18n.finalizePendingLocaleChange()
-        }
-      }*/
       head() {
           return {
               bodyAttrs: {
@@ -76,3 +58,15 @@
   }
 
 </script>
+<i18n>
+{
+	"en": {
+		"subtitle": "Discover our history and the incredible objects that bring nature and humans together<br/>1 or 2 posts per month - Unsubscribe in one click",
+		"title": "Join the vegetable and mineral revolution"
+	},
+	"fr": {
+		"subtitle": "Une à deux fois par mois, découvrez notre histoire et les incroyables objets qui rapprochent la nature et l'humain",
+		"title": "Rejoignez la révolution végétale et minérale"
+	}
+}
+</i18n>

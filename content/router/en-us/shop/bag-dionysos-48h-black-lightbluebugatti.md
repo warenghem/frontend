@@ -60,8 +60,7 @@ offers:
   availability: in stock
   pieces: 30 pieces soon
 categories:
-- name: Bags
-  slug: bags
+- id: bag
   depth: 2
 tags:
 - 48H

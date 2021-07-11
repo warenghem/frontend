@@ -3,7 +3,7 @@
 
     <v-app-bar class="menu-bar pr-1" flat height="48px">
       <div class="d-flex align-center ml-1">
-        <div style="width:40px" class="wa-smart-picture square-ratio skeletton wa-product-image bgcard">
+        <div style="width:40px" class="wa-smart-picture square-ratio wa-product-image">
           <img :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1/Products/'+ product.image[0].src"
                class="lazyload mediabox-img"
                alt=""
@@ -22,7 +22,7 @@
             {{product.price}} {{$i18n.localeProperties.currencySign}}</h3>
         </div>
         <div class="mr-3">
-          <MainButton :text="'btnWaitforit'" @click.native="$store.state.productModal=true" style="width:260px" class="w-100" />
+          <MoleculesBtnMain :text="$t('btnWaitforit')" @click.native="$store.state.productModal=true" style="width:260px" class="w-100" />
         </div>
       </div>
     </v-app-bar>

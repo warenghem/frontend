@@ -3,7 +3,7 @@
         <div 
             v-for="image in images"
             :key="image"
-            class="wa-smart-picture square-ratio skeletton wa-product-image"
+            class="wa-smart-picture square-ratio wa-product-image"
         >
             <img class="lazyload mediabox-img"
                 :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-150'+ image +' 150w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ image +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ image +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ image +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ image +' 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800'+ image +' 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960'+ image +' 960w'" 

@@ -60,9 +60,8 @@ offers:
   availability: in stock
   pieces: 30 pièces prochainement
 categories:
-- name: Bags
+- id: bag
   google: 3032
-  slug: bags
   depth: 2
 tags:
 - 48H

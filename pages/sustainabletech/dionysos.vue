@@ -1,8 +1,8 @@
 <template>
   <div class="pb-10">
 	<v-toolbar dense class="menubar pa-0 w-100">
-		<Backbutton class="border-bottom-2 h-100"/>
-		<div class="px-5 border-bottom-2 bg-theme d-flex w-100 h-100">
+		<AtomsBtnBack class="border-bottom-2 h-100"/>
+		<div class="px-5 border-bottom-2 d-flex w-100 h-100">
 			<img width="110px" class="icon lazyload pb-1" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Logos/Dionysos.svg 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Logos/Dionysos.svg 512w'">
 		</div>
 		<v-spacer></v-spacer>
@@ -17,24 +17,24 @@
 			<img width="100%" class="icon lazyload mediabox-img" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos.png 1500w'">
 		</div>
 	</div>
-	<div class="text-center text-white page-title2 spacing" v-html="$t('title1')"></div>
+	<div class="text-center white--text page-title2 spacing" v-html="$t('title1')"></div>
 	<v-container fluid class="grid-container pa-0">
 		<v-card 
 			v-for="(product,p_idx) in products"
 			:key="p_idx"
 			height= "100%"
 			lazy
-			class="bgcard card rounded-xl mx-2 mx-md-0"
+			class=" card rounded-xl mx-2 mx-md-0"
 			:class="grid[p_idx]"
 			data-aos="fadeup" data-aos-delay="300"
 		>
-				<div class="h-100 img-fluid theme--light skeletton w-100 d-flex justify-center align-center">
+				<div class="h-100 img-fluid theme--light w-100 d-flex justify-center align-center">
 					<div :style="grid2[p_idx]" style="z-index:2" class="background text-center position-absolute d-flex justify-center align-center h-100 w-100">
 						<img width="200" class="icon lazyload" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ icon[p_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ icon[p_idx] +' 512w'">
 					</div>
 					<div
 						style="z-index:2;max-width:600px;margin-top: 250px!important" 
-						class="text-center position-absolute d-flex justify-center align-center h-100 w-100 text pvw d-block ma-auto page-subtitle2 teradeli-medium text-white"
+						class="text-center position-absolute d-flex justify-center align-center h-100 w-100 text pvw d-block ma-auto page-subtitle2 teradeli-medium white--text"
 						v-html="product.summary"
 					>
 					</div>
@@ -58,7 +58,7 @@
 		</v-card>
 	</v-container>
 	<v-container fluid class="position-relative pa-0 spacing">
-		<div style="z-index:2" class="text-center text-white page-title2 position-relative" v-html="$t('title2')"></div>
+		<div style="z-index:2" class="text-center white--text page-title2 position-relative" v-html="$t('title2')"></div>
 		<div class="position-relative mediabox" style="background:black">
 			<div style="z-index:3;min-height: 70vh;" class="position-relative w-100 text-center specialgradientoverlay d-flex align-center justify-center pa-5">
 				<img data-aos="fade" data-aos-delay="300" style="width:500px; max-width:100%;z-index: 2;position: relative;" class="icon lazyload pb-3" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_2.7b.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_2.7b.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_2.7b.png 683w'">
@@ -68,7 +68,7 @@
 		</div>
 	</v-container>
 	<v-container id="text" fluid class="text-center pa-1">
-		<div class="text-center text-white page-title2 spacing" v-html="$t('title3')"></div>
+		<div class="text-center white--text page-title2 spacing" v-html="$t('title3')"></div>
 		<img data-aos="fadeup" data-aos-delay="300" style="max-width:800px;background: #f6f5f3;" class="lazyload rounded-xl w-100" data-srcset="https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380/Environments/dionysos_timelines.png 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512/Environments/dionysos_timelines.png 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683/Environments/dionysos_timelines.png 683w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-800/Environments/dionysos_timelines.png 800w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-960/Environments/dionysos_timelines.png 960w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1500/Environments/dionysos_timelines.png 1500w">
 	</v-container>
 	<!--<v-container fluid class="timeline-container">
@@ -109,10 +109,10 @@
 			:key="o_idx"
 			height= "100%"
 			lazy
-			class="bgcard card"
+			class=" card"
 			:class="origingrid[o_idx]"
 		>
-				<div class="h-100 img-fluid theme--light skeletton">
+				<div class="h-100 img-fluid theme--light">
 					<div style="z-index:2" class="text-uppercase text-center position-absolute d-flex justify-center h-100 w-100 pt-5">
 						{{origin.subtitle}}
 					</div>
@@ -122,7 +122,7 @@
 								<img width="200px" class="icon lazyload" :srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ originicon[o_idx] +' 300w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-380'+ originicon[o_idx] +' 380w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-512'+ originicon[o_idx] +' 512w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-683'+ originicon[o_idx] +' 683w'">
 							</div>
 							<div
-								class="text-center text-uppercase text-white page-title d-block" style="max-width:500px!important;font-weight: bold;"
+								class="text-center text-uppercase white--text page-title d-block" style="max-width:500px!important;font-weight: bold;"
 								>
 								{{origin.title}}
 							</div>
@@ -132,7 +132,7 @@
 				</div>
 		</v-card>
 	</v-container>-->
-	<div class="text-center text-white page-title2 spacing" v-html="$t('title4')"></div>
+	<div class="text-center white--text page-title2 spacing" v-html="$t('title4')"></div>
 	<v-container fluid class="pa-0">
 		<v-row class="ma-0">
 		<v-col 
@@ -329,7 +329,7 @@
   grid-template-rows: 1fr;
   grid-template-areas:
     "div2 div2 div2 div3 div3 div3";
-  @media (max-width: 48em) {
+  @media #{map-get($display-breakpoints, 'xs-only')} {
   grid-template-areas:
     "div2 div2 div2 div2 div2 div2"
     "div3 div3 div3 div3 div3 div3"
@@ -346,7 +346,7 @@
   grid-template-rows: 1fr 1fr 1fr;
   grid-template-areas:
     "div1 div1 div1 div2 div2 div2 div3 div3 div3";
-  @media (max-width: 48em) {
+  @media #{map-get($display-breakpoints, 'xs-only')} {
   	grid-template-areas:
 		"div1 div1 div1 div1 div1 div1"
 		"div2 div2 div2 div2 div2 div2"
@@ -357,7 +357,7 @@
 }
 .card {
   height: 25rem!important;
-  @media (min-width: 48em) {
+  @media #{map-get($display-breakpoints, 'sm-and-up')} {
     height: 40rem!important;
   }
 }
@@ -462,7 +462,7 @@ border-radius: 20px !important; }
 	::v-deep .v-timeline-item__inner-dot {
 		border: 2px solid white;
 	}
-@media (min-width: 48em) {
+@media #{map-get($display-breakpoints, 'sm-and-up')} {
 	::v-deep .dot1 .v-timeline-item__dot, ::v-deep .dot1 .v-timeline-item__dot, ::v-deep .dot2 .v-timeline-item__dot, ::v-deep .dot3 .v-timeline-item__dot, ::v-deep .dot5 .v-timeline-item__dot, ::v-deep .dot6 .v-timeline-item__dot {
 		height: 152px!important;
 		width: 152px!important;

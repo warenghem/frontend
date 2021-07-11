@@ -2,35 +2,25 @@
   <div v-click-outside="closeSideModal">
     <ProductStickyToolbar class="stickyBar" :product="product"/>
     <v-container fluid class="pa-0">
+      <AtomsBtnBack style="z-index:1; height:47px!important" class="position-absolute systemBackground"/>
       <v-row
         class="ma-0"
       >
         <v-col
-          cols="12"
+          cols="12" 
           md="8"
           class="pa-0"
         >
           <v-row class="ma-0">
-            <div style="z-index:1" class="position-absolute">
-              <Backbutton/>
-            </div>
             <v-col :cols="12" class="pl-lg-0 pa-0 position-relative">
-              <VueSlickCarousel class="bgcard" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :key="selectedColor">
+              <VueSlickCarousel class="" :arrows="false" :dots="false" ref="c1" :asNavFor="$refs.c2" :focusOnSelect="true" :key="selectedColor">
                 <div
                   v-for="(img,i_dx) in productImages"
                   :key="'image_'+i_dx"
                   style="outline: none;"
                 >
 
-                  <div class="wa-smart-picture square-ratio skeletton wa-product-image">
-                    <div class="position-absolute px-3 realisation">{{$t('3drender')}}</div>
-                    <img
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-4-3/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-4-3/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-4-3/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-4-3/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-4-3/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-4-3/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-4-3/'+ img.src +' 2500w,'"
-                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-4-3/'+ img.src"
-                      class="lazyload mediabox-img"
-                      alt=""
-                    >
-                  </div>
+                  <AtomsImageSquared class="wa-product-image systemGray" :ratio="'ar-4-3'" :image="img.src" />
                 </div>
               </VueSlickCarousel>
               <VueSlickCarousel class="mt-2" ref="c2" v-bind="settingsnav" :asNavFor="$refs.c1" :focusOnSelect="true" :key="selectedColor">
@@ -39,15 +29,7 @@
                   :key="'image_'+i_dx"
                   @click="$refs.c1.goTo(i_dx)"
                 >
-                  <div class="wa-smart-picture square-ratio skeletton wa-product-image hand mx-1">
-                    <img
-                      v-if="productImages.length > 0"
-                      :data-srcset="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-640,ar-1-1/'+ img.src +' 640w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-768,ar-1-1/'+ img.src +' 768w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1024,ar-1-1/'+ img.src +' 1024w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1366,ar-1-1/'+ img.src +' 1366w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1600,ar-1-1/'+ img.src +' 1600w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-1920,ar-1-1/'+ img.src +' 1920w,https://ik.imagekit.io/g1noocuou2/tr:q-70,w-2500,ar-1-1/'+ img.src +' 2500w,'"
-                      :data-lowsrc="'https://ik.imagekit.io/g1noocuou2/tr:q-15,bl-10,w-640,ar-1-1/'+ img.src"
-                      class="bgcard lazyload mediabox-img"
-                      alt=""
-                    >
-                  </div>
+                  <AtomsImageSquared class="wa-product-image systemGray hand mx-1" :ratio="'ar-1-1'" :image="img.src" />
                 </div>
               </VueSlickCarousel>
             </v-col>
@@ -63,19 +45,9 @@
           </div>-->
           <div class="home-title px-0 text-left">{{product.name}}</div>
           <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2">{{product.slogan}}</div>
-          <div class="py-5 d-flex align-center justify-space-between">
-            <v-row style="" justify="center" class="pa-0 ma-0 text-center">
-              <v-card
-                  v-for="(ad,i_dx) in product.award"
-                  :key="'award'+i_dx"
-                  class="mx-5 award-img"
-               >
-               <div style="height:60px">
-                <img width="100%" class="h-100 contain" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-120,dpr-2/Logos/'+ ad.image" alt="">
-               </div>
-              </v-card>
-            </v-row>
-          </div>
+          <v-row align="center" justify="center" class="py-5 pa-0 ma-0 text-center">
+              <img v-for="(ad,i_dx) in product.award" :key="'award'+i_dx" style="height:60px" width="100%" class="mx-5 award-img h-100 contain" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-120,dpr-2/Logos/'+ ad.image" alt="">
+          </v-row>
           <!--<div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
                @click="openSideModal('colorSide')"
           >
@@ -94,27 +66,19 @@
             </div>
 
           </div>-->
-          <div class="d-flex justify-space-between align-center my-5 mx-3">
-            <h3 class="teradeli-book">{{ $n(product.price, 'currency') }}</h3>
-            <div class="smalltext d-none">
-              <v-icon style="bottom: 1px" x-small :class="{'available':stockstatus.stock !== '0'}">{{ svgPath4 }}</v-icon>
-              {{product.offers.availability !== '0'?$t('product.stock'):$t('product.notInStock')}}
-            </div>
-            <div class="smalltext">
-              <v-icon style="bottom: 1px;" x-small :class="{'available':product.offers.availability}">{{ svgPath4 }}</v-icon>
-              {{product.offers.pieces}}
-            </div>
-          </div>
-          <MainButton :text="'btnWaitforit'" :large="true" @click.native="$store.state.productModal=true" style="width:260px" class="w-100" />
-          <Buybutton :product="product" class="w-100 my-2 d-none" />
+          <v-row align="center" justify="space-between" class="my-5 mx-3">
+            <ProductPrice :price="product.price" />
+            <ProductStock :pieces="product.offers.pieces" :stock="stockstatus.stock"/>
+          </v-row>
+          <MoleculesBtnMain :text="$t('btnWaitforit')" :large="true" @click.native="$store.state.productModal=true" class="w-100" />
+          <ProductBuybutton :product="product" class="w-100 my-2 d-none" />
           <p class="text-center">{{$t('nopayment')}}</p>
-          <div class="mt-5" v-html="product.description">
-          </div>
+          <div class="mt-5" v-html="product.description"></div>
           <v-subheader>{{$t('product.details')}}</v-subheader>
           <div class="mx-5">
             <div class="py-5 d-flex align-center justify-space-between">
               <v-row style="height:92px" justify="center" class="pa-0 ma-0 text-center">
-                <v-card
+                <div
                     v-for="(mtr,i_dx) in product.material"
                     :key="'material_'+i_dx"
                     width="110px"
@@ -123,7 +87,7 @@
                 <v-card-text class="pa-0">
                   {{mtr.name}}
                 </v-card-text>
-                </v-card>
+                </div>
               </v-row>
             </div>
             <div class="mb-5">
@@ -273,9 +237,9 @@
         </v-col>
       </v-row>-->
     </v-container>
-    <ShopIcon class="py-10"/>
-    <InfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
-    <SideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
+    <OrganismsShopIcon class="py-10"/>
+    <ProductInfoModal :is-modal="infoModal" v-on:closeModal="infoModal=false" :current="currentModal"/>
+    <ProductSideModal :is-modal="sideModal" v-on:closeModal="closeSideModal" :current="currentSideItem"
                 :product="product" @colorSelect="colorSelect" />
   </div>
 
@@ -296,7 +260,7 @@
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
     import VueFoldable from 'vue-foldable'
     import 'vue-foldable/dist/vue-foldable.css'
-    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiCircle, mdiTruckDelivery, mdiPackageVariantClosed } from '@mdi/js'
+    import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiTruckDelivery, mdiPackageVariantClosed } from '@mdi/js'
     // import "viewerjs/dist/viewer.css";
     Vue.component('foldable', VueFoldable);
     import getSiteMeta from '@/utils/getSiteMeta';
@@ -327,7 +291,6 @@
                 svgPath1: mdiChevronRight,
                 svgPath2: mdiCreditCard,
                 svgPath3: mdiContentCopy,
-                svgPath4: mdiCircle,
                 svgPath5: mdiTruckDelivery,
                 svgPath7: mdiPackageVariantClosed,
                 read_more: true,
@@ -578,10 +541,16 @@ button.slick-arrow.slick-next {
   }
 .award-img {
     width: 35%;
-    @media (min-width:48em) {
+    @media #{map-get($display-breakpoints, 'sm-and-up')} {
       width: 25%;
      }
   }
+::v-deep .v-chip {
+  height: auto!important;
+  white-space: inherit!important;
+  min-height: 32px;
+  padding: 6px 12px!important;
+}
 /* purgecss start ignore */
   .vue-foldable-container {
     transition: max-height 0.7s;

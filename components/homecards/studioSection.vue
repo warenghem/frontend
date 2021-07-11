@@ -5,7 +5,7 @@
         <v-row no-gutters class="pa-0 pt-3">
             <v-col cols="12" lg="3" md="4" sm="6" v-for="(profile,idx) in profiles" :key="'profile_'+idx">
                 <v-card align=center class="item-inner pa-sm-5 pa-0 pb-10">
-                    <!--<div class="profile-holder mb-0 pa-0 skeletton wa-smart-picture rounded-xl large-ratio">
+                    <!--<div class="profile-holder mb-0 pa-0 wa-smart-picture rounded-xl large-ratio">
                         <v-card-actions style="z-index:2;bottom:0;right:0" class="position-absolute">
                             <v-spacer></v-spacer>
                             <v-btn
@@ -28,7 +28,7 @@
                     <div class="text-left pt-2">
                         <div class="smalltitle teradeli-medium primary--text pt-3">{{profile.name}}</div>
                         <div class="smalltitle teradeli-medium lightbugattiblue--text pt-2">
-                            {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
+                            {{$t('profiles')(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).role:''}}
                         </div>
                         <div class="item-details pt-3">
                             {{$t('profiles').find(pro=>profile.key===pro.key)?$t('profiles').find(pro=>profile.key===pro.key).biography:''}}

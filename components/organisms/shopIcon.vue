@@ -7,14 +7,14 @@
             <v-btn
                 icon
                 class="mb-2"
-                :to="items[idx].link" nuxt
+                :to="localePath('/')+items[idx].link" nuxt
             >
                 <v-icon x-large>{{ items[idx].icon }}</v-icon>
             </v-btn>
             <div class=" teradeli-medium">{{item.title}}</div>
-            <NuxtLink :to="items[idx].link">
-                <Discoverbutton class="teradeli-medium lightbugattiblue--text"/>
-            </NuxtLink>
+            <!--<NuxtLink :to="items[idx].link">
+                <MoleculesBtnText :text="$t('btnDiscover')" class="teradeli-medium lightbugattiblue--text"/>
+            </NuxtLink>-->
         </v-col>
     </v-row>
 </template>
@@ -26,15 +26,15 @@
             return {
                 items: [
                     {
-                        link: this.localePath('/shipping/'),
+                        link: 'shipping/',
                         icon: mdiTruckDelivery
                     },
                     {
-                        link: this.localePath('/payments/'),
+                        link: 'payments/',
                         icon: mdiCreditCard
                     },
                     {
-                        link: this.localePath('/shipping/'),
+                        link: 'shipping/',
                         icon: mdiPackageVariantClosed
                     }
                 ]

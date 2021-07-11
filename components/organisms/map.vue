@@ -39,7 +39,6 @@
       <div class="card">
         <div style="height: 50px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
-            <treebutton class="d-none" @click="closeSlide"/>
           </div>
           <v-btn
             text
@@ -160,7 +159,6 @@
       <div class="card">
         <div style="height: 50px" class="d-flex justify-space-between align-center border-bottom-2">
           <div class="border-right-2 px-3 h-100 d-flex align-center" style="width: 100%">
-            <treebutton class="d-none" @click="closeSlide"/>
           </div>
           <v-btn
             text
@@ -561,7 +559,7 @@
         width: 69vw !important;
       }
     }
-    @media only screen and (max-width: 48em) {
+    @media #{map-get($display-breakpoints, 'xs-only')} {
       width: 100vw !important;
       right: -100vw;
       .card-header {

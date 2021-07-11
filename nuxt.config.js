@@ -1,7 +1,5 @@
-import getSiteMeta from "./utils/getSiteMeta";
-
-const meta = getSiteMeta();
-import colors from 'vuetify/es5/util/colors'
+import getSiteMeta from './utils/getSiteMeta'
+const meta = getSiteMeta()
 import axios from 'axios'
 
 export default {
@@ -12,27 +10,30 @@ export default {
     baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
   publicRuntimeConfig: {
-    baseUrl: process.env.BASE_URL || 'http://localhost:3000',
+    baseUrl: process.env.BASE_URL || 'http://localhost:3000'
   },
   head: {
     titleTemplate: '%s' + ' | Warenghem',
     title: 'Somewhere...',
     meta: [
       ...meta,
-      {charset: "utf-8"},
-      {name: "HandheldFriendly", content: "True"},
-      {name: "viewport", content: "width=device-width, initial-scale=1"},
-      {property: "og:site_name", content: "Warenghem Studios"},
+      { charset: 'utf-8' },
+      { name: 'HandheldFriendly', content: 'True' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { property: 'og:site_name', content: 'Warenghem Studios' },
       {
-        hid: "description",
-        name: "description",
+        hid: 'description',
+        name: 'description',
         content:
-          "À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com'",
+          "À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com'"
       },
-      {property: "og:image:width", content: "740"},
-      {property: "og:image:height", content: "300"},
-      {name: "twitter:site", content: "@warenghemparis"},
-      {name: "twitter:card", content: "https://ik.imagekit.io/g1noocuou2/logo-meta.png"},
+      { property: 'og:image:width', content: '740' },
+      { property: 'og:image:height', content: '300' },
+      { name: 'twitter:site', content: '@warenghemparis' },
+      {
+        name: 'twitter:card',
+        content: 'https://ik.imagekit.io/g1noocuou2/logo-meta.png'
+      }
     ],
     link: [
       /*{
@@ -40,21 +41,33 @@ export default {
         rel: "canonical",
         href: process.env.BASE_URL,
       },*/
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: "preconnect", href: "https://ik.imagekit.io", crossorigin: true},
-      {rel: "preconnect", href: "https://app.snipcart.com", crossorigin: true},
-      {rel: "preconnect", href: "https://cdn.snipcart.com", crossorigin: true},
-      {rel: "preconnect", href: "d33wubrfki0l68.cloudfront.net", crossorigin: true},
-      {rel: "preconnect", href: "www.google-analytics.com", crossorigin: true},
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { rel: 'preconnect', href: 'https://ik.imagekit.io', crossorigin: true },
+      {
+        rel: 'preconnect',
+        href: 'https://app.snipcart.com',
+        crossorigin: true
+      },
+      {
+        rel: 'preconnect',
+        href: 'https://cdn.snipcart.com',
+        crossorigin: true
+      },
+      {
+        rel: 'preconnect',
+        href: 'd33wubrfki0l68.cloudfront.net',
+        crossorigin: true
+      },
+      { rel: 'preconnect', href: 'www.google-analytics.com', crossorigin: true }
     ]
   },
   pageTransition: {
     transition(to, from) {
       if (!from) {
-        return "slide-left"
+        return 'slide-left'
       }
-      return +to.params.id < +from.params.id ? "slide-right" : "slide-left"
-    },
+      return +to.params.id < +from.params.id ? 'slide-right' : 'slide-left'
+    }
   },
   render: {
     /*asyncScripts: true,
@@ -69,17 +82,14 @@ export default {
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
-  css: [
-    '@/assets/scss/main.css',
-    '@/assets/scss/app.scss',
-  ],
+  css: ['@/assets/scss/main.css', '@/assets/scss/app.scss'],
 
   // Plugins to run before rendering page (https://go.nuxtjs.dev/config-plugins)
   plugins: [
     /*'~/plugins/router',*/
-    {src: '~/plugins/lazysizes', ssr: false},
-    {src: '~/plugins/vee-validate', ssr: false},
-    {src: '~/plugins/aos', ssr: false},
+    { src: '~/plugins/lazysizes', ssr: false },
+    { src: '~/plugins/vee-validate', ssr: false },
+    { src: '~/plugins/aos', ssr: false }
   ],
 
   // Auto import components (https://go.nuxtjs.dev/config-components)
@@ -91,12 +101,12 @@ export default {
     '@nuxtjs/vuetify',
     '@nuxtjs/svg',
     '@nuxtjs/google-analytics',
-    '@nuxtjs/snipcart'
+    '@nuxtjs/snipcart',
+    '@nuxt/postcss8'
   ],
 
   // Modules (https://go.nuxtjs.dev/config-modules)
   modules: [
-    // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
     [
       '@nuxtjs/component-cache',
@@ -111,7 +121,7 @@ export default {
     '@nuxt/content',
     '@nuxtjs/gtm',
     'cookie-universal-nuxt',
-    '@nuxtjs/sitemap',
+    '@nuxtjs/sitemap'
   ],
 
   // Content module configuration (https://go.nuxtjs.dev/config-content)
@@ -130,9 +140,10 @@ export default {
       lang: 'fr-fr',
       ogHost: 'www.warenghem.com',
       ogSiteName: 'Warenghem Studios',
-      ogDescription: 'À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com',
+      ogDescription:
+        'À Paris, Bags & shoes made from Wine leather - Vegan & Ecologic | Made in France | Sustainable Technologies - www.warenghem.com',
       twitterCard: 'summary',
-      twitterSite: 'www.warenghem.com',
+      twitterSite: 'www.warenghem.com'
     }
   },
 
@@ -161,7 +172,7 @@ export default {
         file: 'en-us.json',
         currency: 'GBP',
         currencySign: '£',
-        img: '/flags/united-kingdom.svg',
+        img: '/flags/united-kingdom.svg'
       },
       {
         code: 'fr-ch',
@@ -172,7 +183,7 @@ export default {
         file: 'fr-fr.json',
         currency: 'CHF',
         currencySign: '₣',
-        img: '/flags/switzerland.svg',
+        img: '/flags/switzerland.svg'
       },
       {
         code: 'en-us',
@@ -195,7 +206,7 @@ export default {
         file: 'en-us.json',
         currency: 'EUR',
         currencySign: '€',
-        img: '/flags/european-union.svg',
+        img: '/flags/european-union.svg'
       },
       {
         code: 'fr-ca',
@@ -206,7 +217,7 @@ export default {
         file: 'fr-fr.json',
         currency: 'CAD',
         currencySign: 'C$',
-        img: '/flags/canada.svg',
+        img: '/flags/canada.svg'
       },
       {
         code: 'en-ca',
@@ -217,7 +228,7 @@ export default {
         file: 'en-us.json',
         currency: 'CAD',
         currencySign: 'C$',
-        img: '/flags/canada.svg',
+        img: '/flags/canada.svg'
       },
       {
         code: 'en',
@@ -228,7 +239,7 @@ export default {
         file: 'en-us.json',
         currency: 'USD',
         currencySign: '$',
-        img: '/flags/monde.svg',
+        img: '/flags/monde.svg'
       },
       {
         code: 'fr-fr',
@@ -241,13 +252,14 @@ export default {
         currencySign: '€',
         img: '/flags/france.svg',
         isCatchallLocale: true
-      },
+      }
     ],
     vueI18n: {
       messages: {
         fr: require('./locales/fr-fr.json'),
-        en: require('./locales/en-us.json'),
+        en: require('./locales/en-us.json')
       },
+      silentFallbackWarn: true,
       numberFormats: {
         'fr-fr': {
           currency: {
@@ -298,7 +310,7 @@ export default {
             minimumFractionDigits: 0
           }
         },
-        'en': {
+        en: {
           currency: {
             style: 'currency',
             currency: 'USD',
@@ -412,7 +424,7 @@ export default {
             minute: 'numeric'
           }
         },
-        'en': {
+        en: {
           short: {
             year: 'numeric',
             month: 'short',
@@ -428,102 +440,117 @@ export default {
           }
         }
       }
-    },
+    }
   },
   hooks: {
     'content:file:beforeInsert': (document) => {
       if (document.extension === '.md') {
-        document.priceEuro = document.offers ? parseFloat(document.offers.price) : null;
-        let currency = [];
-        let snipCurrency = {};
+        document.priceEuro = document.offers
+          ? parseFloat(document.offers.price)
+          : null
+        let currency = []
+        let snipCurrency = {}
         if (document.priceEuro) {
           /*250 per month axios.get("http://api.exchangeratesapi.io/v1/latest?access_key=64ac053a7427164393210fab8ef82178&base=EUR").then(res => {*/
           /*1000 per month axios.get("http://data.fixer.io/api/latest?access_key=c92c63715229ad0c6cbc84a09a4fcd66&base=EUR").then(res => {*/
           /*unlimited per month*/
-          axios.get("https://api.exchangerate.host/latest?base=EUR").then(res => {
-            Object.entries(res.data.rates).forEach(([key, value]) => {
-              if (['EUR', 'CAD', 'USD', 'GBP', 'CHF'].includes(key)) {
-                if (key !== 'EUR') {
-                  currency.push({
-                    "name": key,
-                    "price": (value * document.priceEuro + document.priceEuro * 0.01).toFixed(0)
-                  })
-                  snipCurrency[key.toLowerCase()] = parseInt((value * document.priceEuro + document.priceEuro * 0.01).toFixed(0))
-                } else {
-                  currency.push({"name": key, "price": document.priceEuro.toFixed(0)})
-                  snipCurrency[key.toLowerCase()] = parseInt(document.priceEuro.toFixed(0))
+          axios
+            .get('https://api.exchangerate.host/latest?base=EUR')
+            .then((res) => {
+              Object.entries(res.data.rates).forEach(([key, value]) => {
+                if (['EUR', 'CAD', 'USD', 'GBP', 'CHF'].includes(key)) {
+                  if (key !== 'EUR') {
+                    currency.push({
+                      name: key,
+                      price: (
+                        value * document.priceEuro +
+                        document.priceEuro * 0.01
+                      ).toFixed(0)
+                    })
+                    snipCurrency[key.toLowerCase()] = parseInt(
+                      (
+                        value * document.priceEuro +
+                        document.priceEuro * 0.01
+                      ).toFixed(0)
+                    )
+                  } else {
+                    currency.push({
+                      name: key,
+                      price: document.priceEuro.toFixed(0)
+                    })
+                    snipCurrency[key.toLowerCase()] = parseInt(
+                      document.priceEuro.toFixed(0)
+                    )
+                  }
                 }
-              }
-
-            });
-            document.currency = currency;
-            document.snipCurrency = snipCurrency;
-          }).catch(() => {
-            document.currency = currency;
-            document.snipCurrency = {} 
-          });
+              })
+              document.currency = currency
+              document.snipCurrency = snipCurrency
+            })
+            .catch(() => {
+              document.currency = currency
+              document.snipCurrency = {}
+            })
         }
       }
     }
   },
-
-  axios: {
-    baseURL: 'https://tree-nation.com/api/',
-  },
-
   vuetify: {
     customVariables: ['~/assets/variables.scss'],
     treeShake: true,
     defaultAssets: false,
+    lang: {},
     theme: {
       options: {
         customProperties: true,
+        variations: false
       },
       themes: {
         dark: {
-          background: '#000',
-          bgcard: {
-            base: '#1E1E1F',
-            darken3: '#161617'
-          },
-          primary: '#ffffff',
-          secondary: '#767676',
-          terciary: '#666666',
-          accent: colors.grey.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+          systemBackground: '#000',
+          systemTopNavigation: '#1D1D1D',
+          systemBottomNavigation: '#161616',
+          systemGray: '#1C1C1E',
+          systemGray2: '#2C2C2E',
+          systemGray3: '#3A3A3C',
+          systemGray4: '#48484A',
+          systemGray5: '#636366',
+          systemGray6: '#8E8E93',
+          systemYellow: '#ffd60a',
+          systemOrange: '#ff9f0a',
+          systemRed: '#ff453a',
+          systemGreen: '#30d158',
           darkbugattiblue: '#153038',
           lightbugattiblue: '#3D8EBE',
-          wablack: '#19110b'
+          primary: 'ffffff',
+          secondary: 'ebebf5',
+          anchor: '#3D8EBE'
         },
         light: {
-          background: colors.white,
-          bgcard: {
-            base: '#eaeaec',
-            lighten3: '#ffb700',
-            darken3: '#161617'
-          },
-          primary: '#313131',
-          secondary: '#424242',
-          terciary: '#ffb700',
-          accent: colors.grey.darken3,
-          info: colors.teal.lighten1,
-          warning: colors.amber.base,
-          error: colors.deepOrange.accent4,
-          success: colors.green.accent3,
+          systemBackground: '#ffffff',
+          systemGray: '#F2F2F7',
+          systemGray2: '#E5E5EA',
+          systemGray3: '#D1D1D6',
+          systemGray4: '#C7C7CC',
+          systemGray5: '#AEAEB2',
+          systemGray6: '#8E8E93',
+          systemYellow: '#ffcc00',
+          systemOrange: '#ff9500',
+          systemRed: '#ff3b30',
+          systemGreen: '#34c759',
           darkbugattiblue: '#153038',
           lightbugattiblue: '#3D8EBE',
-          wablack: '#19110b',
-          appledarkfooter: '#1d1d1f'
+          primary: '000000',
+          secondary: '#86868b',
+          anchor: '#3D8EBE'
         }
       }
     },
-    css: true,
+    css: false
   },
   snipcart: {
-    key: "N2VkOWYwOTgtNDYxMC00YWFmLWFjYzEtMDllZmY0YzdmZmUyNjM3Mzk5NDI5MzA2MTE0MDg2",
+    key:
+      'N2VkOWYwOTgtNDYxMC00YWFmLWFjYzEtMDllZmY0YzdmZmUyNjM3Mzk5NDI5MzA2MTE0MDg2'
   },
   sitemap: {
     path: '/sitemapindex.xml',
@@ -531,31 +558,30 @@ export default {
     i18n: true,
     gzip: true,
     trailingSlash: true,
-    exclude: [
-      '^.*api.*$',
-      '^.*filter.*$',
-    ],
+    exclude: ['^.*api.*$', '^.*filter.*$'],
     routes: async () => {
-      const {$content} = require('@nuxt/content')
-      const files = await $content(`router`, {deep: true}).only(['path', 'slug']).fetch()
+      const { $content } = require('@nuxt/content')
+      const files = await $content(`router`, { deep: true })
+        .only(['path', 'slug'])
+        .fetch()
       /*return files.map(file => file.path === '/index' ? '/' : file.path)*/
 
       return files.map((file) => ({
         url: file.path.split('/')[1] === 'en' ? file.slug : file.path,
         links: [
-          {lang: 'en', url: `en/${file.slug}/`},
-          {lang: 'en-ca', url: `en-ca/${file.slug}/`},
-          {lang: 'en-gb', url: `en-ca/${file.slug}/`},
-          {lang: 'en-ie', url: `en-ie/${file.slug}/`},
-          {lang: 'en-us', url: `en-us/${file.slug}/`},
-          {lang: 'fr-ca', url: `fr-ca/${file.slug}/`},
-          {lang: 'fr-ch', url: `fr-ch/${file.slug}/`},
+          { lang: 'en', url: `en/${file.slug}/` },
+          { lang: 'en-ca', url: `en-ca/${file.slug}/` },
+          { lang: 'en-gb', url: `en-ca/${file.slug}/` },
+          { lang: 'en-ie', url: `en-ie/${file.slug}/` },
+          { lang: 'en-us', url: `en-us/${file.slug}/` },
+          { lang: 'fr-ca', url: `fr-ca/${file.slug}/` },
+          { lang: 'fr-ch', url: `fr-ch/${file.slug}/` },
           /*{ lang: 'fr-fr', url: `fr-fr/${file.slug}/` },*/
-          {lang: 'x-default', url: `${file.slug}/`}
+          { lang: 'x-default', url: `${file.slug}/` }
         ]
       }))
     },
-    filter({routes}) {
+    filter({ routes }) {
       return routes.map((route) => {
         if (!route.name) return route
         const page = route.name.split('__')[0]
@@ -587,36 +613,42 @@ export default {
   },
   router: {
     trailingSlash: true,
+    middleware: 'pages'
   },
   // Build Configuration (https://go.nuxtjs.dev/config-build)
   build: {
-    extend(config, {isDev, isClient, loaders: {vue}}) {
+    extend(config, { isDev, isClient, loaders: { vue } }) {
       if (isClient) {
-        vue.transformAssetUrls.img = ['data-src', 'src'];
+        vue.transformAssetUrls.img = ['data-src', 'src']
         vue.transformAssetUrls.source = ['data-srcset', 'srcset']
       }
     },
     postcss: {
+      hideNothingWarning: true,
       plugins: {
-        "@fullhuman/postcss-purgecss": {
+        lost: {},
+        '@fullhuman/postcss-purgecss': {
           content: [
             'components/**/*.vue',
             'layouts/**/*.vue',
             'pages/**/*.vue',
             'plugins/**/*.js',
-            'node_modules/vuetify/src/**/*.ts',
+            'node_modules/vuetify/src/**/*.ts'
           ],
           styleExtensions: ['.css'],
           safelist: {
             standard: [
-              "body",
-              "html",
-              "nuxt-progress",
+              'body',
+              'html',
+              'nuxt-progress',
               /col-*/,
               /v-dialog*/,
               /^vue-foldable/,
               /^slide-left/,
-              "aos-init", "aos-animate", "data-aos-delay", "data-aos-duration",
+              'aos-init',
+              'aos-animate',
+              'data-aos-delay',
+              'data-aos-duration'
             ],
             deep: [
               /page-enter/,
@@ -630,18 +662,24 @@ export default {
               /dialog-bottom-transition/,
               /^vue-foldable/,
               /^viewer/,
-              /^slide-left/,
+              /^slide-left/
             ],
-            greedy: [/leaflet/, /^lazy/, /^ls/, /^mediabox/, /^slick/, /^viewer/, /^vue-foldable/, /^slide-left/]
+            greedy: [
+              /leaflet/,
+              /^lazy/,
+              /^ls/,
+              /^mediabox/,
+              /^slick/,
+              /^viewer/,
+              /^vue-foldable/,
+              /^slide-left/
+            ]
           }
         }
       }
     }
   },
   generate: {
-    exclude: [
-      /^.*api.*$/,
-      /^.*filter.*$/,
-    ]
-  },
+    exclude: [/^.*api.*$/, /^.*filter.*$/]
+  }
 }
