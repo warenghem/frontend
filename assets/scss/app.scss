@@ -1041,15 +1041,10 @@ letter-spacing: .009em;
 .menu-bar, .v-bottom-navigation {
   backdrop-filter: saturate(180%) blur(20px);
   transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
-  .v-btn {
-    background: none!important;
-  }
-
   .brand {
     filter: brightness(1) invert(0);
     transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);
   }
-
   .item {
     color: #19110b;
     transition: all .3s cubic-bezier(1.0, 0.5, 0.8, 1.0);

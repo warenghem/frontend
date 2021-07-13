@@ -45,10 +45,10 @@ colors:
 material:
 - id: 1
   name: Cuir végétal de vin Dionysos®
-  icon: leather.jpg
+  icon: API/products/leather.webp
 - id: 2
   name: Lin Francais Bio
-  icon: linen_camel.jpg
+  icon: API/products/linen_decati.jpg
 award:
 - name: Made in France
   image: madeinfrance.png

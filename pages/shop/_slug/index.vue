@@ -1,6 +1,6 @@
 <template>
   <div v-click-outside="closeSideModal">
-    <ProductStickyToolbar class="stickyBar" :product="product"/>
+    <ProductToolbarSticky class="stickyBar" :stock="stockstatus.stock" :product="product"/>
     <v-container fluid class="pa-0">
       <AtomsBtnBack style="z-index:1; height:47px!important" class="position-absolute systemBackground"/>
       <v-row
@@ -43,7 +43,7 @@
           <!--<div style="margin-top: -10px;" class="d-flex justify-space-between mt-5 mt-lg-0">
             <div>{{product.sku}}</div>
           </div>-->
-          <div class="home-title px-0 text-left">{{product.name}}</div>
+          <ProductTitle :title="product.name" />
           <div class="sub-title teradeli-medium secondary--text px-0 text-left pt-2">{{product.slogan}}</div>
           <v-row align="center" justify="center" class="py-5 pa-0 ma-0 text-center">
               <img v-for="(ad,i_dx) in product.award" :key="'award'+i_dx" style="height:60px" width="100%" class="mx-5 award-img h-100 contain" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-120,dpr-2/Logos/'+ ad.image" alt="">
@@ -71,62 +71,27 @@
             <ProductStock :pieces="product.offers.pieces" :stock="stockstatus.stock"/>
           </v-row>
           <MoleculesBtnMain :text="$t('btnWaitforit')" :large="true" @click.native="$store.state.productModal=true" class="w-100" />
-          <ProductBuybutton :product="product" class="w-100 my-2 d-none" />
+          <ProductBtnBuy :product="product" class="w-100 my-2 d-none" />
           <p class="text-center">{{$t('nopayment')}}</p>
           <div class="mt-5" v-html="product.description"></div>
           <v-subheader>{{$t('product.details')}}</v-subheader>
           <div class="mx-5">
-            <div class="py-5 d-flex align-center justify-space-between">
-              <v-row style="height:92px" justify="center" class="pa-0 ma-0 text-center">
-                <div
-                    v-for="(mtr,i_dx) in product.material"
-                    :key="'material_'+i_dx"
-                    width="110px"
-                >
-                <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/Materials/'+ mtr.icon" alt="">
+            <v-row justify="center" class="mb-5 pa-0 ma-0 text-center materials">
+              <div
+                  v-for="(mtr,i_dx) in product.material"
+                  :key="'material_'+i_dx"
+                  width="110px"
+                  class="px-2 py-3"
+              >
+                <img width="40px" class="rounded-lg" :src="'https://ik.imagekit.io/g1noocuou2/tr:q-70,w-40,ar-1-1,r-8/'+ mtr.icon" alt="">
                 <v-card-text class="pa-0">
                   {{mtr.name}}
                 </v-card-text>
-                </div>
-              </v-row>
-            </div>
-            <div class="mb-5">
-              <foldable class="baidu-foldable" height="%50">
-                <slot>
-                  <span class="pt-2">{{product.dimensions.length}} x {{product.dimensions.height}} x {{product.dimensions.width}} {{product.dimensions.unit}}</span>
-                  <span class="teradeli-light">{{$t('product.size')}}</span>
-                  <div class="py-4">
-                    <v-chip-group
-                      active-class="primary--text"
-                      column
-                    >
-                      <v-chip
-                        v-for="(det,i_dx) in product.details"
-                        :key="'award'+i_dx"
-                      >
-                        {{ det }}
-                      </v-chip>
-                    </v-chip-group>
-                  </div>
-                </slot>
-                <template slot="view-more" slot-scope="{ toggle, collapsed }">
-                  <div @click="toggle"
-                      class="baidu-view-more"
-                      :class="{ 'collapsed': collapsed }">
-                    <svg class="baidu-view-more-icon" viewBox="0 0 1024 1024" xmlns="http://www.w3.org/2000/svg" width="20"
-                        height="20" fill="#3596ff">
-                      <path
-                        d="M512 0c-281.6 0-512 230.4-512 512s230.4 512 512 512 512-230.4 512-512-230.4-512-512-512z m0 938.666667c-234.666667 0-426.666667-192-426.666667-426.666667s192-426.666667 426.666667-426.666667 426.666667 192 426.666667 426.666667-192 426.666667-426.666667 426.666667z"
-                        p-id="3018"></path>
-                      <path
-                        d="M793.6 396.8c-17.066667-17.066667-42.666667-17.066667-59.733333 0l-221.866667 221.866667-221.866667-221.866667c-17.066667-17.066667-42.666667-17.066667-59.733333 0-17.066667 17.066667-17.066667 42.666667 0 59.733333l251.733333 251.733334c17.066667 17.066667 42.666667 17.066667 59.733334 0l251.733333-251.733334c17.066667-12.8 17.066667-42.666667 0-59.733333z"
-                        p-id="3019"></path>
-                    </svg>
-                    <span class="baidu-view-more-text">{{ collapsed ? $t('product.readMore') : $t('product.readLess') }}</span>
-                  </div>
-                </template>
-              </foldable>
-            </div>
+              </div>
+            </v-row>
+            <span class="pt-2">{{product.dimensions.length}} x {{product.dimensions.height}} x {{product.dimensions.width}} {{product.dimensions.unit}}</span>
+            <span class="teradeli-light">{{$t('product.size')}}</span>
+            <ProductChipFoldable  :chip="product.details"/>
           </div>
           <div class="mb-7">
             <div style="height:50px" class="border-top-2 border-bottom-2 cursor-pointer d-flex align-center justify-space-between"
@@ -258,11 +223,8 @@
     import VueSlickCarousel from 'vue-slick-carousel'
     import 'vue-slick-carousel/dist/vue-slick-carousel.css'
     import 'vue-slick-carousel/dist/vue-slick-carousel-theme.css'
-    import VueFoldable from 'vue-foldable'
-    import 'vue-foldable/dist/vue-foldable.css'
     import { mdiChevronRight, mdiCreditCard, mdiContentCopy, mdiTruckDelivery, mdiPackageVariantClosed } from '@mdi/js'
     // import "viewerjs/dist/viewer.css";
-    Vue.component('foldable', VueFoldable);
     import getSiteMeta from '@/utils/getSiteMeta';
 
     export default {
@@ -522,9 +484,6 @@
     }
 </script>
 <style lang="scss">
-button.slick-arrow.slick-next {
-    display: none!important;
-}
   .right-icon {
     font-size: 35px !important;
   }
@@ -545,81 +504,10 @@ button.slick-arrow.slick-next {
       width: 25%;
      }
   }
-::v-deep .v-chip {
-  height: auto!important;
-  white-space: inherit!important;
-  min-height: 32px;
-  padding: 6px 12px!important;
-}
-/* purgecss start ignore */
-  .vue-foldable-container {
-    transition: max-height 0.7s;
-  }
-  .vue-foldable-mask {
-    transition: opacity 3s;
-    bottom: 24px;
-  }
-  .slick-list {
-    padding-left: 0!important;
-}
-.vue-foldable .vue-foldable-container {
-    overflow: hidden;
-}
-.vue-foldable {
-    position: relative;
-}
-.vue-foldable .vue-foldable-mask.collapsed {
-    opacity: 1;
-    background: linear-gradient(180deg,rgba(255,255,255,0),#fff);
-}
-.vue-foldable .vue-foldable-mask:not(.collapsed) {
-    opacity: 0;
-}
-.vue-foldable .vue-foldable-mask {
-    position: absolute;
-    bottom: 30px;
-    height: 80px;
-    width: 100%;
-    background: transparent;
-    pointer-events: none;
-}
-.vue-foldable.baidu-foldable
-{
-  .vue-foldable-container {
-    transition: max-height 0.3s;
-  }
-  .vue-foldable-mask {
-    transition: opacity 3s;
-    bottom: 34px;
-  }
-  .v-slide-group__wrapper {
-    touch-action: unset!important;
-}
-  .baidu-view-more {
-    background-color: #fff;
-    transition: background-color .1s ease-in-out;
-    color: #3D8EBE;
-    padding: 0 8px;
-    font-size: 14px;
-    border-radius: 4px;
-    text-align: center;
-    height: 34px;
-    line-height: 32px;
-    min-width: 72px;
-    cursor: pointer;
-    .baidu-view-more-icon {
-      vertical-align: middle;
-    }
-    .baidu-view-more-text {
-      vertical-align: middle;
-    }
-    &:not(.collapsed) {
-      .baidu-view-more-icon {
-        transform: scaleY(-1);
-      }
-    }
+.materials {
+  height:204px;
+  @media screen and (min-width: 1486px) {
+      height:92px
   }
 }
-/* purgecss end ignore */
-
 </style>

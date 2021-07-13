@@ -1,5 +1,4 @@
 <template>
-  <div>
     <v-btn
         elevation="0"
         rounded
@@ -16,8 +15,6 @@
     >
       {{$t('product.cartBtn')}}
     </v-btn>
-  </div>
-
 </template>
 
 <script>
